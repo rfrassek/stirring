@@ -1375,7 +1375,8 @@ where the coefficients
 \end{equation}
 \begin{equation}\label{a2lm1}
 	\begin{split}
-		D_{ii}^{2L-1}=&2e_{ii}^{tot}+\left(e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}\right)-2\sum_{a\neq b}e_{ii}^{[a]}e_{ii}^{[b]}-2\sum_{a\neq b}\sum_{j=2\,:\,j\neq i}^{N}e_{ij}^{[a]}e_{ji}^{[b]}
+		D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}\right)-2\sum_{a\neq b}e_{ii}^{[a]}e_{ii}^{[b]}-2\sum_{a\neq b}\sum_{j=2\,:\,j\neq i}^{N}e_{ij}^{[a]}e_{ji}^{[b]}\\
+		&=e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=2}^{N}e_{ij}^{[a]}e_{ji}^{[b]}
 	\end{split}
 \end{equation}
 
@@ -1393,7 +1394,10 @@ Moreover, $\forall j=2,\ldots,L$ and for $i=1$
 \end{equation}
 where the coefficient is 
 \begin{equation}\label{b}
-	B_{j}^{2L-1}=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-e_{j1}^{[a]}e_{jj}^{[b]}-\sum_{k=2\,:\,k\neq j}^{N}e_{k1}^{[a]}e_{jk}^{[b]}\right)
+\begin{split}
+	B_{j}^{2L-1}&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-e_{j1}^{[a]}e_{jj}^{[b]}-\sum_{k=2\,:\,k\neq j}^{N}e_{k1}^{[a]}e_{jk}^{[b]}\right)\\
+	&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-\sum_{k=2}^{N}e_{k1}^{[a]}e_{jk}^{[b]}\right)
+	\end{split}
 \end{equation}
 \textbf{Remark}: it is easy to see that, when restricted to the case of 2 species,  \eqref{a2lp},\eqref{a2l},\eqref{a2lm1} correspond to the one compute in \cite{frassek2020eigenstates}. \\ \\
 The interesting charges (we only look for the first non trivial one) take the following form
