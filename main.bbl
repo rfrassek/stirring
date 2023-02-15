@@ -1,0 +1,75 @@
+\begin{thebibliography}{10}
+
+\bibitem{giardina2009duality}
+Cristian Giardina, Jorge Kurchan, Frank Redig, and Kiamars Vafayi.
+\newblock Duality and hidden symmetries in interacting particle systems.
+\newblock {\em Journal of Statistical Physics}, 135(1):25--55, 2009.
+
+\bibitem{carinci2013duality}
+Gioia Carinci, Cristian Giardina, Claudio Giberti, and Frank Redig.
+\newblock Duality for stochastic models of transport.
+\newblock {\em Journal of Statistical Physics}, 152(4):657--697, 2013.
+
+\bibitem{frassek2020duality}
+Rouven Frassek, Cristian Giardina, and Jorge Kurchan.
+\newblock Duality and hidden equilibrium in transport models.
+\newblock {\em SciPost Physics}, 9(4):054, 2020.
+
+\bibitem{derrida1993exact}
+Bernard Derrida, Martin~R Evans, Vincent Hakim, and Vincent Pasquier.
+\newblock Exact solution of a 1d asymmetric exclusion model using a matrix
+  formulation.
+\newblock {\em Journal of Physics A: Mathematical and General}, 26(7):1493,
+  1993.
+
+\bibitem{frassek2019non}
+Rouven Frassek.
+\newblock The non-compact xxz spin chain as stochastic particle process.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical},
+  52(33):335202, 2019.
+
+\bibitem{frassek2020eigenstates}
+Rouven Frassek.
+\newblock Eigenstates of triangularisable open xxx spin chains and closed-form
+  solutions for the steady state of the open ssep.
+\newblock {\em Journal of Statistical Mechanics: Theory and Experiment},
+  2020(5):053104, 2020.
+
+\bibitem{floreani2022switching}
+Simone Floreani, Cristian Giardin{\`a}, Frank~den Hollander, Shubhamoy Nandan,
+  and Frank Redig.
+\newblock Switching interacting particle systems: scaling limits, uphill
+  diffusion and boundary layer.
+\newblock {\em Journal of Statistical Physics}, 186(3):1--45, 2022.
+
+\bibitem{redig2022ergodic}
+Frank Redig and Hidde van Wiechen.
+\newblock Ergodic theory of multi-layer interacting particle systems.
+\newblock {\em arXiv preprint arXiv:2203.12462}, 2022.
+
+\bibitem{casini2022uphill}
+Francesco Casini, Cristian Giardina, and Cecilia Vernia.
+\newblock Uphill in reaction-diffusion multi-species interacting particles
+  systems.
+\newblock {\em arXiv preprint arXiv:2210.01514}, 2022.
+
+\bibitem{vanicat2017exact}
+Matthieu Vanicat.
+\newblock Exact solution to integrable open multi-species ssep and macroscopic
+  fluctuation theory.
+\newblock {\em Journal of Statistical Physics}, 166(5):1129--1150, 2017.
+
+\bibitem{zhou2021orthogonal}
+Zhengye Zhou.
+\newblock Orthogonal polynomial stochastic duality functions for multi-species
+  sep (2j) and multi-species irw.
+\newblock {\em SIGMA. Symmetry, Integrability and Geometry: Methods and
+  Applications}, 17:113, 2021.
+
+\bibitem{belitsky2015self}
+Vladimir Belitsky and Gunter~M Sch{\"u}tz.
+\newblock Self-duality for the two-component asymmetric simple exclusion
+  process.
+\newblock {\em Journal of mathematical physics}, 56(8):083302, 2015.
+
+\end{thebibliography}

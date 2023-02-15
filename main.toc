@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}% 
+\contentsline {paragraph}{Organization of the paper}{2}{section*.2}% 
+\contentsline {section}{\numberline {2}The stirring process}{2}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}The infinitesimal generator}{2}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}The Lie algebraic description}{4}{subsection.2.2}% 
+\contentsline {section}{\numberline {3}Duality}{6}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Algebraic formulation}{6}{subsection.3.1}% 
+\contentsline {subsubsection}{\numberline {3.1.1}Proof of the duality relation}{7}{subsubsection.3.1.1}% 
+\contentsline {section}{\numberline {4}Integrability}{11}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Absorption probabilities}{14}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}The steady state and the exact correlations}{20}{subsection.4.2}% 
+\contentsline {subsubsection}{\numberline {4.2.1}One and two point correlations}{22}{subsubsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.3}Absorption probabilities for general 2j}{23}{subsection.4.3}% 
+\contentsline {subsection}{\numberline {4.4}Mapping to equilibrium?}{25}{subsection.4.4}% 
+\contentsline {subsubsection}{\numberline {4.4.1}Quantum inverse scattering method}{25}{subsubsection.4.4.1}% 
+\contentsline {section}{\numberline {5}Conclusion}{28}{section.5}% 
