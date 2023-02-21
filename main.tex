@@ -1341,7 +1341,11 @@ Then we have
 Q_{2L+2}x^{2L+2}+Q_{2L+1}x^{2L+1}+Q_{2L}x^{2L}+\ldots
 \end{split}
 \end{equation}
-We call these $Q_{k}$, with $k=0,\ldots,2L+2$, the \textit{charges}. For large $x$, we compute them by expanding $U_{0}^{d}(x)$ in a polynomial: 
+We call these $Q_{k}$, with $k=0,\ldots,2L+2$, the \textit{charges}. \\
+We can also introduce 
+\begin{equation}
+	T_{0}(x)=(N+x)A(x)-\sum_{i=2}^{N}xD_{ii}(x)\quad\text{such that}\quad T_{\Delta}(x)=T_{0}(x)+\sum_{i=2}^{N}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)
+\end{equation}For large $x$, we compute them by expanding $U_{0}^{d}(x)$ in a polynomial: 
 \begin{equation}
 	A(x)=\sum_{k=0}^{2L+1}A^{k}x^{k}\quad D_{ii}(x)=\sum_{k=0}^{2L+1}D_{ii}^{k}x^{k}\quad B_{i}(x)=\sum_{k=0}^{2L-1}B_{i}^{k}x^{k}
 \end{equation}
@@ -1475,6 +1479,70 @@ These two matrices $Q_{2}^{0}$ and $Q_{2}^{\Delta}$ are such that
 \begin{equation}
 Q_{2}=Q_{2}^{0}+Q_{2}^{\Delta}
 \end{equation}
+We have that the eigenvectors and eigenvalues of the equilibrium case are given by
+\begin{equation}
+T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle =\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
+\end{equation}
+where $m_{2},\ldots,m_{N}$ denote the total occupation along the chain of species $2,\ldots,N$. Let us notice that $m_{1}=L-\sum_{k=2}^{N}m_{k}$.\\
+We make the following ansatz for the eigenvectors of the chain with left triangular and right diagonal boundaries:
+\begin{equation}
+	|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle=\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots\Delta_{N}^{k_{N}}G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\end{equation}
+where 
+\begin{equation}
+G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=(2x+N)^{N-1}\left[\left(\Lambda_{m_{2},\ldots,m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]^{-(N-1)}B_{2}(x)\ldots B_{N}(x)
+\end{equation}
+This function has the following properties:
+\begin{equation}\label{SecondProperty}
+\left[\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{i},\ldots,k_{N}}(x)=(2x+N)B_{i}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{i}-1,\ldots,k_{N}}(x)\quad \forall i\in \{2,\ldots,N\}
+\end{equation}
+\begin{equation}\label{FirstProperty}
+	B_{i}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,m_{i},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle =0\quad \forall i\in \{2,\ldots,N\}
+\end{equation}
+We prove the ansatz:
+\begin{align*}
+	T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
+	\\&+
+	\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\ldots+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}+1}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{2}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\ldots
+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}+1}(2x+N)B_{N}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\end{align*}
+we replace $k_{i}\to k_{i}+1$ $\forall i\in\{2,\ldots,N\}$ in the proper summation. Then,
+\begin{align*}
+	T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
+	\\&+
+	\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\ldots+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{2}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2}-1,\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\ldots
+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{N}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}-1}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+
+	\Delta_{2}^{m_{2}+1}\sum_{k_{3}=0}^{m_{3}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{3}^{k_{3}}\Delta_{N}^{k_{N}}(2x+N)B_{2}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{m_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+
+	\Delta_{N}^{m_{N}+1}\sum_{k_{2}=0}^{m_{3}}\ldots\sum_{k_{N-1}=0}^{m_{N-1}}\Delta_{3}^{k_{2}}\Delta_{N-1}^{k_{N-1}}(2x+N)B_{2}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\end{align*}
+We use prperties \eqref{SecondProperty} and \eqref{FirstProperty}:
+\begin{align*}
+		T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
+	\\&+
+	\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\ldots+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left[\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\ldots
+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left[\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\end{align*}
+then
+\begin{align*}
+T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=
+		\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
+	\\&+
+	\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\ldots+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&=
+	\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle
+\end{align*}
 \section{Conclusion}
 
 
