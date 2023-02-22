@@ -1490,8 +1490,11 @@ We make the following ansatz for the eigenvectors of the chain with left triangu
 \end{equation}
 where 
 \begin{equation}
-G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=(2x+N)^{N-1}\left[\left(\Lambda_{m_{2},\ldots,m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]^{-(N-1)}B_{2}(x)\ldots B_{N}(x)
+\begin{split}
+G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=&(2x+N)^{2-N+k_{2}+\ldots+k_{N}}\left[\left(\Lambda_{m_{2},\ldots,m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]^{N-2-k_{2}+\ldots-k_{N}}\\&B_{2}^{k_{2}}(x)\ldots B_{N}^{k_{N}}(x)
+\end{split}
 \end{equation}
+Let us notice that when all $k$'s are one, we have again the expression (2.17) of the 2 species case. 
 This function has the following properties:
 \begin{itemize}
 \item Property one: \begin{equation}\label{SecondProperty}
@@ -1499,11 +1502,11 @@ This function has the following properties:
 \end{equation}
 Indeed take for example $i=2$
 \begin{align*}
-G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{N}}(x)&=(2x+N)(2x+N)^{k_{2}+k_{3}+\ldots+k_{N}-1}\left[\left(\Lambda_{m_{2},\ldots,m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]^{-1}
+G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{N}}(x)&=(2x+N)(2x+N)^{2-N+k_{2}-1+k_{3}\ldots+k_{N}}\left[\left(\Lambda_{m_{2},\ldots,m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]^{-1}
 \\&
-\left[\left(\Lambda_{m_{2},\ldots,m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]^{-k_{2}+1-k_{3}-\ldots-k_{N}} B_{2}(x)B_{2}(x)^{k_{2}-1}B_{3}^{k_{3}}(x)\ldots B_{N}^{k_{N}}(x) 
+\left[\left(\Lambda_{m_{2},\ldots,m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]^{N-2-k_{2}+1-k_{3}-\ldots-k_{N}} B_{2}(x)B_{2}(x)^{k_{2}-1}B_{3}^{k_{3}}(x)\ldots B_{N}^{k_{N}}(x) 
 \\&=
-\left[\left(\Lambda_{m_{2},\ldots,m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]^{-1}B_{2}(x)G_{m_{2},\ldots,m_{N}}^{k_{2}-1,k-{3},\ldots,k_{N}}(x)
+\left[\left(\Lambda_{m_{2},\ldots,m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]^{-1}(2x+N)B_{2}(x)G_{m_{2},\ldots,m_{N}}^{k_{2}-1,k_{3},\ldots,k_{N}}(x)
 \end{align*}
 \item Property two: 
 \begin{equation}\label{FirstProperty}
