@@ -13,6 +13,7 @@
 \usepackage{bbm}
 \usepackage{bm}
 \usepackage{appendix}
+\usepackage{comment}
 \numberwithin{equation}{section}
 
 
@@ -175,18 +176,18 @@ The way one can define a multi-type (or multi-species) interacting particle syst
 In this work we concentrate our effort in this last "single layer" case with a repulsive process, i.e. a dynamic in which a maximum amount of particles can be present in each site at each time. We will call this amount, the "maximal occupancy" and it will indicated with $\twoj$ where $\twoj\in\mathbb{N}$. Particle of any species can exchange their position in the graph, under this exclusion constraint. The system will be put out of equilibrium and some absorbing duality result are investigated. Moreover, we will use this duality, to study the out of equilibrium steady state. In particular, in case of $\twoj=1$ we should retrieve the model studied in \cite{vanicat2017exact}. We will then exploit this last result and the duality, to write explicitly all the correlations of this \textit{hard-core exclusion} case. The main tool that we will use is the Lie algebraic description of the process, that allows to find the duality as a proper symmetry of the generator. 
 \paragraph{Organization of the paper}
 \section{The stirring process}
-We consider the stirring process with an arbitrary number of particles $N$. It is important to note that any one of them can be considered the empty (or hole) particle. Thus, in this first general setting we do not distinguish between real and empty particles. However, this distinction will be useful in the section about duality, where we will see that this empty will play a special role. The stochastic dynamics is Markovian and consist in an exchange of particles of any type between two connected site of a graph. \\
+{\color{blue}We consider the stirring process with an arbitrary number of particles $N$. It is important to note that any one of them can be considered the empty (or hole) particle. Thus, in this first general setting we do not distinguish between real and empty particles. However, this distinction will be useful in the section about duality, where we will see that this empty will play a special role. The stochastic dynamics is Markovian and consist in an exchange of particles of any type between two connected site of a graph.}
 \subsection{The infinitesimal generator}
-Let's consider a connected and undirected graph $G=(V,\mathcal{E})$ where $x\in V$ denotes the set of vertex and $\mathcal{E}$ denotes the set of edges $(x,y)$ with $x,y\in V$.  The process has a repulsive nature, thus the state space must contain informations about this maximal occupancy. Then we define 
+We consider a connecAt each site $x\in V$, we describe the occupation with an $N-$dimensional vector in which the value of the $k$-th component $n_{k}^{x}$ denotes the number of particles of species $k\in \{1,\ldots,N\}$. On each vertex we allow maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space is
 \begin{equation}\label{stateSpace}
-    \Omega:=\left\{n=(n_{1},\ldots,n_{N})\in\mathbb{N}_0^{N}\;:\; |n|=\twoj\right\}^{|V|}
+    \Omega:=\left\{(n_{1},\ldots,n_{N})\in\mathbb{N}_0^{N}\;:\; \sum_{k=1}^{N}n_{k}=\twoj\right\}^{|V|}
 \end{equation}
-where $|n|=\sum_{k=1}^{N}n_{k}$ denotes the total number of particles per site and $|V|$  the total number of vertices. At each site $x\in V$, we describe the occupation with an $N-$dimensional vector in which the value of the $k$-th component $n_{k}^{x}$ denotes the number of particles of species $k$, under the constraint that the total number of particle in the site is $\twoj$. \\
-The dynamic consists in an exchange of particles between connected vertex. Moreover, each vertex can be connected with a reservoir that inject, remove or exchange particles. Mathematically, this can be described by an infinitesimal generator as follows
+
+The edge dynamics consists in an exchange of particles between connected vertices. Moreover, each vertex can be connected with a reservoir that exchanges particles with the external environement. Mathematically, this can be described by an infinitesimal generator of the form
 \begin{equation}\label{Generator}
     \mathcal{L}=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}+\sum_{x\in V}\Gamma_{x}\mathcal{L}_{x}
 \end{equation}
-where the quantities $ \omega_{x,y}$ are called conductancies and $\Gamma_{x}$ local inhomogeneities. The generator $\mathcal{L}_{x,y}$ is called the \textit{edge generator}, while $\mathcal{L}_{x}$ is called the \textit{site generator}. These linear operators act on local functions $f:\Omega\to \mathbb{R}$ as follows
+where the quantities $ \omega_{x,y}\geq 0$ are called conductances and $\Gamma_{x}\geq 0$ local inhomogeneities. The generator $\mathcal{L}_{x,y}$ is called the \textit{edge generator}, while $\mathcal{L}_{x}$ is called the \textit{site generator}. These linear operators act on functions $f:\Omega\to \mathbb{R}$ as follows
 \begin{equation}
 \mathcal{L}_{x,y}f(n)=\sum_{k,l=1}^{N}n_{k}^{x}n_{l}^{y}\left[f(n-\delta_{x}^{k}+\delta_{l}^{x}+\delta_{k}^{y}-\delta_{l}^{y})-f(n)\right]
 \end{equation}
@@ -194,7 +195,9 @@ where the quantities $ \omega_{x,y}$ are called conductancies and $\Gamma_{x}$ l
     \mathcal{L}_{x}f(n)=\sum_{k,l=1}^{N}\alpha_{k}^{x}n_{l}^{x}\left[f(n+\delta_{k}^{x}-\delta_{l}^{x})-f(n)\right]
 \end{equation}
 where 
-$\delta_{k}^{x}=(0,\ldots,0,1,0,\ldots,0)$ withe the one in the $k$-th position. This means that the edge generator exchanges a particle of type $k$ in the site $x$ with a particle of type $l$ in the site $y$, while the site generator inject a particle of type $k$ and remove a particle of type $l$, both in the site $x$. The following Figure \ref{fig:1}, Figure \ref{fig:2} help in understanding the dynamics. 
+$\delta_{k}^{x}=(0,\ldots,0,1,0,\ldots,0)$ withe the one in the $k$-th position.
+This means that on an edge at rate $\omega_{x,y}n_{k}^{x}n_{l}^{y}$ a particle of type $k$ at site $x$ is exchanged with a particle of tipe $l$ at site $y$; furthermore, on each site $x\in V$ at rate $\Gamma_{x}\alpha_{k}^{x}n_{l}^{x}$ a particle of type $l$ is replaced with a particle of type $k$. 
+The following Figure \ref{fig:1}, Figure \ref{fig:2} help in understanding the dynamics. 
 \begin{figure}
     \centering
     \includegraphics[scale=0.6]{Dyn_stir.eps}
@@ -207,30 +210,24 @@ $\delta_{k}^{x}=(0,\ldots,0,1,0,\ldots,0)$ withe the one in the $k$-th position.
     \caption{The site dynamics}
     \label{fig:2}
 \end{figure}\newline \\
-\textbf{Remark}: 
+{\color{blue}\textbf{Remark}: 
     We can always assign the name "empty" to one of the species of particles in the above dynamics (let's say, without loss of generality, the species 1). This species would play the role of "compensator" in the exclusion constraint, in the sense that its occupation will always be determined once we know the others, i.e. $\forall x\in V$: 
     \begin{equation}
         n_{1}^{x}=\twoj-\sum_{k=2}^{N}n_{k}^{x}
     \end{equation}
-    Moreover, if we set $N=2$ and $\twoj=2j$, we exactly retrieve the SEP(2j), where the empty occupation is indeed $2j-\eta_{x}$ where $\eta_{x}$ is the number of (color blind) particles in the site $x$. In this sense we can think about the stirring process as the natural generalization of the SEP(2j).
+    Moreover, if we set $N=2$ and $\twoj=2j$, we exactly retrieve the SEP(2j), where the empty occupation is indeed $2j-\eta_{x}$ where $\eta_{x}$ is the number of (color blind) particles in the site $x$. In this sense we can think about the stirring process as the natural generalization of the SEP(2j).}
     \begin{flushright}
         $\square$
     \end{flushright}
-The process described by \eqref{Generator} is reversible if and only if, for any $k\in\{1,\ldots,N\}$, the boundary parameters $\alpha_{k}^{x}=\alpha_{k}$ $\forall x\in V$. The reversible product measure is a Multinuomial distribution of parameter $\twoj$. That means that 
+The process described by the generator \eqref{Generator} is reversible if and only if, for any $k\in\{1,\ldots,N\}$, the boundary parameters $\alpha_{k}^{x}=\alpha_{k}$ $\forall x\in V$. The non-homogeneus reversible product measure has marginals the
 \begin{equation}\label{reversibleMeasure}
-    \mu^{rev}=\bigotimes_{x\in V}\mu^{rev}_{x}\qquad \mu_{x}^{rev}\sim \text{Multinomial}\left(\twoj,p_{1},\ldots,p_{N}\right)\quad :\quad p_{k}=\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}
+    \mu^{rev}=\bigotimes_{x\in V}\mu^{rev}_{x}\qquad \mu_{x}^{rev}\sim \text{Multinomial}\left(\twoj,p_{1},\ldots,p_{N}\right)\quad \text{where}\quad p_{k}=\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}
 \end{equation}
-This can be proven just by imposing the detailed balance conditions for the edge and for the site generators. Let us notice that the reversible measure is product only over the sites, but not over the species. This is due to the exclusion constraint that makes particle interact. 
-
-{\color{red}[LET'S SKIP THE PROOF? I THINK IT IS STANDARD!]}.\\
+This can be proven just by imposing the detailed balance conditions for the edge and for the site generators. Let us notice that the reversible measure is product only over the sites, but not over the species.
 \subsection{The Lie algebraic description}
 
 
-
-%The approach we use to find duality relations is the Lie algebraic one. The main idea is to describe the infinitesimal generator (or better, its transposed, i.e. the Hamiltonian operator) via a proper combination of the basis of a certain Lie algebra. Then, duality will be found by symmetry argument.\\
-
-
-Consider the $gl(N)$ Lie algebra with with generators denoted by $\EE_{a,b}$ with $a,b\in \{1,\ldots,N\}$ and commutation relations
+Consider the $gl(N)$ Lie algebra with with generators denoted by $\EE_{ab}$ with $a,b\in \{1,\ldots,N\}$ and commutation relations
 \begin{equation}\label{eq:comgl}
 \left[\EE_{ab},\EE_{cd}\right]=\EE_{ad}\delta_{bc}-\EE_{cb}\delta_{ad}\qquad \forall a,b\in \{1,\ldots,N\}
 \end{equation}
@@ -239,64 +236,48 @@ We are interested in the symmetric finite-dimensional representations with
 \begin{equation}\label{eq:dynkin}
     \lambda=(\twoj,0,\ldots,0) \qquad\text{where}\qquad \twoj\in\mathbb{N}
 \end{equation} 
-The dimension of the symmetric representations is given by the combination of $N$ objects in $\twoj$ positions with repetition:
+The dimension $M$ of the symmetric representations is given by the combination of $N$ objects in $\twoj$ positions with repetition:
 \begin{equation}
-	D= \frac{(N+\twoj-1)!}{\twoj  !(N-1)!}
+	M= \frac{(N+\twoj-1)!}{\twoj  !(N-1)!}
 \end{equation} 
-The basis elements of the vector space of the representation $\mathbb{C}^{D}$ are denoted by 
+The basis elements of the vector space of the representation $\mathbb{C}^{M}$ are the column vectors 
 \begin{equation}
-  |n\rangle=  |n_{1},\ldots,n_{N}\rangle\qquad \forall
-    n=(n_{1},\ldots,n_{N})
+  |n\rangle=  |n_{1},\ldots,n_{N}\rangle
 \end{equation}
-$\forall n=(n_{1},\ldots,n_{N})\in \chi$ where $\chi:=\left\{n:|n|=\twoj\right\}$ {\color{red}(let us notice that $\Omega=\chi^{|V|}$)?}. This vector can be mapped in a one-to-one correspondence with the canonical basis of $\mathbb{C}^{D}$. This basis vector satisfy the orthogonality relation
+%where $\sum_{k=1}^{N}n_{i}=\nu$. 
+This basis vector satisfy the orthogonality relation
 \begin{equation}\label{ortho}
     \langle m_{1},\ldots,m_{N}|n_{1},\ldots,n_{N}\rangle=\prod_{k=1}^{N}\delta_{m_{k},n_{k}}
 \end{equation}
-where  $ \langle m_{1},\ldots,m_{N}|=| m_{1},\ldots,m_{N}\rangle^T$.
- 
-The explicit actions of the basis element of the algebra on the vectors of the space $\mathbb{C}^{D}$ are the following, for non Cartan and Cartan elements respectively: 
+where  $ \langle m_{1},\ldots,m_{N}|$ is the row vector obtained by transposing $|m\rangle$ and $\delta_{m_{k},n{k}}$ is the Kronhecker delta. 
+The explicit actions of the algebra generators on the vectors $|n\rangle$ are the following:
 \begin{equation}\label{actionE}
 	\begin{cases}
-		E_{ab}|n_{1},\ldots,n_{a},\ldots,n_{b},\ldots,n_{N}\rangle =n_{b}|n_{1},\ldots,n_{a}+1,\ldots,n_{b}-1,\ldots,n_{N}\rangle\\[0.1cm]
-		E_{aa}|n_{1},\ldots,n_{a},\ldots,n_{b},\ldots,n_{N}\rangle = n_{a} |n_{1},\ldots,n_{a},\ldots,n_{b},\ldots,n_{N}\rangle
-	\end{cases}\qquad \forall a,b\in\{1,\ldots,N\}
+		E_{ab}|n_{1},\ldots,n_{a},\ldots,n_{b},\ldots,n_{N}\rangle =n_{b}|n_{1},\ldots,n_{a}+1,\ldots,n_{b}-1,\ldots,n_{N}\rangle\quad a\neq b\\[0.1cm]
+		E_{aa}|n_{1},\ldots,n_{a},\ldots,n_{b},\ldots,n_{N}\rangle = n_{a} |n_{1},\ldots,n_{a},\ldots,n_{b},\ldots,n_{N}\rangle\quad a=b
+	\end{cases}
 \end{equation}  
-One can check that the generators defined in this way satisfy the commutation relations \eqref{eq:comgl} and yield Dynkin weight \eqref{eq:dynkin}.
-
-
-We now define the equivalent of \eqref{stateSpace} in the vector notation
- \begin{equation}
-	\Omega':=\left\{|n\rangle=|n_{1},\ldots,n_{N}\rangle \;:\;n\in\mathbb{N}_0^N,\;\;|n|=\twoj\right\}^{\otimes|V|}
-	\end{equation}
-where we denote 
+One can check that the generators defined in this way satisfy the commutation relations \eqref{eq:comgl} and yield Dynkin weight \eqref{eq:dynkin}. The Cartan element $E_{aa}$ conserves the number of particles of type $a$. 
+\textbf{Remark}: The symmetric representations $\lambda=(\twoj,0,\ldots,0)$ are dual to the representations $\lambda=(\twoj,\ldots,\twoj,0)$ that can be obtained via 
 \begin{equation}
-|{\bf n}\rangle=\left(\,\bigotimes_{x\in V}	|n_{1},\ldots,n_{N}\rangle_{x}\right)\in \Omega'
+   \bar E_{ab}=\mu\delta_{ab}-E_{N-b+1,N-a+1}
 \end{equation}
-such that
+{\color{red} This needs to be checked and give alternative form of Hamiltonian?}\\
+By the Lie algebra above we describe the process characterized by the generator \eqref{Generator}. We consider the state space \eqref{stateSpace} composed by 
+
+%We now define the equivalent of \eqref{stateSpace} in the vector notation
+% \begin{equation}
+%	\Omega':=\left\{|n\rangle=|n_{1},\ldots,n_{N}\rangle \;:\;n\in\mathbb{N}_0^N,\;\;|n|=\twoj\right\}^{\otimes|V|}
+%	\end{equation}
+%where we denote 
+\begin{equation}
+|{\bf n}\rangle=\left(\,\bigotimes_{x\in V}	|n_{1}^{x},\ldots,n_{N}^{x}\rangle\right)
+\end{equation}
+such that, $\forall x\in V$ we have $\sum_{k=1}^{N}n_{k}^{x}=\nu$. Moreover, the following orthogonality relations holds:
 \begin{equation}
     \langle {\bf n}|{\bf m}\rangle =\prod_{x=1}^L\prod_{i=1}^N\delta_{n^x_i,m^{x}_i}
 \end{equation}
-
-
-When the state space is discrete, it is useful to write the dynamics of the process in term of an other operator, the Hamiltonian. The relation between these two operator is the following
-\begin{equation}
-H=\mathcal{L}^{T}
-\end{equation}
-
-
-
-
-Following  \cite{belitsky2015self} we define
-\begin{equation}
-    \mathcal{L}f( {\bf n})=\langle f|H| {\bf n}\rangle
-\end{equation}
-where 
-\begin{equation}
-    \langle f|=\sum_{ {\bf n}}f( {\bf n})\langle  {\bf n}|
-\end{equation}
-
-
-The Hamiltonian operator can be written in term of the basis element of the Lie algebra as
+We introduce the Hamiltonian operator
 
 \begin{equation}\label{OriginalHamiltonian}
 	\begin{split}
@@ -305,30 +286,82 @@ The Hamiltonian operator can be written in term of the basis element of the Lie 
 \end{equation}
 where the edge Hamiltonian is
 \begin{equation}\label{edgeHamiltonian}
-H_{x,y}=\sum_{k,l=1}^{N}\left(E_{kl}\otimes E_{lk}-E_{ll}\otimes E_{kk}\right)_{x,y}
+H_{x,y}=\sum_{k,l=1}^{N}E_{kl}^{x}\otimes E_{lk}^{y}-E_{ll}^{x}\otimes E_{kk}^{y}
  \end{equation}
  and where the site Hamiltonian is
  \begin{equation}\label{siteHamiltonian}
-H_{x}=\sum_{k,l=1}^{N}\alpha_{k}^{x}\left(E_{kl}-E_{ll}\right)_x
+H_{x}=\sum_{k,l=1}^{N}\alpha_{k}^{x}\left(E_{kl}^{x}-E_{ll}^{x}\right)
 \end{equation}
+Here $E_{kl}^{x}$ is a copy of $E_{kl}$ defined in \eqref{actionE} acting on site $x$. 
 
-
-Moreover, by the \eqref{coproductC2} and by computing the explicit action of the diagonal part, we can write this Hamiltonian in function of the coproduct of the second Casimir
+We can write this Hamiltonian in function of the coproduct of the second Casimir
 \begin{equation}
     C_{2}=\sum_{a,b=1}^{N}E_{ab}E_{ba}
 \end{equation}
 It reads
 \begin{equation}
-	H=\sum_{x,y\in \mathcal{E}}\omega_{x,y}\left\{\frac{1}{2}\Delta(C_{2})-\twoj(2\twoj+N)\frac{1}{2}\mathbbm{1}\otimes\mathbbm{1}\right\}+\sum_{x\in V}\Gamma_{x}\sum_{k,l=1}^{N}\alpha_{k}^{x}\left(E_{k,l}-\twoj\mathbbm{1}\right)
+	H_{x,y}=\left\{\frac{1}{2}\Delta^{xy}(C_{2})-\twoj(2\twoj+N)\frac{1}{2}\mathbbm{1}^{x}\otimes\mathbbm{1}^{y}\right\}
 \end{equation}
-Here we introduced the standard coproduct $\Delta:E_{ab}\mapsto E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}$ and used that $C_{2}=\twoj(\twoj+N)$. 
+Here we introduced the standard coproduct
+\begin{equation}
+\begin{split}
+\Delta:gl(N)&\to gl(N)\otimes gl(N)\\
+E_{ab}&\to E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
+\end{split}
+\end{equation} acting on sites $x,y$ and used that $C_{2}|n\rangle=\twoj(\twoj+N)|n\rangle$. 
 
  
-\textbf{Remark}: The symmetric representations $\lambda=(\twoj,0,\ldots,0)$ are dual to the representations $\lambda=(\twoj,\ldots,\twoj,0)$ that can be obtained via 
+
+Following  \cite{belitsky2015self}, the Hamiltonian and the genertor are linked by the following relation:
 \begin{equation}
-   \bar E_{ab}=\mu\delta_{ab}-E_{N-b+1,N-a+1}
+H=\mathcal{L}^{T}
 \end{equation}
-{\color{red} This needs to be checked and give alternative form of Hamiltonian?}
+The generator can also be expressed as 
+
+\begin{equation}
+    \mathcal{L}f( {\bf n})=\langle f|H| {\bf n}\rangle
+\end{equation}
+where 
+\begin{equation}
+    \langle f|=\sum_{ {\bf n}}f( {\bf n})\langle  {\bf n}|
+\end{equation}
+
+\begin{comment}
+We introduce the Hamiltonian operator
+
+\begin{equation}\label{OriginalHamiltonian}
+	\begin{split}
+		H=\sum_{x,y\in \mathcal{E}}\omega_{x,y}H_{x,y}+\sum_{x\in V}\Gamma_{x}H_{x}
+	\end{split}
+\end{equation}
+where the edge Hamiltonian is
+\begin{equation}\label{edgeHamiltonian}
+H_{x,y}=\sum_{k,l=1}^{N}E_{kl}^{x}\otimes E_{lk}^{y}-E_{ll}^{x}\otimes E_{kk}^{y}
+ \end{equation}
+ and where the site Hamiltonian is
+ \begin{equation}\label{siteHamiltonian}
+H_{x}=\sum_{k,l=1}^{N}\alpha_{k}^{x}\left(E_{kl}^{x}-E_{ll}^{x}\right)
+\end{equation}
+Here $E_{kl}^{x}$ is a copy of $E_{kl}$ defined in \eqref{actionE} acting on site $x$. 
+
+We can write this Hamiltonian in function of the coproduct of the second Casimir
+\begin{equation}
+    C_{2}=\sum_{a,b=1}^{N}E_{ab}E_{ba}
+\end{equation}
+It reads
+\begin{equation}
+	H_{x,y}=\left\{\frac{1}{2}\Delta^{xy}(C_{2})-\twoj(2\twoj+N)\frac{1}{2}\mathbbm{1}^{x}\otimes\mathbbm{1}^{y}\right\}
+\end{equation}
+Here we introduced the standard coproduct
+\begin{equation}
+\begin{split}
+\Delta:gl(N)&\to gl(N)\otimes gl(N)\\
+E_{ab}&\to E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
+\end{split}
+\end{equation} acting on sites $x,y$ and used that $C_{2}|n\rangle=\twoj(\twoj+N)|n\rangle$. 
+\end{comment}
+ 
+
 
 
 \section{Duality}
@@ -360,7 +393,7 @@ The self-dual Hamiltonian is the following
 	\end{split}
 \end{equation}
 where
-\begin{align}
+\begin{align}\label{Hedge}
 H_{x,y}&=\sum_{k,l=1}^{N}\left(E_{kl}^{x}\otimes E_{lk}^{y}-E_{ll}^{x}\otimes E_{kk}^{y}\right)\\
 \widetilde{H}_{x,\varepsilon(x)}&=\left(\sum_{i=2}^{N}\alpha_{i}^{x}\right)\sum_{k=2}^{N}\left((a^{\dagger}_{k})_{\varepsilon(x)}E_{1k}^{x}-E_{kk}^{x}\right)
 \end{align}
@@ -569,7 +602,58 @@ By taking the product over $x\in V$ and considering the extra site part we arriv
 \begin{flushright}
     $\square$
 \end{flushright}
+{\color{blue}\subsection{Duality for the reaction diffusion process on a graph}
+[IN CASE WE DECIDE TO ADD THIS PART WE SHOULD DEFINE EVERYTHING PROPERLY... LET'S THINK ABOUT THIS]
+It is possible to prove the absorbing duality also for the family of processes introduced in \cite{casini2022uphill}. Indeed, the Hamiltonain is
+\begin{equation}\label{ReactionDiffusionHamiltonian}
+H=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}H_{x,y}^{RD}+\sum_{x\in V}\Gamma_{x}H_{x}
+\end{equation}
+The site Hamiltonian $H_{x}$ is the one defined in \eqref{siteHamiltonian}
+while the edge Hamiltonian is 
+\begin{equation}
+H_{x,y}^{RD}=H_{x,y}^{S}+H_{x,y}^{SM}+H_{x,y}^{LM}+H_{x,y}^{RM}
+\end{equation}
+with $H_{x,y}^{S}$ is exactly the one defined in \eqref{edgeHamiltonian} and 
+\begin{equation}
+H_{x,y}^{SM}=\sigma_{12}\sum_{a,b=1}^{3}\left(E_{\overline{a}b}^{x}\otimes E_{\overline{b}a}^{y}-E_{bb}^{x}\otimes E_{aa}^{y}\right)
+\end{equation}
+\begin{equation}
+H_{x,y}^{LM}=\left(\Upsilon-2\sigma_{12}-m\right)\sum_{a=1}^{3}\left(E_{\overline{a}a}^{x}\otimes \mathbbm{1}^{y}-E_{aa}\otimes\mathbbm{1}^{x}\right)
+\end{equation}
+\begin{equation}
+H_{x,y}^{RM}=m\sum_{a=1}^{3}\left(\mathbbm{1}^{x}\otimes E_{\overline{a}a}^{y}-\mathbbm{1}^{x}\otimes E_{aa}^{y}\right)
+\end{equation}
 
+The matrix $S$ defined in \eqref{Simmetry_s} is a symmetry also for $H^{RD}$. We first prove it for $H_{x,y}^{SM}$.. We will prove that 
+\begin{equation}\label{symmetrySM}
+\sum_{a,b=1}^{3}[E_{\overline{a}b}^{x}\otimes E_{\overline{b}a}^{y},S]=\sum_{a,b=1}^{3}[E_{bb}^{x}\otimes E_{aa}^{y},S]
+\end{equation}
+The left-hand-side is
+\begin{equation}
+\begin{split}
+&\left[E_{10}^{x},E_{\overline{a}b}^{x}\right]\otimes \left[E_{10}^{y},E_{\overline{b}a}^{y}\right]+\left[E_{10}^{x},E_{\overline{a}b}^{x}\right]\otimes\left[E_{20}^{y},E_{\overline{b}a}^{y}\right]+\left[E_{20}^{x},E_{\overline{a}b}^{x}\right]\otimes\left[E_{10}^{y},E_{\overline{b}a}^{y}\right]+\left[E_{20}^{x},E_{\overline{a}b}^{x}\right]\otimes\left[E_{20}^{y},E_{\overline{b}a}^{y}\right]
+\end{split}
+\end{equation}
+and the right-hand-side is
+\begin{equation}
+\begin{split}
+\left[E_{10}^{x},E_{bb}^{x}\right]\otimes \left[E_{10}^{y},E_{aa}^{y}\right]+\left[E_{10}^{x},E_{bb}^{x}\right]\otimes\left[E_{20}^{y},E_{aa}^{y}\right]+\left[E_{20}^{x},E_{bb}^{x}\right]\otimes\left[E_{10}^{y},E_{aa}^{y}\right]+\left[E_{20}^{x},E_{bb}^{x}\right]\otimes\left[E_{20}^{y},E_{aa}^{y}\right]
+\end{split}
+\end{equation}
+by using the commutators $\forall k=1,2$
+\begin{equation}
+\begin{split}
+&\left[E_{k0},E_{\overline{a}b}\right]=\left(E_{kb}\delta_{\overline{a}0}-E_{\overline{a}0}\delta_{bk}\right)\\
+&\left[E_{k0},E_{\overline{b}a}\right]=\left(E_{ka}\delta_{\overline{b}0}-E_{\overline{b}0}\delta_{ak}\right)\\
+&\left[E_{k0},E_{aa}\right]=\left(E_{ka}\delta_{a0}-E_{a0}\delta_{bk}\right)\\
+&\left[E_{k0},E_{bb}\right]=\left(E_{kb}\delta_{b0}-E_{b0}\delta_{bk}\right)
+\end{split}
+\end{equation}
+and summing over all $a,b\in\{1,2,3\}$ we obtatain \eqref{symmetrySM}. Similarly, we can prove that
+\begin{equation}\label{symmetryM}
+\sum_{a=1}^{3}\left[E_{\overline{a}a}^{x}\otimes \mathbbm{1}^{y},S\right]=\sum_{a=1}^{3}\left[E_{aa}^{x}\otimes \mathbbm{1}^{y},S\right]\qquad \sum_{a=1}^{3}\left[\mathbbm{1}^{x}\otimes E_{\overline{a}a}^{y},S\right]=\sum_{a=1}^{3}\left[\mathbbm{1}^{x}\otimes E_{aa}^{y},S\right]
+\end{equation}
+As a consequence of \eqref{symmetrySM} and \eqref{symmetryM} the Hamiltonian \eqref{ReactionDiffusionHamiltonian} is self-dual with absorbing reservoirs with self-duality matrix given by \eqref{dualityMatrix}.} 
 \section{Integrability}\label{sec4}
 We study the explicit steady state and the exact formulas for the correlations in the case of hard-core interaction ($\twoj=1$), i.e. when at most one particle of any is allowed in each site at any time. We simplify the geometry to a one dimensional chain $\{1,\ldots,L\}$ of length $L$ with boundaries at the ends. We assume a nearest neighbor interaction, i.e. we fix the conductances as follows
 \begin{equation}
@@ -1457,7 +1541,15 @@ It is easy to show that
 The commutation with the Hamiltonian $\widetilde{H}$ for $Q_{2L+2}$ and $Q_{2L+1}$ is trivial. \\
 We introduce the following:
 \begin{equation}
-Q_{2}^{0}:=NA^{2L}+A^{2L-1}-\sum_{i=2}^{N}D_{ii}^{2L-1}
+Q_{2L}^{0}:=NA^{2L}+A^{2L-1}-\sum_{i=2}^{N}D_{ii}^{2L-1}
+\end{equation}
+that is 
+\begin{equation}
+\begin{split}
+Q_{2L}^{0}&=N\left(I^{tot}+2e_{11}^{tot}\right)+e_{11}^{tot}(2e_{11}^{tot}+I^{tot})-\sum_{j=2}^{N}e_{jj}^{tot}
+\\&
++\sum_{i=2}^{N}\left(	2Ne_{ii}^{tot}+\left(e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}\right)-2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\right)
+\end{split}
 \end{equation}
 it has the property that commute with the equilibrium Hamiltonian
 \begin{equation}
@@ -1489,84 +1581,80 @@ We have that the eigenvectors and eigenvalues of the equilibrium case are given 
 T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle =\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
 \end{equation}
 where $m_{2},\ldots,m_{N}$ denote the total occupation along the chain of species $2,\ldots,N$. Let us notice that $m_{1}=L-\sum_{k=2}^{N}m_{k}$.\\
-We make the following ansatz for the eigenvectors of the chain with left triangular and right diagonal boundaries:
+We make the following ansatz for the eigenvectors of the chain with left triangular and right diagonal boundaries. For the sake of notation, we restrict to the case with $N=3$ and we denote by $\Delta_{2}=\alpha_{2}-\beta_{2}$ and $\Delta_{3}=\alpha_{3}-\beta_{3}$.
 \begin{equation}
-	|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle=\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots\Delta_{N}^{k_{N}}G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+|\Psi_{m_{2},m_{3}}^{\Delta}\rangle=\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
 \end{equation}
-where 
-\begin{equation}
+
+We replace the above eigenvectors in 
+\begin{equation}\label{eigDELTA}
+T_{\Delta}(x)|\Psi_{m_{2},m_{3}}^{\Delta}\rangle=\Lambda_{m_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{\Delta}\rangle
+\end{equation}
+and we obtain
+\begin{align*}
+&\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}+1}\Delta_{3}^{k_{3}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+\\&
++\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}+1}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+\\&=
+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}\Lambda_{m_{1},m_{2}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+\end{align*}
+after a change of summation indexes we obtain
+\begin{align*}
+&\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+\\+&
+\sum_{k_{2}=1}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle+\Delta_{2}^{m_{2}+1}\sum_{k_{3}=0}^{m_{3}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{m_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+\\+&
+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=1}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle+\Delta_{3}^{m_{3}+1}\sum_{k_{2}=0}^{m_{2}}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+\\=&
+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}\Lambda_{m_{1},m_{2}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+\end{align*}
+we impose the powers of $\Delta_{2}\Delta_{3}$ to be equal. We obtain the following conditions 
+\begin{enumerate}
+\item $k_{2}=0$ and $k_{3}=0$
+\begin{equation}\label{cond1}
+T_{0}(x)G_{m_{2},m_{3},\epsilon}^{0,0}(x)|\Psi_{m_{1},m_{2}}^{0}\rangle=\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3},\epsilon}^{0,0}(x)|\Psi_{m_{1},m_{2}}^{0}\rangle
+\end{equation}
+\item $k_{2}=m_{2}+1$ and $k_{3}\in \{0,\ldots,m_{3}\}$
+\begin{equation}\label{cond2}
 \begin{split}
-G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=&(2x+N)^{2-N+k_{2}+\ldots+k_{N}}\left[\left(\Lambda_{m_{2},\ldots,m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]^{N-2-k_{2}+\ldots-k_{N}}\\&B_{2}^{k_{2}}(x)\ldots B_{N}^{k_{N}}(x)
+B_{2}(x)G_{m_{2},m_{3},\epsilon}^{m_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle=0
 \end{split}
 \end{equation}
-Let us notice that when all $k$'s are one, we have again the expression (2.17) of the 2 species case \cite{frassek2020eigenstates}. 
-This function has the following properties:
-\begin{itemize}
-\item Property one: (this is the equivalent of equation (2.19) of \cite{frassek2020eigenstates})\begin{equation}\label{SecondProperty}
-\left[\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{i},\ldots,k_{N}}(x)=(2x+N)B_{i}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{i}-1,\ldots,k_{N}}(x)\quad \forall i\in \{2,\ldots,N\}
+\item $k_{2}\in\{0,\ldots,m_{2}\}$ and $k_{3}=m_{3}+1$
+\begin{equation}\label{cond3}
+\begin{split}
+B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle=0
+\end{split}
 \end{equation}
-Indeed take for example $i=2$
-\begin{align*}
-G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{N}}(x)&=(2x+N)(2x+N)^{2-N+k_{2}-1+k_{3}\ldots+k_{N}}\left[\left(\Lambda_{m_{2},\ldots,m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]^{-1}
-\\&
-\left[\left(\Lambda_{m_{2},\ldots,m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]^{N-2-k_{2}+1-k_{3}-\ldots-k_{N}} B_{2}(x)B_{2}(x)^{k_{2}-1}B_{3}^{k_{3}}(x)\ldots B_{N}^{k_{N}}(x) 
-\\&=
-\left[\left(\Lambda_{m_{2},\ldots,m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]^{-1}(2x+N)B_{2}(x)G_{m_{2},\ldots,m_{N}}^{k_{2}-1,k_{3},\ldots,k_{N}}(x)
-\end{align*}
-\item Property two: (this is the equivalent of equation (2.20) of \cite{frassek2020eigenstates})
-\begin{equation}\label{FirstProperty}
-	B_{i}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,m_{i},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle =0\quad \forall i\in \{2,\ldots,N\}
+\item $k_{2}\in \{1,\ldots,m_{2}\}$ and $k_{3}\in\{1,\ldots,m_{3}\}$
+\begin{equation}\label{cond4}
+\begin{split}
+&\left(T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)+B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)\right)|\Psi_{m_{2},m_{3}}^{0}\rangle
+\\=&
+\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+\end{split}
 \end{equation}
-{\color{blue}This second property can be proved by using a lower weight representation }
-\end{itemize}
-We prove the ansatz:
-\begin{align*}
-	T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
-	\\&+
-	\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0} 
-	\\&+\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}+1}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{2}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots +
-	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}+1}(2x+N)B_{N}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\end{align*}
-we replace $k_{i}\to k_{i}+1$ $\forall i\in\{2,\ldots,N\}$ in the proper summation. Then,
-\begin{align*}
-	T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
-	\\&+
-	\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{2}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2}-1,\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots
-	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{N}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}-1}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+
-	\Delta_{2}^{m_{2}+1}\sum_{k_{3}=0}^{m_{3}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{3}^{k_{3}}\Delta_{N}^{k_{N}}(2x+N)B_{2}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{m_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots +
-	\Delta_{N}^{m_{N}+1}\sum_{k_{2}=0}^{m_{3}}\ldots\sum_{k_{N-1}=0}^{m_{N-1}}\Delta_{3}^{k_{2}}\Delta_{N-1}^{k_{N-1}}(2x+N)B_{2}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\end{align*}
-We use prperties \eqref{SecondProperty} and \eqref{FirstProperty}:
-\begin{align*}
-		T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
-	\\&+
-	\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left[\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots +
-	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left[\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\end{align*}
-then
-\begin{align*}
-T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=
-		\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
-	\\&+
-	\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&=
-	\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle
-\end{align*}
-
+\item $k_{2}=0$ and $k_{3}\in\{1,\ldots,m_{3}\}$
+\begin{equation}\label{cond5}
+\begin{split}
+&\left(T_{0}(x)G_{m_{2},m_{3},\epsilon}^{0,k_{3}}(x)+B_{3}(x)G_{m_{2},m_{3},\epsilon}^{0,k_{3}-1}(x)\right)|\Psi_{m_{2},m_{3}}^{0}\rangle
+=
+\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3},\epsilon}^{0,k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+\end{split}
+\end{equation}
+\item $k_{2}\in\{1,\ldots,m_{2}\}$ and $k_{3}=0$
+\begin{equation}\label{cond6}
+\begin{split}
+&\left(T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},0}(x)+B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,0}(x)\right)|\Psi_{m_{2},m_{3}}^{0}\rangle
+=
+\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},0}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+\end{split}
+\end{equation}
+\end{enumerate}
+To find the function $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ we must fulfil the conditions \eqref{cond1},\eqref{cond2},\eqref{cond3},\eqref{cond4}, \eqref{cond5},\eqref{cond6}.
 \subsection{Bethe equations}
-Describe eigenvalues of $T_0$ following 
-\cite{Belliard2}
+Describe eigenvalues of $T_0(x)$ following.
+\cite{belliard2}
 \section{Conclusion}
 
 
