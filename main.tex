@@ -13,8 +13,14 @@
 \usepackage{bbm}
 \usepackage{bm}
 \usepackage{appendix}
+<<<<<<< HEAD
 \usepackage{comment}
 \numberwithin{equation}{section}
+=======
+\numberwithin{equation}{subsection}
+
+
+>>>>>>> 51c47b05b035b5a7d79d0539de1628d37ff12941
 
 
 
@@ -1634,6 +1640,7 @@ B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle=
 \Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
 \end{split}
 \end{equation}
+<<<<<<< HEAD
 \item $k_{2}=0$ and $k_{3}\in\{1,\ldots,m_{3}\}$
 \begin{equation}\label{cond5}
 \begin{split}
@@ -1655,6 +1662,66 @@ To find the function $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ we must fulfil 
 \subsection{Bethe equations}
 Describe eigenvalues of $T_0(x)$ following.
 \cite{belliard2}
+=======
+{\color{blue}This second property can be proved by using a lower weight representation }
+\end{itemize}
+We prove the ansatz:
+\begin{align*}
+	T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
+	\\&+
+	\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\ldots+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0} 
+	\\&+\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}+1}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{2}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\ldots +
+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}+1}(2x+N)B_{N}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\end{align*}
+we replace $k_{i}\to k_{i}+1$ $\forall i\in\{2,\ldots,N\}$ in the proper summation. Then,
+\begin{align*}
+	T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
+	\\&+
+	\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\ldots+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{2}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2}-1,\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\ldots
+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{N}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}-1}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+
+	\Delta_{2}^{m_{2}+1}\sum_{k_{3}=0}^{m_{3}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{3}^{k_{3}}\Delta_{N}^{k_{N}}(2x+N)B_{2}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{m_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\ldots +
+	\Delta_{N}^{m_{N}+1}\sum_{k_{2}=0}^{m_{3}}\ldots\sum_{k_{N-1}=0}^{m_{N-1}}\Delta_{3}^{k_{2}}\Delta_{N-1}^{k_{N-1}}(2x+N)B_{2}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\end{align*}
+We use prperties \eqref{SecondProperty} and \eqref{FirstProperty}:
+\begin{align*}
+		T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
+	\\&+
+	\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\ldots+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left[\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\ldots +
+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left[\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\end{align*}
+then
+\begin{align*}
+T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=
+		\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
+	\\&+
+	\sum_{k_{2}=1}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&+\ldots+	\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\\&=
+	\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle
+\end{align*}
+
+For $i\neq 1$ we have
+\begin{equation}
+\begin{split}
+ \sum_{i,j=2}^N [E_{ij}E_{ji},E_{k1}]&=\sum_{i,j=2}^N E_{ij} [E_{ji},E_{k1}]+\sum_{i,j=2}^N  [E_{ij},E_{k1}]E_{ji}=\sum_{j=2}^N( E_{kj} E_{j1}+ E_{j1} E_{kj})
+\\&=\sum_{j=2}^N( 2E_{kj} E_{j1}+ [E_{j1}, E_{kj}])=2\sum_{j=2}^N E_{kj} E_{j1}-(N-1)E_{k1}
+ \end{split}
+\end{equation} 
+
+\subsection{Bethe ansatz solution}
+Describe eigenvalues of $T_0$ following 
+\cite{Belliard2}
+>>>>>>> 51c47b05b035b5a7d79d0539de1628d37ff12941
 \section{Conclusion}
 
 
