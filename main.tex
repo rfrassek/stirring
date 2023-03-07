@@ -13,14 +13,11 @@
 \usepackage{bbm}
 \usepackage{bm}
 \usepackage{appendix}
-<<<<<<< HEAD
 \usepackage{comment}
 \numberwithin{equation}{section}
-=======
 \numberwithin{equation}{subsection}
 
 
->>>>>>> 51c47b05b035b5a7d79d0539de1628d37ff12941
 
 
 
@@ -184,7 +181,8 @@ In this work we concentrate our effort in this last "single layer" case with a r
 \section{The stirring process}
 {\color{blue}We consider the stirring process with an arbitrary number of particles $N$. It is important to note that any one of them can be considered the empty (or hole) particle. Thus, in this first general setting we do not distinguish between real and empty particles. However, this distinction will be useful in the section about duality, where we will see that this empty will play a special role. The stochastic dynamics is Markovian and consist in an exchange of particles of any type between two connected site of a graph.}
 \subsection{The infinitesimal generator}
-We consider a connecAt each site $x\in V$, we describe the occupation with an $N-$dimensional vector in which the value of the $k$-th component $n_{k}^{x}$ denotes the number of particles of species $k\in \{1,\ldots,N\}$. On each vertex we allow maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space is
+We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
+At each site $x\in V$, we describe the occupation with an $N-$dimensional vector in which the value of the $k$-th component $n_{k}^{x}$ denotes the number of particles of species $k\in \{1,\ldots,N\}$. On each vertex we allow maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space is
 \begin{equation}\label{stateSpace}
     \Omega:=\left\{(n_{1},\ldots,n_{N})\in\mathbb{N}_0^{N}\;:\; \sum_{k=1}^{N}n_{k}=\twoj\right\}^{|V|}
 \end{equation}
@@ -237,8 +235,8 @@ Consider the $gl(N)$ Lie algebra with with generators denoted by $\EE_{ab}$ with
 \begin{equation}\label{eq:comgl}
 \left[\EE_{ab},\EE_{cd}\right]=\EE_{ad}\delta_{bc}-\EE_{cb}\delta_{ad}\qquad \forall a,b\in \{1,\ldots,N\}
 \end{equation}
-The finite-dimensional representations are labelled by partitions $\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_N)$ with $\lambda_i\in \mathbb{N}$ and  $\lambda_i\geq \lambda_{i+1}$.
-We are interested in the symmetric finite-dimensional representations with 
+{\color{red}The finite-dimensional representations are labelled by partitions $\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_N)$ of $\nu$ with $\lambda_i\in \mathbb{N}$ and $\sum_{i=1}^N \lambda_i = \nu$. We assume $\lambda_i\geq \lambda_{i+1}$ without loss of generality.}
+We are interested in the {\em symmetric} finite-dimensional representations with 
 \begin{equation}\label{eq:dynkin}
     \lambda=(\twoj,0,\ldots,0) \qquad\text{where}\qquad \twoj\in\mathbb{N}
 \end{equation} 
@@ -255,7 +253,7 @@ This basis vector satisfy the orthogonality relation
 \begin{equation}\label{ortho}
     \langle m_{1},\ldots,m_{N}|n_{1},\ldots,n_{N}\rangle=\prod_{k=1}^{N}\delta_{m_{k},n_{k}}
 \end{equation}
-where  $ \langle m_{1},\ldots,m_{N}|$ is the row vector obtained by transposing $|m\rangle$ and $\delta_{m_{k},n{k}}$ is the Kronhecker delta. 
+where  $ \langle m_{1},\ldots,m_{N}|$ is the row vector obtained by transposing $|m\rangle$ and $\delta_{m_{k},n_{k}}$ is the Kronhecker delta. 
 The explicit actions of the algebra generators on the vectors $|n\rangle$ are the following:
 \begin{equation}\label{actionE}
 	\begin{cases}
@@ -264,6 +262,8 @@ The explicit actions of the algebra generators on the vectors $|n\rangle$ are th
 	\end{cases}
 \end{equation}  
 One can check that the generators defined in this way satisfy the commutation relations \eqref{eq:comgl} and yield Dynkin weight \eqref{eq:dynkin}. The Cartan element $E_{aa}$ conserves the number of particles of type $a$. 
+
+\noindent
 \textbf{Remark}: The symmetric representations $\lambda=(\twoj,0,\ldots,0)$ are dual to the representations $\lambda=(\twoj,\ldots,\twoj,0)$ that can be obtained via 
 \begin{equation}
    \bar E_{ab}=\mu\delta_{ab}-E_{N-b+1,N-a+1}
@@ -1662,7 +1662,6 @@ To find the function $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ we must fulfil 
 \subsection{Bethe equations}
 Describe eigenvalues of $T_0(x)$ following.
 \cite{belliard2}
-=======
 {\color{blue}This second property can be proved by using a lower weight representation }
 \end{itemize}
 We prove the ansatz:
