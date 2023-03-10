@@ -192,10 +192,10 @@ The edge dynamics consists in an exchange of particles between connected vertice
     \mathcal{L}=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}+\sum_{x\in V}\Gamma_{x}\mathcal{L}_{x}
 \end{equation}
 where the quantities $ \omega_{x,y}\geq 0$ are called conductances and $\Gamma_{x}\geq 0$ local inhomogeneities. The generator $\mathcal{L}_{x,y}$ is called the \textit{edge generator}, while $\mathcal{L}_{x}$ is called the \textit{site generator}. These linear operators act on functions $f:\Omega\to \mathbb{R}$ as follows
-\begin{equation}
+\begin{equation}\label{edgeGenerator}
 \mathcal{L}_{x,y}f(n)=\sum_{k,l=1}^{N}n_{k}^{x}n_{l}^{y}\left[f(n-\delta_{x}^{k}+\delta_{l}^{x}+\delta_{k}^{y}-\delta_{l}^{y})-f(n)\right]
 \end{equation}
-\begin{equation}
+\begin{equation}\label{siteGenerator}
     \mathcal{L}_{x}f(n)=\sum_{k,l=1}^{N}\alpha_{k}^{x}n_{l}^{x}\left[f(n+\delta_{k}^{x}-\delta_{l}^{x})-f(n)\right]
 \end{equation}
 where 
