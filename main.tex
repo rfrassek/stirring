@@ -182,12 +182,12 @@ In this work we concentrate our effort in this last "single layer" case with a r
 {\color{blue}We consider the stirring process with an arbitrary number of particles $N$. It is important to note that any one of them can be considered the empty (or hole) particle. Thus, in this first general setting we do not distinguish between real and empty particles. However, this distinction will be useful in the section about duality, where we will see that this empty will play a special role. The stochastic dynamics is Markovian and consist in an exchange of particles of any type between two connected site of a graph.}
 \subsection{The infinitesimal generator}
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
-At each site $x\in V$, we describe the occupation with an $N-$dimensional vector in which the value of the $k$-th component $n_{k}^{x}$ denotes the number of particles of species $k\in \{1,\ldots,N\}$. On each vertex we allow maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space is
+At each site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $k$-th component $n_{k}^{x}$ denotes the number of particles of species $k\in \{1,\ldots,N\}$ at site $x\in V$. On each vertex we allow a total  maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space of the process on the graph $G$ is 
 \begin{equation}\label{stateSpace}
-    \Omega:=\left\{(n_{1},\ldots,n_{N})\in\mathbb{N}_0^{N}\;:\; \sum_{k=1}^{N}n_{k}=\twoj\right\}^{|V|}
+    \Omega:=\left\{(n_{1},\ldots,n_{N})\in\mathbb{N}_0^{N}\;:\; \sum_{k=1}^{N}n_{k}=\twoj\right\}^{V}
 \end{equation}
-
-The edge dynamics consists in an exchange of particles between connected vertices. Moreover, each vertex can be connected with a reservoir that exchanges particles with the external environement. Mathematically, this can be described by an infinitesimal generator of the form
+Moreover, we denote a particle configuration as $\mathbf{n}\in \Omega$, where $\mathbf{n}=(n_{k}^{x})_{x\in V,\,k\in\{1,\ldots,N\}}$ .\\
+The dynamics consists in an exchange of particles (at Poissonian times) between connected vertices. Moreover, each vertex  exchanges particles with the external environement. The infinitesimal generator of the process reads
 \begin{equation}\label{Generator}
     \mathcal{L}=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}+\sum_{x\in V}\Gamma_{x}\mathcal{L}_{x}
 \end{equation}
@@ -199,9 +199,14 @@ where the quantities $ \omega_{x,y}\geq 0$ are called conductances and $\Gamma_{
     \mathcal{L}_{x}f(n)=\sum_{k,l=1}^{N}\alpha_{k}^{x}n_{l}^{x}\left[f(n+\delta_{k}^{x}-\delta_{l}^{x})-f(n)\right]
 \end{equation}
 where 
-$\delta_{k}^{x}=(0,\ldots,0,1,0,\ldots,0)$ withe the one in the $k$-th position.
-This means that on an edge at rate $\omega_{x,y}n_{k}^{x}n_{l}^{y}$ a particle of type $k$ at site $x$ is exchanged with a particle of tipe $l$ at site $y$; furthermore, on each site $x\in V$ at rate $\Gamma_{x}\alpha_{k}^{x}n_{l}^{x}$ a particle of type $l$ is replaced with a particle of type $k$. 
-The following Figure \ref{fig:1}, Figure \ref{fig:2} help in understanding the dynamics. 
+\begin{equation}
+(\delta_{k}^{x})^{y}_{\ell}=\begin{cases}
+1\qquad &\text{if}\quad y=x,\;\ell=k\\
+0\qquad &\text{otherwise}
+\end{cases}
+\end{equation}
+This means that on the edge $(x,y)\in \mathcal{E}$ at rate $\omega_{x,y}n_{k}^{x}n_{l}^{y}$ a particle of type $k$ at site $x$ is exchanged with a particle of tipe $l$ at site $y$; furthermore, on each site $x\in V$ at rate $\Gamma_{x}\alpha_{k}^{x}n_{\ell}^{x}$ a particle of type $\ell$ is replaced with a particle of type $k$. 
+See Figure \ref{fig:1}, Figure \ref{fig:2}for a visual description of the dyamics. 
 \begin{figure}
     \centering
     \includegraphics[scale=0.6]{Dyn_stir.eps}
@@ -223,11 +228,22 @@ The following Figure \ref{fig:1}, Figure \ref{fig:2} help in understanding the d
     \begin{flushright}
         $\square$
     \end{flushright}
-The process described by the generator \eqref{Generator} is reversible if and only if, for any $k\in\{1,\ldots,N\}$, the boundary parameters $\alpha_{k}^{x}=\alpha_{k}$ $\forall x\in V$. The non-homogeneus reversible product measure has marginals the
-\begin{equation}\label{reversibleMeasure}
-    \mu^{rev}=\bigotimes_{x\in V}\mu^{rev}_{x}\qquad \mu_{x}^{rev}\sim \text{Multinomial}\left(\twoj,p_{1},\ldots,p_{N}\right)\quad \text{where}\quad p_{k}=\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}
+The process described by the generator \eqref{Generator} is reversiblewith respect to the homogeneus product measure \begin{equation}\label{reversibleMeasure}
+\mu_{rev}=\bigotimes_{x\in V}\mu^{rev}_{x}
 \end{equation}
-This can be proven just by imposing the detailed balance conditions for the edge and for the site generators. Let us notice that the reversible measure is product only over the sites, but not over the species.
+when for any $k\in\{1,\ldots,N\}$
+\begin{equation}\label{reversibilityCondition}
+\alpha_{k}^{x}=\alpha_{k}\qquad \forall x\in V
+\end{equation}
+This measure has marginals $\mu_{rev}^{x}$ distributed as 
+\begin{equation}
+ \mu^{x}_{rev}\sim \text{Multinomial}\left(\twoj,p_{1},\ldots,p_{N}\right)\quad \text{where}\quad p_{k}=\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}
+\end{equation}
+namely
+\begin{equation}
+\mu_{rev}^{x}(n^{x})=\frac{\nu}{\prod_{k=1}^{N}n_{k}^{x}}\prod_{k=1}^{N}p_{k}^{n_{k}^{x}}
+\end{equation}
+This can be proven just by imposing the detailed balance conditions for the edge and for the site generators. If condition \eqref{reversibilityCondition} is not met, then reversibility is lost: each reservoir at site $x$ wants to fix its own density $\alpha^{x}=(\alpha_{1}^{x},\ldots,\alpha_{N}^{x})$ and currents will arise when at least two of them are different. 
 \subsection{The Lie algebraic description}
 
 
@@ -235,25 +251,25 @@ Consider the $gl(N)$ Lie algebra with with generators denoted by $\EE_{ab}$ with
 \begin{equation}\label{eq:comgl}
 \left[\EE_{ab},\EE_{cd}\right]=\EE_{ad}\delta_{bc}-\EE_{cb}\delta_{ad}\qquad \forall a,b\in \{1,\ldots,N\}
 \end{equation}
-{\color{red}The finite-dimensional representations are labelled by partitions $\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_N)$ of $\nu$ with $\lambda_i\in \mathbb{N}$ and $\sum_{i=1}^N \lambda_i = \nu$. We assume $\lambda_i\geq \lambda_{i+1}$ without loss of generality.}
+The finite-dimensional representations are labelled by partitions $\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_N)$ of $\nu$ with $\lambda_i\in \mathbb{N}$ and $\sum_{i=1}^N \lambda_i = \nu$. We assume $\lambda_i\geq \lambda_{i+1}$ without loss of generality.
 We are interested in the {\em symmetric} finite-dimensional representations with 
 \begin{equation}\label{eq:dynkin}
     \lambda=(\twoj,0,\ldots,0) \qquad\text{where}\qquad \twoj\in\mathbb{N}
 \end{equation} 
-The dimension $M$ of the symmetric representations is given by the combination of $N$ objects in $\twoj$ positions with repetition:
+The dimension $M$ of the symmetric representations is given by the combination of $N$ objects in $\twoj$ positions with repetition, namely
 \begin{equation}
 	M= \frac{(N+\twoj-1)!}{\twoj  !(N-1)!}
 \end{equation} 
-The basis elements of the vector space of the representation $\mathbb{C}^{M}$ are the column vectors 
+The basis elements of the vector space $\mathbb{C}^{M}$ are the column vectors 
 \begin{equation}
-  |n\rangle=  |n_{1},\ldots,n_{N}\rangle
+  |n\rangle=  |n_{1},\ldots,n_{N}\rangle,\quad \text{with}\quad n_{i}\in\mathbb{N}_{0}\quad \text{sucht that}\quad \sum_{i=1}^{N}n_{i}=\nu
 \end{equation}
 %where $\sum_{k=1}^{N}n_{i}=\nu$. 
-This basis vector satisfy the orthogonality relation
+This basis vector satisfy the orthogonality relation with respect to the Euclidean scalar product 
 \begin{equation}\label{ortho}
     \langle m_{1},\ldots,m_{N}|n_{1},\ldots,n_{N}\rangle=\prod_{k=1}^{N}\delta_{m_{k},n_{k}}
 \end{equation}
-where  $ \langle m_{1},\ldots,m_{N}|$ is the row vector obtained by transposing $|m\rangle$ and $\delta_{m_{k},n_{k}}$ is the Kronhecker delta. 
+where  $ \langle m_{1},\ldots,m_{N}|$ is the row vector obtained by transposing $|m_{1},\ldots,m_{N}\rangle$ and $\delta_{m_{k},n_{k}}$ is the Kronhecker delta. 
 The explicit actions of the algebra generators on the vectors $|n\rangle$ are the following:
 \begin{equation}\label{actionE}
 	\begin{cases}
@@ -261,7 +277,7 @@ The explicit actions of the algebra generators on the vectors $|n\rangle$ are th
 		E_{aa}|n_{1},\ldots,n_{a},\ldots,n_{b},\ldots,n_{N}\rangle = n_{a} |n_{1},\ldots,n_{a},\ldots,n_{b},\ldots,n_{N}\rangle\quad a=b
 	\end{cases}
 \end{equation}  
-One can check that the generators defined in this way satisfy the commutation relations \eqref{eq:comgl} and yield Dynkin weight \eqref{eq:dynkin}. The Cartan element $E_{aa}$ conserves the number of particles of type $a$. 
+One can check that the matrices defined in this way satisfy the commutation relations \eqref{eq:comgl} and yield Dynkin weight \eqref{eq:dynkin}.
 
 \noindent
 \textbf{Remark}: The symmetric representations $\lambda=(\twoj,0,\ldots,0)$ are dual to the representations $\lambda=(\twoj,\ldots,\twoj,0)$ that can be obtained via 
@@ -269,7 +285,7 @@ One can check that the generators defined in this way satisfy the commutation re
    \bar E_{ab}=\mu\delta_{ab}-E_{N-b+1,N-a+1}
 \end{equation}
 {\color{red} This needs to be checked and give alternative form of Hamiltonian?}\\
-By the Lie algebra above we describe the process characterized by the generator \eqref{Generator}. We consider the state space \eqref{stateSpace} composed by 
+By the Lie algebra above we describe the process characterized by the generator \eqref{Generator}. The state space \eqref{stateSpace} is the vector space with basis elements 
 
 %We now define the equivalent of \eqref{stateSpace} in the vector notation
 % \begin{equation}
@@ -279,7 +295,7 @@ By the Lie algebra above we describe the process characterized by the generator 
 \begin{equation}
 |{\bf n}\rangle=\left(\,\bigotimes_{x\in V}	|n_{1}^{x},\ldots,n_{N}^{x}\rangle\right)
 \end{equation}
-such that, $\forall x\in V$ we have $\sum_{k=1}^{N}n_{k}^{x}=\nu$. Moreover, the following orthogonality relations holds:
+where we require that $n_{k}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have $\sum_{k=1}^{N}n_{k}^{x}=\nu$. The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
 \begin{equation}
     \langle {\bf n}|{\bf m}\rangle =\prod_{x=1}^L\prod_{i=1}^N\delta_{n^x_i,m^{x}_i}
 \end{equation}
@@ -292,32 +308,13 @@ We introduce the Hamiltonian operator
 \end{equation}
 where the edge Hamiltonian is
 \begin{equation}\label{edgeHamiltonian}
-H_{x,y}=\sum_{k,l=1}^{N}E_{kl}^{x}\otimes E_{lk}^{y}-E_{ll}^{x}\otimes E_{kk}^{y}
+H_{x,y}=\sum_{k,l=1}^{N}\left(E_{kl}^{x}\otimes E_{lk}^{y}-E_{ll}^{x}\otimes E_{kk}^{y}\right)
  \end{equation}
  and where the site Hamiltonian is
  \begin{equation}\label{siteHamiltonian}
 H_{x}=\sum_{k,l=1}^{N}\alpha_{k}^{x}\left(E_{kl}^{x}-E_{ll}^{x}\right)
 \end{equation}
 Here $E_{kl}^{x}$ is a copy of $E_{kl}$ defined in \eqref{actionE} acting on site $x$. 
-
-We can write this Hamiltonian in function of the coproduct of the second Casimir
-\begin{equation}
-    C_{2}=\sum_{a,b=1}^{N}E_{ab}E_{ba}
-\end{equation}
-It reads
-\begin{equation}
-	H_{x,y}=\left\{\frac{1}{2}\Delta^{xy}(C_{2})-\twoj(2\twoj+N)\frac{1}{2}\mathbbm{1}^{x}\otimes\mathbbm{1}^{y}\right\}
-\end{equation}
-Here we introduced the standard coproduct
-\begin{equation}
-\begin{split}
-\Delta:gl(N)&\to gl(N)\otimes gl(N)\\
-E_{ab}&\to E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
-\end{split}
-\end{equation} acting on sites $x,y$ and used that $C_{2}|n\rangle=\twoj(\twoj+N)|n\rangle$. 
-
- 
-
 Following  \cite{belitsky2015self}, the Hamiltonian and the genertor are linked by the following relation:
 \begin{equation}
 H=\mathcal{L}^{T}
@@ -329,8 +326,32 @@ The generator can also be expressed as
 \end{equation}
 where 
 \begin{equation}
-    \langle f|=\sum_{ {\bf n}}f( {\bf n})\langle  {\bf n}|
+    \langle f|=\sum_{ {\bf n\in \Omega}}f( {\bf n})\langle  {\bf n}|
 \end{equation}
+
+We can write this Hamiltonian as a function of the coproduct of the second Casimir
+\begin{equation}
+    C_{2}=\sum_{a,b=1}^{N}E_{ab}E_{ba}
+\end{equation}
+that acts diagonally as $C_{2}|\mathbf{n}\rangle=\twoj(\twoj+N)|\mathbf{n}\rangle$. \\
+ Considering two sites $x,y\in \mathcal{E}$ the standard coproduct operator is defined as 
+\begin{equation}
+\begin{split}
+\Delta^{x,y}:gl(N)&\to gl(N)\otimes gl(N)\\
+E_{ab}&\to E_{ab}^{x}\otimes \mathbbm{1}^{y}+\mathbbm{1}^{x}\otimes E_{ab}^{y}
+\end{split}
+\end{equation}
+therefore, we have 
+\begin{equation}
+\Delta^{x,y}(C_{2})=\sum_{a,b=1}^{N}\Delta(E_{ab})\Delta(E_{ba})=2\sum_{a,b=1}^{N}E_{ab}^{x}\otimes E_{ba}^{y}+C_{2}^{x}\otimes \mathbbm{1}^{y}+\mathbbm{1}^{x}\otimes C_{2}^{y}
+\end{equation}
+
+One can check that 
+\begin{equation}\label{hamiltonianCasimir}
+	H_{x,y}=\frac{1}{2}\Delta^{xy}(C_{2})-\twoj(2\twoj+N)\mathbbm{1}^{x}\otimes\mathbbm{1}^{y}
+\end{equation}
+ 
+
 
 \begin{comment}
 We introduce the Hamiltonian operator
