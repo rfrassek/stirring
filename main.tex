@@ -228,8 +228,8 @@ See Figure \ref{fig:1}, Figure \ref{fig:2}for a visual description of the dyamic
     \begin{flushright}
         $\square$
     \end{flushright}
-The process described by the generator \eqref{Generator} is reversiblewith respect to the homogeneus product measure \begin{equation}\label{reversibleMeasure}
-\mu_{rev}=\bigotimes_{x\in V}\mu^{rev}_{x}
+The process described by the generator \eqref{Generator} is reversible with respect to the homogeneus product measure \begin{equation}\label{reversibleMeasure}
+\mu_{rev}=\bigotimes_{x\in V}\mu_{rev}^{x}
 \end{equation}
 when for any $k\in\{1,\ldots,N\}$
 \begin{equation}\label{reversibilityCondition}
@@ -241,7 +241,7 @@ This measure has marginals $\mu_{rev}^{x}$ distributed as
 \end{equation}
 namely
 \begin{equation}
-\mu_{rev}^{x}(n^{x})=\frac{\nu}{\prod_{k=1}^{N}n_{k}^{x}}\prod_{k=1}^{N}p_{k}^{n_{k}^{x}}
+\mu_{rev}^{x}(n^{x})=\frac{\nu!}{\prod_{k=1}^{N}n_{k}^{x}!}\prod_{k=1}^{N}p_{k}^{n_{k}^{x}}
 \end{equation}
 This can be proven just by imposing the detailed balance conditions for the edge and for the site generators. If condition \eqref{reversibilityCondition} is not met, then reversibility is lost: each reservoir at site $x$ wants to fix its own density $\alpha^{x}=(\alpha_{1}^{x},\ldots,\alpha_{N}^{x})$ and currents will arise when at least two of them are different. 
 \subsection{The Lie algebraic description}
@@ -285,7 +285,7 @@ One can check that the matrices defined in this way satisfy the commutation rela
    \bar E_{ab}=\mu\delta_{ab}-E_{N-b+1,N-a+1}
 \end{equation}
 {\color{red} This needs to be checked and give alternative form of Hamiltonian?}\\
-By the Lie algebra above we describe the process characterized by the generator \eqref{Generator}. The state space \eqref{stateSpace} is the vector space with basis elements 
+By the Lie algebra above we describe the process with generator \eqref{Generator}. The state space \eqref{stateSpace} is the vector space with basis elements 
 
 %We now define the equivalent of \eqref{stateSpace} in the vector notation
 % \begin{equation}
@@ -315,7 +315,7 @@ H_{x,y}=\sum_{k,l=1}^{N}\left(E_{kl}^{x}\otimes E_{lk}^{y}-E_{ll}^{x}\otimes E_{
 H_{x}=\sum_{k,l=1}^{N}\alpha_{k}^{x}\left(E_{kl}^{x}-E_{ll}^{x}\right)
 \end{equation}
 Here $E_{kl}^{x}$ is a copy of $E_{kl}$ defined in \eqref{actionE} acting on site $x$. 
-Following  \cite{belitsky2015self}, the Hamiltonian and the genertor are linked by the following relation:
+Following  \cite{belitsky2015self}, the Hamiltonian and the genertor are linked by
 \begin{equation}
 H=\mathcal{L}^{T}
 \end{equation}
@@ -329,11 +329,11 @@ where
     \langle f|=\sum_{ {\bf n\in \Omega}}f( {\bf n})\langle  {\bf n}|
 \end{equation}
 
-We can write this Hamiltonian as a function of the coproduct of the second Casimir
+We can write the edge Hamiltonian \eqref{edgeHamiltonian} as a function of the coproduct of the second Casimir of $gl(N)$
 \begin{equation}
     C_{2}=\sum_{a,b=1}^{N}E_{ab}E_{ba}
 \end{equation}
-that acts diagonally as $C_{2}|\mathbf{n}\rangle=\twoj(\twoj+N)|\mathbf{n}\rangle$. \\
+that acts diagonally as $C_{2}|\mathbf{n}\rangle=\twoj(\twoj+N)|\mathbf{n}\rangle$ and belogs to the center of $gl(N)$ (i.e. it commutes with all the basis elements).  \\
  Considering two sites $x,y\in \mathcal{E}$ the standard coproduct operator is defined as 
 \begin{equation}
 \begin{split}
@@ -393,7 +393,7 @@ E_{ab}&\to E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
 
 \section{Duality}
 \subsection{Definition of duality}
-Consider two Markov processes $(\eta_{t})_{t\geq 0}$ defined on a state space $\Omega$ and $(\xi_{t})_{t\geq 0}$ defined on a state space $\widetilde{\Omega}$. We say that they are dual, with respect to a duality function $D:\Omega\times \widetilde{\Omega}\to \mathbb{R}$, if $\forall \eta\in\Omega$, $\forall \xi\in\widetilde{\Omega}$ and $\forall t> 0$ we have 
+Consider two Markov processes: $(\eta_{t})_{t\geq 0}$ defined on a state space $\Omega$ and $(\xi_{t})_{t\geq 0}$ defined on a state space $\widetilde{\Omega}$. We say that they are dual, with respect to a duality function $D:\Omega\times \widetilde{\Omega}\to \mathbb{R}$, if $\forall \eta\in\Omega$, $\forall \xi\in\widetilde{\Omega}$ and $\forall t> 0$ we have 
 \begin{equation}
     \mathbb{E}_{\eta}\left[D(\eta_{t},\xi)\right]=\mathbb{E}_{\xi}\left[D(\eta,\xi_{t})\right]
 \end{equation}
