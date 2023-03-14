@@ -139,7 +139,7 @@
 % \centering
 \begin{center}
  \begingroup\LARGE
-\bf Stirring process
+\bf Multispecies stirring process
 \par\endgroup
  \vspace{3.5em}
  \begingroup\large \bf
@@ -247,7 +247,7 @@ This can be proven just by imposing the detailed balance conditions for the edge
 \subsection{The Lie algebraic description}
 
 
-Consider the $gl(N)$ Lie algebra with with generators denoted by $\EE_{ab}$ with $a,b\in \{1,\ldots,N\}$ and commutation relations
+Consider the Lie algebra $gl(N)$ with generators denoted by $\EE_{ab}$ with $a,b\in \{1,\ldots,N\}$ and commutation relations
 \begin{equation}\label{eq:comgl}
 \left[\EE_{ab},\EE_{cd}\right]=\EE_{ad}\delta_{bc}-\EE_{cb}\delta_{ad}\qquad \forall a,b\in \{1,\ldots,N\}
 \end{equation}
@@ -297,7 +297,7 @@ By the Lie algebra above we describe the process with generator \eqref{Generator
 \end{equation}
 where we require that $n_{k}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have $\sum_{k=1}^{N}n_{k}^{x}=\nu$. The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
 \begin{equation}
-    \langle {\bf n}|{\bf m}\rangle =\prod_{x=1}^L\prod_{i=1}^N\delta_{n^x_i,m^{x}_i}
+    \langle {\bf n}|{\bf m}\rangle =\prod_{x\in V}\prod_{i=1}^N\delta_{n^x_i,m^{x}_i}
 \end{equation}
 We introduce the Hamiltonian operator
 
@@ -308,11 +308,9 @@ We introduce the Hamiltonian operator
 \end{equation}
 where the edge Hamiltonian is
 \begin{equation}\label{edgeHamiltonian}
-H_{x,y}=\sum_{k,\ell=1}^{N}\left(E_{k\ell}^{x}\otimes E_{\ell k}^{y}-E_{\ell\ell}^{x}\otimes E_{kk}^{y}\right)
+H_{x,y}=\sum_{k,\ell=1}^{N}\Big(E_{k\ell}^{x} E_{\ell k}^{y}-E_{\ell\ell}^{x} E_{kk}^{y}\Big)
  \end{equation}
- {\color{red}confusing notation: tensor product and site index.... Remove tensor product?}
- 
- and where the site Hamiltonian is
+  and where the site Hamiltonian is
  \begin{equation}\label{siteHamiltonian}
 H_{x}=\sum_{k,\ell=1}^{N}\alpha_{k}^{x}\left(E_{k\ell}^{x}-E_{\ell\ell}^{x}\right)
 \end{equation}
@@ -321,38 +319,37 @@ Following  \cite{belitsky2015self}, the Hamiltonian and the genertor are linked 
 \begin{equation}
 H=\mathcal{L}^{T}
 \end{equation}
-The generator can also be expressed as 
-
+The action of the generator can also be expressed as 
 \begin{equation}
     \mathcal{L}f( {\bf n})=\langle f|H| {\bf n}\rangle
 \end{equation}
 where 
 \begin{equation}
-    \langle f|=\sum_{ {\bf n\in \Omega}}f( {\bf n})\langle  {\bf n}|
+    \langle f|=\sum_{ {{\bf n}\in \Omega}}f( {\bf n})\langle  {\bf n}|
 \end{equation}
 
 We can write the edge Hamiltonian \eqref{edgeHamiltonian} as a function of the coproduct of the second Casimir of $gl(N)$
 \begin{equation}\label{secondCasimir}
     C_{2}=\sum_{a,b=1}^{N}E_{ab}E_{ba}
 \end{equation}
-that acts diagonally as $C_{2}|\mathbf{n}\rangle=\twoj(\twoj+N)|\mathbf{n}\rangle$ and belogs to the center of $gl(N)$ (i.e. it commutes with all the basis elements).  \\
- Considering two sites $x,y\in \mathcal{E}$ the standard coproduct operator is defined as 
+that acts diagonally as $C_{2}|\mathbf{n}\rangle=\twoj(\twoj+N)|\mathbf{n}\rangle$ and belogs to the center of $gl(N)$ (i.e. it commutes with all the algebra elements).  
+More precisely,  considering the standard coproduct 
 \begin{equation}
 \begin{split}
-\Delta^{x,y}:gl(N)&\to gl(N)\otimes gl(N)\\
-E_{ab}&\to E_{ab}^{x}\otimes \mathbbm{1}^{y}+\mathbbm{1}^{x}\otimes E_{ab}^{y}
+\Delta:gl(N)&\to gl(N)\otimes gl(N)\\
+E_{ab}&\to E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
 \end{split}
 \end{equation}
-therefore, we have 
+we have 
 \begin{equation}
-\Delta^{x,y}(C_{2})=\sum_{a,b=1}^{N}\Delta(E_{ab})\Delta(E_{ba})=2\sum_{a,b=1}^{N}E_{ab}^{x}\otimes E_{ba}^{y}+C_{2}^{x}\otimes \mathbbm{1}^{y}+\mathbbm{1}^{x}\otimes C_{2}^{y}
+\Delta(C_{2})=\sum_{a,b=1}^{N}\Delta(E_{ab})\Delta(E_{ba})=2\sum_{a,b=1}^{N}E_{ab}\otimes E_{ba}+C_{2}\otimes \mathbbm{1}+\mathbbm{1}\otimes C_{2}
 \end{equation}
-
-One can check that 
+Then, one can check that 
 \begin{equation}\label{hamiltonianCasimir}
-	H_{x,y}=\frac{1}{2}\Delta^{xy}(C_{2})-\twoj(2\twoj+N)\mathbbm{1}^{x}\otimes\mathbbm{1}^{y}
+	H_{x,y}=\frac{1}{2}\Delta^{x,y}(C_{2})-\twoj(2\twoj+N)
 \end{equation}
- 
+where $\Delta^{x,y}(C_2)$ denotes a copy of $\Delta(C_2)$ acting on  
+the edge $(x,y)\in \mathcal{E}$.
 
 
 \begin{comment}
@@ -394,18 +391,17 @@ E_{ab}&\to E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
 
 
 \section{Duality}
-\subsection{Definition of duality}
-Consider two Markov processes: $(\eta_{t})_{t\geq 0}$ defined on a state space $\Omega$ and $(\xi_{t})_{t\geq 0}$ defined on a state space $\widetilde{\Omega}$. We say that they are dual, with respect to a duality function $D:\Omega\times \widetilde{\Omega}\to \mathbb{R}$, if $\forall \eta\in\Omega$, $\forall \xi\in\widetilde{\Omega}$ and $\forall t> 0$ we have 
+\subsection{Definition}
+Consider two Markov processes $(\eta_{t})_{t\geq 0}$ defined on a state space $\Omega$ and $(\xi_{t})_{t\geq 0}$ defined on a state space $\widetilde{\Omega}$. We say that they are dual, with respect to a duality function $D:\Omega\times \widetilde{\Omega}\to \mathbb{R}$, if $\forall \eta\in\Omega$, $\forall \xi\in\widetilde{\Omega}$ and $\forall t> 0$ we have 
 \begin{equation}
     \mathbb{E}_{\eta}\left[D(\eta_{t},\xi)\right]=\mathbb{E}_{\xi}\left[D(\eta,\xi_{t})\right]
 \end{equation}
-where $\mathbb{E}_{\eta}$ denotes the expectation with respect the law of the Markov process $(\eta_{t})_{t\geq 0}$ initialized with the particle configuration $\eta$, whereas $\mathbb{E}_{\xi}$ denotes the expectation with respect the law of the Markov process $(\xi_{t})_{t\geq 0}$ initialized with the particle configuration $\xi$.
-The duality definition can also be formulated as a relation between the generators. Call $\mathcal{L}$ the generator of $(\eta_{t})_{t\geq0}$ and $\widetilde{\mathcal{L}}$ the generator of $(\xi_{t})_{t\geq 0}$, then we say that these two processes are dual with respect the duality function $D:\Omega\times \widetilde{\Omega}\to \mathbb{R}$ if $\forall \eta\in\Omega$ and $\forall \xi\in\widetilde{\Omega}$ if
+where $\mathbb{E}_{\eta}$ denotes the expectation with respect the law of the Markov process $(\eta_{t})_{t\geq 0}$ initialized with the particle configuration $\eta$, whereas $\mathbb{E}_{\xi}$ denotes the expectation with respect to the law of the Markov process $(\xi_{t})_{t\geq 0}$ initialized with the particle configuration $\xi$.
+The duality definition can also be formulated as a relation between the generators. Call $\mathcal{L}$ the generator of $(\eta_{t})_{t\geq0}$ and $\widetilde{\mathcal{L}}$ the generator of $(\xi_{t})_{t\geq 0}$, then we say that these two processes are dual with respect to the duality function $D:\Omega\times \widetilde{\Omega}\to \mathbb{R}$ if $\forall \eta\in\Omega$ and $\forall \xi\in\widetilde{\Omega}$
 \begin{equation}\label{dualityRelationGenerator}
     \left(\mathcal{L}D(\cdot,\xi)\right)(\eta)=\left(\widetilde{\mathcal{L}}D(\eta,\cdot)\right)(\xi)
 \end{equation}
-\textbf{Remark}:
-in the specific case where $\mathcal{L}=\widetilde{\mathcal{L}}$ we say that the processes are self-dual with respect to a self-duality function.
+In the specific case where $\mathcal{L}=\widetilde{\mathcal{L}}$ we say that the process is self-dual.
 \newline
 \newline
 \textbf{Remark}:
@@ -417,12 +413,11 @@ that can be read as
 \begin{equation}\label{dualityIntertwines}
     \mathcal{L}D=D\widetilde{\mathcal{L}}^{T}
 \end{equation}
-where the superscript $T$ denotes the matrix transposition. Therefore, the duality relation \eqref{dualityIntertwines} is an intertwining transformation between two linear operators $\mathcal{L}$ and $\widetilde{\mathcal{L}}$. Working with the Hamiltonian operators the duality relation \eqref{dualityIntertwines} reads as
+where the superscript $T$ denotes the matrix transposition. Therefore, the duality relation \eqref{dualityIntertwines} is an intertwining between two linear operators $\mathcal{L}$ and $\widetilde{\mathcal{L}}$. Working with the Hamiltonian operators the duality relation \eqref{dualityIntertwines} reads 
 \begin{equation}\label{DualityRelation}
     H^{T}D=D\widetilde{H}
 \end{equation}
-where $\widetilde{H}=\widetilde{\mathcal{L}}^{T}$.
-\subsection{Duality for the generalized multi-species boundary driven stirring process}
+\subsection{Duality for the multi-species stirring process}
 We now state our duality result. The process $|\mathbf{n}\rangle$ with Hamiltonian \eqref{OriginalHamiltonian} is dual in the sense of \eqref{DualityRelation}, with respect to a process $|\bm{\xi}\rangle$ defined on the enlarged state space
 \begin{equation}
     \widetilde{\Omega}:=\Omega\times \mathbb{N}_{0}^{V}
@@ -445,6 +440,7 @@ By introducing the action of a bosonic creation operator $a^{\dagger}|q\rangle=|
 $(a^{\dagger})_{k}^{\widetilde{x}}$ as a copy of $a^{\dagger}$ acting on the extra-site $\widetilde{x}$ and on the occupation of the species $k\in\{2,\ldots,N\}$. \\
 The Hamiltonians \eqref{OriginalHamiltonian} and \eqref{DualHamiltonian} are dual with respect to the duality matrix $D$ defined as 
 \begin{equation}
+\label{duality-function-good}
     D=\bigotimes_{x\in V}\left(D_{x}\otimes D_{\widetilde{x}}\right)
 \end{equation}
 We denote by $D_{x}$ the site part. This is defined as 
@@ -470,7 +466,7 @@ D_{\widetilde{x}}=\sum_{m_{2}^{\widetilde{x}},\ldots,m_{N}^{\widetilde{x}}=0}^{\
 \end{equation}
 On one hand, the edge part of the dual Hamiltonian \eqref{DualHamiltonian} is a copy of \eqref{edgeHamiltonian}, therefore it performs the stirring dynamic on the graph. On the other hand, the site dual Hamiltonian \eqref{siteDualHamiltonian} replaces a particle of any type $k\in\{2,\ldots,N\}$ at site $x$ with a particle of type $1$ and creates a particle of the same type $k$ at the extra-site $\widetilde{x}$. This means that, eventually, only particles of type $1$ remain in the graph while all other types are absorbed by the extra-sites. Thinking about the type $1$ as the hole  the graph is eventually emptied, similarly to what proved in the SEP(2j)\cite{carinci2013duality}.
 \subsection{Proof of the duality relation}\label{subsectionDualityProof}
-To prove the duality relation between \eqref{OriginalHamiltonian} and \eqref{DualHamiltonian} with the duality matrix \eqref{dualityMatrix} we shall show that 
+To prove the duality relation between \eqref{OriginalHamiltonian} and \eqref{DualHamiltonian} with the duality matrix \eqref{duality-function-good} we shall show that 
 \begin{equation}
     H^{T}D=D\widetilde{H}
 \end{equation}
