@@ -1778,21 +1778,21 @@ T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle =\Lambda_{m_{2},\ldots,m_{N}}(x)|\
 \end{equation}
 where $m_{2},\ldots,m_{N}$ denote the total occupation along the chain of species $2,\ldots,N$. Let us notice that $m_{1}=L-\sum_{k=2}^{N}m_{k}$.\\
 For the sake of notation, we restrict to the case with $N=3$ and we denote by $\Delta_{2}=\alpha_{2}-\beta_{2}$ and $\Delta_{3}=\alpha_{3}-\beta_{3}$ and we further assume that $\Delta_{2}=\Delta_{3}=\Delta$. 
-We make the following ansatz for the eigevectors of the diagonal-triangular spin chain:
+We make the following ansatz for the eigevectors of the diagonal-triangular spin chain. Consider the whole chain of dimension $L$. Then, $m=m_{2}+m_{3}$ sites have particles of a type $2$ or $3$ and the remaining $L-m$ are empty. For fixed $m$ there is a one to one correspondence between empty and occupeid sites. Therefore, our ansatz is that $\forall m\in \{0,\ldots,L\}$ 
 \begin{equation}\label{ansatzEigenvectorDelta}
-|\Psi_{m_{2},m_{3}}^{\Delta}\rangle=\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{2}}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+|\Psi_{L-m}^{\Delta}\rangle=\mathbbm{1}_{\{m_{2}+m_{3}=m\}}\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{2}}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
 \end{equation}
 We replace the above eigenvectors in 
 \begin{equation}\label{eigDELTA}
-T_{\Delta}(x)|\Psi_{m_{2},m_{3}}^{\Delta}\rangle=\Lambda_{m_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{\Delta}\rangle
+T_{\Delta}(x)|\Psi_{L-m}^{\Delta}\rangle=\Lambda_{m_{2},m_{3}}(x)|\Psi_{L-m}^{\Delta}\rangle
 \end{equation}
 and we obtain
 \begin{align*}
-&\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x) |\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+&\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
 \\+&
-\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{3}+1}\left(B_{2}(x)+B_{3}(x)\right)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{3}+1}\left(B_{2}(x)+B_{3}(x)\right)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
 \\=&
-\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{3}}\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3}\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{3}}\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3}\epsilon}^{k_{2},k_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
 \end{align*}
 We assume that $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=G_{m_{2},m_{3},\epsilon}^{k_{2}+k_{3}}(x)$, i.e. it only depends on the sum of $k_{2}$ and $k_{3}$. We make an shift of summation indexes such that 
 \begin{equation}
@@ -1800,37 +1800,39 @@ k_{2}+k_{3}\to k_{2}+k_{3}+1
 \end{equation}
 then we obtain
 \begin{align*}
-&\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x) |\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+&\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x) |\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
 \\+&
-\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\mathbbm{1}_{\{k_{2}+k_{3}\neq 0\}}\Delta^{k_{2}+k_{3}}\left(B_{2}(x)+B_{3}(x)\right)G_{m_{2},m_{3},\epsilon}^{k_{2}+k_{3}-1}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\mathbbm{1}_{\{k_{2}+k_{3}\neq 0\}}\Delta^{k_{2}+k_{3}}\left(B_{2}(x)+B_{3}(x)\right)G_{m_{2},m_{3},\epsilon}^{k_{2}+k_{3}-1}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
 \\+&
-\Delta^{m_{2}+m_{3}+1}\left(B_{2}(x)+B_{3}(x)\right)G_{m_{2},m_{3},\epsilon}^{m_{2}+m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+\Delta^{m_{2}+m_{3}+1}\left(B_{2}(x)+B_{3}(x)\right)G_{m_{2},m_{3},\epsilon}^{m_{2}+m_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
 \\=&
-\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{3}}\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3}\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{3}}\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3}\epsilon}^{k_{2},k_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
 \end{align*}
 By equalizing the powers of $\Delta$ we obtain the following condition that must be fulfilled to have that \eqref{ansatzEigenvectorDelta} are indeed the eigenvectors for the triangular-diagonal spin chain:
 \begin{enumerate}
 \item for $k_{2}=k_{3}=0$
 \begin{equation}\label{condition1}
-T_{0}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}=\Lambda_{m_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+T_{0}(x)|\Psi_{m_{2},m_{3}}^{0}|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}=\Lambda_{m_{2},m_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
 \end{equation}
 \item for $k_{2}+k_{3}\neq 0$
 \begin{equation}\label{condition2}
 \begin{split}
-\left[\left(\Lambda_{m_{2},m_{3}}(x)+\epsilon\right)I-T_{0}(x)\right]^{-1}&G_{m_{2},m_{3},\epsilon}^{k_{2}+k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}\\&=\left(B_{2}(x)+B_{3}(x)\right)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+\left[\left(\Lambda_{m_{2},m_{3}}(x)+\epsilon\right)I-T_{0}(x)\right]^{-1}&G_{m_{2},m_{3},\epsilon}^{k_{2}+k_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}\\&=\left(B_{2}(x)+B_{3}(x)\right)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
 \end{split}
 \end{equation}
 \item finally
 \begin{equation}\label{condition3}
-\left(B_{2}(x)+B_{3}(x)\right)G_{m_{2},m_{3},\epsilon}^{m_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}=0
+\left(B_{2}(x)+B_{3}(x)\right)G_{m_{2},m_{3},\epsilon}^{m_{2},m_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}=0
 \end{equation}
 \end{enumerate}
 By chosing 
-\begin{equation}
+\begin{equation}\label{G-solution}
 G_{m_{2},m_{3},\epsilon}^{k_{2}+k_{3}}(x)=\left\{\left[\left(\Lambda_{m_{2},m_{3}}(x)+\epsilon\right)I-T_{0}^{x}\right]^{-1}\left(B_{2}(x)+B_{3}(x)\right)\right\}^{k_{2}+k_{3}}
 \end{equation}
-conditions \eqref{condition1} and \eqref{condition2} are easilly satisfied. To fulfill condition \eqref{condition3}% we can think about $m_{1}:=L-m_{2}-m_{3}$ as the number of empty states in the whole chain. We can further introducte $m:=m_{2}+m_{3}$ and then write $m_{1}=L-m$. Therefore we have an invertivle map between holes and particles, therefore we can think about $\left(B_{2}(x)+B_{3}(x)\right)$ as a lowering operator and 
-We make the following ansatz for the eigenvectors of the chain with left triangular and right diagonal boundaries. For the sake of notation, we restrict to the case with $N=3$ and we denote by $\Delta_{2}=\alpha_{2}-\beta_{2}$ and $\Delta_{3}=\alpha_{3}-\beta_{3}$.
+conditions \eqref{condition1} and \eqref{condition2} are easilly satisfied. To fulfill condition \eqref{condition3} we observe that, under the condition that $m=m_{2}+m_{3}$ we have that the action of \eqref{G-solution} on $|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}$ leads to a completely occupied state (with both species $2$ and $3$). Therefore, applying to it the rising operator$\left(B_{2}(x)+B_{3}(x)\right)$ we obtain zero.
+
+
+{\color{blue}We make the following ansatz for the eigenvectors of the chain with left triangular and right diagonal boundaries. For the sake of notation, we restrict to the case with $N=3$ and we denote by $\Delta_{2}=\alpha_{2}-\beta_{2}$ and $\Delta_{3}=\alpha_{3}-\beta_{3}$.
 \begin{equation}
 |\Psi_{m_{2},m_{3}}^{\Delta}\rangle=\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
 \end{equation}
@@ -1947,7 +1949,7 @@ T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=
 	\\&=
 	\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle
 \end{align*}
-
+}
 For $i\neq 1$ we have
 \begin{equation}
 \begin{split}
