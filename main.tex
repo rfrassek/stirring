@@ -308,11 +308,11 @@ We introduce the Hamiltonian operator
 \end{equation}
 where the edge Hamiltonian is
 \begin{equation}\label{edgeHamiltonian}
-H_{x,y}=\sum_{k,l=1}^{N}\left(E_{kl}^{x}\otimes E_{lk}^{y}-E_{ll}^{x}\otimes E_{kk}^{y}\right)
+H_{x,y}=\sum_{k,\ell=1}^{N}\left(E_{k\ell}^{x}\otimes E_{\ell k}^{y}-E_{\ell\ell}^{x}\otimes E_{kk}^{y}\right)
  \end{equation}
  and where the site Hamiltonian is
  \begin{equation}\label{siteHamiltonian}
-H_{x}=\sum_{k,l=1}^{N}\alpha_{k}^{x}\left(E_{kl}^{x}-E_{ll}^{x}\right)
+H_{x}=\sum_{k,\ell=1}^{N}\alpha_{k}^{x}\left(E_{k\ell}^{x}-E_{\ell\ell}^{x}\right)
 \end{equation}
 Here $E_{kl}^{x}$ is a copy of $E_{kl}$ defined in \eqref{actionE} acting on site $x$. 
 Following  \cite{belitsky2015self}, the Hamiltonian and the genertor are linked by
@@ -573,6 +573,7 @@ By using \eqref{transpositionPropertyR} and \eqref{commutationSymm-edgeHamiltoni
 \begin{flushright}
 $\square$
 \end{flushright}
+
 \paragraph{Proof of \eqref{siteDualRelation}} The proof of the site duality relations relies on the Hadamard Lemma that reads, $\forall E,A \in gl(N)$, as
 \begin{equation}\label{HadamardFormula}
     \exp{(-E)}A\exp{(E)}=A-\left[E,A\right]+\frac{1}{2!}\left[E,\left[E,A\right],\right]-\frac{1}{3!}\left[E,\left[E,\left[E,A\right]\right]\right]+\ldots
@@ -580,7 +581,7 @@ $\square$
  By \eqref{transpositionPropertyR} we write the transpose of site Hamiltonian \eqref{siteHamiltonian} 
 \begin{equation}
     \begin{split}
-H_{x}^{T}=\sum_{k,l=0}^{N}\alpha_{k}^{x}\left(E_{k\ell}^{x}-E_{\ell\ell}^{x}\right)^{T}=R_{x}\sum_{k,l=0}^{N}\alpha_{k}^{x}\left(E_{lk}^{x}-E_{ll}^{x}\right)R_{x}^{-1}
+H_{x}^{T}=\sum_{k,l=0}^{N}\alpha_{k}^{x}\left(E_{k\ell}^{x}-E_{\ell\ell}^{x}\right)^{T}=R_{x}\sum_{k,\ell=0}^{N}\alpha_{k}^{x}\left(E_{\ell k}^{x}-E_{\ell\ell}^{x}\right)R_{x}^{-1}
     \end{split}
 \end{equation}
 First, we multiply both sides for $R_{x}\exp{(E^{x})}$
@@ -651,11 +652,11 @@ and the from the second commutator on-wards they are all zero.
 Therefore we have
 \begin{equation}
 \begin{split}
-    &\exp{(-E^{x})}\sum_{k=1}^{N}\sum_{l=1}^{N}\alpha_{k}^{x}\left(E_{lk}^{x}-E_{ll}^{x}\right)\exp{(E^{x})}\\&=
-     \exp{(-E^{x})}\sum_{k=1}^{N}\alpha_{k}^{x}\left(E_{1k}^{x}-E_{11}^{x}\right)\exp{(E^{x})}
-     + \exp{(-E^{x})}\sum_{k=1}^{N}\sum_{l=2}^{N}\alpha_{k}^{x}\left(E_{lk}^{x}-E_{ll}^{x}\right)\exp{(E^{x})}
+    &\exp{(-E^{x})}\sum_{k=1}^{N}\sum_{\ell=1}^{N}\alpha_{k}^{x}\left(E_{\ell k}^{x}-E_{\ell\ell}^{x}\right)\exp{(E^{x})}\\&=
+     \exp{(-E^{x})}\sum_{k=2}^{N}\alpha_{k}^{x}\left(E_{1k}^{x}-E_{11}^{x}\right)\exp{(E^{x})}
+     + \exp{(-E^{x})}\sum_{k=1}^{N}\sum_{\ell=2}^{N}\alpha_{k}^{x}\left(E_{\ell k}^{x}-E_{\ell\ell}^{x}\right)\exp{(E^{x})}
      \\&=
-     \sum_{k=2}^{N}\alpha_{k}^{x}\left(E_{1k}+E_{11}^{x}-\sum_{a=2}^{N}(E_{ak}^{x}+E_{a1}^{x})-E_{11}^{x}+\sum_{j=2}^{N}E_{j1}^{x}\right)+\sum_{k=1}^{N}\sum_{l=2}^{N}\alpha_{k}^{x}\left(E_{lk}^{x}+E_{\ell 1}^{x}-E_{\ell\ell}^{x}-E_{l1}^{x}\right)
+     \sum_{k=2}^{N}\alpha_{k}^{x}\left(E_{1k}+E_{11}^{x}-\sum_{a=2}^{N}(E_{ak}^{x}+E_{a1}^{x})-E_{11}^{x}+\sum_{a=2}^{N}E_{a1}^{x}\right)+\sum_{k=1}^{N}\sum_{\ell =2}^{N}\alpha_{k}^{x}\left(E_{\ell k}^{x}+E_{\ell 1}^{x}-E_{\ell\ell}^{x}-E_{\ell 1}^{x}\right)
      \\&=
 \sum_{k=2}^{N}\alpha_{k}^{x}E_{1k}^{x}-\sum_{k=1}^{N}\alpha_{k}^{x}\sum_{\ell=2}^{N}E_{\ell\ell}^{x}
 =
@@ -706,11 +707,11 @@ Since the duality matrix \eqref{dualityMatrix} is tensor product over sites, the
 $\square$
 \end{flushright}
 \textbf{Remark}:
-The duality result can be state also in terms of infinitesimal generators \eqref{Generator}. In this case, the dual process, is denoted by $(\bm{\xi}(t))_{t\geq 0}$, where for each $t\geq 0$ and for each $x\in V$ we denote
+The duality result can be also stated  in terms of the infinitesimal generators \eqref{Generator}. The dual process is $(\bm{\xi}(t))_{t\geq 0}$ . For each $x\in V$ we define the $x-th$ component as
 \begin{equation}
 \xi^{x}(t)=\left(r_{1}^{x}(t),\ldots,r_{N}^{x}(t),m_{2}^{\widetilde{x}}(t),\ldots,m_{N}^{\widetilde{x}}(t)\right)
 \end{equation}
-where we denote $r_{k}^{x}$ the occupation of dual particle of type $k\in \{1,\ldots,N\}$ at site $x$ and with $m_{l}^{\widetilde{x}}$ the occupation of dual particle of type $k\in \{1,\ldots,N\}$ at extra-site $\widetilde{x}$ connected to $x\in V$. This dual process has values in the enlarged state space
+ where we denote $r_{k}^{x}$ the occupation of dual particle of type $k\in \{1,\ldots,N\}$ at site $x$ and with $m_{l}^{\widetilde{x}}$ the occupation of dual particle of type $k\in \{1,\ldots,N\}$ at extra-site $\widetilde{x}$ connected to $x\in V$. This dual process lives in the enlarged state space
 \begin{equation}
     \widetilde{\Omega}:=\Omega\times \mathbb{N}^{V}_{0}
 \end{equation}
@@ -723,7 +724,7 @@ $\mathcal{L}_{x,y}$ is the one defined in \eqref{siteGenerator} and, for any fun
 \begin{equation}
     \widetilde{\mathcal{L}}_{x}f(\bm{\xi})=\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{k=2}^{N}\xi_{k}^{x}\left(f(\bm{\xi}-\delta_{k}^{x}+\delta_{1}^{x}+\delta_{k}^{\widetilde{x}})-f(\bm{\xi})\right)
 \end{equation}
-The duality relation \eqref{DualityRelation} reads
+The duality relation \eqref{DualityRelation} reads as
 \begin{equation}\label{dualityGenerators}
     \left(\mathcal{L}D(\cdot,\bm{\xi})\right)(\bm{n})=\left(\widetilde{\mathcal{L}}D(\bm{n},\cdot)\right)(\bm{\xi})
 \end{equation}
@@ -734,14 +735,14 @@ where
 are the element of the duality matrix \eqref{dualityMatrix}. The proof of \eqref{dualityGenerators} follows from \eqref{DualityRelation}. Therefore, we only need to show that the elements of \eqref{dualityMatrix} are indeed \eqref{dualityElements}.
 Fix an arbitrary site $x\in V$
 \begin{align*}
-	 &\langle n^{x}|D_{x}\otimes D_{\widetilde{x}}|\xi^{x}\rangle\\&=\langle n_{1}^{x},\ldots,n_{N}^{x}|\sum_{m_{2}^{\widetilde{x}},\ldots,m_{N}^{\widetilde{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\varepsilon(x)}}\langle m_{2},\ldots,m_{N}|_{x}
+	 &\langle n^{x}|D_{x}\otimes D_{\widetilde{x}}|\xi^{x}\rangle\\&=\langle n_{1}^{x},\ldots,n_{N}^{x}|\sum_{m_{2}^{\widetilde{x}},\ldots,m_{N}^{\widetilde{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widetilde{x}}}\langle m_{2}^{\widetilde{x}},\ldots,m_{N}^{\widetilde{x}}|
 	 \otimes(\exp{(E_{12}^{x}+\ldots+E_{1N}^{x}}))^{T}R_{x}\\&|r_{1}^{x},\ldots,r_{N}^{x}\rangle_{x} \otimes |q_{2}^{\widetilde{x}},\ldots,q_{N}^{\widetilde{x}}\rangle
 \end{align*}
 On one hand, on the extra-site $\widetilde{x}$ we have 
 \begin{align*}
 \sum_{m_{2}^{\widetilde{x}},\ldots,m_{N}^{\widetilde{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widetilde{x}}}\langle m_{2}^{\widetilde{x}},\ldots,m_{N}^{\widetilde{x}}||q_{2}^{\widetilde{x}},\ldots,q_{N}^{\widetilde{x}}|=\prod_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widetilde{x}}}
 \end{align*}
-on the other hand, on the site $x$ we have 
+On the other hand, on the site $x$, we have 
 \begin{align*}
 &\langle n_{1}^{x},\ldots,n_{N}^{x}|(\exp{(E_{12}^{x}+\ldots+E_{1N}^{x})})^{T}R_{x}|r_{1}^{x},\ldots,r_{N}^{x}\rangle\\&= \langle  n_{1}^{x},\ldots,n_{N}^{x}|\left(\sum_{k_{2}=0}^{\infty}\frac{\left\{\left(E_{12}^{x}\right)^{T}\right\}^{k_{2}}}{k_{2}!}\ldots\sum_{k_{N}=0}^{\infty}\frac{\left\{\left(E_{1N}^{x}\right)^{T}\right\}^{k_{N}}}{k_{N}!}\sum_{s\in\chi}\frac{s_{1}^{x}!\ldots s_{N}^{x}!}{\nu!}|s_{1}^{x},\ldots,s_{N}^{x}\rangle\langle s_{1}^{x},\ldots,s_{N}^{x}|\right)|r_{1}^{x},\ldots,r_{N}^{x}\rangle\\&=
 \sum_{k_{2}=0}^{n_{1}^{x}}\ldots\sum_{k_{N}=0}^{n_{N}^{x}}\langle n_{1}^{x}+k_{2}+\ldots+k_{N},n_{2}^{x}-k_{2},\ldots,n_{N}^{x}-k_{N}|_{x}\frac{n_{2}^{x}!\ldots n_{N}^{x}!}{(n_{2}^{x}-k_{2})!\ldots(n_{N}^{x}-k_{N})!}
@@ -749,8 +750,11 @@ on the other hand, on the site $x$ we have
 \frac{1}{k_{2}!,\ldots,k_{N}!}\frac{r_{1}^{x}!\ldots r_{N}^{x}!}{\nu!}|r_{1},\ldots,r_{N}\rangle_{x}\\&=\frac{(2j-\sum_{k=1}^{N}r_{k}^{x})!r_{2}^{x}!\ldots r_{N }^{x}!}{\nu!}\frac{n_{2}^{x}!\ldots n_{N}^{x}!}{r_{2}^{x}!\ldots r_{N}^{x}!}\frac{1}{(n_{2}^{x}-r_{2}^{x})!\ldots (n_{N}^{x}-r_{N}^{x})!}\\&=
 \frac{(2j-\sum_{k=2}^{N}r_{k}^{x})}{\nu!}\prod_{k=2}^{N}\frac{n_{k}^{x}!}{(n_{k}^{x}-r_{k}^{x})!}
 \end{align*}
-where we applied the orthogonality relations \eqref{ortho} and the fact that $r_{1}^{x}=\nu-\sum_{k=2}^{N}r_{k}^{x}$. Finally, by taking the product over $x\in V$ we prove \eqref{dualityElements}. \newline \\
-\textbf{Remark}: in the reverible situation, i.e. when $\forall x\in V$ $\alpha_{k}^{x}=\alpha_{k}$, the average of the element of the duality matrix with respect to the reversible measure \eqref{reversibleMeasure}, satisfies
+where we applied the orthogonality relations \eqref{ortho} and the fact that $r_{1}^{x}=\nu-\sum_{k=2}^{N}r_{k}^{x}$. Finally, by taking the product over $x\in V$ we prove \eqref{dualityElements}.\\
+\newline 
+\textbf{Remark}: It is important to notice that the denomiator the elements of the duality matrix \eqref{dualityElements} $(n_{k}^{x}-r_{k}^{x})!$,  implies that, at each site $x\in V$ and for every species $k\in \{2,\ldots,N\}$ the number of dual particles is lower or equal than the number of original particles. This means that the dynamics of the dual proces is simpler than the one of the original one. It is possible to perform similar computations choosing as a symmetry $E^{x}=\sum_{a=2}^{N}E_{1a}^{x}$ or $E^{x}=\sum_{a=2}^{N}E_{aa}^{x}$. However, these would lead to duality matrices where the number of dual particles is greater than the number of original ones loosing the simplification of the dynamics. 
+ \newline \\
+\textbf{Remark}: in the reverible situation, i.e. when $\forall x\in V$ $\alpha_{k}^{x}=\alpha_{k}$, the average of the element of the duality matrix with respect to the reversible measure \eqref{reversibleMeasure}, is
 \begin{equation}
 \mathbb{E}_{\mu^{rev}}\left[D(\bm{n},\bm{\xi})\right]=\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\sum_{x\in V}r_{k}^{x}+\sum_{x\in V}m_{k}^{\widetilde{x}}}\qquad \forall \bm{n}\in \Omega,\quad\forall \bm{\xi}\in \widetilde{\Omega}
 \end{equation}
@@ -758,7 +762,7 @@ where we applied the orthogonality relations \eqref{ortho} and the fact that $r_
     $\square$
 \end{flushright}
 \subsection{Duality for a reaction diffusion process}
-In \cite{UPHILL}, a two-species hard-core reaction diffusion process has been introduced. The feature of this process is that its action on the occupation variable of any species gives a difference-differential equation where both discrete Laplacians and a linear reaction term are present (multiplied for proper constants). In this subsection we write a generalization to $N\in \mathbb{N}$ species with arbitrary maximal occupation per site, again called $\nu\in\mathbb{N}_{0}$. The generator reads as follows
+In \cite{casini2022uphill}, a two-species hard-core reaction diffusion process has been introduced. The feature of this process is that its action on the occupation variable of any species gives a difference-differential equation where both discrete Laplacians and a linear reaction term are present (multiplied for proper constants). In this subsection we write a generalization to $N\in \mathbb{N}$ species with arbitrary maximal occupation per site, again called $\nu\in\mathbb{N}_{0}$. The generator reads as follows
 \begin{equation}\label{RDGenerator}
     \mathcal{L}^{rd}=\sum_{x,y\in\mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}^{rd}+\sum_{x\in V}\Gamma_{x}\mathcal{L}_{x}
 \end{equation}
@@ -768,7 +772,7 @@ where
 \end{equation}
 with $\mathcal{L}_{x,y}$ and $\mathcal{L}_{x}$ are the generators the generator \eqref{edgeGenerator} and \eqref{siteGenerator} respectively and, for any function $f:\Omega\to \mathbb{R}$
 \begin{equation}
-    \mathcal{L}_{x,u}^{i}f(n)=\sum_{k,l=1}^{N}n_{k}^{x}n_{l}^{y}\left(f(n-\delta_{k}^{x}+\delta_{g_{i}(l)}^{x}+\delta_{g_{i}(k)}^{y}-\delta_{l}^{y})-f(n)\right)
+    \mathcal{L}_{x,u}^{i}f(\bm{n})=\sum_{k,l=1}^{N}n_{k}^{x}n_{l}^{y}\left(f(\bm{n}-\delta_{k}^{x}+\delta_{g_{i}(l)}^{x}+\delta_{g_{i}(k)}^{y}-\delta_{l}^{y})-f(\bm{n})\right)
 \end{equation}
 with the mapping 
 \begin{equation}
@@ -780,7 +784,7 @@ with the mapping
 \end{equation}
 and where
 \begin{equation}
-    \mathcal{L}_{x,y}^{m}f(n)=\sum_{l,k=0}^{N}n_{k}^{x}\left(f(n-\delta_{k}^{x}+\delta_{l}^{x})-f(n)\right)
+    \mathcal{L}_{x,y}^{m}f(\bm{n})=\sum_{l,k=0}^{N}n_{k}^{x}\left(f(\bm{n}-\delta_{k}^{x}+\delta_{l}^{x})-f(\bm{n})\right)
 \end{equation}
 the action on the occupation variable $n_{\alpha}^{x}$ of particle type $\alpha\in \{2,\ldots,N\}$ at site $x\in V $
 is the following
@@ -804,7 +808,7 @@ Therefore, considering \eqref{actionGraphRD} on the geometry of a chain of finit
 \begin{equation}\label{DifferenceEquation}
 \mathcal{L}^{rd}n_{\alpha}^{x}=\nu\sigma_{11}\Delta_{L}n_{\alpha}^{x}+\nu\sigma_{12}\sum_{l=2\,:\,l\neq k}^{N}\Delta_{L}n_{l}^{x}+\Upsilon\sum_{l=1}^{N}(n_{l}^{x}-n_{\alpha}^{x})
 \end{equation}
-where with the symbol $\Delta_{N}$ we denote the discrete Laplacian operator on the chain, i.e. $\Delta_{L}n_{k}^{x}=n_{k}^{x+1}+n_{k}^{x-1}-2n_{k}^{x}$, $\forall x\in \{2,\ldots,L-1\}$ and $\forall k\in \{2,\ldots,N\}$. In the spirit of \cite{} we can write he the Master's equation for the evolution of the average density occupation, obtaining a system of $N-1$ difference differential equation where the discrete Laplacian of all species are coupled and linear reaction term are present. \\ 
+where with the symbol $\Delta_{N}$ we denote the discrete Laplacian operator on the chain, i.e. $\Delta_{L}n_{k}^{x}=n_{k}^{x+1}+n_{k}^{x-1}-2n_{k}^{x}$, $\forall x\in \{2,\ldots,L-1\}$ and $\forall k\in \{2,\ldots,N\}$. In the spirit of \cite{casini2022uphill} we can write he the Master's equation for the evolution of the average density occupation, obtaining a system of $N-1$ difference differential equation where the discrete Laplacian of all species are coupled and linear reaction term are present. \\ 
 The process defined by generator \eqref{RDGenerator} has reversible product measure when all the reservoirs have the same parameter for each site and each species, i.e. $\alpha_{k}^{x}=\alpha$, $\forall k\in \{1,\ldots,N\}$ and $x\in V$. This measure is given by
 \begin{equation}
     \Lambda^{rev}=\bigotimes_{x\in V}\Lambda_{x}^{rev}
@@ -830,7 +834,7 @@ For this model, the duality relation is
 \begin{equation}\label{DualityRelationRD}
     (H^{rd})^{T}D=D\widetilde{H}^{rd}
 \end{equation}
-where the duality matrix $D$ is again \eqref{dualityMatrix}. Following subsection \ref{subsectionDualityProof}, to prove \eqref{DualityRelationRD} we only need tho show that the operator $S_{x,y}$ defined in \eqref{symmetry} commutes with $\sum_{i=1}^{N}H_{x,y}^{i}$ and with $H_{x,y}^{m}$. This result will follow from the commutator between $\sum_{i=1}^{N}H_{x,y}^{i}$ and $\sum_{a=2}^{N}(E_{a1}^{x})\otimes \sum_{b=2}^{N}E_{b,1}^{x}$ and from the commutator between $H_{x,y}^{m}$ and $\sum_{a=2}^{N}(E_{a1}^{x})\otimes \sum_{b=2}^{N}E_{b,1}^{x}$. Using \eqref{eq:comgl}, the bilinearity and associativity of the Kronecker product and the bilinearity of the brackets we obtain 
+where the duality matrix $D$ is again \eqref{dualityMatrix}. Following subsection \ref{subsectionDualityProof}, to prove \eqref{DualityRelationRD} we only need tho show that the operator $S_{x,y}$ defined in \eqref{symmetry} commutes with $\sum_{i=1}^{N}H_{x,y}^{i}$ and with $H_{x,y}^{m}$. This result will follow from the commutator between $\sum_{i=1}^{N}H_{x,y}^{i}$ and $\sum_{a=2}^{N}(E_{a1}^{x})\otimes \sum_{b=2}^{N}E_{b,1}^{x}$ and from the commutator between  and $\sum_{a=2}^{N}(E_{a1}^{x})\otimes \sum_{b=2}^{N}E_{b,1}^{x}$. Using \eqref{eq:comgl}, the bilinearity and associativity of the Kronecker product and the bilinearity of the brackets we obtain 
 \begin{align*}
     &\left[\sum_{a=2}^{N}E_{a1}^{x}\otimes \sum_{b=2}^{N}E_{b1}^{x},\;\sum_{i=1}^{N}\sum_{k,l=1}^{N}\left(E_{g_{i}(l)k}^{x}\otimes E_{g_{i}(k)l}^{y}-E_{kk}^{x}\otimes E_{ll}^{y}\right)\right]
     \\=&\sum_{a,b=2}^{N}\sum_{i=1}^{N}\sum_{k,l=1}^{N}\left\{\left(E_{ak}^{x}\delta_{g_{i}(l)0}-E_{g_{i}(l)0}^{x}\delta_{ak}\right)\otimes \left(E_{bl}^{y}\delta_{g_{i}(k)0}-E_{g_{i}(k)0}^{y}\delta_{bk}\right)-\left(E_{ak}^{x}\delta_{k0}-E_{k0}^{x}\delta_{ak}\right)\otimes \left(E_{bl}^{y}\delta_{l0}-E_{l0}^{y}\delta_{bl}\right)\right\}
@@ -842,7 +846,7 @@ where the duality matrix $D$ is again \eqref{dualityMatrix}. Following subsectio
 \begin{equation}
 \left[\sum_{a=2}^{N}E_{a1}^{x}\otimes \sum_{b=2}^{N}E_{b1}^{x},\;\sum_{i=1}^{N}\sum_{k,l=1}^{N}\left(E_{lk}^{x}\otimes \mathbbm{1}^{y}-E_{kk}^{x}\otimes \mathbbm{1}^{y}\right)\right]=0
 \end{equation}
-Therefore, following a proof similar to the one in subsection \ref{subsectionDualityProof}, \eqref{DualityRelationRD} can be proved. 
+Therefore, arguing similarly to subsection \ref{subsectionDualityProof}, \eqref{DualityRelationRD} can be proved. 
 \section{Integrability}\label{sec4}
 We study the explicit steady state and the exact formulas for the correlations in the case of hard-core interaction ($\twoj=1$), i.e. when at most one particle of any is allowed in each site at any time. We simplify the geometry to a one dimensional chain $\{1,\ldots,L\}$ of length $L$ with boundaries at the ends. We assume a nearest neighbor interaction, i.e. we fix the conductances as follows
 \begin{equation}
