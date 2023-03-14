@@ -184,19 +184,23 @@ In this work we concentrate our effort in this last "single layer" case with a r
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
 At each site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $k$-th component $n_{k}^{x}$ denotes the number of particles of species $k\in \{1,\ldots,N\}$ at site $x\in V$. On each vertex we allow a total  maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space of the process on the graph $G$ is 
 \begin{equation}\label{stateSpace}
-    \Omega:=\left\{(n_{1},\ldots,n_{N})\in\mathbb{N}_0^{N}\;:\; \sum_{k=1}^{N}n_{k}=\twoj\right\}^{V}
+    \Omega:=\Omega_{x}^{V}
 \end{equation}
-Moreover, we denote a particle configuration as $\mathbf{n}\in \Omega$, where $\mathbf{n}=(n_{k}^{x})_{x\in V,\,k\in\{1,\ldots,N\}}$ .\\
+where
+\begin{equation}
+\Omega_{x}:=\left\{(n_{1},\ldots,n_{N})\in\mathbb{N}_0^{N}\;:\; \sum_{k=1}^{N}n_{k}=\twoj\right\}
+\end{equation}
+Moreover, we denote a particle configuration as $\mathbf{n}\in \Omega$, where $\mathbf{n}=(n_{k}^{x})_{x\in V,\,k\in\{1,\ldots,N\}}$  and we denote the site occupation vector as $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$, for all $x\in V$.\\
 The dynamics consists in an exchange of particles (at Poissonian times) between connected vertices. Moreover, each vertex  exchanges particles with the external environement. The infinitesimal generator of the process reads
 \begin{equation}\label{Generator}
     \mathcal{L}=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}+\sum_{x\in V}\Gamma_{x}\mathcal{L}_{x}
 \end{equation}
 where the quantities $ \omega_{x,y}\geq 0$ are called conductances and $\Gamma_{x}\geq 0$ local inhomogeneities. The generator $\mathcal{L}_{x,y}$ is called the \textit{edge generator}, while $\mathcal{L}_{x}$ is called the \textit{site generator}. These linear operators act on functions $f:\Omega\to \mathbb{R}$ as follows
 \begin{equation}\label{edgeGenerator}
-\mathcal{L}_{x,y}f(n)=\sum_{k,l=1}^{N}n_{k}^{x}n_{l}^{y}\left[f(n-\delta_{x}^{k}+\delta_{l}^{x}+\delta_{k}^{y}-\delta_{l}^{y})-f(n)\right]
+\mathcal{L}_{x,y}f(\bm{n})=\sum_{k,l=1}^{N}n_{k}^{x}n_{l}^{y}\left[f(\bm{n}-\delta_{x}^{k}+\delta_{l}^{x}+\delta_{k}^{y}-\delta_{l}^{y})-f(\bm{n})\right]
 \end{equation}
 \begin{equation}\label{siteGenerator}
-    \mathcal{L}_{x}f(n)=\sum_{k,l=1}^{N}\alpha_{k}^{x}n_{l}^{x}\left[f(n+\delta_{k}^{x}-\delta_{l}^{x})-f(n)\right]
+    \mathcal{L}_{x}f(\bm{n})=\sum_{k,l=1}^{N}\alpha_{k}^{x}n_{l}^{x}\left[f(\bm{n}+\delta_{k}^{x}-\delta_{l}^{x})-f(\bm{n})\right]
 \end{equation}
 where 
 \begin{equation}
