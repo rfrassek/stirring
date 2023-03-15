@@ -179,7 +179,9 @@ The way one can define a multi-type (or multi-species) interacting particle syst
 In this work we concentrate our effort in this last "single layer" case with a repulsive process, i.e. a dynamic in which a maximum amount of particles can be present in each site at each time. We will call this amount, the "maximal occupancy" and it will indicated with $\twoj$ where $\twoj\in\mathbb{N}$. Particle of any species can exchange their position in the graph, under this exclusion constraint. The system will be put out of equilibrium and some absorbing duality result are investigated. Moreover, we will use this duality, to study the out of equilibrium steady state. In particular, in case of $\twoj=1$ we should retrieve the model studied in \cite{vanicat2017exact}. We will then exploit this last result and the duality, to write explicitly all the correlations of this \textit{hard-core exclusion} case. The main tool that we will use is the Lie algebraic description of the process, that allows to find the duality as a proper symmetry of the generator. 
 \paragraph{Organization of the paper}
 \section{The stirring process}
-{\color{blue}We consider the stirring process with an arbitrary number of particles $N$. It is important to note that any one of them can be considered the empty (or hole) particle. Thus, in this first general setting we do not distinguish between real and empty particles. However, this distinction will be useful in the section about duality, where we will see that this empty will play a special role. The stochastic dynamics is Markovian and consist in an exchange of particles of any type between two connected site of a graph.}
+The process studied in this paper is the multi-species stirring process on the geometry of a graph. We consider the general situation where at any time and at any site a mixture of $\nu\in \mathbb{N}$, chosen among $N$ possible species (sometimes called types or colors), is present. Among these $N$ types of particles we will distinguish $N-1$ actual types, labelled with $k\in \{2,\ldots,N\}$ and a 'hole', labelled with $1$. This is an arbitrary choice, indeed one could call any of the $N$ colors the hole. In the description of the dynamic this choice is not important, since one could think about the dynamic as a pure exchange of types between sites, under the constraint that the maximal occupancy at each site is $\nu$. However, studying the duality for the boundary driven case, it will be important to chose an hole type, in order to interpret the dual dynamic as absorbing, i.e. to have, eventually, an empty dual process on the graph. Furthermore, one could think about the hole type as the only type whose occupation dependes on the occupations of all the true $N-1$ colors. In the two species case, this multi-species stirring process, is the SEP($\nu$) (see \cite{giardina2009duality}, \cite{carinci2013duality}). Indeed one of the two type is the hole (say again $1$) and its dynamics depends on the one of the true type (say 2), under the constaraint that at most $\nu$ type $2$ particles are present at a site at each time. Therefore, the dynamics can be describe only by species $2$. It is interesting to observe that, in case we stop distinguishing the colors of the true particles $\{2,\ldots,N\}$, we retrieve the SEP($\nu$), thus this multi-species stirring process seems its natural generalization. 
+
+
 \subsection{The infinitesimal generator}
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
 At each site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $k$-th component $n_{k}^{x}$ denotes the number of particles of species $k\in \{1,\ldots,N\}$ at site $x\in V$. On each vertex we allow a total  maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space of the process on the graph $G$ is 
@@ -299,7 +301,7 @@ By the Lie algebra above we describe the process with generator \eqref{Generator
 \begin{equation}
 |{\bf n}\rangle=\left(\,\bigotimes_{x\in V}	|n_{1}^{x},\ldots,n_{N}^{x}\rangle\right)
 \end{equation}
-where we require that $n_{k}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have $\sum_{k=1}^{N}n_{k}^{x}=\nu$. The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
+where we require that $n_{k}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have $\sum_{k=1}^{N}n_{k}^{x}=\nu$. Sometimes it will bw convenient to write $|n^{x}\rangle$ to denote, for a fixed $x\in V$ the vector $|n_{1}^{x},\ldots,n_{N}^{x}\rangle$. The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
 \begin{equation}
     \langle {\bf n}|{\bf m}\rangle =\prod_{x\in V}\prod_{i=1}^N\delta_{n^x_i,m^{x}_i}
 \end{equation}
@@ -320,7 +322,7 @@ H_{x}=\sum_{k,\ell=1}^{N}\alpha_{k}^{x}\left(E_{k\ell}^{x}-E_{\ell\ell}^{x}\righ
 \end{equation}
 Here $E_{kl}^{x}$ is a copy of $E_{kl}$ defined in \eqref{actionE} acting on site $x$. 
 Following  \cite{belitsky2015self}, the Hamiltonian and the genertor are linked by
-\begin{equation}
+\begin{equation}\label{Hamiltonian-Generator}
 H=\mathcal{L}^{T}
 \end{equation}
 The action of the generator can also be expressed as 
