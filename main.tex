@@ -396,7 +396,7 @@ E_{ab}&\to E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
 
 
 
-\section{Duality}
+\section{Duality}\label{sectionDuality}
 \subsection{Definition}
 Consider two Markov processes $(\eta_{t})_{t\geq 0}$ defined on a state space $\Omega$ and $(\xi_{t})_{t\geq 0}$ defined on a state space $\widetilde{\Omega}$. We say that they are dual, with respect to a duality function $D:\Omega\times \widetilde{\Omega}\to \mathbb{R}$, if $\forall \eta\in\Omega$, $\forall \xi\in\widetilde{\Omega}$ and $\forall t> 0$ we have 
 \begin{equation}
@@ -1317,7 +1317,21 @@ By putting things together
 	\langle\rho_{s}^{x},\rho_{s^{'}}^{y}\rangle&=\beta_{s_{1}}\beta_{s_{2}}+\frac{(L+1-y_{1})}{L+1}(\alpha_{s_{1}}-\beta_{s_{1}})\beta_{s_{2}}+\frac{(L+1-y_{2})}{L+1}(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{1}}\\&+\frac{(L-y_{1})(L+1-y_{2})}{L(L+1}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})
 	\end{split}
 \end{equation}
-\subsection{Absorption probabilities for general 2j}
+\subsection{Absorption probabilities}
+{\color{blue}An application of duality is to compute the moments of the steday state of the the original process. Indeed, as metioned in subsection \ref{}, the dual process voids the chain. Therefore, the problem of computing the moments with respect to the stationary distribution is reduced to computing the absorption probabilities of dual particles. \\
+Calling $\mu_{stat}$ the stationary measure of the the process \eqref{Generator} starting from a configuration $\bm{n}$, we can write the following chain of equalities
+\begin{equation}
+\begin{split}
+\mathbb{E}_{\mu^{stat}}\left[D(\bm{n}(t),\bm{\xi})\right]&=\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\bm{\xi})\right]=\lim_{t\to\infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{n},\bm{\xi}(t))\right]
+\\=&
+\sum_{i_{1}=0}^{|\xi_{1}|}\ldots\sum_{i_{N}=0}^{|\xi_{N}|}\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}+\ldots+\alpha_{N}}\right)^{i_{k}}\left(\frac{\beta_{k}}{\beta_{1}+\ldots+\beta_{N}}\right)^{|\xi_{k}|-i_{k}}
+\\&
+\mathbb{P}\left(\xi(\infty)=\sum_{k=2}^{N}\left(i_{k}\delta_{0}+(|\xi_{k}|-i_{k})\delta_{L+1}\right)| \xi_{0}=\xi\right)
+\end{split}
+\end{equation}
+we denote by $i_{k}$ the number of dual particles of species $k\in\{2,\ldots,N\}$ absorbed at left and by $|\xi_{k}|-i_{k}$ the number of particles absorbed at right. \\}
+
+
 Even though integrability does not hold anymore for $j>\frac{1}{2}$, by using the absorbing duality we can still say something about the moment of the non equilibrium steady state distribution. We write the expression for the absorption probability for the general $(2j)$ case when the setting is a one dimensional chain with two reservoirs at the ends. We assume nearest neighbor interaction, similarly to what we did at the beginning of section \ref{sec4}. \\ Let us think about the species $1$ as the empty state. 
 Fix a generic initial dual configuration $\xi$ that contains $|\xi_{k}|$ particles of each non-empty species $k\in \{2,\ldots,N\}$. Since the dual chain is absorbing we have that:  
 \begin{equation}
