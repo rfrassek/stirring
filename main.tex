@@ -186,7 +186,7 @@ The process studied in this paper is the multi-species stirring process on the g
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
 At each site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $k$-th component $n_{k}^{x}$ denotes the number of particles of species $k\in \{1,\ldots,N\}$ at site $x\in V$. On each vertex we allow a total  maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space of the process on the graph $G$ is 
 \begin{equation}\label{stateSpace}
-    \Omega:=\Omega_{x}^{V}
+    \Omega:=\bigtimes_{x\in V} \Omega_{x}
 \end{equation}
 where
 \begin{equation}
@@ -424,39 +424,43 @@ where the superscript $T$ denotes the matrix transposition. Therefore, the duali
     H^{T}D=D\widetilde{H}
 \end{equation}
 \subsection{Duality for the multi-species stirring process}\label{statementDualitySubsection}
-The process $(\mathbf{n}(t))_{t\geq 0}$, defined by the generator \eqref{Generator}, is dual to the absorbing boundary process $(\bm{\xi}(t))_{t\geq 0}$ living in the enlarged state space
+In this section we show that the process $(\mathbf{n}(t))_{t\geq 0}$, defined by the generator \eqref{Generator}, is dual to a process $(\bm{\xi}(t))_{t\geq 0}$ taking values in the enlarged state space
 \begin{equation}\label{dualStateSpace}
-    \widetilde{\Omega}=\Omega_{x}^{V}\times \mathbb{N}_{0}^{V}
+    \widetilde{\Omega}= \bigtimes_{x\in V} \widetilde{\Omega}_{x}\ = \bigtimes_{x\in V} (\Omega_{x}\times \mathbb{N}_{0}^{N-1})
 \end{equation}
-with $\forall x\in V$ and $\forall t\geq 0$ we define
+To each site $x\in V$ we associate an ``extra site'', denoted $\widehat{x}$,
+where dual particles will accumulate in the course of time. 
+We write the configurations $\bm{\xi} \in \widetilde\Omega$  as
 \begin{equation}
-    \xi^{x}(t)=\left(r_{1}^{x}(t),\ldots,r_{N}^{x}(t),m_{2}^{\widehat{x}}(t),\ldots,m_{N}^{\widehat{x}}(t)\right)
+    \bm{\xi}=\left(r_{1}^{x},\ldots,r_{N}^{x},m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}\right)_{x\in V}
 \end{equation}
- where we denote $r_{k}^{x}(t)$ the occupation of dual particle of type $k\in \{1,\ldots,N\}$ at site $x$ at time $t\geq 0$ and where $m_{k}^{\widehat{x}}(t)$ the occupation of dual particle of type $k\in \{1,\ldots,N\}$ at extra-site $\widehat{x}$ connected to $x\in V$ at time $t\geq 0$.\\
- The dual generator is 
+where the component $r_{k}^{x}$ is interpreted as the number of dual particles of type $k\in \{1,\ldots,N\}$ at site $x$, 
+and the component $m_{k}^{\widehat{x}}$  gives the number of dual particles of type $k\in \{2,\ldots,N\}$ at 
+the extra-site $\widehat{x}$ connected to $x\in V$.
+ The  generator of the dual process is 
  \begin{equation}\label{DualGenerator}
     \widetilde{\mathcal{L}}=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}+\sum_{x\in V}\Gamma_{x}\widetilde{\mathcal{L}}_{x}
 \end{equation}
 where 
-$\mathcal{L}_{x,y}$ is the one defined in \eqref{siteGenerator} and, for any function $f:\widetilde{\Omega}\to \mathbb{R}$ 
+$\mathcal{L}_{x,y}$ is defined in \eqref{siteGenerator} and, for any function $f:\widetilde{\Omega}\to \mathbb{R}$ 
 \begin{equation}\label{siteDualGenerator}
-    \widetilde{\mathcal{L}}_{x}f(\bm{\xi})=\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{k=2}^{N}\xi_{k}^{x}\left(f(\bm{\xi}-\delta_{k}^{x}+\delta_{1}^{x}+\delta_{k}^{\widehat{x}})-f(\bm{\xi})\right)
+    \widetilde{\mathcal{L}}_{x}f(\bm{\xi})=\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{k=2}^{N}r_{k}^{x}\left(f(\bm{\xi}-\delta_{k}^{x}+\delta_{1}^{x}+\delta_{k}^{\widehat{x}})-f(\bm{\xi})\right)
 \end{equation}
 and the duality function is 
 \begin{equation}\label{dualityElements}
-	D(\bm{n},\bm{\xi})=\prod_{x\in V}\left(\frac{(2j-\sum_{k=2}^{N}r_{k}^{x})!}{\nu!}\prod_{k=2}^{N}\frac{n_{k}^{x}!}{(n_{k}^{x}-r_{k}^{x})!}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widehat{x}}}\right)
+	D(\bm{n},\bm{\xi})=\prod_{x\in V}\left(\frac{(2j-\sum_{k=2}^{N}r_{k}^{x})!}{\nu!}\prod_{k=2}^{N}\frac{n_{k}^{x}!}{(n_{k}^{x}-r_{k}^{x})!}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widehat{x}}}\,\right)
 \end{equation}
 \newline
-On one hand, the edge part of the dual generator \eqref{DualGenerator} is a copy of \eqref{edgeGenerator}, therefore it performs the stirring dynamics on the graph. On the other hand, the site dual generator \eqref{siteDualGenerator} replaces a particle of any type $k\in\{2,\ldots,N\}$ at site $x$ with a particle of type $1$ and creates a particle of the same type $k$ at the extra-site $\widehat{x}$. This last transition is performed with rate $\sum_{i=1}^{N}\alpha_{i}^{x}r_{k}^{x}$. This means that eventually the dual process empties the graph, putting all the dual particles of species $\{2,\ldots,N\}$ in the extra-sites For this reasons these $\widehat{x}$  play the role of absorbing boundaries. 
+On one hand, the edge part of the dual generator \eqref{DualGenerator} is a copy of \eqref{edgeGenerator}, therefore it performs the stirring dynamics on the graph. On the other hand, the dual generator \eqref{siteDualGenerator} replaces a particle of any type $k\in\{2,\ldots,N\}$ at site $x$ with a particle of type $1$ and creates a particle of the same type $k$ at the extra-site $\widehat{x}$. This last transition is performed with rate $\sum_{i=1}^{N}\alpha_{i}^{x}r_{k}^{x}$. This means that eventually the dual process voids the graph, putting all the dual particles of species $\{2,\ldots,N\}$ in the extra-sites. In other words the extra-sites play the role of absorbing boundaries. 
 \newline \newline
-\textbf{Remark}: in the reversible situation, i.e. when $\forall x\in V$ $\alpha_{k}^{x}=\alpha_{k}$, the average of the element of the duality matrix with respect to the reversible measure \eqref{reversibleMeasure}, is
+\textbf{Remark}: in the reversible situation, i.e. when $\forall x\in V$ $\alpha_{k}^{x}=\alpha_{k}$, the expectation  of the duality function  $D(\bm{n},\bm{\xi})$ with   $\bm{n}$ distributed as  $\mu_{rev} = \bigtimes_{x\in V}\text{Multinomial}\left(\twoj, p_{1},\ldots,p_{N}\right)$ is
 \begin{equation}
 \mathbb{E}_{\mu^{rev}}\left[D(\bm{n},\bm{\xi})\right]=\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\sum_{x\in V}r_{k}^{x}+\sum_{x\in V}m_{k}^{\widehat{x}}}\qquad \forall \bm{n}\in \Omega,\quad\forall \bm{\xi}\in \widetilde{\Omega}
 \end{equation}
 
 \subsection{Proof of duality}
-To prove duality between $(\bm{n}(t))_{t\geq 0}$ and $(\bm{\xi}(t))_{t\geq 0}$ we shall show that \eqref{dualityRelationGenerator} is fulfilled. Here the state space is discrete, therefore the proof consists in finding an intertwining matrix $D$ that satisfies \eqref{dualityIntertwines}. To show this, we will use the Hamiltonians (linked with the generators by \eqref{Hamiltonian-Generator}) and their Lie algebraic description. Indeed, in this formalism the proof reduces in finding symmetries and exponential transformation of generators of the Lie algebra, that are the building blocks of the original and dual Hamiltonians \eqref{OriginalHamiltonian} and \eqref{DualHamiltonian} respectively.  \\
-The duality statement of subsection \ref{statementDualitySubsection} is rewritten in terms of Hamiltonian operators. The dual state space \eqref{dualStateSpace} is interpreted as a vector spaces with elements
+To prove duality between $(\bm{n}(t))_{t\geq 0}$ and $(\bm{\xi}(t))_{t\geq 0}$ we  show that \eqref{dualityIntertwines} is fulfilled.  To show this, we will use the Hamiltonians (linked with the generators by \eqref{Hamiltonian-Generator}) and their Lie algebraic description. Indeed, in this formalism the proof reduces in finding symmetries and exponential transformation of generators of the Lie algebra.\\
+The configuration space  \eqref{dualStateSpace} of the dual process is the collection of vectors
 \begin{equation}
     |\bm{\xi}\rangle=\bigotimes_{x\in V}\left(|r_{1}^{x},\ldots,r_{N}^{x}\rangle\otimes |m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}\rangle\right)
 \end{equation}
@@ -464,13 +468,12 @@ The Hamiltonian of the dual process reads as
 \begin{equation}\label{DualHamiltonian}
     \widetilde{H}=\sum_{x,y\in \mathcal{E}}\omega_{x,y}H_{x,y}+\sum_{x\in V}\Gamma_{x}\widetilde{H}_{x}
 \end{equation}
-
 where $H_{x,y}$ is the one defined in \eqref{edgeHamiltonian}, while 
 \begin{equation}\label{siteDualHamiltonian}
     \widetilde{H}_{x}=\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{k=2}^{N}\left((a^{\dagger})_{k}^{\widehat{x}}\,E_{1k}^{x}-E_{kk}^{x}\right)
 \end{equation}
-By introducing the action of a bosonic creation operator $a^{\dagger}|q\rangle=|q+1\rangle$ on a generic vector $|q\rangle$ with $q\in \mathbb{N}_{0}$, we define in \eqref{siteDualHamiltonian} 
-$(a^{\dagger})_{k}^{\widehat{x}}$ as a copy of $a^{\dagger}$ acting on the extra-site $\widehat{x}$ and on the species $k\in\{2,\ldots,N\}$. \\
+Here we introduced bosonic creation operator $a^{\dagger}$ acting as $a^{\dagger}|q\rangle=|q+1\rangle$ on a generic vector $|q\rangle$ with $q\in \mathbb{N}_{0}$, so that in \eqref{siteDualHamiltonian} 
+$(a^{\dagger})_{k}^{\widehat{x}}$ denotes a copy of $a^{\dagger}$ acting on the extra-site $\widehat{x}$ and on the species $k\in\{2,\ldots,N\}$. \\
 The Hamiltonians \eqref{OriginalHamiltonian} and \eqref{DualHamiltonian} are dual in the sense of \eqref{DualityRelation} with respect to the duality matrix $D$ defined as 
 \begin{equation}\label{dualityMatrix}
     D=\prod_{x\in V}d_{x}\otimes \dd
@@ -488,11 +491,11 @@ and
     R_{x}=\sum_{n^{x}\in\Omega_{x}}\frac{\prod_{k=1}^{N}n_{k}^{x}}{\nu!}|n_{1}^{x},\ldots,n_{N}^{x}\rangle\langle n_{1}^{x},\ldots,n_{N}^{x}|
 \end{equation}
 and where 
-\begin{equation}\label{dualityMatrix}
+\begin{equation}\label{dualityMatrix2}
 \dd=\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|
 \end{equation}
-The matrix $R_{x}$ is diagonal. Their elements are related to the inverse of the weights of the reversible measure \eqref{reversibleMeasure}. In particular, to obtain these elements, we have considered the weights of \eqref{reversibleMeasure} when all the parameters $p_{i}=\frac{1}{N}$. Then, the constant $\left(\frac{1}{N}\right)^{\nu}$ has been neglected, since it does not change the duality relation. This $R_{x}$ is called the 'cheap' duality matrix (see \cite{giardina2009duality}). \\
-Since \eqref{dualityMatrix} is product over sites, \eqref{DualityRelation} is equivalent of proving that 
+The matrix $R_{x}$ is diagonal. Its elements are related to the inverse of the weights of the reversible measure \eqref{reversibleMeasure}. In particular, to obtain these elements, we have considered the weights of \eqref{reversibleMeasure} when all the parameters $p_{i}=\frac{1}{N}$. Then, the constant $\left(\frac{1}{N}\right)^{\nu}$ has been neglected, since it does not change the duality relation. This $R_{x}$ is called the ``cheap'' duality matrix (see \cite{giardina2009duality}). \\
+Since \eqref{dualityMatrix} is product over sites, \eqref{DualityRelation} is equivalent to proving that 
 \begin{equation}\label{edgeDualRealtion}
     H_{x,y}^{T}D=DH_{x,y}\qquad \forall (x,y)\in \mathcal{E}
 \end{equation}
@@ -501,7 +504,7 @@ and
     H_{x}^{T}D=D\widetilde{H}_{x}\qquad \forall x\in V.
 \end{equation}
 We perform the proof in three steps: first we will show that matrix \eqref{dualityMatrix} has elements \eqref{dualityElements}; second we will prove \eqref{edgeDualRealtion}; finally we will show\eqref{siteDualRelation}. 
-\paragraph{Proof of the elements of the duality matrix}We aim to show that 
+\paragraph{Elements of the duality matrix.}We aim to show that 
 \begin{equation}\label{proofDualityElements}
 \langle \bm{n}|D|\bm{\xi}\rangle=D(\bm{n},\bm{\xi})\qquad   \forall \bm{n}\in \Omega,\quad \bm{\xi}\in \widetilde{\Omega}
 \end{equation}
@@ -528,7 +531,7 @@ where in the last equality we applied the orthogonality relations \eqref{ortho} 
 \begin{flushright}
     $\square$
 \end{flushright}
-\paragraph{Proof of \eqref{edgeDualRealtion}}To show \eqref{edgeDualRealtion} we need two 'ingredients'. First the existence of a similarity transformation between the Hamiltonian $H_{x,y}$ defined in \eqref{edgeHamiltonian} and its transposed. As we will show, this similarity transformation is $R_{x}$ defined in \eqref{Rmatrix}. Second, the possibility of finding a symmetry for the Hamiltonian \eqref{edgeHamiltonian}. Exploiting the fact that $H_{x,y}$ is a linear function of the coproduct of the second Casimir of $gl(N)$, (see \eqref{hamiltonianCasimir}) this symmetry is $\exp{(E^{x})}\exp{(E^{y})}$ with $E^{x}$ defined in \eqref{equationEx}. \\
+\paragraph{Proof of \eqref{edgeDualRealtion}.}To show \eqref{edgeDualRealtion} we need two 'ingredients'. First the existence of a similarity transformation between the Hamiltonian $H_{x,y}$ defined in \eqref{edgeHamiltonian} and its transposed. As we will show, this similarity transformation is $R_{x}$ defined in \eqref{Rmatrix}. Second, the possibility of finding a symmetry for the Hamiltonian \eqref{edgeHamiltonian}. Exploiting the fact that $H_{x,y}$ is a linear function of the coproduct of the second Casimir of $gl(N)$, (see \eqref{hamiltonianCasimir}) this symmetry is $\exp{(E^{x})}\exp{(E^{y})}$ with $E^{x}$ defined in \eqref{EquationEx}. \\
 We show that 
 \begin{equation}\label{transpositionPropertyR}
 (E_{ab}^{x})^{T}=R_{x}E_{ab}^{x}R_{x}^{-1}\qquad \forall x\in V
@@ -593,7 +596,7 @@ i.e. $S_{x,y}$ is a symmetry of $H_{x,y}$. \\ Finally, we obtain that
  \begin{flushright}
      $\square$
  \end{flushright}
- \paragraph{Proof of \eqref{siteDualRelation}} To prove \eqref{siteDualRelation} we need two transform via Hadamard formula \eqref{HadamardFormula}, the transposed of the site Hamiltonian \eqref{siteDualHamiltonian} and then introduce properly a creation operator acting on an extra-site $\widehat{x}$ that we connect to every site $x\in V$ of the graph $G$. \\
+ \paragraph{Proof of \eqref{siteDualRelation}.} To prove \eqref{siteDualRelation} we need two transform via Hadamard formula \eqref{HadamardFormula}, the transposed of the site Hamiltonian \eqref{siteDualHamiltonian} and then introduce properly a creation operator acting on an extra-site $\widehat{x}$ that we connect to every site $x\in V$ of the graph $G$. \\
  Considering $A,B\in gl(N)$, we can write the Hadamard formula as 
  \begin{equation}\label{HadamardFormula}
      \exp{(-B)}A\exp{(B)}=A-\left[B,A\right]+\frac{1}{2!}\left[B,\left[B,A\right]\right]-\frac{1}{3!}\left[B,\left[B,\left[B,A\right]\right]\right]+\ldots
