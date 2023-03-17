@@ -130,7 +130,7 @@
 
 \newcommand{\N}{\mathbf{N}}
 \newcommand{\twoj}{\nu}
-
+\allowdisplaybreaks
 
 
 \begin{document} 
@@ -235,7 +235,7 @@ See Figure \ref{fig:1}, Figure \ref{fig:2}for a visual description of the dyamic
         $\square$
     \end{flushright}
 The process described by the generator \eqref{Generator} is reversible with respect to the homogeneus product measure \begin{equation}\label{reversibleMeasure}
-\mu_{rev}=\bigotimes_{x\in V}\mu_{rev}^{x}
+\mu_{rev}=\bigtimes_{x\in V}\mu_{rev}^{x}
 \end{equation}
 when for any $k\in\{1,\ldots,N\}$
 \begin{equation}\label{reversibilityCondition}
@@ -243,11 +243,11 @@ when for any $k\in\{1,\ldots,N\}$
 \end{equation}
 This measure has marginals $\mu_{rev}^{x}$ distributed as 
 \begin{equation}
- \mu^{x}_{rev}\sim \text{Multinomial}\left(\twoj,p_{1},\ldots,p_{N}\right)\quad \text{where}\quad p_{k}=\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}
+ \mu^{x}_{rev}\sim \text{Multinomial}\left(\twoj,\rho_{1},\ldots,\rho_{N}\right)\quad \text{where}\quad \rho_{k}=\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}
 \end{equation}
 namely
 \begin{equation}
-\mu_{rev}^{x}(n^{x})=\frac{\nu!}{\prod_{k=1}^{N}n_{k}^{x}!}\prod_{k=1}^{N}p_{k}^{n_{k}^{x}}
+\mu_{rev}^{x}(n^{x})=\frac{\nu!}{\prod_{k=1}^{N}n_{k}^{x}!}\prod_{k=1}^{N}\rho_{k}^{n_{k}^{x}}
 \end{equation}
 This can be proved just by imposing the detailed balance conditions for the edge and for the site generators. If condition \eqref{reversibilityCondition} is not met, then reversibility is lost: each reservoir at site $x$ wants to fix its own density $\alpha^{x}=(\alpha_{1}^{x},\ldots,\alpha_{N}^{x})$ and currents will arise when at least two of them are different. 
 \subsection{The Lie algebraic description}
@@ -448,14 +448,18 @@ $\mathcal{L}_{x,y}$ is defined in \eqref{siteGenerator} and, for any function $f
 \end{equation}
 and the duality function is 
 \begin{equation}\label{dualityElements}
-	D(\bm{n},\bm{\xi})=\prod_{x\in V}\left(\frac{(2j-\sum_{k=2}^{N}r_{k}^{x})!}{\nu!}\prod_{k=2}^{N}\frac{n_{k}^{x}!}{(n_{k}^{x}-r_{k}^{x})!}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widehat{x}}}\,\right)
+	D(\bm{n},\bm{\xi})=\prod_{x\in V}\left(\frac{(2j-\sum_{k=2}^{N}r_{k}^{x})!}{\nu!}\prod_{k=2}^{N}\frac{n_{k}^{x}!}{(n_{k}^{x}-r_{k}^{x})!}\left(\rho_{k}^{x}\right)^{m_{k}^{\widehat{x}}}\,\right)
+\end{equation}
+where we denote the \textit{density} of the species $k\in \{2,\ldots,N\}$ at the reservoir connected with the site $x\in V$  by 
+\begin{equation}
+\rho_{k}^{x}:=\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}
 \end{equation}
 \newline
 On one hand, the edge part of the dual generator \eqref{DualGenerator} is a copy of \eqref{edgeGenerator}, therefore it performs the stirring dynamics on the graph. On the other hand, the dual generator \eqref{siteDualGenerator} replaces a particle of any type $k\in\{2,\ldots,N\}$ at site $x$ with a particle of type $1$ and creates a particle of the same type $k$ at the extra-site $\widehat{x}$. This last transition is performed with rate $\sum_{i=1}^{N}\alpha_{i}^{x}r_{k}^{x}$. This means that eventually the dual process voids the graph, putting all the dual particles of species $\{2,\ldots,N\}$ in the extra-sites. In other words the extra-sites play the role of absorbing boundaries. 
 \newline \newline
 \textbf{Remark}: in the reversible situation, i.e. when $\forall x\in V$ $\alpha_{k}^{x}=\alpha_{k}$, the expectation  of the duality function  $D(\bm{n},\bm{\xi})$ with   $\bm{n}$ distributed as  $\mu_{rev} = \bigtimes_{x\in V}\text{Multinomial}\left(\twoj, p_{1},\ldots,p_{N}\right)$ is
 \begin{equation}
-\mathbb{E}_{\mu^{rev}}\left[D(\bm{n},\bm{\xi})\right]=\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\sum_{x\in V}r_{k}^{x}+\sum_{x\in V}m_{k}^{\widehat{x}}}\qquad \forall \bm{n}\in \Omega,\quad\forall \bm{\xi}\in \widetilde{\Omega}
+\mathbb{E}_{\mu^{rev}}\left[D(\bm{n},\bm{\xi})\right]=\prod_{k=2}^{N}\left(\rho_{k}^{x}\right)^{\sum_{x\in V}r_{k}^{x}+\sum_{x\in V}m_{k}^{\widehat{x}}}\qquad \forall \bm{n}\in \Omega,\quad\forall \bm{\xi}\in \widetilde{\Omega}
 \end{equation}
 
 \subsection{Proof of duality}
@@ -492,7 +496,7 @@ and
 \end{equation}
 and where 
 \begin{equation}\label{dualityMatrix2}
-\dd=\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|
+\dd=\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\rho_{k}^{x}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|
 \end{equation}
 The matrix $R_{x}$ is diagonal. Its elements are related to the inverse of the weights of the reversible measure \eqref{reversibleMeasure}. In particular, to obtain these elements, we have considered the weights of \eqref{reversibleMeasure} when all the parameters $p_{i}=\frac{1}{N}$. Then, the constant $\left(\frac{1}{N}\right)^{\nu}$ has been neglected, since it does not change the duality relation. This $R_{x}$ is called the ``cheap'' duality matrix (see \cite{giardina2009duality}). \\
 Since \eqref{dualityMatrix} is product over sites, \eqref{DualityRelation} is equivalent to proving that 
@@ -511,12 +515,12 @@ We perform the proof in three steps: first we will show that matrix \eqref{duali
 with $D(\bm{n},\bm{\xi})$ defined in \eqref{dualityElements}. 
 Fix an arbitrary site $x\in V$
 \begin{align*}
-	 &\langle n^{x}|d_{x}\otimes \dd|\xi^{x}\rangle\\&=\langle n_{1}^{x},\ldots,n_{N}^{x}|\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|
-	 \otimes(\exp{(E_{12}^{x}+\ldots+E_{1N}^{x}}))^{T}R_{x}\\&|r_{1}^{x},\ldots,r_{N}^{x}\rangle_{x} \otimes |q_{2}^{\widehat{x}},\ldots,q_{N}^{\widehat{x}}\rangle
+	 &\langle n^{x}|d_{x}\otimes \dd|\xi^{x}\rangle\\&=\langle n_{1}^{x},\ldots,n_{N}^{x}| (\exp{(E_{12}^{x}+\ldots+E_{1N}^{x}}))^{T}R_{x}\otimes\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\rho_{k}^{x}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|
+	 \\&|r_{1}^{x},\ldots,r_{N}^{x}\rangle_{x} \otimes |q_{2}^{\widehat{x}},\ldots,q_{N}^{\widehat{x}}\rangle
 \end{align*}
 On one hand, on the extra-site $\widehat{x}$ we have 
 \begin{align*}
-\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}||q_{2}^{\widehat{x}},\ldots,q_{N}^{\widehat{x}}|=\prod_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widehat{x}}}
+\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\rho_{k}^{x}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}||q_{2}^{\widehat{x}},\ldots,q_{N}^{\widehat{x}}\rangle=\prod_{k=2}^{N}\left(\rho_{k}^{x}\right)^{m_{k}^{\widehat{x}}}
 \end{align*}
 where we used the orthogonality relation \eqref{ortho}. 
 On the other hand, on the site $x$, we have 
@@ -671,8 +675,7 @@ then,we insert the identity $I=\exp{(E^{x})}\exp{(-E^{x})}$ in the right hand si
 H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}\exp{(-E^{x})}\sum_{k,\ell=0}^{N}\alpha_{k}^{x}\left(E_{\ell k}^{x}-E_{\ell\ell}^{x}\right)\exp{(E^{x})}
 \end{equation}
 where $E^{x}$ is a copy of $E$ acting on site $x\in V$ and $E_{ab}^{x}$ with $a,b\in \{1,\ldots,N\}$ are copies of $E_{ab}$ acting at site $x\in V$. Using \eqref{HT_El1}, \eqref{HT_Ell},\eqref{HT-E1l}, \eqref{HT-Ekl}, \eqref{HT-E11} we have that 
-\begin{equation}
-\begin{split}
+\begin{align*}
     &\exp{(-E^{x})}\sum_{k=1}^{N}\sum_{\ell=1}^{N}\alpha_{k}^{x}\left(E_{\ell k}^{x}-E_{\ell\ell}^{x}\right)\exp{(E^{x})}
     \\=&
      \exp{(-E^{x})}\sum_{k=2}^{N}\alpha_{k}^{x}\left(E_{1k}^{x}-E_{11}^{x}\right)\exp{(E^{x})}
@@ -683,24 +686,25 @@ where $E^{x}$ is a copy of $E$ acting on site $x\in V$ and $E_{ab}^{x}$ with $a,
 \sum_{k=2}^{N}\alpha_{k}^{x}E_{1k}^{x}-\sum_{k=1}^{N}\alpha_{k}^{x}\sum_{\ell=2}^{N}E_{\ell\ell}^{x}
 =
      \sum_{k=2}^{N}\left(\alpha_{k}^{x}E_{1k}^{x}-\sum_{i=1}^{N}\alpha_{i}^{x}E_{kk}^{x}\right)
-\\=&
+=
 \sum_{i=1}^{N}\alpha_{i}^{x}\sum_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}E_{1k}^{x}-E_{kk}^{x}\right)
-    \end{split}
-\end{equation}
+\\=&
+\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{k=2}^{N}\left(\rho_{k}^{x}E_{1k}^{x}-E_{kk}^{x}\right)
+ \end{align*}
 Thus, we rewrite \eqref{intermediateTransposeSite} as
 \begin{equation}\label{siteHadamardI}
-H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}E_{1k}^{x}-E_{kk}^{x}\right)
+H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{k=2}^{N}\left(\rho_{k}^{x}E_{1k}^{x}-E_{kk}^{x}\right)
 \end{equation}
 Making the tensor product on both sides of \eqref{siteHadamardI} by 
 \begin{equation}
-\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|
+\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\rho_{k}^{x}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|
 \end{equation}
 and we obtain 
 \begin{equation}\label{siteHadamardII}
     \begin{split}
-&H_{x,y}^{T}d_{x}\otimes\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|
+&H_{x,y}^{T}d_{x}\otimes\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\rho_{k}^{x}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|
 \\=&
-d_{x}\otimes \sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{k=1}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}E_{1k}^{x}-E_{kk}\right)
+d_{x}\otimes \sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\rho_{k}^{x}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{k=1}^{N}\left(\rho_{k}^{x}E_{1k}^{x}-E_{kk}\right)
     \end{split}
 \end{equation}
 Recalling the action of the bosonic creation operator acting at site $\widehat{x}$ and on the species $k\in \{2,\ldots,N\}$ we have that 
@@ -710,18 +714,18 @@ Recalling the action of the bosonic creation operator acting at site $\widehat{x
 Using \eqref{bosonicKX} by a fixed $k\in \{2,\ldots,N\}$ we rewrite the term of \eqref{siteHadamardII} with Lie generator $E_{1k}^{x}$ on the right hand side of \eqref{siteHadamardII} as 
 \begin{equation}
     \begin{split}
-&\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{k}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}E_{1k}^{x}
-\\=&\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widehat{x}}+1}\langle m_{2}^{\widehat{x}},\ldots,m_{k}^{\widehat{x}}+1,\ldots,m_{N}^{\widehat{x}}|(a^{\dagger})_{k}^{\widehat{x}}E_{1k}^{x}
+&\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\rho_{k}^{x}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{k}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}E_{1k}^{x}
+\\=&\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\rho_{k}^{x}\right)^{m_{k}^{\widehat{x}}+1}\langle m_{2}^{\widehat{x}},\ldots,m_{k}^{\widehat{x}}+1,\ldots,m_{N}^{\widehat{x}}|(a^{\dagger})_{k}^{\widehat{x}}E_{1k}^{x}
 \\=&
-\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{k}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|(a^{\dagger})_{k}^{\widehat{x}}E_{1k}^{x}
+\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\rho_{k}^{x}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{k}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|(a^{\dagger})_{k}^{\widehat{x}}E_{1k}^{x}
     \end{split}
 \end{equation}
 where, in the last equality, we performed a change of summation variable. Therefore, inserting this last equation in \eqref{siteHadamardII} we obtain 
 \begin{equation}
     \begin{split}
-     &H_{x,y}^{T}d_{x}\otimes \sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|
+     &H_{x,y}^{T}d_{x}\otimes \sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\rho_{k}^{x}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|
 \\=&
-d_{x}\otimes \sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\frac{\alpha_{k}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{k=1}^{N}\left((a^{\dagger})_{k}^{\widehat{x}}E_{1k}^{x}-E_{kk}^{x}\right)   
+d_{x}\otimes \sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{k=2}^{N}\left(\rho_{k}^{x}\right)^{m_{k}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{k=1}^{N}\left((a^{\dagger})_{k}^{\widehat{x}}E_{1k}^{x}-E_{kk}^{x}\right)   
     \end{split}
 \end{equation}
 Since the duality matrix \eqref{dualityMatrix} is product over sites, the above equality implies \eqref{siteDualRelation}. 
