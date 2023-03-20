@@ -745,27 +745,41 @@ $\square$
 
 
 
-\section{Integrability}\label{sec4}
-We study the explicit steady state and the exact formulas for the correlations in the case of hard-core interaction ($\twoj=1$), i.e. when at most one particle of any is allowed in each site at any time. We simplify the geometry to a one dimensional chain $\{1,\ldots,L\}$ of length $L$ with boundaries at the ends. We assume a nearest neighbor interaction, i.e. we fix the conductances as follows
+\section{Integrability}\label{sectionIntegrabiliy}
+\subsection{The integrable chain and the matrix product ansatz}
+In this section we specialize the multi-species stirring process to the geometry of the one dimensional chain with sites $\{1,\ldots,L\}$ where two reservoirs are connected with the end site $1$ and $L$. These boundaries, exchanges particle with the external environment, putting the chain out of equilibrium. To use integrability is better to work with Hamiltonians. The Hamiltonian that we consider here is obtained by \eqref{OriginalHamiltonian} assuming that the conducatances are
 \begin{equation}
-\omega_{x,y}=\begin{cases}
-    1\quad \text{if}\quad |x-y|=1\\
+    \omega_{x,y}=\begin{cases}
+    1 \quad \text{if}\quad |x-y|=1\\
     0\quad \text{otherwise}
-\end{cases}
+    \end{cases}
 \end{equation}
-$\forall x,y\in \{1,\ldots,L\}$.\\
-The local inhomogeneities are chosen as follows: $\Gamma_{x}=0$ $\forall x\in \{2,\ldots,L-1\}$ and $\Gamma_{1}=\Gamma_{L}=1$. \\
-We can think about the species $1$ as the empty state of the chain. This will be useful in the correlation formula.\\
-In this section we will denote the element of the representation of the Lie algebra by lowercase letters, i.e. $e_{ab}$, since we are in the lowest spin case (the fundamental representation of algebra). \\
+and the local inhomogeneities are
+\begin{equation}
+    \Gamma_{x}=\begin{cases}
+        1\quad \text{if} \quad x\in \{1,L\}\\
+        0\quad \text{otherwise}
+    \end{cases}
+    \end{equation}
+We further assume that the maximal occupancy in each site is $\nu=1$, i.e. that there is an \textit{hard-core interaction}.
+We will denote the element of the representation of the Lie algebra by lowercase letters, i.e. $e_{ab}$, since we are in the lowest spin case (the fundamental representation of algebra). \\
 The state space of the chain is 
 \begin{equation}
-	\Omega=\left\{|n\rangle=|n_{1},\ldots,n_{N}\rangle\;:\;n\in\mathbb{N}_0^N\;\;|n|=1\right\}^{L}
+    \Omega=\bigtimes_{x=1}^{L}\Omega_{x}
+\end{equation}
+where 
+\begin{equation}
+	\Omega_{x}=\left\{|n\rangle=|n_{1},\ldots,n_{N}\rangle\;:\;n\in\mathbb{N}_0^N\;\;|n|=1\right\}
 \end{equation} 
 The Hamiltonian is
 \begin{equation}\label{hamiltonian}
-	H=B_{1}+\sum_{x=1}^{L-1}\mathcal{H}_{x,x+1}+B_{L}
+	H=B_{1}+H_{bulk}+B_{L}
 \end{equation}
 where
+\begin{equation}
+    H_{bulk}=\sum_{x=1}^{L-1}\mathcal{H}_{x,x+1}
+\end{equation}
+Moreover, for a fixed site $x\in \{1,\ldots,L\}$ we have 
 \begin{equation}
 	\begin{split}
 		\mathcal{H}=P-\id
@@ -781,7 +795,7 @@ such that
 		\mathcal{H}|n\rangle\otimes   |m\rangle&=|m\rangle \otimes |n\rangle-|n\rangle \otimes|m\rangle
 	\end{split}
 \end{equation}
-and boundary terms 
+The boundary terms are given by 
 \begin{equation}
 	B_{1}=\begin{pmatrix}
 		\alpha_{1}-1&\alpha_{1}&\ldots&\alpha_{1}\\
@@ -798,7 +812,7 @@ and boundary terms
 		\beta_{N}&\beta_{N}&\ldots&\beta_{N}-1
 	\end{pmatrix}
 \end{equation}
-where the rates satisfy
+where we assume that the parameters satisfy
 \begin{equation}\label{ratesConditions}
 	\sum_{a=2}^{N}\alpha_{a}=1,\qquad\sum_{a=2}^{N}\beta_{a}=1
 \end{equation} 
@@ -806,12 +820,17 @@ We define also
 \begin{equation}\label{lambdaConditions}
 	\lambda_{a}=\alpha_{a}-\beta_{a}\quad\text{with}\quad \sum_{a=2}^{N}\lambda_{a}=0\,.
 \end{equation}
-{\color{red} I will add a figure with the boundary driven chain}\\
-The steady state can be found by the \textit{matrix product ansatz}, that was introduced for the multispecies hard-core stirring in \cite{vanicat2017exact}. The formulation is the following. We aim to compute $|\Psi\rangle$ such that 
+Under these assumption the Hamiltonian \eqref{hamiltonian} is integrable and a matrix product anstz (MPA) for the non-equilibrium steady state is available (see\cite{vanicat}). We recall the main points of this ansatz. \\
+ Calling $|\mathbb{P}(t)\rangle$ a vector that contains the probability of every configuration of the chain with Hamiltonian \eqref{hamiltonian} at time $t\geq 0$, its evolution equation is given by 
+\begin{equation}
+    \frac{d|\mathbb{P}(t)}{dt}=H|\mathbb{P}(t)\rangle
+\end{equation}
+We define the steady state of $H$ defined in \eqref{hamiltonian} a vector, denoted by $|\Psi\rangle$ that contains the probabilities of every configuration of the chain with respect to the stationary distribution, i.e. the probability distribution that the chain reaches when $t\to \infty$. We observe that, since the Markov chain with Hamiltonian \eqref{hamiltonian} is positive recurrent there exists a unique stationary distribution and, moreover, this is distribution is reached when $t\to \infty$ starting for every arbitrary initial distribution. 
+ Therefore, to find the stationary state, we aim to compute $|\Psi\rangle$ such that 
 \begin{equation}
 	H|\Psi\rangle =0
 \end{equation}
-The matrix product ansatz tells:
+The MPA states the following
 \begin{equation}
 	|\Psi\rangle=\frac{1}{Z^{L}}\langle W|\begin{pmatrix}
 		X_{1}\\
@@ -823,16 +842,15 @@ The matrix product ansatz tells:
 		X_{N}
 	\end{pmatrix}|V\rangle
 \end{equation}
-with 
+with the normalization 
 \begin{equation}
 	Z_{L}=\langle W|(X_{1}+\ldots +X_{N})^{L}|V\rangle
 \end{equation}
-where $X_{a}$ for $s=1,\ldots,N$ are operators on an auxiliary space $V_{0}$ while $|V\rangle\in V_{0}$ and $\langle W|\in V_{0}^{*}$ (the dual space), such that $\langle W|V\rangle=1$. \\
-They fulfill
+where $X_{a}$ for $a=1,\ldots,N$ are operators on an auxiliary space $V_{0}$ while $|V\rangle\in V_{0}$ and $\langle W|\in V_{0}^{*}$ ( where $V^{*}$ denotes the algebraic dual space), such that $\langle W|V\rangle=1$. $\langle W|$ and $|V\rangle$ are sometimes called boundary vectors. These operators $(X_{a})_{a\in \{1,\ldots,N\}}$ fulfil the commutators
 \begin{equation}\label{bulk}
 	\left[X_{a},X_{b}\right]=\lambda_{a}X_{b}-\lambda_{b}X_{a}\qquad\forall a,b=1,\ldots,N
 \end{equation}
-and
+and their action on the boundary vectors are
 \begin{equation}\label{leftBoundary}
 	\langle W|\left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=\lambda_{a}\langle W|\qquad\forall a=1,\ldots,N
 \end{equation}
@@ -840,94 +858,104 @@ and
 	\left(\beta_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)|V\rangle=-\lambda_{a}|V\rangle\qquad\forall a=1,\ldots,N
 \end{equation}
 \newline
-\textbf{Remark}: Only $N-1$ of \eqref{leftBoundary} and \eqref{rightBoundary} are independent, indeed because of \eqref{ratesConditions} and \eqref{lambdaConditions}
+\textbf{Remark}: only $N-1$ of \eqref{leftBoundary} and \eqref{rightBoundary} are independent, indeed because of \eqref{ratesConditions} and \eqref{lambdaConditions}
 	\begin{equation}
 		\sum_{a=1}^{N}	\langle W|\left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=\sum_{a=1}^{N}\lambda_{a}\langle W|
 	\end{equation}
-	gives $0=0$. Similar computations for the right boundary.\\
- \newline
- The operators defined in \eqref{bulk},\eqref{leftBoundary},\eqref{rightBoundary} are not known explicitly. Via commutation relation is possible to compute some of the correlations. However, it would be interesting to write formulas for arbitrary correlations and the steady state, apart any choice of the form of the operators. \\
- We introduce some similarity transformations for the Hamiltonian \eqref{hamiltonian}. These allow to define two simpler Hamiltonians whose steady state can be  compute exactly. Reversing back the transformation we will obtain the original steady state. \\ 
-We first use the \textit{dual similarity transformation}, defined by the symmetry operator \eqref{e_def}.
+	gives $0=0$. Similar computations can be done for the right boundary.
+\subsection{The exact steady state for the multi-species stirring process on a chain}\label{subsection-exact}
+We aim to find an explicit for for the steady state $|\Psi\rangle$. The MPA states the form of the steady state in function of an abstract algebra of operators. If an explicit representation of $(X_{a})_{a=1,\ldots,N}$ was available, it would be possible to compute explicitly all the correlations and currents of particles for the Hamiltonian \eqref{hamiltonian}. Another way of computing this steady state, without passing through a representation, is using the commutators \eqref{bulk} and the actions \eqref{leftBoundary} and \eqref{rightBoundary}. For the one and two point correlation and for the currents this has been done in \cite{vanicat}. Inspired by this last reference, in this subsection, we aim to find exact formulas for the steady state of \eqref{hamiltonian} using only the \eqref{bulk}, \eqref{leftBoundary} and \eqref{rightBoundary}. In subsection \eqref{correlation-section}, this result will leads to exact correlation for arbitrary number of particles of type $\{2,\ldots,N\}$. This aim will be achieved by the help of a similarity transformation $\mathcal{S}$ that makes commutation relation simpler, and allows to find the steady state of a transformed Hamiltonian, that will be denoted by $\mathbb{H}$, with lower-triangular left boundary and diagonal right boundary. Therefore, inverting this similarity, one can retrieve the steady state of \eqref{hamiltonian}. A fundamental 'ingredient' of these computation is duality, that has been proved in section \ref{sectionDuality}. 
+\subsubsection{The similarity transformation}
+We aim to construct a similarity transformation that maps the Hamiltonian \eqref{hamiltonian} into an other $\mathbb{H}$ that has left boundary lower-triangular and right boundary diagonal. Consider the transformation
+\begin{equation}\label{transformationV}
+ V:=\exp{\left(\sum_{a=2}^{N}e_{a1}\right)}=\mathbbm{1}+\sum_{a=2}^{N}e_{a1}
+\end{equation}
+Observe that it is the the duality matrix at site $x\in \{1,\ldots,L\}$ up to the multiplication by $R_{x}$. By taking the tensor product over the chain we define
 \begin{equation}
-    V=\text{exp}\left(\sum_{a=2}^{N}e_{a1}\right)=e^{E}
+    \mathcal{V}=V^{\otimes L}
 \end{equation}
-Up to the diagonal matrix $R_{x}$, this is exactly the edge duality matrix. Then, we introduce the Hamiltonian
+ This matrix $\mathcal{V}$ is invertible and we introduce 
+\begin{equation}\label{hatHamiltonian}
+    \widehat{H}:=\widehat{B}_{1}+\mathcal{H}+\widehat{B}_{L}
+\end{equation}
+such that 
+\begin{equation}\label{similarV}
+   H=\left(\mathcal{V}^{-1}\right)^{T}\widehat{H}^{T}V^{T}
+\end{equation}
+Using \eqref{transformationV} we introduce the \textit{similarity transformation} 
+\begin{equation}\label{similarity}
+    S:=\sum_{a=2}^{N}\beta_{a}\sum_{b=2}^{N}e_{ab}+V=-\sum_{a=2}^{N}\beta_{a}\sum_{b=2}^{N}e_{ab}+\exp{\left(\sum_{a=2}^{N}e_{1a}\right)}
+\end{equation}
+Taking the tensor product over the sites of the chain we further define
 \begin{equation}
-	H_{dual}=B_{1}^{dual}+\mathcal{H}+B_{L}^{dual}
+    \mathcal{S}:=S^{\otimes L}
 \end{equation}
-where 
-It is linked to the original one by: 
-\begin{equation}\label{uno}
-	{H}^{T}V=V{H}_{dual}\quad \Rightarrow \quad {H}=\left(V^{-1}\right)^{T}{H}_{dual}^{T}V^{T}
+Therefore, we call
+\begin{equation}\label{bbHamiltonian}
+    \mathbb{H}=\mathbb{B}_{1}+H_{bulk}+\mathbb{B}_{L}
 \end{equation}
-
-We introduce the \textit{S similarity transformation} 
-\begin{equation}\label{Esse}
-    S=\exp \left(-\sum_{a=2}^N \beta_ae_{a1}\right)\exp \left(\sum_{b=2}^N e_{1b}\right)
+such that 
+\begin{equation}\label{similarS}
+    H=\mathcal{S}^{-1} \mathbb{H}\mathcal{S}
 \end{equation}
-and then the Hamiltonian 
-\begin{equation}\label{diagHamiltonian}
-    \widetilde{H}=\widetilde{B}_{1}+\mathcal{H}+\widetilde{B}_{L}
-\end{equation}
-that is linked to the original one by 
-\begin{equation}\label{due}
-    HS=S\widetilde{H}\quad \Rightarrow \quad {H}=S\widetilde{H}S^{-1}
-\end{equation}
-This \eqref{diagHamiltonian} has simpler boundary: the left one is lower triangular and the right one is diagonal. The bulk part remains the same. 
-Indeed, by applying the similarity transformation \eqref{Esse} to the Hamiltonian we have:
+The Hamiltonian $\mathbb{H}$ has lower-triangular left boundary and diagonal right boundary, i.e.
 \begin{equation}
-	\widetilde{B}_{1}=SB_{1}S^{-1}=\begin{pmatrix}
+    \mathbb{B}_{1}=SB_{1}S^{-1}=e_{11}-\mathbbm{1}+\sum_{a=2}^{N}\left(\alpha_{a}-\beta_{a}\right)e_{a1}=\begin{pmatrix}
 		0&0&\ldots&0&0\\
 		\alpha_{2}-\beta_{2}&-1&\ldots&0&0\\
 		\vdots&\vdots&\ddots&\vdots&\vdots\\
-		\alpha_{N-1}-\beta_{N-1}&0&\vdots&-1&0\\
-		\alpha_{N}-\beta_{N}&0&\vdots&0&-1
+		\alpha_{N-1}-\beta_{N-1}&0&\ldots&-1&0\\
+		\alpha_{N}-\beta_{N}&0&\ldots&0&-1
 	\end{pmatrix}
 \end{equation}
+and 
 \begin{equation}
-	\widetilde{B}_{L}=SB_{L}S^{-1}=\begin{pmatrix}
-		-1&0&\ldots&0&0\\
+    \mathbb{B}_{L}=SB_{L}S^{-1}=e_{11}-\mathbbm{1}=\begin{pmatrix}
+		0&0&\ldots&0&0\\
 		0&-1&\ldots&0&0\\
 		\vdots&\vdots&\ddots&\vdots&\vdots\\
-		0&0&\vdots&-1&0\\
-		0&0&\vdots&0&0
-	\end{pmatrix}=e_{NN}-\id
+		0&0&\ldots&-1&0\\
+		0&0&\ldots&0&-1
+  \end{pmatrix}
 \end{equation}
+The bulk part of $\mathbb{H}$ is left unchanged by this transformation, i.e.
 \begin{equation}
-	(S\otimes S)H_{x,x+1}(S\otimes S)^{-1}=H_{x,x+1}
+    \mathcal{H}_{x,x+1}=\left(S\otimes S\right)\mathcal{H}_{x,x+1}\left(S\otimes S\right)^{-1}
 \end{equation}
-that also implies that \eqref{Esse} is a symmetry of the bulk part of the Hamiltonian, since  
+In the following of our analysis it will be useful to have a relation between \eqref{hatHamiltonian} and \eqref{bbHamiltonian}. This relation reads as
 \begin{equation}
-	(S\otimes S)H_{x,x+1}=H_{x,x+1}(S\otimes S)
+    \widehat{H}=\mathcal{T}^{-1}\mathbb{H}\;\mathcal{T}
 \end{equation}
-The relation with the original Hamiltonian is found by imposing \eqref{uno}=\eqref{due}.
+where
 \begin{equation}
-	\begin{split}
-		\left(V^{-1}\right)^{T}H_{dual}^{T}V^{T}&=S\widetilde{H}S^{-1}\\
-		VH_{dual}V^{-1}&=S^{T}\widetilde{H}^{T}\left(S^{-1}\right)^{T}\\
-		H_{dual}&=V^{-1}S^{T}\widetilde{H}^{T}\left(S^{-1}\right)^{T}V\\
-		H_{dual}&=T^{-1}\widetilde{H}^{T}T
-	\end{split}
+    T=\left(S^{-1}\right)^{T}V=\exp{\left(\sum_{a=2}^{N}\beta_{a}e_{1a}\right)}
 \end{equation}
-where 
+and 
 \begin{equation}
-	T:=\left(S^{-1}\right)^{T}V
+    \mathcal{T}:=T^{\otimes L}
 \end{equation}
-Associated to these new Hamiltonians we can define their steady states: 
+Indeed, by imposing equal \eqref{similarV} and \eqref{similarS} we obtain 
+\begin{align*}
+    		\left(\mathcal{V}^{-1}\right)^{T}\widehat{H}^{T}\mathcal{V}^{T}&=\mathcal{S}\mathbb{H}\mathcal{S}^{-1}\\
+		\mathcal{V}\widehat{H}\mathcal{V}^{-1}&=\mathcal{S}^{T}\mathbb{H}^{T}\left(\mathcal{S}^{-1}\right)^{T}\\
+		\widehat{H}&=\mathcal{V}^{-1}\mathcal{S}^{T}\mathbb{H}^{T}\left(\mathcal{S}^{-1}\right)^{T}\mathcal{V}\\
+		\widehat{H}&=\mathcal{T}^{-1}\mathbb{H}^{T}\mathcal{T}
+\end{align*}
+Associated with these new Hamiltonians $\widehat{H}$ and $\mathbb{H}$ we define the following steady states
 \begin{equation}
-	H|\Psi\rangle=0\qquad \widetilde{H}|\widetilde{\Psi}\rangle=0\qquad H_{dual}^{T}|\Psi_{ABS}\rangle=0
+	\mathbb{H}|\widetilde{\Psi}\rangle=0\qquad \widehat{H}^{T}|\widehat{\Psi}\rangle=0
 \end{equation}
-that are linked each others as follows
-\begin{equation}\label{SteadyStates}
-	|\Psi\rangle=\left(S^{-1}\right)^{\otimes L}|\widetilde{\Psi}\rangle\qquad |\Psi\rangle =\left((V^{T})^{-1}\right)^{\otimes L}|\Psi_{ABS}\rangle \qquad |\Psi_{ABS}\rangle=\left(T^{T}\right)^{\otimes L}|\widetilde{\Psi}\rangle
-\end{equation}
-We can exploit \eqref{SteadyStates}, to compute the steady state of the original Hamiltonian \eqref{hamiltonian}.
-\subsection{Absorption probabilities}
-\subsubsection*{The steady state of $\widetilde{H}$}
-We will show that the steady state $|\widetilde{\Psi}\rangle$ of $\widetilde{H}$ is the following 
+The steady states $|\Psi\rangle$, $|\widehat{\Psi}\rangle$ and $|\widetilde{\Psi}\rangle$ are linked by 
+\begin{align}
+	|\Psi\rangle=&\left(\mathcal{S}^{-1}\right)|\widetilde{\Psi}\rangle\label{SteadystateTilde}
+ \\|\Psi\rangle =&\left((\mathcal{{V}}^{T})^{-1}\right)|\widehat{\Psi}\rangle \label{SteadystateHat}
+ \\|\widehat{\Psi}\rangle=&\left(\mathcal{T}^{T}\right)|\widetilde{\Psi}\rangle\label{SteadyStateHatTilde}
+\end{align}
+In the following subsections we will first compute the steady state $|\widetilde{\Psi}\rangle$. Then, using the transformation $\mathcal{T}$ we will retrieve $|\widehat{\Psi}\rangle$. Finally, using the transformation $\mathcal{V}$ we will find $|\Psi\rangle$. 
+\subsubsection{The steady state of $\mathbb{H}$}
+We state the following result. The steady state of the Hamiltonian $\mathbb{H}$ defined in \eqref{bbHamiltonian} is given by 
 \begin{equation}\label{ResulsBasis}
-	|\widetilde{\Psi}\rangle=\sum_{s_{1},\ldots,s_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{i=1}^{L}\delta_{s_{i},1}\right)}{\Gamma\left(L+2\right)}\prod_{i=1}^{L}\left[\lambda_{s_{i}}\left(1+\sum_{j=i}^{L}\delta_{s_{j},1}\right)\right]^{1-\delta_{s_{i},1}}|\mathbf{s}\rangle
+	|\widetilde{\Psi}\rangle=\sum_{s_{1},\ldots,s_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{i=1}^{L}\delta_{s_{i},1}\right)}{\Gamma\left(L+2\right)}\prod_{i=1}^{L}\left[\lambda_{s_{i}}\left(1+\sum_{j=i}^{L}\delta_{s_{j},1}\right)\right]^{1-\delta_{s_{i},1}}|\mathbf{\bm{s}}\rangle
 \end{equation}
 where 
 \begin{equation}
@@ -936,10 +964,21 @@ where
         0\quad \text{otherwise}
     \end{cases}
 \end{equation}
-and the basis vector $|s\rangle =\bigotimes_{i=1}^{L}|s_{i}\rangle$ with $s_{i}\in\{1,\ldots,N\}$ denotes the species that occupies the site $i\in \{1,\ldots,L\}$.
-\newline
-\\
-By applying the $S$ to the vector $\left(X_{1},\ldots,X_{N}\right)$ 	we obtain new operators of the matrix product ansatz that can be written as: 
+and the basis vector $|\bm{s}\rangle =\bigotimes_{i=1}^{L}|s_{i}\rangle$ with $s_{i}\in\{1,\ldots,N\}$ denotes the species that occupies the site $i\in \{1,\ldots,L\}$.
+\paragraph{Proof of formula \eqref{ResulsBasis}} 
+To prove \eqref{ResulsBasis} we will consider the vector composed by the operators of the MPA $(X_{1},\ldots,X_{N})$ and we will act on it with the similarity transformation \eqref{similarity} obtaining new operators $(\Xt_{1},\ldots,\Xt_{N})$ that will satisfy simpler commutators than \eqref{bulk} and simpler actions than \eqref{leftBoundary} and \eqref{rightBoundary}. This will allow to write explicitly the steady state \eqref{ResulsBasis}.
+For the sake of notation, we denote by 
+\begin{equation}
+    \begin{pmatrix}
+		X_{1}\\ 
+		X_{a}
+	\end{pmatrix}=\begin{pmatrix}
+	    X_{1}\\
+     \vdots\\
+     X_{N}
+	\end{pmatrix}\quad \forall a\in \{2,\ldots,N\}
+\end{equation}
+We obtain the new operators of the MPA that by transforming the original one by \eqref{similarity} 
 \begin{equation}\label{Xtildes2b}
 	\begin{pmatrix}
 		\Xt_{1}\\ 
@@ -954,7 +993,7 @@ By applying the $S$ to the vector $\left(X_{1},\ldots,X_{N}\right)$ 	we obtain n
 		X_{a}-\beta_{a}\Xt_{1}\\ 
 	\end{pmatrix}\qquad \forall a=2,\ldots N
 \end{equation}
-we can also reverse the transformation by $S^{-1}$ and get: 
+We can also reverse the transformation by $S^{-1}$ and get back: 
 \begin{equation}\label{Xes}
 	\begin{pmatrix}
 		X_{1}\\
@@ -967,17 +1006,15 @@ we can also reverse the transformation by $S^{-1}$ and get:
 		\Xt_{a}+\beta_{a}\Xt_{1}\\ 
 	\end{pmatrix}\qquad\forall a\in \{2,\ldots,N\}
 \end{equation}
-These new $\widetilde{X}_{a}$ $\forall a\in \{1,\ldots,N\}$ satisfy new commutation relations.\\ 
-Summing over \eqref{bulk} we get
+Summing over $b\in \{1,\ldots,N\}$ in \eqref{bulk} we have
 \begin{equation} 
 	\left[X_{a},\Xt_{1}\right]=\lambda_{a}\Xt_{1}\qquad\forall a=1,\ldots,N
 \end{equation}
-such that it immediately follows that
+therefore, we obtain the commutation relations for $\Xt_{a}$ $\forall a\in \{1,\ldots,N\}$
 \begin{equation}\label{commutationsBulk}
 	\left[\Xt_{a},\Xt_{1}\right]=\lambda_{a}\Xt_{1}\qquad \forall a\in \{2,\ldots,N\}
 \end{equation}
-
-We further get
+Moreover using \eqref{Xtildes2b} and \eqref{Xes}, the action of $\Xt_{a}$ $\forall a\in \{1,\ldots,N\}$ on the boundary vectors are given by 
 \begin{equation}\label{commLEFT}
 	\langle W|\left(\lambda_{a}\Xt_{1}-\Xt_{a}\right)=\lambda_{a}\langle W|\qquad\forall a=2,\ldots,N
 \end{equation}
@@ -985,45 +1022,45 @@ We further get
 	\Xt_{a} |V\rangle= \lambda_{a}|V\rangle\qquad\forall a=2,\ldots,N
 \end{equation} 
 The vector $|\widetilde{\Psi}\rangle$ is written as:
-\begin{equation}
+\begin{equation}\label{toDetermineTilde}
 	|\widetilde{\Psi}\rangle = \frac{1}{Z_{L}}\sum_{\mathbf{n}\in \Omega}\langle W|\prod_{i=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{i}}
-	|V \rangle |\mathbf{n}\rangle
+	|V \rangle \,|\mathbf{n}\rangle
 \end{equation}
 where the basis is 
 $$
 |\mathbf{n}\rangle =|n_{1}^{1},\ldots,n_{N}^{1}\rangle \otimes \ldots\otimes |n_{1}^{L},\ldots,n_{N}^{L}\rangle
 $$
-such that for each site $x\in \{1,\ldots,L\}$ they must fulfill the hard-core constraint $$\sum_{a=1}^{N}n_{a}^{x}=1$$
-The vector $|\widetilde{\Psi}\rangle $ has dimension $N^{L}$. \\
-We need to compute the coefficient $\langle W|\prod_{i=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{m_{a}^{i}}
+such that for each site $x\in \{1,\ldots,L\}$ $|n^{x}\rangle=|n_{1}^{x},\ldots,n_{N}^{x}\rangle\in \Omega_{x}$. 
+We also observe that the vector $|\widetilde{\Psi}\rangle $ has dimension $N^{L}$. \\
+To determine the steady state \eqref{toDetermineTilde}, we need to compute the coefficient $\langle W|\prod_{i=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{m_{a}^{i}}
 |V \rangle$ and the normalization $Z_{L}$. We use the new commutations relations \eqref{commutationsBulk},\eqref{commLEFT} and \eqref{commRIGHT}.\\
 We  rewrite \eqref{commutationsBulk} as:
 \begin{equation}\label{UsefulRelation}
 	\widetilde{X}_{a}\widetilde{X}_{1}=\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}
 \end{equation}
-We first observe that $\forall a\in \{2,\ldots,N\}$ and $\forall l,n\in \mathbb{N}$ we have, thanks to \eqref{UsefulRelation}: 
+Fixing $ a\in \{2,\ldots,N\}$ and $\forall \ell,n\in \mathbb{N}$ and applying many times \eqref{UsefulRelation} we have
 \begin{align*}
-	\widetilde{X}_{a}^{n}\widetilde{X}_{1}^{l}&=\widetilde{X}_{a}^{n-1}\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\widetilde{X}_{N}^{l-1}
-	\\&=\lambda_{a}\widetilde{X}_{a}^{n-1}\widetilde{X}_{1}^{l}+\widetilde{X}_{a}^{n-1}\widetilde{X}_{1}\widetilde{X}_{a}\widetilde{X}_{1}^{l-1}
+	\widetilde{X}_{a}^{n}\widetilde{X}_{1}^{\ell}&=\widetilde{X}_{a}^{n-1}\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\widetilde{X}_{N}^{\ell-1}
+	\\&=\lambda_{a}\widetilde{X}_{a}^{n-1}\widetilde{X}_{1}^{\ell}+\widetilde{X}_{a}^{n-1}\widetilde{X}_{1}\widetilde{X}_{a}\widetilde{X}_{1}^{\ell-1}
 	\\&=
-	\lambda_{a}\widetilde{X}_{a}^{n-2}\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\widetilde{X}_{1}^{l-1}+\widetilde{X}_{a}^{n-2}\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\widetilde{X}_{1}^{l-1}
+	\lambda_{a}\widetilde{X}_{a}^{n-2}\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\widetilde{X}_{1}^{\ell-1}+\widetilde{X}_{a}^{n-2}\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\widetilde{X}_{1}^{\ell-1}
 	\\&=\ldots\\&=
-	\widetilde{X}_{1}^{l}\left(\widetilde{X}_{a}+l\lambda_{a}\right)^{n}
+	\widetilde{X}_{1}^{\ell}\left(\widetilde{X}_{a}+\ell\lambda_{a}\right)^{n}
 \end{align*}
-Thus
+therefore 
 \begin{align*}
 	\widetilde{X}_{1}^{n_{1}}\ldots\widetilde{X}_{N-1}^{n_{N-1}}\widetilde{X}_{N}^{n_{N}}=\widetilde{X}_{1}^{n_{1}}\prod_{a=2}^{N}\left(\widetilde{X}_{a}+n_{1}\lambda_{a}\right)^{n_{a}}
 \end{align*}
-by consequence
+By taking the product over the sites $i$ from $1$ to L we obtain 
 \begin{equation}
 	\prod_{i=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{i}}=\widetilde{X}_{1}^{\sum_{i=1}^{L}n_{1}^{l}}\prod_{i=1}^{L}\prod_{a=2}^{N}\left(\widetilde{X}_{a}+\lambda_{a}\sum_{j=i}^{L}n_{1}^{j}\right)^{n_{a}^{i}}
 \end{equation}
-Thus we obtain
+Therefore, multiplying by the boundary vectors we have 
 \begin{equation*}
 	\langle W|\prod_{i=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{i}}
 	|V \rangle=\langle W|\widetilde{X}_{1}^{\sum_{i=1}^{L}n_{1}^{l}}\prod_{i=1}^{L}\prod_{a=2}^{N}\left(\widetilde{X}_{a}+\lambda_{a}\sum_{j=i}^{L}n_{1}^{j}\right)^{n_{a}^{i}}|V\rangle
 \end{equation*}
-by using \eqref{commRIGHT}
+Using \eqref{commRIGHT}
 \begin{align*}
 	W|\prod_{i=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{i}}
 	|V \rangle&=\langle W|\widetilde{X}_{1}^{\sum_{i=1}^{L}n_{1}^{i}}\prod_{i=1}^{L}\prod_{a=2}^{N}\left(\lambda_{a}+\lambda_{a}\sum_{j=i}^{L}n_{1}^{j}\right)^{n_{a}^{i}}|V\rangle
@@ -1032,9 +1069,9 @@ by using \eqref{commRIGHT}
 	\\&=
 	\prod_{i=1}^{L}\prod_{a=2}^{N}\left(\lambda_{a}\right)^{n_{a}^{i}}\left(1+\sum_{j=i}^{L}n_{1}^{j}\right)^{n_{a}^{i}}\langle W|\widetilde{X}_{1}^{\sum_{i=1}^{L}n_{1}^{l}}|V\rangle
 \end{align*}
-we only need to compute $\langle W|\widetilde{X}_{1}^{\sum_{i=1}^{L}n_{1}^{l}}|V\rangle$. For the sake of notation call $\sum_{i=1}^{L}n_{1}^{i}=n_{1}$. Take an arbitrary $a\in \{2,\ldots,N\}$
+To determine the state we need to compute $\langle W|\widetilde{X}_{1}^{\sum_{i=1}^{L}n_{1}^{l}}|V\rangle$. Calling $\sum_{i=1}^{L}n_{1}^{i}=n_{1}$ and taking an arbitrary $a\in \{2,\ldots,N\}$ we have
 \begin{align*}
-	\langle W|\widetilde{X}_{1}^{m_{1}}|V\rangle&=\langle W|\widetilde{X}_{1}\widetilde{X}_{1}^{n_{1}-1}|V\rangle=\langle W|\widetilde{X}_{1}^{n_{1}-1}|V\rangle +\langle W|\frac{1}{\lambda_{a}}\widetilde{X}_{a}\widetilde{X}_{1}^{n_{1}-1}|V\rangle
+	\langle W|\widetilde{X}_{1}^{n_{1}}|V\rangle&=\langle W|\widetilde{X}_{1}\widetilde{X}_{1}^{n_{1}-1}|V\rangle=\langle W|\widetilde{X}_{1}^{n_{1}-1}|V\rangle +\langle W|\frac{1}{\lambda_{a}}\widetilde{X}_{a}\widetilde{X}_{1}^{n_{1}-1}|V\rangle
 	\\&=
 	\langle W|\widetilde{X}_{1}^{n_{1}-1}|V\rangle+\frac{1}{\lambda_{a}}\langle W|\widetilde{X}_{1}^{n_{1}-1}\left(\widetilde{X}_{a}+\lambda_{a}(n_{1}-1)\right)|V\rangle
 	\\&=
@@ -1044,13 +1081,14 @@ we only need to compute $\langle W|\widetilde{X}_{1}^{\sum_{i=1}^{L}n_{1}^{l}}|V
 	\\&=
 	\frac{\Gamma(2+n_{1})}{\Gamma(2+n_{1}-1)}\langle W|\widetilde{X}_{1}^{n_{1}-1}|V\rangle
 \end{align*}
-we have a recursion
+This leads to the recursion relation
 \begin{equation}
 	\begin{cases}
 		\langle W|\widetilde{X}_{1}^{n_{1}}|V\rangle=\frac{\Gamma(2+n_{1})}{\Gamma(2+n_{1}-1)}\langle W|\widetilde{X}_{1}^{n_{1}-1}|V\rangle\\
 		\langle W|\widetilde{X}_{1}^{0}|V\rangle=1
 	\end{cases}
 \end{equation}
+that implies 
 \begin{align*}
 	\langle W|\widetilde{X}_{1}^{n_{1}}|V\rangle&=\frac{\Gamma(2+n_{1})}{\Gamma(2+n_{1}-1)}\langle W|\widetilde{X}_{1}^{n_{1}-1}|V\rangle=\langle W|\widetilde{X}_{1}^{n_{1}}|V\rangle=\frac{\Gamma(2+n_{1})}{\Gamma(2+n_{1}-1)}\frac{\Gamma(2+n_{1}-1)}{\Gamma(2+n_{1}-2)}\langle W|\widetilde{X}_{1}^{n_{1}-2}|V\rangle\\&=
 	\frac{\Gamma(2+n_{1})}{\Gamma(2+n_{1}-1)}\frac{\Gamma(2+n_{1}-1)}{\Gamma(2+n_{1}-2)}\ldots \frac{\Gamma(2-1)}{\Gamma(2)}\langle W|\widetilde{X}_{1}^{0}|V\rangle
@@ -1062,207 +1100,219 @@ By using this result we have
 	\langle W|\prod_{i=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{i}}
 	|V \rangle=\frac{\Gamma(2+n_{1})}{\Gamma(2)}\prod_{i=1}^{L}\prod_{a=2}^{N}\left(\lambda_{a}\right)^{n_{a}^{i}}\left(1+\sum_{j=i}^{L}n_{1}^{j}\right)^{n_{a}^{i}}
 \end{equation}
-we add the normalization
+The normalization constant is computed similarly as 
 \begin{align*}
 	Z_{L}&=\langle W|(X_{1}+\ldots+X_{N})^{L}|V\rangle=\langle W|\widetilde{X}_{1}^{L}|V|\rangle=
 	\frac{\Gamma(2+L)}{\Gamma(2)}
 \end{align*}
-All in all
+Therefore, we write the coefficients of the linear combination \eqref{toDetermineTilde} as 
 \begin{equation}\label{resulEsteady}
 	|\widetilde{\Psi}\rangle= \sum_{\mathbf{n}\in \Omega}\frac{\Gamma(2+\sum_{i=1}^{L}n_{1}^{i})}{\Gamma(2+L)}\prod_{i=1}^{L}\prod_{a=2}^{N}\left(\lambda_{a}\right)^{n_{a}^{i}}\left(1+\sum_{j=i}^{L}n_{1}^{j}\right)^{n_{a}^{i}}|\mathbf{n}\rangle
 \end{equation}
-
- We now perform a change of basis. By calling $s_{i}$ the (only) species present at site $i$, we can rewrite
+Calling $s_{i}$ the species present at site $i$, we rewrite the basis vector 
 \begin{equation}
 	|n_{1}^{i},\ldots,n_{N}^{i}\rangle=|s_{i}\rangle
 \end{equation}
-where $s_i=\sum_{k=1}^Nk\delta_{n_k^i,1}$. 
-Then it is to see that 
+where $s_i=\sum_{k=1}^N\delta_{n_k^i,1}$. Finally we take the tensor product of the vectors $|s_{i}\rangle$ and we obtain
 \begin{equation}
 	|\mathbf{s}\rangle=\bigotimes_{i=1}^{L}|s_{i}\rangle=|\mathbf{s}\rangle
 \end{equation}
-with $s_{i}\in\{1,\ldots,N\}$.     
-\\Moreover, for a fixed site $i$, the coefficient
-\begin{equation}
-	\prod_{a=2}^{N}\left(\lambda_{a}\right)^{n_{a}^{i}}\left(1+\sum_{j=i}^{L}n_{1}^{j}\right)^{n_{a}^{i}}
-\end{equation}
-has only one factor, associated to the non empty species $a$ that is the site $i$, i.e. to the only $m_{a}^{i}\neq 0$. Furthermore, if the site $i$ has the empty, i.e. $1$, the whole coefficient equals 1. The $m_{1}^{i}$ are one if and only if the occupation of site $i$ is $1$, then it easy to see that $m_{1}^{i}=\delta_{s_{i},1}$. Then, we can write
+with $s_{i}\in\{1,\ldots,N\}$. For a fixed site $i$, because of the hard-core interaction that allows at most one particle on type different from $1$ ,at site $i$ we have 
 \begin{equation}
 	\prod_{a=2}^{N}\left(\lambda_{a}\right)^{n_{a}^{i}}\left(1+\sum_{j=i}^{L}n_{1}^{j}\right)^{n_{a}^{i}}=\left[\lambda_{s_{i}}\left(1+\sum_{j=i}^{L}\delta_{s_{j},1}\right)\right]^{1-\delta_{s_{i},1}}
 \end{equation}
-As already pointed out, $m_{1}^{i}=\delta_{s_{i},1}$, then 
+Moreover, we have 
 \begin{equation}
 	\frac{\Gamma(2+\sum_{i=1}^{L}n_{1}^{i})}{\Gamma(2+L)}=\frac{\Gamma\left(2+\sum_{i=1}^{L}\delta_{s_{i},1}\right)}{\Gamma\left(L+2\right)}
 \end{equation}
-Finally, making the sum over all $\mathbf{s}\in \Omega$ is equivalent to sum over all the possible values of each $s_{i}\in\{1,\ldots,N\}$ $\forall i\in\{1,\ldots,L\}$. Thus, by putting all these things together, we obtain \eqref{ResulsBasis} from \eqref{resulEsteady}
-\subsubsection*{The steady state of $H_{dual}^{T}$}
-The steady state $|\Psi_{ABS}\rangle$ such that $H_{dual}^{T}|\Psi_{abs}\rangle=0$ is given by the following formula:
+Finally summing over all $\mathbf{s}\in \Omega$ (that is equivalent, $\forall i\in\{1,\ldots,L\}$, to summing over all the possible values of each $s_{i}\in\{1,\ldots,N\}$) we obtain \eqref{ResulsBasis} from \eqref{resulEsteady}.
+\begin{flushright}
+$\square$
+\end{flushright}
+\subsubsection{The steady state of $\widehat{H}$}
+Knowing the steady state \eqref{ResulsBasis} of the Hamiltonian $\mathbb{H}$ defined in \eqref{bbHamiltonian}, we use \eqref{SteadyStateHatTilde} to retrieve the steady state of the Hamiltonian $\widehat{H}$ defined in \eqref{hatHamiltonian}. The result is the following 
+\begin{equation}\label{ABS-vect}
+    |\widehat{\Psi}\rangle =\sum_{s_{1},\ldots,s_{L}=1}^{N}\widehat{\Psi}(\bm{s})|\bm{s}\rangle 
+\end{equation}
+where 
 \begin{equation}\label{ABS}
 		\begin{split}
-			|\Psi_{ABS}\rangle=\sum_{s_{1},\ldots,s_{L}=1}^{N}\sum_{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(L+2)}\prod_{l=1}^{L}\left(\lambda_{s_{l}}\left(1+L-l-\sum_{j=l}^{L}c_{j}\right)\right)^{c_{l}}\beta_{s_{l}}^{(1-c_{l})(1-\delta_{s_{l},1})}\bigotimes_{r=1}^{L} |s_{r}\rangle
+			\widehat{\Psi}(\bm{s})=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(L+2)}\prod_{l=1}^{L}\left(\lambda_{s_{l}}\left(1+L-l-\sum_{j=l}^{L}c_{j}\right)\right)^{c_{l}}\beta_{s_{l}}^{(1-c_{l})(1-\delta_{s_{l},1})}
 		\end{split}
 	\end{equation} 
- By \eqref{SteadyStates}, we first need to compute $(T^{T})^{\otimes L}$. 
-The matrix $T$ has the following form
-\begin{equation}\label{ExplicitMatrixT}
-	T=\exp\left(-\sum_{b=2}^{N}e_{b1}\right)\exp\left(\sum_{a=2}^{N}\beta_{a}e_{1a}\right)\exp\left(\sum_{b=2}^{N}e_{b1}\right)=\exp\left(\sum_{a=2}^{N}\beta_{a}e_{1a}\right)
-\end{equation}
-Thus
-\begin{equation}
-	T=I_{N\times N}+\begin{pmatrix}
-		0&\beta_{2}&\ldots&\beta_{N}\\
-		0&0&\ldots&0\\
-		\vdots&\vdots&\ldots&\vdots\\
-		0&0&\ldots&0
-	\end{pmatrix}
-\end{equation}
-We introduce the following notation: $e_{a}^{b}=e_{ab}$, $e_{ab}\otimes e_{cd}=e_{a,c}^{b,d}$ and $$\delta_{a,b}=\begin{cases}
-	1\quad \text{if}\quad a=b\\
-	0\quad \text{if}\quad a\neq b
-\end{cases}$$ 
-Then we have that 
-\begin{equation}
-	T^{T}=I_{N\times N}+\begin{pmatrix}
-		0&0&\ldots&0\\
-		\beta_{2}&0&\ldots&0\\
-		\vdots&\vdots&\ldots&\vdots\\
-		\beta_{N}&0&\ldots&0
-	\end{pmatrix}=\sum_{s_{1}=1}^{N}e_{i}^{i}+(1-\delta_{s_{1},1})\sum_{s_{1}=2}^{N}\beta_{s_{1}}e_{s_{1}}^{1}
-\end{equation}
-For the sake of notation let us introduce also the following matrix
-\begin{equation}
-	Q:=(1-\delta_{s_{1},1})\sum_{s_{1}=2}^{N}\beta_{s_{1}}e_{s_{1}}^{1}
-\end{equation}
-We start by computing 
-\begin{equation}
-	T^{T}\otimes T^{T}=\left(I_{N\times N}+Q\right)\otimes\left(I_{N\times N}+Q\right)=I_{N\times N}\otimes I_{N\times N}+I_{N\times N}\otimes Q+Q\otimes I_{N\times N}+Q\otimes Q
-\end{equation}
-Let's compute each terms separately:
-\begin{equation}
-	I_{N\times N}\otimes I_{N\times N}=\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}\otimes \sum_{s_{2}=1}^{N}e_{s_{2}}^{s_{2}}=\sum_{s_{1},s_{2}=1}^{N}e_{s_{1},s_{2}}^{s_{1},s_{2}}
-\end{equation}
-\begin{equation}
-	I_{N\times N}\otimes Q=(1-\delta_{s_{2},1})\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}\otimes \sum_{s_{2}=2}^{N}\beta_{s_{2}}e_{s_{2}}^{1}=(1-\delta_{s_{2},1})\sum_{s_{1}=1,s_{2}=2}^{N}e_{s_{1},s_{2}}^{s_{1},1}\beta_{s_{2}}
-\end{equation}
-\begin{equation}
-	Q\otimes I_{N\times N}=(1-\delta_{s_{1},1})\sum_{s_{1}=2}^{N}\beta_{s_{1}}e_{s_{1}}^{1}\otimes \sum_{s_{2}=1}^{N}e_{s_{2}}^{s_{2}}=(1-\delta_{s_{1},1})\sum_{s_{1}=2,s_{2}=1}^{N}e_{s_{1},s_{2}}^{1,s_{2}}\beta_{s_{1}}
-\end{equation}
-\begin{equation}
-	Q\otimes Q=(1-\delta_{s_{1},1})(1-\delta_{s_{2},1})\sum_{s_{1}=2}^{N}\beta_{s_{1}}e_{s_{1}}^{1}\otimes \sum_{s_{2}=2}^{N}\beta_{s_{2}}e_{s_{2}}^{1}=(1-\delta_{s_{1},1})(1-\delta_{s_{2},1})\sum_{s_{1},s_{2}=2}^{N}\delta_{s_{1},s_{2}}^{1,1}\beta_{s_{1}}\beta_{s_{2}}
-\end{equation}
-Take a line of the matrix $T^{T}\otimes T^{T}$ identified by index $(s_{1},s_{2})$, then it can be written as
-\begin{equation}
-	\left(T^{T}\otimes T^{T}\right)_{(s_{1},s_{2})}=e_{s_{1},s_{2}}^{s_{1},s_{2}}+(1-\delta_{s_{2},1})\beta_{s_{2}}e_{s_{1},s_{2}}^{s_{1},1}+(1-\delta_{s_{1},1})\beta_{s_{1}}e_{s_{1},s_{2}}^{1,s_{2}}+(1-\delta_{s_{1},1})(1-e_{s_{2},1})\beta_{s_{1}}\beta_{s_{2}}e_{s_{1},s_{2}}^{1,1}
-\end{equation}
-Then it is easy to generalize for an arbitrary order of tensor product. Take the configuration with $L$ sites and identify the row $\mathbf{s}=(s_{1},\ldots,s_{L})$ with $s_{i}\in \{1,\ldots,N\}$, $\forall i\in\{1,\ldots,L\}$:
-\begin{equation}
-	\begin{split}
-		\left(T^{T}\right)^{\otimes L}_{s_{1},\ldots,s_{L}}&=e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}+\sum_{k_{1}=s_{1},\ldots,s_{L}\,:\,k_{1}\neq 1}e_{s_{1},\ldots,k_{1},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{k_{1}}\\&+\sum_{k_{1},k_{2}=s_{1},\ldots,s_{L}\,:\,k_{1},k_{2}\neq 1}e_{s_{1},\ldots,k_{1},\ldots,k_{2}\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,1,\ldots,s_{L}}\beta_{k_{1}}\beta_{k_{2}}+\ldots+\left(\sum_{i=1}^{L}(1-\delta_{s_{i},1})\right)\prod_{i=1}^{L}\left(\beta_{s_{i}}\right)^{1-\delta_{s_{i},1}}e_{s_{1},\ldots,s_{L}}^{1,\ldots,1}
-	\end{split}
-\end{equation}
-Then, by multiplying this matrix for the vector $|\widetilde{\Psi}\rangle$ we obtain
-\begin{equation}\label{ABS_intermediate}
-	\begin{split}
-		\Psi_{ABS}(\mathbf{s})&=\left(T^{T}\right)^{\otimes m}_{s_{1},\ldots,s_{L}}|\widetilde{\Psi}\rangle\\&= \widetilde{\Psi}(\mathbf{s})+\sum_{k_{1}=s_{1},\ldots,s_{L}\,:\, k_{1}\neq 1}\widetilde{\Psi}(s_{1},\ldots,\overbrace{1}^{k_{1}},\ldots,s_{L})\beta_{k_{1}}\\&+
-		\sum_{k_{1},k_{2}=s_{1},\ldots,s_{L}\,:\, k_{1},k_{2}\neq 1}\widetilde{\Psi}(s_{1},\ldots,\overbrace{1}^{k_{1}},\ldots,\overbrace{1}^{k_{2}},\ldots,s_{L})\beta_{k_{1}}\beta_{k_{2}}\\&+\ldots+\widetilde{\Psi}(1,\ldots,1)\left(\sum_{i=1}^{L}(1-\delta_{s_{i},1})\right)\prod_{i=1}^{L}\left(\beta_{s_{i}}\right)^{1-\delta_{s_{i},1}}
-	\end{split}
-\end{equation}
-from \eqref{resulEsteady}, we have the following equation
-\begin{equation}
-	\widetilde{\Psi}(\mathbf{s})=\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{s_{i},1})}{\Gamma(L+2)}\prod_{i=1}^{L}\left(\lambda_{s_{i}}\left(1+L-i-\sum_{j=i}^{L}(1-\delta_{s_{i},1})\right)\right)^{1-\delta_{s_{i},1}}
-\end{equation}
-Then, for fixed $\mathbf{s}$ we have a contribution of a factor $\lambda_{s_{i}}\left(1+L-i-\sum_{j=i}^{L}(1-\delta_{s_{i},1})\right)$ if the site is non empty, and a contribution of a factor $1$ if the site is empty. 
-Let's introduce the coefficients 
-\begin{equation}
+and where
+ \begin{equation}\label{CiEquation}
 	c_{i}=\begin{cases}
 		1\quad \text{if}\quad s_{i}\neq 1\\
 		0\quad \text{if}\quad s_{i}=1
-	\end{cases}
+	\end{cases}\qquad \forall i\in \{1,\ldots,N\}
 \end{equation}
-Thus we have $\widetilde{\Psi}(\mathbf{s})$ when all the $c_{i}$ are one and $\widetilde{\Psi}(1,\ldots,1)$ when all the $c_{i}$ are zero. All the configurations in between refers to different values of these $c_{i}$. \\The equation \eqref{ABS_intermediate}, can now be written in terms of $c_{i}$ as follows
+\paragraph{Proof of formula \eqref{ABS-vect}} As a consequence of \eqref{SteadyStateHatTilde}, we only need to show how the transformation $\mathcal{T}^{T}$ acts on the vector $|\widetilde{\Psi}\rangle$. The matrix $T^{T}$ is given by 
+\begin{equation}
+    T^{T}=\mathbbm{1}+\sum_{a=2}^{N}\beta_{a}e_{a1}
+\end{equation}
+We introduce the following notation
+\begin{equation}\label{notation1}
+    e_{ab}=e_{a}^{b}=\left(\delta_{a,c}\delta_{b,d}\right)_{c,d\in\{1,\ldots,N\}}\qquad \forall a,b\in \{1,\ldots,\}
+\end{equation}
+and 
+\begin{equation}\label{notation2}
+    e_{ab}\otimes e_{cd}=e_{a,c}^{b,d}=\left(\delta_{(a,b),(e,f)}\delta_{(c,d),(g,h)}\right)_{e,f,g,h\in \{1,\ldots,N\}}\qquad \forall a,b,c,d\in \{1,\ldots,N\}
+    \end{equation}
+    that can be generalized for $e_{s_{1},\ldots,s_{L}}^{q_{1},\ldots,q_{L}}$ with $s_{1},\ldots,s_{L},q_{1},\ldots,q_{L}\in \{1,\ldots,N\}$. With this notation we have that 
+    \begin{equation}
+        T^{T}=\sum_{s_{1}=1}^{N}e_{i}^{i}+Q
+    \end{equation}
+    where
+    \begin{equation}
+	Q:=(1-\delta_{s_{1},1})\sum_{s_{1}=2}^{N}\beta_{s_{1}}e_{s_{1}}^{1}
+\end{equation}
+We compute
+\begin{equation}
+    \begin{split}
+        	T^{T}\otimes T^{T}&=\left(I_{N\times N}+Q\right)\otimes\left(I_{N\times N}+Q\right)
+         \\&=
+         I_{N\times N}\otimes I_{N\times N}+I_{N\times N}\otimes Q+Q\otimes I_{N\times N}+Q\otimes Q
+    \end{split}
+\end{equation}
+where the addends are 
+\begin{equation*}
+\begin{split}
+	&I_{N\times N}\otimes I_{N\times N}=\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}\otimes \sum_{s_{2}=1}^{N}e_{s_{2}}^{s_{2}}=\sum_{s_{1},s_{2}=1}^{N}e_{s_{1},s_{2}}^{s_{1},s_{2}}\\
+	&I_{N\times N}\otimes Q=(1-\delta_{s_{2},1})\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}\otimes \sum_{s_{2}=2}^{N}\beta_{s_{2}}e_{s_{2}}^{1}=(1-\delta_{s_{2},1})\sum_{s_{1}=1,s_{2}=2}^{N}e_{s_{1},s_{2}}^{s_{1},1}\beta_{s_{2}}\\
+	&Q\otimes I_{N\times N}=(1-\delta_{s_{1},1})\sum_{s_{1}=2}^{N}\beta_{s_{1}}e_{s_{1}}^{1}\otimes \sum_{s_{2}=1}^{N}e_{s_{2}}^{s_{2}}=(1-\delta_{s_{1},1})\sum_{s_{1}=2,s_{2}=1}^{N}e_{s_{1},s_{2}}^{1,s_{2}}\beta_{s_{1}}\\
+	&Q\otimes Q=(1-\delta_{s_{1},1})(1-\delta_{s_{2},1})\sum_{s_{1}=2}^{N}\beta_{s_{1}}e_{s_{1}}^{1}\otimes \sum_{s_{2}=2}^{N}\beta_{s_{2}}e_{s_{2}}^{1}=(1-\delta_{s_{1},1})(1-\delta_{s_{2},1})\sum_{s_{1},s_{2}=2}^{N}e_{s_{1},s_{2}}^{1,1}\beta_{s_{1}}\beta_{s_{2}}
+ \end{split}
+\end{equation*}
+The matrix $T^{T}\otimes T^{T}$ has elements $\left\{\left(T^{T}\otimes T^{T}\right)_{s_{1},s_{2}}^{q_{1},q_{2}}\right\}_{s_{1},s_{2},q_{1},q_{2}\in \{1,\ldots,N\}}$, where the subscripts $s_{1},s_{2}$ denote the raw and the superscript $q_{1},q_{2}$ the column. We fix a raw of this matrix with arbitrary index $s_{1},s_{2}$
+\begin{equation}
+	\left(T^{T}\otimes T^{T}\right)_{s_{1},s_{2}}=e_{s_{1},s_{2}}^{s_{1},s_{2}}+(1-\delta_{s_{2},1})\beta_{s_{2}}e_{s_{1},s_{2}}^{s_{1},1}+(1-\delta_{s_{1},1})\beta_{s_{1}}e_{s_{1},s_{2}}^{1,s_{2}}+(1-\delta_{s_{1},1})(1-e_{s_{2},1})\beta_{s_{1}}\beta_{s_{2}}e_{s_{1},s_{2}}^{1,1}
+\end{equation}
+Iterating this tensor product for the chain of length $L$, we write the raw with indices $\bm{s}=s_{1},\ldots,s_{L}$
+ of the matrix $\mathcal{T}^{T}$ as 
 \begin{equation}
 	\begin{split}
-		\Psi_{ABS}(\mathbf{s})=\sum_{c_{1}=0}^{1-\delta_{s_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{s_{L},1}}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(L+2)}\prod_{i=1}^{L}\left[\lambda_{s_{i}}\left(1+L-i-\sum_{j=i}^{L}c_{j}\right)\right]^{c_{i}}\left(\beta_{s_{i}}\right)^{(1-c_{i})(1-\delta_{s_{i},1})}
+		\mathcal{T}^{T}_{\bm{s}}&=\left(T^{T}\right)^{\otimes L}_{s_{1},\ldots,s_{L}}=\,e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}+\sum_{q_{1}=1}^{N}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\\&+\sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{q_{2}}\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\beta_{s_{q_{2}}}
+  \\&+
+  \ldots+\left(\prod_{i=1}^{L}(1-\delta_{s_{i},1})\right)\prod_{i=1}^{L}\left(\beta_{s_{i}}\right)^{1-\delta_{s_{i},1}}e_{s_{1},\ldots,s_{L}}^{1,\ldots,1}
 	\end{split}
 \end{equation}
-The summations goes from $0$ to $\delta_{s_{i},1}$ because in \eqref{ABS_intermediate}, the configurations that has an empty occupation are cosnidered to contribute just with a $1$.
-In the above formual, we make the span over all possible $c_{i}\in\{0,1\}$ when the site is non-empty, and we keep $c_{i}=0$ when the site is empty. Moreover, when $c_{i}=1$ we add a factor $\lambda_{s_{i}}\left(1+L-i-\sum_{j=i}^{L}(1-\delta_{s_{i},1})\right)$, while we add a factor $\beta_{s_{i}}$ when $c_{i}=0$ and the site is non-empty.
-Finally, by considering all possible occupancies of the sites we obtain \eqref{ABS}. 
-\newline
-\textbf{Remark}: {\color{red} Can we interpret the steady state $|\Psi_{ABS}\rangle $ as the absorption probabilities ?}
-\subsection{The steady state and the exact correlations}
-By using the previous result we can write explicit formulas for the steady state of the original Hamiltonian \eqref{hamiltonian} and for arbitrary order correlations. 
-\newline
-The steady state of the original Hamiltonian $|\Psi\rangle$, defined by $H|\Psi\rangle=0$, is characterized by the following formula
-	\begin{equation}\label{ExpSteadyState}
-		\begin{split}
-			|\Psi\rangle &= \sum_{s_{1},\ldots,s_{L}=1}^{N}\left(\sum{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(L+2)}\prod_{i=1}^{L}\left(\lambda_{s_{i}}\left(1+L-i-\sum_{j=i}^{L}c_{j}\right)\right)^{c_{i}}\beta_{s_{i}}^{(1-c_{i})(1-\delta_{s_{i},1})}\right. \\ &+ \left.\sum_{l=0}^{\Xi(\mathbf{s})}(-1)^{l}\delta_{j\geq 1}\sum_{k_{1},\ldots,k_{l}=s_{1},\ldots,s_{L}}\prod_{q=1}^{j}\delta_{k_{q},1}\sum_{\tilde{s}_{k_{1}},\ldots,\tilde{s}_{k_{l}}=2}^{N}\sum_{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\prod_{t=1}^{l}\delta_{c_{k_{t}},1}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(2+L)}\right.\\&\cdot\left.\prod_{i=1\;:\;i\neq k_{1},\ldots,k_{l}}^{L}\left(\lambda_{s_{i}}\left(1+L-i-\sum_{j=i}^{L}c_{j}\right)\right)^{c_{i}}\beta_{s_{i}}^{(1-c_{i})(1-\delta_{s_{i},1})}\prod_{r=1}^{l}\lambda_{\tilde{s}_{k_{r}}}\left(1+L-k_{r}-\sum_{j=i}^{L}c_{j}\right)^{c_{k_{r}}}\right)\bigotimes_{i=1}^{L}|s_{i}\rangle
-		\end{split}
-	\end{equation}
-	where
-	\begin{equation}
-		\Xi(\mathbf{s})=\sum_{i=1}^{L}\delta_{s_{i},1}
-	\end{equation}
- \newline
- \\
- \textbf{Remark}: Let us notice that 	$\forall \mathbf{s}=(s_{1},\ldots,s_{l})$ such that $s_{i}\neq 1$ $\forall i \in\{1,\ldots,L\}$ (i.e. a configuration without any state 1, that can be interpreted as a non-empty configuration) we have that 
-	\begin{equation}\label{LinkABS-corr}
-		\Psi(\mathbf{s})=\Psi_{ABS}(\mathbf{s})
-	\end{equation}
-This can be seen, in such a situation the second addend of \eqref{ExpSteadyState} vanishes. 
- \newline
- By \eqref{SteadyStates}, we only have to compute $\left((V^{-1})^{T}\right)^{\otimes L}$.\\
-For the sake of notation lets call 
-\begin{equation}
-	W:=(V^{-1})^{T}
-\end{equation}
-We have that 
-\begin{equation}
-	W=I_{N\times N}+\begin{pmatrix}
-		0&-1&-1&\ldots&-1\\
-		0&0&0&\ldots&0\\
-		\vdots&\vdots&\vdots&\ddots&\vdots\\
-		0&0&0&\ldots&0
-	\end{pmatrix}=\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}+\delta_{s_{1},1}\sum_{\tilde{s}_{1}=2}^{N}e_{1}^{\tilde{s}_{1}}(-1)
-\end{equation}
-we first take the tensor product between two of them
-\begin{equation}
+The product $\mathcal{T}^{T}|\widetilde{\Psi}\rangle$ gives a vector whose component are denoted by $\widehat{\Psi}(\bm{s})$ that are given by 
+\begin{equation}\label{ABS_intermediate}
 	\begin{split}
-		W\otimes W &= \sum_{s_{1},s_{2}=1}^{N}e_{s_{1},s_{2}}^{s_{1},s_{2}}+(-1)\delta_{s_{2},1}\sum_{s_{1}=1,\tilde{s}_{2}=2}^{N}e_{s_{1},1}^{s_{1},\tilde{s}_{2}}\\&+(-1)\delta_{s_{1},1}\sum_{\tilde{s}_{1}=2,s_{2}=1}^{N}e_{1,s_{2}}^{\tilde{s}_{1},s_{2}} +(-1)(-1)\delta_{s_{1},1}\delta_{s_{2},1}\sum_{\tilde{s}_{1},\tilde{s}_{2}=2}^{N}e_{1,1}^{\tilde{s}_{1},\tilde{s}_{2}}
+		\widehat{\Psi}(\mathbf{s})&=\mathcal{T}^{T}_{\bm{s}}|\widetilde{\Psi}\rangle\\&= \widetilde{\Psi}(\mathbf{s})+\sum_{q_{1}= 1}^{L}(1-\delta_{s_{q_{1}},1})\widetilde{\Psi}(s_{1},\ldots,\overbrace{1}^{s_{q_{1}}},\ldots,s_{L})\beta_{s_{q_{1}}}\\&+
+		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})\widetilde{\Psi}(s_{1},\ldots,\overbrace{1}^{s_{q_{1}}},\ldots,\overbrace{1}^{s_{q_{2}}},\ldots,s_{L})\beta_{k_{1}}\beta_{k_{2}}\\&+\ldots+\widetilde{\Psi}(1,\ldots,1)\left(\prod_{i=1}^{L}(1-\delta_{s_{i},1})\right)\prod_{i=1}^{L}\left(\beta_{s_{i}}\right)^{1-\delta_{s_{i},1}}
 	\end{split}
 \end{equation}
-In the above formula, there is a diagonal term that is always present, while the other addend that is non-vanishing when there is at least one empty. \\
-Let's iterating the tensor product multiplication. Then, for a fixed raw, identified by $\mathbf{s}=\{s_{1},\ldots,s_{L}\}$ with $s_{i})_{i=1,\ldots,L}\in \{1,\ldots,N\}$, of the $L-$times tensor product matrix we have the following expression:
+For a fixed configuration $\bm{s}=(s_{1},\ldots,s_{N})$, using equation \eqref{ResulsBasis} and observing that 
 \begin{equation}
+  \left(1+\sum_{j=i}^{L}\delta_{s_{j},1}\right) =\left(1+L-i-\sum_{j=i}^{L}(1-\delta_{s_{i},1})\right)
+\end{equation}
+we obtain 
+    \begin{equation}
+	\widetilde{\Psi}(\bm{s})=\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{s_{i},1})}{\Gamma(L+2)}\prod_{i=1}^{L}\left(\lambda_{s_{i}}\left(1+L-i-\sum_{j=i}^{L}(1-\delta_{s_{i},1})\right)\right)^{1-\delta_{s_{i},1}}
+\end{equation}
+Because of the exponent $(1-\delta_{s_{i},1})$, the element $\widetilde{\Psi}(\bm{s})$ has, up the term $\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{s_{i},1})}{\Gamma(L+2)}$, a contribution of a factor $\lambda_{s_{i}}\left(1+L-i-\sum_{j=i}^{L}(1-\delta_{s_{i},1})\right)$ if the site is non empty, and a contribution of a factor "$1$" if the site is empty, it is convenient to introduce the $c_{i}$ of defined in \eqref{CiEquation}. Then, equation  \eqref{ABS_intermediate} reads 
+\begin{equation}\label{elementsABS}
 	\begin{split}
-		(W)^{\otimes L}_{\mathbf{s}}&=e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}+\sum_{l=0}^{\Xi(\mathbf{s})}(-1)^{l}\delta_{l\geq 1}\sum_{k_{1},\ldots,k_{l}=s_{1},\ldots,s_{L}}\prod_{q=1}^{l}\delta_{k_{q},1}\sum_{\tilde{s}_{k_{1}},\ldots,\tilde{s}_{k_{j}}=2}^{N}e_{s_{1},\ldots,\underbrace{1}_{k_{1}},\ldots,\underbrace{1}_{k_{l}},\ldots,s_{L}}^{s_{1},\ldots,\tilde{s}_{k_{1}},\ldots,\tilde{s}_{k_{l}},\ldots,s_{L}}
+		\widehat{\Psi}(\mathbf{s})=\sum_{c_{1}=0}^{1-\delta_{s_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{s_{L},1}}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(L+2)}\prod_{i=1}^{L}\left[\lambda_{s_{i}}\left(1+L-i-\sum_{j=i}^{L}c_{j}\right)\right]^{c_{i}}\left(\beta_{s_{i}}\right)^{(1-c_{i})(1-\delta_{s_{i},1})}
 	\end{split}
+\end{equation} 
+Indeed, when $c_{i}=0$ this formula replaces the contribution in the square brackets with a $b_{s_{i}}$. 
+Finally, considering all possible occupancy $\bm{s}$, we obtain \eqref{ABS}.
+\begin{flushright}
+    $\square$
+\end{flushright}
+\subsubsection{The steady state of $H$}
+The steady state $|\Psi\rangle$ of the Hamiltonian $\mathbb{H}$ defined in \eqref{bbHamiltonian} is given by 
+\begin{equation}\label{steadyStateH}
+    |\Psi\rangle=\sum_{s_{1},\ldots,s_{L}=1}^{N}\Psi(\bm{s})|\bm{s}\rangle
 \end{equation}
-where 
+where for every $(s_{1},\ldots,s_{L})=\bm{s}$
+\begin{equation}\label{steadyStateH-coeff}
+    \begin{split}
+        \Psi(\bm{s})&=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(L+2)}\prod_{l=1}^{L}\left(\lambda_{s_{l}}\left(1+L-l-\sum_{j=l}^{L}c_{j}\right)\right)^{c_{l}}\beta_{s_{l}}^{(1-c_{l})(1-\delta_{s_{l},1})}
+        \\&+
+        \sum_{\ell=1}^{L}(-1)^{\ell}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{\ell}=q_{\ell-1}+1}^{L}\left(\prod_{r=1}^{\ell}\delta_{s_{q_{r}},1}\right) 
+        \sum_{r=1}^{\ell}\sum_{d_{q_{r}}=2}^{N}\sum_{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(2+L)}
+  \\ &
+  \prod_{i=1\,:\, i\neq q_{1},\ldots,q_{\ell}}^{L}\left(\lambda_{s_{i}}\left(1-L-i-\sum_{j=i}^{L}c_{j}\right)\right)^{c_{i}}\beta_{s_{i}}^{(1-c_{i})(1-\delta_{s_{i},1})}
+  \prod_{r=1}^{\ell}\lambda_{q_{r}}\left(1+L-q_{r}-\sum_{j=q_{r}}^{L}c_{j}\right)
+    \end{split}
+\end{equation}
+\textbf{Remark}: we observe that if no holes are present in \eqref{steadyStateH-coeff}, i.e. if $s_{i}\neq 1$ $\forall i\in \{1,\ldots,L\}$, then the second addend vanishes and, for these particular configurations, 
+\begin{equation}\label{LinkABS-corr}
+\Psi(\bm{s})=\widehat{\Psi}(\bm{s})
+\end{equation}
+
+
+\paragraph{Proof of formula \eqref{steadyStateH}} To find $|\Psi\rangle$ we will use \eqref{SteadystateHat}. For the sake of notation we call
 \begin{equation}
-	\Xi(\mathbf{s})=\sum_{i=1}^{L}\delta_{s_{i},1}
+    F=\left(V^{-1}\right)^{T}
 \end{equation}
-Now, by multiplying $(W)^{\otimes L}_{s_{1},\ldots,s_{L}}$ with $|\Psi_{ABS}\rangle $ we get
+and thus 
 \begin{equation}
-	\begin{split}
-		(W)^{\otimes L}_{\mathbf{s}}|\Psi_{ABS}\rangle&=\Psi_{ABS}(\mathbf{s})\\&+\sum_{l=0}^{\Xi(\mathbf{s})}(-1)^{l}\delta_{l\geq 1}\sum_{k_{1},\ldots,k_{l}=s_{1},\ldots,s_{L}}\prod_{q=1}^{l}\delta_{k_{q},1}\sum_{\tilde{s}_{k_{1}},\ldots,\tilde{s}_{k_{j}}=2}^{N}\Psi_{ABS}(s_{1},\ldots,\tilde{s}_{k_{1}},\ldots,\tilde{s}_{k_{l}},\ldots,s_{L})
-	\end{split}
+    \mathcal{F}=F^{\otimes L}
 \end{equation}
-Now, we only need to write explicitly the term $\Psi_{ABS}(s_{1},\ldots,\tilde{s}_{k_{1}},\ldots,\tilde{s}_{k_{l}},\ldots,s_{L})$. We use formula\eqref{ABS_intermediate} specialized to the case where we put all the $c_{k_{1}},\ldots,c_{k_{l}}=1$ and we replace the species in the coordinates $k_{1},\ldots,k_{l}$ with  $\tilde{s}_{k_{1}},\ldots,\tilde{s}_{k_{l}}$:
+By direct computations and using the notation introduced in \eqref{notation1} and \eqref{notation2} we have 
 \begin{equation}
-	\begin{split}
-		&\Psi_{ABS}(s_{1},\ldots,\tilde{s}_{k_{1}},\ldots,\tilde{s}_{k_{l}},\ldots,s_{L})=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\prod_{t=1}^{l}\delta_{c_{k_{t}},1}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(2+L)}\\
-		&\cdot\prod_{i=1\;:\;i\neq k_{1},\ldots,k_{l}}^{L}\left(\lambda_{s_{i}}\left(1+L-i-\sum_{j=i}^{L}c_{j}\right)\right)^{c_{i}}\beta_{s_{i}}^{(1-c_{i})(1-\delta_{s_{i},1})}\prod_{r=1}^{l}\lambda_{\tilde{s}_{k_{r}}}\left(1+L-k_{r}-\sum_{j=i}^{L}c_{j}\right)^{c_{k_{r}}}
-	\end{split}
+    F=\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}+\delta_{s_{1},1}(-1)\sum_{d_{1}=2}^{N}e_{1}^{d_{1}}
 \end{equation}
-Finally, we make vary these $\tilde{s}_{k_{1}},\ldots,\tilde{s}_{k_{l}}$  between $2$ and $N$. 
-By putting things together and considering all the rows, we obtain \eqref{ExpSteadyState}.\\
-We can now use the explicit expression of the steady state to find arbitrary point correlations.\\
-\subsubsection*{Exact correlations}
-If we think about $1$ as the empty, the correlations only involve species different from $1$. 
-Thus, for the process defined by the Hamiltonian \eqref{hamiltonian}, the $m$-points correlations, between sites $\mathbf{y}=(y_{1},\ldots,y_{m})$ occupied by the species $\mathbf{s}=(s_{1},\ldots,s_{m})\in \{2,\ldots,N\}^{m}$ are characterized by the following formula:
-	\begin{equation}\label{exactCorrelations}
-		\langle\rho^{y_{1}}_{s_{1}},\ldots,\rho^{y_{m}}_{s_{m}}\rangle=\sum_{c_{1},\ldots,c_{m}=0}^{1}
+Taking the tensor product over two sites we obtain 
+\begin{equation}
+\begin{split}
+    F\otimes F&=\sum_{s_{1},s_{2}=1}^{N}\left(e_{s_{1},s_{2}}^{s_{1},s_{2}}+(-1)\delta_{s_{2},1}\sum_{d_{2}=2}^{N}e_{s_{1},1}^{s_{1},d_{2}}
+     \right.\\ &+\left. 
+    (-1)\delta_{s_{1},1}\sum_{d_{1}=2}^{N}e_{1,s_{2}}^{d_{1},s_{2}}+(-1)^{2}\delta_{s_{1},1}\delta_{s_{2},1}\sum_{d_{1},d_{2}=2}^{N}e_{1,1}^{d_{1},d_{2}}\right)
+    \end{split}
+\end{equation}
+therefore, fixing a raw with indices $s_{1},s_{2}\in \{1,\ldots,N\}$ of the matrix $F\otimes F$ we obtain 
+\begin{equation}
+\begin{split}
+    \left(F\otimes F\right)_{s_{1},s_{2}}&=e_{s_{1},s_{2}}^{s_{1},s_{2}}+(-1)\delta_{s_{2},1}\sum_{d_{2}=2}^{N}e_{s_{1},1}^{s_{1},d_{2}}
+    \\&+
+    (-1)\delta_{s_{1},1}\sum_{d_{1}=2}^{N}e_{1,s_{2}}^{d_{1},s_{2}}+(-1)^{2}\delta_{s_{1},1}\delta_{s_{2},1}\sum_{d_{1},d_{2}=2}^{N}e_{1,1}^{d_{1},d_{2}}
+    \\&=
+    \sum_{q_{1}=1}^{2}\prod_{r=1}^{1}\delta_{s_{q_{r}},1}\sum_{r=1}^{1}\sum_{d_{q_{r}}=2}^{N}e_{s_{i},1}^{s_{i}d_{q_{r}}}
+    +
+    (-1)\sum_{q_{1}=1}^{2}\sum_{q_{2}=q_{1}+1}^{2}\prod_{r=1}^{2}\delta_{s_{q_{r}},1}\sum_{r=1}^{2}\sum_{d_{q_{r}}=2}^{N}e_{s_{i},1}^{s_{i}d_{q_{r}}}
+    \end{split}
+\end{equation}
+where $e_{s_{i},d_{q_{r}}}$ denotes the matrix $e_{s_{1},s_{2}}^{s_{1},s_{2}}$ where the subscripts $s_{q_{r}}$ have been replaced by "1" and the superscript $s_{q_{r}}$ have been replaced by $d_{q_{r}}$, with $r=1,2$. \\
+We generalize this tensor product to an arbitrary number of sites $L$ obtaining the matrix $\mathcal{F}$. We write the expression of a fixed raw with indices $s_{1},\ldots,s_{L}\in \{1,\ldots,N\}$ as 
+\begin{equation}
+    \begin{split}
+        \mathcal{F}_{s_{1},\ldots,s_{L}}&=e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}
+        \\&
+        +\sum_{\ell=1}^{L}(-1)^{\ell}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{\ell}=q_{\ell-1}+1}^{L}\left(\prod_{r=1}^{\ell}\delta_{s_{q_{r}},1}\right)\sum_{r=1}^{\ell}\sum_{d_{q_{r}}=2}^{N}e_{\ldots,s_{i},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,s_{i},\ldots,\,d_{q_{r}}\,,\ldots}
+    \end{split}
+\end{equation}
+where $e_{\ldots,s_{i},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,s_{i},\ldots,\,d_{q_{r}}\,,\ldots}$ denotes the matrix $e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}$ where the subscripts $s_{q_{1}},\ldots,s_{q_{\ell}}$ have been replaced by "1" and the superscripts $s_{q_{1}},\ldots,s_{q_{\ell}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{\ell}}$. \\
+Multiplying the raw with indices $s_{1},\ldots,s_{L}$ of the matrix $\mathcal{F}$ by the vector $|\widehat{\Psi}\rangle$ we obtain 
+\begin{equation}
+    \begin{split}
+        \mathcal{F}_{s_{1},\ldots,s_{L}}|\widehat{\Psi}\rangle&=\widehat{\Psi}(s_{1},\ldots,s_{L})+ 
+        \\&
+        +\sum_{\ell=1}^{L}(-1)^{\ell}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{\ell}=q_{\ell-1}+1}^{L}\left(\prod_{r=1}^{\ell}\delta_{s_{q_{r}},1}\right)\sum_{r=1}^{\ell}\sum_{d_{q_{r}}=2}^{N}\widehat{\Psi}(\ldots,s_{i},\ldots,d_{q_{r}},\ldots)
+    \end{split}
+\end{equation}
+where $\widehat{\Psi}(\ldots,s_{i},\ldots,d_{q_{r}},\ldots)$ denotes the component $\widehat{\Psi}(s_{1},\ldots,s_{L})$ where the occupations  $s_{q_{1}},\ldots,s_{q_{\ell}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{\ell}}$. Using \eqref{elementsABS} we have 
+\begin{equation}
+    \begin{split}
+  &\widehat{\Psi}(\ldots,a_{i},\ldots,d_{q_{r}},\ldots)=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\left(\prod_{r=1}^{\ell}\delta_{c_{r},1}\right)\frac{\Gamma(2+L-\sum_{k=1}^{L}}{\Gamma(2+L)}
+  \\&
+  \prod_{i=1\,:\, i\neq q_{1},\ldots,q_{\ell}}^{L}\left(\lambda_{s_{i}}\left(1-L-i-\sum_{j=i}^{L}c_{j}\right)\right)^{c_{i}}\beta_{s_{i}}^{(1-c_{i})(1-\delta_{s_{i},1})}
+  \prod_{r=1}^{\ell}\lambda_{q_{r}}\left(1+L-q_{r}-\sum_{j=q_{r}}^{L}c_{j}\right)
+    \end{split}
+\end{equation}
+indeed, in coordinates $q_{r}$ with $r=1,\ldots \ell$ the site is non-empty, thus $c_{q_{r}}=1$. Finally, considering all possible occupations $\bm{s}=(s_{1},\ldots,s_{L})$ we obtain \eqref{steadyStateH}. 
+\begin{flushright}
+    $\square$
+\end{flushright}
+\subsection{Exact correlations}\label{correlation-section}
+We compute in this section a formula for the stationary steady state correlations between $m$- points of the chain, each of them occupied by a non empty species, i.e. a species with label from $2$ to $N$. This is motivated by interest of understanding how actual particles of the chain are correlated among each others. Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $\bm{y}=(y_{1},\ldots,y_{m})$, such that $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$. In each of these points there is a particle of species $s_{i}\in \{2,\ldots,N\}$. Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
+\begin{equation}\label{exactCorrelations}
+		\langle n^{y_{1}}_{s_{1}},\ldots,n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{c_{1},\ldots,c_{m}=0}^{1}
 			f(c_{1},\ldots,c_{m})\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(c_{k},\ldots,c_{m})
 	\end{equation}
 	where 
@@ -1273,167 +1323,142 @@ Thus, for the process defined by the Hamiltonian \eqref{hamiltonian}, the $m$-po
 	\begin{equation}\label{powerCoeffNOspec}
 		f(c_{1},\ldots,c_{m})=\frac{\Gamma(L+2-\sum_{i=1}^{m}c_{i})}{\Gamma(L+2)}
 	\end{equation}
-We aim to compute the correlations between the sites $\mathbf{y}=\left(y_{1},\ldots,y_{m}\right)$ occupied by the species $\mathbf{s}=\left(s_{1},\ldots,s_{m}\right)$, such that $s_{1},\ldots,s_{m}\in \{2,\ldots,N\}$. %We exploit the formula \eqref{ExpSteadyState}. %By duality we have that 
-This means that we need to find 
-\begin{equation}
+ \paragraph{Proof of formula \eqref{exactCorrelations}}
+ We aim to compute the correlations between the sites $\mathbf{y}=\left(y_{1},\ldots,y_{m}\right)$ occupied by the species $\mathbf{s}=\left(s_{1},\ldots,s_{m}\right)$, such that $s_{1},\ldots,s_{m}\in \{2,\ldots,N\}$ i.e. 
+\begin{equation}\label{Prob-m}
 	\begin{split}
-		\langle\rho_{s_{1}}^{y_{1}}\ldots\rho_{s_{m}}^{y_{m}}\rangle&%=\mathbb{E}_{\mu_{stat}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\eta_{s_{k}}^{y_{k}}=1\}}\right]=\mathbb{E}_{\mu_{stat}}\left[D(\eta,\sum_{k=1}^{m}\delta_{s_{k}}^{y_{k}})\right]\\&
-		=\mathbb{P}_{stat}\left(\eta_{s_{1}}^{y_{1}}=1,\ldots,\eta_{s_{m}}^{y_{m}}=1\right)
+		\langle n_{s_{1}}^{y_{1}},\ldots, n_{s_{m}}^{y_{m}}\rangle_{\text{stat}}&
+		=\mathbb{P}_{stat}\left(n_{s_{1}}^{y_{1}}=1,\ldots,n_{s_{m}}^{y_{m}}=1\right)
 	\end{split}
 \end{equation}
-The probability at the stationary state that we have $m$ points occupied with $\mathbf{s}$ species, can be thought as the stationary probability of a chain of length $m$ with coordinates denoted by $y_{1},\ldots,y_{m}$ and where all the sites are occupied by $s_{1},\ldots,s_{m}$. This probability can be written as the stationary state of such a chain with the notation 
+where we denote $\mathbb{P}_{stat}$ the non-equilibrium steady state distribution. 
+This probability \eqref{Prob-m} can be seen as the component \eqref{steadyStateH-coeff} of the stationary state \eqref{steadyStateH} of a chain of length $m$ with each coordinates $y_{i}$ occupied by $s_{i}\neq 1$, i.e. 
 \begin{equation}
-	\mathbb{P}_{\text{stat, Chain m}}\left(s_{1},\ldots,s_{m};y_{1},\ldots,y_{m}\right)=\Psi_{m}\left(s_{1},\ldots,s_{m};y_{1},\ldots,y_{m}\right)
+	\mathbb{P}_{stat}\left(n_{s_{1}}^{y_{1}}=1,\ldots,n_{s_{m}}^{y_{m}}=1\right)=\Psi_{\bm{y}}\left(s_{1},\ldots,s_{m}\right)
 \end{equation}
-As already pointed out in \eqref{LinkABS-corr}, for non empty configurations we have:
+where the subscript $\bm{y}$ underlines the fact that we are considering a chain with length $m$. 
+As already pointed out in \eqref{LinkABS-corr}, for non-empty configurations we have:
 \begin{equation}\label{Corr-mABS}
-	\Psi_{m}(s_{1},\ldots,s_{m};y_{1},\ldots,y_{m})=\Psi_{ABS}(s_{1},\ldots,s_{m};y_{1},\ldots,y_{m})
+	\Psi_{\bm{y}}(s_{1},\ldots,s_{m})=\widehat{\Psi}_{\bm{y}}(s_{1},\ldots,s_{m})
 \end{equation}
 Thus, by applying the formula \eqref{ABS_intermediate} we have 
 \begin{equation}
-	\Psi_{ABS}(s_{1},\ldots,s_{m},\mathbf{y})=\sum_{c_{1},\ldots,c_{m}=0}^{1}\frac{\Gamma(2+L-\sum_{k=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{s_{k}}^{c_{k}}\beta_{s_{k}}^{1-c_{k}}\left(L+1-y_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}
+	\widehat{\Psi}_{\bm{y}}(s_{1},\ldots,s_{m})=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1}\frac{\Gamma(2+L-\sum_{k=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{s_{k}}^{c_{k}}\beta_{s_{k}}^{1-c_{k}}\left(L+1-y_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}
 \end{equation}
-By using the relation \eqref{Corr-mABS} we have the equations for arbitrary correlations.
-\subsubsection{One and two point correlations}
-We show two examples of computation of correlations via \eqref{exactCorrelations}.\\     
-\textbf{One point correlations}: choose $s_{1}=s$ and $y_{1}=x$
-\begin{align*}
-	\langle\rho_{s}^{x}\rangle=\sum_{c_{1}=0}^{1}(\alpha_{s}-\beta_{s})^{c_{1}}\beta_{s}^{1-c_{1}}g_{s}(c_{1})f(c_{1})
-\end{align*}
-we have that $f(0)=1$ and $f(1)=\frac{\Gamma(L+2-1)}{\Gamma(L+2)}=\frac{1}{L+1}$ and $g_{s}(0)=1$ and $g_{s}(1)=(L+2-x-1)$. Thus we obtain 
-\begin{align*}
-\langle\rho_{s}^{x}\rangle=\frac{(L+1-x)}{L+1}(\alpha_{s}-\beta_{s})+\beta_{s}
-\end{align*}
-that is exactly the one point correlations computed in \cite{vanicat2017exact}.\\
-\textbf{Two points correlations}: %fix $s_{1}=s,\;s_{2}=s^{'}$ and $y_{1}=x,\;y_{2}=y$
+By using the relation \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we have the equations for arbitrary correlations.
+\begin{flushright}
+    $\square$
+\end{flushright}
+\subsubsection{Explicit examples of correlations}
+We give some examples of correlations applying formula \eqref{exactCorrelations}.
+\paragraph{One point correlations}
+The average with respect to the non equilibrium distribution of the occupation variable of the species $s_{1}\in \{2,\ldots,N\}$ at coordinate $y_{1}\in \{1,\ldots,L\}$ reads
+\begin{equation}
+	\langle n_{s_{1}}^{y_{1}}\rangle_{\text{stat}}=\sum_{c_{1}=0}^{1}(\alpha_{s_{1}}-\beta_{s_{1}})^{c_{1}}\beta_{s_{1}}^{1-c_{1}}g_{s_{1}}(c_{1})f(c_{1})
+\end{equation}
+Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain 
+\begin{equation}\label{one-pts-corr}
+\langle n_{s_{1}}^{y_{1}}\rangle_{\text{stat}}=\frac{(L+1-y_{1})}{L+1}(\alpha_{s_{1}}-\beta_{s_{1}})+\beta_{s_{1}}
+\end{equation}
+\paragraph{Two points correlations}
+The two points correlations with respect the non equilibrium distribution of the occupation variable of the species $s_{1},s_{2}\in \{2,\ldots,N\}$ at coordinates $y,x\in \{1,\ldots,L\}$ with $x< y$ reads 
 \begin{equation}
 	\begin{split}
-	\langle\rho_{s}^{x},\rho_{s^{'}}^{y}\rangle= \sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}f(c_{1},c_{2})\prod_{k=1}^{2}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(c_{1},c_{2})
+	\langle n_{s_{1}}^{x},n_{s_{2}}^{y}\rangle_{\text{stat}}= \sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}f(c_{1},c_{2})\prod_{k=1}^{2}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(c_{k},c_{2})
 	\end{split}
 \end{equation}
-we have that 
-\begin{align*}
-	&g_{1}(0,0)=1&g_{2}(0,0)=1\\&
-	g_{1}(1,0)=(L+2-y_{1}-1)&g_{2}(1,0)=1\\&
-	g_{1}(0,1)=1&g_{2}(0,1)=(L+2-y_{2}-1)\\&
-	g_{1}(1,1)=(L+2-y_{1}-2)&g_{2}(1,1)=(L+2-y_{2}-1)
-\end{align*}
-while
-\begin{align*}
-	f(0,0)=1\quad f(0,1)=f(1,0)=\frac{\Gamma(L+2-1)}{\Gamma(L+2)}\quad f(1,1)=\frac{\Gamma(L+2-2)}{\Gamma(L+2)}
-\end{align*}
-By putting things together
-\begin{equation}
+Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain 
+\begin{equation}\label{two-pts-corr}
 	\begin{split}
-	\langle\rho_{s}^{x},\rho_{s^{'}}^{y}\rangle&=\beta_{s_{1}}\beta_{s_{2}}+\frac{(L+1-y_{1})}{L+1}(\alpha_{s_{1}}-\beta_{s_{1}})\beta_{s_{2}}+\frac{(L+1-y_{2})}{L+1}(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{1}}\\&+\frac{(L-y_{1})(L+1-y_{2})}{L(L+1}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})
+	\langle n_{s_{1}}^{x},n_{s_{2}}^{y}\rangle_{\text{stat}}&=\beta_{s_{1}}\beta_{s_{2}}+\frac{(L+1-y_{1})}{L+1}(\alpha_{s_{1}}-\beta_{s_{1}})\beta_{s_{2}}+\frac{(L+1-y_{2})}{L+1}(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{1}}\\&+\frac{(L-y_{1})(L+1-y_{2})}{L(L+1}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})
 	\end{split}
 \end{equation}
-\subsection{Absorption probabilities}
-{\color{blue}An application of duality is to compute the moments of the steday state of the the original process. Indeed, as metioned in subsection \ref{}, the dual process voids the chain. Therefore, the problem of computing the moments with respect to the stationary distribution is reduced to computing the absorption probabilities of dual particles. \\
-Calling $\mu_{stat}$ the stationary measure of the the process \eqref{Generator} starting from a configuration $\bm{n}$, we can write the following chain of equalities
+\paragraph{Three points correlations}
+The three points correlations with respect the non equilibrium distribution of the occupation variable of the species $s_{1},s_{2},s_{3}\in \{2,\ldots,N\}$ at coordinates $y_{1},y_{2},y_{3}\in \{1,\ldots,L\}$ such that $y_{1}<y_{2}<y_{3}$
 \begin{equation}
+    \langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}},n_{s_{3}}^{y_{3}}\rangle_{\text{stat}}=\sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}\sum_{c_{3}=0}^{1}f(c_{1},c_{2},c_{3})\prod_{k=1}^{2}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(c_{k},\ldots,c_{3})
+\end{equation}
+Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain 
+\begin{equation}\label{three-pts-corr}
+    \begin{split}
+        \langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}},n_{s_{3}}^{y_{3}}\rangle_{\text{stat}}&=\prod_{k=1}^{3}\beta_{s_{k}}+\sum_{k=1}^{3}\frac{(L-y_{k})}{(L+1)}(\alpha_{s_{k}}-\beta_{s_{k}})\prod_{q=1\,:\,q\neq k}^{3}\beta_{s_{q}}
+        \\&+
+        \frac{(L-y_{2})(L-y_{3}+1)}{L(L+1)}(\alpha_{s_{2}}-\beta_{s_{2}})(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{1}}
+        \\&+
+        \frac{(L-y_{1})(L-y_{3}+1)}{L(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{2}}
+        \\&+
+        \frac{(L-y_{1})(L-y_{2}+1)}{L(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{3}}
+        \\&+
+        \frac{(L-y_{1}-1)(L-y_{2})(L-y_{3}+1)}{L(L-1)(L+1)}\prod_{k=1}^{3}(\alpha_{s_{k}}-\beta_{s_{k}})
+    \end{split}
+\end{equation}
+\textbf{Remark}: the one and two points correlations computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively are exactly the ones found in subsection 4.3 of \cite{vanicat}. 
+\subsection{One points correlations of the non-integrable multi-speceis stirring process on a chain}
+In subsection \ref{subsection-exact}, for the case with geometry of one dimensional chain of length $L$ connected at the ends with two reservoris of parameters $(\alpha_{k})_{k=1,\ldots,N}$ and $(\beta_{k})_{k=1,\ldots,N}$, all the correlations have been written by \eqref{exactCorrelations} using integrability. When the maximal occupation of each site $\nu>1$, this nice property is lost. However, something about correlations can be said using duality. In this subsection we still consider the same geometry of \ref{subsection-exact}. As pointed out in section \ref{sectionDuality}, the dual process voids the chain. Therefore, the problem of computing the average of the duality matrix with respect to the stationary distribution is reduced to computing the absorption probabilities of dual particles, as we will clarify below.\\
+We consider the process $(\bm{n}(t))_{t\geq 0}$ on a chain of length $L$ with the end sites connected with two reservoirs. This interaction with the external environment is described by the generators 
+\begin{equation}
+    \mathcal{L}_{1}f(\bm{n})=\sum_{k,\ell=0}^{N}\alpha_{k}n_{\ell}^{1}\left(f(\bm{n}-\delta_{\ell}^{x}+\delta_{k}^{x})-f(\bm{n})\right)\qquad \mathcal{L}_{L}f(\bm{n})=\sum_{k,\ell=0}^{N}\beta_{k}n_{\ell}^{L}\left(f(\bm{n}-\delta_{\ell}^{x}+\delta_{k}^{x})-f(\bm{n})\right)
+\end{equation}
+The bulk generator is 
+\begin{equation}
+    \mathcal{L}_{\text{bulk}}=\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}\quad \text{where}\quad \mathcal{L}_{x,x+1}f(\bm{n})=\sum_{k,\ell=0}^{N}n_{k}^{x}n_{\ell}^{x+1}\left(f(\bm{n}-\delta_{k}^{x}+\delta_{\ell}^{x}+\delta_{k}^{x+1}-\delta_{\ell}^{x+1})-f(\bm{n})\right)
+\end{equation}
+This process is dual to $(\bm{\xi}(t))_{t\geq0} $ on the enlarged configuration space $\widetilde{\Omega}=N_{0}^{N-1}\times\bigtimes_{x=1}^{L} \Omega_{x}\times N_{0}^{L-1}$ with the same $\mathcal{L}_{\text{bulk}}$ and with absorbing boundaries, i.e. 
+\begin{equation}
+\begin{split}
+        \widetilde{\mathcal{L}}_{1}f(\bm{\xi})&=\sum_{i=1}^{N}\alpha_{i}\sum_{k=2}^{N}\xi_{k}^{1}\left(f(\bm{\xi}-\delta_{k}^{1}+\delta_{k}^{0}+\delta_{k}^{1})f(\bm{\xi})\right)\\\widetilde{\mathcal{L}}_{L}f(\bm{\xi})&=\sum_{i=1}^{L}\beta_{i}\sum_{k=2}^{N}\xi_{k}^{L}\left(f(\bm{\xi}-\delta_{k}^{L}+\delta_{k}^{L+1}+\delta_{k}^{L})-f(\bm{\xi})\right)
+        \end{split}
+\end{equation}
+where $0$ and $L+1$ are the extra-sites. The duality function on the chain is
+\begin{equation}\label{dualityFunctionChain}
+    D(\bm{n},\bm{\xi})=\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\sum_{i=1}\alpha_{i}}\right)^{\xi_{k}^{0}}\prod_{x=1}^{L}\prod_{k=2}^{N}\frac{\eta_{k}^{x}!}{(n_{k}^{x}-\xi_{k}^{x})!}\prod_{k=2}^{N}\left(\frac{\beta_{k}}{\sum_{i=1}\beta_{i}}\right)^{\xi_{k}^{L+1}}
+\end{equation}
+Calling $\mu_{stat}$ the stationary measure of the the process $(\bm{n}(t))_{t\geq 0}$ starting from a configuration $\bm{n}$, and considering a generic configuration $\bm{\xi}$ of the dual process, we write the following equalities using \eqref{DualityRelation}
+\begin{equation}\label{ExptationSS}
 \begin{split}
 \mathbb{E}_{\mu^{stat}}\left[D(\bm{n}(t),\bm{\xi})\right]&=\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\bm{\xi})\right]=\lim_{t\to\infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{n},\bm{\xi}(t))\right]
 \\=&
-\sum_{i_{1}=0}^{|\xi_{1}|}\ldots\sum_{i_{N}=0}^{|\xi_{N}|}\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}+\ldots+\alpha_{N}}\right)^{i_{k}}\left(\frac{\beta_{k}}{\beta_{1}+\ldots+\beta_{N}}\right)^{|\xi_{k}|-i_{k}}
-\\&
-\mathbb{P}\left(\xi(\infty)=\sum_{k=2}^{N}\left(i_{k}\delta_{0}+(|\xi_{k}|-i_{k})\delta_{L+1}\right)| \xi_{0}=\xi\right)
+\sum_{i_{1}=0}^{|\xi_{1}|}\ldots\sum_{i_{N}=0}^{|\xi_{N}|}\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}+\ldots+\alpha_{N}}\right)^{i_{k}}\left(\frac{\beta_{k}}{\beta_{1}+\ldots+\beta_{N}}\right)^{|\xi_{k}|-i_{k}}a_{i_{1},\ldots,i_{k}}(\bm{\xi})
 \end{split}
 \end{equation}
-we denote by $i_{k}$ the number of dual particles of species $k\in\{2,\ldots,N\}$ absorbed at left and by $|\xi_{k}|-i_{k}$ the number of particles absorbed at right. \\}
-
-
-Even though integrability does not hold anymore for $j>\frac{1}{2}$, by using the absorbing duality we can still say something about the moment of the non equilibrium steady state distribution. We write the expression for the absorption probability for the general $(2j)$ case when the setting is a one dimensional chain with two reservoirs at the ends. We assume nearest neighbor interaction, similarly to what we did at the beginning of section \ref{sec4}. \\ Let us think about the species $1$ as the empty state. 
-Fix a generic initial dual configuration $\xi$ that contains $|\xi_{k}|$ particles of each non-empty species $k\in \{2,\ldots,N\}$. Since the dual chain is absorbing we have that:  
-\begin{equation}
-	\begin{split}
-		\lim_{t\to \infty}\mathbb{E}_{\xi}\left[D(\eta,\xi(t))\right]=& \sum_{i_{1}=0}^{|\xi_{1}|}\ldots\sum_{i_{N}=0}^{|\xi_{N}|}\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}+\ldots+\alpha_{N}}\right)^{i_{k}}\left(\frac{\beta_{k}}{\beta_{1}+\ldots+\beta_{N}}\right)^{|\xi_{k}|-i_{k}}\\&
-		\mathbb{P}\left(\xi(\infty)=\sum_{k=2}^{N}\left(i_{k}\delta_{0}+(|\xi_{k}|-i_{k})\delta_{L+1}\right)| \xi_{0}=\xi\right)
-	\end{split}
+where 
+\begin{equation}\label{Pass}
+    a_{i_{k}}(\bm{\xi})=\mathbb{P}\left(\xi(\infty)=\sum_{k=2}^{N}\left(i_{k}\delta_{0}+(|\xi_{k}|-i_{k})\delta_{L+1}\right)| \xi_{0}=\xi\right)
 \end{equation}
-we denote by $i_{k}$ the number of dual particles of species $k\in\{2,\ldots,N\}$ absorbed at left and by $|\xi_{k}|-i_{k}$ the number of particles absorbed at right. \\
-By duality we have that 
+where $D(\bm{n},\bm{\xi})$ is the duality function defined in \eqref{dualityFunctionChain}. Here, we denote by $|\xi_{k}|=\sum_{x=1}^{L}\xi_{k}^{x}$ and by $i_{k}$ the number of dual particles of species $k\in\{2,\ldots,N\}$ absorbed at left, thus we denote by $|\xi_{k}|-i_{k}$ the number of particles of the same type absorbed at right.\\
+We observe that the duality function \eqref{dualityFunctionChain} computed in the dual configurations $\bm{\widehat{\xi}}=\delta_{s_{1}}^{y_{1}}+\ldots+\delta_{s_{m}}^{y_{m}}$ with $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$ and $s_{i}\in \{2,\ldots,N\}$ $\forall i=\{2,\ldots,m\}$ is given by 
 \begin{equation}
-	\mathbb{E}_{\text{stationary},\eta}\left[D(\eta(t),\xi)\right]=\lim_{t\to \infty}\mathbb{E}_{\eta}\left[D(\eta(t),\xi)\right]=\lim_{t\to \infty}\mathbb{E}_{\xi}\left[D(\eta,\xi(t))\right]
+    D(\bm{n},\bm{\widehat{\xi}})= \frac{\prod_{k=1}^{m}n_{s_{k}}^{x_{k}}}{(\nu-m+1)}
 \end{equation}
-\textbf{One point correlations}
+Therefore, up to a constant, $\mathbb{E}_{\mu^{\text{stat}}}\left[D(\bm{n},\bm{\widehat{\xi}})\right]$ gives the non-equilibrium stationary state $m-$points correlations between non-empty species. This expectation is computed by \eqref{ExptationSS} once the absorption probabilities $a_{i_{s_{k}}}(\widehat{\bm{\xi}})$. The issue is that, usually, these absorption probabilities fulfil some difference equations that are not easy to solve. For example, we report here the solution for the one points correlations. 
+\paragraph{One point correlations for the non-integrable case}
+We have that $\widehat{\bm{\xi}}=\delta_{s}^{x}$, then 
 \begin{equation}
-	D(\eta,\delta_{s}^{x})=\eta_{s}^{x}
+	\nu D(\eta,\delta_{s}^{x})=n_{s}^{x}
 \end{equation}
 Thus
-\begin{equation}
-	\langle \rho_{s}^{x}\rangle_{\text{stat}}=\lim_{t\to\infty}\mathbb{E}\left[\delta_{s}^{x}(t)\right]=\sum_{i_{s}=0}^{1}\left(\frac{\alpha_{s}}{\alpha_{1}+\ldots+\alpha_{N}}\right)^{i_{s}}\left(\frac{\beta_{s}}{\beta_{1}+\ldots+\beta_{N}}\right)^{1-i_{k}}\mathbb{P}_{\delta_{s}^{x}}\left(\xi_{\infty}=i_{s}\delta_{0}+(1-i_{s})\delta_{L+1}\right)
+\begin{equation}\label{OnePtsCORR}
+\begin{split}
+	\langle n_{s}^{x}\rangle_{\text{stat}}&=\frac{1}{\nu}\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\delta_{k}^{x})\right]\\&=\frac{1}{\nu}\sum_{i_{s}=0}^{1}\left(\frac{\alpha_{s}}{\alpha_{1}+\ldots+\alpha_{N}}\right)^{i_{s}}\left(\frac{\beta_{s}}{\beta_{1}+\ldots+\beta_{N}}\right)^{1-i_{k}}\mathbb{P}_{\delta_{s}^{x}}\left(\xi_{\infty}=i_{s}\delta_{0}+(1-i_{s})\delta_{L+1}\right)
+ \end{split}
 \end{equation}
-we want to determine $p^{x}_{s}(1)=\mathbb{P}_{\delta_{s}^{x}}\left(\xi_{\infty}=i_{s}\delta_{0}+(1-i_{s})\delta_{L+1}\right)$ and by consequence $p^{x}_{s}(0)=1-p^{x}_{s}(1)$.\\
-We condition on the first jump:
-\begin{equation}
-	p^{x}_{s}(1)=p^{x+1}_{s}(1)\;\mathbb{P}(\text{First jump on the right})+p^{x-1}_{s}(1)\;\mathbb{P}(\text{First jump on the left})
-\end{equation}
-Then:
-\begin{itemize}
-	\item If $x=1$, then the particle has probability $\frac{(\alpha_{1}+\ldots+\alpha_{N})}{1+(\alpha_{1}+\ldots+\alpha_{N})}$ of jumping to the left and $\frac{1}{1+(\alpha_{1}+\ldots+\alpha_{N})}$ of jumping to the right. Thus
-	\begin{equation}
-		p^{1}_{s}(1)=p^{0}_{s}(1)\frac{(\alpha_{1}+\ldots+\alpha_{N})}{1+(\alpha_{1}+\ldots+\alpha_{N})}+p^{2}_{s}(1)\frac{1}{1+(\alpha_{1}+\ldots+\alpha_{N})}
-	\end{equation}
-\item if $x\in \{2,\dots,L-1\}$, we have $1/2$ of probability of jumping left and right
-\begin{equation}
-	p_{x}^{s}(1)=\frac{1}{2}\left(p_{x+1}^{s}(1)+p_{x-1}^{s}(1)\right)
-\end{equation}
-	\item If $x=L$, then the particle has probability $\frac{(\beta_{1}+\ldots+\beta_{N})}{1+(\beta_{1}+\ldots+\beta_{N})}$ of jumping to the left and $\frac{1}{1+(\beta_{1}+\ldots+\beta_{N})}$ of jumping to the right. Thus
-\begin{equation}
-	p^{L}_{s}(1)=p^{L+1}_{s}(1)\frac{(\beta_{1}+\ldots+\beta_{N})}{1+(\beta_{1}+\ldots+\beta_{N})}+p_{L-1}^{s}(1)\frac{1}{1+(\beta_{1}+\ldots+\beta_{N})}
-\end{equation}
-\item Boundary conditions:
-\begin{equation}
-	p^{0}_{s}(1)=1\qquad p^{L+1}_{s}(1)=0
-\end{equation}
-\end{itemize}
-Denote $\alpha_{1}+\ldots+\alpha_{N}=A$ and $\beta_{1}+\ldots+\beta_{N}=B$ for the sake of notation.\\
-All in all we need to solve
-\begin{equation}
+we want to determine $a^{x}_{s}(1)=\mathbb{P}_{\delta_{s}^{x}}\left(\xi_{\infty}=i_{s}\delta_{0}+(1-i_{s})\delta_{L+1}\right)$ is the probability of a random walker on the chain $\{1,\ldots,L\}$ with absorbing boundaries. This $a_{s}^{x}(1)$ fulfils the following equations 
+\begin{equation}\label{gamblers-ruin}
 	\begin{cases}
-		\Delta_{x}^{L}p^{x}_{s}(1)=0\\
-		p^{1}_{s}(1)=\frac{A}{1+A}+p^{2}_{s}(1)\frac{1}{1+A}\\
-		p^{L}_{s}(1)=p^{L-1}_{s}(1)\frac{1}{1+B}
+		\Delta_{x}^{L}a^{x}_{s}(1)=0\\
+		a^{1}_{s}(1)=\frac{A}{1+A}+a^{2}_{s}(1)\frac{1}{1+A}\\
+		a^{L}_{s}(1)=a^{L-1}_{s}(1)\frac{1}{1+B}
 		\end{cases}
 \end{equation}
-A general solution of the discerete laplace equation is
+where $\Delta_{x}^{L}$ is the discrete Laplace operator on the chain of length $L$ and where, for the sake of notation, we call $\alpha_{1}+\ldots+\alpha_{N}=A$ and $\beta_{1}+\ldots+\beta_{N}=B$. The equations \eqref{gamblers-ruin} can be solved.Therefore, using \eqref{OnePtsCORR} and $a^{x}_{s}(0)=1-a^{x}_{s}(1)$ we obtain 
 \begin{equation}
-	p_{x}^{s}(1)=C_{1}x+C_{2}
+\langle n_{s}^{x}\rangle_{\text{stat}}=\frac{1}{\nu}\frac{\alpha_{s}(LB-Bx+1)+\beta_{s}(Ax+1-A)}{ABL-AB+A+B}
 \end{equation}
-we match with boundary conditions:
-\begin{equation}
-	\begin{cases}
-	C_{1}+C_{2}=\frac{A}{1+A}+\frac{2C_{1}+C_{2}}{A+1}\\
-	C_{1}L+C_{2}=\frac{C_{1}(L-1)+C_{2}}{1+B}
-	\end{cases}
-\end{equation}
-The solution
-\begin{equation}
-	C_{1}=\frac{(-A B)}{(A + B - A B + A B L)}\qquad C_{2}=\frac{(A (1 + B L))}{(A + B - A B + A B L)}
-\end{equation}
-\begin{equation}
-	p_{x}^{s}(1)=\frac{A (B (L-x)+1)}{A (B (L-1)+1)+B}
-\end{equation}
-then 
-\begin{equation}
-	p^{x}_{s}(0)=1-p^{x}_{s}(1)=\frac{B (A (x-1)+1)}{A (B (L-1)+1)+B}
-\end{equation}
-then the average density is 
-\begin{equation}
-\langle\rho_{s}^{x}\rangle_{\text{stat}}=\frac{\alpha_{s}(LB-Bx+1)+\beta_{s}(Ax+1-A)}{ABL-AB+A+B}
-\end{equation}
-\newline \\
 \textbf{Remark}: In case $A=B=1$ we have 
 	\begin{equation}
-\langle\rho_{s}^{x}\rangle_{\text{stat}}=\frac{\alpha_{s}(L-x+1)+\beta_{s}x}{L+1}
+\langle n_{s}^{x}\rangle_{\text{stat}}=\frac{\alpha_{s}(L-x+1)+\beta_{s}x}{L+1}
 	\end{equation}
-and it exactly matches with \cite{vanicat2017exact}. \\
-In case $A=B=2j$ we have 
-\begin{equation}
-	\langle\rho_{s}^{x}\rangle_{\text{stat}}=\frac{\alpha_{s}(2jL-2jx+1)+\beta_{s}(2jx+1-2j)}{2jL-4j(j-1)}
-\end{equation}
-All the other correlations could be, in principle, computed with the same strategy. However, the computations become very hard as the correlation order rises, because it is not easy to find explicit solutions of the difference equations that arise from the conditioning on the first jump and the imposition of the boundary conditions. 
+that gives back \eqref{one-pts-corr}.  \\ 
 \subsection{Mapping to equilibrium?}
 {\color{red}
 check also Appendix A in
