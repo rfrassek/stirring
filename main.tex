@@ -59,6 +59,7 @@
 \newcommand{\spe}{N}
 
 
+\newcommand{\com}[1]{{ (* {\color{red}\small #1}*)}}
 
 
 \setcounter{tocdepth}{2}
@@ -621,20 +622,22 @@ For the following of the proof we need the application of the Hadamard formula w
         \exp{(-E)}E_{\ell \ell}\exp{(E)}=E_{\ell \ell}+E_{\ell 1}
     \end{equation}
 Indeed, using \eqref{eq:comgl} we have 
-    \begin{equation*}
+    \begin{equation}
        \left[E, E_{\ell\ell}\right]=\sum_{a=2}^{N}\left(E_{a\ell}\delta_{\ell 1}-E_{\ell 1}\delta_{a\ell}\right)=-E_{l1}
-    \end{equation*}
+    \end{equation}
     Inserting the above commutator in \eqref{HadamardFormula}, we obtain \eqref{HT_Ell}.
     \item for $A=E_{1\ell}$ with $\ell\in \{2,\ldots,N\}$, we obtain 
     \begin{equation}\label{HT-E1l}
         \exp{(-E)}E_{1 \ell}\exp{(E)}=E_{1\ell}+E_{11}-\sum_{j=2}^{N}\left(E_{j1}+E_{j\ell}\right)
     \end{equation}
+  \com{Why indices have names $\ell, k, j, a, b$? Fix one set for the generators}
+    
     Indeed, using \eqref{eq:comgl} we have 
-    \begin{equation*}
+    \begin{equation}
 [E,E_{1\ell}]=\sum_{a=2}^{N}\left(E_{a\ell}\delta_{11}-E_{11}\delta_{a\ell}\right)=\sum_{j=2}^{N}E_{j\ell}-E_{11};
-\end{equation*}
+\end{equation}
 and 
-\begin{equation*}
+\begin{equation}
 \begin{split}
 \left[E,[E,E_{1\ell}]\right]&=\sum_{b=2}^{N}\sum_{j=2}^{N}\left[E_{b1},E_{j\ell}\right]-\sum_{b=2}^{N}\left[E_{b1},E_{11}\right]
 \\&=
@@ -642,25 +645,31 @@ and
 \\=&
 -2\sum_{j=2}^{N}E_{j1};
 \end{split}
-\end{equation*}
+\end{equation}
 Inserting the above commutators in \eqref{HadamardFormula}, we obtain \eqref{HT-E1l}.
 \item for $A=E_{k\ell}$ with $k,\ell \in \{2,\ldots,N\}$ we obtain 
 \begin{equation}\label{HT-Ekl}
     \exp{(-E)}E_{\ell k}\exp{(E)}=E_{k\ell}+E_{\ell 1}
 \end{equation}
+\com{double check}
    Indeed, using \eqref{eq:comgl} we have 
-\begin{equation*}
-[E,E_{k\ell}]=\sum_{a=2}^{N}\left(E_{ak}^{x}\delta_{\ell 1}-E_{\ell 1}^{x}\delta_{ak}\right)=-E_{\ell 1}^{x};
-\end{equation*}
+   {\color{red}
+\begin{equation}
+[E,E_{k\ell}]=\sum_{a=2}^{N}\left(E_{ak}\delta_{\ell 1}-E_{\ell 1}\delta_{ak}\right)=-E_{\ell 1};
+\end{equation}
+}
+\begin{equation}
+[E,E_{k\ell}]=\sum_{a=2}^{N}\left(E_{a\ell}\delta_{k1}-E_{k1}\delta_{\ell a}\right)=-E_{k1};
+\end{equation}
 Inserting the above commutator in \eqref{HadamardFormula}, we obtain \eqref{HT-Ekl}.
 \item for $A=E_{11}$ we obtain 
 \begin{equation}\label{HT-E11}
-    \exp{(-E^{x})}E_{11}^{x}\exp{(E^{x})}=E_{11}^{x}-\sum_{j=2}^{N}E_{j1}^{x}
+    \exp{(-E)}E_{11}\exp{(E)}=E_{11}-\sum_{j=2}^{N}E_{j1}
 \end{equation}
   Indeed, using \eqref{eq:comgl} we have 
 
 \begin{align*}
-[E,E_{11}]=\sum_{a=2}^{N}\left(E_{ak}\delta_{11}-E_{\ell 1}\delta_{a1}\right)=\sum_{j=2}^{N}E_{j1};
+[E,E_{11}]=\sum_{a=2}^{N}\left(E_{a1}\delta_{11}-E_{1 1}\delta_{a1}\right)=\sum_{j=2}^{N}E_{j1};
 \end{align*}
   Inserting the above commutator in \eqref{HadamardFormula}, we obtain \eqref{HT-E11}.
 \end{enumerate}
@@ -1056,10 +1065,10 @@ By taking the product over the sites $i$ from $1$ to L we obtain
 	\prod_{i=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{i}}=\widetilde{X}_{1}^{\sum_{i=1}^{L}n_{1}^{l}}\prod_{i=1}^{L}\prod_{a=2}^{N}\left(\widetilde{X}_{a}+\lambda_{a}\sum_{j=i}^{L}n_{1}^{j}\right)^{n_{a}^{i}}
 \end{equation}
 Therefore, multiplying by the boundary vectors we have 
-\begin{equation*}
+\begin{equation}
 	\langle W|\prod_{i=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{i}}
 	|V \rangle=\langle W|\widetilde{X}_{1}^{\sum_{i=1}^{L}n_{1}^{l}}\prod_{i=1}^{L}\prod_{a=2}^{N}\left(\widetilde{X}_{a}+\lambda_{a}\sum_{j=i}^{L}n_{1}^{j}\right)^{n_{a}^{i}}|V\rangle
-\end{equation*}
+\end{equation}
 Using \eqref{commRIGHT}
 \begin{align*}
 	W|\prod_{i=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{i}}
@@ -1176,14 +1185,14 @@ We compute
     \end{split}
 \end{equation}
 where the addends are 
-\begin{equation*}
+\begin{equation}
 \begin{split}
 	&I_{N\times N}\otimes I_{N\times N}=\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}\otimes \sum_{s_{2}=1}^{N}e_{s_{2}}^{s_{2}}=\sum_{s_{1},s_{2}=1}^{N}e_{s_{1},s_{2}}^{s_{1},s_{2}}\\
 	&I_{N\times N}\otimes Q=(1-\delta_{s_{2},1})\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}\otimes \sum_{s_{2}=2}^{N}\beta_{s_{2}}e_{s_{2}}^{1}=(1-\delta_{s_{2},1})\sum_{s_{1}=1,s_{2}=2}^{N}e_{s_{1},s_{2}}^{s_{1},1}\beta_{s_{2}}\\
 	&Q\otimes I_{N\times N}=(1-\delta_{s_{1},1})\sum_{s_{1}=2}^{N}\beta_{s_{1}}e_{s_{1}}^{1}\otimes \sum_{s_{2}=1}^{N}e_{s_{2}}^{s_{2}}=(1-\delta_{s_{1},1})\sum_{s_{1}=2,s_{2}=1}^{N}e_{s_{1},s_{2}}^{1,s_{2}}\beta_{s_{1}}\\
 	&Q\otimes Q=(1-\delta_{s_{1},1})(1-\delta_{s_{2},1})\sum_{s_{1}=2}^{N}\beta_{s_{1}}e_{s_{1}}^{1}\otimes \sum_{s_{2}=2}^{N}\beta_{s_{2}}e_{s_{2}}^{1}=(1-\delta_{s_{1},1})(1-\delta_{s_{2},1})\sum_{s_{1},s_{2}=2}^{N}e_{s_{1},s_{2}}^{1,1}\beta_{s_{1}}\beta_{s_{2}}
  \end{split}
-\end{equation*}
+\end{equation}
 The matrix $T^{T}\otimes T^{T}$ has elements $\left\{\left(T^{T}\otimes T^{T}\right)_{s_{1},s_{2}}^{q_{1},q_{2}}\right\}_{s_{1},s_{2},q_{1},q_{2}\in \{1,\ldots,N\}}$, where the subscripts $s_{1},s_{2}$ denote the raw and the superscript $q_{1},q_{2}$ the column. We fix a raw of this matrix with arbitrary index $s_{1},s_{2}$
 \begin{equation}
 	\left(T^{T}\otimes T^{T}\right)_{s_{1},s_{2}}=e_{s_{1},s_{2}}^{s_{1},s_{2}}+(1-\delta_{s_{2},1})\beta_{s_{2}}e_{s_{1},s_{2}}^{s_{1},1}+(1-\delta_{s_{1},1})\beta_{s_{1}}e_{s_{1},s_{2}}^{1,s_{2}}+(1-\delta_{s_{1},1})(1-e_{s_{2},1})\beta_{s_{1}}\beta_{s_{2}}e_{s_{1},s_{2}}^{1,1}
