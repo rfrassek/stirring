@@ -678,13 +678,10 @@ Inserting the above commutators in \eqref{HadamardFormula}, we obtain \eqref{HT-
 \begin{equation}\label{HT-Ekl}
     \exp{(-E)}E_{\ell k}\exp{(E)}=E_{k\ell}+E_{\ell 1}
 \end{equation}
-\com{double check}
    Indeed, using \eqref{eq:comgl} we have 
-   {\color{red}
 \begin{equation}
-[E,E_{k\ell}]=\sum_{a=2}^{N}\left(E_{ak}\delta_{\ell 1}-E_{\ell 1}\delta_{ak}\right)=-E_{\ell 1};
+[E,E_{\ell k}]=\sum_{a=2}^{N}\left(E_{ak}\delta_{\ell 1}-E_{\ell 1}\delta_{ak}\right)=-E_{\ell 1};
 \end{equation}
-}
 \begin{equation}
 [E,E_{k\ell}]=\sum_{a=2}^{N}\left(E_{a\ell}\delta_{k1}-E_{k1}\delta_{\ell a}\right)=-E_{k1};
 \end{equation}
@@ -1173,7 +1170,7 @@ Knowing the steady state \eqref{ResulsBasis} of the Hamiltonian $\mathbb{H}$ def
 where 
 \begin{equation}\label{ABS}
 		\begin{split}
-			\widehat{\Psi}(\bm{s})=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(L+2)}\prod_{l=1}^{L}\left(\lambda_{s_{l}}\left(1+L-l-\sum_{j=l}^{L}c_{j}\right)\right)^{c_{l}}\beta_{s_{l}}^{(1-c_{l})(1-\delta_{s_{l},1})}
+			\widehat{\Psi}(\bm{s})=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(L+2)}\prod_{l=1}^{L}\left(\lambda_{s_{l}}\left(2+L-l-\sum_{j=l}^{L}c_{j}\right)\right)^{c_{l}}\beta_{s_{l}}^{(1-c_{l})(1-\delta_{s_{l},1})}
 		\end{split}
 	\end{equation} 
 and where
@@ -1222,7 +1219,7 @@ where the addends are
 \end{equation}
 The matrix $T^{T}\otimes T^{T}$ has elements $\left\{\left(T^{T}\otimes T^{T}\right)_{s_{1},s_{2}}^{q_{1},q_{2}}\right\}_{s_{1},s_{2},q_{1},q_{2}\in \{1,\ldots,N\}}$, where the subscripts $s_{1},s_{2}$ denote the raw and the superscript $q_{1},q_{2}$ the column. We fix a raw of this matrix with arbitrary index $s_{1},s_{2}$
 \begin{equation}
-	\left(T^{T}\otimes T^{T}\right)_{s_{1},s_{2}}=e_{s_{1},s_{2}}^{s_{1},s_{2}}+(1-\delta_{s_{2},1})\beta_{s_{2}}e_{s_{1},s_{2}}^{s_{1},1}+(1-\delta_{s_{1},1})\beta_{s_{1}}e_{s_{1},s_{2}}^{1,s_{2}}+(1-\delta_{s_{1},1})(1-e_{s_{2},1})\beta_{s_{1}}\beta_{s_{2}}e_{s_{1},s_{2}}^{1,1}
+	\left(T^{T}\otimes T^{T}\right)_{s_{1},s_{2}}=e_{s_{1},s_{2}}^{s_{1},s_{2}}+(1-\delta_{s_{2},1})\beta_{s_{2}}e_{s_{1},s_{2}}^{s_{1},1}+(1-\delta_{s_{1},1})\beta_{s_{1}}e_{s_{1},s_{2}}^{1,s_{2}}+(1-\delta_{s_{1},1})(1-\delta_{s_{2},1})\beta_{s_{1}}\beta_{s_{2}}e_{s_{1},s_{2}}^{1,1}
 \end{equation}
 Iterating this tensor product for the chain of length $L$, we write the raw with indices $\bm{s}=s_{1},\ldots,s_{L}$
  of the matrix $\mathcal{T}^{T}$ as 
@@ -1242,11 +1239,11 @@ The product $\mathcal{T}^{T}|\widetilde{\Psi}\rangle$ gives a vector whose compo
 \end{equation}
 For a fixed configuration $\bm{s}=(s_{1},\ldots,s_{N})$, using equation \eqref{ResulsBasis} and observing that 
 \begin{equation}
-  \left(1+\sum_{j=i}^{L}\delta_{s_{j},1}\right) =\left(1+L-i-\sum_{j=i}^{L}(1-\delta_{s_{i},1})\right)
+  \left(1+\sum_{j=i}^{L}\delta_{s_{j},1}\right) =\left(2+L-i-\sum_{j=i}^{L}(1-\delta_{s_{i},1})\right)
 \end{equation}
 we obtain 
     \begin{equation}
-	\widetilde{\Psi}(\bm{s})=\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{s_{i},1})}{\Gamma(L+2)}\prod_{i=1}^{L}\left(\lambda_{s_{i}}\left(1+L-i-\sum_{j=i}^{L}(1-\delta_{s_{i},1})\right)\right)^{1-\delta_{s_{i},1}}
+	\widetilde{\Psi}(\bm{s})=\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{s_{i},1})}{\Gamma(L+2)}\prod_{i=1}^{L}\left(\lambda_{s_{i}}\left(2+L-i-\sum_{j=i}^{L}(1-\delta_{s_{i},1})\right)\right)^{1-\delta_{s_{i},1}}
 \end{equation}
 Because of the exponent $(1-\delta_{s_{i},1})$, the element $\widetilde{\Psi}(\bm{s})$ has, up the term $\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{s_{i},1})}{\Gamma(L+2)}$, a contribution of a factor $\lambda_{s_{i}}\left(1+L-i-\sum_{j=i}^{L}(1-\delta_{s_{i},1})\right)$ if the site is non empty, and a contribution of a factor "$1$" if the site is empty, it is convenient to introduce the $c_{i}$ of defined in \eqref{CiEquation}. Then, equation  \eqref{ABS_intermediate} reads 
 \begin{equation}\label{elementsABS}
@@ -1267,13 +1264,16 @@ The steady state $|\Psi\rangle$ of the Hamiltonian $\mathbb{H}$ defined in \eqre
 where for every $(s_{1},\ldots,s_{L})=\bm{s}$
 \begin{equation}\label{steadyStateH-coeff}
     \begin{split}
-        \Psi(\bm{s})&=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(L+2)}\prod_{l=1}^{L}\left(\lambda_{s_{l}}\left(1+L-l-\sum_{j=l}^{L}c_{j}\right)\right)^{c_{l}}\beta_{s_{l}}^{(1-c_{l})(1-\delta_{s_{l},1})}
+        \Psi(\bm{s})&=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(L+2)}\prod_{l=1}^{L}\left(\lambda_{s_{l}}\left(2+L-l-\sum_{j=l}^{L}c_{j}\right)\right)^{c_{l}}\beta_{s_{l}}^{(1-c_{l})(1-\delta_{s_{l},1})}
         \\&+
         \sum_{\ell=1}^{L}(-1)^{\ell}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{\ell}=q_{\ell-1}+1}^{L}\left(\prod_{r=1}^{\ell}\delta_{s_{q_{r}},1}\right) 
-        \sum_{r=1}^{\ell}\sum_{d_{q_{r}}=2}^{N}\sum_{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(2+L)}
-  \\ &
-  \prod_{i=1\,:\, i\neq q_{1},\ldots,q_{\ell}}^{L}\left(\lambda_{s_{i}}\left(1-L-i-\sum_{j=i}^{L}c_{j}\right)\right)^{c_{i}}\beta_{s_{i}}^{(1-c_{i})(1-\delta_{s_{i},1})}
-  \prod_{r=1}^{\ell}\lambda_{q_{r}}\left(1+L-q_{r}-\sum_{j=q_{r}}^{L}c_{j}\right)
+        \sum_{r=1}^{\ell}\sum_{d_{q_{r}}=2}^{N}
+\\&
+\sum_{i=1\,:\, i\neq q_{1},\ldots,q_{l}}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\sum_{p=1}^{\ell}\sum_{c_{q_{p}}=0}^{1}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(2+L)}
+  \prod_{i=1\,:\, i\neq q_{1},\ldots,q_{\ell}}^{L}\left(\lambda_{s_{i}}\left(2+L-i-\sum_{j=i}^{L}c_{j}\right)\right)^{c_{i}}
+ \\ &
+ \beta_{s_{i}}^{(1-c_{i})(1-\delta_{s_{i},1})}
+ \prod_{t=1}^{\ell}\lambda_{d_{q_{t}}}\left(2+L-q_{t}-\sum_{j=q_{t}}^{L}c_{j}\right)^{c_{q_{t}}}\beta_{d_{q_{t}}}^{(1-c_{q_{t}})}
     \end{split}
 \end{equation}
 \textbf{Remark}: we observe that if no holes are present in \eqref{steadyStateH-coeff}, i.e. if $s_{i}\neq 1$ $\forall i\in \{1,\ldots,L\}$, then the second addend vanishes and, for these particular configurations, 
@@ -1335,13 +1335,14 @@ Multiplying the raw with indices $s_{1},\ldots,s_{L}$ of the matrix $\mathcal{F}
 where $\widehat{\Psi}(\ldots,s_{i},\ldots,d_{q_{r}},\ldots)$ denotes the component $\widehat{\Psi}(s_{1},\ldots,s_{L})$ where the occupations  $s_{q_{1}},\ldots,s_{q_{\ell}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{\ell}}$. Using \eqref{elementsABS} we have 
 \begin{equation}
     \begin{split}
-  &\widehat{\Psi}(\ldots,a_{i},\ldots,d_{q_{r}},\ldots)=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\left(\prod_{r=1}^{\ell}\delta_{c_{r},1}\right)\frac{\Gamma(2+L-\sum_{k=1}^{L}}{\Gamma(2+L)}
-  \\&
-  \prod_{i=1\,:\, i\neq q_{1},\ldots,q_{\ell}}^{L}\left(\lambda_{s_{i}}\left(1-L-i-\sum_{j=i}^{L}c_{j}\right)\right)^{c_{i}}\beta_{s_{i}}^{(1-c_{i})(1-\delta_{s_{i},1})}
-  \prod_{r=1}^{\ell}\lambda_{q_{r}}\left(1+L-q_{r}-\sum_{j=q_{r}}^{L}c_{j}\right)
+  &\widehat{\Psi}(\ldots,a_{i},\ldots,d_{q_{r}},\ldots)=\sum_{i=1\,:\, i\neq q_{1},\ldots,q_{l}}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{i},1}}\sum_{p=1}^{\ell}\sum_{c_{q_{p}}=0}^{1}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(2+L)}
+\\&  
+\prod_{i=1\,:\, i\neq q_{1},\ldots,q_{\ell}}^{L}\left(\lambda_{s_{i}}\left(2+L-i-\sum_{j=i}^{L}c_{j}\right)\right)^{c_{i}}\beta_{s_{i}}^{(1-c_{i})(1-\delta_{s_{i},1})}
+\\&
+  \prod_{t=1}^{\ell}\lambda_{d_{q_{t}}}\left(2+L-q_{t}-\sum_{j=q_{t}}^{L}c_{j}\right)^{c_{q_{t}}}\beta_{d_{q_{t}}}^{(1-c_{q_{t}})}
     \end{split}
 \end{equation}
-indeed, in coordinates $q_{r}$ with $r=1,\ldots \ell$ the site is non-empty, thus $c_{q_{r}}=1$. Finally, considering all possible occupations $\bm{s}=(s_{1},\ldots,s_{L})$ we obtain \eqref{steadyStateH}. 
+indeed, in coordinates $q_{r}$ with $r=1,\ldots \ell$ the species $1$ is replaced by all other possible species from $2$ to $N$.  Finally, considering all possible occupations $\bm{s}=(s_{1},\ldots,s_{L})$ we obtain \eqref{steadyStateH}. 
 \begin{flushright}
     $\square$
 \end{flushright}
