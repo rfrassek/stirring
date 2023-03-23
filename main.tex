@@ -203,7 +203,7 @@ steady state sets in.
 {\bf Remark:} in the following we will often consider type $1$ as a distinguished type
 (called `holes'), whose number at each site is fixed by the numbers of particles 
 of the remaining $N-1$ types (at the same site). It is interesting to observe that, in case we stop distinguishing the colors of the ``true'' particles of types $\{2,\ldots,N\}$, we retrieve the 
-boundary-driven version of the partial symmetric exclusion process \cite{ss,carinci2013duality}.
+boundary-driven version of the partial symmetric exclusion process \cite{schutzSandow,carinci2013duality}.
 The choice of type $1$ for the distinguished type is arbitrary and does not affect
 the results. In particular, we shall see in Section \ref{sectionDuality} about duality, that
 the dual process eventually has only particles of type $1$ on the graph.
@@ -897,7 +897,7 @@ and their action on the boundary vectors are
 	\end{equation}
 	gives $0=0$. Similar computations can be done for the right boundary.
 \subsection{The exact steady state for the multi-species stirring process on a chain}\label{subsection-exact}
-We aim to find an explicit for for the steady state $|\Psi\rangle$. The MPA states the form of the steady state in function of an abstract algebra of operators. If an explicit representation of $(X_{a})_{a=1,\ldots,N}$ was available, it would be possible to compute explicitly all the correlations and currents of particles for the Hamiltonian \eqref{hamiltonian}. Another way of computing this steady state, without passing through a representation, is using the commutators \eqref{bulk} and the actions \eqref{leftBoundary} and \eqref{rightBoundary}. For the one and two point correlation and for the currents this has been done in \cite{vanicat}. Inspired by this last reference, in this subsection, we aim to find exact formulas for the steady state of \eqref{hamiltonian} using only the \eqref{bulk}, \eqref{leftBoundary} and \eqref{rightBoundary}. In subsection \eqref{correlation-section}, this result will leads to exact correlation for arbitrary number of particles of type $\{2,\ldots,N\}$. This aim will be achieved by the help of a similarity transformation $\mathcal{S}$ that makes commutation relation simpler, and allows to find the steady state of a transformed Hamiltonian, that will be denoted by $\mathbb{H}$, with lower-triangular left boundary and diagonal right boundary. Therefore, inverting this similarity, one can retrieve the steady state of \eqref{hamiltonian}. A fundamental 'ingredient' of these computation is duality, that has been proved in section~\ref{sectionDuality}. \com{clarify}
+We aim to find an explicit for for the steady state $|\Psi\rangle$. The MPA states the form of the steady state in function of an abstract algebra of operators. If an explicit representation of $(X_{a})_{a=1,\ldots,N}$ was available, it would be possible to compute explicitly all the correlations and currents of particles for the Hamiltonian \eqref{hamiltonian}. Another way of computing this steady state, without passing through a representation, is using the commutators \eqref{bulk} and the actions \eqref{leftBoundary} and \eqref{rightBoundary}. For the one and two point correlation and for the currents this has been done in \cite{vanicat2017exact}. Inspired by this last reference, in this subsection, we aim to find exact formulas for the steady state of \eqref{hamiltonian} using only the \eqref{bulk}, \eqref{leftBoundary} and \eqref{rightBoundary}. In subsection \eqref{correlation-section}, this result will leads to exact correlation for arbitrary number of particles of type $\{2,\ldots,N\}$. This aim will be achieved by the help of a similarity transformation $\mathcal{S}$ that makes commutation relation simpler, and allows to find the steady state of a transformed Hamiltonian, that will be denoted by $\mathbb{H}$, with lower-triangular left boundary and diagonal right boundary. Therefore, inverting this similarity, one can retrieve the steady state of \eqref{hamiltonian}. A fundamental 'ingredient' of these computation is duality, that has been proved in section~\ref{sectionDuality}. Indeed, the similarity transformation $\mathcal{S}$ relies on an "intermediate transformation" $V$ (see \eqref{transformationV}) that is, up to the diagonal operator $R$, the duality matrix. \com{clarify}
 \subsubsection{The similarity transformation}
 We aim to construct a similarity transformation that maps the Hamiltonian \eqref{hamiltonian} into an other $\mathbb{H}$ that has left boundary lower-triangular and right boundary diagonal. Consider the transformation
 \begin{equation}\label{transformationV}
@@ -1248,10 +1248,10 @@ we obtain
 Because of the exponent $(1-\delta_{s_{i},1})$, the element $\widetilde{\Psi}(\bm{s})$ has, up the term $\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{s_{i},1})}{\Gamma(L+2)}$, a contribution of a factor $\lambda_{s_{i}}\left(1+L-i-\sum_{j=i}^{L}(1-\delta_{s_{i},1})\right)$ if the site is non empty, and a contribution of a factor "$1$" if the site is empty, it is convenient to introduce the $c_{i}$ of defined in \eqref{CiEquation}. Then, equation  \eqref{ABS_intermediate} reads 
 \begin{equation}\label{elementsABS}
 	\begin{split}
-		\widehat{\Psi}(\mathbf{s})=\sum_{c_{1}=0}^{1-\delta_{s_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{s_{L},1}}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(L+2)}\prod_{i=1}^{L}\left[\lambda_{s_{i}}\left(1+L-i-\sum_{j=i}^{L}c_{j}\right)\right]^{c_{i}}\left(\beta_{s_{i}}\right)^{(1-c_{i})(1-\delta_{s_{i},1})}
+		\widehat{\Psi}(\mathbf{s})=\sum_{c_{1}=0}^{1-\delta_{s_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{s_{L},1}}\frac{\Gamma(2+L-\sum_{k=1}^{L}c_{k})}{\Gamma(L+2)}\prod_{i=1}^{L}\left(\lambda_{s_{i}}\left(2+L-i-\sum_{j=i}^{L}c_{j}\right)\right)^{c_{i}}\left(\beta_{s_{i}}\right)^{(1-c_{i})(1-\delta_{s_{i},1})}
 	\end{split}
 \end{equation} 
-Indeed, when $c_{i}=0$ this formula replaces the contribution in the square brackets with a $b_{s_{i}}$. 
+Indeed, when $c_{i}=0$ this formula replaces the contribution in the square brackets with a $\beta_{s_{i}}$. 
 Finally, considering all possible occupancy $\bm{s}$, we obtain \eqref{ABS}.
 \begin{flushright}
     $\square$
@@ -1380,7 +1380,7 @@ As already pointed out in \eqref{LinkABS-corr}, for non-empty configurations we 
 \end{equation}
 Thus, by applying the formula \eqref{ABS_intermediate} we have 
 \begin{equation}
-	\widehat{\Psi}_{\bm{y}}(s_{1},\ldots,s_{m})=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1}\frac{\Gamma(2+L-\sum_{k=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{s_{k}}^{c_{k}}\beta_{s_{k}}^{1-c_{k}}\left(L+1-y_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}
+	\widehat{\Psi}_{\bm{y}}(s_{1},\ldots,s_{m})=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1}\frac{\Gamma(2+L-\sum_{k=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{s_{k}}^{c_{k}}\beta_{s_{k}}^{1-c_{k}}\left(2+L-y_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}
 \end{equation}
 By using the relation \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we have the equations for arbitrary correlations.
 \begin{flushright}
