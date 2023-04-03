@@ -314,7 +314,7 @@ The explicit actions of the algebra generators on the vectors $|n\rangle$ are th
 One can check that the matrices defined in this way satisfy the commutation relations \eqref{eq:comgl} and yield Dynkin weight \eqref{eq:dynkin}.
 
 \noindent
-\textbf{Remara}: The symmetric representations $\lambda=(\twoj,0,\ldots,0)$ are dual to the representations $\lambda=(\twoj,\ldots,\twoj,0)$ that can be obtained via 
+\textbf{Reamrk}: The symmetric representations $\lambda=(\twoj,0,\ldots,0)$ are dual to the representations $\lambda=(\twoj,\ldots,\twoj,0)$ that can be obtained via 
 \begin{equation}
    \bar E_{ab}=\nu\delta_{ab}-E_{N-b+1,N-a+1}
 \end{equation}
@@ -438,7 +438,7 @@ The duality definition can also be formulated as a relation between the generato
 In the specific case where $\mathcal{L}=\widetilde{\mathcal{L}}$ we say that the process is self-dual.
 \newline
 \newline
-\textbf{Remara}:
+\textbf{Reamrk}:
 when the state spaces of the dual processes is finite, the generators and the duality function are matrices with elements $\mathcal{L}(\eta,\eta^{'})$, $\widetilde{\mathcal{L}}(\xi,\xi^{'})$ and $D(\eta,\xi)$ for arbitrary $\eta,\eta^{'}\in\Omega$ and $\xi,\xi^{'}\in \widetilde{\Omega}$. Therefore, we can write the duality relation \eqref{dualityRelationGenerator} as 
 \begin{equation}
     \sum_{\eta^{'}\in\,\Omega}\mathcal{L}(\eta,\eta^{'})D(\eta^{'},\xi)=\sum_{\xi^{'}\in\, \widetilde{\Omega}}\widetilde{\mathcal{L}}(\xi,\xi^{'})D(\eta,\xi^{'})
@@ -485,7 +485,7 @@ where we denote the \textit{density} of the species $k\in \{2,\ldots,N\}$ at the
 \newline
 On one hand, the edge part of the dual generator \eqref{DualGenerator} is a copy of \eqref{edgeGenerator}, therefore it performs the stirring dynamics on the graph. On the other hand, the dual generator \eqref{siteDualGenerator} replaces a particle of any type $k\in\{2,\ldots,N\}$ at site $x$ with a particle of type $1$ and creates a particle of the same type $k$ at the extra-site $\widehat{x}$. This last transition is performed with rate $\sum_{i=1}^{N}\alpha_{i}^{x}r_{a}^{x}$. This means that eventually the dual process voids the graph, putting all the dual particles of species $\{2,\ldots,N\}$ in the extra-sites. In other words the extra-sites play the role of absorbing boundaries. 
 \newline \newline
-\textbf{Remara}: in the reversible situation, i.e. when $\forall x\in V$ $\alpha_{a}^{x}=\alpha_{a}$, the expectation  of the duality function  $D(\bm{n},\bm{\xi})$ with   $\bm{n}$ distributed as  $\mu_{rev} = \bigtimes_{x\in V}\text{Multinomial}\left(\twoj, p_{1},\ldots,p_{N}\right)$ is
+\textbf{Reamrk}: in the reversible situation, i.e. when $\forall x\in V$ $\alpha_{a}^{x}=\alpha_{a}$, the expectation  of the duality function  $D(\bm{n},\bm{\xi})$ with   $\bm{n}$ distributed as  $\mu_{rev} = \bigtimes_{x\in V}\text{Multinomial}\left(\twoj, p_{1},\ldots,p_{N}\right)$ is
 \begin{equation}
 \mathbb{E}_{\mu^{rev}}\left[D(\bm{n},\bm{\xi})\right]=\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{\sum_{x\in V}r_{a}^{x}+\sum_{x\in V}m_{a}^{\widehat{x}}}\qquad \forall \bm{n}\in \Omega,\quad\forall \bm{\xi}\in \widetilde{\Omega}
 \end{equation}
@@ -520,7 +520,7 @@ E^{x}=\sum_{a=2}^{N}E_{a1}^{x}
 \end{equation}
 and
 \begin{equation}\label{Rmatrix}
-    R_{x}=\sum_{n^{x}\in\Omega_{x}}\frac{\prod_{a=1}^{N}n_{a}^{x}}{\nu!}|n_{1}^{x},\ldots,n_{N}^{x}\rangle\langle n_{1}^{x},\ldots,n_{N}^{x}|
+    R_{x}=\sum_{n^{x}\in\Omega_{x}}\frac{\prod_{a=1}^{N}n_{a}^{x}!}{\nu!}|n_{1}^{x},\ldots,n_{N}^{x}\rangle\langle n_{1}^{x},\ldots,n_{N}^{x}|
 \end{equation}
 and where 
 \begin{equation}\label{dualityMatrix2}
@@ -636,7 +636,7 @@ i.e. $S_{x,y}$ is a symmetry of $H_{x,y}$. \\ Finally, we obtain that
     \end{split}
 \end{equation}
  where we used \eqref{transpositionPropertyH} and \eqref{symmetryH} in the second equality. Thus, \eqref{edgeDualRealtion} is proved. 
- %\textbf{Remara}: it is important to notice that the elements of the duality matrix \eqref{dualityElements} are well defined only if at each site $x\in V$ and for every species $k\in \{2,\ldots,N\}$ the number of dual particles $r_{x}^{a}$ is lower or equal than the number of original particles $n_{a}^{x}$. This implies that the dynamics of the dual process is simpler, because described by a lower number of particles. By the way, it is possible to perform computations similar to the one made in this proof choosing instead of  \eqref{equationE} {\color{red} $E=\sum_{a=2}^{N}E_{1a}$ or $E=\sum_{a=2}^{N}E_{aa}$.}
+ %\textbf{Reamrk}: it is important to notice that the elements of the duality matrix \eqref{dualityElements} are well defined only if at each site $x\in V$ and for every species $k\in \{2,\ldots,N\}$ the number of dual particles $r_{x}^{a}$ is lower or equal than the number of original particles $n_{a}^{x}$. This implies that the dynamics of the dual process is simpler, because described by a lower number of particles. By the way, it is possible to perform computations similar to the one made in this proof choosing instead of  \eqref{equationE} {\color{red} $E=\sum_{a=2}^{N}E_{1a}$ or $E=\sum_{a=2}^{N}E_{aa}$.}
  %{\color{blue} That's confusing. What is E?}
  
  
@@ -824,11 +824,11 @@ where
 \end{equation} 
 The Hamiltonian is
 \begin{equation}\label{hamiltonian}
-	H=B_{1}+H_{bula}+B_{L}
+	H=B_{1}+H_{bulk}+B_{L}
 \end{equation}
 where
 \begin{equation}
-    H_{bula}=\sum_{x=1}^{L-1}\mathcal{H}_{x,x+1}
+    H_{bulk}=\sum_{x=1}^{L-1}\mathcal{H}_{x,x+1}
 \end{equation}
 Moreover, for a fixed site $x\in \{1,\ldots,L\}$ we have 
 \begin{equation}
@@ -909,7 +909,7 @@ and their action on the boundary vectors are
 	\left(\beta_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)|V\rangle=-\lambda_{a}|V\rangle\qquad\forall a=1,\ldots,N
 \end{equation}
 \newline
-\textbf{Remara}: only $N-1$ of \eqref{leftBoundary} and \eqref{rightBoundary} are independent, indeed because of \eqref{ratesConditions} and \eqref{lambdaConditions}
+\textbf{Reamrk}: only $N-1$ of \eqref{leftBoundary} and \eqref{rightBoundary} are independent, indeed because of \eqref{ratesConditions} and \eqref{lambdaConditions}
 	\begin{equation}
 		\sum_{a=1}^{N}	\langle W|\left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=\sum_{a=1}^{N}\lambda_{a}\langle W|
 	\end{equation}
@@ -931,7 +931,7 @@ Observe that it is the the duality matrix at site $x\in \{1,\ldots,L\}$ up to th
 \end{equation}
 such that 
 \begin{equation}\label{similarV}
-   H=\left(\mathcal{V}^{-1}\right)^{T}\widehat{H}^{T}V^{T}
+   H=\left(\mathcal{V}^{-1}\right)^{T}\widehat{H}^{T}\mathcal{V}^{T}
 \end{equation}
 Using \eqref{transformationV} we introduce the \textit{similarity transformation} 
 \begin{equation}\label{similarity}
@@ -943,7 +943,7 @@ Taking the tensor product over the sites of the chain we further define
 \end{equation}
 Therefore, we call
 \begin{equation}\label{bbHamiltonian}
-    \mathbb{H}=\mathbb{B}_{1}+H_{bula}+\mathbb{B}_{L}
+    \mathbb{H}=\mathbb{B}_{1}+H_{bulk}+\mathbb{B}_{L}
 \end{equation}
 such that 
 \begin{equation}\label{similarS}
@@ -1180,7 +1180,7 @@ Finally summing over all $\mathbf{s}\in \Omega$ (that is equivalent, $\forall i\
 \begin{flushright}
 $\square$
 \end{flushright}
-\subsubsection{The steady state of $\widehat{H}$}
+\subsubsection{The steady state of $\widehat{H}^{T}$}
 Knowing the steady state \eqref{ResulsBasis} of the Hamiltonian $\mathbb{H}$ defined in \eqref{bbHamiltonian}, we use \eqref{SteadyStateHatTilde} to retrieve the steady state of the Hamiltonian $\widehat{H}$ defined in \eqref{hatHamiltonian}. The result is the following 
 \begin{equation}\label{ABS-vect}
     |\widehat{\Psi}\rangle =\sum_{s_{1},\ldots,s_{L}=1}^{N}\widehat{\Psi}(\bm{s})|\bm{s}\rangle 
@@ -1294,7 +1294,7 @@ where for every $(s_{1},\ldots,s_{L})=\bm{s}$
  \prod_{t=1}^{b}\lambda_{d_{q_{t}}}\left(2+L-q_{t}-\sum_{j=q_{t}}^{L}c_{j}\right)^{c_{q_{t}}}\beta_{d_{q_{t}}}^{(1-c_{q_{t}})}
     \end{split}
 \end{equation}
-\textbf{Remara}: we observe that if no holes are present in \eqref{steadyStateH-coeff}, i.e. if $s_{x}\neq 1$ $\forall i\in \{1,\ldots,L\}$, then the second addend vanishes and, for these particular configurations, 
+\textbf{Reamrk}: we observe that if no holes are present in \eqref{steadyStateH-coeff}, i.e. if $s_{x}\neq 1$ $\forall i\in \{1,\ldots,L\}$, then the second addend vanishes and, for these particular configurations, 
 \begin{equation}\label{LinkABS-corr}
 \Psi(\bm{s})=\widehat{\Psi}(\bm{s})
 \end{equation}
@@ -1709,7 +1709,7 @@ then
 	2\sum_{a,b=1\,:\, a<b}^{L}e_{j1}^{[a]}e_{11}^{[b]}-2\sum_{a,b=1\,:\, a>b}^{L}\sum_{a=2}^{N}e_{ja}^{[a]}e_{a1}^{[b]}}
 \end{split}
 \end{equation}
-\textbf{Remara}: it is easy to see that, when restricted to the case of 2 species,  \eqref{a2lp},\eqref{a2l},\eqref{a2lm1} correspond to the one compute in \cite{frassek2020eigenstates}. \\ \\
+\textbf{Reamrk}: it is easy to see that, when restricted to the case of 2 species,  \eqref{a2lp},\eqref{a2l},\eqref{a2lm1} correspond to the one compute in \cite{frassek2020eigenstates}. \\ \\
 The interesting charges (we only look for the first non trivial one) take the following form  
 
 
@@ -2059,7 +2059,7 @@ Therefore, arguing similarly to subsection~\ref{subsectionDualityProof}, \eqref{
 \appendix
 \section{Oscillator}
 
-\textbf{Remara}: The basis element the we have defined above, can also be thought as proper compositions of the rising and lowering operators of th Heisenberg Lie algebra. Indeed, \begin{equation}\label{creationOperators}
+\textbf{Reamrk}: The basis element the we have defined above, can also be thought as proper compositions of the rising and lowering operators of th Heisenberg Lie algebra. Indeed, \begin{equation}\label{creationOperators}
 	\begin{cases}
 	\oad_{a}|n_{1},\ldots,n_{a},\ldots,n_{N}\rangle = |n_{1},\ldots,n_{a}+1,\ldots,n_{N}\rangle\\
 	\oa_{a}|n_{1},\ldots,n_{a},\ldots,n_{N}\rangle =n_{a}|n_{1},\ldots,n_{a}-1,\ldots,n_{N}\rangle
@@ -2116,7 +2116,7 @@ In matrix form $\forall a,b\in \{1,\ldots,N\}$
 	&e_{ab}=\sum_{n\in\chi}n_{b}|n_{1},\ldots,n_{a}+1,\ldots,n_{b}-1,\ldots n_{N}\rangle \langle n_{1},\ldots,n_{N}|
 	\end{split}
 \end{equation}
-\textbf{Remara}: in this algebraic setting it is more convenient to use the \textit{Bra-Ket} notation for the states of the process. The mapping with the vectors written in \eqref{stateSpace} is the following
+\textbf{Reamrk}: in this algebraic setting it is more convenient to use the \textit{Bra-Ket} notation for the states of the process. The mapping with the vectors written in \eqref{stateSpace} is the following
 \begin{equation}
 (n_{1}^{x},\ldots,n_{N}^{x})^{T}=|n_{1},\ldots,n_{N}\rangle_{x}\qquad(n_{1}^{x},\ldots,n_{N}^{x})=\langle n_{1},\ldots,n_{N}|_{x}
 \end{equation}
