@@ -1287,7 +1287,7 @@ where for every $(s_{1},\ldots,s_{L})=\bm{s}$
         \sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right) 
         \sum_{r=1}^{b}\sum_{d_{q_{r}}=2}^{N}
 \\&
-\sum_{i=1\,:\, i\neq q_{1},\ldots,q_{l}}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{x},1}}\sum_{p=1}^{b}\sum_{c_{q_{p}}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{L}c_{a})}{\Gamma(2+L)}
+\sum_{i=1\,:\, i\neq q_{1},\ldots,q_{b}}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{x},1}}\sum_{p=1}^{b}\sum_{c_{q_{p}}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{L}c_{a})}{\Gamma(2+L)}
   \prod_{i=1\,:\, i\neq q_{1},\ldots,q_{b}}^{L}\left(\lambda_{s_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{i}}
  \\ &
  \beta_{s_{x}}^{(1-c_{i})(1-\delta_{s_{x},1})}
@@ -1378,6 +1378,10 @@ We compute in this section a formula for the stationary steady state correlation
 	\begin{equation}\label{powerCoeffNOspec}
 		f(c_{1},\ldots,c_{m})=\frac{\Gamma(L+2-\sum_{i=1}^{m}c_{i})}{\Gamma(L+2)}
 	\end{equation}
+\textbf{Remark}: using the Binomial Theorem we rewrite the \eqref{exactCorrelations} as
+\begin{equation}
+	\langle n^{y_{1}}_{s_{1}},\ldots,n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{s_{k}}^{t_{k}}\beta_{s_{k}}^{1-t_{k}}\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(c_{1},\ldots,c_{m})g_{k}(c_{k},\ldots,c_{m})
+\end{equation}
  \paragraph{Proof of formula \eqref{exactCorrelations}}
  We aim to compute the correlations between the sites $\mathbf{y}=\left(y_{1},\ldots,y_{m}\right)$ occupied by the species $\mathbf{s}=\left(s_{1},\ldots,s_{m}\right)$, such that $s_{1},\ldots,s_{m}\in \{2,\ldots,N\}$ i.e. 
 \begin{equation}\label{Prob-m}
@@ -1448,7 +1452,7 @@ Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain
     \end{split}
 \end{equation}
 \textbf{Remark}: the one and two points correlations computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively are exactly the ones found in subsection 4.3 of \cite{vanicat2017exact}. 
-\subsection{One points correlations of the non-integrable multi-speceis stirring process on a chain}
+\subsection{One points correlations of the non-integrable multi-speceis stirring process on a chain[To check, something could be wrong]}
 In subsection~\ref{subsection-exact}, for the case with geometry of one dimensional chain of length $L$ connected at the ends with two reservoris of parameters $(\alpha_{a})_{a=1,\ldots,N}$ and $(\beta_{a})_{a=1,\ldots,N}$, all the correlations have been written by \eqref{exactCorrelations} using integrability. When the maximal occupation of each site $\nu>1$, this nice property is lost. However, something about correlations can be said using duality. In this subsection we still consider the same geometry of \ref{subsection-exact}. As pointed out in section~\ref{sectionDuality}, the dual process voids the chain. Therefore, the problem of computing the average of the duality matrix with respect to the stationary distribution is reduced to computing the absorption probabilities of dual particles, as we will clarify below. In this context it is better to work agin with generators. We first write the generators for the original and the dual process and the duality matrix in the particular case of this geometry. \\
 We consider the process $(\bm{n}(t))_{t\geq 0}$ on a chain of length $L$ with the end sites connected with two reservoirs. This interaction with the external environment is described by the generators 
 \begin{equation}
@@ -1474,12 +1478,12 @@ Calling $\mu_{stat}$ the stationary measure of the the process $(\bm{n}(t))_{t\g
 \begin{split}
 \mathbb{E}_{\mu^{stat}}\left[D(\bm{n}(t),\bm{\xi})\right]&=\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\bm{\xi})\right]=\lim_{t\to\infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{n},\bm{\xi}(t))\right]
 \\=&
-\sum_{i_{1}=0}^{|\xi_{1}|}\ldots\sum_{i_{N}=0}^{|\xi_{N}|}\prod_{a=2}^{N}\left(\rho_{a}^{L}\right)^{i_{a}}\left(\rho_{a}^{R}\right)^{|\xi_{a}|-i_{a}}a_{i_{1},\ldots,i_{a}}(\bm{\xi})
+\sum_{i_{1}=0}^{|\xi_{1}|}\ldots\sum_{i_{N}=0}^{|\xi_{N}|}\prod_{a=2}^{N}\left(\rho_{a}^{L}\right)^{i_{a}}\left(\rho_{a}^{R}\right)^{|\xi_{a}|-i_{a}}a_{i_{1},\ldots,i_{N}}(\bm{\xi})
 \end{split}
 \end{equation}
 where 
 \begin{equation}\label{Pass}
-    a_{i_{a}}(\bm{\xi})=\mathbb{P}\left(\xi(\infty)=\sum_{a=2}^{N}\left(i_{a}\delta_{0}+(|\xi_{a}|-i_{a})\delta_{L+1}\right)| \xi_{0}=\xi\right)
+    a_{i_{1},\ldots,i_{N}}(\bm{\xi})=\mathbb{P}\left(\xi(\infty)=\sum_{a=2}^{N}\left(i_{a}\delta_{0}+(|\xi_{a}|-i_{a})\delta_{L+1}\right)| \xi_{0}=\xi\right)
 \end{equation}
 where $D(\bm{n},\bm{\xi})$ is the duality function defined in \eqref{dualityFunctionChain}. Here, we denote by $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x}$ and by $i_{a}$ the number of dual particles of species $k\in\{2,\ldots,N\}$ absorbed at left, thus we denote by $|\xi_{a}|-i_{a}$ the number of particles of the same type absorbed at right.\\
 We observe that the duality function \eqref{dualityFunctionChain} computed in the dual configurations $\bm{\widehat{\xi}}=\delta_{s_{1}}^{y_{1}}+\ldots+\delta_{s_{m}}^{y_{m}}$ with $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$ and $s_{x}\in \{2,\ldots,N\}$ $\forall i=\{2,\ldots,m\}$ is given by 
