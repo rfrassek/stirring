@@ -144,7 +144,7 @@
 \par\endgroup
  \vspace{3.5em}
  \begingroup\large \bf
-% {Rouven Frassea}
+% {Rouven Frassek}
  \par\endgroup
 \vspace{2em}
 
@@ -1368,11 +1368,11 @@ indeed, in coordinates $q_{r}$ with $r=1,\ldots b$ the species $1$ is replaced b
 We compute in this section a formula for the stationary steady state correlations between $m$- points of the chain, each of them occupied by a non empty species, i.e. a species with label from $2$ to $N$. This is motivated by interest of understanding how actual particles of the chain are correlated among each others. Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $\bm{y}=(y_{1},\ldots,y_{m})$, such that $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$. In each of these points there is a particle of species $s_{x}\in \{2,\ldots,N\}$. Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
 \begin{equation}\label{exactCorrelations}
 		\langle n^{y_{1}}_{s_{1}},\ldots,n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{c_{1},\ldots,c_{m}=0}^{1}
-			f(c_{1},\ldots,c_{m})\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(c_{k},\ldots,c_{m})
+			f(c_{1},\ldots,c_{m})\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(y_{k},c_{k},\ldots,c_{m})
 	\end{equation}
 	where 
 	\begin{equation}\label{powerCoeffSpecies}
-		g_{k}(c_{k},\ldots,c_{m})=\left(L+2-y_{k}-\sum_{i=k}^{m}c_{i}\right)^{c_{k}}
+		g_{k}(y_{k},c_{k},\ldots,c_{m})=\left(L+2-y_{k}-\sum_{i=k}^{m}c_{i}\right)^{c_{k}}
 	\end{equation}
 	and 
 	\begin{equation}\label{powerCoeffNOspec}
@@ -1380,7 +1380,7 @@ We compute in this section a formula for the stationary steady state correlation
 	\end{equation}
 \textbf{Remark}: using the Binomial Theorem we rewrite the \eqref{exactCorrelations} as
 \begin{equation}
-	\langle n^{y_{1}}_{s_{1}},\ldots,n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{s_{k}}^{t_{k}}\beta_{s_{k}}^{1-t_{k}}\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(c_{1},\ldots,c_{m})g_{k}(c_{k},\ldots,c_{m})
+	\langle n^{y_{1}}_{s_{1}},\ldots,n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{s_{k}}^{t_{k}}\beta_{s_{k}}^{1-t_{k}}\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(c_{1},\ldots,c_{m})g_{k}(y_{k},c_{k},\ldots,c_{m})
 \end{equation}
  \paragraph{Proof of formula \eqref{exactCorrelations}}
  We aim to compute the correlations between the sites $\mathbf{y}=\left(y_{1},\ldots,y_{m}\right)$ occupied by the species $\mathbf{s}=\left(s_{1},\ldots,s_{m}\right)$, such that $s_{1},\ldots,s_{m}\in \{2,\ldots,N\}$ i.e. 
