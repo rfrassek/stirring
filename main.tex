@@ -217,7 +217,7 @@ Interpreting type $1$ as an hole, one can then say that the dual process voids t
 
 
 
-\subsection{The infinitesimal generator}
+\subsection{The process generator}
 We now give the mathematical description of the multi-species stirring process.
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
 At each site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $k$-th component $n_{a}^{x}$ denotes the number of particles of species $k\in \{1,\ldots,N\}$ at site $x\in V$. On each vertex we allow a total  maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space of the process on the graph $G$ is 
@@ -452,7 +452,8 @@ where the superscript $T$ denotes the matrix transposition. Therefore, the duali
     H^{T}D=D\widetilde{H}
 \end{equation}
 \subsection{Duality for the multi-species stirring process}\label{statementDualitySubsection}
-In this section we show that the process $(\mathbf{n}(t))_{t\geq 0}$, defined by the generator \eqref{Generator}, is dual to a process $(\bm{\xi}(t))_{t\geq 0}$ taking values in the enlarged state space
+In this section we formulate duality for the multi-species stirring process $(\mathbf{n}(t))_{t\geq 0}$, defined by the generator \eqref{Generator}.
+The dual  process $(\bm{\xi}(t))_{t\geq 0}$ takes values in the enlarged state space
 \begin{equation}\label{dualStateSpace}
     \widetilde{\Omega}= \bigtimes_{x\in V} \widetilde{\Omega}_{x}\ = \bigtimes_{x\in V} (\Omega_{x}\times \mathbb{N}_{0}^{N-1})
 \end{equation}
@@ -462,37 +463,39 @@ We write the configurations $\bm{\xi} \in \widetilde\Omega$  as
 \begin{equation}
     \bm{\xi}=\left(r_{1}^{x},\ldots,r_{N}^{x},m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}\right)_{x\in V}
 \end{equation}
-where the component $r_{a}^{x}$ is interpreted as the number of dual particles of type $k\in \{1,\ldots,N\}$ at site $x$, 
-and the component $m_{a}^{\widehat{x}}$  gives the number of dual particles of type $k\in \{2,\ldots,N\}$ at 
+where the component $r_{a}^{x}$ is interpreted as the number of dual particles of type $a\in \{1,\ldots,N\}$ at site $x$, 
+and the component $m_{a}^{\widehat{x}}$  gives the number of dual particles of type $a\in \{2,\ldots,N\}$ at 
 the extra-site $\widehat{x}$ connected to $x\in V$.
- The  generator of the dual process is 
+
+The duality function is given by
+\begin{equation}\label{dualityElements}
+	D(\bm{n},\bm{\xi})=\prod_{x\in V}\left(\frac{(\nu -\sum_{a=2}^{N}r_{a}^{x})!}{\nu!}\prod_{a=2}^{N}\frac{n_{a}^{x}!}{(n_{a}^{x}-r_{a}^{x})!}\left(\rho_{a}^{x}\right)^{m_{a}^{\widehat{x}}}\,\right)
+\end{equation}
+where we denote the \textit{density} of the species $a\in \{2,\ldots,N\}$ imposed by the reservoir at site $x\in V$  by 
+\begin{equation}
+\rho_{a}^{x}:=\frac{\alpha_{a}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}
+\end{equation}
+The dual process is defined by its generator, which reads
  \begin{equation}\label{DualGenerator}
     \widetilde{\mathcal{L}}=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}+\sum_{x\in V}\Gamma_{x}\widetilde{\mathcal{L}}_{x}
 \end{equation}
 where 
-$\mathcal{L}_{x,y}$ is defined in \eqref{siteGenerator} and, for any function $f:\widetilde{\Omega}\to \mathbb{R}$ 
+$\mathcal{L}_{x,y}$ is defined in \eqref{edgeGenerator} and, for any function $f:\widetilde{\Omega}\to \mathbb{R}$ 
 \begin{equation}\label{siteDualGenerator}
     \widetilde{\mathcal{L}}_{x}f(\bm{\xi})=\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}r_{a}^{x}\left(f(\bm{\xi}-\delta_{a}^{x}+\delta_{1}^{x}+\delta_{a}^{\widehat{x}})-f(\bm{\xi})\right)
 \end{equation}
-and the duality function is 
-\begin{equation}\label{dualityElements}
-	D(\bm{n},\bm{\xi})=\prod_{x\in V}\left(\frac{(2j-\sum_{a=2}^{N}r_{a}^{x})!}{\nu!}\prod_{a=2}^{N}\frac{n_{a}^{x}!}{(n_{a}^{x}-r_{a}^{x})!}\left(\rho_{a}^{x}\right)^{m_{a}^{\widehat{x}}}\,\right)
-\end{equation}
-where we denote the \textit{density} of the species $k\in \{2,\ldots,N\}$ at the reservoir connected with the site $x\in V$  by 
-\begin{equation}
-\rho_{a}^{x}:=\frac{\alpha_{a}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}
-\end{equation}
 \newline
-On one hand, the edge part of the dual generator \eqref{DualGenerator} is a copy of \eqref{edgeGenerator}, therefore it performs the stirring dynamics on the graph. On the other hand, the dual generator \eqref{siteDualGenerator} replaces a particle of any type $k\in\{2,\ldots,N\}$ at site $x$ with a particle of type $1$ and creates a particle of the same type $k$ at the extra-site $\widehat{x}$. This last transition is performed with rate $\sum_{i=1}^{N}\alpha_{i}^{x}r_{a}^{x}$. This means that eventually the dual process voids the graph, putting all the dual particles of species $\{2,\ldots,N\}$ in the extra-sites. In other words the extra-sites play the role of absorbing boundaries. 
+Therefore the dual dynamics is described as follows. On one hand, the edge part $\mathcal{L}_{x,y}$ of the dual generator gives rise to  the multi-species stirring dynamics on the graph. On the other hand, the site
+part $\widetilde{\mathcal{L}}_{x}$ of the dual generator replaces a particle of any type $a\in\{2,\ldots,N\}$ at site $x$ with a particle of type $1$ and creates a particle of the same type $a$ at the extra-site $\widehat{x}$. This last transition is performed with rate $\sum_{i=1}^{N}\alpha_{i}^{x}r_{a}^{x}$. This means that eventually the dual process voids the graph, putting all the dual particles of species $\{2,\ldots,N\}$ in the extra-sites. In other words the extra-sites play the role of absorbing boundaries. 
 \newline \newline
-\textbf{Reamrk}: in the reversible situation, i.e. when $\forall x\in V$ $\alpha_{a}^{x}=\alpha_{a}$, the expectation  of the duality function  $D(\bm{n},\bm{\xi})$ with   $\bm{n}$ distributed as  $\mu_{rev} = \bigtimes_{x\in V}\text{Multinomial}\left(\twoj, p_{1},\ldots,p_{N}\right)$ is
+\textbf{Remark}: in the reversible situation, i.e. when $\forall x\in V$ $\rho_{a}^{x}=\rho_{a}$, the expectation  of the duality function  $D(\bm{n},\bm{\xi})$ with   $\bm{n}$ distributed as  $\mu_{rev} = \bigtimes_{x\in V}\text{Multinomial}\left(\twoj, \rho_{1},\ldots,\rho_{N}\right)$ is
 \begin{equation}
-\mathbb{E}_{\mu^{rev}}\left[D(\bm{n},\bm{\xi})\right]=\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{\sum_{x\in V}r_{a}^{x}+\sum_{x\in V}m_{a}^{\widehat{x}}}\qquad \forall \bm{n}\in \Omega,\quad\forall \bm{\xi}\in \widetilde{\Omega}
+\mathbb{E}_{\mu^{rev}}\left[D(\bm{n},\bm{\xi})\right]=\prod_{a=2}^{N}\left(\rho_{a}\right)^{\sum_{x\in V}r_{a}^{x}+\sum_{x\in V}m_{a}^{\widehat{x}}}\qquad \forall \bm{n}\in \Omega,\quad\forall \bm{\xi}\in \widetilde{\Omega}
 \end{equation}
 
 \subsection{Proof of duality}
 To prove duality between $(\bm{n}(t))_{t\geq 0}$ and $(\bm{\xi}(t))_{t\geq 0}$ we  show that \eqref{dualityIntertwines} is fulfilled.  To show this, we will use the Hamiltonians (linked with the generators by \eqref{Hamiltonian-Generator}) and their Lie algebraic description. Indeed, in this formalism the proof reduces to finding symmetries and exponential transformation of generators of the Lie algebra.\\
-The configuration space  \eqref{dualStateSpace} of the dual process is the collection of vectors
+To each configuration $\bm{\xi}$ of the configuration space  \eqref{dualStateSpace} of the dual process we associate the vector
 \begin{equation}
     |\bm{\xi}\rangle=\bigotimes_{x\in V}\left(|r_{1}^{x},\ldots,r_{N}^{x}\rangle\otimes |m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}\rangle\right)
 \end{equation}
@@ -662,7 +665,7 @@ In the followin we need the application of the Hadamard formula with $B=E$ defin
     \end{equation}
 Indeed, using \eqref{eq:comgl} we have 
     \begin{equation}
-       \left[E, E_{bb}\right]=\sum_{a=2}^{N}\left(E_{ab}\delta_{b 1}-E_{b 1}\delta_{ab}\right)=-E_{l1}
+       \left[E, E_{bb}\right]=\sum_{a=2}^{N}\left(E_{ab}\delta_{b 1}-E_{b 1}\delta_{ab}\right)=-E_{b1}
     \end{equation}
     Inserting the above commutator in \eqref{HadamardFormula}, we obtain \eqref{HT_Ell}.
     \item for $A=E_{1b}$ with $b\in \{2,\ldots,N\}$, we obtain 
@@ -673,29 +676,26 @@ Indeed, using \eqref{eq:comgl} we have
     
     Indeed, using \eqref{eq:comgl} we have 
     \begin{equation}
-[E,E_{1b}]=\sum_{a=2}^{N}\left(E_{ab}\delta_{11}-E_{11}\delta_{ab}\right)=\sum_{a=2}^{N}E_{ab}-E_{11};
+[E,E_{1b}]=\sum_{a=2}^{N}\left(E_{ab}\delta_{11}-E_{11}\delta_{ab}\right)= (\sum_{a=2}^{N}E_{ab} ) -E_{11};
 \end{equation}
 and 
 \begin{equation}
 \begin{split}
 \left[E,[E,E_{1b}]\right]&=\sum_{b=2}^{N}\sum_{a=2}^{N}\left[E_{b1},E_{ab}\right]-\sum_{b=2}^{N}\left[E_{b1},E_{11}\right]
 \\&=
-\sum_{a,b=2}^{N}\left(E_{bb}\delta_{a1}-E_{j1}\delta_{bb}\right)-\sum_{b=2}^{N}\left(E_{b1}\delta_{11}-E_{11}\delta_{b1}\right)
+\sum_{a,b=2}^{N}\left(E_{bb}\delta_{a1}-E_{a1}\delta_{bb}\right)-\sum_{b=2}^{N}\left(E_{b1}\delta_{11}-E_{11}\delta_{b1}\right)
 \\=&
 -2\sum_{a=2}^{N}E_{a1};
 \end{split}
 \end{equation}
 Inserting the above commutators in \eqref{HadamardFormula}, we obtain \eqref{HT-E1l}.
-\item for $A=E_{ab}$ with $k,b \in \{2,\ldots,N\}$ we obtain 
+\item for $A=E_{ab}$ with $a,b \in \{2,\ldots,N\}$ we obtain 
 \begin{equation}\label{HT-Ekl}
-    \exp{(-E)}E_{b a}\exp{(E)}=E_{ab}+E_{b 1}
+    \exp{(-E)}E_{a b}\exp{(E)}=E_{ab}+E_{a 1}
 \end{equation}
    Indeed, using \eqref{eq:comgl} we have 
 \begin{equation}
-[E,E_{b a}]=\sum_{a=2}^{N}\left(E_{aa}\delta_{b 1}-E_{b 1}\delta_{aa}\right)=-E_{b 1};
-\end{equation}
-\begin{equation}
-[E,E_{ab}]=\sum_{a=2}^{N}\left(E_{ab}\delta_{a1}-E_{a1}\delta_{b a}\right)=-E_{a1};
+[E,E_{ab}]=\sum_{c=2}^{N}\left(E_{cb}\delta_{a1}-E_{a1}\delta_{c b}\right)=-E_{a1};
 \end{equation}
 Inserting the above commutator in \eqref{HadamardFormula}, we obtain \eqref{HT-Ekl}.
 \item for $A=E_{11}$ we obtain 
@@ -798,7 +798,7 @@ $\square$
 
 \section{Integrability}\label{sectionIntegrabiliy}
 \subsection{The integrable chain and the matrix product ansatz}
-In this section we specialize the multi-species stirring process to the geometry of the one dimensional chain with sites $\{1,\ldots,L\}$ where two reservoirs are connected with the end site $1$ and $L$. These boundaries, exchanges particle with the external environment, putting the chain out of equilibrium. To use integrability is better to work with Hamiltonians. The Hamiltonian that we consider here is obtained by \eqref{OriginalHamiltonian} assuming that the conducatances are
+In this section we specialize the multi-species stirring process to the geometry of the one dimensional chain with sites $\{1,\ldots,L\}$ where two reservoirs act at the boundary sites $1$ and $L$. These boundaries, exchanging particle with the external environment, put the chain out of equilibrium. The Hamiltonian that we consider here is obtained by \eqref{OriginalHamiltonian} assuming that the conductances are
 \begin{equation}
     \omega_{x,y}=\begin{cases}
     1 \quad \text{if}\quad |x-y|=1\\
@@ -813,15 +813,7 @@ and the local inhomogeneities are
     \end{cases}
     \end{equation}
 We further assume that the maximal occupancy in each site is $\nu=1$, i.e. that there is an \textit{hard-core interaction}.
-We will denote the element of the representation of the Lie algebra by lowercase letters, i.e. $e_{ab}$, since we are in the lowest spin case (the fundamental representation of algebra). \\
-The state space of the chain is 
-\begin{equation}
-    \Omega=\bigtimes_{x=1}^{L}\Omega_{x}
-\end{equation}
-where 
-\begin{equation}
-	\Omega_{x}=\left\{|n\rangle=|n_{1},\ldots,n_{N}\rangle\;:\;n\in\mathbb{N}_0^N\;\;|n|=1\right\}
-\end{equation} 
+{\color{red} We will denote the element of the representation of the Lie algebra by lowercase letters, i.e. $e_{ab}$, since we are in the lowest spin case (the fundamental representation of algebra).} \\
 The Hamiltonian is
 \begin{equation}\label{hamiltonian}
 	H=B_{1}+H_{bulk}+B_{L}
@@ -830,7 +822,7 @@ where
 \begin{equation}
     H_{bulk}=\sum_{x=1}^{L-1}\mathcal{H}_{x,x+1}
 \end{equation}
-Moreover, for a fixed site $x\in \{1,\ldots,L\}$ we have 
+Here $\mathcal{H}_{x,x+1}$  is a copy (acting on the edge $x,x+1$) of the two-site Hamiltonian
 \begin{equation}
 	\begin{split}
 		\mathcal{H}=P-\id
@@ -838,9 +830,9 @@ Moreover, for a fixed site $x\in \{1,\ldots,L\}$ we have
 \end{equation}
 with 
 \begin{equation}
-	P=\sum_{a,b=1}^Ne_{ab}\otimes e_{ba}
+	P=\sum_{a,b=1}^Ne_{ab}\otimes e_{ba}.
 \end{equation} 
-such that
+The action of $\mathcal{H}$ amounts to the permutation of the two sites, i.e.
 \begin{equation}
 	\begin{split}
 		\mathcal{H}|n\rangle\otimes   |m\rangle&=|m\rangle \otimes |n\rangle-|n\rangle \otimes|m\rangle
@@ -865,18 +857,19 @@ The boundary terms are given by
 \end{equation}
 where we assume that the parameters satisfy
 \begin{equation}\label{ratesConditions}
-	\sum_{a=2}^{N}\alpha_{a}=1,\qquad\sum_{a=2}^{N}\beta_{a}=1
+	\sum_{a=1}^{N}\alpha_{a}=1,\qquad\sum_{a=1}^{N}\beta_{a}=1
 \end{equation} 
 We define also 
 \begin{equation}\label{lambdaConditions}
-	\lambda_{a}=\alpha_{a}-\beta_{a}\quad\text{with}\quad \sum_{a=2}^{N}\lambda_{a}=0\,.
+	\lambda_{a}=\alpha_{a}-\beta_{a}\quad\text{with}\quad \sum_{a=1}^{N}\lambda_{a}=0\,.
 \end{equation}
-Under these assumption the Hamiltonian \eqref{hamiltonian} is integrable and a matrix product anstz (MPA) for the non-equilibrium steady state is available (see\cite{vanicat2017exact}). We recall the main points of this ansatz. \\
- Calling $|\mathbb{P}(t)\rangle$ a vector that contains the probability of every configuration of the chain with Hamiltonian \eqref{hamiltonian} at time $t\geq 0$, its evolution equation is given by 
+Under these assumption the Hamiltonian \eqref{hamiltonian} is integrable and a matrix product ansatz (MPA) for the non-equilibrium steady state is available (see\cite{vanicat2017exact}). 
+ Calling $|{P}(t)\rangle$ a vector that contains the probability of every configuration of the chain with Hamiltonian \eqref{hamiltonian} at time $t\geq 0$, its evolution equation is given by 
+ the master equation
 \begin{equation}
-    \frac{d|\mathbb{P}(t)}{dt}=H|\mathbb{P}(t)\rangle
+    \frac{d|{P}(t)\rangle}{dt}=H|{P}(t)\rangle
 \end{equation}
-We define the steady state of $H$ defined in \eqref{hamiltonian} a vector, denoted by $|\Psi\rangle$ that contains the probabilities of every configuration of the chain with respect to the stationary distribution, i.e. the probability distribution that the chain reaches when $t\to \infty$. We observe that, since the Markov chain with Hamiltonian \eqref{hamiltonian} is positive recurrent there exists a unique stationary distribution and, moreover, this is distribution is reached when $t\to \infty$ starting for every arbitrary initial distribution. 
+We denote by $|\Psi\rangle$ that contains the probabilities of every configuration of the chain with respect to the stationary distribution, i.e. the probability distribution that the chain reaches when $t\to \infty$. We observe that, since the Markov chain with Hamiltonian \eqref{hamiltonian} is positive recurrent there exists a unique stationary distribution and, moreover, this is distribution is reached when $t\to \infty$ starting for every arbitrary initial distribution. 
  Therefore, to find the stationary state, we aim to compute $|\Psi\rangle$ such that 
 \begin{equation}
 	H|\Psi\rangle =0
@@ -897,7 +890,7 @@ with the normalization
 \begin{equation}
 	Z_{L}=\langle W|(X_{1}+\ldots +X_{N})^{L}|V\rangle
 \end{equation}
-where $X_{a}$ for $a=1,\ldots,N$ are operators on an auxiliary space $V_{0}$ while $|V\rangle\in V_{0}$ and $\langle W|\in V_{0}^{*}$ ( where $V^{*}$ denotes the algebraic dual space), such that $\langle W|V\rangle=1$. $\langle W|$ and $|V\rangle$ are sometimes called boundary vectors. These operators $(X_{a})_{a\in \{1,\ldots,N\}}$ fulfil the commutators
+where the operators $(X_{a})_{a\in \{1,\ldots,N\}}$ fulfill the commutators
 \begin{equation}\label{bula}
 	\left[X_{a},X_{b}\right]=\lambda_{a}X_{b}-\lambda_{b}X_{a}\qquad\forall a,b=1,\ldots,N
 \end{equation}
@@ -909,13 +902,14 @@ and their action on the boundary vectors are
 	\left(\beta_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)|V\rangle=-\lambda_{a}|V\rangle\qquad\forall a=1,\ldots,N
 \end{equation}
 \newline
-\textbf{Reamrk}: only $N-1$ of \eqref{leftBoundary} and \eqref{rightBoundary} are independent, indeed because of \eqref{ratesConditions} and \eqref{lambdaConditions}
+\textbf{Remark}: only $N-1$ of the $N$ equations \eqref{leftBoundary}  are independent. This can be seen by summing them 
 	\begin{equation}
 		\sum_{a=1}^{N}	\langle W|\left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=\sum_{a=1}^{N}\lambda_{a}\langle W|
 	\end{equation}
-	gives $0=0$. Similar computations can be done for the right boundary.
-\subsection{The exact steady state for the multi-species stirring process on a chain}\label{subsection-exact}
-We aim to find an explicit for for the steady state $|\Psi\rangle$. The MPA states the form of the steady state in function of an abstract algebra of operators. If an explicit representation of $(X_{a})_{a=1,\ldots,N}$ was available, it would be possible to compute explicitly all the correlations and currents of particles for the Hamiltonian \eqref{hamiltonian}. Another way of computing this steady state, without passing through a representation, is using the commutators \eqref{bula} and the actions \eqref{leftBoundary} and \eqref{rightBoundary}. For the one and two point correlation and for the currents this has been done in \cite{vanicat2017exact}. Inspired by this last reference, in this subsection, we aim to find exact formulas for the steady state of \eqref{hamiltonian} using only the \eqref{bula}, \eqref{leftBoundary} and \eqref{rightBoundary}. In subsection \eqref{correlation-section}, this result will leads to exact correlation for arbitrary number of particles of type $\{2,\ldots,N\}$. This aim will be achieved by the help of a similarity transformation $\mathcal{S}$ that makes commutation relation simpler, and allows to find the steady state of a transformed Hamiltonian, that will be denoted by $\mathbb{H}$, with lower-triangular left boundary and diagonal right boundary. Therefore, inverting this similarity, one can retrieve the steady state of \eqref{hamiltonian}. A fundamental 'ingredient' of these computation is duality, that has been proved in section~\ref{sectionDuality}. Indeed, the similarity transformation $\mathcal{S}$ relies on an "intermediate transformation" $V$ (see \eqref{transformationV}) that is, up to the diagonal operator $R$, the duality matrix. \com{clarify}
+	and using  \eqref{ratesConditions} and \eqref{lambdaConditions}.
+ Similarly for the right boundary  \eqref{rightBoundary} there are only  $N-1$ independent equations.
+\subsection{The explicit form of the steady state}\label{subsection-exact}
+We aim to find an explicit for for the steady state $|\Psi\rangle$. The MPA gives the steady state in terms of an abstract algebra of operators. If an explicit representation of $(X_{a})_{a=1,\ldots,N}$ was available, it would be possible to compute explicitly all the correlations and currents of particles for the Hamiltonian \eqref{hamiltonian}. Another way of computing this steady state, without passing through a representation, is using the commutators \eqref{bula} and the actions \eqref{leftBoundary} and \eqref{rightBoundary}. For the one and two point correlation and for the currents this has been done in \cite{vanicat2017exact}. Inspired by this last reference, in this subsection, we aim to find exact formulas for the steady state  $|\Psi\rangle$ using only the \eqref{bula}, \eqref{leftBoundary} and \eqref{rightBoundary}. In subsection \ref{correlation-section}, this result will leads to exact correlation for arbitrary number of particles of type $\{2,\ldots,N\}$. This aim will be achieved by the help of a similarity transformation $\mathcal{S}$ that makes commutation relations simpler, and allows to find the steady state $|\widetilde\Psi\rangle$ of a transformed Hamiltonian, denoted  $\mathbb{H}$, with lower-triangular left boundary and diagonal right boundary. Therefore, inverting this similarity, one can retrieve the steady state of \eqref{hamiltonian}. A fundamental 'ingredient' of these computation is duality, that has been proved in section~\ref{sectionDuality}. Indeed, the similarity transformation $\mathcal{S}$ relies on an "intermediate transformation" $V$ (see \eqref{transformationV}) that is, up to the diagonal operator $R$, the duality matrix. \com{clarify}
 \subsubsection{The similarity transformation}
 We aim to construct a similarity transformation that maps the Hamiltonian \eqref{hamiltonian} into an other $\mathbb{H}$ that has left boundary lower-triangular and right boundary diagonal. Consider the transformation
 \begin{equation}\label{transformationV}
@@ -1294,7 +1288,7 @@ where for every $(s_{1},\ldots,s_{L})=\bm{s}$
  \prod_{t=1}^{b}\lambda_{d_{q_{t}}}\left(2+L-q_{t}-\sum_{j=q_{t}}^{L}c_{j}\right)^{c_{q_{t}}}\beta_{d_{q_{t}}}^{(1-c_{q_{t}})}
     \end{split}
 \end{equation}
-\textbf{Reamrk}: we observe that if no holes are present in \eqref{steadyStateH-coeff}, i.e. if $s_{x}\neq 1$ $\forall i\in \{1,\ldots,L\}$, then the second addend vanishes and, for these particular configurations, 
+\textbf{Remark}: we observe that if no holes are present in \eqref{steadyStateH-coeff}, i.e. if $s_{x}\neq 1$ $\forall i\in \{1,\ldots,L\}$, then the second addend vanishes and, for these particular configurations, 
 \begin{equation}\label{LinkABS-corr}
 \Psi(\bm{s})=\widehat{\Psi}(\bm{s})
 \end{equation}
@@ -1367,7 +1361,7 @@ indeed, in coordinates $q_{r}$ with $r=1,\ldots b$ the species $1$ is replaced b
 \subsection{Exact correlations}\label{correlation-section}
 We compute in this section a formula for the stationary steady state correlations between $m$- points of the chain, each of them occupied by a non empty species, i.e. a species with label from $2$ to $N$. This is motivated by interest of understanding how actual particles of the chain are correlated among each others. Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $\bm{y}=(y_{1},\ldots,y_{m})$, such that $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$. In each of these points there is a particle of species $s_{x}\in \{2,\ldots,N\}$. Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
 \begin{equation}\label{exactCorrelations}
-		\langle n^{y_{1}}_{s_{1}},\ldots,n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{c_{1},\ldots,c_{m}=0}^{1}
+		\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{c_{1},\ldots,c_{m}=0}^{1}
 			f(c_{1},\ldots,c_{m})\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(y_{k},c_{k},\ldots,c_{m})
 	\end{equation}
 	where 
@@ -1378,9 +1372,9 @@ We compute in this section a formula for the stationary steady state correlation
 	\begin{equation}\label{powerCoeffNOspec}
 		f(c_{1},\ldots,c_{m})=\frac{\Gamma(L+2-\sum_{i=1}^{m}c_{i})}{\Gamma(L+2)}
 	\end{equation}
-\textbf{Remark}: using the Binomial Theorem we rewrite the \eqref{exactCorrelations} as
+\textbf{Remark}: using the Binomial Theorem we rewrite the \eqref{exactCorrelations} as {\color{red}{add (-1)}}
 \begin{equation}
-	\langle n^{y_{1}}_{s_{1}},\ldots,n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{s_{k}}^{t_{k}}\beta_{s_{k}}^{1-t_{k}}\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(c_{1},\ldots,c_{m})g_{k}(y_{k},c_{k},\ldots,c_{m})
+	\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{s_{k}}^{t_{k}}\beta_{s_{k}}^{1-t_{k}}\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(c_{1},\ldots,c_{m})g_{k}(y_{k},c_{k},\ldots,c_{m})
 \end{equation}
  \paragraph{Proof of formula \eqref{exactCorrelations}}
  We aim to compute the correlations between the sites $\mathbf{y}=\left(y_{1},\ldots,y_{m}\right)$ occupied by the species $\mathbf{s}=\left(s_{1},\ldots,s_{m}\right)$, such that $s_{1},\ldots,s_{m}\in \{2,\ldots,N\}$ i.e. 
@@ -1423,24 +1417,24 @@ Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain
 The two points correlations with respect the non equilibrium distribution of the occupation variable of the species $s_{1},s_{2}\in \{2,\ldots,N\}$ at coordinates $y,x\in \{1,\ldots,L\}$ with $x< y$ reads 
 \begin{equation}
 	\begin{split}
-	\langle n_{s_{1}}^{x},n_{s_{2}}^{y}\rangle_{\text{stat}}= \sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}f(c_{1},c_{2})\prod_{k=1}^{2}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(c_{k},c_{2})
+	\langle n_{s_{1}}^{x}n_{s_{2}}^{y}\rangle_{\text{stat}}= \sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}f(c_{1},c_{2})\prod_{k=1}^{2}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(c_{k},c_{2})
 	\end{split}
 \end{equation}
 Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain 
 \begin{equation}\label{two-pts-corr}
 	\begin{split}
-	\langle n_{s_{1}}^{x},n_{s_{2}}^{y}\rangle_{\text{stat}}&=\beta_{s_{1}}\beta_{s_{2}}+\frac{(L+1-y_{1})}{L+1}(\alpha_{s_{1}}-\beta_{s_{1}})\beta_{s_{2}}+\frac{(L+1-y_{2})}{L+1}(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{1}}\\&+\frac{(L-y_{1})(L+1-y_{2})}{L(L+1}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})
+	\langle n_{s_{1}}^{x} n_{s_{2}}^{y}\rangle_{\text{stat}}&=\beta_{s_{1}}\beta_{s_{2}}+\frac{(L+1-y_{1})}{L+1}(\alpha_{s_{1}}-\beta_{s_{1}})\beta_{s_{2}}+\frac{(L+1-y_{2})}{L+1}(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{1}}\\&+\frac{(L-y_{1})(L+1-y_{2})}{L(L+1}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})
 	\end{split}
 \end{equation}
 \paragraph{Three points correlations}
 The three points correlations with respect the non equilibrium distribution of the occupation variable of the species $s_{1},s_{2},s_{3}\in \{2,\ldots,N\}$ at coordinates $y_{1},y_{2},y_{3}\in \{1,\ldots,L\}$ such that $y_{1}<y_{2}<y_{3}$
 \begin{equation}
-    \langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}},n_{s_{3}}^{y_{3}}\rangle_{\text{stat}}=\sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}\sum_{c_{3}=0}^{1}f(c_{1},c_{2},c_{3})\prod_{k=1}^{2}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(c_{k},\ldots,c_{3})
+    \langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}n_{s_{3}}^{y_{3}}\rangle_{\text{stat}}=\sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}\sum_{c_{3}=0}^{1}f(c_{1},c_{2},c_{3})\prod_{k=1}^{2}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(c_{k},\ldots,c_{3})
 \end{equation}
 Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain 
 \begin{equation}\label{three-pts-corr}
     \begin{split}
-        \langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}},n_{s_{3}}^{y_{3}}\rangle_{\text{stat}}&=\prod_{k=1}^{3}\beta_{s_{k}}+\sum_{k=1}^{3}\frac{(L-y_{k})}{(L+1)}(\alpha_{s_{k}}-\beta_{s_{k}})\prod_{q=1\,:\,q\neq k}^{3}\beta_{s_{q}}
+        \langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}n_{s_{3}}^{y_{3}}\rangle_{\text{stat}}&=\prod_{k=1}^{3}\beta_{s_{k}}+\sum_{k=1}^{3}\frac{(L-y_{k})}{(L+1)}(\alpha_{s_{k}}-\beta_{s_{k}})\prod_{q=1\,:\,q\neq k}^{3}\beta_{s_{q}}
         \\&+
         \frac{(L-y_{2})(L-y_{3}+1)}{L(L+1)}(\alpha_{s_{2}}-\beta_{s_{2}})(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{1}}
         \\&+
