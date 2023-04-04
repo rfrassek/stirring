@@ -667,22 +667,22 @@ Indeed, using \eqref{eq:comgl} we have
     Inserting the above commutator in \eqref{HadamardFormula}, we obtain \eqref{HT_Ell}.
     \item for $A=E_{1b}$ with $b\in \{2,\ldots,N\}$, we obtain 
     \begin{equation}\label{HT-E1l}
-        \exp{(-E)}E_{1 b}\exp{(E)}=E_{1b}+E_{11}-\sum_{j=2}^{N}\left(E_{j1}+E_{jb}\right)
+        \exp{(-E)}E_{1 b}\exp{(E)}=E_{1b}+E_{11}-\sum_{a=2}^{N}\left(E_{a1}+E_{ab}\right)
     \end{equation}
-  \com{Why indices have names $b, k, j, a, b$? Fix one set for the generators}
+  %\com{Why indices have names $b, k, j, a, b$? Fix one set for the generators}
     
     Indeed, using \eqref{eq:comgl} we have 
     \begin{equation}
-[E,E_{1b}]=\sum_{a=2}^{N}\left(E_{ab}\delta_{11}-E_{11}\delta_{ab}\right)=\sum_{j=2}^{N}E_{jb}-E_{11};
+[E,E_{1b}]=\sum_{a=2}^{N}\left(E_{ab}\delta_{11}-E_{11}\delta_{ab}\right)=\sum_{a=2}^{N}E_{ab}-E_{11};
 \end{equation}
 and 
 \begin{equation}
 \begin{split}
-\left[E,[E,E_{1b}]\right]&=\sum_{b=2}^{N}\sum_{j=2}^{N}\left[E_{b1},E_{jb}\right]-\sum_{b=2}^{N}\left[E_{b1},E_{11}\right]
+\left[E,[E,E_{1b}]\right]&=\sum_{b=2}^{N}\sum_{a=2}^{N}\left[E_{b1},E_{ab}\right]-\sum_{b=2}^{N}\left[E_{b1},E_{11}\right]
 \\&=
-\sum_{j,b=2}^{N}\left(E_{bb}\delta_{j1}-E_{j1}\delta_{bb}\right)-\sum_{b=2}^{N}\left(E_{b1}\delta_{11}-E_{11}\delta_{b1}\right)
+\sum_{a,b=2}^{N}\left(E_{bb}\delta_{a1}-E_{j1}\delta_{bb}\right)-\sum_{b=2}^{N}\left(E_{b1}\delta_{11}-E_{11}\delta_{b1}\right)
 \\=&
--2\sum_{j=2}^{N}E_{j1};
+-2\sum_{a=2}^{N}E_{a1};
 \end{split}
 \end{equation}
 Inserting the above commutators in \eqref{HadamardFormula}, we obtain \eqref{HT-E1l}.
@@ -700,19 +700,19 @@ Inserting the above commutators in \eqref{HadamardFormula}, we obtain \eqref{HT-
 Inserting the above commutator in \eqref{HadamardFormula}, we obtain \eqref{HT-Ekl}.
 \item for $A=E_{11}$ we obtain 
 \begin{equation}\label{HT-E11}
-    \exp{(-E)}E_{11}\exp{(E)}=E_{11}-\sum_{j=2}^{N}E_{j1}
+    \exp{(-E)}E_{11}\exp{(E)}=E_{11}-\sum_{a=2}^{N}E_{a1}
 \end{equation}
   Indeed, using \eqref{eq:comgl} we have 
 
 \begin{align*}
-[E,E_{11}]=\sum_{a=2}^{N}\left(E_{a1}\delta_{11}-E_{1 1}\delta_{a1}\right)=\sum_{j=2}^{N}E_{j1};
+[E,E_{11}]=\sum_{a=2}^{N}\left(E_{a1}\delta_{11}-E_{1 1}\delta_{a1}\right)=\sum_{a=2}^{N}E_{a1};
 \end{align*}
   Inserting the above commutator in \eqref{HadamardFormula}, we obtain \eqref{HT-E11}.
 \end{enumerate}
 Using \eqref{transpositionPropertyR} we write the transpose of site Hamiltonian \eqref{siteHamiltonian} 
 \begin{equation}
     \begin{split}
-H_{x}^{T}=\sum_{a,l=0}^{N}\alpha_{a}^{x}\left(E_{ab}^{x}-E_{bb}^{x}\right)^{T}=R_{x}\sum_{a,b=0}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)R_{x}^{-1}
+H_{x}^{T}=\sum_{a,b=0}^{N}\alpha_{a}^{x}\left(E_{ab}^{x}-E_{bb}^{x}\right)^{T}=R_{x}\sum_{a,b=0}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)R_{x}^{-1}
     \end{split}
 \end{equation}
 First, we multiply both sides by $R_{x}\exp{(E^{x})}$
@@ -1287,10 +1287,10 @@ where for every $(s_{1},\ldots,s_{L})=\bm{s}$
         \sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right) 
         \sum_{r=1}^{b}\sum_{d_{q_{r}}=2}^{N}
 \\&
-\sum_{i=1\,:\, i\neq q_{1},\ldots,q_{b}}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{x},1}}\sum_{p=1}^{b}\sum_{c_{q_{p}}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{L}c_{a})}{\Gamma(2+L)}
-  \prod_{i=1\,:\, i\neq q_{1},\ldots,q_{b}}^{L}\left(\lambda_{s_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{i}}
+\sum_{x=1\,:\, x\neq q_{1},\ldots,q_{b}}^{L}\sum_{c_{x}=0}^{1-\delta_{s_{x},1}}\sum_{p=1}^{b}\sum_{c_{q_{p}}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{L}c_{a})}{\Gamma(2+L)}
+  \prod_{x=1\,:\, x\neq q_{1},\ldots,q_{b}}^{L}\left(\lambda_{s_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}
  \\ &
- \beta_{s_{x}}^{(1-c_{i})(1-\delta_{s_{x},1})}
+ \beta_{s_{x}}^{(1-c_{x})(1-\delta_{s_{x},1})}
  \prod_{t=1}^{b}\lambda_{d_{q_{t}}}\left(2+L-q_{t}-\sum_{j=q_{t}}^{L}c_{j}\right)^{c_{q_{t}}}\beta_{d_{q_{t}}}^{(1-c_{q_{t}})}
     \end{split}
 \end{equation}
@@ -1353,9 +1353,9 @@ Multiplying the raw with indices $s_{1},\ldots,s_{L}$ of the matrix $\mathcal{F}
 where $\widehat{\Psi}(\ldots,s_{x},\ldots,d_{q_{r}},\ldots)$ denotes the component $\widehat{\Psi}(s_{1},\ldots,s_{L})$ where the occupations  $s_{q_{1}},\ldots,s_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. Using \eqref{elementsABS} we have 
 \begin{equation}
     \begin{split}
-  &\widehat{\Psi}(\ldots,a_{i},\ldots,d_{q_{r}},\ldots)=\sum_{i=1\,:\, i\neq q_{1},\ldots,q_{l}}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{x},1}}\sum_{p=1}^{b}\sum_{c_{q_{p}}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{L}c_{a})}{\Gamma(2+L)}
+  &\widehat{\Psi}(\ldots,s_{x},\ldots,d_{q_{r}},\ldots)=\sum_{x=1\,:\, x\neq q_{1},\ldots,q_{l}}^{L}\sum_{c_{x}=0}^{1-\delta_{s_{x},1}}\sum_{p=1}^{b}\sum_{c_{q_{p}}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{L}c_{a})}{\Gamma(2+L)}
 \\&  
-\prod_{i=1\,:\, i\neq q_{1},\ldots,q_{b}}^{L}\left(\lambda_{s_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{i}}\beta_{s_{x}}^{(1-c_{i})(1-\delta_{s_{x},1})}
+\prod_{i=x\,:\, x\neq q_{1},\ldots,q_{b}}^{L}\left(\lambda_{s_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}\beta_{s_{x}}^{(1-c_{x})(1-\delta_{s_{x},1})}
 \\&
   \prod_{t=1}^{b}\lambda_{d_{q_{t}}}\left(2+L-q_{t}-\sum_{j=q_{t}}^{L}c_{j}\right)^{c_{q_{t}}}\beta_{d_{q_{t}}}^{(1-c_{q_{t}})}
     \end{split}
