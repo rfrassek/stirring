@@ -15,6 +15,7 @@
 \usepackage{appendix}
 \usepackage{comment}
 \usepackage{mathtools}
+\usepackage{array}
 \numberwithin{equation}{section}
 \numberwithin{equation}{subsection}
 
@@ -911,10 +912,10 @@ and their action on the boundary vectors are
 \subsection{The explicit form of the steady state}\label{subsection-exact}
 As pointed already pointed out, the MPA gives an abstract form of the steady state, in terms of an algebra of operators. However, to write explicitly the steady state one should know a representation of this algebra. Another approach is to directly use the commutators and figure out correlations from them. This path has been followed in \cite{vanicat2017exact} to compute one and two points correlations. However, it is interesting to put effort in this direction and look for explicit form of arbitrary correlations. We will carry out this aim by the use of duality, proved in Section \ref{sectionDuality}. The idea is summarized in the following. We define a sequence of similarity transformation such that 
 \begin{equation}
-	H\;\xrightarrow{S_{1}}\;H^{'}\;\xrightarrow{S_{2}}\;H^{''}
+	H\;\xrightarrow{\mathcal{S}_{1}}\;H^{'}\;\xrightarrow{\mathcal{S}_{2}}\;H^{''}
 \end{equation} 
-where $S_{1}$ makes $H^{'}$ with both diagonal boundaries and $S_{2}$ makes $H^{''}$ with left triangular boundary and right diagonal one. Thanks to these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{rightBoundary}, \eqref{leftBoundary} of the operators $(X_{a})_{a\in\{1,\ldots,N\}}$ of the MPA will become simple, therefore, the steady state $|\widetilde{\Psi}\rangle$ of $H^{''}$ will be written explicitly. Then, reversing the transformations we will retrieve $|\Psi\rangle$. The first transformation $S_{1}$ is closely related to the dual matrix. Moreover, we will see that $H^{'}$ is $\widetilde{H}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. This informally explains the role of duality. The second transformation $S_{2}$ allows to diagonalize the right boundary, paying the price of having the left one depending on the difference between the densities of the two reservoirs. \\
-This idea is exposed as follows. We first define the similarity transformations $S_{1},S_{2}$ and the Hamiltonians $H^{'},H^{''}$. Second, we compute the steady state of $H^{''}$ thanks to the simpler commutators. Finally, we invert the similarities and retrieve the steady state of $H^{'}$ and $H$ respectively.  
+where $\mathcal{S}_{1}$ makes $H^{'}$ with both diagonal boundaries and $\mathcal{S}_{2}$ makes $H^{''}$ with left triangular boundary and right diagonal one. Thanks to these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{rightBoundary}, \eqref{leftBoundary} of the operators $(X_{a})_{a\in\{1,\ldots,N\}}$ of the MPA will become simple, therefore, the steady state $|\Psi\rangle$ of $H^{''}$ will be written explicitly. Then, reversing the transformations we will retrieve $|\Psi^{''}\rangle$. The first transformation $\mathcal{S}_{1}$ is closely related to the dual matrix. Moreover, we will see that $H^{'}$ is $\widetilde{H}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. This informally explains the role of duality. The second transformation $\mathcal{S}_{2}$ allows to diagonalize the right boundary, paying the price of having the left one depending on the difference between the densities of the two reservoirs. \\
+This idea is exposed as follows. We first define the similarity transformations $\mathcal{S}_{1},\mathcal{S}_{2}$ and the Hamiltonians $H^{'},H^{''}$. Second, we compute the steady state of $H^{''}$ thanks to the simpler commutators. Finally, we invert the similarities and retrieve the steady state of $H^{'}$ and $H$ respectively.  
 
 
 
@@ -947,20 +948,61 @@ The boundary Hamiltonians are \eqref{siteDualHamiltonian} without the extra-site
 	B^{'}_{1}=\sum_{a=2}^{N}\left(\alpha_{a}E_{1a}^{1}-E_{aa}^{1}\right)\qquad B^{'}_{1}=\sum_{a=2}^{N}\left(\beta_{a}E_{1a}^{L}-E_{aa}^{L}\right)
 \end{equation}
 Therefore, we can conclude that $H^{'}$ is $\widetilde{H}^{T}$ in which the extra-site parts have been removed and replaced by identities. \\
-The steady state $|\widehat{\Psi}\rangle$ of $H^{'}$ fulfils the equations
+The steady state $|\Psi^{'}\rangle$ of $H^{'}$ fulfils the equations
 \begin{equation}
-	H^{'}|\widehat{\Psi}\rangle=0
+	H^{'}|\Psi^{'}\rangle=0
 \end{equation}
 therefore, it is easy to see that 
 \begin{equation}
-	|\Psi\rangle =\mathcal{S}_{1}^{-1}|\widehat{\Psi}\rangle
+	|\Psi\rangle =\mathcal{S}_{1}^{-1}|\Psi^{'}\rangle
 \end{equation}
 
  We introduce the second transformation as 
  \begin{equation}
  	S_{2}:=\exp{\left(-\sum_{a=2}^{N}\beta_{a}e_{a1}\right)}=\mathbbm{1}-\sum_{a=2}^{N}\beta_{a}e_{a1}
  \end{equation}
-
+By taking the tensor product over the chain we also define
+\begin{equation}
+	\mathcal{S}_{2}=S_{2}^{\otimes L}
+\end{equation}
+Using $\mathcal{S}$ we introduce 
+\begin{equation}
+	H^{''}=B_{1}^{''}+H_{bulk}+B_{L}^{''}
+\end{equation}
+that is similar to $H^{'}$ by $S_{2}$, i.e.
+\begin{equation}
+	H^{'}=\mathcal{S}_{2}^{-1}H^{''}\mathcal{S}_{2}
+\end{equation}
+The boundary Hamiltonians are the following 
+\begin{equation}
+	B_{1}^{''}=e_{11}-\mathbbm{1}+\sum_{a=2}^{N}(\alpha_{a}-\beta_{a})e_{a1}\qquad B_{L}^{''}=e_{11}-\mathbbm{1}
+\end{equation}
+i.e. the left one is lower triangular and depends on the differences between boundary parameters, while the right one is diagonal. 
+The steady state of $|\Psi^{''}\rangle$ of $H^{''}$ solves 
+\begin{equation}
+	H^{''}|\Psi^{''}\rangle=0
+\end{equation}
+and it is related to $|\Psi^{'}\rangle$ by 
+\begin{equation}
+	|\Psi^{'}\rangle = \mathcal{S}_{2}^{-1}|\Psi^{''}\rangle
+\end{equation}
+It is convenient to introduce also the similarity between $H$ and $H^{''}$, such that
+\begin{equation}
+H=\mathcal{S}^{-1}H^{''}\mathcal{S}
+\end{equation}
+where 
+\begin{equation}\label{similarity}
+	S=S_{2}S_{1}=\exp{\left(-\sum_{a=2}^{N}\beta_{a}e_{a1}\right)}\exp{\left(\sum_{a=2}^{N}e_{a1}\right)}
+\end{equation}
+and 
+\begin{equation}
+	\mathcal{S}=S^{\otimes L}
+\end{equation}
+This transformation connect the steady states of $H$ and $H^{''}$ by 
+\begin{equation}
+	|\Psi\rangle=\mathcal{S}^{-1}|\Psi^{''}\rangle
+\end{equation}
+\begin{comment}
 Using \eqref{transformationV} we introduce the \textit{similarity transformation} 
 \begin{equation}\label{similarity}
     S:=\sum_{a=2}^{N}\beta_{a}\sum_{b=1}^{N}e_{ab}+V=-\sum_{a=2}^{N}\beta_{a}\sum_{b=1}^{N}e_{ab}+\exp{\left(\sum_{a=2}^{N}e_{1a}\right)}
@@ -1031,10 +1073,11 @@ The steady states $|\Psi\rangle$, $|\widehat{\Psi}\rangle$ and $|\widetilde{\Psi
  \\|\widehat{\Psi}\rangle=&\left(\mathcal{T}^{T}\right)|\widetilde{\Psi}\rangle\label{SteadyStateHatTilde}
 \end{align}
 In the following subsections we will first compute the steady state $|\widetilde{\Psi}\rangle$. Then, using the transformation $\mathcal{T}$ we will retrieve $|\widehat{\Psi}\rangle$. Finally, using the transformation $\mathcal{V}$ we will find $|\Psi\rangle$. 
-\subsubsection{The steady state of $\mathbb{H}$}\label{subsectionSSHsec}
-We state the following result. The steady state of the Hamiltonian $\mathbb{H}$ defined in \eqref{bbHamiltonian} is given by 
+\end{comment}
+\subsubsection{The steady state of $J^{''}$}\label{subsectionSSHsec}
+We state the following result. The steady state of the Hamiltonian $H^{''}$ is given by 
 \begin{equation}\label{ResulsBasis}
-	|\widetilde{\Psi}\rangle=\sum_{s_{1},\ldots,s_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{s_{x},1}\right)}{\Gamma\left(L+2\right)}\prod_{x=1}^{L}\left[\lambda_{s_{x}}\left(1+\sum_{j=x}^{L}\delta_{s_{j},1}\right)\right]^{1-\delta_{s_{x},1}}|\mathbf{\bm{s}}\rangle
+	|\Psi^{''} \rangle=\sum_{s_{1},\ldots,s_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{s_{x},1}\right)}{\Gamma\left(L+2\right)}\prod_{x=1}^{L}\left[\lambda_{s_{x}}\left(1+\sum_{j=x}^{L}\delta_{s_{j},1}\right)\right]^{1-\delta_{s_{x},1}}|\mathbf{\bm{s}}\rangle
 \end{equation}
 where 
 \begin{equation}
@@ -1045,7 +1088,7 @@ where
 \end{equation}
 and the basis vector $|\bm{s}\rangle =\bigotimes_{i=1}^{L}|s_{x}\rangle$ with $s_{x}\in\{1,\ldots,N\}$ denotes the species that occupies the site $i\in \{1,\ldots,L\}$.
 \paragraph{Proof of formula \eqref{ResulsBasis}} 
-To prove \eqref{ResulsBasis} we will consider the vector composed by the operators of the MPA $(X_{1},\ldots,X_{N})$ and we will act on it with the similarity transformation \eqref{similarity} obtaining new operators $(\Xt_{1},\ldots,\Xt_{N})$ that will satisfy simpler commutators than \eqref{bula} and simpler actions than \eqref{leftBoundary} and \eqref{rightBoundary}. This will allow to write explicitly the steady state \eqref{ResulsBasis}.
+To prove \eqref{ResulsBasis} we consider the vector with elements the operators of the MPA $(X_{1},\ldots,X_{N})$ and we act on it with the similarity transformation $S=S_{2}S_{1}$ obtaining new operators $(\Xt_{1},\ldots,\Xt_{N})$ that will satisfy simpler commutators. 
 For the sake of notation, we denote by 
 \begin{equation}
     \begin{pmatrix}
@@ -1057,7 +1100,7 @@ For the sake of notation, we denote by
      X_{N}
 	\end{pmatrix}\quad \forall a\in \{2,\ldots,N\}
 \end{equation}
-We obtain the new operators of the MPA that by transforming the original one by \eqref{similarity} 
+We obtain the new operators of the MPA that by transforming the original one by $S$
 \begin{equation}\label{Xtildes2b}
 	\begin{pmatrix}
 		\Xt_{1}\\ 
@@ -1085,7 +1128,7 @@ We can also reverse the transformation by $S^{-1}$ and get back:
 		\Xt_{a}+\beta_{a}\Xt_{1}\\ 
 	\end{pmatrix}\qquad\forall a\in \{2,\ldots,N\}
 \end{equation}
-Summing over $b\in \{1,\ldots,N\}$ in \eqref{bula} we have
+Summing over $b\in \{1,\ldots,N\}$ in \eqref{bulk} we have
 \begin{equation} 
 	\left[X_{a},\Xt_{1}\right]=\lambda_{a}\Xt_{1}\qquad\forall a=1,\ldots,N
 \end{equation}
@@ -1093,16 +1136,16 @@ therefore, we obtain the commutation relations for $\Xt_{a}$ $\forall a\in \{1,\
 \begin{equation}\label{commutationsBula}
 	\left[\Xt_{a},\Xt_{1}\right]=\lambda_{a}\Xt_{1}\qquad \forall a\in \{2,\ldots,N\}
 \end{equation}
-Moreover using \eqref{Xtildes2b} and \eqref{Xes}, the action of $\Xt_{a}$ $\forall a\in \{1,\ldots,N\}$ on the boundary vectors are given by 
+Moreover using \eqref{Xtildes2b} and \eqref{Xes}, the action of $\Xt_{a}$ $\forall a\in \{2,\ldots,N\}$ on the boundary vectors are given by 
 \begin{equation}\label{commLEFT}
 	\langle W|\left(\lambda_{a}\Xt_{1}-\Xt_{a}\right)=\lambda_{a}\langle W|\qquad\forall a=2,\ldots,N
 \end{equation}
 \begin{equation}\label{commRIGHT}
 	\Xt_{a} |V\rangle= \lambda_{a}|V\rangle\qquad\forall a=2,\ldots,N
 \end{equation} 
-The vector $|\widetilde{\Psi}\rangle$ is written as:
+The vector $|\Psi^{''}\rangle$ is written as:
 \begin{equation}\label{toDetermineTilde}
-	|\widetilde{\Psi}\rangle = \frac{1}{Z_{L}}\sum_{\mathbf{n}\in \Omega}\langle W|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}
+	|Psi^{''}\rangle = \frac{1}{Z_{L}}\sum_{\mathbf{n}\in \Omega}\langle W|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}
 	|V \rangle \,|\mathbf{n}\rangle
 \end{equation}
 where the basis is 
@@ -1110,21 +1153,20 @@ $$
 |\mathbf{n}\rangle =|n_{1}^{1},\ldots,n_{N}^{1}\rangle \otimes \ldots\otimes |n_{1}^{L},\ldots,n_{N}^{L}\rangle
 $$
 such that for each site $x\in \{1,\ldots,L\}$ $|n^{x}\rangle=|n_{1}^{x},\ldots,n_{N}^{x}\rangle\in \Omega_{x}$. 
-We also observe that the vector $|\widetilde{\Psi}\rangle $ has dimension $N^{L}$. \\
 To determine the steady state \eqref{toDetermineTilde}, we need to compute the coefficient $\langle W|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{m_{a}^{x}}
 |V \rangle$ and the normalization $Z_{L}$. We use the new commutations relations \eqref{commutationsBula},\eqref{commLEFT} and \eqref{commRIGHT}.\\
 We  rewrite \eqref{commutationsBula} as:
 \begin{equation}\label{UsefulRelation}
 	\widetilde{X}_{a}\widetilde{X}_{1}=\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}
 \end{equation}
-Fixing $ a\in \{2,\ldots,N\}$ and $\forall b,n\in \mathbb{N}$ and applying many times \eqref{UsefulRelation} we have
+Fixing $ a\in \{2,\ldots,N\}$ and for arbitrary $ \ell,n\in \mathbb{N}$ and applying many times \eqref{UsefulRelation} we have
 \begin{align*}
-	\widetilde{X}_{a}^{n}\widetilde{X}_{1}^{b}&=\widetilde{X}_{a}^{n-1}\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\widetilde{X}_{N}^{b-1}
-	\\&=\lambda_{a}\widetilde{X}_{a}^{n-1}\widetilde{X}_{1}^{b}+\widetilde{X}_{a}^{n-1}\widetilde{X}_{1}\widetilde{X}_{a}\widetilde{X}_{1}^{b-1}
+	\widetilde{X}_{a}^{n}\widetilde{X}_{1}^{\ell}&=\widetilde{X}_{a}^{n-1}\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\widetilde{X}_{N}^{\ell-1}
+	\\&=\lambda_{a}\widetilde{X}_{a}^{n-1}\widetilde{X}_{1}^{b}+\widetilde{X}_{a}^{n-1}\widetilde{X}_{1}\widetilde{X}_{a}\widetilde{X}_{1}^{\ell-1}
 	\\&=
-	\lambda_{a}\widetilde{X}_{a}^{n-2}\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\widetilde{X}_{1}^{b-1}+\widetilde{X}_{a}^{n-2}\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\widetilde{X}_{1}^{b-1}
+	\lambda_{a}\widetilde{X}_{a}^{n-2}\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\widetilde{X}_{1}^{\ell-1}+\widetilde{X}_{a}^{n-2}\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}\right)\widetilde{X}_{1}^{b-1}
 	\\&=\ldots\\&=
-	\widetilde{X}_{1}^{b}\left(\widetilde{X}_{a}+b\lambda_{a}\right)^{n}
+	\widetilde{X}_{1}^{\ell}\left(\widetilde{X}_{a}+\ell\lambda_{a}\right)^{n}
 \end{align*}
 therefore 
 \begin{align*}
@@ -1148,7 +1190,7 @@ Using \eqref{commRIGHT}
 	\\&=
 	\prod_{x=1}^{L}\prod_{a=2}^{N}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{1}^{j}\right)^{n_{a}^{x}}\langle W|\widetilde{X}_{1}^{\sum_{i=1}^{L}n_{1}^{l}}|V\rangle
 \end{align*}
-To determine the state we need to compute $\langle W|\widetilde{X}_{1}^{\sum_{i=1}^{L}n_{1}^{l}}|V\rangle$. Calling $\sum_{i=1}^{L}n_{1}^{x}=n_{1}$ and taking an arbitrary $a\in \{2,\ldots,N\}$ we have
+To determine the state we need to compute $\langle W|\widetilde{X}_{1}^{\sum_{x=1}^{L}n_{1}^{l}}|V\rangle$. Calling $\sum_{x=1}^{L}n_{1}^{x}=n_{1}$ and taking an arbitrary $a\in \{2,\ldots,N\}$ we have
 \begin{align*}
 	\langle W|\widetilde{X}_{1}^{n_{1}}|V\rangle&=\langle W|\widetilde{X}_{1}\widetilde{X}_{1}^{n_{1}-1}|V\rangle=\langle W|\widetilde{X}_{1}^{n_{1}-1}|V\rangle +\langle W|\frac{1}{\lambda_{a}}\widetilde{X}_{a}\widetilde{X}_{1}^{n_{1}-1}|V\rangle
 	\\&=
@@ -1208,15 +1250,15 @@ Finally summing over all $\mathbf{s}\in \Omega$ (that is equivalent, $\forall i\
 \begin{flushright}
 $\square$
 \end{flushright}
-\subsubsection{The steady state of $\widehat{H}^{T}$}\label{subsectionSSdual}
+\subsubsection{The steady state of $H^{'}$}\label{subsectionSSdual}
 Knowing the steady state \eqref{ResulsBasis} of the Hamiltonian $\mathbb{H}$ defined in \eqref{bbHamiltonian}, we use \eqref{SteadyStateHatTilde} to retrieve the steady state of the Hamiltonian $\widehat{H}$ defined in \eqref{hatHamiltonian}. The result is the following 
 \begin{equation}\label{ABS-vect}
-    |\widehat{\Psi}\rangle =\sum_{s_{1},\ldots,s_{L}=1}^{N}\widehat{\Psi}(\bm{s})|\bm{s}\rangle 
+    |\Psi^{'}\rangle =\sum_{s_{1},\ldots,s_{L}=1}^{N}\Psi^{'}(\bm{s})|\bm{s}\rangle 
 \end{equation}
 where 
 \begin{equation}\label{ABS}
 		\begin{split}
-			\widehat{\Psi}(\bm{s})=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{x},1}}\frac{\Gamma(2+L-\sum_{a=1}^{L}c_{a})}{\Gamma(L+2)}\prod_{l=1}^{L}\left(\lambda_{s_{l}}\left(2+L-l-\sum_{j=l}^{L}c_{j}\right)\right)^{c_{l}}\beta_{s_{l}}^{(1-c_{l})(1-\delta_{s_{l},1})}
+			\Psi^{'}(\bm{s})=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1-\delta_{s_{x},1}}\frac{\Gamma(2+L-\sum_{a=1}^{L}c_{a})}{\Gamma(L+2)}\prod_{l=1}^{L}\left(\lambda_{s_{l}}\left(2+L-l-\sum_{j=l}^{L}c_{j}\right)\right)^{c_{l}}\beta_{s_{l}}^{(1-c_{l})(1-\delta_{s_{l},1})}
 		\end{split}
 	\end{equation} 
 and where
@@ -1226,9 +1268,9 @@ and where
 		0\quad \text{if}\quad s_{x}=1
 	\end{cases}\qquad \forall x\in \{1,\ldots,L\}
 \end{equation}
-\paragraph{Proof of formula \eqref{ABS-vect}} As a consequence of \eqref{SteadyStateHatTilde}, we only need to show how the transformation $\mathcal{T}^{T}$ acts on the vector $|\widetilde{\Psi}\rangle$. The matrix $T^{T}$ is given by 
+\paragraph{Proof of formula \eqref{ABS-vect}} As a consequence of \eqref{SteadyStateHatTilde}, we only need to show how the transformation $\mathcal{S}_{2}^{-1}$ acts on the vector $|\Psi^{'}\rangle$. The matrix $S_{2}^{-1}$, acting on a single site, is given by 
 \begin{equation}
-    T^{T}=\mathbbm{1}+\sum_{a=2}^{N}\beta_{a}e_{a1}
+   S_{2}^{-1}=\mathbbm{1}+\sum_{a=2}^{N}\beta_{a}e_{a1}
 \end{equation}
 We introduce the following notation
 \begin{equation}\label{notation1}
@@ -1240,7 +1282,7 @@ and
     \end{equation}
     that can be generalized for $e_{s_{1},\ldots,s_{L}}^{q_{1},\ldots,q_{L}}$ with $s_{1},\ldots,s_{L},q_{1},\ldots,q_{L}\in \{1,\ldots,N\}$. With this notation we have that 
     \begin{equation}
-        T^{T}=\sum_{s_{1}=1}^{N}e_{i}^{x}+Q
+        S_{2}^{-1}=\sum_{s_{1}=1}^{N}e_{i}^{x}+Q
     \end{equation}
     where
     \begin{equation}
@@ -1249,7 +1291,7 @@ and
 We compute
 \begin{equation}
     \begin{split}
-        	T^{T}\otimes T^{T}&=\left(I_{N\times N}+Q\right)\otimes\left(I_{N\times N}+Q\right)
+        	S_{2}^{-1}\otimes S_{2}^{-1}&=\left(I_{N\times N}+Q\right)\otimes\left(I_{N\times N}+Q\right)
          \\&=
          I_{N\times N}\otimes I_{N\times N}+I_{N\times N}\otimes Q+Q\otimes I_{N\times N}+Q\otimes Q
     \end{split}
@@ -1263,24 +1305,27 @@ where the addends are
 	&Q\otimes Q=(1-\delta_{s_{1},1})(1-\delta_{s_{2},1})\sum_{s_{1}=2}^{N}\beta_{s_{1}}e_{s_{1}}^{1}\otimes \sum_{s_{2}=2}^{N}\beta_{s_{2}}e_{s_{2}}^{1}=(1-\delta_{s_{1},1})(1-\delta_{s_{2},1})\sum_{s_{1},s_{2}=2}^{N}e_{s_{1},s_{2}}^{1,1}\beta_{s_{1}}\beta_{s_{2}}
  \end{split}
 \end{equation}
-The matrix $T^{T}\otimes T^{T}$ has elements $\left\{\left(T^{T}\otimes T^{T}\right)_{s_{1},s_{2}}^{q_{1},q_{2}}\right\}_{s_{1},s_{2},q_{1},q_{2}\in \{1,\ldots,N\}}$, where the subscripts $s_{1},s_{2}$ denote the raw and the superscript $q_{1},q_{2}$ the column. We fix a raw of this matrix with arbitrary index $s_{1},s_{2}$
+The matrix $S_{2}^{-1}\otimes S_{2}^{-1}$ can be written as
 \begin{equation}
-	\left(T^{T}\otimes T^{T}\right)_{s_{1},s_{2}}=e_{s_{1},s_{2}}^{s_{1},s_{2}}+(1-\delta_{s_{2},1})\beta_{s_{2}}e_{s_{1},s_{2}}^{s_{1},1}+(1-\delta_{s_{1},1})\beta_{s_{1}}e_{s_{1},s_{2}}^{1,s_{2}}+(1-\delta_{s_{1},1})(1-\delta_{s_{2},1})\beta_{s_{1}}\beta_{s_{2}}e_{s_{1},s_{2}}^{1,1}
+	\left\{\left(S_{2}^{-1}\otimes S_{2}^{-1}\right)_{s_{1},s_{2}}^{q_{1},q_{2}}\right\}_{s_{1},s_{2}\in \{1,\ldots,N\}}^{q_{1},q_{2}\in \{1,\ldots,N\}}
 \end{equation}
-Iterating this tensor product for the chain of length $L$, we write the raw with indices $\bm{s}=s_{1},\ldots,s_{L}$
- of the matrix $\mathcal{T}^{T}$ as 
+where the subscripts $s_{1},s_{2}$ denote the raw and the superscript $q_{1},q_{2}$ the column. Therefore, the raw identified by $s_{1},s_{2}$ reads
+\begin{equation}
+	\left(S_{2}^{-1}\otimes S_{2}^{-1}\right)_{s_{1},s_{2}}=e_{s_{1},s_{2}}^{s_{1},s_{2}}+(1-\delta_{s_{2},1})\beta_{s_{2}}e_{s_{1},s_{2}}^{s_{1},1}+(1-\delta_{s_{1},1})\beta_{s_{1}}e_{s_{1},s_{2}}^{1,s_{2}}+(1-\delta_{s_{1},1})(1-\delta_{s_{2},1})\beta_{s_{1}}\beta_{s_{2}}e_{s_{1},s_{2}}^{1,1}
+\end{equation}
+We iterate this tensor product for the chain of length $L$, and we write the raw with indices arbitrary $\bm{s}=s_{1},\ldots,s_{L}\in \{1,\ldots,N\}$ as
 \begin{equation}
 	\begin{split}
-		\mathcal{T}^{T}_{\bm{s}}&=\left(T^{T}\right)^{\otimes L}_{s_{1},\ldots,s_{L}}=\,e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}+\sum_{q_{1}=1}^{N}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\\&+\sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{q_{2}}\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\beta_{s_{q_{2}}}
+	(\mathcal{S}_{2}^{-1})_{\bm{s}}=\left(S_{2}^{-1}\right)^{\otimes L}_{\bm{s}}&=\,e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}+\sum_{q_{1}=1}^{N}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\\&+\sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{q_{2}}\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\beta_{s_{q_{2}}}
   \\&+
   \ldots+\left(\prod_{x=1}^{L}(1-\delta_{s_{x},1})\right)\prod_{x=1}^{L}\left(\beta_{s_{x}}\right)^{1-\delta_{s_{x},1}}e_{s_{1},\ldots,s_{L}}^{1,\ldots,1}
 	\end{split}
 \end{equation}
-The product $\mathcal{T}^{T}|\widetilde{\Psi}\rangle$ gives a vector whose component are denoted by $\widehat{\Psi}(\bm{s})$ that are given by 
+The product $\mathcal{S}_{2}^{-1}|\Psi^{''}\rangle$ gives a vector whose component are denoted by $\Psi^{'}(\bm{s})$ that are given by 
 \begin{equation}\label{ABS_intermediate}
 	\begin{split}
-		\widehat{\Psi}(\mathbf{s})&=\mathcal{T}^{T}_{\bm{s}}|\widetilde{\Psi}\rangle\\&= \widetilde{\Psi}(\mathbf{s})+\sum_{q_{1}= 1}^{L}(1-\delta_{s_{q_{1}},1})\widetilde{\Psi}(s_{1},\ldots,\overbrace{1}^{s_{q_{1}}},\ldots,s_{L})\beta_{s_{q_{1}}}\\&+
-		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})\widetilde{\Psi}(s_{1},\ldots,\overbrace{1}^{s_{q_{1}}},\ldots,\overbrace{1}^{s_{q_{2}}},\ldots,s_{L})\beta_{a_{1}}\beta_{a_{2}}\\&+\ldots+\widetilde{\Psi}(1,\ldots,1)\left(\prod_{x=1}^{L}(1-\delta_{s_{x},1})\right)\prod_{x=1}^{L}\left(\beta_{s_{x}}\right)^{1-\delta_{s_{x},1}}
+		\Psi^{'}(\mathbf{s})&=(\mathcal{S}_{2}^{-1})_{\bm{s}}|\Psi^{''}\rangle\\&= \Psi^{''}(\mathbf{s})+\sum_{q_{1}= 1}^{L}(1-\delta_{s_{q_{1}},1})\Psi^{''}(s_{1},\ldots,\overbrace{1}^{s_{q_{1}}},\ldots,s_{L})\beta_{s_{q_{1}}}\\&+
+		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})\Psi^{''}(s_{1},\ldots,\overbrace{1}^{s_{q_{1}}},\ldots,\overbrace{1}^{s_{q_{2}}},\ldots,s_{L})\beta_{a_{1}}\beta_{a_{2}}\\&+\ldots+\Psi^{''}(1,\ldots,1)\left(\prod_{x=1}^{L}(1-\delta_{s_{x},1})\right)\prod_{x=1}^{L}\left(\beta_{s_{x}}\right)^{1-\delta_{s_{x},1}}
 	\end{split}
 \end{equation}
 For a fixed configuration $\bm{s}=(s_{1},\ldots,s_{N})$, using equation \eqref{ResulsBasis} and observing that 
@@ -1289,12 +1334,12 @@ For a fixed configuration $\bm{s}=(s_{1},\ldots,s_{N})$, using equation \eqref{R
 \end{equation}
 we obtain 
     \begin{equation}
-	\widetilde{\Psi}(\bm{s})=\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{s_{x},1})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{s_{x}}\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{s_{x},1})\right)\right)^{1-\delta_{s_{x},1}}
+\Psi^{''}(\bm{s})=\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{s_{x},1})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{s_{x}}\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{s_{x},1})\right)\right)^{1-\delta_{s_{x},1}}
 \end{equation}
-Because of the exponent $(1-\delta_{s_{x},1})$, the element $\widetilde{\Psi}(\bm{s})$ has, up the term $\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{s_{x},1})}{\Gamma(L+2)}$, a contribution of a factor $\lambda_{s_{x}}\left(1+L-x-\sum_{j=x}^{L}(1-\delta_{s_{x},1})\right)$ if the site is non empty, and a contribution of a factor "$1$" if the site is empty, it is convenient to introduce the $c_{i}$ of defined in \eqref{CiEquation}. Then, equation  \eqref{ABS_intermediate} reads 
+Because of the exponent $(1-\delta_{s_{x},1})$, the element $\Psi^{''}(\bm{s})$ has, up the term $\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{s_{x},1})}{\Gamma(L+2)}$, a contribution of a factor $\lambda_{s_{x}}\left(1+L-x-\sum_{j=x}^{L}(1-\delta_{s_{x},1})\right)$ if the site is non empty, and a contribution of a factor "$1$" if the site is empty, it is convenient to introduce the $c_{i}$ of defined in \eqref{CiEquation}. Then, equation  \eqref{ABS_intermediate} reads 
 \begin{equation}\label{elementsABS}
 	\begin{split}
-		\widehat{\Psi}(\mathbf{s})=\sum_{c_{1}=0}^{1-\delta_{s_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{s_{L},1}}\frac{\Gamma(2+L-\sum_{a=1}^{L}c_{a})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{s_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{i}}\left(\beta_{s_{x}}\right)^{(1-c_{i})(1-\delta_{s_{x},1})}
+		\Psi^{'}(\mathbf{s})=\sum_{c_{1}=0}^{1-\delta_{s_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{s_{L},1}}\frac{\Gamma(2+L-\sum_{a=1}^{L}c_{a})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{s_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{i}}\left(\beta_{s_{x}}\right)^{(1-c_{i})(1-\delta_{s_{x},1})}
 	\end{split}
 \end{equation} 
 Indeed, when $c_{i}=0$ this formula replaces the contribution in the square brackets with a $\beta_{s_{x}}$. 
