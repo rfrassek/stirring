@@ -14,6 +14,7 @@
 \usepackage{bm}
 \usepackage{appendix}
 \usepackage{comment}
+\usepackage{mathtools}
 \numberwithin{equation}{section}
 \numberwithin{equation}{subsection}
 
@@ -514,7 +515,7 @@ We will show below that the Hamiltonians \eqref{OriginalHamiltonian} and \eqref{
     D=\prod_{x\in V}d_{x}\otimes \dd
 \end{equation}
 where
-\begin{equation}
+\begin{equation}\label{bulkElementDualityMatrix}
 d_{x}=R_{x}\exp{(E^{x})}
 \end{equation}
 with 
@@ -853,14 +854,23 @@ We define also
 \begin{equation}\label{lambdaConditions}
 	\lambda_{a}=\alpha_{a}-\beta_{a}\quad\text{with}\quad \sum_{a=1}^{N}\lambda_{a}=0\,.
 \end{equation}
+In this setting the extra-sites are denoted by $0$ and $L+1$, since connected with sites $1$ and $L$ of the chain respectively. Moreover, the matrix $R_{x}$ reduces to the identity. Therefore, the duality matrix reads as
+\begin{equation}
+	D=\mathcal{D}_{0}\otimes\prod_{x=1}^{L}\exp{E^{x}}\otimes \mathcal{D}_{L+1}
+\end{equation}
+and the dual Hamiltonian 
+\begin{equation}
+	\widetilde{H}=H_{0}+\sum_{x=1}^{L-1}H_{x,x+1}+H_{L+1}
+\end{equation}
+with the operators \eqref{edgeHamiltonian} and \eqref{siteDualHamiltonian}. In the long-time horizon, the dual process voids the chain, and all particles are eventually absorbed at extra-site $0$ or $L+1$. \\
 Under these assumption the Hamiltonian \eqref{hamiltonian} is integrable and a matrix product ansatz (MPA) for the non-equilibrium steady state is available (see\cite{vanicat2017exact}). 
  Calling $|{P}(t)\rangle$ a vector that contains the probability of every configuration of the chain with Hamiltonian \eqref{hamiltonian} at time $t\geq 0$, its evolution equation is given by 
  the master equation
 \begin{equation}
-    \frac{d|{P}(t)\rangle}{dt}=H|{P}(t)\rangle
+    \frac{d|{\Psi}(t)\rangle}{dt}=H|{\Psi}(t)\rangle
 \end{equation}
-We denote by $|\Psi\rangle$ that contains the probabilities of every configuration of the chain with respect to the stationary distribution, i.e. the probability distribution that the chain reaches when $t\to \infty$. We observe that, since the Markov chain with Hamiltonian \eqref{hamiltonian} is positive recurrent there exists a unique stationary distribution and, moreover, this is distribution is reached when $t\to \infty$ starting for every arbitrary initial distribution. 
- Therefore, to find the stationary state, we aim to compute $|\Psi\rangle$ such that 
+This Markov chain is positive recurrent, therefore there exist a unique stationary measure, that will be reached when time goes to infinity, regardless of the initial distribution. 
+We denote by $|\Psi\rangle$ the column vector that contains the probabilities of every configuration of the chain with respect to this unique stationary distribution. This vector is the right eigenvector with vanishing eigenvalue of $H$, i.e. it solves 
 \begin{equation}
 	H|\Psi\rangle =0
 \end{equation}
@@ -881,7 +891,7 @@ with the normalization
 	Z_{L}=\langle W|(X_{1}+\ldots +X_{N})^{L}|V\rangle
 \end{equation}
 where the operators $(X_{a})_{a\in \{1,\ldots,N\}}$ fulfill the commutators
-\begin{equation}\label{bula}
+\begin{equation}\label{bulk}
 	\left[X_{a},X_{b}\right]=\lambda_{a}X_{b}-\lambda_{b}X_{a}\qquad\forall a,b=1,\ldots,N
 \end{equation}
 and their action on the boundary vectors are
@@ -899,24 +909,58 @@ and their action on the boundary vectors are
 	and using  \eqref{ratesConditions} and \eqref{lambdaConditions}.
  Similarly for the right boundary  \eqref{rightBoundary} there are only  $N-1$ independent equations.
 \subsection{The explicit form of the steady state}\label{subsection-exact}
-We aim to find an explicit for for the steady state $|\Psi\rangle$. The MPA gives the steady state in terms of an abstract algebra of operators. If an explicit representation of $(X_{a})_{a=1,\ldots,N}$ was available, it would be possible to compute explicitly all the correlations and currents of particles for the Hamiltonian \eqref{hamiltonian}. Another way of computing this steady state, without passing through a representation, is using the commutators \eqref{bula} and the actions \eqref{leftBoundary} and \eqref{rightBoundary}. For the one and two point correlation and for the currents this has been done in \cite{vanicat2017exact}. Inspired by this last reference, in this subsection, we aim to find exact formulas for the steady state  $|\Psi\rangle$ using only the \eqref{bula}, \eqref{leftBoundary} and \eqref{rightBoundary}. In subsection \ref{correlation-section}, this result will leads to exact correlation for arbitrary number of particles of type $\{2,\ldots,N\}$. This aim will be achieved by the help of a similarity transformation $\mathcal{S}$ that makes commutation relations simpler, and allows to find the steady state $|\widetilde\Psi\rangle$ of a transformed Hamiltonian, denoted  $\mathbb{H}$, with lower-triangular left boundary and diagonal right boundary. Therefore, inverting this similarity, one can retrieve the steady state of \eqref{hamiltonian}. A fundamental 'ingredient' of these computation is duality, that has been proved in section~\ref{sectionDuality}. Indeed, the similarity transformation $\mathcal{S}$ relies on an "intermediate transformation" $V$ (see \eqref{transformationV}) that is, up to the diagonal operator $R$, the duality matrix. \com{clarify}
-\subsubsection{The similarity transformation}
-We aim to construct a similarity transformation that maps the Hamiltonian \eqref{hamiltonian} into an other $\mathbb{H}$ that has left boundary lower-triangular and right boundary diagonal. Consider the transformation
-\begin{equation}\label{transformationV}
- V:=\exp{\left(\sum_{a=2}^{N}e_{a1}\right)}=\mathbbm{1}+\sum_{a=2}^{N}e_{a1}
-\end{equation}
-Observe that it is the the duality matrix at site $x\in \{1,\ldots,L\}$ up to the multiplication by $R_{x}$. By taking the tensor product over the chain we define
+As pointed already pointed out, the MPA gives an abstract form of the steady state, in terms of an algebra of operators. However, to write explicitly the steady state one should know a representation of this algebra. Another approach is to directly use the commutators and figure out correlations from them. This path has been followed in \cite{vanicat2017exact} to compute one and two points correlations. However, it is interesting to put effort in this direction and look for explicit form of arbitrary correlations. We will carry out this aim by the use of duality, proved in Section \ref{sectionDuality}. The idea is summarized in the following. We define a sequence of similarity transformation such that 
 \begin{equation}
-    \mathcal{V}=V^{\otimes L}
+	H\;\xrightarrow{S_{1}}\;H^{'}\;\xrightarrow{S_{2}}\;H^{''}
+\end{equation} 
+where $S_{1}$ makes $H^{'}$ with both diagonal boundaries and $S_{2}$ makes $H^{''}$ with left triangular boundary and right diagonal one. Thanks to these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{rightBoundary}, \eqref{leftBoundary} of the operators $(X_{a})_{a\in\{1,\ldots,N\}}$ of the MPA will become simple, therefore, the steady state $|\widetilde{\Psi}\rangle$ of $H^{''}$ will be written explicitly. Then, reversing the transformations we will retrieve $|\Psi\rangle$. The first transformation $S_{1}$ is closely related to the dual matrix. Moreover, we will see that $H^{'}$ is $\widetilde{H}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. This informally explains the role of duality. The second transformation $S_{2}$ allows to diagonalize the right boundary, paying the price of having the left one depending on the difference between the densities of the two reservoirs. \\
+This idea is exposed as follows. We first define the similarity transformations $S_{1},S_{2}$ and the Hamiltonians $H^{'},H^{''}$. Second, we compute the steady state of $H^{''}$ thanks to the simpler commutators. Finally, we invert the similarities and retrieve the steady state of $H^{'}$ and $H$ respectively.  
+
+
+
+\begin{comment}
+{\color{blue}We aim to find an explicit for for the steady state $|\Psi\rangle$. The MPA gives the steady state in terms of an abstract algebra of operators. If an explicit representation of $(X_{a})_{a=1,\ldots,N}$ was available, it would be possible to compute explicitly all the correlations and currents of particles for the Hamiltonian \eqref{hamiltonian}. Another way of computing this steady state, without passing through a representation, is using the commutators \eqref{bula} and the actions \eqref{leftBoundary} and \eqref{rightBoundary}. For the one and two point correlation and for the currents this has been done in \cite{vanicat2017exact}. Inspired by this last reference, in this subsection, we aim to find exact formulas for the steady state  $|\Psi\rangle$ using only the \eqref{bula}, \eqref{leftBoundary} and \eqref{rightBoundary}. In subsection \ref{correlation-section}, this result will leads to exact correlation for arbitrary number of particles of type $\{2,\ldots,N\}$. This aim will be achieved by the help of a similarity transformation $\mathcal{S}$ that makes commutation relations simpler, and allows to find the steady state $|\widetilde\Psi\rangle$ of a transformed Hamiltonian, denoted  $\mathbb{H}$, with lower-triangular left boundary and diagonal right boundary. Therefore, inverting this similarity, one can retrieve the steady state of \eqref{hamiltonian}. A fundamental 'ingredient' of these computation is duality, that has been proved in section~\ref{sectionDuality}. Indeed, the similarity transformation $\mathcal{S}$ relies on an "intermediate transformation" $V$ (see \eqref{transformationV}) that is, up to the diagonal operator $R$, the duality matrix.} \com{clarify}
+\end{comment}
+\subsubsection{The similarity transformation}\label{subsectionSTransf}
+We introduce the first transformation as
+\begin{equation}\label{transformationV}
+ S_{1}:=\exp{\left(\sum_{a=2}^{N}e_{a1}\right)}=\mathbbm{1}+\sum_{a=2}^{N}e_{1a}
 \end{equation}
- This matrix $\mathcal{V}$ is invertible and we introduce 
+Observe that $S_{1}$ is the transposed of the bulk part of the duality matrix $d_{x}$  at site $x\in \{1,\ldots,L\}$ (see \eqref{bulkElementDualityMatrix}). By taking the tensor product over the chain we define
+\begin{equation}
+    \mathcal{S}_{1}=S_{1}^{\otimes L}
+\end{equation}
+that is related with the duality matrix by 
+\begin{equation}
+\mathcal{S}_{1}=\mathbbm{1}_{0}\otimes \prod_{x=1}^{L}d_{x}^{T}\otimes \mathbbm{1}_{L+1}
+\end{equation}
+ This matrix $\mathcal{S}_{1}$ is invertible and we introduce 
 \begin{equation}\label{hatHamiltonian}
-    \widehat{H}:=\widehat{B}_{1}+\mathcal{H}+\widehat{B}_{L}
+   H^{'}:=B^{'}_{1}+H_{bulk}+B^{'}_{L}
 \end{equation}
-such that 
+that is similar to $H$ via $\mathcal{S}_{1}$, i.e. 
 \begin{equation}\label{similarV}
-   H=\left(\mathcal{V}^{-1}\right)^{T}\widehat{H}^{T}\mathcal{V}^{T}
+   H=\mathcal{S}_{1}^{-1}H^{'}\mathcal{S}_{1}
 \end{equation}
+The boundary Hamiltonians are \eqref{siteDualHamiltonian} without the extra-site bosonic creation operators $(a^{\dagger})_{a}^{0}$ and $(a^{\dagger})_{a}^{L+1}$, i.e.
+\begin{equation}
+	B^{'}_{1}=\sum_{a=2}^{N}\left(\alpha_{a}E_{1a}^{1}-E_{aa}^{1}\right)\qquad B^{'}_{1}=\sum_{a=2}^{N}\left(\beta_{a}E_{1a}^{L}-E_{aa}^{L}\right)
+\end{equation}
+Therefore, we can conclude that $H^{'}$ is $\widetilde{H}^{T}$ in which the extra-site parts have been removed and replaced by identities. \\
+The steady state $|\widehat{\Psi}\rangle$ of $H^{'}$ fulfils the equations
+\begin{equation}
+	H^{'}|\widehat{\Psi}\rangle=0
+\end{equation}
+therefore, it is easy to see that 
+\begin{equation}
+	|\Psi\rangle =\mathcal{S}_{1}^{-1}|\widehat{\Psi}\rangle
+\end{equation}
+
+ We introduce the second transformation as 
+ \begin{equation}
+ 	S_{2}:=\exp{\left(-\sum_{a=2}^{N}\beta_{a}e_{a1}\right)}=\mathbbm{1}-\sum_{a=2}^{N}\beta_{a}e_{a1}
+ \end{equation}
+
 Using \eqref{transformationV} we introduce the \textit{similarity transformation} 
 \begin{equation}\label{similarity}
     S:=\sum_{a=2}^{N}\beta_{a}\sum_{b=1}^{N}e_{ab}+V=-\sum_{a=2}^{N}\beta_{a}\sum_{b=1}^{N}e_{ab}+\exp{\left(\sum_{a=2}^{N}e_{1a}\right)}
@@ -987,7 +1031,7 @@ The steady states $|\Psi\rangle$, $|\widehat{\Psi}\rangle$ and $|\widetilde{\Psi
  \\|\widehat{\Psi}\rangle=&\left(\mathcal{T}^{T}\right)|\widetilde{\Psi}\rangle\label{SteadyStateHatTilde}
 \end{align}
 In the following subsections we will first compute the steady state $|\widetilde{\Psi}\rangle$. Then, using the transformation $\mathcal{T}$ we will retrieve $|\widehat{\Psi}\rangle$. Finally, using the transformation $\mathcal{V}$ we will find $|\Psi\rangle$. 
-\subsubsection{The steady state of $\mathbb{H}$}
+\subsubsection{The steady state of $\mathbb{H}$}\label{subsectionSSHsec}
 We state the following result. The steady state of the Hamiltonian $\mathbb{H}$ defined in \eqref{bbHamiltonian} is given by 
 \begin{equation}\label{ResulsBasis}
 	|\widetilde{\Psi}\rangle=\sum_{s_{1},\ldots,s_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{s_{x},1}\right)}{\Gamma\left(L+2\right)}\prod_{x=1}^{L}\left[\lambda_{s_{x}}\left(1+\sum_{j=x}^{L}\delta_{s_{j},1}\right)\right]^{1-\delta_{s_{x},1}}|\mathbf{\bm{s}}\rangle
@@ -1164,7 +1208,7 @@ Finally summing over all $\mathbf{s}\in \Omega$ (that is equivalent, $\forall i\
 \begin{flushright}
 $\square$
 \end{flushright}
-\subsubsection{The steady state of $\widehat{H}^{T}$}
+\subsubsection{The steady state of $\widehat{H}^{T}$}\label{subsectionSSdual}
 Knowing the steady state \eqref{ResulsBasis} of the Hamiltonian $\mathbb{H}$ defined in \eqref{bbHamiltonian}, we use \eqref{SteadyStateHatTilde} to retrieve the steady state of the Hamiltonian $\widehat{H}$ defined in \eqref{hatHamiltonian}. The result is the following 
 \begin{equation}\label{ABS-vect}
     |\widehat{\Psi}\rangle =\sum_{s_{1},\ldots,s_{L}=1}^{N}\widehat{\Psi}(\bm{s})|\bm{s}\rangle 
@@ -1258,7 +1302,7 @@ Finally, considering all possible occupancy $\bm{s}$, we obtain \eqref{ABS}.
 \begin{flushright}
     $\square$
 \end{flushright}
-\subsubsection{The steady state of $H$}
+\subsubsection{The steady state of $H$}\label{subsectionSSH}
 The steady state $|\Psi\rangle$ of the Hamiltonian $\mathbb{H}$ defined in \eqref{bbHamiltonian} is given by 
 \begin{equation}\label{steadyStateH}
     |\Psi\rangle=\sum_{s_{1},\ldots,s_{L}=1}^{N}\Psi(\bm{s})|\bm{s}\rangle
