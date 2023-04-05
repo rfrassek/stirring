@@ -222,7 +222,7 @@ Interpreting type $1$ as an hole, one can then say that the dual process voids t
 \subsection{The process generator}
 We now give the mathematical description of the multi-species stirring process.
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
-At each site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $k$-th component $n_{a}^{x}$ denotes the number of particles of species $k\in \{1,\ldots,N\}$ at site $x\in V$. On each vertex we allow a total  maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space of the process on the graph $G$ is 
+At each site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $k$-th component $n_{a}^{x}$ denotes the number of particles of species $a\in \{1,\ldots,N\}$ at site $x\in V$. On each vertex we allow a total  maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space of the process on the graph $G$ is 
 \begin{equation}\label{stateSpace}
     \Omega:=\bigtimes_{x\in V} \Omega_{x}
 \end{equation}
@@ -267,7 +267,7 @@ See Figure \ref{fig:1}, Figure \ref{fig:2}for a visual description of the dyamic
 The process described by the generator \eqref{Generator} is reversible with respect to the homogeneus product measure \begin{equation}\label{reversibleMeasure}
 \mu_{rev}=\bigtimes_{x\in V}\mu_{rev}^{x}
 \end{equation}
-when for any $k\in\{1,\ldots,N\}$
+when for any $a\in\{1,\ldots,N\}$
 \begin{equation}\label{reversibilityCondition}
 \alpha_{a}^{x}=\alpha_{a}\qquad \forall x\in V
 \end{equation}
@@ -510,7 +510,7 @@ where $H_{x,y}$ is the one defined in \eqref{edgeHamiltonian}, while
     \widetilde{H}_{x}=\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left((a^{\dagger})_{a}^{\widehat{x}}\,E_{1a}^{x}-E_{aa}^{x}\right)
 \end{equation}
 Here we introduced bosonic creation operator $a^{\dagger}$ acting as $a^{\dagger}|q\rangle=|q+1\rangle$ on a generic vector $|q\rangle$ with $q\in \mathbb{N}_{0}$, so that in \eqref{siteDualHamiltonian} 
-$(a^{\dagger})_{a}^{\widehat{x}}$ denotes a copy of $a^{\dagger}$ acting on the extra-site $\widehat{x}$ and on the species $k\in\{2,\ldots,N\}$. \\
+$(a^{\dagger})_{a}^{\widehat{x}}$ denotes a copy of $a^{\dagger}$ acting on the extra-site $\widehat{x}$ and on the species $a\in\{2,\ldots,N\}$. \\
 We will show below that the Hamiltonians \eqref{OriginalHamiltonian} and \eqref{DualHamiltonian} are dual in the sense of \eqref{DualityRelation} where the duality matrix $D$ is described as 
 \begin{equation}\label{dualityMatrix}
     D=\prod_{x\in V}d_{x}\otimes \dd
@@ -631,7 +631,7 @@ i.e. $S_{x,y}$ is a symmetry of $H_{x,y}$. \\ Exploiting these considerations we
     \end{split}
 \end{equation}
  where we used \eqref{transpositionPropertyH} and \eqref{symmetryH} in the second equality. Thus, \eqref{edgeDualRealtion} is proved. 
- %\textbf{Reamrk}: it is important to notice that the elements of the duality matrix \eqref{dualityElements} are well defined only if at each site $x\in V$ and for every species $k\in \{2,\ldots,N\}$ the number of dual particles $r_{x}^{a}$ is lower or equal than the number of original particles $n_{a}^{x}$. This implies that the dynamics of the dual process is simpler, because described by a lower number of particles. By the way, it is possible to perform computations similar to the one made in this proof choosing instead of  \eqref{equationE} {\color{red} $E=\sum_{a=2}^{N}E_{1a}$ or $E=\sum_{a=2}^{N}E_{aa}$.}
+ %\textbf{Reamrk}: it is important to notice that the elements of the duality matrix \eqref{dualityElements} are well defined only if at each site $x\in V$ and for every species $a\in \{2,\ldots,N\}$ the number of dual particles $r_{x}^{a}$ is lower or equal than the number of original particles $n_{a}^{x}$. This implies that the dynamics of the dual process is simpler, because described by a lower number of particles. By the way, it is possible to perform computations similar to the one made in this proof choosing instead of  \eqref{equationE} {\color{red} $E=\sum_{a=2}^{N}E_{1a}$ or $E=\sum_{a=2}^{N}E_{aa}$.}
  %{\color{blue} That's confusing. What is E?}
  
  
@@ -749,11 +749,11 @@ and we obtain
 d_{x}\otimes \sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=1}^{N}\left(\rho_{a}^{x}E_{1a}^{x}-E_{aa}\right)
     \end{split}
 \end{equation}
-Recalling the action of the bosonic creation operator acting at site $\widehat{x}$ and on the species $k\in \{2,\ldots,N\}$ we have that 
+Recalling the action of the bosonic creation operator acting at site $\widehat{x}$ and on the species $a\in \{2,\ldots,N\}$ we have that 
 \begin{equation}\label{bosonicKX}
     \langle m_{2}^{\widehat{x}},\ldots,m_{a}^{\widehat{x}}+1,\ldots,m_{N}^{\widehat{x}}|=  \langle m_{2}^{\widehat{x}},\ldots,m_{a}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|(a^{\dagger})^{\widehat{x}}_{a}
 \end{equation}
-Using \eqref{bosonicKX} by a fixed $k\in \{2,\ldots,N\}$ we rewrite the term of \eqref{siteHadamardII} with Lie generator $E_{1a}^{x}$ on the right hand side of \eqref{siteHadamardII} as 
+Using \eqref{bosonicKX} by a fixed $a\in \{2,\ldots,N\}$ we rewrite the term of \eqref{siteHadamardII} with Lie generator $E_{1a}^{x}$ on the right hand side of \eqref{siteHadamardII} as 
 \begin{equation}
     \begin{split}
 &\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{a}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|\frac{\alpha_{a}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}E_{1a}^{x}
@@ -1244,7 +1244,7 @@ with $s_{x}\in\{1,\ldots,N\}$. For a fixed site $i$, because of the hard-core in
 \end{equation}
 Moreover, we have 
 \begin{equation}
-	\frac{\Gamma(2+\sum_{i=1}^{L}n_{1}^{x})}{\Gamma(2+L)}=\frac{\Gamma\left(2+\sum_{i=1}^{L}\delta_{s_{x},1}\right)}{\Gamma\left(L+2\right)}
+	\frac{\Gamma(2+\sum_{x=1}^{L}n_{1}^{x})}{\Gamma(2+L)}=\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{s_{x},1}\right)}{\Gamma\left(L+2\right)}
 \end{equation}
 Finally summing over all $\mathbf{s}\in \Omega$ (that is equivalent, $\forall i\in\{1,\ldots,L\}$, to summing over all the possible values of each $s_{x}\in\{1,\ldots,N\}$) we obtain \eqref{ResulsBasis} from \eqref{resulEsteady}.
 \begin{flushright}
@@ -1282,7 +1282,7 @@ and
     \end{equation}
     that can be generalized for $e_{s_{1},\ldots,s_{L}}^{q_{1},\ldots,q_{L}}$ with $s_{1},\ldots,s_{L},q_{1},\ldots,q_{L}\in \{1,\ldots,N\}$. With this notation we have that 
     \begin{equation}
-        S_{2}^{-1}=\sum_{s_{1}=1}^{N}e_{i}^{x}+Q
+        S_{2}^{-1}=\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}+Q
     \end{equation}
     where
     \begin{equation}
@@ -1316,7 +1316,7 @@ where the subscripts $s_{1},s_{2}$ denote the raw and the superscript $q_{1},q_{
 We iterate this tensor product for the chain of length $L$, and we write the raw with indices arbitrary $\bm{s}=s_{1},\ldots,s_{L}\in \{1,\ldots,N\}$ as
 \begin{equation}
 	\begin{split}
-	(\mathcal{S}_{2}^{-1})_{\bm{s}}=\left(S_{2}^{-1}\right)^{\otimes L}_{\bm{s}}&=\,e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}+\sum_{q_{1}=1}^{N}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\\&+\sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{q_{2}}\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\beta_{s_{q_{2}}}
+	(\mathcal{S}_{2}^{-1})_{\bm{s}}=\left(S_{2}^{-1}\right)^{\otimes L}_{\bm{s}}&=\,e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\\&+\sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{q_{2}}\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\beta_{s_{q_{2}}}
   \\&+
   \ldots+\left(\prod_{x=1}^{L}(1-\delta_{s_{x},1})\right)\prod_{x=1}^{L}\left(\beta_{s_{x}}\right)^{1-\delta_{s_{x},1}}e_{s_{1},\ldots,s_{L}}^{1,\ldots,1}
 	\end{split}
@@ -1558,7 +1558,7 @@ where
 \begin{equation}\label{Pass}
     a_{i_{1},\ldots,i_{N}}(\bm{\xi})=\mathbb{P}\left(\xi(\infty)=\sum_{a=2}^{N}\left(i_{a}\delta_{0}+(|\xi_{a}|-i_{a})\delta_{L+1}\right)| \xi_{0}=\xi\right)
 \end{equation}
-where $D(\bm{n},\bm{\xi})$ is the duality function defined in \eqref{dualityFunctionChain}. Here, we denote by $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x}$ and by $i_{a}$ the number of dual particles of species $k\in\{2,\ldots,N\}$ absorbed at left, thus we denote by $|\xi_{a}|-i_{a}$ the number of particles of the same type absorbed at right.\\
+where $D(\bm{n},\bm{\xi})$ is the duality function defined in \eqref{dualityFunctionChain}. Here, we denote by $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x}$ and by $i_{a}$ the number of dual particles of species $a\in\{2,\ldots,N\}$ absorbed at left, thus we denote by $|\xi_{a}|-i_{a}$ the number of particles of the same type absorbed at right.\\
 We observe that the duality function \eqref{dualityFunctionChain} computed in the dual configurations $\bm{\widehat{\xi}}=\delta_{s_{1}}^{y_{1}}+\ldots+\delta_{s_{m}}^{y_{m}}$ with $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$ and $s_{x}\in \{2,\ldots,N\}$ $\forall i=\{2,\ldots,m\}$ is given by 
 \begin{equation}
     D(\bm{n},\bm{\widehat{\xi}})= \frac{\prod_{a=1}^{m}n_{s_{a}}^{x_{a}}}{(\nu-m+1)}
@@ -2080,8 +2080,8 @@ Therefore, considering \eqref{actionGraphRD} on the geometry of a chain of finit
 \begin{equation}\label{DifferenceEquation}
 \mathcal{L}^{rd}n_{\alpha}^{x}=\nu\sigma_{11}\Delta_{L}n_{\alpha}^{x}+\nu\sigma_{12}\sum_{l=2\,:\,l\neq a}^{N}\Delta_{L}n_{l}^{x}+\Upsilon\sum_{l=1}^{N}(n_{l}^{x}-n_{\alpha}^{x})
 \end{equation}
-where with the symbol $\Delta_{N}$ we denote the discrete Laplacian operator on the chain, i.e. $\Delta_{L}n_{a}^{x}=n_{a}^{x+1}+n_{a}^{x-1}-2n_{a}^{x}$, $\forall x\in \{2,\ldots,L-1\}$ and $\forall k\in \{2,\ldots,N\}$. In the spirit of \cite{casini2022uphill} we can write he the Master's equation for the evolution of the average density occupation, obtaining a system of $N-1$ difference differential equation where the discrete Laplacian of all species are coupled and linear reaction term are present. \\ 
-The process defined by generator \eqref{RDGenerator} has reversible product measure when all the reservoirs have the same parameter for each site and each species, i.e. $\alpha_{a}^{x}=\alpha$, $\forall k\in \{1,\ldots,N\}$ and $x\in V$. This measure is given by
+where with the symbol $\Delta_{N}$ we denote the discrete Laplacian operator on the chain, i.e. $\Delta_{L}n_{a}^{x}=n_{a}^{x+1}+n_{a}^{x-1}-2n_{a}^{x}$, $\forall x\in \{2,\ldots,L-1\}$ and $\forall a\in \{2,\ldots,N\}$. In the spirit of \cite{casini2022uphill} we can write he the Master's equation for the evolution of the average density occupation, obtaining a system of $N-1$ difference differential equation where the discrete Laplacian of all species are coupled and linear reaction term are present. \\ 
+The process defined by generator \eqref{RDGenerator} has reversible product measure when all the reservoirs have the same parameter for each site and each species, i.e. $\alpha_{a}^{x}=\alpha$, $\forall a\in \{1,\ldots,N\}$ and $x\in V$. This measure is given by
 \begin{equation}
     \Lambda^{rev}=\bigotimes_{x\in V}\Lambda_{x}^{rev}
 \end{equation}
