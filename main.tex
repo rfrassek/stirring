@@ -1296,7 +1296,7 @@ and
     \begin{equation}
     	S_{2}^{-1}=\sum_{s_{1}=1}^{N}\left\{e_{s_{1}}^{s_{1}}+(1-\delta_{s_{1},1})\sum_{q_{1}=1}^{1}\beta_{s_{q_{1}}}e_{s_{q_{1}}}^{1}\right\}
     \end{equation}
-    Assuming that \eqref{InverseS2} is true for $L$, we prove that it holds for $L+1$
+    Assuming that \eqref{InverseS2} is true for arbitrary $L\in \mathbb{N}$, we prove that it holds for $L+1$
 \begin{align*}
     	\left(S_{2}^{\otimes L}\right)^{-1}\otimes S_{2}^{-1}&=\sum_{s_{1}=1}^{N}\ldots\sum_{s_{L}=1}^{N}\left\{e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}++\sum_{q_{1}=1}^{L}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\right. 
     	\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{q_{2}}\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\beta_{s_{q_{2}}}\right.
@@ -1431,7 +1431,7 @@ Using the notation introduced in \eqref{notation1} and \eqref{notation2} we have
 	\end{split}
 \end{equation}
 where $e_{\ldots,s_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,s_{x},\ldots,\,d_{q_{r}}\,,\ldots}$ denotes the matrix $e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}$ where the subscripts $s_{q_{1}},\ldots,s_{q_{b}}$ have been replaced by "1" and the superscripts $s_{q_{1}},\ldots,s_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. \\
-This is proved by induction. Indeed, for $L=1$ it is trivially true, by \eqref{S1-L1}. We assume that it is true for $L$ and we prove that it holds for $L+1$. 
+This is proved by induction. Indeed, for $L=1$ it is trivially true, by \eqref{S1-L1}. We assume that it is true for arbitrary $L\in \mathbb{N}$ and we prove that it holds for $L+1$. 
 \begin{align*}
 \left(S_{1}^{\otimes L}\right)^{-1}\otimes S_{1}^{-1}&=
 \sum_{s_{1}=1}^{N}\ldots\sum_{s_{L}=1}^{N}\left\{e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}\right. \\&+\left. \sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{r=1}^{b}\sum_{d_{q_{r}}=2}^{N}e_{\ldots,s_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,s_{x},\ldots,\,d_{q_{r}}\,,\ldots}\right\}
@@ -2124,7 +2124,7 @@ The aim of this section is to give an answer to these questions.
 \subsection{Linear reaction-diffusion process with coupled discrete Laplacians}
 Considering again a connected graph $G=(V,\mathcal{E})$ with set of vertices $V$ and set of edges $\mathcal{E}$, we introduce the generator
 \begin{equation}\label{RDGenerator}
-    \mathcal{L}^{rd}=\sum_{x,y\in\mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}^{rd}+\sum_{x\in V}\Gamma_{x}\mathcal{L}_{x}
+    \mathcal{L}^{rd}=\sum_{x,y\in\mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}^{rd}+\sum_{x\in V}\Gamma_{x}\mathcal{L}_{x}^{rd}
 \end{equation}
 where
 \begin{equation}
@@ -2148,7 +2148,7 @@ and where
 \end{equation}
 The site generator reads
 \begin{equation}
-	\mathcal{L}_{x}f(\bm{n})=\sum_{a,b=1}^{N}\alpha_{a}^{x}n_{b}^{x}\left(f(\bm{n}-\delta_{b}^{x}+\delta_{a}^{x})-f(\bm{n})\right)
+	\mathcal{L}_{x}^{rd}f(\bm{n})=\sum_{a,b=1}^{N}\alpha_{a}^{x}n_{b}^{x}\left(f(\bm{n}-\delta_{b}^{x}+\delta_{a}^{x})-f(\bm{n})\right)
 \end{equation}
 where the boundary parameters are defined as
 \begin{equation}
@@ -2157,8 +2157,9 @@ where the boundary parameters are defined as
 	\alpha_{1}^{x}&=\nu\left(\sigma_{11}+(N-1)\sigma_{12}\right)-\sum_{a=2}^{N}\alpha_{a}^{x}
 	\end{split}
 \end{equation}
+\paragraph{Action on the occupation variable $n_{d}^{x}$ for the edge generator $\mathcal{L}_{x,y}^{rd}$}
 The action on the occupation variable $n_{d}^{x}$ of particle type $d\in \{2,\ldots,N\}$ at site $x\in V $
-is the following
+is the following 
 \begin{equation}\label{actionGraphRD}
 \begin{split}
     \mathcal{L}_{x,y}^{rd}n_{d}^{x}&=\nu \sigma_{11}(n_{d}^{y}-n_{d}^{x})+\nu\sigma_{12}\sum_{c=2\,:	,c\neq d}^{N}(n_{c}^{y}-n_{d}^{x})+(\Upsilon-2\nu\sigma_{12})\sum_{c=2}^{N}(n_{c}^{x}-n_{\alpha}^{x})
@@ -2166,15 +2167,34 @@ is the following
 \end{equation}
 Indeed
 \begin{equation}
+	\mathcal{L}_{x,y}n_{d}^{x}=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left((n_{d}^{x}-\delta_{a}^{x}+\delta_{b}^{x}+\delta_{a}^{y}-\delta_{b}^{y})-n_{d}^{x}\right)=\nu\left(n_{d}^{y}-n_{d}^{x}\right)
+\end{equation}
+while for every $c\in \{2,\ldots,N\}$ we have 
+\begin{equation}
     \begin{split}
-\mathcal{L}_{x,y}^{c}n_{a}^{x}&=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left(n_{d}^{x}-\delta_{a}^{x}+\delta_{g_{c}(b)}^{x}+\delta_{g_{c}(a)}^{y}-\delta_{b}^{y}-n_{\alpha}^{x}\right)=\sum_{a=1}^{N}n_{a}^{x}n_{q}^{y}-\sum_{\ell=1}^{N}n_{\alpha}^{x}n_{\ell}^{y}
+\mathcal{L}_{x,y}^{c}n_{a}^{x}&=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left((n_{d}^{x}-\delta_{a}^{x}+\delta_{g_{c}(b)}^{x}+\delta_{g_{c}(a)}^{y}-\delta_{b}^{y})-n_{\alpha}^{x}\right)=\sum_{a=1}^{N}n_{a}^{x}n_{q}^{y}-\sum_{\ell=1}^{N}n_{\alpha}^{x}n_{\ell}^{y}
 \\&=
 \sum_{a=2}^{N}n_{a}^{x}n_{q}^{y}-\left(\nu-\sum_{i=2}^{N}n_{i}^{x}\right)n_{q}^{y}-\sum_{\ell=2}^{N}n_{\alpha}^{x}n_{\ell}^{y}-n_{\alpha}^{x}\left(\nu-\sum_{i=2}^{N}n_{i}^{y}\right)
 \\&=
 \nu(n_{q}^{y}-n_{\alpha}^{x})
     \end{split}
 \end{equation}
-where we call $q\in \{2,\ldots,N\}$ such that $g_{i}(q)=\alpha$ and $\ell\in \{2,\ldots,N\}$ such that $g_{i}(\ell)\neq \alpha$. Summing over all indices $c\in\{2,\ldots,N\}\,:\,c\neq d$ we obtain \eqref{actionGraphRD}.\\
+where we call $q\in \{2,\ldots,N\}$ such that $g_{i}(q)=\alpha$ and $\ell\in \{2,\ldots,N\}$ such that $g_{i}(\ell)\neq \alpha$.
+Moreover, we have
+\begin{equation}
+	\mathcal{L}_{x,y}^{m}n_{d}^{x}=\sum_{a,b=2}^{N}n_{a}^{x}\left((n_{d}^{x}-\delta_{a}^{x}+\delta_{b}^{x})-n_{d}^{x}\right)=\sum_{b=1}^{N}(n_{b}^{x}-n_{d}^{x})
+\end{equation}
+Then, summing over all indices $c\in\{2,\ldots,N\}\,:\,c\neq d$, we obtain \eqref{actionGraphRD}.
+\paragraph{Action on the occupation variable $n_{d}^{x}$ for the site generator $\mathcal{L}_{x}^{rd}$}
+Acting on $n_{d}^{x}$  with $\mathcal{L}_{x}^{rd}$ we obtain
+\begin{equation}
+	\begin{split}
+	\mathcal{L}_{x}^{rd}n_{d}^{x}&=\sum_{a,b=1}^{N}\alpha_{a}^{x}n_{b}^{x}\left((n_{d}^{x}-\delta_{b}^{x}+\delta_{a}^{x})-n_{d}^{x}\right)=\alpha_{d}^{x}\sum_{b=1\,:\,b\neq d}^{N}n_{b}^{x}-n_{d}^{x}\sum_{b=1\,:b\neq d}^{N}\alpha_{b}^{x}
+	\\&=
+	\alpha_{d}^{x}\left(\nu-n_{d}^{x}\right)-n_{d}^{x}\left(\nu(\sigma_{11}+(N-1)\sigma_{12})-\alpha_{d}^{x}\right)
+	\\&=
+	\end{split}
+\end{equation}
 As a consequence, considering \eqref{actionGraphRD} on the geometry of a chain of finite length $L\in \mathbb{N}$, the action of the generator \eqref{RDGenerator} on the occupation variable $n_{\alpha}^{x}$ gives
 \begin{equation}\label{DifferenceEquation}
 \mathcal{L}^{rd}n_{d}^{x}=\nu\sigma_{11}\Delta_{L}n_{d}^{x}+\nu\sigma_{12}\sum_{c=2\,:\,l\neq d}^{N}\Delta_{L}n_{c}^{x}+\Upsilon\sum_{c=2}^{N}(n_{c}^{x}-n_{\alpha}^{x})
