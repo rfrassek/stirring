@@ -2114,7 +2114,7 @@ Describe eigenvalues of $T_0$ following
 
 
 \section{Multi-species stirring process with reaction}
-\subsection{Duality for a reaction diffusion process}
+\subsection{Reaction-diffusion process with coupled discrete Laplacians}
 In \cite{casini2022uphill}, a two-species hard-core reaction diffusion process has been introduced. The feature of this process is that its action on the occupation variable of any species gives a difference-differential equation where both discrete Laplacians and a linear reaction term are present (multiplied for proper constants). In this subsection we write a generalization to $N\in \mathbb{N}$ species with arbitrary maximal occupation per site, again called $\nu\in\mathbb{N}_{0}$. The generator reads as follows
 \begin{equation}\label{RDGenerator}
     \mathcal{L}^{rd}=\sum_{x,y\in\mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}^{rd}+\sum_{x\in V}\Gamma_{x}\mathcal{L}_{x}
@@ -2161,7 +2161,8 @@ Therefore, considering \eqref{actionGraphRD} on the geometry of a chain of finit
 \begin{equation}\label{DifferenceEquation}
 \mathcal{L}^{rd}n_{\alpha}^{x}=\nu\sigma_{11}\Delta_{L}n_{\alpha}^{x}+\nu\sigma_{12}\sum_{l=2\,:\,l\neq a}^{N}\Delta_{L}n_{l}^{x}+\Upsilon\sum_{l=1}^{N}(n_{l}^{x}-n_{\alpha}^{x})
 \end{equation}
-where with the symbol $\Delta_{N}$ we denote the discrete Laplacian operator on the chain, i.e. $\Delta_{L}n_{a}^{x}=n_{a}^{x+1}+n_{a}^{x-1}-2n_{a}^{x}$, $\forall x\in \{2,\ldots,L-1\}$ and $\forall a\in \{2,\ldots,N\}$. In the spirit of \cite{casini2022uphill} we can write he the Master's equation for the evolution of the average density occupation, obtaining a system of $N-1$ difference differential equation where the discrete Laplacian of all species are coupled and linear reaction term are present. \\ 
+where with the symbol $\Delta_{N}$ we denote the discrete Laplacian operator on the chain, i.e. $\Delta_{L}n_{a}^{x}=n_{a}^{x+1}+n_{a}^{x-1}-2n_{a}^{x}$, $\forall x\in \{2,\ldots,L-1\}$ and $\forall a\in \{2,\ldots,N\}$. In the spirit of \cite{casini2022uphill} we can write he the Master's equation for the evolution of the average density occupation, obtaining a system of $N-1$ difference differential equation where the discrete Laplacian of all species are coupled and linear reaction term are present. 
+\subsection{Reversible measure} 
 The process defined by generator \eqref{RDGenerator} has reversible product measure when all the reservoirs have the same parameter for each site and each species, i.e. $\alpha_{a}^{x}=\alpha$, $\forall a\in \{1,\ldots,N\}$ and $x\in V$. This measure is given by
 \begin{equation}
     \Lambda^{rev}=\bigotimes_{x\in V}\Lambda_{x}^{rev}
@@ -2170,14 +2171,15 @@ where the marginals are
 \begin{equation}
     \Lambda_{x}^{rev}\sim \text{Multinomial}(\nu,p,\ldots,p)
 \end{equation}
-with $p=\frac{1}{N}$. This can be verified by imposing the detailed balance condition.\\
+with $p=\frac{1}{N}$. This can be verified by imposing the detailed balance condition.
+\subsection{Duality}
 This generator $\mathcal{L}^{rd}$ can be described by the Hamiltonian $H^{rd}$ that is defined through the basis elements \eqref{actionE} of the $gl(N)$ Lie algebra as 
 \begin{equation}
-    H^{rd}=\sum_{x,y\in \mathcal{E}}\omega_{x,y}\left(\sigma_{11}H_{x,y}+\sigma_{12}\sum_{i=1}^{N}H_{x,y}^{x}+(\Upsilon-2\sigma_{12})H_{x,y}^{m}\right)+\sum_{x\in V}\Gamma_{x}H_{x}
+    H^{rd}=\sum_{x,y\in \mathcal{E}}\omega_{x,y}\left(\sigma_{11}H_{x,y}+\sigma_{12}\sum_{c=1}^{N}H_{x,y}^{c}+(\Upsilon-2\sigma_{12})H_{x,y}^{m}\right)+\sum_{x\in V}\Gamma_{x}H_{x}
 \end{equation}
 where $H_{x,y}$ and $H_{x}$ are \eqref{edgeHamiltonian} and \eqref{siteHamiltonian} respectively, 
 \begin{equation}
-    H_{x,y}^{x}=\sum_{a,l=0}^{N}\left(E_{g_{i}(l)a}^{x}\otimes E_{g_{i}(k)l}^{y}-E_{aa}^{x}\otimes E_{ll}^{y}\right)
+    H_{x,y}^{c}=\sum_{a,b=0}^{N}\left(E_{g_{i}(l)a}^{c}\otimes E_{g_{i}(k)l}^{y}-E_{aa}^{x}\otimes E_{ll}^{y}\right)
 \end{equation}
 and 
 \begin{equation}
