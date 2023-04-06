@@ -2114,52 +2114,70 @@ Describe eigenvalues of $T_0$ following
 
 
 \section{Multi-species stirring process with reaction}
-\subsection{Reaction-diffusion process with coupled discrete Laplacians}
-In \cite{casini2022uphill}, a two-species hard-core reaction diffusion process has been introduced. The feature of this process is that its action on the occupation variable of any species gives a difference-differential equation where both discrete Laplacians and a linear reaction term are present (multiplied for proper constants). In this subsection we write a generalization to $N\in \mathbb{N}$ species with arbitrary maximal occupation per site, again called $\nu\in\mathbb{N}_{0}$. The generator reads as follows
+In \cite{casini2022uphill} it has been defined a process whose average occupation evolution equation are given by two Laplacians and a linear reaction term (mutation). This model consists in a sum of three Markov generators: a stirring, a stirring-mutation and a pure mutation one. For the lattice $\mathbb{Z}$, self-duality has been showed. In view of what have been proved in the previous section of this work, some questions arise naturally:
+\begin{enumerate}
+	\item Is it possible to extend this last duality result to the boundary-driven case in order to have an absorbing dual process?
+	\item Does this process shares the same $gl(N)$ Lie-algebraic structure?
+	\item Is it possible to extend the results to a case with arbitrary number of species $N\in \mathbb{N}$ and arbitrary maximal site occupation $\nu\in \mathbb{N}$?
+\end{enumerate}
+The aim of this section is to give an answer to these questions. 
+\subsection{Linear reaction-diffusion process with coupled discrete Laplacians}
+Considering again a connected graph $G=(V,\mathcal{E})$ with set of vertices $V$ and set of edges $\mathcal{E}$, we introduce the generator
 \begin{equation}\label{RDGenerator}
     \mathcal{L}^{rd}=\sum_{x,y\in\mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}^{rd}+\sum_{x\in V}\Gamma_{x}\mathcal{L}_{x}
 \end{equation}
 where
 \begin{equation}
-    \mathcal{L}_{x,y}^{rd}=\sigma_{11}\mathcal{L}_{x,y}+\sigma_{12}\sum_{i=1}^{N}\mathcal{L}_{x,y}^{x}+(\Upsilon-2\nu\sigma_{12})\mathcal{L}_{x,y}^{m}
+    \mathcal{L}_{x,y}^{rd}=\sigma_{11}\mathcal{L}_{x,y}+\sigma_{12}\sum_{c=1}^{N}\mathcal{L}_{x,y}^{c}+(\Upsilon-2\nu\sigma_{12})\mathcal{L}_{x,y}^{m}
 \end{equation}
-with $\mathcal{L}_{x,y}$ and $\mathcal{L}_{x}$ are the generators the generator \eqref{edgeGenerator} and \eqref{siteGenerator} respectively and, for any function $f:\Omega\to \mathbb{R}$
+with $\mathcal{L}_{x,y}$ is the generator the generator \eqref{edgeGenerator} and, for any function $f:\Omega\to \mathbb{R}$
 \begin{equation}
-    \mathcal{L}_{x,u}^{x}f(\bm{n})=\sum_{a,l=1}^{N}n_{a}^{x}n_{l}^{y}\left(f(\bm{n}-\delta_{a}^{x}+\delta_{g_{i}(l)}^{x}+\delta_{g_{i}(k)}^{y}-\delta_{l}^{y})-f(\bm{n})\right)
+    \mathcal{L}_{x,y}^{c}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left(f(\bm{n}-\delta_{a}^{x}+\delta_{g_{c}(b)}^{x}+\delta_{g_{c}(a)}^{y}-\delta_{b}^{y})-f(\bm{n})\right)
 \end{equation}
 with the mapping 
 \begin{equation}
-    g_{i}(k)=\begin{cases}
-    k+i \quad &\text{if}\quad k+i\leq N\\
-    k+i-N\quad &\text{if}\quad k+i>N\\
-    0\quad &\text{if}\quad k=0
-\end{cases}
+    g_{c}(k)=\begin{cases}
+    k+c \quad &\text{if}\quad k+c\leq N\\
+    k+c-N\quad &\text{if}\quad k+c>N\\
+    1\quad &\text{if}\quad k=1
+\end{cases}\qquad \forall k\in \{1,\ldots N\}
 \end{equation}
 and where
 \begin{equation}
-    \mathcal{L}_{x,y}^{m}f(\bm{n})=\sum_{l,k=0}^{N}n_{a}^{x}\left(f(\bm{n}-\delta_{a}^{x}+\delta_{l}^{x})-f(\bm{n})\right)
+    \mathcal{L}_{x,y}^{m}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}\left(f(\bm{n}-\delta_{a}^{x}+\delta_{b}^{x})-f(\bm{n})\right)
 \end{equation}
-the action on the occupation variable $n_{\alpha}^{x}$ of particle type $\alpha\in \{2,\ldots,N\}$ at site $x\in V $
+The site generator reads
+\begin{equation}
+	\mathcal{L}_{x}f(\bm{n})=\sum_{a,b=1}^{N}\alpha_{a}^{x}n_{b}^{x}\left(f(\bm{n}-\delta_{b}^{x}+\delta_{a}^{x})-f(\bm{n})\right)
+\end{equation}
+where the boundary parameters are defined as
+\begin{equation}
+	\begin{split}
+	\alpha_{a}^{x}&=\sigma_{11}\nu\rho_{a}^{x}+\sigma_{12}\nu\sum_{b=2\,:\,b\neq a}^{N}\rho_{b}^{x}\qquad \text{if} \quad k\in \{2,\ldots,N\}\\
+	\alpha_{1}^{x}&=\nu\left(\sigma_{11}+(N-1)\sigma_{12}\right)-\sum_{a=2}^{N}\alpha_{a}^{x}
+	\end{split}
+\end{equation}
+The action on the occupation variable $n_{d}^{x}$ of particle type $d\in \{2,\ldots,N\}$ at site $x\in V $
 is the following
 \begin{equation}\label{actionGraphRD}
 \begin{split}
-    \mathcal{L}_{x,y}^{rd}n_{\alpha}^{x}&=\nu \sigma_{11}(n_{\alpha}^{y}-n_{\alpha}^{x})+\nu\sigma_{12}\sum_{i=1}^{N}(n_{g_{i}(k)}^{y}-n_{\alpha}^{x})+(\Upsilon-2\nu\sigma_{12})\sum_{l=1}^{N}(n_{l}^{x}-n_{\alpha}^{x})
+    \mathcal{L}_{x,y}^{rd}n_{d}^{x}&=\nu \sigma_{11}(n_{d}^{y}-n_{d}^{x})+\nu\sigma_{12}\sum_{c=2\,:	,c\neq d}^{N}(n_{c}^{y}-n_{d}^{x})+(\Upsilon-2\nu\sigma_{12})\sum_{c=2}^{N}(n_{c}^{x}-n_{\alpha}^{x})
 \end{split}
 \end{equation}
-indeed, 
+Indeed
 \begin{equation}
     \begin{split}
-\mathcal{L}_{x,y}^{x}n_{\alpha}^{x}&=\sum_{a,l=1}^{N}n_{a}^{x}n_{l}^{y}\left(n_{\alpha}^{x}-\delta_{a}^{x}+\delta_{g_{i}(l)^{x}}+\delta_{g_{i}(x)}^{y}-\delta_{l}^{y}-n_{\alpha}^{x}\right)=\sum_{a=1}^{N}n_{a}^{x}n_{q}^{y}-\sum_{c=1}^{N}n_{\alpha}^{x}n_{c}^{y}
+\mathcal{L}_{x,y}^{c}n_{a}^{x}&=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left(n_{d}^{x}-\delta_{a}^{x}+\delta_{g_{c}(b)}^{x}+\delta_{g_{c}(a)}^{y}-\delta_{b}^{y}-n_{\alpha}^{x}\right)=\sum_{a=1}^{N}n_{a}^{x}n_{q}^{y}-\sum_{\ell=1}^{N}n_{\alpha}^{x}n_{\ell}^{y}
 \\&=
-\sum_{a=2}^{N}n_{a}^{x}n_{q}^{y}-\left(\nu-\sum_{i=2}^{N}n_{i}^{x}\right)n_{q}^{y}-\sum_{c=2}^{N}n_{\alpha}^{x}n_{c}^{y}-n_{\alpha}^{x}\left(\nu-\sum_{i=2}^{N}n_{i}^{y}\right)
+\sum_{a=2}^{N}n_{a}^{x}n_{q}^{y}-\left(\nu-\sum_{i=2}^{N}n_{i}^{x}\right)n_{q}^{y}-\sum_{\ell=2}^{N}n_{\alpha}^{x}n_{\ell}^{y}-n_{\alpha}^{x}\left(\nu-\sum_{i=2}^{N}n_{i}^{y}\right)
 \\&=
 \nu(n_{q}^{y}-n_{\alpha}^{x})
     \end{split}
 \end{equation}
-where we call $q\in \{1,\ldots,N\}$ such that $g_{i}(q)=\alpha$ and $c\in \{1,\ldots,N\}$ such that $g_{i}(c)\neq \alpha$. Summing over all indices $i\in\{1,\ldots,N\}$ we obtain \eqref{actionGraphRD}.\\
-Therefore, considering \eqref{actionGraphRD} on the geometry of a chain of finite length $L\in \mathbb{N}$, the action of the generator \eqref{RDGenerator} on the occupation variable $n_{\alpha}^{x}$ gives
+where we call $q\in \{2,\ldots,N\}$ such that $g_{i}(q)=\alpha$ and $\ell\in \{2,\ldots,N\}$ such that $g_{i}(\ell)\neq \alpha$. Summing over all indices $c\in\{2,\ldots,N\}\,:\,c\neq d$ we obtain \eqref{actionGraphRD}.\\
+As a consequence, considering \eqref{actionGraphRD} on the geometry of a chain of finite length $L\in \mathbb{N}$, the action of the generator \eqref{RDGenerator} on the occupation variable $n_{\alpha}^{x}$ gives
 \begin{equation}\label{DifferenceEquation}
-\mathcal{L}^{rd}n_{\alpha}^{x}=\nu\sigma_{11}\Delta_{L}n_{\alpha}^{x}+\nu\sigma_{12}\sum_{l=2\,:\,l\neq a}^{N}\Delta_{L}n_{l}^{x}+\Upsilon\sum_{l=1}^{N}(n_{l}^{x}-n_{\alpha}^{x})
+\mathcal{L}^{rd}n_{d}^{x}=\nu\sigma_{11}\Delta_{L}n_{d}^{x}+\nu\sigma_{12}\sum_{c=2\,:\,l\neq d}^{N}\Delta_{L}n_{c}^{x}+\Upsilon\sum_{c=2}^{N}(n_{c}^{x}-n_{\alpha}^{x})
 \end{equation}
 where with the symbol $\Delta_{N}$ we denote the discrete Laplacian operator on the chain, i.e. $\Delta_{L}n_{a}^{x}=n_{a}^{x+1}+n_{a}^{x-1}-2n_{a}^{x}$, $\forall x\in \{2,\ldots,L-1\}$ and $\forall a\in \{2,\ldots,N\}$. In the spirit of \cite{casini2022uphill} we can write he the Master's equation for the evolution of the average density occupation, obtaining a system of $N-1$ difference differential equation where the discrete Laplacian of all species are coupled and linear reaction term are present. 
 \subsection{Reversible measure} 
@@ -2179,7 +2197,7 @@ This generator $\mathcal{L}^{rd}$ can be described by the Hamiltonian $H^{rd}$ t
 \end{equation}
 where $H_{x,y}$ and $H_{x}$ are \eqref{edgeHamiltonian} and \eqref{siteHamiltonian} respectively, 
 \begin{equation}
-    H_{x,y}^{c}=\sum_{a,b=0}^{N}\left(E_{g_{i}(l)a}^{c}\otimes E_{g_{i}(k)l}^{y}-E_{aa}^{x}\otimes E_{ll}^{y}\right)
+    H_{x,y}^{c}=\sum_{a,b=0}^{N}\left(E_{g_{c}(a)b}^{c}\otimes E_{g_{c}(b)a}^{y}-E_{aa}^{x}\otimes E_{bb}^{y}\right)
 \end{equation}
 and 
 \begin{equation}
