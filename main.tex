@@ -1522,33 +1522,37 @@ We compute in this section a formula for the stationary steady state correlation
 	\begin{equation}\label{powerCoeffNOspec}
 		f(c_{1},\ldots,c_{m})=\frac{\Gamma(L+2-\sum_{i=1}^{m}c_{i})}{\Gamma(L+2)}
 	\end{equation}
-\textbf{Remark}: using the Binomial Theorem we rewrite the \eqref{exactCorrelations} as {\color{red}{add (-1)}}
+\textbf{Remark}: using the Binomial Theorem we rewrite the \eqref{exactCorrelations} as 
 \begin{equation}
-	\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{s_{k}}^{t_{k}}\beta_{s_{k}}^{1-t_{k}}\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(c_{1},\ldots,c_{m})g_{k}(y_{k},c_{k},\ldots,c_{m})
+\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{c_{1},\ldots,c_{m}=0}^{1}
+f(c_{1},\ldots,c_{m})f(c_{1},\ldots,c_{m})\sum_{t_{1}=0}^{c_{1}}\sum_{t_{m}=1}^{c_{m}}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}\alpha_{s_{q}}^{t_{q}}\beta_{s_{q}}^{1-t_{q}}g_{q}(y_{q},c_{q},\ldots,c_{m})
 \end{equation}
+%\begin{equation}
+%	\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{s_{k}}^{t_{k}}\beta_{s_{k}}^{1-t_{k}}\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(c_{1},\ldots,c_{m})g_{k}(y_{k},c_{k},\ldots,c_{m})
+%\end{equation}
  \paragraph{Proof of formula \eqref{exactCorrelations}}
  We aim to compute the correlations between the sites $\mathbf{y}=\left(y_{1},\ldots,y_{m}\right)$ occupied by the species $\mathbf{s}=\left(s_{1},\ldots,s_{m}\right)$, such that $s_{1},\ldots,s_{m}\in \{2,\ldots,N\}$ i.e. 
 \begin{equation}\label{Prob-m}
 	\begin{split}
-		\langle n_{s_{1}}^{y_{1}},\ldots, n_{s_{m}}^{y_{m}}\rangle_{\text{stat}}&
+		\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}}\rangle_{\text{stat}}&
 		=\mathbb{P}_{stat}\left(n_{s_{1}}^{y_{1}}=1,\ldots,n_{s_{m}}^{y_{m}}=1\right)
 	\end{split}
 \end{equation}
 where we denote $\mathbb{P}_{stat}$ the non-equilibrium steady state distribution. 
-This probability \eqref{Prob-m} can be seen as the component \eqref{steadyStateH-coeff} of the stationary state \eqref{steadyStateH} of a chain of length $m$ with each coordinates $y_{i}$ occupied by $s_{x}\neq 1$, i.e. 
+This probability \eqref{Prob-m} $\Psi(\bm{s})$ of a chain of length $m$ with each coordinates $y_{i}$ occupied by $s_{x}\neq 1$, i.e. 
 \begin{equation}
 	\mathbb{P}_{stat}\left(n_{s_{1}}^{y_{1}}=1,\ldots,n_{s_{m}}^{y_{m}}=1\right)=\Psi_{\bm{y}}\left(s_{1},\ldots,s_{m}\right)
 \end{equation}
 where the subscript $\bm{y}$ underlines the fact that we are considering a chain with length $m$. 
 As already pointed out in \eqref{LinkABS-corr}, for non-empty configurations we have:
 \begin{equation}\label{Corr-mABS}
-	\Psi_{\bm{y}}(s_{1},\ldots,s_{m})=\widehat{\Psi}_{\bm{y}}(s_{1},\ldots,s_{m})
+	\Psi_{\bm{y}}(s_{1},\ldots,s_{m})=\Psi^{'}_{\bm{y}}(s_{1},\ldots,s_{m})
 \end{equation}
-Thus, by applying the formula \eqref{ABS_intermediate} we have 
+Thus, by applying \eqref{ABS_intermediate} we have 
 \begin{equation}
-	\widehat{\Psi}_{\bm{y}}(s_{1},\ldots,s_{m})=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{s_{k}}^{c_{k}}\beta_{s_{k}}^{1-c_{k}}\left(2+L-y_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}
+	\Psi_{\bm{y}}(s_{1},\ldots,s_{m})=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{s_{k}}^{c_{k}}\beta_{s_{k}}^{1-c_{k}}\left(2+L-y_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}
 \end{equation}
-By using the relation \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we have the equations for arbitrary correlations.
+Introducing $f(c_{1},\ldots,c_{m})$ and $g_{a}(y_{a},c_{a},\ldots,c_{m})$ we have the formulas for arbitrary correlations.
 \begin{flushright}
     $\square$
 \end{flushright}
@@ -1571,9 +1575,15 @@ The two points correlations with respect the non equilibrium distribution of the
 	\end{split}
 \end{equation}
 Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain 
+\begin{equation}
+	\begin{split}
+	\langle n_{s_{1}}^{x} n_{s_{2}}^{y}\rangle_{\text{stat}}&=\beta_{s_{1}}\beta_{s_{2}}+\frac{(L+1-y_{1})}{L+1}(\alpha_{s_{1}}-\beta_{s_{1}})\beta_{s_{2}}+\frac{(L+1-y_{2})}{L+1}(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{1}}\\&+\frac{(L-y_{1})(L+1-y_{2})}{L(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})
+	\end{split}
+\end{equation}
+Therefore, we obtain the second cumulant, i.e. the second truncated correlation as 
 \begin{equation}\label{two-pts-corr}
 	\begin{split}
-	\langle n_{s_{1}}^{x} n_{s_{2}}^{y}\rangle_{\text{stat}}&=\beta_{s_{1}}\beta_{s_{2}}+\frac{(L+1-y_{1})}{L+1}(\alpha_{s_{1}}-\beta_{s_{1}})\beta_{s_{2}}+\frac{(L+1-y_{2})}{L+1}(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{1}}\\&+\frac{(L-y_{1})(L+1-y_{2})}{L(L+1}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})
+		\mathbb{E}[n_{y_{1}}^{s_{1}}n_{y_{2}}^{s_{2}}]-\mathbb{E}[n_{y_{1}}^{s_{1}}]\mathbb{E}[n_{y_{2}}^{s_{2}}]=-\frac{y_{1}(L-y_{2}+1)}{L(L+1)^{2}}\left(\alpha_{s_{1}}-\beta_{s_{1}}\right)\left(\alpha_{s_{2}}-\beta_{s_{2}}\right)
 	\end{split}
 \end{equation}
 \paragraph{Three points correlations}
@@ -1582,20 +1592,20 @@ The three points correlations with respect the non equilibrium distribution of t
     \langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}n_{s_{3}}^{y_{3}}\rangle_{\text{stat}}=\sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}\sum_{c_{3}=0}^{1}f(c_{1},c_{2},c_{3})\prod_{k=1}^{2}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(c_{k},\ldots,c_{3})
 \end{equation}
 Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain 
-\begin{equation}\label{three-pts-corr}
-    \begin{split}
-        \langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}n_{s_{3}}^{y_{3}}\rangle_{\text{stat}}&=\prod_{k=1}^{3}\beta_{s_{k}}+\sum_{k=1}^{3}\frac{(L-y_{k})}{(L+1)}(\alpha_{s_{k}}-\beta_{s_{k}})\prod_{q=1\,:\,q\neq k}^{3}\beta_{s_{q}}
-        \\&+
+\begin{align}\label{three-pts-corr}
+        \langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}n_{s_{3}}^{y_{3}}\rangle_{\text{stat}}&=\beta_{s_{1}}\beta_{s_{2}}\beta_{s_{3}}+\frac{(L-y_{1})}{(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})\beta_{s_{2}}\beta_{s_{3}}
+        \\&+\nonumber
+        \frac{(L-y_{2})}{(L+1)}(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{1}}\beta_{s_{3}}+\frac{(L-y_{3})}{(L+1)}(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{1}}\beta_{s_{2}}
+        \\&+\nonumber
         \frac{(L-y_{2})(L-y_{3}+1)}{L(L+1)}(\alpha_{s_{2}}-\beta_{s_{2}})(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{1}}
-        \\&+
+        \\&+\nonumber
         \frac{(L-y_{1})(L-y_{3}+1)}{L(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{2}}
-        \\&+
+        \\&+\nonumber
         \frac{(L-y_{1})(L-y_{2}+1)}{L(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{3}}
-        \\&+
-        \frac{(L-y_{1}-1)(L-y_{2})(L-y_{3}+1)}{L(L-1)(L+1)}\prod_{k=1}^{3}(\alpha_{s_{k}}-\beta_{s_{k}})
-    \end{split}
-\end{equation}
-\textbf{Remark}: the one and two points correlations computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively are exactly the ones found in subsection 4.3 of \cite{vanicat2017exact}. 
+        \\&+\nonumber
+        \frac{(L-y_{1}-1)(L-y_{2})(L-y_{3}+1)}{L(L-1)(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})(\alpha_{s_{3}}-\beta_{s_{3}})
+\end{align}
+\textbf{Remark}: the first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, are exactly the ones found in subsection 4.3 of \cite{vanicat2017exact}. 
 \subsection{One points correlations of the non-integrable multi-speceis stirring process on a chain[To check, something could be wrong]}
 In subsection~\ref{subsection-exact}, for the case with geometry of one dimensional chain of length $L$ connected at the ends with two reservoris of parameters $(\alpha_{a})_{a=1,\ldots,N}$ and $(\beta_{a})_{a=1,\ldots,N}$, all the correlations have been written by \eqref{exactCorrelations} using integrability. When the maximal occupation of each site $\nu>1$, this nice property is lost. However, something about correlations can be said using duality. In this subsection we still consider the same geometry of \ref{subsection-exact}. As pointed out in section~\ref{sectionDuality}, the dual process voids the chain. Therefore, the problem of computing the average of the duality matrix with respect to the stationary distribution is reduced to computing the absorption probabilities of dual particles, as we will clarify below. In this context it is better to work agin with generators. We first write the generators for the original and the dual process and the duality matrix in the particular case of this geometry. \\
 We consider the process $(\bm{n}(t))_{t\geq 0}$ on a chain of length $L$ with the end sites connected with two reservoirs. This interaction with the external environment is described by the generators 
