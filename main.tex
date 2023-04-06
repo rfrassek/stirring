@@ -2153,9 +2153,13 @@ The site generator reads
 where the boundary parameters are defined as
 \begin{equation}
 	\begin{split}
-	\alpha_{a}^{x}&=\sigma_{11}\nu\rho_{a}^{x}+\sigma_{12}\nu\sum_{b=2\,:\,b\neq a}^{N}\rho_{b}^{x}\qquad \text{if} \quad k\in \{2,\ldots,N\}\\
-	\alpha_{1}^{x}&=\nu\left(\sigma_{11}+(N-1)\sigma_{12}\right)-\sum_{a=2}^{N}\alpha_{a}^{x}
+	\alpha_{a}^{x}&=\sigma_{11}\rho_{a}^{x}+\sigma_{12}\sum_{b=2\,:\,b\neq a}^{N}\rho_{b}^{x}\qquad \text{if} \quad k\in \{2,\ldots,N\}\\
+	\alpha_{1}^{x}&=\nu\left(\sigma_{11}+(N-2)\sigma_{12}\right)-\sum_{a=2}^{N}\alpha_{a}^{x}
 	\end{split}
+\end{equation}
+and where, for every $x\in V$, we further assumed that
+\begin{equation}
+	\sum_{a=1}^{N}\rho_{a}^{x}=\nu
 \end{equation}
 \paragraph{Action on the occupation variable $n_{d}^{x}$ for the edge generator $\mathcal{L}_{x,y}^{rd}$}
 The action on the occupation variable $n_{d}^{x}$ of particle type $d\in \{2,\ldots,N\}$ at site $x\in V $
@@ -2165,6 +2169,7 @@ is the following
     \mathcal{L}_{x,y}^{rd}n_{d}^{x}&=\nu \sigma_{11}(n_{d}^{y}-n_{d}^{x})+\nu\sigma_{12}\sum_{c=2\,:	,c\neq d}^{N}(n_{c}^{y}-n_{d}^{x})+(\Upsilon-2\nu\sigma_{12})\sum_{c=2}^{N}(n_{c}^{x}-n_{\alpha}^{x})
 \end{split}
 \end{equation}
+
 Indeed
 \begin{equation}
 	\mathcal{L}_{x,y}n_{d}^{x}=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left((n_{d}^{x}-\delta_{a}^{x}+\delta_{b}^{x}+\delta_{a}^{y}-\delta_{b}^{y})-n_{d}^{x}\right)=\nu\left(n_{d}^{y}-n_{d}^{x}\right)
@@ -2191,8 +2196,10 @@ Acting on $n_{d}^{x}$  with $\mathcal{L}_{x}^{rd}$ we obtain
 	\begin{split}
 	\mathcal{L}_{x}^{rd}n_{d}^{x}&=\sum_{a,b=1}^{N}\alpha_{a}^{x}n_{b}^{x}\left((n_{d}^{x}-\delta_{b}^{x}+\delta_{a}^{x})-n_{d}^{x}\right)=\alpha_{d}^{x}\sum_{b=1\,:\,b\neq d}^{N}n_{b}^{x}-n_{d}^{x}\sum_{b=1\,:b\neq d}^{N}\alpha_{b}^{x}
 	\\&=
-	\alpha_{d}^{x}\left(\nu-n_{d}^{x}\right)-n_{d}^{x}\left(\nu(\sigma_{11}+(N-1)\sigma_{12})-\alpha_{d}^{x}\right)
-	\\&=
+	\alpha_{d}^{x}\left(\nu-n_{d}^{x}\right)-n_{d}^{x}\left(\nu(\sigma_{11}+(N-2)\sigma_{12})-\alpha_{d}^{x}\right)
+	\\&=\alpha_{d}^{x}\nu-n_{d}^{x}\nu(\sigma_{11}+(N-2)\sigma_{12})
+	\\=&
+	\nu\sigma_{11}\rho_{d}^{x}+\sigma_{12}\left(\sum_{b=2\,:\,b\neq d}^{N}\rho_{b}^{x}\right)-n_{d}^{x}\nu(\sigma_{11}+(N-2)\sigma_{12})
 	\end{split}
 \end{equation}
 As a consequence, considering \eqref{actionGraphRD} on the geometry of a chain of finite length $L\in \mathbb{N}$, the action of the generator \eqref{RDGenerator} on the occupation variable $n_{\alpha}^{x}$ gives
