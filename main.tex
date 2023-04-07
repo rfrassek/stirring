@@ -2149,7 +2149,7 @@ defined $\forall c\in\{1,\ldots,N-2\}$ as
     1\quad &\text{if}\quad k=1
 \end{cases}
 \end{equation}
-Observe that $g_{c}(\cdot)$ is surjective and bijective, and thus invertible. \\
+Observe that $g_{c}(\cdot)$ is surjective and injective, and thus invertible. \\
 Moreover,
 \begin{equation}
     \mathcal{L}_{x,y}^{m}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}\left(f(\bm{n}-\delta_{a}^{x}+\delta_{b}^{x})-f(\bm{n})\right)
@@ -2218,11 +2218,18 @@ Using equation \eqref{actionGraphRD} we have that $\forall x\in \{2,\ldots,L-1\}
 \end{equation}
 where with the symbol $\Delta_{L}$ we denote the discrete Laplacian operator on the chain, i.e. $\Delta_{L}n_{a}^{x}=n_{a}^{x+1}+n_{a}^{x-1}-2n_{a}^{x}$.
 Similarly, using \eqref{actionGraphRD}  and \eqref{actionBoudaryRD} we have that, $\forall d\in \{2,\ldots,N\}$ 
-\begin{equation}
+\begin{equation}\label{actionBDLine}
 \mathcal{L}^{rd}n_{d}^{1}=\sigma_{11}\nu \left(\rho_{d}^{1}-2n_{d}^{1}+n_{2}^{2}\right)+\sigma_{12}\nu\sum_{c=2\,:\,c\neq d}^{N}\left(\rho_{c}^{1}-2n_{c}^{1}+n_{c}^{2}\right)+\Upsilon\sum_{c=2\,:\,c\neq d}^{N}\left(n_{c}^{1}-n_{d}^{1}\right)
 \end{equation}
-On the occupation variable $n_{d}^{L}$ the action is similar, but with the upper case $1$ replaced by $L$
- In the spirit of \cite{casini2022uphill} we can write he the Master's equation for the evolution of the average density occupation, obtaining a system of $N-1$ difference-differential equation where the discrete Laplacians of all species are coupled and linear reaction terms are present. Therefore, this model is a generalization to $N$ species and to maximal occupation $\nu$ of the one studied in \cite{casini2022uphill}. This answers the first question of the beginning of this section. 
+On the occupation variable $n_{d}^{L}$ the action is similar, but with the upper case $1$ replaced by $L$.\\ In the spirit of \cite{casini2022uphill} we can define the average density occupation of species $a$ at site $x$ as
+ \begin{equation}
+ 	\rho_{a}(x,t)=\mathbb{E}_{\mu}\left[n_{a}^{x}(t)\right]
+ \end{equation}
+ where $\mathbb{E}_{\mu}$ denotes the expectation with respect to the law of the Markov process $(\bm{n})_{t\geq 0}$ initialized with arbitrary initial measure $\mu$. They evolve according to the Master's equation
+ \begin{equation}
+ 	\frac{d \rho_{a}(x,t)}{dt}=\mathbb{E}_{\mu}\left[\mathcal{L}^{rd}n_{a}^{x}(t)\right]
+ \end{equation} 
+Therefore, using the action of $\mathcal{L}^{rd}$ expressed by \eqref{DifferenceEquation} and \eqref{actionBDLine} we obtaina system of $N-1$ difference-differential equation where the discrete Laplacians of all species are coupled and linear reaction terms are present. For these reasons, this model is a generalization to $N$ species and to maximal occupation $\nu$ of the one studied in \cite{casini2022uphill}. This answers the first question of the beginning of this section. 
 \subsection{Reversible measure} 
 The process described by the generator \eqref{RDGenerator} is reversible with respect to the homogeneus product measure \begin{equation}\label{reversibleMeasureRD}
 	\Lambda_{rev}=\bigtimes_{x\in V}\Lambda_{rev}^{x}
@@ -2255,7 +2262,7 @@ that simplifies to
 \end{equation}
 that is true if and only if $p_{a}=p$ $\forall a\in \{2,\ldots,N\}$.\\
 By similar computation it is possible to show that the same result is obtained imposing the detailled balance for the transition $\bm{n}\to \bm{n}-\delta_{a}^{x}+\delta_{b}^{x}$. \\
-Recalling that, to have reversibility the reservoirs parameters must fulfil $\rho_{a}^{x}=\rho_{a}$ $\forall x \in V$ and $\forall a\in \{1,\ldots,N\}$, we obtain the result. 
+Recalling that, to have reversibility, the reservoirs parameters must fulfil $\rho_{a}^{x}=\rho_{a}$ $\forall x \in V$ and $\forall a\in \{1,\ldots,N\}$, we obtain the result. 
 \subsection{Duality}
 In this subsection we formulate duality for the multi-species stirring process $(\mathbf{n}(t))_{t\geq 0}$, defined by the generator \eqref{RDGenerator}.
 The dual  process $(\bm{\xi}(t))_{t\geq 0}$ takes values in the enlarged state space
@@ -2287,7 +2294,8 @@ The dual process is defined by its generator, which reads
 where 
 $\mathcal{L}_{x,y}^{rd}$ is defined in \eqref{edgeGeneratorRD} and, $\widetilde{\mathcal{L}}_{x}^{rd}$ is again the absorbing dual generator $\widetilde{\mathcal{L}}_{x}$ defined in \eqref{siteDualGenerator}. 
 \newline
-\textbf{Remark}: the generator $\mathcal{L}^{rd}$ has a dual with respect to the same duality function of $\mathcal{L}$ of the multi-species stirring process. Moreover, the dual process has absorbing boundaries while it performs the same edge dynamics of $\mathcal{L}^{rd}$. As we will show this follows from the same $gl(N)$ algebraic structure. 
+\newline
+\textbf{Remark}: the generator $\mathcal{L}^{rd}$ has a dual $\widetilde{\mathcal{L}}^{rd}$ with respect to the same duality function \eqref{dualityElements} of the multi-species stirring process. The dual process has absorbing boundaries while it performs the same edge dynamics of $\mathcal{L}^{rd}$. As we will show this follows from the same $gl(N)$ algebraic structure. 
 \subsubsection{Proof of duality relation for reaction-diffusion process}
 In the spirit of what we did in Section \ref{sectionDuality}, it is convenient to write the Hamiltonian of the process, that is defined through the basis elements \eqref{actionE} of the $gl(N)$ Lie algebra as 
 \begin{equation}
@@ -2334,7 +2342,7 @@ where in the last equality we used the invertibility of the map $g_{c}(\cdot)$. 
 \begin{flushright}
 	$\square$
 \end{flushright}
-With this prove we answered to the second and third questions stated at the beginning of this section. 
+With this prove we answered the second and third questions stated at the beginning of this section. 
 
 
 
