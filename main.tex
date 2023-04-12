@@ -222,7 +222,7 @@ Interpreting type $1$ as an hole, one can then say that the dual process voids t
 \subsection{The process generator}
 We now give the mathematical description of the multi-species stirring process.
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
-At each site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $k$-th component $n_{a}^{x}$ denotes the number of particles of species $a\in \{1,\ldots,N\}$ at site $x\in V$. On each vertex we allow a total  maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space of the process on the graph $G$ is 
+At each site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ denotes the number of particles of species $a\in \{1,\ldots,N\}$ at site $x\in V$. On each vertex we allow a total  maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space of the process on the graph $G$ is 
 \begin{equation}\label{stateSpace}
     \Omega:=\bigtimes_{x\in V} \Omega_{x}
 \end{equation}
@@ -237,7 +237,7 @@ The dynamics consists in an exchange of particles (at Poissonian times) between 
 \end{equation}
 where the quantities $ \omega_{x,y}\geq 0$ are called conductances and $\Gamma_{x}\geq 0$ local inhomogeneities. The generator $\mathcal{L}_{x,y}$ is called the \textit{edge generator}, while $\mathcal{L}_{x}$ is called the \textit{site generator}. These linear operators act on functions $f:\Omega\to \mathbb{R}$ as follows
 \begin{equation}\label{edgeGenerator}
-\mathcal{L}_{x,y}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}n_{l}^{y}\left[f(\bm{n}-\delta_{x}^{a}+\delta_{b}^{x}+\delta_{a}^{y}-\delta_{b}^{y})-f(\bm{n})\right]
+\mathcal{L}_{x,y}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left[f(\bm{n}-\delta^{x}_{a}+\delta_{b}^{x}+\delta_{a}^{y}-\delta_{b}^{y})-f(\bm{n})\right]
 \end{equation}
 \begin{equation}\label{siteGenerator}
     \mathcal{L}_{x}f(\bm{n})=\sum_{a,b=1}^{N}\alpha_{a}^{x}n_{b}^{x}\left[f(\bm{n}+\delta_{a}^{x}-\delta_{b}^{x})-f(\bm{n})\right]
@@ -249,7 +249,7 @@ where
 0\qquad &\text{otherwise}
 \end{cases}
 \end{equation}
-This means that on the edge $(x,y)\in \mathcal{E}$ at rate $\omega_{x,y}n_{a}^{x}n_{b}^{y}$ a particle of type $k$ at site $x$ is exchanged with a particle of tipe $l$ at site $y$; furthermore, on each site $x\in V$ at rate $\Gamma_{x}\alpha_{a}^{x}n_{b}^{x}$ a particle of type $b$ is replaced with a particle of type $k$. 
+This means that on the edge $(x,y)\in \mathcal{E}$ at rate $\omega_{x,y}n_{a}^{x}n_{b}^{y}$ a particle of type $a$ at site $x$ is exchanged with a particle of type $b$ at site $y$; furthermore, on each site $x\in V$ at rate $\Gamma_{x}\alpha_{a}^{x}n_{b}^{x}$ a particle of type $b$ is replaced with a particle of type $a$. 
 See Figure \ref{fig:1}, Figure \ref{fig:2}for a visual description of the dyamics. 
 \begin{figure}
     \centering
@@ -285,14 +285,14 @@ This can be proved just by imposing the detailed balance conditions for the edge
 
 Consider the Lie algebra $gl(N)$ with generators denoted by $\EE_{ab}$ with $a,b\in \{1,\ldots,N\}$ and commutation relations
 \begin{equation}\label{eq:comgl}
-\left[\EE_{ab},\EE_{cd}\right]=\EE_{ad}\delta_{bc}-\EE_{cb}\delta_{ad}\qquad \forall a,b\in \{1,\ldots,N\}
+\left[\EE_{ab},\EE_{cd}\right]=\EE_{ad}\delta_{cb}-\EE_{cb}\delta_{ad}\qquad \forall a,b\in \{1,\ldots,N\}
 \end{equation}
 The finite-dimensional representations are labelled by partitions $\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_N)$ of $\nu$ with $\lambda_i\in \mathbb{N}$ and $\sum_{i=1}^N \lambda_i = \nu$. We assume $\lambda_i\geq \lambda_{i+1}$ without loss of generality.
 We are interested in the {\em symmetric} finite-dimensional representations with 
 \begin{equation}\label{eq:dynkin}
     \lambda=(\twoj,0,\ldots,0) \qquad\text{where}\qquad \twoj\in\mathbb{N}
 \end{equation} 
-The dimension $M$ of the symmetric representations is given by the combination of $N$ objects in $\twoj$ positions with repetition, namely
+The dimension $M$ of this symmetric representations is given by the combination of $N$ objects in $\twoj$ positions with repetition, namely
 \begin{equation}
 	M= \frac{(N+\twoj-1)!}{\twoj  !(N-1)!}
 \end{equation} 
@@ -334,7 +334,7 @@ By the Lie algebra above we describe the process with generator \eqref{Generator
 \end{equation}
 where we require that $n_{a}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have $\sum_{a=1}^{N}n_{a}^{x}=\nu$. Sometimes it will bw convenient to write $|n^{x}\rangle$ to denote, for a fixed $x\in V$, the vector $|n_{1}^{x},\ldots,n_{N}^{x}\rangle$. The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
 \begin{equation}
-    \langle {\bf n}|{\bf m}\rangle =\prod_{x\in V}\prod_{i=1}^N\delta_{n^x_i,m^{x}_i}
+    \langle {\bf n}|{\bf m}\rangle =\prod_{x\in V}\prod_{a=1}^N\delta_{n^x_a,m^{x}_a}
 \end{equation}
 We introduce the Hamiltonian operator
 
@@ -351,7 +351,7 @@ H_{x,y}=\sum_{a,b=1}^{N}\Big(E_{ab}^{x} E_{b a}^{y}-E_{bb}^{x} E_{aa}^{y}\Big)
  \begin{equation}\label{siteHamiltonian}
 H_{x}=\sum_{a,b=1}^{N}\alpha_{a}^{x}\left(E_{ab}^{x}-E_{bb}^{x}\right)
 \end{equation}
-Here $E_{al}^{x}$ is a copy of $E_{al}$ defined in \eqref{actionE} acting on site $x$. 
+Here $E_{ab}^{x}$ is a copy of $E_{ab}$ defined in \eqref{actionE} acting on site $x$. 
 Following  \cite{belitsky2015self}, the Hamiltonian and the genertor are linked by
 \begin{equation}\label{Hamiltonian-Generator}
 H=\mathcal{L}^{T}
@@ -544,7 +544,7 @@ and
 We perform the duality proof in three steps: first we will show that matrix \eqref{dualityMatrix} has elements \eqref{dualityElements}; second we will prove \eqref{edgeDualRealtion}; finally we will show\eqref{siteDualRelation}. 
 As a preliminary result we show the following property 
 \begin{equation}\label{transpositionPropertyR}
-(E_{ab}^{x})^{T}=R_{x}E_{ab}^{x}R_{x}^{-1}\qquad \forall x\in V
+(E_{ba}^{x})^{T}=R_{x}E_{ab}^{x}R_{x}^{-1}\qquad \forall x\in V
 \end{equation}
 Indeed
 \begin{align*}
@@ -577,15 +577,15 @@ On one hand, on the extra-site $\widehat{x}$ we have
 where we used the orthogonality relation \eqref{ortho}. 
 On the other hand, on the site $x$, we have 
 \begin{align*}
-&\langle n_{1}^{x},\ldots,n_{N}^{x}|(\exp{(E_{12}^{x}+\ldots+E_{1N}^{x})})^{T}R_{x}|r_{1}^{x},\ldots,r_{N}^{x}\rangle\\&= \langle  n_{1}^{x},\ldots,n_{N}^{x}|\left(\sum_{a_{2}=0}^{\infty}\frac{\left\{\left(E_{12}^{x}\right)^{T}\right\}^{k_{2}}}{k_{2}!}\ldots\sum_{a_{N}=0}^{\infty}\frac{\left\{\left(E_{1N}^{x}\right)^{T}\right\}^{k_{N}}}{k_{N}!}\sum_{s\in\Omega_{x}}\frac{s_{1}^{x}!\ldots s_{N}^{x}!}{\nu!}|s_{1}^{x},\ldots,s_{N}^{x}\rangle\langle s_{1}^{x},\ldots,s_{N}^{x}|\right)
+&\langle n_{1}^{x},\ldots,n_{N}^{x}|(\exp{(E_{12}^{x}+\ldots+E_{1N}^{x})})^{T}R_{x}|r_{1}^{x},\ldots,r_{N}^{x}\rangle\\&= \langle  n_{1}^{x},\ldots,n_{N}^{x}|\left(\sum_{k_{2}=0}^{\infty}\frac{\left\{\left(E_{12}^{x}\right)^{T}\right\}^{k_{2}}}{k_{2}!}\ldots\sum_{k_{N}=0}^{\infty}\frac{\left\{\left(E_{1N}^{x}\right)^{T}\right\}^{k_{N}}}{k_{N}!}\sum_{s\in\Omega_{x}}\frac{s_{1}^{x}!\ldots s_{N}^{x}!}{\nu!}|s_{1}^{x},\ldots,s_{N}^{x}\rangle\langle s_{1}^{x},\ldots,s_{N}^{x}|\right)
 \\&
 \hspace{2.cm}\qquad|r_{1}^{x},\ldots,r_{N}^{x}\rangle
 \\&=
-\sum_{a_{2}=0}^{n_{1}^{x}}\ldots\sum_{a_{N}=0}^{n_{N}^{x}}\langle n_{1}^{x}+k_{2}+\ldots+k_{N},n_{2}^{x}-k_{2},\ldots,n_{N}^{x}-k_{N}|
+\sum_{k_{2}=0}^{n_{1}^{x}}\ldots\sum_{k_{N}=0}^{n_{N}^{x}}\langle n_{1}^{x}+k_{2}+\ldots+k_{N},n_{2}^{x}-k_{2},\ldots,n_{N}^{x}-k_{N}|
 \\&
 \hspace{2.cm}\prod_{a=2}^{N}\left((n_{a}^{x}(n_{a}^{x}-1)\ldots (n_{a}^{x}-k_{a}+1)\right)\frac{1}{k_{2}!,\ldots,k_{N}!}\frac{r_{1}^{x}!\ldots r_{N}^{x}!}{\nu!}|r_{1}^{x},\ldots,r_{N}^{x}\rangle
 \\&=
-\sum_{a_{2}=0}^{n_{1}^{x}}\ldots\sum_{a_{N}=0}^{n_{N}^{x}}\langle n_{1}^{x}+k_{2}+\ldots+k_{N},n_{2}^{x}-k_{2},\ldots,n_{N}^{x}-k_{N}|\frac{n_{2}^{x}!\ldots n_{N}^{x}!}{(n_{2}^{x}-k_{2})!\ldots(n_{N}^{x}-k_{N})!}
+\sum_{k_{2}=0}^{n_{1}^{x}}\ldots\sum_{k_{N}=0}^{n_{N}^{x}}\langle n_{1}^{x}+k_{2}+\ldots+k_{N},n_{2}^{x}-k_{2},\ldots,n_{N}^{x}-k_{N}|\frac{n_{2}^{x}!\ldots n_{N}^{x}!}{(n_{2}^{x}-k_{2})!\ldots(n_{N}^{x}-k_{N})!}
 \\& 
 \hspace{2.cm}\qquad\frac{1}{k_{2}!,\ldots,k_{N}!}\frac{r_{1}^{x}!\ldots r_{N}^{x}!}{\nu!}|r_{1}^{x},\ldots,r_{N}^{x}\rangle
 \\&=
@@ -596,19 +596,19 @@ where in the last equality we applied the orthogonality relations \eqref{ortho} 
     $\square$
 \end{flushright}
 \paragraph{Proof of \eqref{edgeDualRealtion}.}To show this relation we need two 'ingredients'. First the existence of a similarity transformation between the Hamiltonian $H_{x,y}$  and its transposed. As we will show, this similarity transformation is $R_{x}R_{y}$.  Second, the possibility of finding a symmetry for the edge Hamiltonian. Exploiting \eqref{hamiltonianCasimir}, we will search for a symmetry of the second Casimir $C_{2}$. As we will see, this symmetry is $\sum_{a=2}^{N}E_{a1}$ \\
-Using \eqref{transpositionPropertyR} we obtain 
+We first look for the similarity between $H_{x,y}$ and its transposed. Using \eqref{transpositionPropertyR} we obtain 
  
 \begin{equation}\label{transpositionPropertyH}
     H_{x,y}^{T}=\left(R_{x}R_{y}\right)H_{x,y}\left(R_{x}R_{y}\right)^{-1}
 \end{equation}
-therefore we have found the symilarity tranfsormation between $H_{x,y}$ and its transposed. \\
+therefore we have found the similarity transformation between $H_{x,y}$ and its transposed. \\
 We now look for a symmetry of $H_{x,y}$, i.e. a matrix $S_{x,y}$ of the same dimension such that it satisfies 
 \begin{equation}
 	H_{x,y}S_{x,y}=S_{s,y}H_{x,y}\quad \Leftrightarrow \quad [H_{x,y},S_{x,y}]=0
 \end{equation}
-Using \eqref{hamiltonianCasimir}, we observe that $H_{x,y}$ is proportional to the coproduct of the second Casimir, up to a diagonal term. Therefore, it is enough to look for a symmetry of $\Delta (C_{2})$. Using the bilinearity of the coproduct operator and the fact that $C_{2}$ belongs to the centre of the Lie algebra, it is easy to show that for any matrix $E\in gl(N)$
+Using \eqref{hamiltonianCasimir}, we observe that $H_{x,y}$ is proportional to the coproduct of the second Casimir, up to a diagonal term. Therefore, it is enough to look for a symmetry of $\Delta (C_{2})$. Using the bilinearity of the coproduct operator and the fact that $C_{2}$ belongs to the centre of the Lie algebra, it is easy to show that for any matrix $E\in gl(N)$ it holds
 \begin{equation}
-	[C_{2},E]=0\quad \Rightarrow\quad \left[\Delta (C_{2},\Delta(A)) \right]=0
+	[C_{2},E]=0\quad \Rightarrow\quad \left[\Delta (C_{2}),\Delta(E)) \right]=0
 \end{equation}
 We chose 
 \begin{equation}
@@ -670,7 +670,7 @@ i.e. $S_{x,y}$ is a symmetry of $H_{x,y}$. \\ Exploiting these considerations we
  \begin{equation}\label{HadamardFormula}
      \exp{(-B)}A\exp{(B)}=A-\left[B,A\right]+\frac{1}{2!}\left[B,\left[B,A\right]\right]-\frac{1}{3!}\left[B,\left[B,\left[B,A\right]\right]\right]+\ldots
  \end{equation}
-In the following we need the application of the Hadamard formula with $B=E$ defined in \eqref{equationE} and with $A$ equal to some of the generator $E_{ab}$ of the Lie algebra. Therefore we compute 
+In the following we need the application of the Hadamard formula with $B=\sum_{a=2}^{N}E_{a1}$ defined in \eqref{equationE} and with $A$ equal to some of the generator $E_{ab}$ of the Lie algebra. Therefore we compute 
 \begin{enumerate}
     \item for $A=E_{b 1}$ with $b\in \{2,\ldots,N\}$, we obtain 
     \begin{equation}\label{HT_El1}
@@ -688,32 +688,32 @@ Indeed, using \eqref{eq:comgl} we have
     Inserting the above commutator in \eqref{HadamardFormula}, we obtain \eqref{HT_Ell}.
     \item for $A=E_{1b}$ with $b\in \{2,\ldots,N\}$, we obtain 
     \begin{equation}\label{HT-E1l}
-        \exp{(-E)}E_{1 b}\exp{(E)}=E_{1b}+E_{11}-\sum_{a=2}^{N}\left(E_{a1}+E_{ab}\right)
+        \exp{(-E)}E_{1 a}\exp{(E)}=E_{1a}+E_{11}-\sum_{c=2}^{N}\left(E_{c1}+E_{ca}\right)
     \end{equation}
   %\com{Why indices have names $b, k, j, a, b$? Fix one set for the generators}
     
     Indeed, using \eqref{eq:comgl} we have 
     \begin{equation}
-[E,E_{1b}]=\sum_{a=2}^{N}\left(E_{ab}\delta_{11}-E_{11}\delta_{ab}\right)= (\sum_{a=2}^{N}E_{ab} ) -E_{11};
+[E,E_{1a}]=\sum_{c=2}^{N}\left(E_{ca}\delta_{11}-E_{11}\delta_{ca}\right)= (\sum_{c=2}^{N}E_{ca} ) -E_{11};
 \end{equation}
 and 
 \begin{equation}
 \begin{split}
-\left[E,[E,E_{1b}]\right]&=\sum_{c=2}^{N}\sum_{a=2}^{N}\left[E_{c1},E_{ab}\right]-\sum_{c=2}^{N}\left[E_{c1},E_{11}\right]
+\left[E,[E,E_{1a}]\right]&=\sum_{d=2}^{N}\sum_{c=2}^{N}\left[E_{d1},E_{ca}\right]-\sum_{d=2}^{N}\left[E_{d1},E_{11}\right]
 \\&=
-\sum_{a,c=2}^{N}\left(E_{cb}\delta_{a1}-E_{a1}\delta_{cb}\right)-\sum_{c=2}^{N}\left(E_{c1}\delta_{11}-E_{11}\delta_{c1}\right)
+\sum_{d,c=2}^{N}\left(E_{da}\delta_{c1}-E_{c1}\delta_{da}\right)-\sum_{d=2}^{N}\left(E_{d1}\delta_{11}-E_{11}\delta_{d1}\right)
 \\=&
--2\sum_{a=2}^{N}E_{a1};
+-2\sum_{c=2}^{N}E_{c1};
 \end{split}
 \end{equation}
 Inserting the above commutators in \eqref{HadamardFormula}, we obtain \eqref{HT-E1l}.
-\item for $A=E_{ab}$ with $a,b \in \{2,\ldots,N\}$ we obtain 
+\item for $A=E_{ba}$ with $a,b \in \{2,\ldots,N\}$ we obtain 
 \begin{equation}\label{HT-Ekl}
-    \exp{(-E)}E_{a b}\exp{(E)}=E_{ab}+E_{a 1}
+    \exp{(-E)}E_{a b}\exp{(E)}=E_{ba}+E_{b1}
 \end{equation}
    Indeed, using \eqref{eq:comgl} we have 
 \begin{equation}
-[E,E_{ab}]=\sum_{c=2}^{N}\left(E_{cb}\delta_{a1}-E_{a1}\delta_{c b}\right)=-E_{a1};
+[E,E_{ba}]=\sum_{c=2}^{N}\left(E_{ca}\delta_{b1}-E_{b1}\delta_{c a}\right)=-E_{b1};
 \end{equation}
 Inserting the above commutator in \eqref{HadamardFormula}, we obtain \eqref{HT-Ekl}.
 \item for $A=E_{11}$ we obtain 
@@ -723,41 +723,49 @@ Inserting the above commutator in \eqref{HadamardFormula}, we obtain \eqref{HT-E
   Indeed, using \eqref{eq:comgl} we have 
 
 \begin{align*}
-[E,E_{11}]=\sum_{a=2}^{N}\left(E_{a1}\delta_{11}-E_{1 1}\delta_{a1}\right)=\sum_{a=2}^{N}E_{a1};
+[E,E_{11}]=\sum_{c=2}^{N}\left(E_{c1}\delta_{11}-E_{1 1}\delta_{c1}\right)=\sum_{c=2}^{N}E_{c1};
 \end{align*}
   Inserting the above commutator in \eqref{HadamardFormula}, we obtain \eqref{HT-E11}.
 \end{enumerate}
 Using \eqref{transpositionPropertyR} we write the transpose of site Hamiltonian \eqref{siteHamiltonian} 
 \begin{equation}
     \begin{split}
-H_{x}^{T}=\sum_{a,b=0}^{N}\alpha_{a}^{x}\left(E_{ab}^{x}-E_{bb}^{x}\right)^{T}=R_{x}\sum_{a,b=0}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)R_{x}^{-1}
+H_{x}^{T}=\sum_{a,b=1}^{N}\alpha_{a}^{x}\left(E_{ab}^{x}-E_{bb}^{x}\right)^{T}=R_{x}\sum_{a,b=1}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)R_{x}^{-1}
     \end{split}
 \end{equation}
 First, we multiply both sides by $R_{x}\exp{(E^{x})}$
 \begin{equation}
-    H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\sum_{a,b =0}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}
+    H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\sum_{a,b =1}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}
 \end{equation}
 then,we insert the identity $I=\exp{(E^{x})}\exp{(-E^{x})}$ in the right hand side
 \begin{equation}\label{intermediateTransposeSite}
-H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}\exp{(-E^{x})}\sum_{a,b=0}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}
+H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}\exp{(-E^{x})}\sum_{a,b=1}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}
 \end{equation}
 %where $E^{x}$ is a copy of $E$ acting on site $x\in V$ and $E_{ab}^{x}$ with $a,b\in \{1,\ldots,N\}$ are copies of $E_{ab}$ acting at site $x\in V$.
  Using \eqref{HT_El1}, \eqref{HT_Ell},\eqref{HT-E1l}, \eqref{HT-Ekl}, \eqref{HT-E11} we have that 
 \begin{align*}
     &\exp{(-E^{x})}\sum_{a=1}^{N}\sum_{b=1}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}
     \\=&
-     \exp{(-E^{x})}\sum_{a=2}^{N}\alpha_{a}^{x}\left(E_{1a}^{x}-E_{11}^{x}\right)\exp{(E^{x})}
-     + \exp{(-E^{x})}\sum_{a=1}^{N}\sum_{b=2}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}
-     \\=&
-     \sum_{a=2}^{N}\alpha_{a}^{x}\left(E_{1a}+E_{11}^{x}-\sum_{a=2}^{N}(E_{aa}^{x}+E_{a1}^{x})-E_{11}^{x}+\sum_{a=2}^{N}E_{a1}^{x}\right)+\sum_{a=1}^{N}\sum_{b =2}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}+E_{b 1}^{x}-E_{bb}^{x}-E_{b 1}^{x}\right)
-     \\=&
-\sum_{a=2}^{N}\alpha_{a}^{x}E_{1a}^{x}-\sum_{a=1}^{N}\alpha_{a}^{x}\sum_{b=2}^{N}E_{bb}^{x}
-=
-     \sum_{a=2}^{N}\left(\alpha_{a}^{x}E_{1a}^{x}-\sum_{i=1}^{N}\alpha_{i}^{x}E_{aa}^{x}\right)
-=
-\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\frac{\alpha_{a}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}E_{1a}^{x}-E_{aa}^{x}\right)
-\\=&
-\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\rho_{a}^{x}E_{1a}^{x}-E_{aa}^{x}\right)
+    \sum_{a=2}^{N}\alpha_{a}^{x}\left(E_{1a}^{x}+E_{11}^{x}-\sum_{c=2}^{N}E_{c1}^{x}+E_{ca}^{x}-E_{11}^{x}+\sum_{c=2}^{N}E_{c1}^{x}\right)+\alpha_{1}^{x}\sum_{b=2}^{N}\left(E_{b1}^{x}-E_{bb}^{x}-E_{b1}^{x}\right)
+    \\&+\sum_{a=2}^{N}\sum_{b=2}^{N}\alpha_{a}^{x}\left(E_{ba}^{x}+E_{b1}^{x}-E_{bb}^{x}-E_{b1}^{x}\right)
+    \\&=\sum_{a=2}^{N}\alpha_{a}^{x}E_{1a}^{x}-\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{b=2}^{N}E_{bb}^{x}=
+    \sum_{a=2}^{N}\left(\alpha_{a}^{x}E_{1a}^{x}-\sum_{i=1}^{N}\alpha_{i}^{x}E_{aa}^{x}\right)
+    \\&=
+    \sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\frac{\alpha_{a}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}E_{1a}^{x}-E_{aa}^{x}\right)
+    \\&=
+    \sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\rho_{a}^{x}E_{1a}^{x}-E_{aa}^{x}\right)
+    % \exp{(-E^{x})}\sum_{a=2}^{N}\alpha_{a}^{x}\left(E_{1a}^{x}-E_{11}^{x}\right)\exp{(E^{x})}
+     %+ \exp{(-E^{x})}\sum_{a=1}^{N}\sum_{b=2}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}
+     %\\=&
+    % \sum_{a=2}^{N}\alpha_{a}^{x}\left(E_{1a}+E_{11}^{x}-\sum_{a=2}^{N}(E_{aa}^{x}+E_{a1}^{x})-E_{11}^{x}+\sum_{a=2}^{N}E_{a1}^{x}\right)+\sum_{a=1}^{N}\sum_{b =2}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}+E_{b 1}^{x}-E_{bb}^{x}-E_{b 1}^{x}\right)
+    % \\=&
+%\sum_{a=2}^{N}\alpha_{a}^{x}E_{1a}^{x}-\sum_{a=1}^{N}\alpha_{a}^{x}\sum_{b=2}^{N}E_{bb}^{x}
+%=
+  %   \sum_{a=2}^{N}\left(\alpha_{a}^{x}E_{1a}^{x}-\sum_{i=1}^{N}\alpha_{i}^{x}E_{aa}^{x}\right)
+%=
+%\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\frac{\alpha_{a}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}E_{1a}^{x}-E_{aa}^{x}\right)
+%\\=&
+%\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\rho_{a}^{x}E_{1a}^{x}-E_{aa}^{x}\right)
  \end{align*}
 Thus, we rewrite \eqref{intermediateTransposeSite} as
 \begin{equation}\label{siteHadamardI}
@@ -1890,7 +1898,7 @@ This process is dual to $(\bm{\xi}(t))_{t\geq0} $ on the enlarged configuration 
 \end{equation}
 where $0$ and $L+1$ are the extra-sites. The duality function on the chain is
 \begin{equation}\label{dualityFunctionChain}
-    D(\bm{n},\bm{\xi})=\prod_{a=2}^{N}\left(\rho_{a}^{L}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(\nu-\sum_{a=2}^{N}\xi_{a}^{x})|}{\nu!}\prod_{a=2}^{N}\frac{\eta_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=2}^{N}\left(\rho_{a}^{R}\right)^{\xi_{a}^{L+1}}
+    D(\bm{n},\bm{\xi})=\prod_{a=2}^{N}\left(\rho_{a}^{L}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(ò\nu-\sum_{a=2}^{N}\xi_{a}^{x})|}{\nu!}\prod_{a=2}^{N}\frac{\eta_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=2}^{N}\left(\rho_{a}^{R}\right)^{\xi_{a}^{L+1}}
 \end{equation}
 where $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{\sum_{i=1}^{N}\alpha_{i}}$ and where $\rho_{\alpha}^{R}=\frac{\beta_{a}}{\sum_{i=1}^{N}\beta_{i}}$.\\
 Calling $\mu_{stat}$ the stationary measure of the the process $(\bm{n}(t))_{t\geq 0}$ starting from a configuration $\bm{n}$, and considering a generic configuration $\bm{\xi}$ of the dual process, we write the following equalities using \eqref{DualityRelation}
