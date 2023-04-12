@@ -745,27 +745,15 @@ H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}\exp{(-E^{x})}\sum_{a,b=1}^{N}\alp
  Using \eqref{HT_El1}, \eqref{HT_Ell},\eqref{HT-E1l}, \eqref{HT-Ekl}, \eqref{HT-E11} we have that 
 \begin{align*}
     &\exp{(-E^{x})}\sum_{a=1}^{N}\sum_{b=1}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}
-    \\=&
-    \sum_{a=2}^{N}\alpha_{a}^{x}\left(E_{1a}^{x}+E_{11}^{x}-\sum_{c=2}^{N}E_{c1}^{x}+E_{ca}^{x}-E_{11}^{x}+\sum_{c=2}^{N}E_{c1}^{x}\right)+\alpha_{1}^{x}\sum_{b=2}^{N}\left(E_{b1}^{x}-E_{bb}^{x}-E_{b1}^{x}\right)
-    \\&+\sum_{a=2}^{N}\sum_{b=2}^{N}\alpha_{a}^{x}\left(E_{ba}^{x}+E_{b1}^{x}-E_{bb}^{x}-E_{b1}^{x}\right)
+    \\&=
+    \sum_{a=2}^{N}\alpha_{a}^{x}\left(E_{1a}^{x}+E_{11}^{x}-\sum_{c=2}^{N}E_{c1}^{x}+E_{ca}^{x}-E_{11}^{x}+
+    \sum_{c=2}^{N}E_{c1}^{x}\right)\\&+\alpha_{1}^{x}\sum_{b=2}^{N}\left(E_{b1}^{x}-E_{bb}^{x}-E_{b1}^{x}\right)+\sum_{a=2}^{N}\sum_{b=2}^{N}\alpha_{a}^{x}\left(E_{ba}^{x}+E_{b1}^{x}-E_{bb}^{x}-E_{b1}^{x}\right)
     \\&=\sum_{a=2}^{N}\alpha_{a}^{x}E_{1a}^{x}-\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{b=2}^{N}E_{bb}^{x}=
     \sum_{a=2}^{N}\left(\alpha_{a}^{x}E_{1a}^{x}-\sum_{i=1}^{N}\alpha_{i}^{x}E_{aa}^{x}\right)
     \\&=
     \sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\frac{\alpha_{a}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}E_{1a}^{x}-E_{aa}^{x}\right)
     \\&=
     \sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\rho_{a}^{x}E_{1a}^{x}-E_{aa}^{x}\right)
-    % \exp{(-E^{x})}\sum_{a=2}^{N}\alpha_{a}^{x}\left(E_{1a}^{x}-E_{11}^{x}\right)\exp{(E^{x})}
-     %+ \exp{(-E^{x})}\sum_{a=1}^{N}\sum_{b=2}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}
-     %\\=&
-    % \sum_{a=2}^{N}\alpha_{a}^{x}\left(E_{1a}+E_{11}^{x}-\sum_{a=2}^{N}(E_{aa}^{x}+E_{a1}^{x})-E_{11}^{x}+\sum_{a=2}^{N}E_{a1}^{x}\right)+\sum_{a=1}^{N}\sum_{b =2}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}+E_{b 1}^{x}-E_{bb}^{x}-E_{b 1}^{x}\right)
-    % \\=&
-%\sum_{a=2}^{N}\alpha_{a}^{x}E_{1a}^{x}-\sum_{a=1}^{N}\alpha_{a}^{x}\sum_{b=2}^{N}E_{bb}^{x}
-%=
-  %   \sum_{a=2}^{N}\left(\alpha_{a}^{x}E_{1a}^{x}-\sum_{i=1}^{N}\alpha_{i}^{x}E_{aa}^{x}\right)
-%=
-%\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\frac{\alpha_{a}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}E_{1a}^{x}-E_{aa}^{x}\right)
-%\\=&
-%\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\rho_{a}^{x}E_{1a}^{x}-E_{aa}^{x}\right)
  \end{align*}
 Thus, we rewrite \eqref{intermediateTransposeSite} as
 \begin{equation}\label{siteHadamardI}
@@ -790,7 +778,7 @@ Recalling the action of the bosonic creation operator acting at site $\widehat{x
 Using \eqref{bosonicKX} by a fixed $a\in \{2,\ldots,N\}$ we rewrite the term of \eqref{siteHadamardII} with Lie generator $E_{1a}^{x}$ on the right hand side of \eqref{siteHadamardII} as 
 \begin{equation}
     \begin{split}
-&\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{a}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|\frac{\alpha_{a}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}E_{1a}^{x}
+&\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{a}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|\rho_{a}^{x}E_{1a}^{x}
 \\=&\sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{\widehat{x}}+1}\langle m_{2}^{\widehat{x}},\ldots,m_{a}^{\widehat{x}}+1,\ldots,m_{N}^{\widehat{x}}|(a^{\dagger})_{a}^{\widehat{x}}E_{1a}^{x}
 \\=&
 \sum_{m_{2}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{\widehat{x}}}\langle m_{2}^{\widehat{x}},\ldots,m_{a}^{\widehat{x}},\ldots,m_{N}^{\widehat{x}}|(a^{\dagger})_{a}^{\widehat{x}}E_{1a}^{x}
