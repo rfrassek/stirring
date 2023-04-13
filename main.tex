@@ -351,7 +351,8 @@ H_{x,y}=\sum_{a,b=1}^{N}\Big(E_{ab}^{x} E_{b a}^{y}-E_{bb}^{x} E_{aa}^{y}\Big)
  \begin{equation}\label{siteHamiltonian}
 H_{x}=\sum_{a,b=1}^{N}\alpha_{a}^{x}\left(E_{ab}^{x}-E_{bb}^{x}\right)
 \end{equation}
-Here $E_{ab}^{x}$ is a copy of $E_{ab}$ defined in \eqref{actionE} acting on site $x$. 
+Here $E_{ab}^{x}$ is a copy of $E_{ab}$ defined in \eqref{actionE} acting on site $x$ (and
+acting trivially as the identity on the other sites). 
 Following  \cite{belitsky2015self}, the Hamiltonian and the genertor are linked by
 \begin{equation}\label{Hamiltonian-Generator}
 H=\mathcal{L}^{T}
@@ -512,7 +513,7 @@ where $H_{x,y}$ is the one defined in \eqref{edgeHamiltonian}, while
 \end{equation}
 Here we introduced bosonic creation operator $a^{\dagger}$ acting as $a^{\dagger}|q\rangle=|q+1\rangle$ on a generic vector $|q\rangle$ with $q\in \mathbb{N}_{0}$, so that in \eqref{siteDualHamiltonian} 
 $(a^{\dagger})_{a}^{\widehat{x}}$ denotes a copy of $a^{\dagger}$ acting on the extra-site $\widehat{x}$ and on the species $a\in\{2,\ldots,N\}$. \\
-We will show below that the Hamiltonians \eqref{OriginalHamiltonian} and \eqref{DualHamiltonian} are dual in the sense of \eqref{DualityRelation} where the duality matrix $D$ is described as 
+We will show below that the Hamiltonians \eqref{OriginalHamiltonian} and \eqref{DualHamiltonian} are dual in the sense of \eqref{DualityRelation}. The duality matrix $D$ is described as 
 \begin{equation}\label{dualityMatrix}
     D=\prod_{x\in V}d_{x}\otimes \dd
 \end{equation}
@@ -525,7 +526,7 @@ with
 E^{x}=\sum_{a=2}^{N}E_{a1}^{x}
 \end{equation}
 and
-\begin{equation}\label{Rmatrix}
+\begin{equation}\label{Revmatrix}
     R_{x}=\sum_{n^{x}\in\Omega_{x}}\frac{\prod_{a=1}^{N}n_{a}^{x}!}{\nu!}|n_{1}^{x},\ldots,n_{N}^{x}\rangle\langle n_{1}^{x},\ldots,n_{N}^{x}|
 \end{equation}
 and where 
@@ -827,7 +828,7 @@ and the local inhomogeneities are
     \end{cases}
     \end{equation}
 We further assume that the maximal occupancy in each site is $\nu=1$, i.e. that there is an \textit{hard-core interaction}.
-{\color{red} We will denote the element of the representation of the Lie algebra by lowercase letters, i.e. $e_{ab}$, since we are in the the fundamental representation of the algebra.} \\
+We will denote the element of the representation of the $gl(N)$ Lie algebra by lowercase letters, i.e. $(e_{ab})_{a,b\in\{1,\ldots,N\}}$, to highlight that we are in  the fundamental representation of the algebra.
 The Hamiltonian is
 \begin{equation}\label{hamiltonian}
 	H=B_{1}+H_{bulk}+B_{L}
@@ -871,7 +872,7 @@ The boundary terms are given by
 		\beta_{N}&\beta_{N}&\ldots&\ldots&\beta_{N}&\beta_{N}-1
 	\end{pmatrix}
 \end{equation}
-where we assume that the parameters satisfy
+where, without loss of generality,  we assume that the parameters satisfy
 \begin{equation}\label{ratesConditions}
 	\sum_{a=1}^{N}\alpha_{a}=1,\qquad\sum_{a=1}^{N}\beta_{a}=1
 \end{equation} 
@@ -879,8 +880,10 @@ We define also
 \begin{equation}\label{lambdaConditions}
 	\lambda_{a}=\alpha_{a}-\beta_{a}\quad\text{with}\quad \sum_{a=1}^{N}\lambda_{a}=0\,.
 \end{equation}
-Under these assumption the Hamiltonian is integrable (see \cite{vanicat2017exact}). \\
-For what concerns duality, in this setting the extra-sites are denoted by $0$ and $L+1$, since connected respectively with sites $1$ and $L$ of the chain. Moreover, the matrix $R_{x}$ reduces to the identity. Therefore, the duality matrix reads as
+Under these assumption the Hamiltonian is integrable (see \cite{vanicat2017exact} for its derivation within the Quantum Inverse Scattering method). \\
+\paragraph{Duality.} 
+In this setting the extra-sites are denoted by $0$ and $L+1$, since connected respectively with sites $1$ and $L$ of the chain. Moreover, the matrix $R_{x}$ defined in \eqref{Revmatrix} 
+reduces to the identity which implies $e_{ab}^T= e_{ba}$. Therefore, the duality matrix reads
 \begin{equation}
 	D=\mathcal{D}_{0}\otimes\prod_{x=1}^{L}\exp{(E^{x})}\otimes \mathcal{D}_{L+1}
 \end{equation}
@@ -888,15 +891,15 @@ and the dual Hamiltonian
 \begin{equation}
 	\widetilde{H}=\widetilde{H}_{0}+\sum_{x=1}^{L-1}H_{x,x+1}+\widetilde{H}_{L+1}
 \end{equation}
-In the long-time horizon, the dual process voids the chain, and all particles are eventually absorbed at extra-site $0$ or $L+1$.
-\paragraph{Matrix Product Ansatz (MPA)} Matrix product ansatz for the non-equilibrium steady state has been formulated in \cite{vanicat2017exact}, here we recall its main points.\\
- Calling $|\Psi(t)\rangle$ a vector that contains the probability of every configuration of the chain with Hamiltonian \eqref{hamiltonian} at time $t\geq 0$, its evolution equation is given by 
+In the long-time limit, the dual process voids the chain, and all particles are eventually absorbed at the extra-sites $0$ and $L+1$.
+\paragraph{Matrix Product Ansatz (MPA).} The matrix product ansatz for the non-equilibrium steady state has been formulated in \cite{vanicat2017exact}, here we briefly recall it.
+ Denoting by $|\Psi(t)\rangle$ the column vector that encodes the probability distribution of the chain with Hamiltonian \eqref{hamiltonian} at time $t\geq 0$, its evolution equation is given by 
  the Master equation
 \begin{equation}
     \frac{d|{\Psi}(t)\rangle}{dt}=H|{\Psi}(t)\rangle
 \end{equation}
-This Markov chain is positive recurrent, therefore there exist a unique stationary measure, that will be reached when time goes to infinity, regardless of the initial distribution. 
-We denote by $|\Psi\rangle$ the column vector that contains the probabilities of every configuration of the chain with respect to this unique stationary distribution. This vector is the right eigenvector with vanishing eigenvalue of $H$, i.e. it solves 
+This Markov chain is positive recurrent, therefore there exists a unique stationary measure, that will be reached when time goes to infinity, regardless of the initial distribution. 
+We denote by $|\Psi\rangle$ the column vector that gives the stationary distribution. This vector is the right eigenvector with vanishing eigenvalue of $H$, i.e. it solves 
 \begin{equation}
 	H|\Psi\rangle =0
 \end{equation}
@@ -935,12 +938,16 @@ and their action on the boundary vectors are
 	and using  \eqref{ratesConditions} and \eqref{lambdaConditions}.
  Similarly for the right boundary  \eqref{rightBoundary} there are only  $N-1$ independent equations.
 \subsection{The explicit form of the steady state}\label{subsection-exact}
-The MPA gives an abstract form of the steady state in terms of an algebra of operators. However, to write explicitly the steady state one should know a representation of this algebra. Another approach is to directly use the commutators and figure out correlations from them. This path has been followed in \cite{vanicat2017exact} to compute one and two points correlations. However, it is interesting to put effort in this direction and look for explicit form of arbitrary correlations. We will carry out this aim by the use of duality, proved in Section \ref{sectionDuality}. The idea is summarized in the following. We define a sequence of similarity transformation such that 
+The MPA gives an abstract form of the steady state in terms of an algebra of operators. However, to write explicitly the steady state one should provide a representation of this algebra. Another approach is to directly use the commutators and compute the steady-state correlations using the commutation relations and the boundary actions. This path has been followed in \cite{vanicat2017exact} to compute one-point and two-point correlations. 
+Here we follow the approach of working with the abstract commutation  relations. We will show that the duality property established in Section \ref{sectionDuality} simplifies substantially the  use of commutators in the actual
+computation. The idea is summarized as follows. We define a sequence of similarity transformation such that 
 \begin{equation}
 	H\;\xrightarrow{\mathcal{S}_{1}}\;H^{'}\;\xrightarrow{\mathcal{S}_{2}}\;H^{''}
 \end{equation} 
-where $\mathcal{S}_{1}$ makes $H^{'}$ with both diagonal boundaries and $\mathcal{S}_{2}$ makes $H^{''}$ with left triangular boundary and right diagonal one. Thanks to these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{rightBoundary}, \eqref{leftBoundary} of the operators $(X_{a})_{a\in\{1,\ldots,N\}}$ of the MPA become simpler, therefore, the steady state $|\Psi^{''}\rangle$ of $H^{''}$ will be written explicitly. Then, reversing the transformations we will retrieve $|\Psi\rangle$.\\
-The first transformation $\mathcal{S}_{1}$ is closely related to the dual matrix. Moreover, we will see that $H^{'}$ is $\widetilde{H}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. This informally explains the role of duality. The second transformation $\mathcal{S}_{2}$ diagonalize the right boundary. This allows to simplify a lot the commutators of the MPA algebra, paying the price of having left boundary that depends on the difference between the densities of the two reservoirs. \\
+where $H^{'}= \mathcal{S}_{1} H \mathcal{S}_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = \mathcal{S}_{2}H' \mathcal{S}_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Thanks to these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} of the operators $(X_{a})_{a\in\{1,\ldots,N\}}$ of the MPA become simpler, therefore, the steady state $|\Psi^{''}\rangle$ of $H^{''}$ will be written explicitly. Then, reversing the transformations we will retrieve $|\Psi\rangle$.
+
+The first transformation $\mathcal{S}_{1}$ is closely related to the dual matrix. Moreover, we will see that $H^{'}$ is $\widetilde{H}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. The second transformation $\mathcal{S}_{2}$ diagonalize the right boundary. The composition  $\mathcal{S}_{2} \mathcal{S}_{1}$ allows to simplify the commutators of the MPA algebra, paying the price of having left boundary that depends on the difference between the densities of the two reservoirs. 
+
 The computation are organized as follows: we first define the similarity transformations $\mathcal{S}_{1},\mathcal{S}_{2}$ and the Hamiltonians $H^{'},H^{''}$. Second, we compute the steady state of $H^{''}$ thanks to the simpler commutators. Finally, we invert the similarities and retrieve the steady state of $H^{'}$ and $H$ respectively. 
 
 
@@ -949,7 +956,7 @@ The computation are organized as follows: we first define the similarity transfo
 \begin{comment}
 {\color{blue}We aim to find an explicit for for the steady state $|\Psi\rangle$. The MPA gives the steady state in terms of an abstract algebra of operators. If an explicit representation of $(X_{a})_{a=1,\ldots,N}$ was available, it would be possible to compute explicitly all the correlations and currents of particles for the Hamiltonian \eqref{hamiltonian}. Another way of computing this steady state, without passing through a representation, is using the commutators \eqref{bula} and the actions \eqref{leftBoundary} and \eqref{rightBoundary}. For the one and two point correlation and for the currents this has been done in \cite{vanicat2017exact}. Inspired by this last reference, in this subsection, we aim to find exact formulas for the steady state  $|\Psi\rangle$ using only the \eqref{bula}, \eqref{leftBoundary} and \eqref{rightBoundary}. In subsection \ref{correlation-section}, this result will leads to exact correlation for arbitrary number of particles of type $\{2,\ldots,N\}$. This aim will be achieved by the help of a similarity transformation $\mathcal{S}$ that makes commutation relations simpler, and allows to find the steady state $|\widetilde\Psi\rangle$ of a transformed Hamiltonian, denoted  $\mathbb{H}$, with lower-triangular left boundary and diagonal right boundary. Therefore, inverting this similarity, one can retrieve the steady state of \eqref{hamiltonian}. A fundamental 'ingredient' of these computation is duality, that has been proved in section~\ref{sectionDuality}. Indeed, the similarity transformation $\mathcal{S}$ relies on an "intermediate transformation" $V$ (see \eqref{transformationV}) that is, up to the diagonal operator $R$, the duality matrix.} \com{clarify}
 \end{comment}
-\subsubsection{The similarity transformation}\label{subsectionSTransf}
+\subsubsection{The similarity transformations}\label{subsectionSTransf}
 We introduce the first transformation as
 \begin{equation}\label{transformationV}
  S_{1}:=\exp{\left(\sum_{a=2}^{N}e_{1a}\right)}=\mathbbm{1}+\sum_{a=2}^{N}e_{1a}
@@ -960,29 +967,27 @@ Observe that $S_{1}$ is the transposed of the bulk part of the duality matrix $d
 \end{equation}
 that is related with the duality matrix by 
 \begin{equation}
-\mathcal{S}_{1}=\mathbbm{1}_{0}\otimes \prod_{x=1}^{L}d_{x}^{T}\otimes \mathbbm{1}_{L+1}
+\mathcal{S}_{1}=\prod_{x=1}^{L}d_{x}^{T}
 \end{equation}
  This $\mathcal{S}_{1}$ is invertible, then we introduce 
 \begin{equation}\label{hatHamiltonian}
    H^{'}:=B^{'}_{1}+H_{bulk}+B^{'}_{L}
 \end{equation}
-that is similar to $H$ via $\mathcal{S}_{1}$, i.e. 
+that is related to $H$ by
 \begin{equation}\label{similarV}
    H=\mathcal{S}_{1}^{-1}H^{'}\mathcal{S}_{1}
 \end{equation}
-The boundary Hamiltonians $B_{1}^{'}$ and $B_{L}^{'}$ are $\widetilde{H}_{0}$ and $\widetilde{H}_{L+1}$ without the extra-site bosonic creation operators $(a^{\dagger})_{a}^{0}$ and $(a^{\dagger})_{a}^{L+1}$, i.e.
+The boundary Hamiltonians $B_{1}^{'}$ and $B_{L}^{'}$ relates to the transposed of  $\widetilde{H}_{0}$ and $\widetilde{H}_{L+1}$, the boundary part of the dual Hamiltonian  defined in \eqref{siteDualHamiltonian},
+they are obtained replacing the  extra-site bosonic creation operators $(a^{\dagger})_{a}^{0}$  (resp. $(a^{\dagger})_{a}^{L+1}$) with the corresponding reservoir parameters $\alpha_a$ (resp. $\beta_a$):
 \begin{equation}
-	B^{'}_{1}=\sum_{a=2}^{N}\left(\alpha_{a}E_{1a}^{1}-E_{aa}^{1}\right)\qquad B^{'}_{1}=\sum_{a=2}^{N}\left(\beta_{a}E_{1a}^{L}-E_{aa}^{L}\right)
+	B^{'}_{1}=\sum_{a=2}^{N}\left(\alpha_{a}e_{a1}^{1}-e_{aa}^{1}\right)\qquad B^{'}_{L}=\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}\right)
 \end{equation}
-Therefore, we can conclude that $H^{'}$ is $\widetilde{H}^{T}$ in which the extra-site parts have been removed and replaced by identities. \\
-The steady state $|\Psi^{'}\rangle$ of $H^{'}$ fulfils the equation
-\begin{equation}
-	H^{'}|\Psi^{'}\rangle=0
-\end{equation}
-then, it is easy to see that 
+Obviously
 \begin{equation}\label{S1-Inverse}
 	|\Psi\rangle =\mathcal{S}_{1}^{-1}|\Psi^{'}\rangle
 \end{equation}
+where $|\Psi^{'}\rangle$ satisfies $H^{'}|\Psi^{'}\rangle=0$.
+
 We introduce the second transformation as 
  \begin{equation}
  	S_{2}:=\exp{\left(-\sum_{a=2}^{N}\beta_{a}e_{a1}\right)}=\mathbbm{1}-\sum_{a=2}^{N}\beta_{a}e_{a1}
@@ -995,7 +1000,7 @@ We introduce
 \begin{equation}
 	H^{''}=B_{1}^{''}+H_{bulk}+B_{L}^{''}
 \end{equation}
-that is similar to $H^{'}$ by $S_{2}$, i.e.
+that is related to $H'$ by
 \begin{equation}
 	H^{'}=\mathcal{S}_{2}^{-1}H^{''}\mathcal{S}_{2}
 \end{equation}
@@ -1632,7 +1637,7 @@ Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain
 \end{align}
 \textbf{Remark}: the first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, are exactly the ones found in subsection 4.3 of \cite{vanicat2017exact}. 
 
-\section{Steady state for the non-integrable chain}
+\section{Non-integrable chain}
 In Section \ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable thanks to integrability. This nice property is lost when we allow an arbitrary maximal occupation $\nu>1$, therefore it is natural to ask if we can still say something about correlations. Again, exploiting duality, steady state correlations can be expressed in terms of absorption probabilities of the dual particles.
 \subsection{Steady state correlations and duality}
 We consider a chain of length $L$ where the end sites $1$ and $L$ are connected with two reservoirs. Now, each site can host $\nu\geq 1$ particles, chosen among the $N$ types. The generator reads as
@@ -2021,13 +2026,13 @@ where $\Delta_{x}^{L}$ is the discrete Laplace operator on the chain of length $
 	\end{equation}
 that gives back \eqref{one-pts-corr}.  
 \end{comment}
-\subsection{Mapping to equilibrium?}
+\section{Mapping to equilibrium?}
 {\color{red}
 check also Appendix A in
 \cite{Alcaraz:1992zc} }
 
 \cite{Sklyanin:1988yz}
-\subsubsection{Quantum inverse scattering method}
+\subsection{Quantum inverse scattering method}
 We can apply the \textit{quantum inverse scattering method} to this process. We introduce the quantum space as $V=V_{1}\otimes\ldots\otimes V_{j}\otimes\ldots\otimes V_{L}$ and the auxiliary space $V_{0}$. In this specific case $V_{j}=\mathbb{C}^{N}$ $\forall j=0,1,\ldots ,L$. We introduce the following matrices acting on the spaces with indices $a,b=0,1,\ldots,L$
 \begin{equation}\label{Rmatrix}
 R_{ab}(x)=\frac{(P_{ab}+Ix)}{x+1}
