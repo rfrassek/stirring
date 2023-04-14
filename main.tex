@@ -744,18 +744,21 @@ H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}\exp{(-E^{x})}\sum_{a,b=1}^{N}\alp
 \end{equation}
 %where $E^{x}$ is a copy of $E$ acting on site $x\in V$ and $E_{ab}^{x}$ with $a,b\in \{1,\ldots,N\}$ are copies of $E_{ab}$ acting at site $x\in V$.
  Using \eqref{HT_El1}, \eqref{HT_Ell},\eqref{HT-E1l}, \eqref{HT-Ekl}, \eqref{HT-E11} we have that 
-\begin{align*}
-    &\exp{(-E^{x})}\sum_{a=1}^{N}\sum_{b=1}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}
-    \\&=
+\begin{align}
+    &\exp{(-E^{x})}\sum_{a=1}^{N}\sum_{b=1}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}\nonumber
+    \\&=\nonumber
     \sum_{a=2}^{N}\alpha_{a}^{x}\left(E_{1a}^{x}+E_{11}^{x}-\sum_{c=2}^{N}(E_{c1}^{x})-\sum_{c=2}^{N}(E_{ca}^{x})-E_{11}^{x}+
-    \sum_{c=2}^{N}(E_{c1}^{x})\right)\\&+\alpha_{1}^{x}\sum_{b=2}^{N}\left(E_{b1}^{x}-E_{bb}^{x}-E_{b1}^{x}\right)+\sum_{a=2}^{N}\sum_{b=2}^{N}\alpha_{a}^{x}\left(E_{ba}^{x}+E_{b1}^{x}-E_{bb}^{x}-E_{b1}^{x}\right)
-    \\&=\sum_{a=2}^{N}\alpha_{a}^{x}E_{1a}^{x}-\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{b=2}^{N}E_{bb}^{x}=
+    \sum_{c=2}^{N}(E_{c1}^{x})\right)
+    \\&+\nonumber
+    \alpha_{1}^{x}\sum_{b=2}^{N}\left(E_{b1}^{x}-E_{bb}^{x}-E_{b1}^{x}\right)+\sum_{a=2}^{N}\sum_{b=2}^{N}\alpha_{a}^{x}\left(E_{ba}^{x}+E_{b1}^{x}-E_{bb}^{x}-E_{b1}^{x}\right)
+    \\&=\nonumber
+    \sum_{a=2}^{N}\alpha_{a}^{x}E_{1a}^{x}-\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{b=2}^{N}E_{bb}^{x}=
     \sum_{a=2}^{N}\left(\alpha_{a}^{x}E_{1a}^{x}-\sum_{i=1}^{N}\alpha_{i}^{x}E_{aa}^{x}\right)
-    \\&=
+    \\&=\nonumber
     \sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\frac{\alpha_{a}^{x}}{\sum_{i=1}^{N}\alpha_{i}^{x}}E_{1a}^{x}-E_{aa}^{x}\right)
     \\&=
     \sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\rho_{a}^{x}E_{1a}^{x}-E_{aa}^{x}\right)
- \end{align*}
+ \end{align}
 in short
 \begin{equation}\label{HadTransfBoundary}
 \exp{(-E^{x})}\sum_{a=1}^{N}\sum_{b=1}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}=	\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\rho_{a}^{x}E_{1a}^{x}-E_{aa}^{x}\right)
@@ -1686,9 +1689,9 @@ The three points correlations with respect the non equilibrium distribution of t
 \end{equation}
 Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain 
 \begin{align}\label{three-pts-corr}
-        \langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}n_{s_{3}}^{y_{3}}\rangle_{\text{stat}}&=\beta_{s_{1}}\beta_{s_{2}}\beta_{s_{3}}+\frac{(L-y_{1})}{(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})\beta_{s_{2}}\beta_{s_{3}}
+        \langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}n_{s_{3}}^{y_{3}}\rangle_{\text{stat}}&=\beta_{s_{1}}\beta_{s_{2}}\beta_{s_{3}}+\frac{(L+1-y_{1})}{(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})\beta_{s_{2}}\beta_{s_{3}}
         \\&+\nonumber
-        \frac{(L-y_{2})}{(L+1)}(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{1}}\beta_{s_{3}}+\frac{(L-y_{3})}{(L+1)}(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{1}}\beta_{s_{2}}
+        \frac{(L+1-y_{2})}{(L+1)}(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{1}}\beta_{s_{3}}+\frac{(L+1-y_{3})}{(L+1)}(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{1}}\beta_{s_{2}}
         \\&+\nonumber
         \frac{(L-y_{2})(L-y_{3}+1)}{L(L+1)}(\alpha_{s_{2}}-\beta_{s_{2}})(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{1}}
         \\&+\nonumber
@@ -1698,6 +1701,10 @@ Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain
         \\&+\nonumber
         \frac{(L-y_{1}-1)(L-y_{2})(L-y_{3}+1)}{L(L-1)(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})(\alpha_{s_{3}}-\beta_{s_{3}})
 \end{align}
+The third cumulant is given by 
+\begin{align*}
+	\mathbb{E}\left[n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}\right]-\mathbb{E}\left[n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}\right]\mathbb{E}\left[n_{s_{3}}^{y_{3}}\right]-\mathbb{E}\left[n_{s_{1}}^{y_{1}}n_{s_{3}}^{y_{3}}\right]\mathbb{E}\left[n_{s_{2}}^{y_{2}}\right]-\mathbb{E}\left[n_{s_{3}}^{y_{3}}n_{s_{2}}^{y_{2}}\right]\mathbb{E}\left[n_{s_{1}}^{y_{1}}\right]+2\mathbb{E}\left[n_{s_{1}}^{y_{1}}\right]\mathbb{E}\left[n_{s_{2}}^{y_{2}}\right]\mathbb{E}\left[n_{s_{3}}^{y_{3}}\right]
+\end{align*}
 \textbf{Remark}: the first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, are exactly the ones found in subsection 4.3 of \cite{vanicat2017exact}. 
 
 \section{Non-integrable chain}
