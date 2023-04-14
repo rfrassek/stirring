@@ -340,12 +340,12 @@ We introduce the Hamiltonian operator
 
 \begin{equation}\label{OriginalHamiltonian}
 	\begin{split}
-		H=\sum_{x,y\in \mathcal{E}}\omega_{x,y}H_{x,y}+\sum_{x\in V}\Gamma_{x}H_{x}
+		H=\sum_{x,y\in \mathcal{E}}\omega_{x,y}\mathcal{H}_{x,y}+\sum_{x\in V}\Gamma_{x}H_{x}
 	\end{split}
 \end{equation}
 where the edge Hamiltonian is
 \begin{equation}\label{edgeHamiltonian}
-H_{x,y}=\sum_{a,b=1}^{N}\Big(E_{ab}^{x} E_{b a}^{y}-E_{bb}^{x} E_{aa}^{y}\Big)
+\mathcal{H}_{x,y}=\sum_{a,b=1}^{N}\Big(E_{ab}^{x} E_{b a}^{y}-E_{bb}^{x} E_{aa}^{y}\Big)
  \end{equation}
   and where the site Hamiltonian is
  \begin{equation}\label{siteHamiltonian}
@@ -384,7 +384,7 @@ we have
 \end{equation}
 Then, one can check that 
 \begin{equation}\label{hamiltonianCasimir}
-	H_{x,y}=\frac{1}{2}\Delta^{x,y}(C_{2})-\twoj(2\twoj+N)
+	\mathcal{H}=\frac{1}{2}\Delta^{x,y}(C_{2})-\twoj(2\twoj+N)
 \end{equation}
 where $\Delta^{x,y}(C_2)$ denotes a copy of $\Delta(C_2)$ acting on  
 the edge $(x,y)\in \mathcal{E}$.
@@ -395,12 +395,12 @@ We introduce the Hamiltonian operator
 
 \begin{equation}\label{OriginalHamiltonian}
 	\begin{split}
-		H=\sum_{x,y\in \mathcal{E}}\omega_{x,y}H_{x,y}+\sum_{x\in V}\Gamma_{x}H_{x}
+		H=\sum_{x,y\in \mathcal{E}}\omega_{x,y}\mathcal{H}_{x,y}+\sum_{x\in V}\Gamma_{x}H_{x}
 	\end{split}
 \end{equation}
 where the edge Hamiltonian is
 \begin{equation}\label{edgeHamiltonian}
-H_{x,y}=\sum_{a,l=1}^{N}E_{al}^{x}\otimes E_{la}^{y}-E_{ll}^{x}\otimes E_{aa}^{y}
+\mathcal{H}_{x,y}=\sum_{a,l=1}^{N}E_{al}^{x}\otimes E_{la}^{y}-E_{ll}^{x}\otimes E_{aa}^{y}
  \end{equation}
  and where the site Hamiltonian is
  \begin{equation}\label{siteHamiltonian}
@@ -414,7 +414,7 @@ We can write this Hamiltonian in function of the coproduct of the second Casimir
 \end{equation}
 It reads
 \begin{equation}
-	H_{x,y}=\left\{\frac{1}{2}\Delta^{xy}(C_{2})-\twoj(2\twoj+N)\frac{1}{2}\mathbbm{1}^{x}\otimes\mathbbm{1}^{y}\right\}
+	\mathcal{H}_{x,y}=\left\{\frac{1}{2}\Delta^{xy}(C_{2})-\twoj(2\twoj+N)\frac{1}{2}\mathbbm{1}^{x}\otimes\mathbbm{1}^{y}\right\}
 \end{equation}
 Here we introduced the standard coproduct
 \begin{equation}
@@ -505,9 +505,9 @@ To each configuration $\bm{\xi}$ of the configuration space  \eqref{dualStateSpa
 \end{equation}
 The Hamiltonian of the dual process reads
 \begin{equation}\label{DualHamiltonian}
-    \widetilde{H}=\sum_{x,y\in \mathcal{E}}\omega_{x,y}H_{x,y}+\sum_{x\in V}\Gamma_{x}\widetilde{H}_{x}
+    \widetilde{H}=\sum_{x,y\in \mathcal{E}}\omega_{x,y}\mathcal{H}_{x,y}+\sum_{x\in V}\Gamma_{x}\widetilde{H}_{x}
 \end{equation}
-where $H_{x,y}$ is the one defined in \eqref{edgeHamiltonian}, while 
+where $\mathcal{H}_{x,y}$ is the one defined in \eqref{edgeHamiltonian}, while 
 \begin{equation}\label{siteDualHamiltonian}
     \widetilde{H}_{x}=\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left((a^{\dagger})_{a}^{\widehat{x}}\,E_{1a}^{x}-E_{aa}^{x}\right)
 \end{equation}
@@ -536,7 +536,7 @@ and where
 The matrix $R_{x}$ is diagonal. Its elements are related to the inverse of the weights of the reversible measure \eqref{reversibleMeasure}. In particular, to obtain these elements, we have considered the weights of \eqref{reversibleMeasure} when all the parameters $p_{i}=\frac{1}{N}$. Then, the constant $\left(\frac{1}{N}\right)^{\nu}$ has been neglected, since it does not change the duality relation. This $R_{x}$ is called the ``cheap'' duality matrix (see \cite{giardina2009duality}). \\
 Since \eqref{dualityMatrix} is product over sites, proving \eqref{DualityRelation} is equivalent to showing that 
 \begin{equation}\label{edgeDualRealtion}
-    H_{x,y}^{T}D=DH_{x,y}\qquad \forall (x,y)\in \mathcal{E}
+    \mathcal{H}_{x,y}^{T}D=D\mathcal{H}_{x,y}\qquad \forall (x,y)\in \mathcal{E}
 \end{equation}
 and 
 \begin{equation}\label{siteDualRelation}
@@ -596,18 +596,18 @@ where in the last equality we applied the orthogonality relations \eqref{ortho} 
 \begin{flushright}
     $\square$
 \end{flushright}
-\paragraph{Proof of \eqref{edgeDualRealtion}.}To show this relation we need two 'ingredients'. First the existence of a similarity transformation between the Hamiltonian $H_{x,y}$  and its transposed. As we will show, this similarity transformation is $R_{x}R_{y}$.  Second, the possibility of finding a symmetry for the edge Hamiltonian. Exploiting \eqref{hamiltonianCasimir}, we will search for a symmetry of the second Casimir $C_{2}$. As we will see, this symmetry is $\sum_{a=2}^{N}E_{a1}$ \\
-We first look for the similarity between $H_{x,y}$ and its transposed. Using \eqref{transpositionPropertyR} we obtain 
+\paragraph{Proof of \eqref{edgeDualRealtion}.}To show this relation we need two 'ingredients'. First the existence of a similarity transformation between the Hamiltonian $\mathcal{H}_{x,y}$  and its transposed. As we will show, this similarity transformation is $R_{x}R_{y}$.  Second, the possibility of finding a symmetry for the edge Hamiltonian. Exploiting \eqref{hamiltonianCasimir}, we will search for a symmetry of the second Casimir $C_{2}$. As we will see, this symmetry is $\sum_{a=2}^{N}E_{a1}$ \\
+We first look for the similarity between $\mathcal{H}_{x,y}$ and its transposed. Using \eqref{transpositionPropertyR} we obtain 
  
 \begin{equation}\label{transpositionPropertyH}
-    H_{x,y}^{T}=\left(R_{x}R_{y}\right)H_{x,y}\left(R_{x}R_{y}\right)^{-1}
+    \mathcal{H}_{x,y}^{T}=\left(R_{x}R_{y}\right)\mathcal{H}_{x,y}\left(R_{x}R_{y}\right)^{-1}
 \end{equation}
-therefore we have found the similarity transformation between $H_{x,y}$ and its transposed. \\
-We now look for a symmetry of $H_{x,y}$, i.e. a matrix $S_{x,y}$ of the same dimension such that it satisfies 
+therefore we have found the similarity transformation between $\mathcal{H}_{x,y}$ and its transposed. \\
+We now look for a symmetry of $\mathcal{H}_{x,y}$, i.e. a matrix $S_{x,y}$ of the same dimension such that it satisfies 
 \begin{equation}
-	H_{x,y}S_{x,y}=S_{s,y}H_{x,y}\quad \Leftrightarrow \quad [H_{x,y},S_{x,y}]=0
+	\mathcal{H}_{x,y}S_{x,y}=S_{s,y}\mathcal{H}_{x,y}\quad \Leftrightarrow \quad [\mathcal{H}_{x,y},S_{x,y}]=0
 \end{equation}
-Using \eqref{hamiltonianCasimir}, we observe that $H_{x,y}$ is proportional to the coproduct of the second Casimir, up to a diagonal term. Therefore, it is enough to look for a symmetry of $\Delta (C_{2})$. Using the bilinearity of the coproduct operator and the fact that $C_{2}$ belongs to the centre of the Lie algebra, it is easy to show that for any matrix $E\in gl(N)$ it holds
+Using \eqref{hamiltonianCasimir}, we observe that $\mathcal{H}_{x,y}$ is proportional to the coproduct of the second Casimir, up to a diagonal term. Therefore, it is enough to look for a symmetry of $\Delta (C_{2})$. Using the bilinearity of the coproduct operator and the fact that $C_{2}$ belongs to the centre of the Lie algebra, it is easy to show that for any matrix $E\in gl(N)$ it holds
 \begin{equation}
 	[C_{2},E]=0\quad \Rightarrow\quad \left[\Delta (C_{2}),\Delta(E)) \right]=0
 \end{equation}
@@ -621,13 +621,13 @@ and, for a fixed $(x,y)\in \mathcal{E}$, we define
 \end{equation}
 where $\Delta^{x,y}(E)$ is a copy of the coproduct acting on sites $x$ and $y$. Therefore, this operator $S_{x,y}$ satisfies
 \begin{equation}\label{symmetryH}
-	\left[S_{x,y},H_{x,y}\right]=0
+	\left[S_{x,y},\mathcal{H}_{x,y}\right]=0
 \end{equation}
-i.e. it is a symmetry of $H_{x,y}$. \\ Exploiting these considerations we write
+i.e. it is a symmetry of $\mathcal{H}_{x,y}$. \\ Exploiting these considerations we write
 
 
 \begin{comment}
-As already pointed out, $H_{x,y}$ is a linear function of $\Delta(C_{2})$. This implies that symmetries of  $\Delta(C_{2})$ are also symmetries of  $H_{x,y}$. Moreover, the coproduct is a Lie algebra homomorphism, i.e. $\forall A,B\in gl(N)$
+As already pointed out, $\mathcal{H}_{x,y}$ is a linear function of $\Delta(C_{2})$. This implies that symmetries of  $\Delta(C_{2})$ are also symmetries of  $\mathcal{H}_{x,y}$. Moreover, the coproduct is a Lie algebra homomorphism, i.e. $\forall A,B\in gl(N)$
 \begin{equation}\label{symmetryCoproduct}
     [A,B]=0\quad \Longrightarrow\quad \left[\Delta(A),\Delta(B)\right]=0
 \end{equation}
@@ -645,16 +645,16 @@ Finally, for fixed $(x,y)\in \mathcal{E}$, we define
 \end{equation}
 where $\Delta^{x,y}(E)$ is a copy of the coproduct acting on sites $x$ and $y$. This operator $S^{x,y}$ satisfies
 \begin{equation}\label{symmetryH}
-    \left[S_{x,y},H_{x,y}\right]=0
+    \left[S_{x,y},\mathcal{H}_{x,y}\right]=0
 \end{equation}
-i.e. $S_{x,y}$ is a symmetry of $H_{x,y}$. \\ Exploiting these considerations we write
+i.e. $S_{x,y}$ is a symmetry of $\mathcal{H}_{x,y}$. \\ Exploiting these considerations we write
 \end{comment}
 \begin{equation}
     \begin{split}
-        H_{x,y}^{T}D&=(R_{x}R_{y})H_{x,y}(R_{x}R_{y})^{-1}\left(d_{x}\otimes\dd\right)\left(d_{y}\otimes\mathcal{D}_{\widehat{y}}\right)\prod_{z\in V\,:\, z\neq x,y}\left(d_{z}\otimes \mathcal{D}_{\widehat{z}}\right)
-        \\&=\left(R_{x}\exp{(E^{x})}\otimes \dd\right)\left(R_{y}\exp{(E^{y})}\otimes \mathcal{D}_{\widehat{y}}\right)H_{x,y}\prod_{z\in V\,:\, z\neq x,y}\left(d_{z}\otimes \mathcal{D}_{\widehat{z}}\right)
+        \mathcal{H}_{x,y}^{T}D&=(R_{x}R_{y})\mathcal{H}_{x,y}(R_{x}R_{y})^{-1}\left(d_{x}\otimes\dd\right)\left(d_{y}\otimes\mathcal{D}_{\widehat{y}}\right)\prod_{z\in V\,:\, z\neq x,y}\left(d_{z}\otimes \mathcal{D}_{\widehat{z}}\right)
+        \\&=\left(R_{x}\exp{(E^{x})}\otimes \dd\right)\left(R_{y}\exp{(E^{y})}\otimes \mathcal{D}_{\widehat{y}}\right)\mathcal{H}_{x,y}\prod_{z\in V\,:\, z\neq x,y}\left(d_{z}\otimes \mathcal{D}_{\widehat{z}}\right)
         \\&=
-        DH_{x,y}
+        D\mathcal{H}_{x,y}
     \end{split}
 \end{equation}
  where we used \eqref{transpositionPropertyH} and \eqref{symmetryH} in the second equality. Thus, \eqref{edgeDualRealtion} is proved. 
@@ -756,6 +756,10 @@ H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}\exp{(-E^{x})}\sum_{a,b=1}^{N}\alp
     \\&=
     \sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\rho_{a}^{x}E_{1a}^{x}-E_{aa}^{x}\right)
  \end{align*}
+in short
+\begin{equation}\label{HadTransfBoundary}
+\exp{(-E^{x})}\sum_{a=1}^{N}\sum_{b=1}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}=	\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\rho_{a}^{x}E_{1a}^{x}-E_{aa}^{x}\right)
+\end{equation}
 Thus, we rewrite \eqref{intermediateTransposeSite} as
 \begin{equation}\label{siteHadamardI}
 H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}\sum_{i=1}^{N}\alpha_{i}^{x}\sum_{a=2}^{N}\left(\rho_{a}^{x}E_{1a}^{x}-E_{aa}^{x}\right)
@@ -831,7 +835,7 @@ We further assume that the maximal occupancy in each site is $\nu=1$, i.e. that 
 We will denote the element of the representation of the $gl(N)$ Lie algebra by lowercase letters, i.e. $(e_{ab})_{a,b\in\{1,\ldots,N\}}$, to highlight that we are in  the fundamental representation of the algebra.
 The Hamiltonian is
 \begin{equation}\label{hamiltonian}
-	H=B_{1}+H_{bulk}+B_{L}
+	H=H_{1}+H_{bulk}+H_{L}
 \end{equation}
 where
 \begin{equation}
@@ -855,7 +859,7 @@ The action of $\mathcal{H}$ amounts to the permutation of the occupations the tw
 \end{equation}
 The boundary terms are given by 
 \begin{equation}
-	B_{1}=\begin{pmatrix}
+	H_{1}=\begin{pmatrix}
 		\alpha_{1}-1&\alpha_{1}&\alpha_{1}&\ldots&\ldots&\alpha_{1}\\
 		\alpha_{2}&\alpha_{2}-1&\alpha_{2}&\ldots&\ldots&\alpha_{2}\\
 		\vdots&\vdots& &\ddots& &\vdots\\
@@ -864,7 +868,7 @@ The boundary terms are given by
 	\end{pmatrix}
 \end{equation}
 \begin{equation}
-	B_{L}=\begin{pmatrix}
+	H_{L}=\begin{pmatrix}
 		\beta_{1}-1&\beta_{1}&\beta_{1}&\ldots&\ldots&\beta_{1}\\
 		\beta_{2}&\beta_{2}-1&\beta_{2}&\ldots&\ldots&\beta_{2}\\
 		\vdots&\vdots& &\ddots& &\vdots\\
@@ -883,13 +887,17 @@ We define also
 Under these assumption the Hamiltonian is integrable (see \cite{vanicat2017exact} for its derivation within the Quantum Inverse Scattering method). \\
 \paragraph{Duality.} 
 In this setting the extra-sites are denoted by $0$ and $L+1$, since connected respectively with sites $1$ and $L$ of the chain. Moreover, the matrix $R_{x}$ defined in \eqref{Revmatrix} 
-reduces to the identity which implies $e_{ab}^T= e_{ba}$. Therefore, the duality matrix reads
+reduces to the identity which implies 
+\begin{equation}\label{transpostionPropertyFund}
+e_{ab}^T= e_{ba}
+\end{equation}
+ Therefore, the duality matrix reads
 \begin{equation}
 	D=\mathcal{D}_{0}\otimes\prod_{x=1}^{L}\exp{(E^{x})}\otimes \mathcal{D}_{L+1}
 \end{equation}
 and the dual Hamiltonian 
 \begin{equation}
-	\widetilde{H}=\widetilde{H}_{0}+\sum_{x=1}^{L-1}H_{x,x+1}+\widetilde{H}_{L+1}
+	\widetilde{H}=\widetilde{H}_{1}+\sum_{x=1}^{L-1}\mathcal{H}_{x,x+1}+\widetilde{H}_{L}
 \end{equation}
 In the long-time limit, the dual process voids the chain, and all particles are eventually absorbed at the extra-sites $0$ and $L+1$.
 \paragraph{Matrix Product Ansatz (MPA).} The matrix product ansatz for the non-equilibrium steady state has been formulated in \cite{vanicat2017exact}, here we briefly recall it.
@@ -930,7 +938,8 @@ and their action on the boundary vectors are
 \begin{equation}\label{rightBoundary}
 	\left(\beta_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)|V\rangle=-\lambda_{a}|V\rangle\qquad\forall a=1,\ldots,N
 \end{equation}
-\newline
+Without loss of generality, we further assume that $\langle W|V\rangle=1$. 
+\newline \newline
 \textbf{Remark}: only $N-1$ of the $N$ equations \eqref{leftBoundary}  are independent. This can be seen by summing them over the species $a\in \{1,\ldots,N\}$:
 	\begin{equation}
 		\sum_{a=1}^{N}	\langle W|\left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=\sum_{a=1}^{N}\lambda_{a}\langle W|
@@ -942,13 +951,13 @@ The MPA gives an abstract form of the steady state in terms of an algebra of ope
 Here we follow the approach of working with the abstract commutation  relations. We will show that the duality property established in Section \ref{sectionDuality} simplifies substantially the  use of commutators in the actual
 computation. The idea is summarized as follows. We define a sequence of similarity transformation such that 
 \begin{equation}
-	H\;\xrightarrow{\mathcal{S}_{1}}\;H^{'}\;\xrightarrow{\mathcal{S}_{2}}\;H^{''}
+	H\;\xrightarrow{S_{1}}\;H^{'}\;\xrightarrow{S_{2}}\;H^{''}
 \end{equation} 
-where $H^{'}= \mathcal{S}_{1} H \mathcal{S}_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = \mathcal{S}_{2}H' \mathcal{S}_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Thanks to these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} of the operators $(X_{a})_{a\in\{1,\ldots,N\}}$ of the MPA become simpler, therefore, the steady state $|\Psi^{''}\rangle$ of $H^{''}$ will be written explicitly. Then, reversing the transformations we will retrieve $|\Psi\rangle$.
+where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Thanks to these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} of the operators $(X_{a})_{a\in\{1,\ldots,N\}}$ of the MPA become simpler, therefore, the right eigenvector with vanishing eigenvalue $|\Psi^{''}\rangle$ of $H^{''}$ will be written explicitly. Then, reversing the transformations we will retrieve $|\Psi\rangle$.
 
-The first transformation $\mathcal{S}_{1}$ is closely related to the dual matrix. Moreover, we will see that $H^{'}$ is $\widetilde{H}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. The second transformation $\mathcal{S}_{2}$ diagonalize the right boundary. The composition  $\mathcal{S}_{2} \mathcal{S}_{1}$ allows to simplify the commutators of the MPA algebra, paying the price of having left boundary that depends on the difference between the densities of the two reservoirs. 
+The first transformation $S_{1}$ is closely related to the dual matrix. Moreover, we will see that $H^{'}$ is $\widetilde{H}^{T}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. The second transformation $S_{2}$ diagonalize the right boundary. The composition  $S_{2} S_{1}$ allows to simplify the commutators of the MPA algebra, paying the price of having left boundary that depends on the difference between the densities of the two reservoirs. 
 
-The computation are organized as follows: we first define the similarity transformations $\mathcal{S}_{1},\mathcal{S}_{2}$ and the Hamiltonians $H^{'},H^{''}$. Second, we compute the steady state of $H^{''}$ thanks to the simpler commutators. Finally, we invert the similarities and retrieve the steady state of $H^{'}$ and $H$ respectively. 
+The computation are organized as follows: we first define the similarity transformations $S_{1},S_{2}$ and the Hamiltonians $H^{'},H^{''}$. Second, we compute right eigenvector with vanishing eigenvalue of $H^{''}$ thanks to the simpler commutators. Finally, we invert the similarities and retrieve the right eigenvector with vanishing eigenvalue of $H^{'}$ and the steady state of $H$.  
 
 
 
@@ -957,79 +966,133 @@ The computation are organized as follows: we first define the similarity transfo
 {\color{blue}We aim to find an explicit for for the steady state $|\Psi\rangle$. The MPA gives the steady state in terms of an abstract algebra of operators. If an explicit representation of $(X_{a})_{a=1,\ldots,N}$ was available, it would be possible to compute explicitly all the correlations and currents of particles for the Hamiltonian \eqref{hamiltonian}. Another way of computing this steady state, without passing through a representation, is using the commutators \eqref{bula} and the actions \eqref{leftBoundary} and \eqref{rightBoundary}. For the one and two point correlation and for the currents this has been done in \cite{vanicat2017exact}. Inspired by this last reference, in this subsection, we aim to find exact formulas for the steady state  $|\Psi\rangle$ using only the \eqref{bula}, \eqref{leftBoundary} and \eqref{rightBoundary}. In subsection \ref{correlation-section}, this result will leads to exact correlation for arbitrary number of particles of type $\{2,\ldots,N\}$. This aim will be achieved by the help of a similarity transformation $\mathcal{S}$ that makes commutation relations simpler, and allows to find the steady state $|\widetilde\Psi\rangle$ of a transformed Hamiltonian, denoted  $\mathbb{H}$, with lower-triangular left boundary and diagonal right boundary. Therefore, inverting this similarity, one can retrieve the steady state of \eqref{hamiltonian}. A fundamental 'ingredient' of these computation is duality, that has been proved in section~\ref{sectionDuality}. Indeed, the similarity transformation $\mathcal{S}$ relies on an "intermediate transformation" $V$ (see \eqref{transformationV}) that is, up to the diagonal operator $R$, the duality matrix.} \com{clarify}
 \end{comment}
 \subsubsection{The similarity transformations}\label{subsectionSTransf}
+Consider the matrices
+\begin{align}
+	\mathcal{S}_{1}:=\exp{\left(\sum_{a=2}^{N}e_{1a}\right)}\label{S1Gen}\\
+	\mathcal{S}_{2}:=\exp{\left(-\sum_{a=2}^{N}\beta_{a}e_{a1}\right)}\label{S2Gen}
+\end{align}
 We introduce the first transformation as
 \begin{equation}\label{transformationV}
- S_{1}:=\exp{\left(\sum_{a=2}^{N}e_{1a}\right)}=\mathbbm{1}+\sum_{a=2}^{N}e_{1a}
+ \mathcal{S}_{1}^{x}:=\exp{\left(\sum_{a=2}^{N}e_{1a}^{x}\right)}%=\mathbbm{1}+\sum_{a=2}^{N}e_{1a}
 \end{equation}
-Observe that $S_{1}$ is the transposed of the bulk part of the duality matrix $d_{x}$  at site $x\in \{1,\ldots,L\}$ (see \eqref{bulkElementDualityMatrix}). By taking the tensor product over the chain we define
+that is composed by a copy of $\mathcal{S}_{1}$ acting at site $x$ and with identities acting at all other sites of the chain. 
+Observe that $\mathcal{S}_{1}^{x}$ is the transposed of the bulk part of the duality matrix $d_{x}$  at site $x\in \{1,\ldots,L\}$ (see \eqref{bulkElementDualityMatrix}). By taking the product over the chain we define
 \begin{equation}
-    \mathcal{S}_{1}=S_{1}^{\otimes L}
+    S_{1}=\prod_{x=1}^{L}\mathcal{S}_{1}^{x}
 \end{equation}
 that is related with the duality matrix by 
 \begin{equation}
-\mathcal{S}_{1}=\prod_{x=1}^{L}d_{x}^{T}
+S_{1}=\prod_{x=1}^{L}d_{x}^{T}
 \end{equation}
- This $\mathcal{S}_{1}$ is invertible, then we introduce 
+ This $S_{1}$ is invertible, then we introduce 
 \begin{equation}\label{hatHamiltonian}
-   H^{'}:=B^{'}_{1}+H_{bulk}+B^{'}_{L}
+   H^{'}:=H^{'}_{1}+H_{bulk}+H^{'}_{L}
 \end{equation}
 that is related to $H$ by
 \begin{equation}\label{similarV}
-   H=\mathcal{S}_{1}^{-1}H^{'}\mathcal{S}_{1}
+   H^{'}=S_{1}H^{'}S_{1}^{-1}
 \end{equation}
-The boundary Hamiltonians $B_{1}^{'}$ and $B_{L}^{'}$ relates to the transposed of  $\widetilde{H}_{0}$ and $\widetilde{H}_{L+1}$, the boundary part of the dual Hamiltonian  defined in \eqref{siteDualHamiltonian},
-they are obtained replacing the  extra-site bosonic creation operators $(a^{\dagger})_{a}^{0}$  (resp. $(a^{\dagger})_{a}^{L+1}$) with the corresponding reservoir parameters $\alpha_a$ (resp. $\beta_a$):
+The bulk part of the Hamiltonian is left unchanged while the boundaries are given by 
 \begin{equation}
-	B^{'}_{1}=\sum_{a=2}^{N}\left(\alpha_{a}e_{a1}^{1}-e_{aa}^{1}\right)\qquad B^{'}_{L}=\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}\right)
+	H^{'}_{1}=\sum_{a=2}^{N}\left(\alpha_{a}e_{a1}^{1}-e_{aa}^{1}\right)\qquad H^{'}_{L}=\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}\right)
 \end{equation}
+Indeed, using \eqref{HadTransfBoundary}, \eqref{ratesConditions} and \eqref{transpostionPropertyFund}, we obtain for the left boundary
+\begin{equation}
+	\begin{split}
+		H_{1}^{'}&=S_{1}H_{1}S_{1}^{-1}=\exp{\left(\sum_{c=2}^{N}e_{1c}^{1}\right)}\sum_{a,b=1}^{N}\alpha_{a}\left(e_{ab}^{1}-e_{bb}^{1}\right)\exp{\left(-\sum_{c=2}^{N}e_{1c}^{1}\right)}
+		\\&=
+		\left\{\exp{\left(-\sum_{c=2}^{N}e_{c1}^{1}\right)}\sum_{a,b=1}^{N}\alpha_{a}\left(e_{ba}^{1}-e_{bb}^{1}\right)\exp{\left(\sum_{c=2}^{N}e_{c1}^{1}\right)}\right\}^{T}
+		\\&=
+		\sum_{a=2}^{N}\left(\alpha_{a}e_{1a}^{1}-e_{aa}^{1}\right)^{T}
+		\\&=
+		\sum_{a=2}^{N}\left(\alpha_{a}e_{a1}^{1}-e_{aa}^{1}\right)
+	\end{split}
+\end{equation}
+Similarly, for the right boundary we have 
+\begin{equation}
+H_{1}^{'}=\exp{\left(\sum_{c=2}^{N}e_{1c}^{1}\right)}\sum_{a,b=1}^{N}\alpha_{a}\left(e_{ab}^{1}-e_{bb}^{1}\right)\exp{\left(-\sum_{c=2}^{N}e_{1c}^{1}\right)}=\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}\right)
+\end{equation}
+\textbf{Remark:} the boundary Hamiltonians $H_{1}^{'}$ and $H_{L}^{'}$ relates to the transposed of  $\widetilde{H}_{1}$ and $\widetilde{H}_{L}$, the boundary part of the dual Hamiltonian  defined in \eqref{siteDualHamiltonian}. They are obtained replacing the  extra-site bosonic creation operators $(a^{\dagger})_{a}^{0}$  (resp. $(a^{\dagger})_{a}^{L+1}$) with the corresponding reservoir parameters $\alpha_a$ (resp. $\beta_a$).
+\newline\newline
 Obviously
 \begin{equation}\label{S1-Inverse}
-	|\Psi\rangle =\mathcal{S}_{1}^{-1}|\Psi^{'}\rangle
+	|\Psi\rangle =S_{1}^{-1}|\Psi^{'}\rangle
 \end{equation}
 where $|\Psi^{'}\rangle$ satisfies $H^{'}|\Psi^{'}\rangle=0$.
 
 We introduce the second transformation as 
  \begin{equation}
- 	S_{2}:=\exp{\left(-\sum_{a=2}^{N}\beta_{a}e_{a1}\right)}=\mathbbm{1}-\sum_{a=2}^{N}\beta_{a}e_{a1}
+ 	\mathcal{S}_{2}:=\exp{\left(-\sum_{a=2}^{N}\beta_{a}e_{a1}^{x}\right)}%=\mathbbm{1}-\sum_{a=2}^{N}\beta_{a}e_{a1}
  \end{equation}
-By taking the tensor product over the chain we also define
+that is composed by a copy of $\mathcal{S}_{2}$ acting at site $x$ and with identities acting at all other sites of the chain. 
+By taking the product over the chain we also define
 \begin{equation}
-	\mathcal{S}_{2}=S_{2}^{\otimes L}
+	S_{2}=\prod_{x=1}^{L}S_{2}^{x}
 \end{equation}
-We introduce 
+We define 
 \begin{equation}
-	H^{''}=B_{1}^{''}+H_{bulk}+B_{L}^{''}
+	H^{''}=H_{1}^{''}+H_{bulk}+H_{L}^{''}
 \end{equation}
 that is related to $H'$ by
 \begin{equation}
-	H^{'}=\mathcal{S}_{2}^{-1}H^{''}\mathcal{S}_{2}
+	H^{''}=S_{2}H^{'}S_{2}^{-1}
 \end{equation}
 The boundary Hamiltonians of $H^{''}$ reads
+\begin{align}
+	H_{1}^{''}=e_{11}^{1}-\mathbbm{1}^{1}+\sum_{a=2}^{N}(\alpha_{a}-\beta_{a})e_{a1}^{1}\qquad H_{L}^{''}=e_{11}^{L}-\mathbbm{1}^{L}
+\end{align}
+i.e. the left one is lower triangular and depends on the differences between boundary parameters, while the right one is diagonal. The expressions of $H_{1}^{''}$ and $H_{L}^{''}$ are proved using the Hadamard formula \eqref{HadamardFormula} with $B=\sum_{c=2}^{N}\beta_{c}e_{c1}$ and $A=e_{a1},$ and $A=e_{aa}$. We compute
+\begin{enumerate}
+	\item $A=e_{a1}$ with $a\neq 1$
+	\begin{equation}
+		\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}\right)}e_{a1}\exp{\left(\sum_{c=2}^{N}\beta_{c}e_{c1}\right)}=e_{a1}
+	\end{equation}
+\item $A=e_{aa}$ with $a\neq 1$
 \begin{equation}
-	B_{1}^{''}=e_{11}-\mathbbm{1}+\sum_{a=2}^{N}(\alpha_{a}-\beta_{a})e_{a1}\qquad B_{L}^{''}=e_{11}-\mathbbm{1}
+		\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{x}\right)}e_{aa}^{x}\exp{\left(\sum_{c=2}^{N}\beta_{c}e_{c1}^{x}\right)}=e_{aa}^{x}+\beta_{a}e_{a1}^{x}
+	\end{equation}
+Indeed 
+\begin{equation}
+	\sum_{c=2}^{N}[e_{c1},e_{aa}]=\sum_{c=2}^{N}\beta_{c}\left(e_{ca}\delta_{a1}-e_{a1}\delta_{ca}\right)=-\beta_{a}e_{a1}
 \end{equation}
-i.e. the left one is lower triangular and depends on the differences between boundary parameters, while the right one is diagonal. 
-The steady state of $|\Psi^{''}\rangle$ of $H^{''}$ solves 
+\end{enumerate}
+Therefore, we have for the left boundary
+\begin{equation}
+	\begin{split}
+		H_{1}^{''}&=S_{2}H_{1}^{'}S_{2}^{-1}=\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{1}\right)}\sum_{a=2}^{N}\left(\alpha_{a}e_{a1}^{1}-e_{aa}^{1}\right)\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{1}\right)}
+		\\&=
+		\sum_{a=2}^{N}\left(\alpha_{a}e_{a1}^{1}-e_{aa}^{1}-\beta_{a}e_{a1}^{1}\right)
+		\\&=
+		e_{11}^{1}-\mathbbm{1}^{1}+\sum_{a=2}^{N}(\alpha_{a}-\beta_{a})e_{a1}^{1}
+	\end{split}
+\end{equation}
+Similarly, for the right boundary
+\begin{equation}
+	\begin{split}
+			H_{1}^{''}&=\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{L}\right)}\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}\right)\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{L}\right)}
+			\\&=
+			\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}-\beta_{a}e_{a1}^{L}\right)=
+			\\&=
+			e_{11}^{L}-\mathbbm{1}^{L}
+	\end{split}
+\end{equation}
+Obviously
+\begin{equation}\label{S2-Inverse}
+	|\Psi^{'}\rangle = S_{2}^{-1}|\Psi^{''}\rangle
+\end{equation}
+and $|\Psi^{''}\rangle$ solves
 \begin{equation}
 	H^{''}|\Psi^{''}\rangle=0
 \end{equation}
-and it is related to $|\Psi^{'}\rangle$ by 
-\begin{equation}\label{S2-Inverse}
-	|\Psi^{'}\rangle = \mathcal{S}_{2}^{-1}|\Psi^{''}\rangle
+It is convenient to introduce also the transformation
+\begin{equation}\label{similarity}
+	S=S_{2}S_{1}=\prod_{x=1}^{L}\exp{\left(-\sum_{a=2}^{N}\beta_{a}e_{a1}^{x}\right)}\exp{\left(\sum_{a=2}^{N}e_{a1}^{x}\right)}
 \end{equation}
-It is convenient to introduce also the similarity between $H$ and $H^{''}$, such that
+This matrix $S$ connects $H$ with $H^{''}$ by 
 \begin{equation}
 H=\mathcal{S}^{-1}H^{''}\mathcal{S}
 \end{equation}
-where 
-\begin{equation}\label{similarity}
-	S=S_{2}S_{1}=\exp{\left(-\sum_{a=2}^{N}\beta_{a}e_{a1}\right)}\exp{\left(\sum_{a=2}^{N}e_{a1}\right)}
-\end{equation}
-and 
-\begin{equation}
-	\mathcal{S}=S^{\otimes L}
-\end{equation}
-This transformation connect the steady states of $H$ and $H^{''}$ by 
+and, obviously
 \begin{equation}
 	|\Psi\rangle=\mathcal{S}^{-1}|\Psi^{''}\rangle
 \end{equation}
@@ -1105,7 +1168,7 @@ The steady states $|\Psi\rangle$, $|\widehat{\Psi}\rangle$ and $|\widetilde{\Psi
 \end{align}
 In the following subsections we will first compute the steady state $|\widetilde{\Psi}\rangle$. Then, using the transformation $\mathcal{T}$ we will retrieve $|\widehat{\Psi}\rangle$. Finally, using the transformation $\mathcal{V}$ we will find $|\Psi\rangle$. 
 \end{comment}
-\subsubsection{The steady state of $H^{''}$}\label{subsectionSSHsec}
+\subsubsection{Explicit formula for $|\Psi^{''}\rangle$}\label{subsectionSSHsec}
 We state the following result: the steady state of the Hamiltonian $H^{''}$ is given by 
 \begin{equation}\label{ResulsBasis}
 	|\Psi^{''} \rangle=\sum_{s_{1},\ldots,s_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{s_{x},1}\right)}{\Gamma\left(L+2\right)}\prod_{x=1}^{L}\left[\lambda_{s_{x}}\left(1+\sum_{j=x}^{L}\delta_{s_{j},1}\right)\right]^{1-\delta_{s_{x},1}}|\mathbf{\bm{s}}\rangle
@@ -1280,7 +1343,7 @@ Finally summing over all $\mathbf{s}\in \Omega$  we obtain \eqref{ResulsBasis}.
 \begin{flushright}
 $\square$
 \end{flushright}
-\subsubsection{The steady state of $H^{'}$}\label{subsectionSSdual}
+\subsubsection{Explicit formula for $|\Psi^{'}\rangle$}\label{subsectionSSdual}
 Knowing the steady state  of the Hamiltonian $H^{''}$ we use \eqref{S2-Inverse} to retrieve the steady state of the Hamiltonian $H^{'}$. The result is the following 
 \begin{equation}\label{ABS-vect}
     |\Psi^{'}\rangle =\sum_{s_{1},\ldots,s_{L}=1}^{N}\Psi^{'}(\bm{s})|\bm{s}\rangle 
@@ -1298,9 +1361,9 @@ and where
 		0\quad \text{if}\quad s_{y}=1
 	\end{cases}\qquad \forall y\in \{1,\ldots,L\}
 \end{equation}
-\paragraph{Proof of formula \eqref{ABS-vect}} As a consequence of \eqref{S2-Inverse}, we only need to show how the transformation $\mathcal{S}_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. The matrix $S_{2}^{-1}$, acting on a single site, is given by 
+\paragraph{Proof of formula \eqref{ABS-vect}} As a consequence of \eqref{S2-Inverse}, we only need to show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Here is more convenient to consider the matrix $\mathcal{S}_{2}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and make explicitly the tensor product over the chain. This matrix $\mathcal{S}_{2}$ is given by 
 \begin{equation}
-   S_{2}^{-1}=\mathbbm{1}+\sum_{a=2}^{N}\beta_{a}e_{a1}
+   \mathcal{S}_{2}^{-1}=\mathbbm{1}+\sum_{a=2}^{N}\beta_{a}e_{a1}
 \end{equation}
 We introduce the following notation
 \begin{equation}\label{notation1}
@@ -1314,7 +1377,7 @@ and
     
     \begin{equation}\label{InverseS2}
     	\begin{split}
-    		\mathcal{S}_{2}^{-1}=\left(S_{2}^{\otimes L}\right)^{-1}&=\sum_{s_{1}=1}^{N}\ldots\sum_{s_{L}=1}^{N}\left\{e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\right. 
+    		\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}&=\sum_{s_{1}=1}^{N}\ldots\sum_{s_{L}=1}^{N}\left\{e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\right. 
     		\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{q_{2}}\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\beta_{s_{q_{2}}}\right.
     		\\&+\left.
     		\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{s_{q_{t}},1})\right)e_{s_{1},\ldots,s_{q_{L-1}s_{L}}}^{1,\ldots,1,s_{L}}
@@ -1324,11 +1387,11 @@ and
     \end{equation}
     We prove it by induction. When $L=1$ it is true, indeed
     \begin{equation}
-    	S_{2}^{-1}=\sum_{s_{1}=1}^{N}\left\{e_{s_{1}}^{s_{1}}+(1-\delta_{s_{1},1})\sum_{q_{1}=1}^{1}\beta_{s_{q_{1}}}e_{s_{q_{1}}}^{1}\right\}
+    	\mathcal{S}_{2}^{-1}=\sum_{s_{1}=1}^{N}\left\{e_{s_{1}}^{s_{1}}+(1-\delta_{s_{1},1})\sum_{q_{1}=1}^{1}\beta_{s_{q_{1}}}e_{s_{q_{1}}}^{1}\right\}
     \end{equation}
     Assuming that \eqref{InverseS2} is true for arbitrary $L\in \mathbb{N}$, we prove that it holds for $L+1$
 \begin{align*}
-    	\left(S_{2}^{\otimes L}\right)^{-1}\otimes S_{2}^{-1}&=\sum_{s_{1}=1}^{N}\ldots\sum_{s_{L}=1}^{N}\left\{e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}++\sum_{q_{1}=1}^{L}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\right. 
+    	\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}\otimes \mathcal{S}_{2}^{-1}&=\sum_{s_{1}=1}^{N}\ldots\sum_{s_{L}=1}^{N}\left\{e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}++\sum_{q_{1}=1}^{L}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\right. 
     	\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{q_{2}}\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\beta_{s_{q_{2}}}\right.
     	\\&+\left.
     	\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{s_{q_{t}},1})\right)e_{s_{1},\ldots,s_{q_{L-1}s_{L}}}^{1,\ldots,1,s_{L}}
@@ -1342,7 +1405,7 @@ and
     	\right. \\&+ \left. 
     	\left(\prod_{x=1}^{L+1}(1-\delta_{s_{x},1})\right)\prod_{x=1}^{L+1}\beta_{s_{x}}e_{s_{1},\ldots,s_{L+1}}^{1,\ldots,1} \right\}
     	\\&=
-    	\left(S_{2}^{\otimes L+1}\right)^{-1}
+    	\left(\mathcal{S}_{2}^{\otimes L+1}\right)^{-1}
 \end{align*}
     \begin{comment}
      
@@ -1379,11 +1442,11 @@ where the subscripts $s_{1},s_{2}$ denote the raw and the superscript $q_{1},q_{
 	\left(S_{2}^{-1}\otimes S_{2}^{-1}\right)_{s_{1},s_{2}}=e_{s_{1},s_{2}}^{s_{1},s_{2}}+(1-\delta_{s_{2},1})\beta_{s_{2}}e_{s_{1},s_{2}}^{s_{1},1}+(1-\delta_{s_{1},1})\beta_{s_{1}}e_{s_{1},s_{2}}^{1,s_{2}}+(1-\delta_{s_{1},1})(1-\delta_{s_{2},1})\beta_{s_{1}}\beta_{s_{2}}e_{s_{1},s_{2}}^{1,1}
 \end{equation}
 \end{comment}
-The product $\mathcal{S}_{2}^{-1}|\Psi^{''}\rangle$ gives a vector $|\Psi^{'}\rangle$ whose component are denoted by $\Psi^{'}(\bm{s})$. 
-To find these elements we need to fix the rows correspondent to $\bm{s}$ in the matrix $\mathcal{S}_{2}^{-1}$. Consider a string $\bm{s}=(s_{1},\ldots,s_{L})$ with $s_{1},\ldots,s_{L}\in \{1,\ldots,N\}$, then the corresponding row reads
+The product $\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}|\Psi^{''}\rangle$ gives a vector $|\Psi^{'}\rangle$ whose component are denoted by $\Psi^{'}(\bm{s})$. 
+To find these elements we need to fix the rows correspondent to $\bm{s}$ in the matrix $\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}$. Consider a string $\bm{s}=(s_{1},\ldots,s_{L})$ with $s_{1},\ldots,s_{L}\in \{1,\ldots,N\}$, then the corresponding row reads
 \begin{equation}
 	\begin{split}
-	(\mathcal{S}_{2}^{-1})_{\bm{s}}=\left(S_{2}^{-1}\right)^{\otimes L}_{\bm{s}}&=\,e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\\&+\sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{q_{2}}\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\beta_{s_{q_{2}}}
+\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}_{\bm{s}}&=\,e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\\&+\sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{q_{2}}\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\beta_{s_{q_{2}}}
   \\&+
   \ldots+\left(\prod_{x=1}^{L}(1-\delta_{s_{x},1})\right)\prod_{x=1}^{L}\left(\beta_{s_{x}}\right)^{1-\delta_{s_{x},1}}e_{s_{1},\ldots,s_{L}}^{1,\ldots,1}
 	\end{split}
@@ -1392,7 +1455,7 @@ To find these elements we need to fix the rows correspondent to $\bm{s}$ in the 
 Therefore, we have that 
 \begin{equation}\label{ABS_intermediate}
 	\begin{split}
-		\Psi^{'}(\mathbf{s})&=(\mathcal{S}_{2}^{-1})_{\bm{s}}|\Psi^{''}\rangle\\&= \Psi^{''}(\mathbf{s})+\sum_{q_{1}= 1}^{L}(1-\delta_{s_{q_{1}},1})\Psi^{''}(s_{1},\ldots,\overbrace{1}^{s_{q_{1}}},\ldots,s_{L})\beta_{q_{1}}\\&+
+		\Psi^{'}(\mathbf{s})&=(\mathcal{S}_{2}^{-1})_{\bm{s}}^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\mathbf{s})+\sum_{q_{1}= 1}^{L}(1-\delta_{s_{q_{1}},1})\Psi^{''}(s_{1},\ldots,\overbrace{1}^{s_{q_{1}}},\ldots,s_{L})\beta_{q_{1}}\\&+
 		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})\Psi^{''}(s_{1},\ldots,\overbrace{1}^{q_{1}},\ldots,\overbrace{1}^{q_{2}},\ldots,s_{L})\beta_{a_{1}}\beta_{a_{2}}\\&+\ldots+\Psi^{''}(1,\ldots,1)\left(\prod_{x=1}^{L}(1-\delta_{s_{x},1})\right)\prod_{x=1}^{L}\left(\beta_{s_{x}}\right)^{1-\delta_{s_{x},1}}
 	\end{split}
 \end{equation}
@@ -1448,14 +1511,14 @@ where for every $(s_{1},\ldots,s_{L})=\bm{s}$
 \end{equation}
 When the configuration has holes, the presence of the second addend is motivated by the dependence of the "empty" in a fixed site from all others types in the same site.
 
-\paragraph{Proof of formula \eqref{steadyStateH}} As a consequence of \eqref{S1-Inverse}, we only need to show how the transformation $\mathcal{S}_{1}^{-1}$ acts on the vector $|\Psi^{'}\rangle$. The matrix $S_{1}^{-1}$, acting on a single site, is given by 
+\paragraph{Proof of formula \eqref{steadyStateH}} As a consequence of \eqref{S1-Inverse}, we only need to show how the transformation $S_{1}^{-1}$ acts on the vector $|\Psi^{'}\rangle$. Here is more convenient to consider the matrix $\mathcal{S}_{1}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and make explicitly the tensor product over the chain. This matrix $\mathcal{S}_{1}$ is given by
 \begin{equation}\label{S1-L1}
-	S_{1}^{-1}=\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}+(-1)\delta_{s_{1},1}\sum_{d_{1}=2}^{N}e_{1}^{d_{1}}
+	\mathcal{S}_{1}^{-1}=\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}+(-1)\delta_{s_{1},1}\sum_{d_{1}=2}^{N}e_{1}^{d_{1}}
 \end{equation}
 Using the notation introduced in \eqref{notation1} and \eqref{notation2} we have that 
 \begin{equation}
 	\begin{split}
-		\mathcal{S}_{1}^{-1}=\left(S_{1}^{\otimes L}\right)^{-1}&=\sum_{s_{1}=1}^{N}\ldots\sum_{s_{L}=1}^{N}\left\{e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}\right.
+		\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}&=\sum_{s_{1}=1}^{N}\ldots\sum_{s_{L}=1}^{N}\left\{e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}\right.
 		\\&
 		+\left.\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{r=1}^{b}\sum_{d_{q_{r}}=2}^{N}e_{\ldots,s_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,s_{x},\ldots,\,d_{q_{r}}\,,\ldots}\right\} 
 	\end{split}
@@ -1463,7 +1526,7 @@ Using the notation introduced in \eqref{notation1} and \eqref{notation2} we have
 where $e_{\ldots,s_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,s_{x},\ldots,\,d_{q_{r}}\,,\ldots}$ denotes the matrix $e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}$ where the subscripts $s_{q_{1}},\ldots,s_{q_{b}}$ have been replaced by "1" and the superscripts $s_{q_{1}},\ldots,s_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. \\
 This is proved by induction. Indeed, for $L=1$ it is trivially true, by \eqref{S1-L1}. We assume that it is true for arbitrary $L\in \mathbb{N}$ and we prove that it holds for $L+1$. 
 \begin{align*}
-\left(S_{1}^{\otimes L}\right)^{-1}\otimes S_{1}^{-1}&=
+\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}\otimes \mathcal{S}_{1}^{-1}&=
 \sum_{s_{1}=1}^{N}\ldots\sum_{s_{L}=1}^{N}\left\{e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}\right. \\&+\left. \sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{r=1}^{b}\sum_{d_{q_{r}}=2}^{N}e_{\ldots,s_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,s_{x},\ldots,\,d_{q_{r}}\,,\ldots}\right\}
 \\&\otimes
 \left\{ \sum_{s_{1}=1}^{N}e_{s_{L+1}}^{s_{L+1}}+(-1)\delta_{s_{L+1},1}\sum_{d_{L+1}=2}^{N}e_{1}^{d_{L+1}}\right\}
@@ -1515,11 +1578,11 @@ We generalize this tensor product to an arbitrary number of sites $L$ obtaining 
 \end{equation}
 where $e_{\ldots,s_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,s_{x},\ldots,\,d_{q_{r}}\,,\ldots}$ denotes the matrix $e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}$ where the subscripts $s_{q_{1}},\ldots,s_{q_{b}}$ have been replaced by "1" and the superscripts $s_{q_{1}},\ldots,s_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. \\
 \end{comment}
-The product $\mathcal{S}_{1}^{-1}|\Psi^{'}\rangle$ gives a vector whose component are denoted by $\Psi(\bm{s})$. 
+The product $\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\Psi^{'}\rangle$ gives a vector whose component are denoted by $\Psi(\bm{s})$. 
 To find this elements we need to fix the rows correspondent to $\bm{s}$. Consider a string $\bm{s}=(s_{1},\ldots,s_{L})$ with $s_{1},\ldots,s_{L}\in \{1,\ldots,N\}$, then the corresponding row reads
 \begin{equation}
     \begin{split}
-        \mathcal{S}_{1}^{-1}{\bm{s}}|\Psi{'}\rangle&=\Psi{'}(s_{1},\ldots,s_{L})+ 
+        \left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}_{\bm{s}}|\Psi{'}\rangle&=\Psi{'}(s_{1},\ldots,s_{L})+ 
         \\&
         +\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{r=1}^{b}\sum_{d_{q_{r}}=2}^{N}\Psi{'}(\ldots,s_{x},\ldots,d_{q_{r}},\ldots)
     \end{split}
@@ -1538,7 +1601,7 @@ indeed, in each coordinate $q_{r}$ with $r=1,\ldots b$ the species $1$ is replac
 \begin{flushright}
     $\square$
 \end{flushright}
-\subsection{Exact correlations}\label{correlation-section}
+\subsection{Exact steady state correlations}\label{correlation-section}
 In this section we write a formula for the stationary steady state correlations between $m$- points of the chain, each of them occupied by a non empty species, i.e. a species with label from $2$ to $N$. This is motivated by interest of understanding how actual particles of the chain are correlated among each others and also because the holes depends on the occupation of all other species, as a consequence of the constraint $n_{1}^{x}=\nu-\sum_{a=2}^{N}n_{a}^{x}$ for arbitrary $x\in \{1,\ldots,L\}$. Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $\bm{y}=(y_{1},\ldots,y_{m})$, such that $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$. In each of these points there is a particle of species $s_{x}\in \{2,\ldots,N\}$. Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
 \begin{equation}\label{exactCorrelations}
 		\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{c_{1},\ldots,c_{m}=0}^{1}
@@ -1586,7 +1649,7 @@ Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,y_{k},c_{k},\ldots,c_{m})$ we
 \begin{flushright}
     $\square$
 \end{flushright}
-\subsubsection{Explicit examples of correlations}
+\subsubsection{Explicit examples of steady state correlations}
 We give some examples of correlations applying formula \eqref{exactCorrelations}.
 \paragraph{One point correlations}
 The average with respect to the non equilibrium distribution of the occupation variable of the species $s_{1}\in \{2,\ldots,N\}$ at coordinate $y_{1}\in \{1,\ldots,L\}$ reads
@@ -1912,15 +1975,15 @@ $\mathcal{L}_{x,y}^{rd}$ is defined in \eqref{edgeGeneratorRD} and, $\widetilde{
 \subsubsection{Proof of duality}
 In the spirit of what we did in Section \ref{sectionDuality}, it is convenient to write the Hamiltonian of the process, that is defined through the basis elements \eqref{actionE} of the $gl(N)$ Lie algebra as 
 \begin{equation}
-	H^{rd}=\sum_{x,y\in \mathcal{E}}\omega_{x,y}\left(\sigma_{11}H_{x,y}+\sigma_{12}\sum_{c=1}^{N-2}H_{x,y}^{c}+(\Upsilon-2\sigma_{12})H_{x,y}^{m}\right)+\sum_{x\in V}\Gamma_{x}H_{x}
+	H^{rd}=\sum_{x,y\in \mathcal{E}}\omega_{x,y}\left(\sigma_{11}\mathcal{H}_{x,y}+\sigma_{12}\sum_{c=1}^{N-2}\mathcal{H}_{x,y}^{c}+(\Upsilon-2\sigma_{12})\mathcal{H}_{x,y}^{m}\right)+\sum_{x\in V}\Gamma_{x}H_{x}
 \end{equation}
-where $H_{x,y}$ and $H_{x}$ are \eqref{edgeHamiltonian} and \eqref{siteHamiltonian} respectively, 
+where $\mathcal{H}_{x,y}$ and $H_{x}$ are \eqref{edgeHamiltonian} and \eqref{siteHamiltonian} respectively, 
 \begin{equation}
-	H_{x,y}^{c}=\sum_{a,b=0}^{N}\left(E_{g_{c}(a)b}^{c}\otimes E_{g_{c}(b)a}^{y}-E_{aa}^{x}\otimes E_{bb}^{y}\right)
+	\mathcal{H}_{x,y}^{c}=\sum_{a,b=0}^{N}\left(E_{g_{c}(a)b}^{c}\otimes E_{g_{c}(b)a}^{y}-E_{aa}^{x}\otimes E_{bb}^{y}\right)
 \end{equation}
 and 
 \begin{equation}
-	H_{x,y}^{m}=\sum_{a,b=1}^{N}\left(E_{ba}^{x}\otimes \mathbbm{1}^{y}-E_{aa}^{x}\otimes \mathbbm{1}^{y}\right)
+	\mathcal{H}_{x,y}^{m}=\sum_{a,b=1}^{N}\left(E_{ba}^{x}\otimes \mathbbm{1}^{y}-E_{aa}^{x}\otimes \mathbbm{1}^{y}\right)
 \end{equation}
 Similarly, we will define the dual Hamiltonian $\widetilde{H}^{rd}$. For the edge dynamics, the original and the dual Hamiltonians do coincide, while the site one it is again $\widetilde{H}_{x}$ defined in \eqref{siteDualHamiltonian}, but with the parameters introduced in \eqref{boundaryParamRD}.\\ We aim to show
 \begin{equation}\label{DualityRelationRD}
@@ -1928,15 +1991,15 @@ Similarly, we will define the dual Hamiltonian $\widetilde{H}^{rd}$. For the edg
 \end{equation}
 Therefore, we need to prove that
 \begin{align}
-	(H_{x,y}^{rd})^{T}D&=DH_{x,y}^{rd}\label{edgeDualityRelationRD}\\
+	(\mathcal{H}_{x,y}^{rd})^{T}D&=D\mathcal{H}_{x,y}^{rd}\label{edgeDualityRelationRD}\\
 	H_{x}^{T}D&=D\widetilde{H}_{x}D\label{siteDualityRelationRD}
 \end{align}
-where the duality matrix $D$ is again \eqref{dualityMatrix}. As already pointed out, $H_{x}$ and $\widetilde{H}_{x}$ have the same structure (up to a specific choice of the reservoirs parameters), while $H_{x,y}^{rd}$ has two more terms $\sum_{c=1}^{N-2}H_{x,y}^{c}$ and $H_{x,y}^{m}$. Therefore, we only need to show that 
+where the duality matrix $D$ is again \eqref{dualityMatrix}. As already pointed out, $H_{x}$ and $\widetilde{H}_{x}$ have the same structure (up to a specific choice of the reservoirs parameters), while $\mathcal{H}_{x,y}^{rd}$ has two more terms $\sum_{c=1}^{N-2}\mathcal{H}_{x,y}^{c}$ and $\mathcal{H}_{x,y}^{m}$. Therefore, we only need to show that 
 \begin{align}
-	&(H_{x,y}^{c})^{T}D=DH_{x,y}^{c}\qquad \forall c\in \{1,\ldots,N-2\}\label{cDualityRelation}\\
-	&(H_{x,y}^{m})^{T}D=DH_{x,y}^{m}\label{mDualityRelation}
+	&(\mathcal{H}_{x,y}^{c})^{T}D=D\mathcal{H}_{x,y}^{c}\qquad \forall c\in \{1,\ldots,N-2\}\label{cDualityRelation}\\
+	&(\mathcal{H}_{x,y}^{m})^{T}D=D\mathcal{H}_{x,y}^{m}\label{mDualityRelation}
 \end{align}
-Since the matrix $R_{x}$ is the same, we shall show that $H_{x,y}^{c}$ and $H_{x,y}^{m}$ have $\exp{(E^{x})}\exp{(E^{y})}$ as a symmetry. The first result will follow from the commutator between $H_{x,y}^{c}$ and $\sum_{d=2}^{N}(E_{d1}^{x})\otimes \sum_{k=2}^{N}E_{b,1}^{x}$. Using \eqref{eq:comgl}, the bilinearity and associativity of the Kronecker product and the bilinearity of the brackets we obtain 
+Since the matrix $R_{x}$ is the same, we shall show that $\mathcal{H}_{x,y}^{c}$ and $\mathcal{H}_{x,y}^{m}$ have $\exp{(E^{x})}\exp{(E^{y})}$ as a symmetry. The first result will follow from the commutator between $\mathcal{H}_{x,y}^{c}$ and $\sum_{d=2}^{N}(E_{d1}^{x})\otimes \sum_{k=2}^{N}E_{b,1}^{x}$. Using \eqref{eq:comgl}, the bilinearity and associativity of the Kronecker product and the bilinearity of the brackets we obtain 
 \begin{align*}
 	&\left[\left(\sum_{d=2}^{N}E_{d1}^{x}\otimes\sum_{k=2}^{N}E_{k1}^{y}\right), \sum_{a,b=1}^{N}\left(E_{g_{c}(b)a}^{x}\otimes E_{g_{c}(a)b}^{y} -E_{aa}^{x}\otimes E_{bb}^{y}\right)\right]
 	\\=&
@@ -1948,7 +2011,7 @@ Since the matrix $R_{x}$ is the same, we shall show that $H_{x,y}^{c}$ and $H_{x
 	\\=&0
 \end{align*}
 where in the last equality we used the invertibility of the map $g_{c}(\cdot)$. \\
-The second result will follow from the commutator between $H_{x,y}^{m}$ and $\sum_{d=2}^{N}(E_{d1}^{x})\otimes \sum_{k=2}^{N}E_{b,1}^{x}$. The prof is similar and gives
+The second result will follow from the commutator between $\mathcal{H}_{x,y}^{m}$ and $\sum_{d=2}^{N}(E_{d1}^{x})\otimes \sum_{k=2}^{N}E_{b,1}^{x}$. The prof is similar and gives
 \begin{equation}
 	\left[\sum_{a=2}^{N}E_{a1}^{x}\otimes \sum_{b=2}^{N}E_{b1}^{x},\;\sum_{i=1}^{N}\sum_{a,l=1}^{N}\left(E_{la}^{x}\otimes \mathbbm{1}^{y}-E_{aa}^{x}\otimes \mathbbm{1}^{y}\right)\right]=0
 \end{equation}
@@ -2585,12 +2648,12 @@ The Hamiltonian operator can be written in term of the basis element of the Lie 
 
 \begin{equation}
 	\begin{split}
-		H=\sum_{x,y\in \mathcal{E}}\omega_{x,y}H_{x,y}+\sum_{x\in V}\Gamma_{x}H_{x}
+		H=\sum_{x,y\in \mathcal{E}}\omega_{x,y}\mathcal{H}_{x,y}+\sum_{x\in V}\Gamma_{x}H_{x}
 	\end{split}
 \end{equation}
 where the edge Hamiltonian is
 \begin{equation}
-H_{x,y}=\sum_{a,l=1}^{N}\left(e_{al}\otimes e_{la}-e_{ll}\otimes e_{aa}\right)
+\mathcal{H}_{x,y}=\sum_{a,l=1}^{N}\left(e_{al}\otimes e_{la}-e_{ll}\otimes e_{aa}\right)
  \end{equation}
  and where the site Hamiltonian is
  \begin{equation}
