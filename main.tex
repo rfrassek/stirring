@@ -982,7 +982,7 @@ We introduce the first transformation as
 \begin{equation}\label{transformationV}
  \mathcal{S}_{1}^{x}:=\exp{\left(\sum_{a=2}^{N}e_{1a}^{x}\right)}%=\mathbbm{1}+\sum_{a=2}^{N}e_{1a}
 \end{equation}
-that is composed by a copy of $\mathcal{S}_{1}$ acting at site $x$ and with identities acting at all other sites of the chain. 
+that is composed by a copy of $\mathcal{S}_{1}$ (introduced in \eqref{S1Gen}) acting at site $x$ and with identities acting at all other sites of the chain. 
 Observe that $\mathcal{S}_{1}^{x}$ is the transposed of the bulk part of the duality matrix $d_{x}$  at site $x\in \{1,\ldots,L\}$ (see \eqref{bulkElementDualityMatrix}). By taking the product over the chain we define
 \begin{equation}
     S_{1}=\prod_{x=1}^{L}\mathcal{S}_{1}^{x}
@@ -1029,9 +1029,9 @@ where $|\Psi^{'}\rangle$ satisfies $H^{'}|\Psi^{'}\rangle=0$.
 
 We introduce the second transformation as 
  \begin{equation}
- 	\mathcal{S}_{2}:=\exp{\left(-\sum_{a=2}^{N}\beta_{a}e_{a1}^{x}\right)}%=\mathbbm{1}-\sum_{a=2}^{N}\beta_{a}e_{a1}
+ 	\mathcal{S}_{2}^{x}:=\exp{\left(-\sum_{a=2}^{N}\beta_{a}e_{a1}^{x}\right)}%=\mathbbm{1}-\sum_{a=2}^{N}\beta_{a}e_{a1}
  \end{equation}
-that is composed by a copy of $\mathcal{S}_{2}$ acting at site $x$ and with identities acting at all other sites of the chain. 
+that is composed by a copy of $\mathcal{S}_{2}$ (introduced in \eqref{S2Gen}) acting at site $x$ and with identities acting at all other sites of the chain. 
 By taking the product over the chain we also define
 \begin{equation}
 	S_{2}=\prod_{x=1}^{L}S_{2}^{x}
@@ -1097,11 +1097,11 @@ It is convenient to introduce also the transformation
 \end{equation}
 This matrix $S$ connects $H$ with $H^{''}$ by 
 \begin{equation}
-H=\mathcal{S}^{-1}H^{''}\mathcal{S}
+H=S^{-1}H^{''}S
 \end{equation}
 and, obviously
 \begin{equation}
-	|\Psi\rangle=\mathcal{S}^{-1}|\Psi^{''}\rangle
+	|\Psi\rangle=S^{-1}|\Psi^{''}\rangle
 \end{equation}
 \begin{comment}
 Using \eqref{transformationV} we introduce the \textit{similarity transformation} 
@@ -1358,7 +1358,7 @@ Knowing the steady state  of the Hamiltonian $H^{''}$ we use \eqref{S2-Inverse} 
 where  
 \begin{equation}\label{ABS}
 		\begin{split}
-			\Psi^{'}(\bm{s})=\sum_{x=1}^{L}\sum_{c_{x}=0}^{1-\delta_{s_{x},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{s_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{y}\right)\right)^{c_{y}}\beta_{s_{y}}^{(1-c_{y})(1-\delta_{s_{y},1})}
+			\Psi^{'}(\bm{s})=\sum_{c_{1}=0}^{\delta_{s_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{s_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{s_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{y}\right)\right)^{c_{y}}\beta_{s_{y}}^{(1-c_{y})(1-\delta_{s_{y},1})}
 		\end{split}
 	\end{equation} 
 	\com{Double check this. Sum looks strange}
@@ -1501,7 +1501,7 @@ The steady state $|\Psi\rangle$ of the Hamiltonian $H$ is given by
 where for every $(s_{1},\ldots,s_{L})=\bm{s}$
 \begin{equation}\label{steadyStateH-coeff}
     \begin{split}
-        \Psi(\bm{s})&=\sum_{x=1}^{L}\sum_{c_{x}=0}^{1-\delta_{s_{x},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{s_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{s_{y}}^{(1-c_{y})(1-\delta_{s_{y},1})}
+        \Psi(\bm{s})&=\sum_{c_{1}=0}^{1-\delta_{s_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{s_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{s_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{s_{y}}^{(1-c_{y})(1-\delta_{s_{y},1})}
         \\&+
         \sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right) 
         \sum_{r=1}^{b}\sum_{d_{q_{r}}=2}^{N}
@@ -1743,7 +1743,7 @@ with absorbing boundaries, i.e.
 \end{equation}
 where $0$ and $L+1$ are the extra-sites. The duality function on the chain is
 \begin{equation}\label{dualityFunctionChain}
-	D(\bm{n},\bm{\xi})=\prod_{a=2}^{N}\left(\rho_{a}^{L}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(\nu-\sum_{a=2}^{N}\xi_{a}^{x})|}{\nu!}\prod_{a=2}^{N}\frac{\eta_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=2}^{N}\left(\rho_{a}^{R}\right)^{\xi_{a}^{L+1}}
+	D(\bm{n},\bm{\xi})=\prod_{a=2}^{N}\left(\rho_{a}^{L}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(\nu-\sum_{a=2}^{N}\xi_{a}^{x})!}{\nu!}\prod_{a=2}^{N}\frac{\eta_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=2}^{N}\left(\rho_{a}^{R}\right)^{\xi_{a}^{L+1}}
 \end{equation}
 where $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{\sum_{i=1}^{N}\alpha_{i}}$ and where $\rho_{\alpha}^{R}=\frac{\beta_{a}}{\sum_{i=1}^{N}\beta_{i}}$.\\
 Calling $\mu_{stat}$ the stationary measure of the the process $(\bm{n}(t))_{t\geq 0}$ starting from a configuration $\bm{n}$, and considering a generic configuration $\bm{\xi}$ of the dual process, we write the following equalities using \eqref{DualityRelation}
@@ -1792,6 +1792,116 @@ where $\Delta_{x}^{L}$ is the discrete Laplace operator on the chain of length $
 	\langle n_{s}^{x}\rangle_{\text{stat}}=\frac{\alpha_{s}(L-x+1)+\beta_{s}x}{L+1}
 \end{equation}
 that gives back \eqref{one-pts-corr}.
+\subsection{Instantaneous thermalization}
+In this subsection we aim to extend to the multi-species stirring process the concept of \textit{thermalization limit} (see \cite{carinci2013duality}). The thermalized process gives rise, for any pair nearest neighbour sites of the chain, to a redistribution of the total number of particles. The thermalized model that we present in this paper is obtained from the boundary driven model with generator \eqref{Generator} performing an \textit{instantaneous thermalization limit}: for each bond $(x,x+1)$ the total number of particles $\bm{\epsilon}=n^{x}+n^{x+1}$ is redistributed according to the reversible measure, conditioned on the conservation of $\bm{\epsilon}$. 
+\subsubsection{The thermalization measure}
+As already mentioned, we will redistribute particles on a bond according to a probability measure that is the reversible one \eqref{reversibleMeasure}, conditioned on the conservation of the particles on that bond. We denote
+\begin{equation}
+	\begin{split}
+	\nu_{TH}(\bm{r}|\bm{\epsilon}):&=\mathbb{P}\left(n^{x}=\bm{r}|\eta^{x}+n^{x+1}=\bm{\epsilon}\right)
+	\\&
+	=\mathbb{P}\left((n_{1}^{x},\ldots,n_{N}^{x})=
+	(r_{1},\ldots,r_{N})\;|\;(n_{1}^{x}+n_{1}^{x+1},\ldots,n_{N}^{x}+n_{N}^{x+1})=(\epsilon_{1},\ldots,\epsilon_{N})\right)
+	\end{split}
+\end{equation}
+where
+\begin{equation}
+	\epsilon_{1}=2\nu-\sum_{a=2}^{N}\epsilon_{a}\qquad r_{1}=\nu-\sum_{a=2}^{N}r_{a}
+\end{equation}
+We construct this measure. Using the conditional probability and the fact that the reversible measure \eqref{reversibleMeasure} is product over the sites of the chain of multinomial distributions we have
+\begin{equation}
+	\begin{split}
+\nu_{TH}(\bm{r}|\bm{\epsilon})&=\frac{\mathbb{P}\left(\left\{n^{x}=\bm{r}\right\}\,\cap\,\left\{n^{x}+n^{x+1}=\bm{\epsilon}\right\}\right)}{\mathbb{P}\left(n^{x}+n^{x+1}=\bm{\epsilon}\right)}=\frac{\mathbb{P}\left(n^{x}=\bm{r}\right)\,\mathbb{P}\left(n^{x+1}=\bm{\epsilon}-\bm{r}\right)}{\mathbb{P}\left(n^{x}+n^{x+1}=\bm{\epsilon}\right)}
+	\end{split}
+\end{equation}
+Moreover, it holds that 
+\begin{equation}
+\text{Multinomial}(\nu,\rho_{1},\ldots,\rho_{N})+\text{Multinomial}(\nu,\rho_{1},\ldots,\rho_{N})=\text{Multinomial}(2\nu,\rho_{1},\ldots,\rho_{N})
+\end{equation}
+Therefore 
+\begin{equation}
+	\begin{split}
+	\nu_{TH}(\bm{r}|\bm{\epsilon})=\frac{\binom{\nu}{r_{1},\ldots,r_{N}}\binom{\nu}{(\epsilon_{1}-r_{1}),\ldots,(\epsilon_{N}-r_{N})}}{\binom{2\nu}{\epsilon_{1}\ldots,\epsilon_{N}}}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}
+	\end{split}
+\end{equation}
+where we denote the multinomial coefficient
+\begin{equation}
+	\binom{\nu}{n_{1},\ldots,n_{N}}=\frac{\nu!}{n_{1}!\cdots n_{N}!}
+\end{equation}
+provided that $n_{1}+\ldots+n_{N}=\nu$ and $n_{1},\ldots,n_{N}\in \mathbb{N}_{0}$. 
+\subsubsection{Thermalized multi-species stirring process}
+The thermalized multi-species stirring process is defined on the configuration space $\Omega$ introduced in \eqref{stateSpace} and its generator reads
+\begin{equation}\label{thermalizedGenerator}
+	\mathcal{L}^{TH}=\mathcal{L}_{1}^{TH}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{TH}+\mathcal{L}_{L}^{TH}
+\end{equation}
+where 
+\begin{equation}\label{bulkThermalized}
+	\begin{split}
+	\mathcal{L}_{x,x+1}^{TH}f(\bm{n})=&\sum_{r_{1}=0}^{n_{1}^{x}+n_{1}^{x+1}}\ldots\sum_{r_{N}=0}^{n_{N}^{x}+n_{N}^{x+1}}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}\}}
+	\\&
+	\left\{f(n^{1},\ldots,n^{x-1},\bm{r},n^{x}+n^{x+1}-\bm{r},n^{x+2},\ldots,n^{L})-f(\bm{n})\right\}\nu_{TH}(\bm{r}|\bm{\epsilon})
+	\end{split}
+\end{equation}
+while
+\begin{equation}\label{boundaryThermalized}
+	\begin{split}
+		\mathcal{L}_{1}^{TH}f(\bm{n})=&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}\}}\left\{f(\bm{r},n^{2},\ldots,n^{L})-f(\bm{n})\right\}\\&
+		\binom{\nu}{r_{1},\ldots, r_{N}}\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\nu}
+		\end{split}
+	\end{equation}
+The right boundary generator is defined in a similar way. The $\alpha$'s are replaced by $\beta$'s and the action is only on site $L$. 
+\subsubsection{The dual thermalized process}
+The thermalized dual process $(\bm{\xi}(t))_{t\geq 0}$ is defined on the enlarged configuration space $\widetilde{\Omega}$ introduced in \eqref{dualStateSpace}. Its generator reads
+\begin{equation}
+		\widetilde{\mathcal{L}}^{TH}=\widetilde{\mathcal{L}}_{1}^{TH}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{TH}+\widetilde{\mathcal{L}}_{L}^{TH}
+\end{equation}
+where $\mathcal{L}^{TH}_{x,x+1}$ is \eqref{bulkThermalized} and $\widetilde{\mathcal{L}}_{1}^{TH}$ and $\widetilde{\mathcal{L}}_{L}^{TH}$ are absorbing with rate $1$, i.e. 
+\begin{equation}
+	\begin{split}
+		\widetilde{\mathcal{L}}_{1}^{TH}f(\bm{\xi})=\left\{f(\xi^{0}+\xi^{1},0,\xi^{2},\ldots,\xi^{N})-f(\bm{\xi})\right\}
+	\end{split}
+\end{equation}
+and similarly $\widetilde{\mathcal{L}}_{L}^{TH}$. 
+The duality function is 
+\begin{equation}
+	D(\bm{n},\bm{\xi})=\prod_{a=2}^{N}\left(\rho_{a}^{L}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(\nu-\sum_{a=2}^{N}\xi_{a}^{x})!}{\nu!}\prod_{a=2}^{N}\frac{\eta_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=2}^{N}\left(\rho_{a}^{R}\right)^{\xi_{a}^{L+1}}
+\end{equation}
+The proof of the duality consists in proving 
+\begin{align}
+	\left(\mathcal{L}_{x,x+1}^{TH}D(\cdot,\bm{n})\right)(\bm{n})&=\left(\widetilde{\mathcal{L}}_{x,x+1}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\qquad x\in \{1,\ldots,L-1\}\label{bulkDualityTH}\\
+	\left(\mathcal{L}_{y}^{TH}D(\cdot,\bm{n})\right)(\bm{n})&=\left(\widetilde{\mathcal{L}}_{y}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\qquad y\in\{1,L\}\label{boundaryDualityTH}
+\end{align}
+Equation \eqref{bulkDualityTH} follows from the proof of the edge duality for the multi-species stirring process. To prove \eqref{boundaryDualityTH} we directly apply the generators on the duality function. For the sake of notation, we introduce 
+\begin{equation}
+	d_{x}(n^{x},\xi^{x}):=\frac{(\nu-\sum_{a=2}^{N}\xi_{a}^{x})!}{\nu!}\prod_{a=2}^{N}\frac{\eta_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}
+\end{equation}
+First, we act with $\mathcal{L}_{1}^{TH}$ on $D(\bm{n},\bm{\xi})$. This action gives
+\begin{align}\label{ProvaBordoTH}
+	\left(\mathcal{L}_{1}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})=\nonumber&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\xi_{k}^{0}}\frac{\left(\nu-\sum_{c=2}^{N}\xi_{c}^{1}\right)!}{\nu!}\right.
+	\\&\nonumber
+	\left.\prod_{b=2}^{N}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=2}^{N}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
+	\\&
+	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\nu}
+\end{align}
+Multiplying by $\prod_{a=2}^{N}\left(\frac{\alpha_{1}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{-r_{a}+r_{a}-\xi_{a}^{1}+\xi_{a}^{1}}$ and using the Multinomial Theorem we have that the first addend in the curly brackets is
+\begin{align}\label{pezzo1}
+	&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\xi_{k}^{0}}\frac{\left(\nu-\sum_{c=2}^{N}\xi_{c}^{1}\right)!}{\nu!}\right.\nonumber
+	\\&\nonumber
+	\left.\prod_{b=2}^{N}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=2}^{N}(\rho_{a}^{R})^{\xi_{d}^{L+1}}\right\}	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\nu}\\=&
+	\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=2}^{N}(\rho_{a}^{R})^{\xi_{d}^{L+1}}
+\end{align}
+Multiplying by $\prod_{a=2}^{N}\left(\frac{\alpha_{1}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{r_{a}-r_{a}}$ and by the multinomial Theorem, we have that the second addend in the curly bracket is
+\begin{equation}\label{pezzo2}
+	\begin{split}
+	&D(\bm{n},\bm{\xi})\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\nu}\prod_{a=2}^{N}\left(\frac{\alpha_{1}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{r_{a}-r_{a}}\\=&D(\bm{n},\bm{\xi})
+	\end{split}
+\end{equation}
+Therefore, replacing \eqref{pezzo1} and \eqref{pezzo2} in \eqref{ProvaBordoTH} we obtain 
+\begin{align}
+	\left(\mathcal{L}_{1}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left\{\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=2}^{N}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
+	\\&=
+	\left(\widetilde{\mathcal{L}}_{y}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})
+\end{align}
 \section{Multi-species stirring process with reaction}
 In \cite{casini2022uphill} it has been defined a process whose evolution equation for the average occupation $\rho_{a}(x,t)$ of species $a\in \{2,3\}$ is given by a difference-differential equation with two discrete Laplacians (one for each species, multiplied for a proper diffusivity constant) and a linear reaction term (mutation), i.e.
 \begin{equation}\label{2SpeciesRD}
