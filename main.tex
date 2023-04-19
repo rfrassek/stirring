@@ -2504,12 +2504,18 @@ Q_{2L}^{0}:=NA^{2L}+A^{2L-1}-\sum_{i=2}^{N}D_{ii}^{2L-1}
 that is 
 \begin{equation}
 \begin{split}
-Q_{2L}^{0}&=N\left(I^{tot}+2e_{11}^{tot}\right)+e_{11}^{tot}(2e_{11}^{tot}+I^{tot})-\sum_{j=2}^{N}e_{jj}^{tot}
-\\&
-+\sum_{i=2}^{N}\left(	2Ne_{ii}^{tot}+\left(e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}\right)-2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\right)
+Q_{2L}^{0}&=NI^{tot}+2e_{11}^{tot}(e_{11}^{tot}+I^{tot})-(N+2)\sum_{j=2}^{N}e_{jj}^{tot}+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}
 \end{split}
 \end{equation}
-it has the property that commute with the equilibrium Hamiltonian
+it has the property that commute with the equilibrium Hamiltonian. In case of $N=2$ it differs with respect to the $Q_{2L}^{0}$ computed in formula (2.28) of \cite{frassek2020eigenstates} by the following matrix 
+\begin{equation}
+Q_{2L}^{0,Francesco}-Q_{2L}^{0,Rouven}=	\begin{pmatrix}
+		2&0&0&0\\
+		0&-2&0&0\\
+		0&0&-2&0\\
+		0&0&0&2
+	\end{pmatrix}
+\end{equation}
 \begin{equation}
 \widetilde{H}_{0}:=\widetilde{B}_{1}^{0}+\mathcal{H}+\widetilde{B}_{L}
 \end{equation}
