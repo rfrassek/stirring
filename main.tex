@@ -1400,33 +1400,49 @@ and
     
     \begin{equation}\label{InverseS2}
     	\begin{split}
-    		\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}&=\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,\tau_{L}}^{\tau_{1},\ldots,1,\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\right. 
-    		\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,s_{q_{2}}\ldots,\tau_{L}}^{\tau_{1},\ldots,1,\ldots,1,\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\beta_{s_{q_{2}}}\right.
+    		\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}&=\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},1})e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}}\beta_{\tau_{q_{1}}}\right. 
+    		\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{\tau_{q_{2}},1})e^{\varphi_{1},\ldots,\varphi_{L}}_{\tau_{1},\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}\right.
     		\\&+\left.
-    		\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{s_{q_{t}},1})\right)e_{\tau_{1},\ldots,s_{q_{L-1}\tau_{L}}}^{1,\ldots,1,\tau_{L}}
+    		\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{\tau_{q_{t}},1})\right)e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}}
     		\right. \\&+ \left. 
-    		\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},1})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L}}^{1,\ldots,1} \right\}
+    		\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},1})\right)\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}} \right\}
     	\end{split}
     \end{equation}
+where, $\forall x\in\{1,\ldots,L\}$, we have introduced
+\begin{equation}
+	\varphi_{x}(q_{1},\ldots,q_{L})=\begin{cases}
+		\tau_{x}\qquad &\text{if}\quad x\notin\{q_{1},\ldots,q_{L}\}\\
+		1\qquad &\text{otherwise}\\
+	\end{cases}
+\end{equation}
+The dependence of $\varphi_{x}(q_{1},\ldots,q_{L})$ with respect to $q_{1},\ldots,q_{L}$ is usually understood for the sake of notation.
     We prove it by induction. When $L=1$ it is true, indeed
     \begin{equation}
     	\mathcal{S}_{2}^{-1}=\sum_{\tau_{1}=1}^{N}\left\{e_{\tau_{1}}^{\tau_{1}}+(1-\delta_{\tau_{1},1})\sum_{q_{1}=1}^{1}\beta_{\tau_{q_{1}}}e_{\tau_{q_{1}}}^{1}\right\}
     \end{equation}
     Assuming that \eqref{InverseS2} is true for arbitrary $L\in \mathbb{N}$, we prove that it holds for $L+1$
 \begin{align*}
-    	\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}\otimes \mathcal{S}_{2}^{-1}&=\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,\tau_{L}}^{\tau_{1},\ldots,1,\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\right. 
-    	\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,s_{q_{2}}\ldots,\tau_{L}}^{\tau_{1},\ldots,1,\ldots,1,\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\beta_{s_{q_{2}}}\right.
+    	\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}\otimes \mathcal{S}_{2}^{-1}&=%\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,\tau_{L}}^{\tau_{1},\ldots,1,\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\right. 
+    	%\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{\tau_{q_{2}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,\tau_{q_{2}}\ldots,\tau_{L}}^{\tau_{1},\ldots,1,\ldots,1,\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}\right.
+    	%\\&+\left.
+    	%\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{s_{q_{t}},1})\right)e_{\tau_{1},\ldots,s_{q_{L-1}\tau_{L}}}^{1,\ldots,1,\tau_{L}}
+    	%\right. \\&+ \left. 
+    	%\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},1})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L}}^{1,\ldots,1} \right\}
+    	\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},1})e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}}\beta_{\tau_{q_{1}}}\right. 
+    	\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{\tau_{q_{2}},1})e^{\varphi_{1},\ldots,\varphi_{L}}_{\tau_{1},\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}\right.
     	\\&+\left.
-    	\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{s_{q_{t}},1})\right)e_{\tau_{1},\ldots,s_{q_{L-1}\tau_{L}}}^{1,\ldots,1,\tau_{L}}
+    	\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{\tau_{q_{t}},1})\right)e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}}
     	\right. \\&+ \left. 
-    	\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},1})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L}}^{1,\ldots,1} \right\}\otimes \sum_{\tau_{L+1}=1}^{N}\left\{e_{\tau_{L+1}}^{\tau_{L+1}}+(1-\delta_{\tau_{L+1},1})\sum_{q_{1}=1}^{1}\beta_{\tau_{q_{1}}}e_{\tau_{q_{1}}}^{1}\right\}
+    	\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},1})\right)\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}} \right\}
+    	\\&
+    	\otimes \sum_{\tau_{L+1}=1}^{N}\left\{e_{\tau_{L+1}}^{\tau_{L+1}}+(1-\delta_{\tau_{L+1},1})\sum_{q_{1}=1}^{1}\beta_{\tau_{q_{1}}}e_{\tau_{q_{1}}}^{1}\right\}
     	\\&=
-    	\sum_{\tau_{1}=1}^{N}\ldots\sum_{s_{L+}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L+1}}^{\tau_{1},\ldots,\tau_{L+1}}+\sum_{q_{1}=1}^{L+1}(1-\delta_{\tau_{q_{1}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,\tau_{L+1}}^{\tau_{1},\ldots,1,\ldots,\tau_{L+1}}\beta_{\tau_{q_{1}}}\right. 
-    	\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L+1}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,s_{q_{2}}\ldots,\tau_{L+1}}^{\tau_{1},\ldots,1,\ldots,1,\ldots,\tau_{L+1}}\beta_{\tau_{q_{1}}}\beta_{s_{q_{2}}}\right.
+    	\sum_{\tau_{1}=1}^{N}\ldots\sum_{s_{L+}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L+1}}^{\tau_{1},\ldots,\tau_{L+1}}+\sum_{q_{1}=1}^{L+1}(1-\delta_{\tau_{q_{1}},1})e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1},\ldots,\varphi_{L+1}}\beta_{\tau_{q_{1}}}\right. 
+    	\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L+1}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{\tau_{q_{2}},1})e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1},\ldots,\varphi_{L+1}}\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}\right.
     	\\&+\left.
-    	\ldots+	\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L}(1-\delta_{s_{q_{t}},1})\right)e_{\tau_{1},\ldots,\tau_{q_{L}}\tau_{L+1}}^{1,\ldots,1,\tau_{L+1}}
+    	\ldots+	\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L}(1-\delta_{s_{q_{t}},1})\right)e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1},\ldots,\varphi_{L+1}}
     	\right. \\&+ \left. 
-    	\left(\prod_{x=1}^{L+1}(1-\delta_{\tau_{x},1})\right)\prod_{x=1}^{L+1}\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L+1}}^{1,\ldots,1} \right\}
+    	\sum_{q_{1},\ldots,q_{L+1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{x=1}^{L+1}(1-\delta_{\tau_{x},1})\right)\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1},\ldots,\varphi_{L+1}} \right\}
     	\\&=
     	\left(\mathcal{S}_{2}^{\otimes L+1}\right)^{-1}
 \end{align*}
@@ -1469,20 +1485,20 @@ The product $\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}|\Psi^{''}\rangle$ giv
 To find these elements we need to fix the rows correspondent to $\bm{\tau}$ in the matrix $\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}$. Consider a string $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})$ with $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, then the corresponding row reads
 \begin{equation}
 	\begin{split}
-\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}_{\bm{\tau}}&=\,e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,\tau_{L}}^{\tau_{1},\ldots,1,\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\\&+\sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,s_{q_{2}}\ldots,\tau_{L}}^{\tau_{1},\ldots,1,\ldots,1,\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\beta_{s_{q_{2}}}
+\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}_{\bm{\tau}}&=\,e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},1})e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}}\beta_{\tau_{q_{1}}}\\&+\sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{\tau_{q_{2}},1})e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}}\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}
   \\&+
-  \ldots+\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},1})\right)\prod_{x=1}^{L}\left(\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},1}}e_{\tau_{1},\ldots,\tau_{L}}^{1,\ldots,1}
+  \ldots+\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\;\text{if}\;i\neq j}^{L}\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},1})\right)\left(\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},1}}e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}}
 	\end{split}
 \end{equation}
 
 Therefore, we have that 
 \begin{equation}\label{ABS_intermediate}
 	\begin{split}
-		\Psi^{'}(\bm{\tau})&=(\mathcal{S}_{2}^{-1})_{\bm{\tau}}^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},1})\Psi^{''}(\tau_{1},\ldots,\overbrace{1}^{\tau_{q_{1}}},\ldots,\tau_{L})\beta_{q_{1}}\\&+
-		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{s_{q_{2}},1})\Psi^{''}(\tau_{1},\ldots,\overbrace{1}^{q_{1}},\ldots,\overbrace{1}^{q_{2}},\ldots,\tau_{L})\beta_{a_{1}}\beta_{a_{2}}\\&+\ldots+\Psi^{''}(1,\ldots,1)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},1})\right)\prod_{x=1}^{L}\left(\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},1}}
+		\Psi^{'}(\bm{\tau})&=(\mathcal{S}_{2}^{-1})_{\bm{\tau}}^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},1})\Psi^{''}(\varphi_{1},\ldots,\varphi_{L})\beta_{q_{1}}\\&+
+		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{\tau_{q_{2}},1})\Psi^{''}(\varphi_{1},\ldots,\varphi_{L})\beta_{a_{1}}\beta_{a_{2}}\\&+\ldots+\Psi^{''}(1,\ldots,1)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},1})\right)\prod_{x=1}^{L}\left(\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},1}}
 	\end{split}
 \end{equation}
-For a fixed configuration $\bm{\tau}=(\tau_{1},\ldots,s_{N})$, using equation \eqref{ResulsBasis} and observing that 
+For a fixed configuration $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})$, using equation \eqref{ResulsBasis} and observing that 
 \begin{equation}
   \left(1+\sum_{j=y}^{L}\delta_{s_{j},1}\right) =\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{\tau_{y},1})\right)
 \end{equation}
@@ -1526,14 +1542,15 @@ where for every $(\tau_{1},\ldots,\tau_{L})=\bm{\tau}$
 \end{equation}
 where we have introduced, $\forall x\in \{1,\ldots,L\}$
 \begin{equation}
-	\eta_{x}=\begin{cases}
-		\tau_{x}\qquad &\text{if}\quad x\neq q_{1},\ldots,q_{b}\\
+	\eta_{x}(b)=\begin{cases}
+		\tau_{x}\qquad &\text{if}\quad x\notin \{q_{1},\ldots,q_{b}\}\\
 		d_{x}\qquad &\text{otherwise}
 	\end{cases}%\qquad \theta_{x}=\begin{cases}
 		%\tau_{x}\qquad &\text{if}\quad x\neq 1,\ldots,b\\
 	%	1 \qquad &\text{otherwise}
 	%\end{cases}
 \end{equation}
+The dependence of $\eta_{x}(b)$ with respect to $b$ is usually understood for the sake of notation. 
 {\color{blue}
 \begin{equation}\label{steadyStateH-coeff}
     \begin{split}
@@ -1574,11 +1591,12 @@ where we have introduced, $\forall x\in \{1,\ldots,L\}$
 	%	\tau_{x}\qquad &\text{if}\quad x\neq 1,\ldots,b\\
 	%	d_{x}\qquad &\text{otherwise}
 	%\end{cases}\qquad
-	 \theta_{x}=\begin{cases}
-		\tau_{x}\qquad &\text{if}\quad x\neq 1,\ldots,b\\
+	 \theta_{x}(b)=\begin{cases}
+		\tau_{x}\qquad &\text{if}\quad x\notin \{q_{1},\ldots,q_{b}\}\\
 		1 \qquad &\text{otherwise}
 \end{cases}
 \end{equation}
+The dependence of $\theta(b)$ with respect to $b$ is usually understood for the sake of notation. 
   %$e_{\ldots,\tau_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,\tau_{x},\ldots,\,d_{q_{r}}\,,\ldots}$ denotes the matrix $e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}$ where the subscripts $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by "1" and the superscripts $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. \\
 This is proved by induction. Indeed, for $L=1$ it is trivially true, by \eqref{S1-L1}. We assume that it is true for arbitrary $L\in \mathbb{N}$ and we prove that it holds for $L+1$. 
 \begin{align*}
