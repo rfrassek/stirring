@@ -223,7 +223,7 @@ Interpreting type $1$ as an hole, one can then say that the dual process voids t
 
 
 
-\subsection{The process generator}
+\subsection{The process generator}\label{subsectionGeneratorStr}
 We now give the mathematical description of the multi-species stirring process.
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
 At each site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ denotes the number of particles of species $a\in \{1,\ldots,N\}$ at site $x\in V$. On each vertex we allow a total  maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space of the process on the graph $G$ is 
@@ -234,22 +234,22 @@ where
 \begin{equation}
 \Omega_{x}:=\left\{(n_{1}^{x},\ldots,n_{N}^{x})\in\mathbb{N}_0^{N}\;:\; \sum_{a=1}^{N}n_{a}^{x}=\twoj\right\}
 \end{equation}
-We denote a particle configuration as $\mathbf{n}\in \Omega$, where $\mathbf{n}=(n_{a}^{x})_{x\in V,\,a\in\{1,\ldots,N\}}$ .\\
+We denote a particle configuration as $\bm{n}\in \Omega$, where $\bm{n}=(n_{a}^{x})_{x\in V,\,a\in\{1,\ldots,N\}}$ .\\
 The dynamics consists in an exchange of particles (at Poissonian times) between connected vertices. Moreover, each vertex  exchanges particles with the external environement. The infinitesimal generator of the process reads
 \begin{equation}\label{Generator}
     \mathcal{L}=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}+\sum_{x\in V}\Gamma_{x}\mathcal{L}_{x}
 \end{equation}
 where the quantities $ \omega_{x,y}\geq 0$ are called conductances and $\Gamma_{x}\geq 0$ local inhomogeneities. The generator $\mathcal{L}_{x,y}$ is called the \textit{edge generator}, while $\mathcal{L}_{x}$ is called the \textit{site generator}. These linear operators act on functions $f:\Omega\to \mathbb{R}$ as follows
 \begin{equation}\label{edgeGenerator}
-\mathcal{L}_{x,y}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left[f(\bm{n}-\delta^{x}_{a}+\delta_{b}^{x}+\delta_{a}^{y}-\delta_{b}^{y})-f(\bm{n})\right]
+\mathcal{L}_{x,y}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left[f(\bm{n}-\bm{\delta}^{x}_{a}+\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{y}-\bm{\delta}_{b}^{y})-f(\bm{n})\right]
 \end{equation}
 \begin{equation}\label{siteGenerator}
-    \mathcal{L}_{x}f(\bm{n})=\sum_{a,b=1}^{N}\alpha_{a}^{x}n_{b}^{x}\left[f(\bm{n}+\delta_{a}^{x}-\delta_{b}^{x})-f(\bm{n})\right]
+    \mathcal{L}_{x}f(\bm{n})=\sum_{a,b=1}^{N}\alpha_{a}^{x}n_{b}^{x}\left[f(\bm{n}+\bm{\delta}_{a}^{x}-\bm{\delta}_{b}^{x})-f(\bm{n})\right]
 \end{equation}
 where 
 \begin{equation}
-(\delta_{a}^{x})^{y}_{b}=\begin{cases}
-1\qquad &\text{if}\quad y=x,\;b=k\\
+(\bm{\delta}_{a}^{x})^{y}_{b}=\begin{cases}
+1\qquad &\text{if}\quad y=x,\;b=a\\
 0\qquad &\text{otherwise}
 \end{cases}
 \end{equation}
@@ -277,12 +277,13 @@ when for any $a\in\{1,\ldots,N\}$
 \end{equation}
 This measure has marginals $\mu_{rev}^{x}$ given by 
 \begin{equation}
- \mu^{x}_{rev}\sim \text{Multinomial}\left(\twoj,\rho_{1},\ldots,\rho_{N}\right)\quad \text{where}\quad \rho_{a}=\frac{\alpha_{a}}{\sum_{i=1}^{N}\alpha_{i}}
+ \mu^{x}_{rev}\sim \text{Multinomial}\left(\twoj,\rho_{1},\ldots,\rho_{N}\right)\quad \text{where}\quad \rho_{a}=\frac{\alpha_{a}}{|\alpha|}
 \end{equation}
 namely
 \begin{equation}
 \mu_{rev}^{x}(n^{x})=\frac{\nu!}{\prod_{a=1}^{N}n_{a}^{x}!}\prod_{a=1}^{N}\rho_{a}^{n_{a}^{x}}
 \end{equation}
+where we denote $|\alpha|=\sum_{a=1}^{N}\alpha_{a}$. 
 This can be proved just by imposing the detailed balance conditions for the edge and for the site generators. If condition \eqref{reversibilityCondition} is not met, then reversibility is lost: each reservoir at site $x$ wants to fix its own density $\alpha^{x}=(\alpha_{1}^{x},\ldots,\alpha_{N}^{x})$ and currents will arise when at least two of them are different. 
 \subsection{The Lie algebraic description}
 
@@ -307,9 +308,9 @@ The basis elements of the vector space $\mathbb{C}^{M}$ are the column vectors
 %where $\sum_{a=1}^{N}n_{i}=\nu$. 
 This basis vector satisfy the orthogonality relation with respect to the Euclidean scalar product 
 \begin{equation}\label{ortho}
-    \langle m_{1},\ldots,m_{N}|n_{1},\ldots,n_{N}\rangle=\prod_{a=1}^{N}\delta_{m_{a},n_{a}}
+   \langle m|n \rangle =\langle m_{1},\ldots,m_{N}|n_{1},\ldots,n_{N}\rangle=\prod_{a=1}^{N}\delta_{\xi_{a},n_{a}}
 \end{equation}
-where  $ \langle m_{1},\ldots,m_{N}|$ is the row vector obtained by transposing $|m_{1},\ldots,m_{N}\rangle$ and $\delta_{m_{a},n_{a}}$ is the Kronhecker delta. 
+where  $ \langle m_{1},\ldots,m_{N}|$ is the row vector obtained by transposing $|m_{1},\ldots,m_{N}\rangle$ and $\delta_{\xi_{a},n_{a}}$ is the Kronhecker delta. 
 The explicit actions of the algebra generators on the vectors $|n\rangle$ are the following:
 \begin{equation}\label{actionE}
 	\begin{cases}
@@ -321,7 +322,7 @@ One can check that the matrices defined in this way satisfy the commutation rela
 \newline 
 \textbf{Remark}: it is possible to define these matrices in terms of creation and annihilation operators: see Appendix \ref{appA}.
 \\ \\
-\textbf{Reamrk}: The symmetric representations $\lambda=(\twoj,0,\ldots,0)$ are dual to the representations $\lambda=(\twoj,\ldots,\twoj,0)$ that can be obtained via 
+\textbf{Remark}: The symmetric representations $\lambda=(\twoj,0,\ldots,0)$ are dual to the representations $\lambda=(\twoj,\ldots,\twoj,0)$ that can be obtained via 
 \begin{equation}
    \bar E_{ab}=\nu\delta_{ab}-E_{N-b+1,N-a+1}
 \end{equation}
@@ -374,7 +375,7 @@ We can write the edge Hamiltonian \eqref{edgeHamiltonian} as a function of the c
 \begin{equation}\label{secondCasimir}
     C_{2}=\sum_{a,b=1}^{N}E_{ab}E_{ba}
 \end{equation}
-that acts diagonally as $C_{2}|\mathbf{n}\rangle=\twoj(\twoj+N)|\mathbf{n}\rangle$ and belogs to the center of $gl(N)$ (i.e. it commutes with all the algebra elements).  
+that acts diagonally as $C_{2}|\bm{n}\rangle=\twoj(\twoj+N)|\bm{n}\rangle$ and belogs to the center of $gl(N)$ (i.e. it commutes with all the algebra elements).  
 More precisely,  considering the standard coproduct 
 \begin{equation}
 \begin{split}
@@ -446,7 +447,7 @@ The duality definition can also be formulated as a relation between the generato
 In the specific case where $\mathcal{L}=\widetilde{\mathcal{L}}$ we say that the process is self-dual.
 \newline
 \newline
-\textbf{Reamrk}:
+\textbf{Remark}:
 when the state spaces of the dual processes is finite, the generators and the duality function are matrices with elements $\mathcal{L}(\eta,\eta^{'})$, $\widetilde{\mathcal{L}}(\xi,\xi^{'})$ and $D(\eta,\xi)$ for arbitrary $\eta,\eta^{'}\in\Omega$ and $\xi,\xi^{'}\in \widetilde{\Omega}$. Therefore, we can write the duality relation \eqref{dualityRelationGenerator} as 
 \begin{equation}
     \sum_{\eta^{'}\in\,\Omega}\mathcal{L}(\eta,\eta^{'})D(\eta^{'},\xi)=\sum_{\xi^{'}\in\, \widetilde{\Omega}}\widetilde{\mathcal{L}}(\xi,\xi^{'})D(\eta,\xi^{'})
@@ -460,24 +461,26 @@ where the superscript $T$ denotes the matrix transposition. Therefore, the duali
     H^{T}D=D\widetilde{H}
 \end{equation}
 \subsection{Duality for the multi-species stirring process}\label{statementDualitySubsection}
-In this section we formulate duality for the multi-species stirring process $(\mathbf{n}(t))_{t\geq 0}$, defined by the generator \eqref{Generator}.
-The dual  process $(\bm{\xi}(t))_{t\geq 0}$ takes values in the enlarged state space
-\begin{equation}\label{dualStateSpace}
-    \widetilde{\Omega}= \bigtimes_{x\in V} \widetilde{\Omega}_{x}\ = \bigtimes_{x\in V} (\Omega_{x}\times \mathbb{N}_{0}^{N-1})
-\end{equation}
-To each site $x\in V$ we associate an ``extra site'', denoted $u(x)$,
-where dual particles will accumulate in the course of time. 
-We write the configurations $\bm{\xi} \in \widetilde\Omega$  as
+In this section we formulate duality for the multi-species stirring process $(\bm{n}(t))_{t\geq 0}$, defined by the generator \eqref{Generator}.
+The dual  process $(\bm{\xi}(t))_{t\geq 0}$ is defined on the \textit{enlarged graph} $\widetilde{G}=(\widetilde{V},\widetilde{\mathcal{E}})$ where 
 \begin{equation}
-    \bm{\xi}=\left(\xi_{1}^{x},\ldots,\xi_{N}^{x},\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}\right)_{x\in V}
+	\widetilde{V}:=V\cup \left\{u(x)\,:\, x\in V\right\}\qquad \widetilde{\mathcal{E}}:=\mathcal{E}\cup \left\{(x,u(x))\,:\, x\in V\right\}
+\end{equation}
+This means that to each site $x\in V$ we associate an ``extra-site'', denoted $u(x)$. The configuration space of the dual process is the enlarged state space
+\begin{equation}\label{dualStateSpace}
+    \widetilde{\Omega}= \bigtimes_{x\in V} \widetilde{\Omega}_{x}\ = \bigtimes_{x\in V} (\Omega_{x}\times \mathbb{N}_{0}^{N})
+\end{equation}
+Dual particle will accumulate in these extra-sites in the course of time. We write the configurations $\bm{\xi} \in \widetilde\Omega$  as
+\begin{equation}
+    \bm{\xi}=\left(\xi_{1}^{x},\ldots,\xi_{N}^{x},\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\right)_{x\in V}
 \end{equation}
 where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles of type $a\in \{1,\ldots,N\}$ at site $x$, 
-and the component $m_{a}^{u(x)}$  gives the number of dual particles of type $a\in \{2,\ldots,N\}$ at 
+and the component $\xi_{a}^{u(x)}$  gives the number of dual particles of type $a\in \{1,\ldots,N\}$ at 
 the extra-site $u(x)$ connected to $x\in V$.
 
 The duality function is given by
 \begin{equation}\label{dualityElements}
-	D(\bm{n},\bm{\xi})=\prod_{x\in V}\left(\frac{(\nu -\sum_{a=2}^{N}\xi_{a}^{x})!}{\nu!}\prod_{a=2}^{N}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\left(\rho_{a}^{x}\right)^{m_{a}^{u(x)}}\,\right)
+	D(\bm{n},\bm{\xi})=\prod_{x\in V}\left(\frac{(\nu -\sum_{a=2}^{N}\xi_{a}^{x})!}{\nu!}\prod_{a=2}^{N}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\,\right)
 \end{equation}
 where we denote the \textit{density} of the species $a\in \{2,\ldots,N\}$ imposed by the reservoir at site $x\in V$  by 
 \begin{equation}
@@ -490,7 +493,7 @@ The dual process is defined by its generator, which reads
 where 
 $\mathcal{L}_{x,y}$ is defined in \eqref{edgeGenerator} and, for any function $f:\widetilde{\Omega}\to \mathbb{R}$ 
 \begin{equation}\label{siteDualGenerator}
-    \widetilde{\mathcal{L}}_{x}f(\bm{\xi})=|\alpha^{x}|\sum_{a=2}^{N}\xi_{a}^{x}\left(f(\bm{\xi}-\delta_{a}^{x}+\delta_{1}^{x}+\delta_{a}^{u(x)})-f(\bm{\xi})\right)
+    \widetilde{\mathcal{L}}_{x}f(\bm{\xi})=|\alpha^{x}|\sum_{a=2}^{N}\xi_{a}^{x}\left(f(\bm{\xi}-\bm{\delta}_{a}^{x}+\bm{\delta}_{1}^{x}+\bm{\delta}_{a}^{u(x)})-f(\bm{\xi})\right)
 \end{equation}
 \newline
 Therefore the dual dynamics is described as follows. On one hand, the edge part $\mathcal{L}_{x,y}$ of the dual generator gives rise to  the multi-species stirring dynamics on the graph. On the other hand, the site
@@ -498,14 +501,14 @@ part $\widetilde{\mathcal{L}}_{x}$ of the dual generator replaces a particle of 
 \newline \newline
 \textbf{Remark}: in the reversible situation, i.e. when $\forall x\in V$ $\rho_{a}^{x}=\rho_{a}$, the expectation  of the duality function  $D(\bm{n},\bm{\xi})$ with   $\bm{n}$ distributed as  $\mu_{rev} = \bigtimes_{x\in V}\text{Multinomial}\left(\twoj, \rho_{1},\ldots,\rho_{N}\right)$ is
 \begin{equation}
-\mathbb{E}_{\mu^{rev}}\left[D(\bm{n},\bm{\xi})\right]=\prod_{a=2}^{N}\left(\rho_{a}\right)^{\sum_{x\in V}\xi_{a}^{x}+\sum_{x\in V}m_{a}^{u(x)}}\qquad \forall \bm{n}\in \Omega,\quad\forall \bm{\xi}\in \widetilde{\Omega}
+\mathbb{E}_{\mu^{rev}}\left[D(\bm{n},\bm{\xi})\right]=\prod_{a=2}^{N}\left(\rho_{a}\right)^{\sum_{x\in V}\xi_{a}^{x}+\sum_{x\in V}\xi_{a}^{u(x)}}\qquad \forall \bm{n}\in \Omega,\quad\forall \bm{\xi}\in \widetilde{\Omega}
 \end{equation}
 
 \subsection{Proof of duality}
 To prove duality between $(\bm{n}(t))_{t\geq 0}$ and $(\bm{\xi}(t))_{t\geq 0}$ we  show that \eqref{dualityIntertwines} is fulfilled.  To show this, we will use the Hamiltonians (linked with the generators by \eqref{Hamiltonian-Generator}) and their Lie algebraic description. Indeed, in this formalism the proof reduces to finding symmetries and exponential transformation of generators of the Lie algebra.\\
 To each configuration $\bm{\xi}$ of the configuration space  \eqref{dualStateSpace} of the dual process we associate the vector
 \begin{equation}
-    |\bm{\xi}\rangle=\bigotimes_{x\in V}\left(|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\otimes |\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle\right)
+    |\bm{\xi}\rangle=\bigotimes_{x\in V}\left(|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\otimes |\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle\right)
 \end{equation}
 The Hamiltonian of the dual process reads
 \begin{equation}\label{DualHamiltonian}
@@ -535,7 +538,7 @@ and
 \end{equation}
 and where 
 \begin{equation}\label{dualityMatrix2}
-\dd=\sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{u(x)}}\langle \xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}|
+\dd=\sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|
 \end{equation}
 The matrix $R_{x}$ is diagonal. Its elements are related to the inverse of the weights of the reversible measure \eqref{reversibleMeasure}. In particular, to obtain these elements, we have considered the weights of \eqref{reversibleMeasure} when all the parameters $p_{i}=\frac{1}{N}$. Then, the constant $\left(\frac{1}{N}\right)^{\nu}$ has been neglected, since it does not change the duality relation. This $R_{x}$ is called the ``cheap'' duality matrix (see \cite{giardina2009duality}). \\
 Since \eqref{dualityMatrix} is product over sites, proving \eqref{DualityRelation} is equivalent to showing that 
@@ -574,13 +577,13 @@ where in the up to last equation we used the orthogonality relation \eqref{ortho
 with $D(\bm{n},\bm{\xi})$ defined in \eqref{dualityElements}. 
 Fix an arbitrary site $x\in V$, then we have that 
 \begin{align*}
-	 &\langle n^{x}|d_{x}\otimes \dd|\xi^{x}\rangle\\&=\langle n_{1}^{x},\ldots,n_{N}^{x}| (\exp{(E_{12}^{x}+\ldots+E_{1N}^{x}}))^{T}R_{x}\otimes\sum_{q_{2}^{u(x)},\ldots,q_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{2}^{u(x)},\ldots,q_{N}^{u(x)}|
-	 \\&|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle \otimes |\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle
+	 &\langle n^{x}|d_{x}\otimes \dd|\xi^{x}\rangle\\&=\langle n_{1}^{x},\ldots,n_{N}^{x}| (\exp{(E_{12}^{x}+\ldots+E_{1N}^{x}}))^{T}R_{x}\otimes\sum_{q_{2}^{u(x)},\ldots,q_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|
+	 \\&|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle \otimes |\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle
 \end{align*}
 where we used \eqref{transpositionPropertyR}. \\
 On one hand, on the extra-site $u(x)$ we have 
 \begin{align*}
-\sum_{q_{2}^{u(x)},\ldots,q_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{2}^{u(x)},\ldots,q_{N}^{u(x)}|\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle=\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{u(x)}}
+\sum_{q_{2}^{u(x)},\ldots,q_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle=\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}
 \end{align*}
 where we used the orthogonality relation \eqref{ortho}. 
 On the other hand, on the site $x$, we have 
@@ -776,38 +779,39 @@ H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}|\alpha^{x}|\sum_{a=2}^{N}\left(\r
 \end{equation}
 Making the tensor product on both sides of \eqref{siteHadamardI} by 
 \begin{equation}
-\sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{u(x)}}\langle \xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}|
+\sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|
 \end{equation}
 and we obtain 
 \begin{equation}\label{siteHadamardII}
     \begin{split}
-&H_{x}^{T}d_{x}\otimes\sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{u(x)}}\langle \xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}|
+&H_{x}^{T}d_{x}\otimes\sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|
 \\=&
-d_{x}\otimes \sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{u(x)}}\langle \xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}||\alpha^{x}|\sum_{a=1}^{N}\left(\rho_{a}^{x}E_{1a}^{x}-E_{aa}\right)
+d_{x}\otimes \sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}||\alpha^{x}|\sum_{a=1}^{N}\left(\rho_{a}^{x}E_{1a}^{x}-E_{aa}\right)
     \end{split}
 \end{equation}
 Recalling the action of the bosonic creation operator acting at site $u(x)$ and on the species $a\in \{2,\ldots,N\}$ we have that 
 \begin{equation}\label{bosonicKX}
-    \langle \xi_{2}^{u(x)},\ldots,m_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|=  \langle \xi_{2}^{u(x)},\ldots,m_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(a^{\dagger})^{u(x)}_{a}
+    \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|=  \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(a^{\dagger})^{u(x)}_{a}
 \end{equation}
 Using \eqref{bosonicKX} by a fixed $a\in \{2,\ldots,N\}$ we rewrite the term of \eqref{siteHadamardII} with Lie generator $E_{1a}^{x}$ on the right hand side of \eqref{siteHadamardII} as 
 \begin{equation}
     \begin{split}
-&\sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{u(x)}}\langle \xi_{2}^{u(x)},\ldots,m_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|\rho_{a}^{x}E_{1a}^{x}
-\\=&\sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{u(x)}+1}\langle \xi_{2}^{u(x)},\ldots,m_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(a^{\dagger})_{a}^{u(x)}E_{1a}^{x}
+&\sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|\rho_{a}^{x}E_{1a}^{x}
 \\=&
-\sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{u(x)}}\langle \xi_{2}^{u(x)},\ldots,m_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(a^{\dagger})_{a}^{u(x)}E_{1a}^{x}
+\sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}+1}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(a^{\dagger})_{a}^{u(x)}E_{1a}^{x}
+\\=&
+\sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(a^{\dagger})_{a}^{u(x)}E_{1a}^{x}
     \end{split}
 \end{equation}
 where, in the last equality, we performed a change of summation variable. Therefore, inserting this last equation in \eqref{siteHadamardII} we obtain 
 \begin{equation}
     \begin{split}
 H_{x}^{T}\left(d_{x}\otimes \dd\right)&=
-     H_{x}^{T}d_{x}\otimes \sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{u(x)}}\langle \xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}|
+     H_{x}^{T}d_{x}\otimes \sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|
 \\&=
-d_{x}\otimes \sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{u(x)}}\langle \xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}||\alpha^{x}|\sum_{a=1}^{N}\left((a^{\dagger})_{a}^{u(x)}E_{1a}^{x}-E_{aa}^{x}\right)   
+d_{x}\otimes \sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}||\alpha^{x}|\sum_{a=2}^{N}\left((a^{\dagger})_{a}^{u(x)}E_{1a}^{x}-E_{aa}^{x}\right)   
 \\&=
-d_{x}\otimes \sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{m_{a}^{u(x)}}\langle \xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}|\widetilde{H}_{x}
+d_{x}\otimes \sum_{\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\widetilde{H}_{x}
 \\&=
 \left(d_{x}\otimes \dd\right)\widetilde{H}_{x}
     \end{split}
@@ -1079,7 +1083,7 @@ Therefore, we have for the left boundary
 Similarly, for the right boundary
 \begin{equation}
 	\begin{split}
-			H_{1}^{''}&=\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{L}\right)}\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}\right)\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{L}\right)}
+			H_{L}^{''}&=\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{L}\right)}\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}\right)\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{L}\right)}
 			\\&=
 			\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}-\beta_{a}e_{a1}^{L}\right)=
 			\\&=
@@ -1106,6 +1110,19 @@ and, obviously
 \begin{equation}
 	|\Psi\rangle=S^{-1}|\Psi^{''}\rangle
 \end{equation}
+\textbf{Notation}: sometimes, in the following, we will denote differently the configuration of this hard-core chain in order to alleviate notation. Each configuration can be written as
+\begin{equation}
+	|\bm{\tau}\rangle =\begin{pmatrix}
+		\tau_{1}\\
+		\vdots\\
+		\tau_{L}
+	\end{pmatrix}
+\end{equation}
+with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. This notation is equivalent to the one introduced in Subsection \ref{subsectionGeneratorStr}. Indeed, assume that at site $x$ we have a particle of type $a\in\{1,\ldots,N\} $, then $|n^{x}\rangle$ is composed by zeros but in the component $n_{a}^{x}$ where there is $1$. Therefore, we can uniquely associate  $\tau_{x}=a$ to this $|n^{x}\rangle$, denoting the presence of the species $a$ at site $x$. With this notation, we have that 
+\begin{equation}\label{notation}
+	|n^{x}\rangle =\tau_{x}\qquad \text{and}\qquad|\bm{n}\rangle=|\bm{\tau}\rangle
+\end{equation}
+with the meaning explained above. It will be useful to introduce also $\bm{\tau}=(\tau_{x})_{x\in \{1,\ldots,L\}}$. 
 \begin{comment}
 Using \eqref{transformationV} we introduce the \textit{similarity transformation} 
 \begin{equation}\label{similarity}
@@ -1181,16 +1198,16 @@ In the following subsections we will first compute the steady state $|\widetilde
 \subsubsection{Explicit formula for $|\Psi^{''}\rangle$}\label{subsectionSSHsec}
 We state the following result: the steady state of the Hamiltonian $H^{''}$ is given by 
 \begin{equation}\label{ResulsBasis}
-	|\Psi^{''} \rangle=\sum_{s_{1},\ldots,s_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{s_{x},1}\right)}{\Gamma\left(L+2\right)}\prod_{x=1}^{L}\left[\lambda_{s_{x}}\left(1+\sum_{j=x}^{L}\delta_{s_{j},1}\right)\right]^{1-\delta_{s_{x},1}}|\mathbf{\bm{s}}\rangle
+	|\Psi^{''} \rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},1}\right)}{\Gamma\left(L+2\right)}\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{s_{j},1}\right)\right]^{1-\delta_{\tau_{x},1}}|\mathbf{\bm{\tau}}\rangle
 \end{equation}
 where 
 \begin{equation}
-    \delta_{s_{x},1}:=\begin{cases}
-        1\quad \text{if}\quad s_{x}=1\\
+    \delta_{\tau_{x},1}:=\begin{cases}
+        1\quad \text{if}\quad \tau_{x}=1\\
         0\quad \text{otherwise}
     \end{cases}
 \end{equation}
-and the basis vector $|\bm{s}\rangle =\bigotimes_{i=1}^{L}|s_{x}\rangle$ with $s_{x}\in\{1,\ldots,N\}$ denotes the species that occupies the site $i\in \{1,\ldots,L\}$.
+%and the basis vector $|\bm{\tau}\rangle =\bigotimes_{x=1}^{L}|\tau_{x}\rangle$ with $\tau_{x}\in\{1,\ldots,N\}$ denotes the species that occupies the site $i\in \{1,\ldots,L\}$.
 \paragraph{Proof of formula \eqref{ResulsBasis}} 
 To prove \eqref{ResulsBasis} we consider the vector with elements the operators of the MPA $(X_{1},\ldots,X_{N})$ and we act on it with the similarity transformation $S=S_{2}S_{1}$ obtaining new operators $(\Xt_{1},\ldots,\Xt_{N})$ that will satisfy simpler commutators. 
 For the sake of notation, we denote by 
@@ -1249,15 +1266,15 @@ Moreover using \eqref{Xtildes2b} and \eqref{Xes}, the action of $\Xt_{a}$ $\fora
 \end{equation} 
 Using the transformed operators $(\widetilde{X}_{a})_{a\in\{1,\ldots,N\}}$, the vector $|\Psi^{''}\rangle$ is written as:
 \begin{equation}\label{toDetermineTilde}
-	|\Psi^{''}\rangle = \frac{1}{Z_{L}}\sum_{\mathbf{n}\in \Omega}\langle W|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}
-	|V \rangle \,|\mathbf{n}\rangle
+	|\Psi^{''}\rangle = \frac{1}{Z_{L}}\sum_{\bm{n}\in \Omega}\langle W|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}
+	|V \rangle \,|\bm{n}\rangle
 \end{equation}
 where the basis is 
 $$
-|\mathbf{n}\rangle =|n_{1}^{1},\ldots,n_{N}^{1}\rangle \otimes \ldots\otimes |n_{1}^{L},\ldots,n_{N}^{L}\rangle
+|\bm{n}\rangle =|n_{1}^{1},\ldots,n_{N}^{1}\rangle \otimes \ldots\otimes |n_{1}^{L},\ldots,n_{N}^{L}\rangle
 $$
 such that, for each site $x\in \{1,\ldots,L\}$, $|n^{x}\rangle=|n_{1}^{x},\ldots,n_{N}^{x}\rangle\in \Omega_{x}$. 
-To determine the steady state \eqref{toDetermineTilde}, we need to compute the coefficient $\langle W|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{m_{a}^{x}}
+To determine the steady state \eqref{toDetermineTilde}, we need to compute the coefficient $\langle W|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{\xi_{a}^{x}}
 |V \rangle$ and the normalization $Z_{L}$. Using \eqref{commutationsBula} we have
 \begin{equation}\label{UsefulRelation}
 	\widetilde{X}_{a}\widetilde{X}_{1}=\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{1}\widetilde{X}_{a}
@@ -1331,45 +1348,40 @@ The normalization constant is computed similarly as
 \end{align*}
 Therefore, we write the coefficients of the linear combination \eqref{toDetermineTilde} as 
 \begin{equation}\label{resulEsteady}
-	|\widetilde{\Psi}\rangle= \sum_{\mathbf{n}\in \Omega}\frac{\Gamma(2+\sum_{i=1}^{L}n_{1}^{x})}{\Gamma(2+L)}\prod_{x=1}^{L}\prod_{a=2}^{N}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{1}^{j}\right)^{n_{a}^{x}}|\mathbf{n}\rangle
+	|\Psi^{''}\rangle= \sum_{\bm{n}\in \Omega}\frac{\Gamma(2+\sum_{i=1}^{L}n_{1}^{x})}{\Gamma(2+L)}\prod_{x=1}^{L}\prod_{a=2}^{N}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{1}^{j}\right)^{n_{a}^{x}}|\bm{n}\rangle
 \end{equation}
-Calling $s_{x}$ the species present at site $i$, we rewrite the basis vector 
+Using the notation $\tau_{x}$, $|\bm{\tau}\rangle $ introduced in \eqref{notation} we have 
 \begin{equation}
-	|n_{1}^{x},\ldots,n_{N}^{x}\rangle=|s_{x}\rangle
+	\prod_{a=2}^{N}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{1}^{j}\right)^{n_{a}^{x}}=\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{s_{j},1}\right)\right]^{1-\delta_{\tau_{x},1}}
 \end{equation}
-where $s_{x}=\sum_{a=1}^N\delta_{n_{k}^{x},1}$. Finally we take the tensor product of the vectors $|s_{x}\rangle$ and we obtain
+and 
 \begin{equation}
-	|\mathbf{s}\rangle=\bigotimes_{x=1}^{L}|s_{x}\rangle=|\mathbf{s}\rangle
+	\frac{\Gamma(2+\sum_{x=1}^{L}n_{1}^{x})}{\Gamma(2+L)}=\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},1}\right)}{\Gamma\left(L+2\right)}
 \end{equation}
-with $s_{x}\in\{1,\ldots,N\}$. For a fixed site $x$, because of the hard-core interaction that allows at most one particle on type different from $1$, we have 
+Therefore we obtain
 \begin{equation}
-	\prod_{a=2}^{N}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{1}^{j}\right)^{n_{a}^{x}}=\left[\lambda_{s_{x}}\left(1+\sum_{j=x}^{L}\delta_{s_{j},1}\right)\right]^{1-\delta_{s_{x},1}}
+|\Psi^{''}\rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},1}\right)}{\Gamma\left(L+2\right)}\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{s_{j},1}\right)\right]^{1-\delta_{\tau_{x},1}}|\mathbf{\bm{\tau}}\rangle
 \end{equation}
-Moreover, we write 
-\begin{equation}
-	\frac{\Gamma(2+\sum_{x=1}^{L}n_{1}^{x})}{\Gamma(2+L)}=\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{s_{x},1}\right)}{\Gamma\left(L+2\right)}
-\end{equation}
-Finally summing over all $\mathbf{s}\in \Omega$  we obtain \eqref{ResulsBasis}.
 \begin{flushright}
 $\square$
 \end{flushright}
 \subsubsection{Explicit formula for $|\Psi^{'}\rangle$}\label{subsectionSSdual}
 Knowing the steady state  of the Hamiltonian $H^{''}$ we use \eqref{S2-Inverse} to retrieve the steady state of the Hamiltonian $H^{'}$. The result is the following 
 \begin{equation}\label{ABS-vect}
-    |\Psi^{'}\rangle =\sum_{s_{1},\ldots,s_{L}=1}^{N}\Psi^{'}(\bm{s})|\bm{s}\rangle 
+    |\Psi^{'}\rangle =\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\Psi^{'}(\bm{\tau})|\bm{\tau}\rangle 
 \end{equation}
 where  
 \begin{equation}\label{ABS}
 		\begin{split}
-			\Psi^{'}(\bm{s})=\sum_{c_{1}=0}^{\delta_{s_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{s_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{s_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{y}\right)\right)^{c_{y}}\beta_{s_{y}}^{(1-c_{y})(1-\delta_{s_{y},1})}
+			\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{y}\right)\right)^{c_{y}}\beta_{\tau_{y}}^{(1-c_{y})(1-\delta_{\tau_{y},1})}
 		\end{split}
 	\end{equation} 
 	\com{Double check this. Sum looks strange}
 and where
  \begin{equation}\label{CiEquation}
 	c_{y}=\begin{cases}
-		1\quad \text{if}\quad s_{y}\neq 1\\
-		0\quad \text{if}\quad s_{y}=1
+		1\quad \text{if}\quad \tau_{y}\neq 1\\
+		0\quad \text{if}\quad \tau_{y}=1
 	\end{cases}\qquad \forall y\in \{1,\ldots,L\}
 \end{equation}
 \paragraph{Proof of formula \eqref{ABS-vect}} As a consequence of \eqref{S2-Inverse}, we only need to show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Here is more convenient to consider the matrix $\mathcal{S}_{2}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and make explicitly the tensor product over the chain. This matrix $\mathcal{S}_{2}$ is given by 
@@ -1384,48 +1396,48 @@ and
 \begin{equation}\label{notation2}
     e_{ab}\otimes e_{cd}=e_{a,c}^{b,d}=\left(\delta_{(a,b),(e,f)}\delta_{(c,d),(g,h)}\right)_{e,f,g,h\in \{1,\ldots,N\}}\qquad \forall a,b,c,d\in \{1,\ldots,N\}
     \end{equation}
-    that can be generalized for $e_{s_{1},\ldots,s_{L}}^{q_{1},\ldots,q_{L}}$ with $s_{1},\ldots,s_{L},q_{1},\ldots,q_{L}\in \{1,\ldots,N\}$. With this notation we have that
+    that can be generalized for $e_{\tau_{1},\ldots,\tau_{L}}^{q_{1},\ldots,q_{L}}$ with $\tau_{1},\ldots,\tau_{L},q_{1},\ldots,q_{L}\in \{1,\ldots,N\}$. With this notation we have that
     
     \begin{equation}\label{InverseS2}
     	\begin{split}
-    		\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}&=\sum_{s_{1}=1}^{N}\ldots\sum_{s_{L}=1}^{N}\left\{e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\right. 
-    		\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{q_{2}}\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\beta_{s_{q_{2}}}\right.
+    		\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}&=\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,\tau_{L}}^{\tau_{1},\ldots,1,\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\right. 
+    		\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,s_{q_{2}}\ldots,\tau_{L}}^{\tau_{1},\ldots,1,\ldots,1,\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\beta_{s_{q_{2}}}\right.
     		\\&+\left.
-    		\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{s_{q_{t}},1})\right)e_{s_{1},\ldots,s_{q_{L-1}s_{L}}}^{1,\ldots,1,s_{L}}
+    		\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{s_{q_{t}},1})\right)e_{\tau_{1},\ldots,s_{q_{L-1}\tau_{L}}}^{1,\ldots,1,\tau_{L}}
     		\right. \\&+ \left. 
-    		\left(\prod_{x=1}^{L}(1-\delta_{s_{x},1})\right)\prod_{x=1}^{L}\beta_{s_{x}}e_{s_{1},\ldots,s_{L}}^{1,\ldots,1} \right\}
+    		\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},1})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L}}^{1,\ldots,1} \right\}
     	\end{split}
     \end{equation}
     We prove it by induction. When $L=1$ it is true, indeed
     \begin{equation}
-    	\mathcal{S}_{2}^{-1}=\sum_{s_{1}=1}^{N}\left\{e_{s_{1}}^{s_{1}}+(1-\delta_{s_{1},1})\sum_{q_{1}=1}^{1}\beta_{s_{q_{1}}}e_{s_{q_{1}}}^{1}\right\}
+    	\mathcal{S}_{2}^{-1}=\sum_{\tau_{1}=1}^{N}\left\{e_{\tau_{1}}^{\tau_{1}}+(1-\delta_{\tau_{1},1})\sum_{q_{1}=1}^{1}\beta_{\tau_{q_{1}}}e_{\tau_{q_{1}}}^{1}\right\}
     \end{equation}
     Assuming that \eqref{InverseS2} is true for arbitrary $L\in \mathbb{N}$, we prove that it holds for $L+1$
 \begin{align*}
-    	\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}\otimes \mathcal{S}_{2}^{-1}&=\sum_{s_{1}=1}^{N}\ldots\sum_{s_{L}=1}^{N}\left\{e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}++\sum_{q_{1}=1}^{L}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\right. 
-    	\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{q_{2}}\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\beta_{s_{q_{2}}}\right.
+    	\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}\otimes \mathcal{S}_{2}^{-1}&=\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,\tau_{L}}^{\tau_{1},\ldots,1,\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\right. 
+    	\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,s_{q_{2}}\ldots,\tau_{L}}^{\tau_{1},\ldots,1,\ldots,1,\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\beta_{s_{q_{2}}}\right.
     	\\&+\left.
-    	\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{s_{q_{t}},1})\right)e_{s_{1},\ldots,s_{q_{L-1}s_{L}}}^{1,\ldots,1,s_{L}}
+    	\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{s_{q_{t}},1})\right)e_{\tau_{1},\ldots,s_{q_{L-1}\tau_{L}}}^{1,\ldots,1,\tau_{L}}
     	\right. \\&+ \left. 
-    	\left(\prod_{x=1}^{L}(1-\delta_{s_{x},1})\right)\prod_{x=1}^{L}\beta_{s_{x}}e_{s_{1},\ldots,s_{L}}^{1,\ldots,1} \right\}\otimes \sum_{s_{L+1}=1}^{N}\left\{e_{s_{L+1}}^{s_{L+1}}+(1-\delta_{s_{L+1},1})\sum_{q_{1}=1}^{1}\beta_{s_{q_{1}}}e_{s_{q_{1}}}^{1}\right\}
+    	\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},1})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L}}^{1,\ldots,1} \right\}\otimes \sum_{\tau_{L+1}=1}^{N}\left\{e_{\tau_{L+1}}^{\tau_{L+1}}+(1-\delta_{\tau_{L+1},1})\sum_{q_{1}=1}^{1}\beta_{\tau_{q_{1}}}e_{\tau_{q_{1}}}^{1}\right\}
     	\\&=
-    	\sum_{s_{1}=1}^{N}\ldots\sum_{s_{L+}=1}^{N}\left\{e_{s_{1},\ldots,s_{L+1}}^{s_{1},\ldots,s_{L+1}}+\sum_{q_{1}=1}^{L+1}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L+1}}^{s_{1},\ldots,1,\ldots,s_{L+1}}\beta_{s_{q_{1}}}\right. 
-    	\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L+1}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{q_{2}}\ldots,s_{L+1}}^{s_{1},\ldots,1,\ldots,1,\ldots,s_{L+1}}\beta_{s_{q_{1}}}\beta_{s_{q_{2}}}\right.
+    	\sum_{\tau_{1}=1}^{N}\ldots\sum_{s_{L+}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L+1}}^{\tau_{1},\ldots,\tau_{L+1}}+\sum_{q_{1}=1}^{L+1}(1-\delta_{\tau_{q_{1}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,\tau_{L+1}}^{\tau_{1},\ldots,1,\ldots,\tau_{L+1}}\beta_{\tau_{q_{1}}}\right. 
+    	\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L+1}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,s_{q_{2}}\ldots,\tau_{L+1}}^{\tau_{1},\ldots,1,\ldots,1,\ldots,\tau_{L+1}}\beta_{\tau_{q_{1}}}\beta_{s_{q_{2}}}\right.
     	\\&+\left.
-    	\ldots+	\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L}(1-\delta_{s_{q_{t}},1})\right)e_{s_{1},\ldots,s_{q_{L}}s_{L+1}}^{1,\ldots,1,s_{L+1}}
+    	\ldots+	\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L}(1-\delta_{s_{q_{t}},1})\right)e_{\tau_{1},\ldots,\tau_{q_{L}}\tau_{L+1}}^{1,\ldots,1,\tau_{L+1}}
     	\right. \\&+ \left. 
-    	\left(\prod_{x=1}^{L+1}(1-\delta_{s_{x},1})\right)\prod_{x=1}^{L+1}\beta_{s_{x}}e_{s_{1},\ldots,s_{L+1}}^{1,\ldots,1} \right\}
+    	\left(\prod_{x=1}^{L+1}(1-\delta_{\tau_{x},1})\right)\prod_{x=1}^{L+1}\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L+1}}^{1,\ldots,1} \right\}
     	\\&=
     	\left(\mathcal{S}_{2}^{\otimes L+1}\right)^{-1}
 \end{align*}
     \begin{comment}
      
     \begin{equation}
-        S_{2}^{-1}=\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}+Q
+        S_{2}^{-1}=\sum_{\tau_{1}=1}^{N}e_{\tau_{1}}^{\tau_{1}}+Q
     \end{equation}
     where
     \begin{equation}
-	Q:=(1-\delta_{s_{1},1})\sum_{s_{1}=2}^{N}\beta_{s_{1}}e_{s_{1}}^{1}
+	Q:=(1-\delta_{\tau_{1},1})\sum_{\tau_{1}=2}^{N}\beta_{\tau_{1}}e_{\tau_{1}}^{1}
 \end{equation}
 We compute
 \begin{equation}
@@ -1438,111 +1450,144 @@ We compute
 where the addends are 
 \begin{equation}
 \begin{split}
-	&I_{N\times N}\otimes I_{N\times N}=\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}\otimes \sum_{s_{2}=1}^{N}e_{s_{2}}^{s_{2}}=\sum_{s_{1},s_{2}=1}^{N}e_{s_{1},s_{2}}^{s_{1},s_{2}}\\
-	&I_{N\times N}\otimes Q=(1-\delta_{s_{2},1})\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}\otimes \sum_{s_{2}=2}^{N}\beta_{s_{2}}e_{s_{2}}^{1}=(1-\delta_{s_{2},1})\sum_{s_{1}=1,s_{2}=2}^{N}e_{s_{1},s_{2}}^{s_{1},1}\beta_{s_{2}}\\
-	&Q\otimes I_{N\times N}=(1-\delta_{s_{1},1})\sum_{s_{1}=2}^{N}\beta_{s_{1}}e_{s_{1}}^{1}\otimes \sum_{s_{2}=1}^{N}e_{s_{2}}^{s_{2}}=(1-\delta_{s_{1},1})\sum_{s_{1}=2,s_{2}=1}^{N}e_{s_{1},s_{2}}^{1,s_{2}}\beta_{s_{1}}\\
-	&Q\otimes Q=(1-\delta_{s_{1},1})(1-\delta_{s_{2},1})\sum_{s_{1}=2}^{N}\beta_{s_{1}}e_{s_{1}}^{1}\otimes \sum_{s_{2}=2}^{N}\beta_{s_{2}}e_{s_{2}}^{1}=(1-\delta_{s_{1},1})(1-\delta_{s_{2},1})\sum_{s_{1},s_{2}=2}^{N}e_{s_{1},s_{2}}^{1,1}\beta_{s_{1}}\beta_{s_{2}}
+	&I_{N\times N}\otimes I_{N\times N}=\sum_{\tau_{1}=1}^{N}e_{\tau_{1}}^{\tau_{1}}\otimes \sum_{s_{2}=1}^{N}e_{s_{2}}^{s_{2}}=\sum_{\tau_{1},s_{2}=1}^{N}e_{\tau_{1},s_{2}}^{\tau_{1},s_{2}}\\
+	&I_{N\times N}\otimes Q=(1-\delta_{s_{2},1})\sum_{\tau_{1}=1}^{N}e_{\tau_{1}}^{\tau_{1}}\otimes \sum_{s_{2}=2}^{N}\beta_{s_{2}}e_{s_{2}}^{1}=(1-\delta_{s_{2},1})\sum_{\tau_{1}=1,s_{2}=2}^{N}e_{\tau_{1},s_{2}}^{\tau_{1},1}\beta_{s_{2}}\\
+	&Q\otimes I_{N\times N}=(1-\delta_{\tau_{1},1})\sum_{\tau_{1}=2}^{N}\beta_{\tau_{1}}e_{\tau_{1}}^{1}\otimes \sum_{s_{2}=1}^{N}e_{s_{2}}^{s_{2}}=(1-\delta_{\tau_{1},1})\sum_{\tau_{1}=2,s_{2}=1}^{N}e_{\tau_{1},s_{2}}^{1,s_{2}}\beta_{\tau_{1}}\\
+	&Q\otimes Q=(1-\delta_{\tau_{1},1})(1-\delta_{s_{2},1})\sum_{\tau_{1}=2}^{N}\beta_{\tau_{1}}e_{\tau_{1}}^{1}\otimes \sum_{s_{2}=2}^{N}\beta_{s_{2}}e_{s_{2}}^{1}=(1-\delta_{\tau_{1},1})(1-\delta_{s_{2},1})\sum_{\tau_{1},s_{2}=2}^{N}e_{\tau_{1},s_{2}}^{1,1}\beta_{\tau_{1}}\beta_{s_{2}}
  \end{split}
 \end{equation}
 The matrix $S_{2}^{-1}\otimes S_{2}^{-1}$ can be written as
 \begin{equation}
-	\left\{\left(S_{2}^{-1}\otimes S_{2}^{-1}\right)_{s_{1},s_{2}}^{q_{1},q_{2}}\right\}_{s_{1},s_{2}\in \{1,\ldots,N\}}^{q_{1},q_{2}\in \{1,\ldots,N\}}
+	\left\{\left(S_{2}^{-1}\otimes S_{2}^{-1}\right)_{\tau_{1},s_{2}}^{q_{1},q_{2}}\right\}_{\tau_{1},s_{2}\in \{1,\ldots,N\}}^{q_{1},q_{2}\in \{1,\ldots,N\}}
 \end{equation}
-where the subscripts $s_{1},s_{2}$ denote the raw and the superscript $q_{1},q_{2}$ the column. Therefore, the raw identified by $s_{1},s_{2}$ reads
+where the subscripts $\tau_{1},s_{2}$ denote the raw and the superscript $q_{1},q_{2}$ the column. Therefore, the raw identified by $\tau_{1},s_{2}$ reads
 \begin{equation}
-	\left(S_{2}^{-1}\otimes S_{2}^{-1}\right)_{s_{1},s_{2}}=e_{s_{1},s_{2}}^{s_{1},s_{2}}+(1-\delta_{s_{2},1})\beta_{s_{2}}e_{s_{1},s_{2}}^{s_{1},1}+(1-\delta_{s_{1},1})\beta_{s_{1}}e_{s_{1},s_{2}}^{1,s_{2}}+(1-\delta_{s_{1},1})(1-\delta_{s_{2},1})\beta_{s_{1}}\beta_{s_{2}}e_{s_{1},s_{2}}^{1,1}
+	\left(S_{2}^{-1}\otimes S_{2}^{-1}\right)_{\tau_{1},s_{2}}=e_{\tau_{1},s_{2}}^{\tau_{1},s_{2}}+(1-\delta_{s_{2},1})\beta_{s_{2}}e_{\tau_{1},s_{2}}^{\tau_{1},1}+(1-\delta_{\tau_{1},1})\beta_{\tau_{1}}e_{\tau_{1},s_{2}}^{1,s_{2}}+(1-\delta_{\tau_{1},1})(1-\delta_{s_{2},1})\beta_{\tau_{1}}\beta_{s_{2}}e_{\tau_{1},s_{2}}^{1,1}
 \end{equation}
 \end{comment}
-The product $\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}|\Psi^{''}\rangle$ gives a vector $|\Psi^{'}\rangle$ whose component are denoted by $\Psi^{'}(\bm{s})$. 
-To find these elements we need to fix the rows correspondent to $\bm{s}$ in the matrix $\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}$. Consider a string $\bm{s}=(s_{1},\ldots,s_{L})$ with $s_{1},\ldots,s_{L}\in \{1,\ldots,N\}$, then the corresponding row reads
+The product $\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}|\Psi^{''}\rangle$ gives a vector $|\Psi^{'}\rangle$ whose component are denoted by $\Psi^{'}(\bm{\tau})$. 
+To find these elements we need to fix the rows correspondent to $\bm{\tau}$ in the matrix $\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}$. Consider a string $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})$ with $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, then the corresponding row reads
 \begin{equation}
 	\begin{split}
-\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}_{\bm{s}}&=\,e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{s_{q_{1}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\\&+\sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{s_{1},\ldots,s_{q_{1}},\ldots,s_{q_{2}}\ldots,s_{L}}^{s_{1},\ldots,1,\ldots,1,\ldots,s_{L}}\beta_{s_{q_{1}}}\beta_{s_{q_{2}}}
+\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}_{\bm{\tau}}&=\,e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,\tau_{L}}^{\tau_{1},\ldots,1,\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\\&+\sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{s_{q_{2}},1})e_{\tau_{1},\ldots,\tau_{q_{1}},\ldots,s_{q_{2}}\ldots,\tau_{L}}^{\tau_{1},\ldots,1,\ldots,1,\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\beta_{s_{q_{2}}}
   \\&+
-  \ldots+\left(\prod_{x=1}^{L}(1-\delta_{s_{x},1})\right)\prod_{x=1}^{L}\left(\beta_{s_{x}}\right)^{1-\delta_{s_{x},1}}e_{s_{1},\ldots,s_{L}}^{1,\ldots,1}
+  \ldots+\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},1})\right)\prod_{x=1}^{L}\left(\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},1}}e_{\tau_{1},\ldots,\tau_{L}}^{1,\ldots,1}
 	\end{split}
 \end{equation}
 
 Therefore, we have that 
 \begin{equation}\label{ABS_intermediate}
 	\begin{split}
-		\Psi^{'}(\mathbf{s})&=(\mathcal{S}_{2}^{-1})_{\bm{s}}^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\mathbf{s})+\sum_{q_{1}= 1}^{L}(1-\delta_{s_{q_{1}},1})\Psi^{''}(s_{1},\ldots,\overbrace{1}^{s_{q_{1}}},\ldots,s_{L})\beta_{q_{1}}\\&+
-		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{s_{q_{1}},1})(1-\delta_{s_{q_{2}},1})\Psi^{''}(s_{1},\ldots,\overbrace{1}^{q_{1}},\ldots,\overbrace{1}^{q_{2}},\ldots,s_{L})\beta_{a_{1}}\beta_{a_{2}}\\&+\ldots+\Psi^{''}(1,\ldots,1)\left(\prod_{x=1}^{L}(1-\delta_{s_{x},1})\right)\prod_{x=1}^{L}\left(\beta_{s_{x}}\right)^{1-\delta_{s_{x},1}}
+		\Psi^{'}(\bm{\tau})&=(\mathcal{S}_{2}^{-1})_{\bm{\tau}}^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},1})\Psi^{''}(\tau_{1},\ldots,\overbrace{1}^{\tau_{q_{1}}},\ldots,\tau_{L})\beta_{q_{1}}\\&+
+		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},1})(1-\delta_{s_{q_{2}},1})\Psi^{''}(\tau_{1},\ldots,\overbrace{1}^{q_{1}},\ldots,\overbrace{1}^{q_{2}},\ldots,\tau_{L})\beta_{a_{1}}\beta_{a_{2}}\\&+\ldots+\Psi^{''}(1,\ldots,1)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},1})\right)\prod_{x=1}^{L}\left(\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},1}}
 	\end{split}
 \end{equation}
-For a fixed configuration $\bm{s}=(s_{1},\ldots,s_{N})$, using equation \eqref{ResulsBasis} and observing that 
+For a fixed configuration $\bm{\tau}=(\tau_{1},\ldots,s_{N})$, using equation \eqref{ResulsBasis} and observing that 
 \begin{equation}
-  \left(1+\sum_{j=y}^{L}\delta_{s_{j},1}\right) =\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{s_{y},1})\right)
+  \left(1+\sum_{j=y}^{L}\delta_{s_{j},1}\right) =\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{\tau_{y},1})\right)
 \end{equation}
 we obtain 
     \begin{equation}
-\Psi^{''}(\bm{s})=\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{s_{x},1})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{s_{y}}\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{s_{y},1})\right)\right)^{1-\delta_{s_{y},1}}
+\Psi^{''}(\bm{\tau})=\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\tau_{x},1})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{\tau_{y},1})\right)\right)^{1-\delta_{\tau_{y},1}}
 \end{equation}
 Introducing
 \begin{equation}
-	c_{y}=(1-\delta_{s_{y},1}) \qquad \forall y\in \{1,\ldots L\}
+	c_{y}=(1-\delta_{\tau_{y},1}) \qquad \forall y\in \{1,\ldots L\}
 \end{equation}
-and replacing $\Psi^{'}(\bm{s})$ computed above in \eqref{ABS_intermediate} we obtain 
+and replacing $\Psi^{'}(\bm{\tau})$ computed above in \eqref{ABS_intermediate} we obtain 
 
 
-%Because of the exponent $(1-\delta_{s_{x},1})$, the element $\Psi^{''}(\bm{s})$ has, up the term $\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{s_{x},1})}{\Gamma(L+2)}$, a contribution of a factor $\lambda_{s_{x}}\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{s_{x},1})\right)$ if the site is non empty, and a contribution of a factor "$1$" if the site is empty, it is convenient to introduce the $c_{i}$ of defined in \eqref{CiEquation}. Then, equation  \eqref{ABS_intermediate} reads 
+%Because of the exponent $(1-\delta_{\tau_{x},1})$, the element $\Psi^{''}(\bm{\tau})$ has, up the term $\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{\tau_{x},1})}{\Gamma(L+2)}$, a contribution of a factor $\lambda_{\tau_{x}}\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{x},1})\right)$ if the site is non empty, and a contribution of a factor "$1$" if the site is empty, it is convenient to introduce the $c_{i}$ of defined in \eqref{CiEquation}. Then, equation  \eqref{ABS_intermediate} reads 
 \begin{equation}\label{elementsABS}
 	\begin{split}
-		\Psi^{'}(\mathbf{s})=\sum_{c_{1}=0}^{1-\delta_{s_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{s_{L},1}}\frac{\Gamma(2+L-\sum_{x=1}^{L}c_{x})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{s_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\left(\beta_{s_{y}}\right)^{(1-c_{y})(1-\delta_{s_{y},1})}
+		\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},1}}\frac{\Gamma(2+L-\sum_{x=1}^{L}c_{x})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\left(\beta_{\tau_{y}}\right)^{(1-c_{y})(1-\delta_{\tau_{y},1})}
 	\end{split}
 \end{equation} 
-%Indeed, when $c_{i}=0$ this formula replaces the contribution in the square brackets with a $\beta_{s_{x}}$. 
-Finally, considering all possible configurations $\bm{s}$, we obtain \eqref{ABS-vect}.
+%Indeed, when $c_{i}=0$ this formula replaces the contribution in the square brackets with a $\beta_{\tau_{x}}$. 
+Finally, considering all possible $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, we obtain \eqref{ABS-vect}.
 \begin{flushright}
     $\square$
 \end{flushright}
 \subsubsection{The steady state of $H$}\label{subsectionSSH}
 The steady state $|\Psi\rangle$ of the Hamiltonian $H$ is given by 
 \begin{equation}\label{steadyStateH}
-    |\Psi\rangle=\sum_{s_{1},\ldots,s_{L}=1}^{N}\Psi(\bm{s})|\bm{s}\rangle
+    |\Psi\rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\Psi(\bm{\tau})|\bm{\tau}\rangle
 \end{equation}
-where for every $(s_{1},\ldots,s_{L})=\bm{s}$
+where for every $(\tau_{1},\ldots,\tau_{L})=\bm{\tau}$
+\begin{equation}
+	\begin{split}
+ \Psi(\bm{\tau})&=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\tau_{y}}^{(1-c_{y})(1-\delta_{\tau_{y},1})}
+\\&+
+\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{\tau_{q_{r}},1}\right) 
+\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{b}}=2}^{N}
+\\&
+\sum_{c_{1}=0}^{1-\delta_{\eta_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{\eta_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\eta_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\eta_{y}}^{(1-c_{y})(1-\delta_{\eta_{y},1})}
+	\end{split}
+\end{equation}
+where we have introduced, $\forall x\in \{1,\ldots,L\}$
+\begin{equation}
+	\eta_{x}=\begin{cases}
+		\tau_{x}\qquad &\text{if}\quad x\neq q_{1},\ldots,q_{b}\\
+		d_{x}\qquad &\text{otherwise}
+	\end{cases}%\qquad \theta_{x}=\begin{cases}
+		%\tau_{x}\qquad &\text{if}\quad x\neq 1,\ldots,b\\
+	%	1 \qquad &\text{otherwise}
+	%\end{cases}
+\end{equation}
+{\color{blue}
 \begin{equation}\label{steadyStateH-coeff}
     \begin{split}
-        \Psi(\bm{s})&=\sum_{c_{1}=0}^{1-\delta_{s_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{s_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{s_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{s_{y}}^{(1-c_{y})(1-\delta_{s_{y},1})}
+        \Psi(\bm{\tau})&=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\tau_{y}}^{(1-c_{y})(1-\delta_{\tau_{y},1})}
         \\&+
         \sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{s=1}^{b}\delta_{s_{q_{r}},1}\right) 
         \sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{b}}=2}^{N}
 \\&
-\sum_{x=1\,:\, x\neq q_{1},\ldots,q_{b}}^{L}\sum_{c_{x}=0}^{1-\delta_{s_{x},1}}\sum_{c_{q_{1}}=1}^{1}\ldots\sum_{c_{q_{b}}=0}^{1}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(2+L)}
-  \prod_{y=1\,:\, y\neq q_{1},\ldots,q_{b}}^{L}\left(\lambda_{s_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}
+\sum_{x=1\,:\, x\neq q_{1},\ldots,q_{b}}^{L}\sum_{c_{x}=0}^{1-\delta_{\tau_{x},1}}\sum_{c_{q_{1}}=1}^{1}\ldots\sum_{c_{q_{b}}=0}^{1}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(2+L)}
+  \prod_{y=1\,:\, y\neq q_{1},\ldots,q_{b}}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}
  \\ &
- \beta_{s_{y}}^{(1-c_{y})(1-\delta_{s_{y},1})}
+ \beta_{\tau_{y}}^{(1-c_{y})(1-\delta_{\tau_{y},1})}
  \prod_{t=1}^{b}\lambda_{d_{q_{t}}}\left(2+L-q_{t}-\sum_{j=q_{t}}^{L}c_{j}\right)^{c_{q_{t}}}\beta_{d_{q_{t}}}^{(1-c_{q_{t}})}
     \end{split}
 \end{equation}
-\textbf{Remark}: we observe that if no holes are present in \eqref{steadyStateH-coeff}, i.e. if $s_{x}\neq 1$ $\forall x\in \{1,\ldots,L\}$, then the second addend vanishes and
+}
+\textbf{Remark}: we observe that if no holes are present in \eqref{steadyStateH-coeff}, i.e. if $\tau_{x}\neq 1$ $\forall x\in \{1,\ldots,L\}$, then the second addend vanishes and
 \begin{equation}\label{LinkABS-corr}
-\Psi(\bm{s})=\Psi^{'}(\bm{s})
+\Psi(\bm{\tau})=\Psi^{'}(\bm{\tau})
 \end{equation}
 When the configuration has holes, the presence of the second addend is motivated by the dependence of the "empty" in a fixed site from all others types in the same site.
 
 \paragraph{Proof of formula \eqref{steadyStateH}} As a consequence of \eqref{S1-Inverse}, we only need to show how the transformation $S_{1}^{-1}$ acts on the vector $|\Psi^{'}\rangle$. Here is more convenient to consider the matrix $\mathcal{S}_{1}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and make explicitly the tensor product over the chain. This matrix $\mathcal{S}_{1}$ is given by
 \begin{equation}\label{S1-L1}
-	\mathcal{S}_{1}^{-1}=\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}+(-1)\delta_{s_{1},1}\sum_{d_{1}=2}^{N}e_{1}^{d_{1}}
+	\mathcal{S}_{1}^{-1}=\sum_{\tau_{1}=1}^{N}e_{\tau_{1}}^{\tau_{1}}+(-1)\delta_{\tau_{1},1}\sum_{d_{1}=2}^{N}e_{1}^{d_{1}}
 \end{equation}
 Using the notation introduced in \eqref{notation1} and \eqref{notation2} we have that 
 \begin{equation}
 	\begin{split}
-		\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}&=\sum_{s_{1}=1}^{N}\ldots\sum_{s_{L}=1}^{N}\left\{e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}\right.
+		\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}&=\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}\right.
 		\\&
-		+\left.\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{r}}=2}^{N}e_{\ldots,s_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,s_{x},\ldots,\,d_{q_{r}}\,,\ldots}\right\} 
+		+\left.\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{r}}=2}^{N}e_{\eta_{1},\ldots,\eta_{L}}^{\theta_{1},\ldots,\theta_{L}}\right\} 
 	\end{split}
 \end{equation}
-where $e_{\ldots,s_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,s_{x},\ldots,\,d_{q_{r}}\,,\ldots}$ denotes the matrix $e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}$ where the subscripts $s_{q_{1}},\ldots,s_{q_{b}}$ have been replaced by "1" and the superscripts $s_{q_{1}},\ldots,s_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. \\
+where we have introduced, $\forall x\in \{1,\ldots,L\}$
+\begin{equation}
+	%\eta_{x}=\begin{cases}
+	%	\tau_{x}\qquad &\text{if}\quad x\neq 1,\ldots,b\\
+	%	d_{x}\qquad &\text{otherwise}
+	%\end{cases}\qquad
+	 \theta_{x}=\begin{cases}
+		\tau_{x}\qquad &\text{if}\quad x\neq 1,\ldots,b\\
+		1 \qquad &\text{otherwise}
+\end{cases}
+\end{equation}
+  %$e_{\ldots,\tau_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,\tau_{x},\ldots,\,d_{q_{r}}\,,\ldots}$ denotes the matrix $e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}$ where the subscripts $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by "1" and the superscripts $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. \\
 This is proved by induction. Indeed, for $L=1$ it is trivially true, by \eqref{S1-L1}. We assume that it is true for arbitrary $L\in \mathbb{N}$ and we prove that it holds for $L+1$. 
 \begin{align*}
 \left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}\otimes \mathcal{S}_{1}^{-1}&=
-\sum_{s_{1}=1}^{N}\ldots\sum_{s_{L}=1}^{N}\left\{e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}\right. \\&+\left. \sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{r}}=2}^{N}e_{\ldots,s_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,s_{x},\ldots,\,d_{q_{r}}\,,\ldots}\right\}
+\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}\right. \\&+\left. \sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{r}}=2}^{N}e_{\theta_{1},\ldots,\theta_{L}}^{\eta_{1},\ldots,\eta_{L}}\right\}
 \\&\otimes
-\left\{ \sum_{s_{1}=1}^{N}e_{s_{L+1}}^{s_{L+1}}+(-1)\delta_{s_{L+1},1}\sum_{d_{L+1}=2}^{N}e_{1}^{d_{L+1}}\right\}
+\left\{ \sum_{\tau_{1}=1}^{N}e_{\tau_{L+1}}^{\tau_{L+1}}+(-1)\delta_{\tau_{L+1},1}\sum_{d_{L+1}=2}^{N}e_{1}^{d_{L+1}}\right\}
 \\&=
-\sum_{s_{1}=1}^{N}\ldots\sum_{s_{L+1}=1}^{N}\left\{e_{s_{1},\ldots,s_{L+1}}^{s_{1},\ldots,s_{L+1}}\right. \\&+\left. \sum_{b=1}^{L+1}(-1)^{b}\sum_{q_{1}=1}^{L+1}\sum_{q_{2}=q_{1}+1}^{L+1}\ldots\sum_{q_{b}=q_{b-1}+1}^{L+1}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{b}}=2}^{N}e_{\ldots,s_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,s_{x},\ldots,\,d_{q_{r}}\,,\ldots}\right\}
+	\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L+1}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L+1}}^{\tau_{1},\ldots,\tau_{L+1}}\right. \\&+\left. \sum_{b=1}^{L+1}(-1)^{b}\sum_{q_{1}=1}^{L+1}\sum_{q_{2}=q_{1}+1}^{L+1}\ldots\sum_{q_{b}=q_{b-1}+1}^{L+1}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{b}}=2}^{N}e_{\theta_{1},\ldots,\theta_{L+1}}^{\eta_{1},\ldots,\eta_{L+1}}\right\}
 \end{align*}
 \begin{comment}
 
@@ -1556,59 +1601,67 @@ and thus
 \end{equation}
 By direct computations and using the notation introduced in \eqref{notation1} and \eqref{notation2} we have 
 \begin{equation}
-    F=\sum_{s_{1}=1}^{N}e_{s_{1}}^{s_{1}}+\delta_{s_{1},1}(-1)\sum_{d_{1}=2}^{N}e_{1}^{d_{1}}
+    F=\sum_{\tau_{1}=1}^{N}e_{\tau_{1}}^{\tau_{1}}+\delta_{\tau_{1},1}(-1)\sum_{d_{1}=2}^{N}e_{1}^{d_{1}}
 \end{equation}
 Taking the tensor product over two sites we obtain 
 \begin{equation}
 \begin{split}
-    F\otimes F&=\sum_{s_{1},s_{2}=1}^{N}\left(e_{s_{1},s_{2}}^{s_{1},s_{2}}+(-1)\delta_{s_{2},1}\sum_{d_{2}=2}^{N}e_{s_{1},1}^{s_{1},d_{2}}
+    F\otimes F&=\sum_{\tau_{1},s_{2}=1}^{N}\left(e_{\tau_{1},s_{2}}^{\tau_{1},s_{2}}+(-1)\delta_{s_{2},1}\sum_{d_{2}=2}^{N}e_{\tau_{1},1}^{\tau_{1},d_{2}}
      \right.\\ &+\left. 
-    (-1)\delta_{s_{1},1}\sum_{d_{1}=2}^{N}e_{1,s_{2}}^{d_{1},s_{2}}+(-1)^{2}\delta_{s_{1},1}\delta_{s_{2},1}\sum_{d_{1},d_{2}=2}^{N}e_{1,1}^{d_{1},d_{2}}\right)
+    (-1)\delta_{\tau_{1},1}\sum_{d_{1}=2}^{N}e_{1,s_{2}}^{d_{1},s_{2}}+(-1)^{2}\delta_{\tau_{1},1}\delta_{s_{2},1}\sum_{d_{1},d_{2}=2}^{N}e_{1,1}^{d_{1},d_{2}}\right)
     \end{split}
 \end{equation}
-therefore, fixing a raw with indices $s_{1},s_{2}\in \{1,\ldots,N\}$ of the matrix $F\otimes F$ we obtain 
+therefore, fixing a raw with indices $\tau_{1},s_{2}\in \{1,\ldots,N\}$ of the matrix $F\otimes F$ we obtain 
 \begin{equation}
 \begin{split}
-    \left(F\otimes F\right)_{s_{1},s_{2}}&=e_{s_{1},s_{2}}^{s_{1},s_{2}}+(-1)\delta_{s_{2},1}\sum_{d_{2}=2}^{N}e_{s_{1},1}^{s_{1},d_{2}}
+    \left(F\otimes F\right)_{\tau_{1},s_{2}}&=e_{\tau_{1},s_{2}}^{\tau_{1},s_{2}}+(-1)\delta_{s_{2},1}\sum_{d_{2}=2}^{N}e_{\tau_{1},1}^{\tau_{1},d_{2}}
     \\&+
-    (-1)\delta_{s_{1},1}\sum_{d_{1}=2}^{N}e_{1,s_{2}}^{d_{1},s_{2}}+(-1)^{2}\delta_{s_{1},1}\delta_{s_{2},1}\sum_{d_{1},d_{2}=2}^{N}e_{1,1}^{d_{1},d_{2}}
+    (-1)\delta_{\tau_{1},1}\sum_{d_{1}=2}^{N}e_{1,s_{2}}^{d_{1},s_{2}}+(-1)^{2}\delta_{\tau_{1},1}\delta_{s_{2},1}\sum_{d_{1},d_{2}=2}^{N}e_{1,1}^{d_{1},d_{2}}
     \\&=
-    \sum_{q_{1}=1}^{2}\prod_{r=1}^{1}\delta_{s_{q_{r}},1}\sum_{r=1}^{1}\sum_{d_{q_{r}}=2}^{N}e_{s_{x},1}^{s_{x}d_{q_{r}}}
+    \sum_{q_{1}=1}^{2}\prod_{r=1}^{1}\delta_{s_{q_{r}},1}\sum_{r=1}^{1}\sum_{d_{q_{r}}=2}^{N}e_{\tau_{x},1}^{\tau_{x}d_{q_{r}}}
     +
-    (-1)\sum_{q_{1}=1}^{2}\sum_{q_{2}=q_{1}+1}^{2}\prod_{r=1}^{2}\delta_{s_{q_{r}},1}\sum_{r=1}^{2}\sum_{d_{q_{r}}=2}^{N}e_{s_{x},1}^{s_{x}d_{q_{r}}}
+    (-1)\sum_{q_{1}=1}^{2}\sum_{q_{2}=q_{1}+1}^{2}\prod_{r=1}^{2}\delta_{s_{q_{r}},1}\sum_{r=1}^{2}\sum_{d_{q_{r}}=2}^{N}e_{\tau_{x},1}^{\tau_{x}d_{q_{r}}}
     \end{split}
 \end{equation}
-where $e_{s_{x},d_{q_{r}}}$ denotes the matrix $e_{s_{1},s_{2}}^{s_{1},s_{2}}$ where the subscripts $s_{q_{r}}$ have been replaced by "1" and the superscript $s_{q_{r}}$ have been replaced by $d_{q_{r}}$, with $r=1,2$. \\
-We generalize this tensor product to an arbitrary number of sites $L$ obtaining the matrix $\mathcal{F}$. We write the expression of a fixed raw with indices $s_{1},\ldots,s_{L}\in \{1,\ldots,N\}$ as 
+where $e_{\tau_{x},d_{q_{r}}}$ denotes the matrix $e_{\tau_{1},s_{2}}^{\tau_{1},s_{2}}$ where the subscripts $s_{q_{r}}$ have been replaced by "1" and the superscript $s_{q_{r}}$ have been replaced by $d_{q_{r}}$, with $r=1,2$. \\
+We generalize this tensor product to an arbitrary number of sites $L$ obtaining the matrix $\mathcal{F}$. We write the expression of a fixed raw with indices $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$ as 
 \begin{equation}
     \begin{split}
-        \mathcal{F}_{s_{1},\ldots,s_{L}}&=e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}
+        \mathcal{F}_{\tau_{1},\ldots,\tau_{L}}&=e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}
         \\&
-        +\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{r=1}^{b}\sum_{d_{q_{r}}=2}^{N}e_{\ldots,s_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,s_{x},\ldots,\,d_{q_{r}}\,,\ldots}
+        +\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{r=1}^{b}\sum_{d_{q_{r}}=2}^{N}e_{\ldots,\tau_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,\tau_{x},\ldots,\,d_{q_{r}}\,,\ldots}
     \end{split}
 \end{equation}
-where $e_{\ldots,s_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,s_{x},\ldots,\,d_{q_{r}}\,,\ldots}$ denotes the matrix $e_{s_{1},\ldots,s_{L}}^{s_{1},\ldots,s_{L}}$ where the subscripts $s_{q_{1}},\ldots,s_{q_{b}}$ have been replaced by "1" and the superscripts $s_{q_{1}},\ldots,s_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. \\
+where $e_{\ldots,\tau_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,\tau_{x},\ldots,\,d_{q_{r}}\,,\ldots}$ denotes the matrix $e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}$ where the subscripts $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by "1" and the superscripts $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. \\
 \end{comment}
-The product $\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\Psi^{'}\rangle$ gives a vector whose component are denoted by $\Psi(\bm{s})$. 
-To find this elements we need to fix the rows correspondent to $\bm{s}$. Consider a string $\bm{s}=(s_{1},\ldots,s_{L})$ with $s_{1},\ldots,s_{L}\in \{1,\ldots,N\}$, then the corresponding row reads
+The product $\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\Psi^{'}\rangle$ gives a vector whose component are denoted by $\Psi(\bm{\tau})$. 
+To find this elements we need to fix the rows correspondent to $\bm{\tau}$. Consider a string $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})$ with $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, then the corresponding row of the vector $\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\Psi^{'}\rangle$ reads
 \begin{equation}
     \begin{split}
-        \left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}_{\bm{s}}|\Psi{'}\rangle&=\Psi{'}(s_{1},\ldots,s_{L})+ 
+       \Psi(\bm{\tau}) &=\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}_{\bm{\tau}}|\Psi{'}\rangle=\Psi{'}(\tau_{1},\ldots,\tau_{L})+ 
         \\&
-        +\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{r}}=2}^{N}\Psi{'}(\ldots,s_{x},\ldots,d_{q_{r}},\ldots)
+        +\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{r}}=2}^{N}\Psi{'}(\eta_{1},\ldots,\eta_{L})
     \end{split}
 \end{equation}
-where $\Psi{'}(\ldots,s_{x},\ldots,d_{q_{r}},\ldots)$ denotes the component $\Psi{'}(s_{1},\ldots,s_{L})$ where the occupations  $s_{q_{1}},\ldots,s_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. Using \eqref{elementsABS} we have 
+%where $\Psi{'}(\ldots,\tau_{x},\ldots,d_{q_{r}},\ldots)$ denotes the component $\Psi{'}(\tau_{1},\ldots,\tau_{L})$ where the occupations  $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. 
+Using \eqref{elementsABS} we have 
+\begin{equation}
+  \begin{split}
+	\Psi{'}(\eta_{1},\ldots,\eta_{L})=&\sum_{c_{1}=0}^{1-\delta_{\eta_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{\eta_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}
+	\\&
+	\prod_{y=1}^{L}\left(\lambda_{\eta_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\eta_{y}}^{(1-c_{y})(1-\delta_{\eta_{y},1})}
+\end{split}
+\end{equation}
+{\color{blue}
 \begin{equation}
     \begin{split}
-  &\Psi{'}(\ldots,s_{x},\ldots,d_{q_{r}},\ldots)=\sum_{x=1\,:\, x\neq q_{1},\ldots,q_{l}}^{L}\sum_{c_{x}=0}^{1-\delta_{s_{x},1}}\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{c_{q_{p}}=0}^{1}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(2+L)}
+  &\Psi{'}(\ldots,\tau_{x},\ldots,d_{q_{r}},\ldots)=\sum_{x=1\,:\, x\neq q_{1},\ldots,q_{l}}^{L}\sum_{c_{x}=0}^{1-\delta_{\tau_{x},1}}\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{c_{q_{p}}=0}^{1}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(2+L)}
 \\&  
-\prod_{y=1\,:\, y\neq q_{1},\ldots,q_{b}}^{L}\left(\lambda_{s_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{s_{y}}^{(1-c_{y})(1-\delta_{s_{y},1})}
+\prod_{y=1\,:\, y\neq q_{1},\ldots,q_{b}}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\tau_{y}}^{(1-c_{y})(1-\delta_{\tau_{y},1})}
 \\&
   \prod_{t=1}^{b}\lambda_{d_{q_{t}}}\left(2+L-q_{t}-\sum_{j=q_{t}}^{L}c_{j}\right)^{c_{q_{t}}}\beta_{d_{q_{t}}}^{(1-c_{q_{t}})}
     \end{split}
-\end{equation}
-indeed, in each coordinate $q_{r}$ with $r=1,\ldots b$ the species $1$ is replaced by all other possible species from $2$ to $N$.  Finally, considering all possible configurations $\bm{s}=(s_{1},\ldots,s_{L})$ we obtain \eqref{steadyStateH}. 
+\end{equation}} indeed, in each coordinate $q_{r}$ with $r=1,\ldots b$ the species $1$ is replaced by all other possible species from $2$ to $N$.  Finally, considering all possible $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, we obtain \eqref{steadyStateH}. 
 \begin{flushright}
     $\square$
 \end{flushright}
@@ -1632,7 +1685,7 @@ In this section we write a formula for the stationary steady state correlations 
 f(L,c_{1},\ldots,c_{m})\sum_{t_{1}=0}^{c_{1}}\sum_{t_{m}=1}^{c_{m}}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}\alpha_{a_{q}}^{t_{q}}\beta_{a_{q}}^{1-t_{q}}g_{q}(L,x_{q},c_{q},\ldots,c_{m})
 \end{equation}
 %\begin{equation}
-%	\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{s_{k}}^{t_{k}}\beta_{s_{k}}^{1-t_{k}}\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(c_{1},\ldots,c_{m})g_{k}(y_{k},c_{k},\ldots,c_{m})
+%	\langle n^{y_{1}}_{\tau_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{s_{k}}^{t_{k}}\beta_{s_{k}}^{1-t_{k}}\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(c_{1},\ldots,c_{m})g_{k}(y_{k},c_{k},\ldots,c_{m})
 %\end{equation}
  \paragraph{Proof of formula \eqref{exactCorrelations}}
  We aim to compute the correlations between the sites $\mathbf{x}=\left(x_{1},\ldots,x_{m}\right)$ occupied by the species $\mathbf{a}=\left(a_{1},\ldots,a_{m}\right)$, such that $a_{1},\ldots,a_{m}\in \{2,\ldots,N\}$ i.e. 
@@ -1643,20 +1696,20 @@ f(L,c_{1},\ldots,c_{m})\sum_{t_{1}=0}^{c_{1}}\sum_{t_{m}=1}^{c_{m}}\prod_{q=1}^{
 	\end{split}
 \end{equation}
 where we denote $\mathbb{P}_{stat}$ the non-equilibrium steady state distribution. 
-This corresponds to the steady state probability of a chain of length $m$ with each coordinates $x_{i}$ occupied by $a_{i}\neq 1$, i.e. 
+This corresponds to the steady state probability of a chain of length $m$ with each coordinates $x_{i}$ occupied by $a_{i}\neq 1$.Therefore, using again the notation \eqref{notation} and calling $\tau_{i}=a_{i}$, we have 
 \begin{equation}
-	\mathbb{P}_{stat}\left(n_{a_{1}}^{x_{1}}=1,\ldots,n_{a_{m}}^{x_{m}}=1\right)=\Psi\left(a_{1},\ldots,a_{m}\right)
+	\mathbb{P}_{stat}\left(n_{a_{1}}^{x_{1}}=1,\ldots,n_{a_{m}}^{x_{m}}=1\right)=\Psi\left(\tau_{1},\ldots,\tau_{m}\right)
 \end{equation}
-where $\Psi(\bm{a})$ is the element of the vector \eqref{steadyStateH} computed for this chain $m$.
+where $\Psi(\bm{\tau})$ is the element of the vector \eqref{steadyStateH} computed for this chain $m$.
 As already remarked in \eqref{LinkABS-corr}, for non-empty configurations we have:
 \begin{equation}\label{Corr-mABS}
-	\Psi(a_{1},\ldots,a_{m})=\Psi^{'}(a_{1},\ldots,a_{m})
+	\Psi(\tau_{1},\ldots,\tau_{m})=\Psi^{'}(\tau_{1},\ldots,\tau_{m})
 \end{equation}
 Thus, by applying \eqref{ABS_intermediate} we have 
 \begin{equation}
-	\Psi(a_{1},\ldots,a_{m})=\sum_{i=1}^{L}\sum_{c_{i}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{a_{k}}^{c_{k}}\beta_{a_{k}}^{1-c_{k}}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}
+	\Psi(\tau_{1},\ldots,\tau_{m})=\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{\tau_{k}}^{c_{k}}\beta_{\tau_{k}}^{1-c_{k}}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}
 \end{equation}
-Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,x_{k},c_{k},\ldots,c_{m})$ we have the formulas for arbitrary correlations.
+Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,x_{k},c_{k},\ldots,c_{m})$ and using $\tau_{i}=a_{i}$ $\forall i=1,\ldots,m$, we have the formulas for arbitrary correlations.
 \begin{flushright}
     $\square$
 \end{flushright}
@@ -1726,11 +1779,11 @@ We consider a chain of length $L$ where the end sites $1$ and $L$ are connected 
 \end{equation} 
 where at the boundaries 
 \begin{equation}
-	\mathcal{L}_{1}f(\bm{n})=\sum_{a,b=0}^{N}\alpha_{a}n_{b}^{1}\left(f(\bm{n}-\delta_{b}^{x}+\delta_{a}^{x})-f(\bm{n})\right)\qquad \mathcal{L}_{L}f(\bm{n})=\sum_{a,b=0}^{N}\beta_{a}n_{b}^{L}\left(f(\bm{n}-\delta_{b}^{x}+\delta_{a}^{x})-f(\bm{n})\right)
+	\mathcal{L}_{1}f(\bm{n})=\sum_{a,b=0}^{N}\alpha_{a}n_{b}^{1}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-f(\bm{n})\right)\qquad \mathcal{L}_{L}f(\bm{n})=\sum_{a,b=0}^{N}\beta_{a}n_{b}^{L}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\\bm{delta}_{a}^{x})-f(\bm{n})\right)
 \end{equation}
 while the bulk generator is 
 \begin{equation}
- \mathcal{L}_{x,x+1}f(\bm{n})=\sum_{a,b=0}^{N}n_{a}^{x}n_{b}^{x+1}\left(f(\bm{n}-\delta_{a}^{x}+\delta_{b}^{x}+\delta_{a}^{x+1}-\delta_{b}^{x+1})-f(\bm{n})\right)
+ \mathcal{L}_{x,x+1}f(\bm{n})=\sum_{a,b=0}^{N}n_{a}^{x}n_{b}^{x+1}\left(f(\bm{n}-\bm{\delta}_{a}^{x}+\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x+1}-\bm{\delta}_{b}^{x+1})-f(\bm{n})\right)
 \end{equation}
 This process is dual to $(\bm{\xi}(t))_{t\geq0} $ on the enlarged configuration space
  \begin{equation}	
@@ -1743,14 +1796,14 @@ The dual generator is
 with absorbing boundaries, i.e. 
 \begin{equation}
 	\begin{split}
-		\widetilde{\mathcal{L}}_{1}f(\bm{\xi})&=\sum_{i=1}^{N}\alpha_{i}\sum_{a=2}^{N}\xi_{a}^{1}\left(f(\bm{\xi}-\delta_{a}^{1}+\delta_{a}^{0}+\delta_{a}^{1})f(\bm{\xi})\right)\\\widetilde{\mathcal{L}}_{L}f(\bm{\xi})&=\sum_{i=1}^{L}\beta_{i}\sum_{a=2}^{N}\xi_{a}^{L}\left(f(\bm{\xi}-\delta_{a}^{L}+\delta_{a}^{L+1}+\delta_{a}^{L})-f(\bm{\xi})\right)
+		\widetilde{\mathcal{L}}_{1}f(\bm{\xi})&=|\alpha|\sum_{a=2}^{N}\xi_{a}^{1}\left(f(\bm{\xi}-\bm{\delta}_{a}^{1}+\bm{\delta}_{a}^{0}+\bm{\delta}_{a}^{1})f(\bm{\xi})\right)\\\widetilde{\mathcal{L}}_{L}f(\bm{\xi})&=\sum_{i=1}^{L}\beta_{i}\sum_{a=2}^{N}\xi_{a}^{L}\left(f(\bm{\xi}-\bm{\delta}_{a}^{L}+\bm{\delta}_{a}^{L+1}+\bm{\delta}_{a}^{L})-f(\bm{\xi})\right)
 	\end{split}
 \end{equation}
 where $0$ and $L+1$ are the extra-sites. The duality function on the chain is
 \begin{equation}\label{dualityFunctionChain}
 	D(\bm{n},\bm{\xi})=\prod_{a=2}^{N}\left(\rho_{a}^{L}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(\nu-\sum_{a=2}^{N}\xi_{a}^{x})!}{\nu!}\prod_{a=2}^{N}\frac{\eta_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=2}^{N}\left(\rho_{a}^{R}\right)^{\xi_{a}^{L+1}}
 \end{equation}
-where $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{\sum_{i=1}^{N}\alpha_{i}}$ and where $\rho_{\alpha}^{R}=\frac{\beta_{a}}{\sum_{i=1}^{N}\beta_{i}}$.\\
+where $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{|\alpha|}$ and where $\rho_{\alpha}^{R}=\frac{\beta_{a}}{|\beta|}$.\\
 Calling $\mu_{stat}$ the stationary measure of the the process $(\bm{n}(t))_{t\geq 0}$ starting from a configuration $\bm{n}$, and considering a generic configuration $\bm{\xi}$ of the dual process, we write the following equalities using \eqref{DualityRelation}
 \begin{equation}\label{ExptationSS}
 	\begin{split}
@@ -1764,7 +1817,7 @@ where
 	a_{i_{1},\ldots,i_{N}}(\bm{\xi})=\mathbb{P}\left(\xi(\infty)=\sum_{a=2}^{N}\left(i_{a}\delta_{0}+(|\xi_{a}|-i_{a})\delta_{L+1}\right)| \xi_{0}=\xi\right)
 \end{equation}
 where $D(\bm{n},\bm{\xi})$ is the duality function defined in \eqref{dualityFunctionChain}. Here, we denote by $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x}$ and by $i_{a}$ the number of dual particles of species $a\in\{2,\ldots,N\}$ absorbed at left, thus we denote by $|\xi_{a}|-i_{a}$ the number of particles of the same type absorbed at right.\\
-We observe that the duality function \eqref{dualityFunctionChain} computed in the dual configurations $\bm{\widehat{\xi}}=\delta_{s_{1}}^{y_{1}}+\ldots+\delta_{s_{m}}^{y_{m}}$ with $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$ and $s_{x}\in \{2,\ldots,N\}$ $\forall i=\{2,\ldots,m\}$ is given by 
+We observe that the duality function \eqref{dualityFunctionChain} computed in the dual configurations $\bm{\widehat{\xi}}=\delta_{\tau_{1}}^{y_{1}}+\ldots+\delta_{s_{m}}^{y_{m}}$ with $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$ and $s_{x}\in \{2,\ldots,N\}$ $\forall i=\{2,\ldots,m\}$ is given by 
 \begin{equation}
 	D(\bm{n},\bm{\widehat{\xi}})= \frac{\prod_{a=1}^{m}n_{s_{a}}^{x_{a}}}{(\nu-m+1)}
 \end{equation}
@@ -1784,15 +1837,15 @@ we want to determine $a^{x}_{s}(1)=\mathbb{P}_{\delta_{s}^{x}}\left(\xi_{\infty}
 \begin{equation}\label{gamblers-ruin}
 	\begin{cases}
 		\Delta_{x}^{L}a^{x}_{s}(1)=0\\
-		a^{1}_{s}(1)=\frac{A}{1+A}+a^{2}_{s}(1)\frac{1}{1+A}\\
-		a^{L}_{s}(1)=a^{L-1}_{s}(1)\frac{1}{1+B}
+		a^{1}_{s}(1)=\frac{|\alpha|}{1+|\alpha|}+a^{2}_{s}(1)\frac{1}{1+|\alpha|}\\
+		a^{L}_{s}(1)=a^{L-1}_{s}(1)\frac{1}{1+|\beta|}
 	\end{cases}
 \end{equation}
-where $\Delta_{x}^{L}$ is the discrete Laplace operator on the chain of length $L$ and where, for the sake of notation, we call $\alpha_{1}+\ldots+\alpha_{N}=A$ and $\beta_{1}+\ldots+\beta_{N}=B$. The equations \eqref{gamblers-ruin} can be solved.Therefore, using \eqref{OnePtsCORR} and $a^{x}_{s}(0)=1-a^{x}_{s}(1)$ we obtain 
+where $\Delta_{x}^{L}$ is the discrete Laplace operator on the chain of length $L$ and where. The equations \eqref{gamblers-ruin} can be solved.Therefore, using \eqref{OnePtsCORR} and $a^{x}_{s}(0)=1-a^{x}_{s}(1)$ we obtain 
 \begin{equation}
-	\langle n_{s}^{x}\rangle_{\text{stat}}=\frac{1}{\nu}\frac{\alpha_{s}(LB-Bx+1)+\beta_{s}(Ax+1-A)}{ABL-AB+A+B}
+	\langle n_{s}^{x}\rangle_{\text{stat}}=\frac{1}{\nu}\frac{\alpha_{s}(L|\beta|-|\beta|x+1)+\beta_{s}(|\alpha|x+1-|\alpha|)}{|\alpha||\beta|L-|\alpha||\beta|+|\alpha|+|\beta|}
 \end{equation}
-\textbf{Remark}: In case $A=B=1$ we have 
+\textbf{Remark}: In case $|\alpha|=|\beta|=1$ we have 
 \begin{equation}
 	\langle n_{s}^{x}\rangle_{\text{stat}}=\frac{\alpha_{s}(L-x+1)+\beta_{s}x}{L+1}
 \end{equation}
@@ -1851,7 +1904,7 @@ while
 \begin{equation}\label{boundaryThermalized}
 	\begin{split}
 		\mathcal{L}_{1}^{TH}f(\bm{n})=&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}\}}\left\{f(\bm{r},n^{2},\ldots,n^{L})-f(\bm{n})\right\}\\&
-		\binom{\nu}{r_{1},\ldots, r_{N}}\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\nu}
+		\binom{\nu}{r_{1},\ldots, r_{N}}\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{\nu}
 		\end{split}
 	\end{equation}
 The right boundary generator is defined in a similar way. The $\alpha$'s are replaced by $\beta$'s and the action is only on site $L$. 
@@ -1882,28 +1935,28 @@ Equation \eqref{bulkDualityTH} follows from the proof of the edge duality for th
 \end{equation}
 First, we act with $\mathcal{L}_{1}^{TH}$ on $D(\bm{n},\bm{\xi})$. This action gives
 \begin{align}\label{ProvaBordoTH}
-	\left(\mathcal{L}_{1}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})=\nonumber&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\xi_{k}^{0}}\frac{\left(\nu-\sum_{c=2}^{N}\xi_{c}^{1}\right)!}{\nu!}\right.
+	\left(\mathcal{L}_{1}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})=\nonumber&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{k}^{0}}\frac{\left(\nu-\sum_{c=2}^{N}\xi_{c}^{1}\right)!}{\nu!}\right.
 	\\&\nonumber
 	\left.\prod_{b=2}^{N}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=2}^{N}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
 	\\&
-	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\nu}
+	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{\nu}
 \end{align}
-Multiplying by $\prod_{a=2}^{N}\left(\frac{\alpha_{1}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{-r_{a}+r_{a}-\xi_{a}^{1}+\xi_{a}^{1}}$ and using the Multinomial Theorem we have that the first addend in the curly brackets is
+Multiplying by $\prod_{a=2}^{N}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{-r_{a}+r_{a}-\xi_{a}^{1}+\xi_{a}^{1}}$ and using the Multinomial Theorem we have that the first addend in the curly brackets is
 \begin{align}\label{pezzo1}
-	&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\xi_{k}^{0}}\frac{\left(\nu-\sum_{c=2}^{N}\xi_{c}^{1}\right)!}{\nu!}\right.\nonumber
+	&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{k}^{0}}\frac{\left(\nu-\sum_{c=2}^{N}\xi_{c}^{1}\right)!}{\nu!}\right.\nonumber
 	\\&\nonumber
-	\left.\prod_{b=2}^{N}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=2}^{N}(\rho_{a}^{R})^{\xi_{d}^{L+1}}\right\}	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\nu}\\=&
-	\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=2}^{N}(\rho_{a}^{R})^{\xi_{d}^{L+1}}
+	\left.\prod_{b=2}^{N}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=2}^{N}(\rho_{a}^{R})^{\xi_{d}^{L+1}}\right\}	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{\nu}\\=&
+	\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=2}^{N}(\rho_{a}^{R})^{\xi_{d}^{L+1}}
 \end{align}
-Multiplying by $\prod_{a=2}^{N}\left(\frac{\alpha_{1}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{r_{a}-r_{a}}$ and by the multinomial Theorem, we have that the second addend in the curly bracket is
+Multiplying by $\prod_{a=2}^{N}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{r_{a}-r_{a}}$ and by the multinomial Theorem, we have that the second addend in the curly bracket is
 \begin{equation}\label{pezzo2}
 	\begin{split}
-	&D(\bm{n},\bm{\xi})\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\nu}\prod_{a=2}^{N}\left(\frac{\alpha_{1}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{r_{a}-r_{a}}\\=&D(\bm{n},\bm{\xi})
+	&D(\bm{n},\bm{\xi})\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{\nu}\prod_{a=2}^{N}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{r_{a}-r_{a}}\\=&D(\bm{n},\bm{\xi})
 	\end{split}
 \end{equation}
 Therefore, replacing \eqref{pezzo1} and \eqref{pezzo2} in \eqref{ProvaBordoTH} we obtain 
 \begin{align}
-	\left(\mathcal{L}_{1}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left\{\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{\sum_{i=1}^{N}\alpha_{i}}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=2}^{N}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
+	\left(\mathcal{L}_{1}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left\{\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=2}^{N}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
 	\\&=
 	\left(\widetilde{\mathcal{L}}_{y}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})
 \end{align}
@@ -1931,7 +1984,7 @@ where
 \end{equation}
 with $\mathcal{L}_{x,y}$ is the edge \eqref{edgeGenerator} of the multi-species stirring process and, for any function $f:\Omega\to \mathbb{R}$ and for any $c\in \{1,\ldots,N-2\}$
 \begin{equation}
-	\mathcal{L}_{x,y}^{c}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left(f(\bm{n}-\delta_{a}^{x}+\delta_{g_{c}(b)}^{x}+\delta_{g_{c}(a)}^{y}-\delta_{b}^{y})-f(\bm{n})\right)
+	\mathcal{L}_{x,y}^{c}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left(f(\bm{n}-\bm{\delta}_{a}^{x}+\bm{\delta}_{g_{c}(b)}^{x}+\bm{\delta}_{g_{c}(a)}^{y}-\bm{\delta}_{b}^{y})-f(\bm{n})\right)
 \end{equation}
 with the mapping 
 \begin{equation}
@@ -1951,11 +2004,11 @@ defined $\forall c\in\{1,\ldots,N-2\}$ as
 Observe that $g_{c}(\cdot)$ is surjective and injective, and thus invertible. \\
 Moreover,
 \begin{equation}
-	\mathcal{L}_{x,y}^{m}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}\left(f(\bm{n}-\delta_{a}^{x}+\delta_{b}^{x})-f(\bm{n})\right)
+	\mathcal{L}_{x,y}^{m}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}\left(f(\bm{n}-\bm{\delta}_{a}^{x}+\bm{\delta}_{b}^{x})-f(\bm{n})\right)
 \end{equation}
 The site generator reads
 \begin{equation}
-	\mathcal{L}_{x}^{rd}f(\bm{n})=\sum_{a,b=1}^{N}\alpha_{a}^{x}n_{b}^{x}\left(f(\bm{n}-\delta_{b}^{x}+\delta_{a}^{x})-f(\bm{n})\right)
+	\mathcal{L}_{x}^{rd}f(\bm{n})=\sum_{a,b=1}^{N}\alpha_{a}^{x}n_{b}^{x}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-f(\bm{n})\right)
 \end{equation}
 where the boundary parameters are defined as
 \begin{equation}\label{boundaryParamRD}
@@ -1970,7 +2023,7 @@ and where, for every $x\in V$, we further assume that
 \end{equation}
 \textbf{Remark}: observe that the site generator $\mathcal{L}_{x}^{rd}$ has the form of the one of the multi-species stirring process \eqref{siteGenerator}. We wrote it with the uppercase 'rd' in order to underline the fact that we need a specific choice of the reservoirs parameters $\alpha_{a}^{x}$, as specified above. 
 \paragraph{Action on the occupation variable of $\mathcal{L}_{x,y}^{rd}$}
-For arbitrary edge $(x,y)\in \mathcal{E}$, the action on the occupation variable $n_{d}^{x}$ of particle of type $d\in \{2,\ldots,N\}$ at site $x\in V $ of the edge generator $\mathcal{L}_{x,y}^{rd}$ reads
+For arbitrary edge $(x,y)\in \mathcal{E}$, the action on the occupation variable $f(\bm{n})=n_{d}^{x}$ of particle of type $d\in \{2,\ldots,N\}$ at site $x\in V $ of the edge generator $\mathcal{L}_{x,y}^{rd}$ reads
 \begin{equation}\label{actionGraphRD}
 	\begin{split}
 		\mathcal{L}_{x,y}^{rd}n_{d}^{x}&=\nu \sigma_{11}(n_{d}^{y}-n_{d}^{x})+\nu\sigma_{12}\sum_{q=2\,:	,q\neq d}^{N}(n_{c}^{y}-n_{d}^{x})+(\Upsilon-2\nu\sigma_{12})\sum_{b=2}^{N}(n_{b}^{x}-n_{\alpha}^{x})
@@ -1979,12 +2032,12 @@ For arbitrary edge $(x,y)\in \mathcal{E}$, the action on the occupation variable
 
 Indeed
 \begin{equation}
-	\mathcal{L}_{x,y}n_{d}^{x}=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left((n_{d}^{x}-\delta_{a}^{x}+\delta_{b}^{x}+\delta_{a}^{y}-\delta_{b}^{y})-n_{d}^{x}\right)=\nu\left(n_{d}^{y}-n_{d}^{x}\right)
+	\mathcal{L}_{x,y}n_{d}^{x}=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left((n_{d}^{x}-\bm{\delta}_{a}^{x}+\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{y}-\bm{\delta}_{b}^{y})-n_{d}^{x}\right)=\nu\left(n_{d}^{y}-n_{d}^{x}\right)
 \end{equation}
 while for every $c\in \{1,\ldots,N-2\}$ we have 
 \begin{equation}
 	\begin{split}
-		\mathcal{L}_{x,y}^{c}n_{d}^{x}&=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left((n_{d}^{x}-\delta_{a}^{x}+\delta_{g_{c}(b)}^{x}+\delta_{g_{c}(a)}^{y}-\delta_{b}^{y})-n_{d}^{x}\right)=\sum_{a=1}^{N}n_{a}^{x}n_{q}^{y}-\sum_{\ell=1}^{N}n_{d}^{x}n_{\ell}^{y}
+		\mathcal{L}_{x,y}^{c}n_{d}^{x}&=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left((n_{d}^{x}-\bm{\delta}_{a}^{x}+\bm{\delta}_{g_{c}(b)}^{x}+\bm{\delta}_{g_{c}(a)}^{y}-\bm{\delta}_{b}^{y})-n_{d}^{x}\right)=\sum_{a=1}^{N}n_{a}^{x}n_{q}^{y}-\sum_{\ell=1}^{N}n_{d}^{x}n_{\ell}^{y}
 		\\&=
 		\sum_{a=2}^{N}n_{a}^{x}n_{q}^{y}-\left(\nu-\sum_{i=2}^{N}n_{i}^{x}\right)n_{q}^{y}-\sum_{\ell=2}^{N}n_{d}^{x}n_{\ell}^{y}-n_{d}^{x}\left(\nu-\sum_{i=2}^{N}n_{i}^{y}\right)
 		\\&=
@@ -1994,14 +2047,14 @@ while for every $c\in \{1,\ldots,N-2\}$ we have
 where we call $q$ such that $g_{i}^{-1}(d)=q$. Let us observe that, by the definition of the map $g_{c}(\cdot)$ and for the fact that $1\leq c\leq N-2$, we have that $q\neq d$ and $q\neq 1$ .
 Moreover
 \begin{equation}
-	\mathcal{L}_{x,y}^{m}n_{d}^{x}=\sum_{a,b=2}^{N}n_{a}^{x}\left((n_{d}^{x}-\delta_{a}^{x}+\delta_{b}^{x})-n_{d}^{x}\right)=\sum_{b=1}^{N}(n_{b}^{x}-n_{d}^{x})
+	\mathcal{L}_{x,y}^{m}n_{d}^{x}=\sum_{a,b=2}^{N}n_{a}^{x}\left((n_{d}^{x}-\bm{\delta}_{a}^{x}+\bm{\delta}_{b}^{x})-n_{d}^{x}\right)=\sum_{b=1}^{N}(n_{b}^{x}-n_{d}^{x})
 \end{equation}
 Then, summing over all indices $c\in\{1,\ldots,N-2\}$, we obtain \eqref{actionGraphRD}.
 \paragraph{Action on the occupation variable of $\mathcal{L}_{x}^{rd}$}
 Acting on $n_{d}^{x}$  with $\mathcal{L}_{x}^{rd}$ we obtain
 \begin{equation}\label{actionBoudaryRD}
 	\begin{split}
-		\mathcal{L}_{x}^{rd}n_{d}^{x}&=\sum_{a,b=1}^{N}\alpha_{a}^{x}n_{b}^{x}\left((n_{d}^{x}-\delta_{b}^{x}+\delta_{a}^{x})-n_{d}^{x}\right)=\alpha_{d}^{x}\sum_{b=1\,:\,b\neq d}^{N}n_{b}^{x}-n_{d}^{x}\sum_{b=1\,:b\neq d}^{N}\alpha_{b}^{x}
+		\mathcal{L}_{x}^{rd}n_{d}^{x}&=\sum_{a,b=1}^{N}\alpha_{a}^{x}n_{b}^{x}\left((n_{d}^{x}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-n_{d}^{x}\right)=\alpha_{d}^{x}\sum_{b=1\,:\,b\neq d}^{N}n_{b}^{x}-n_{d}^{x}\sum_{b=1\,:b\neq d}^{N}\alpha_{b}^{x}
 		\\&=
 		\alpha_{d}^{x}\left(\nu-n_{d}^{x}\right)-n_{d}^{x}\left(\nu(\sigma_{11}+(N-2)\sigma_{12})-\alpha_{d}^{x}\right)
 		\\&=\alpha_{d}^{x}\nu-n_{d}^{x}\nu(\sigma_{11}+(N-2)\sigma_{12})
@@ -2065,9 +2118,9 @@ that simplifies to
 \end{equation}
 that is true if and only if $\rho_{a}=\rho$ $\forall a\in \{2,\ldots,N\}$.\\
 By similar computation it is possible to show that the same claim is obtained imposing the detailled balance for the transition $\bm{n}\to \bm{n}-\delta_{a}^{x}+\delta_{b}^{x}$, related to the generator $\mathcal{L}^{m}_{x,y}$. \\
-For the boundary transitions we have that, analogously to what happens for the multispecies stirring process, the reservoirs parameters must be such that $\alpha_{a}^{x}=\alpha_{a}$ and $\rho_{a}=\frac{\alpha_{a}}{\sum_{i=1}^{N}\alpha_{i}}$. As a consequence we have the result. 
+For the boundary transitions we have that, analogously to what happens for the multispecies stirring process, the reservoirs parameters must be such that $\alpha_{a}^{x}=\alpha_{a}$ and $\rho_{a}=\frac{\alpha_{a}}{|\alpha|}$. As a consequence we have the result. 
 \subsection{Duality}
-In this subsection we formulate duality for the multi-species stirring process $(\mathbf{n}(t))_{t\geq 0}$, defined by the generator \eqref{RDGenerator}.
+In this subsection we formulate duality for the multi-species stirring process $(\bm{n}(t))_{t\geq 0}$, defined by the generator \eqref{RDGenerator}.
 The dual  process $(\bm{\xi}(t))_{t\geq 0}$ takes values in the enlarged state space
 \begin{equation}
 	\widetilde{\Omega}= \bigtimes_{x\in V} \widetilde{\Omega}_{x}\ = \bigtimes_{x\in V} (\Omega_{x}\times \mathbb{N}_{0}^{N-1})
@@ -2079,12 +2132,12 @@ We write the configurations $\bm{\xi} \in \widetilde\Omega$  as
 	\bm{\xi}=\left(\xi_{1}^{x},\ldots,\xi_{N}^{x},\xi_{2}^{u(x)},\ldots,\xi_{N}^{u(x)}\right)_{x\in V}
 \end{equation}
 where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles of type $a\in \{1,\ldots,N\}$ at site $x$, 
-and the component $m_{a}^{u(x)}$  gives the number of dual particles of type $a\in \{2,\ldots,N\}$ at 
+and the component $\xi_{a}^{u(x)}$  gives the number of dual particles of type $a\in \{2,\ldots,N\}$ at 
 the extra-site $u(x)$ connected to $x\in V$.
 
 The duality function is given by
 \begin{equation}
-	D(\bm{n},\bm{\xi})=\prod_{x\in V}\left(\frac{(\nu -\sum_{a=2}^{N}\xi_{a}^{x})!}{\nu!}\prod_{a=2}^{N}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\left(\rho_{a}^{x}\right)^{m_{a}^{u(x)}}\,\right)
+	D(\bm{n},\bm{\xi})=\prod_{x\in V}\left(\frac{(\nu -\sum_{a=2}^{N}\xi_{a}^{x})!}{\nu!}\prod_{a=2}^{N}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\,\right)
 \end{equation}
 %where we denote the \textit{density} of the species $a\in \{2,\ldots,N\}$ imposed by the reservoir at site $x\in V$  by 
 %\begin{equation}
@@ -2161,14 +2214,14 @@ The bulk generator is
 This process is dual to $(\bm{\xi}(t))_{t\geq0} $ on the enlarged configuration space $\widetilde{\Omega}=N_{0}^{N-1}\times\bigtimes_{x=1}^{L} \Omega_{x}\times N_{0}^{L-1}$ with the same $\mathcal{L}_{\text{bula}}$ and with absorbing boundaries, i.e. 
 \begin{equation}
 \begin{split}
-        \widetilde{\mathcal{L}}_{1}f(\bm{\xi})&=\sum_{i=1}^{N}\alpha_{i}\sum_{a=2}^{N}\xi_{a}^{1}\left(f(\bm{\xi}-\delta_{a}^{1}+\delta_{a}^{0}+\delta_{a}^{1})f(\bm{\xi})\right)\\\widetilde{\mathcal{L}}_{L}f(\bm{\xi})&=\sum_{i=1}^{L}\beta_{i}\sum_{a=2}^{N}\xi_{a}^{L}\left(f(\bm{\xi}-\delta_{a}^{L}+\delta_{a}^{L+1}+\delta_{a}^{L})-f(\bm{\xi})\right)
+        \widetilde{\mathcal{L}}_{1}f(\bm{\xi})&=|\alpha|\sum_{a=2}^{N}\xi_{a}^{1}\left(f(\bm{\xi}-\delta_{a}^{1}+\delta_{a}^{0}+\delta_{a}^{1})f(\bm{\xi})\right)\\\widetilde{\mathcal{L}}_{L}f(\bm{\xi})&=\sum_{i=1}^{L}\beta_{i}\sum_{a=2}^{N}\xi_{a}^{L}\left(f(\bm{\xi}-\delta_{a}^{L}+\delta_{a}^{L+1}+\delta_{a}^{L})-f(\bm{\xi})\right)
         \end{split}
 \end{equation}
 where $0$ and $L+1$ are the extra-sites. The duality function on the chain is
 \begin{equation}\label{dualityFunctionChain}
     D(\bm{n},\bm{\xi})=\prod_{a=2}^{N}\left(\rho_{a}^{L}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(ò\nu-\sum_{a=2}^{N}\xi_{a}^{x})|}{\nu!}\prod_{a=2}^{N}\frac{\eta_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=2}^{N}\left(\rho_{a}^{R}\right)^{\xi_{a}^{L+1}}
 \end{equation}
-where $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{\sum_{i=1}^{N}\alpha_{i}}$ and where $\rho_{\alpha}^{R}=\frac{\beta_{a}}{\sum_{i=1}^{N}\beta_{i}}$.\\
+where $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{|\alpha|}$ and where $\rho_{\alpha}^{R}=\frac{\beta_{a}}{|\beta|}$.\\
 Calling $\mu_{stat}$ the stationary measure of the the process $(\bm{n}(t))_{t\geq 0}$ starting from a configuration $\bm{n}$, and considering a generic configuration $\bm{\xi}$ of the dual process, we write the following equalities using \eqref{DualityRelation}
 \begin{equation}\label{ExptationSS}
 \begin{split}
@@ -2182,7 +2235,7 @@ where
     a_{i_{1},\ldots,i_{N}}(\bm{\xi})=\mathbb{P}\left(\xi(\infty)=\sum_{a=2}^{N}\left(i_{a}\delta_{0}+(|\xi_{a}|-i_{a})\delta_{L+1}\right)| \xi_{0}=\xi\right)
 \end{equation}
 where $D(\bm{n},\bm{\xi})$ is the duality function defined in \eqref{dualityFunctionChain}. Here, we denote by $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x}$ and by $i_{a}$ the number of dual particles of species $a\in\{2,\ldots,N\}$ absorbed at left, thus we denote by $|\xi_{a}|-i_{a}$ the number of particles of the same type absorbed at right.\\
-We observe that the duality function \eqref{dualityFunctionChain} computed in the dual configurations $\bm{\widehat{\xi}}=\delta_{s_{1}}^{y_{1}}+\ldots+\delta_{s_{m}}^{y_{m}}$ with $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$ and $s_{x}\in \{2,\ldots,N\}$ $\forall i=\{2,\ldots,m\}$ is given by 
+We observe that the duality function \eqref{dualityFunctionChain} computed in the dual configurations $\bm{\widehat{\xi}}=\delta_{\tau_{1}}^{y_{1}}+\ldots+\delta_{s_{m}}^{y_{m}}$ with $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$ and $s_{x}\in \{2,\ldots,N\}$ $\forall i=\{2,\ldots,m\}$ is given by 
 \begin{equation}
     D(\bm{n},\bm{\widehat{\xi}})= \frac{\prod_{a=1}^{m}n_{s_{a}}^{x_{a}}}{(\nu-m+1)}
 \end{equation}
@@ -2410,7 +2463,7 @@ then
 	2\sum_{a,b=1\,:\, a<b}^{L}e_{j1}^{[a]}e_{11}^{[b]}-2\sum_{a,b=1\,:\, a>b}^{L}\sum_{a=2}^{N}e_{ja}^{[a]}e_{a1}^{[b]}}
 \end{split}
 \end{equation}
-\textbf{Reamrk}: it is easy to see that, when restricted to the case of 2 species,  \eqref{a2lp},\eqref{a2l},\eqref{a2lm1} correspond to the one compute in \cite{frassek2020eigenstates}. \\ \\
+\textbf{Remark}: it is easy to see that, when restricted to the case of 2 species,  \eqref{a2lp},\eqref{a2l},\eqref{a2lm1} correspond to the one compute in \cite{frassek2020eigenstates}. \\ \\
 The interesting charges (we only look for the first non trivial one) take the following form  
 
 
@@ -2468,7 +2521,7 @@ In \cite{belliard2011nested}  the eigenvectors and eigenvalues hae been computed
 \begin{equation}
 T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle =\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
 \end{equation}
-where $m_{2},\ldots,m_{N}$ denote the total occupation along the chain of species $2,\ldots,N$. Let us notice that $m_{1}=L-\sum_{a=2}^{N}m_{a}$.\\
+where $m_{2},\ldots,m_{N}$ denote the total occupation along the chain of species $2,\ldots,N$. Let us notice that $m_{1}=L-\sum_{a=2}^{N}\xi_{a}$.\\
 For the sake of notation, we restrict to the case with $N=3$ and we denote by $\Delta_{2}=\alpha_{2}-\beta_{2}$ and $\Delta_{3}=\alpha_{3}-\beta_{3}$ and we further assume that $\Delta_{2}=\Delta_{3}=\Delta$. 
 We make the following ansatz for the eigevectors of the diagonal-triangular spin chain. Consider the whole chain of dimension $L$. Then, $m=m_{2}+m_{3}$ sites have particles of a type $2$ or $3$ and the remaining $L-m$ are empty. For fixed $m$ there is a one to one correspondence between empty and occupeid sites. Therefore, our ansatz is that $\forall m\in \{0,\ldots,L\}$ 
 \begin{equation}\label{ansatzEigenvectorDelta}
