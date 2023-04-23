@@ -330,8 +330,7 @@ The matrices defined in this way satisfy the commutation relations \eqref{eq:com
    \bar E_{ab}=\nu\delta_{ab}-E_{N-b+1,N-a+1}
 \end{equation}
 {\color{red} This needs to be checked and give alternative form of Hamiltonian?}\\
-By the Lie algebra above we describe the process with generator \eqref{Generator}. The state space \eqref{stateSpace} is the vector space with basis elements 
-
+The process with generator \eqref{Generator} can be described in terms of $gl(n)$ Lie algebra generators. The state space \eqref{stateSpace} is given by the $|V|$-fold tensor product of the vector space with basis elements $|n^x\rangle$ at a given site, namely
 %We now define the equivalent of \eqref{stateSpace} in the vector notation
 % \begin{equation}
 %	\Omega':=\left\{|n\rangle=|n_{1},\ldots,n_{N}\rangle \;:\;n\in\mathbb{N}_0^N,\;\;|n|=\twoj\right\}^{\otimes|V|}
@@ -340,18 +339,20 @@ By the Lie algebra above we describe the process with generator \eqref{Generator
 \begin{equation}
 |{\bf n}\rangle=\left(\,\bigotimes_{x\in V}	|n_{1}^{x},\ldots,n_{N}^{x}\rangle\right)
 \end{equation}
-where we require that $n_{a}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have $\sum_{a=1}^{N}n_{a}^{x}=\nu$. Sometimes it will bw convenient to write $|n^{x}\rangle$ to denote, for a fixed $x\in V$, the vector $|n_{1}^{x},\ldots,n_{N}^{x}\rangle$. The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
+{\color{blue}
+where we require that $n_{a}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have $\sum_{a=1}^{N}n_{a}^{x}=\nu$. Sometimes it will bw convenient to write $|n^{x}\rangle$ to denote, for a fixed $x\in V$, the vector $|n_{1}^{x},\ldots,n_{N}^{x}\rangle$.}
+{\color{red}remove?}
+The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
 \begin{equation}
-    \langle {\bf n}|{\bf m}\rangle =\prod_{x\in V}\prod_{a=1}^N\delta_{n^x_a,m^{x}_a}
+    \langle {\bf n}|{\bf m}\rangle =\prod_{x\in V}\prod_{a=1}^N\delta_{n^x_a,m^{x}_a}\,.
 \end{equation}
 We introduce the Hamiltonian operator
-
 \begin{equation}\label{OriginalHamiltonian}
 	\begin{split}
 		H=\sum_{x,y\in \mathcal{E}}\omega_{x,y}\mathcal{H}_{x,y}+\sum_{x\in V}\Gamma_{x}H_{x}
 	\end{split}
 \end{equation}
-where the edge Hamiltonian is
+where the edge Hamiltonian that describes the interaction between two connected sites is
 \begin{equation}\label{edgeHamiltonian}
 \mathcal{H}_{x,y}=\sum_{a,b=1}^{N}\Big(E_{ab}^{x} E_{b a}^{y}-E_{bb}^{x} E_{aa}^{y}\Big)
  \end{equation}
@@ -361,10 +362,11 @@ H_{x}=\sum_{a,b=1}^{N}\alpha_{a}^{x}\left(E_{ab}^{x}-E_{bb}^{x}\right)
 \end{equation}
 Here $E_{ab}^{x}$ is a copy of $E_{ab}$ defined in \eqref{actionE} acting on site $x$ (and
 acting trivially as the identity on the other sites). 
-Following  \cite{belitsky2015self}, the Hamiltonian and the genertor are linked by
+Following  \cite{belitsky2015self}, the Hamiltonian and the Markov generator are linked by
 \begin{equation}\label{Hamiltonian-Generator}
 H=\mathcal{L}^{T}
 \end{equation}
+{\color{red} no minus sign?}
 The action of the generator can also be expressed as 
 \begin{equation}
     \mathcal{L}f( {\bf n})=\langle f|H| {\bf n}\rangle
@@ -388,13 +390,13 @@ E_{ab}&\to E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
 \end{equation}
 we have 
 \begin{equation}
-\Delta(C_{2})=\sum_{a,b=1}^{N}\Delta(E_{ab})\Delta(E_{ba})=2\sum_{a,b=1}^{N}E_{ab}\otimes E_{ba}+C_{2}\otimes \mathbbm{1}+\mathbbm{1}\otimes C_{2}
+\Delta(C_{2})=\sum_{a,b=1}^{N}\Delta(E_{ab})\Delta(E_{ba})=2\sum_{a,b=1}^{N}E_{ab}\otimes E_{ba}+C_{2}\otimes \mathbbm{1}+\mathbbm{1}\otimes C_{2}\,.
 \end{equation}
 Then, one can check that 
 \begin{equation}\label{hamiltonianCasimir}
 	\mathcal{H}=\frac{1}{2}\Delta^{x,y}(C_{2})-\twoj(2\twoj+N)
 \end{equation}
-where $\Delta^{x,y}(C_2)$ denotes a copy of $\Delta(C_2)$ acting on  
+where $\Delta^{x,y}(C_2)$ denotes a {\color{blue}copy} of $\Delta(C_2)$ acting on  
 the edge $(x,y)\in \mathcal{E}$.
 
 
