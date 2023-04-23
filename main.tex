@@ -294,7 +294,7 @@ Consider the Lie algebra $gl(N)$ with generators denoted by $\EE_{ab}$ with $a,b
 \begin{equation}\label{eq:comgl}
 \left[\EE_{ab},\EE_{cd}\right]=\EE_{ad}\delta_{cb}-\EE_{cb}\delta_{ad}\qquad \forall a,b\in \{1,\ldots,N\}\,.
 \end{equation}
-The finite-dimensional representations are labelled by partitions $\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_N)$ of $\nu$ with $\lambda_i\in \mathbb{N}$, $\lambda_i\geq \lambda_{i+1}$ and $\sum_{i=1}^N \lambda_i = \nu$.  
+The finite-dimensional representations are labelled by partitions $\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_N)$ of $\nu$ with  $\lambda_i\geq \lambda_{i+1}$,  $\lambda_i\in \mathbb{N}$ and $\sum_{i=1}^N \lambda_i = \nu$.  
 We are interested in the {\em symmetric} finite-dimensional representations with 
 \begin{equation}\label{eq:dynkin}
     \lambda=(\twoj,0,\ldots,0) \qquad\text{where}\qquad \twoj\in\mathbb{N}\,.
@@ -303,6 +303,7 @@ The dimension $M_\twoj$ of this symmetric representations is given by the combin
 \begin{equation}
 	M_\twoj= \frac{(N+\twoj-1)!}{\twoj  !(N-1)!}
 \end{equation} 
+The generators of the symmetric representations will be denoted by $E_{ab}$.
 The basis elements of the vector space $\mathbb{C}^{M_\twoj}$ are the column vectors denoted by
 \begin{equation}
   |n\rangle=  |n_{1},\ldots,n_{N}\rangle,\quad \text{with}\quad n_{i}\in\mathbb{N}_{0}\quad \text{sucht that}\quad \sum_{i=1}^{N}n_{i}=\nu\,.
@@ -346,6 +347,9 @@ The following orthogonality relation is a consequence of the single site relatio
 \begin{equation}
     \langle {\bf n}|{\bf m}\rangle =\prod_{x\in V}\prod_{a=1}^N\delta_{n^x_a,m^{x}_a}\,.
 \end{equation}
+
+
+{\color{red}Maybe some more text below}
 We introduce the Hamiltonian operator
 \begin{equation}\label{OriginalHamiltonian}
 	\begin{split}
