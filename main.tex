@@ -226,20 +226,20 @@ Interpreting type $1$ as an hole, one can then say that the dual process voids t
 \subsection{The process generator}\label{subsectionGeneratorStr}
 We now give the mathematical description of the multi-species stirring process.
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
-At each site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ denotes the number of particles of species $a\in \{1,\ldots,N\}$ at site $x\in V$. On each vertex we allow a total  maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space of the process on the graph $G$ is 
+At each vertex site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ denotes the number of particles of species $a\in \{1,\ldots,N\}$. On each vertex we allow a total  maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space of the process on the graph $G$ is 
 \begin{equation}\label{stateSpace}
     \Omega:=\bigtimes_{x\in V} \Omega_{x}
 \end{equation}
 where
 \begin{equation}
-\Omega_{x}:=\left\{(n_{1}^{x},\ldots,n_{N}^{x})\in\mathbb{N}_0^{N}\;:\; \sum_{a=1}^{N}n_{a}^{x}=\twoj\right\}
+\Omega_{x}:=\left\{n^x=(n_{1}^{x},\ldots,n_{N}^{x})\in\mathbb{N}_0^{N}\;:\; \sum_{a=1}^{N}n_{a}^{x}=\twoj\right\}\,.
 \end{equation}
 We denote a particle configuration as $\bm{n}\in \Omega$, where $\bm{n}=(n_{a}^{x})_{x\in V,\,a\in\{1,\ldots,N\}}$ .\\
 The dynamics consists in an exchange of particles (at Poissonian times) between connected vertices. Moreover, each vertex  exchanges particles with the external environement. The infinitesimal generator of the process reads
 \begin{equation}\label{Generator}
     \mathcal{L}=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}+\sum_{x\in V}\Gamma_{x}\mathcal{L}_{x}
 \end{equation}
-where the quantities $ \omega_{x,y}\geq 0$ are called conductances and $\Gamma_{x}\geq 0$ local inhomogeneities. The generator $\mathcal{L}_{x,y}$ is called the \textit{edge generator}, while $\mathcal{L}_{x}$ is called the \textit{site generator}. These linear operators act on functions $f:\Omega\to \mathbb{R}$ as follows
+where  $ \omega_{x,y}\geq 0$ are so-called conductances and $\Gamma_{x}\geq 0$ local inhomogeneities. The generator $\mathcal{L}_{x,y}$ is called the \textit{edge generator}, while $\mathcal{L}_{x}$ is called the \textit{site generator}. These linear operators act on functions $f:\Omega\to \mathbb{R}$ as follows
 \begin{equation}\label{edgeGenerator}
 \mathcal{L}_{x,y}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left[f(\bm{n}-\bm{\delta}^{x}_{a}+\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{y}-\bm{\delta}_{b}^{y})-f(\bm{n})\right]
 \end{equation}
@@ -251,10 +251,10 @@ where
 (\bm{\delta}_{a}^{x})^{y}_{b}=\begin{cases}
 1\qquad &\text{if}\quad y=x,\;b=a\\
 0\qquad &\text{otherwise}
-\end{cases}
+\end{cases}\,.
 \end{equation}
-This means that on the edge $(x,y)\in \mathcal{E}$ at rate $\omega_{x,y}n_{a}^{x}n_{b}^{y}$ a particle of type $a$ at site $x$ is exchanged with a particle of type $b$ at site $y$; furthermore, on each site $x\in V$ at rate $\Gamma_{x}\alpha_{a}^{x}n_{b}^{x}$ a particle of type $b$ is replaced with a particle of type $a$. For the sake of notation we denote $|\alpha^{x}|=\sum_{a=1}^{N}\alpha_{a}^{x}$. 
-See Figure \ref{fig:1}, Figure \ref{fig:2}for a visual description of the dyamics. 
+This means that on the edge $(x,y)\in \mathcal{E}$  a particle of type $a$ at site $x$ is exchanged with a particle of type $b$ at site $y$ at rate $\omega_{x,y}n_{a}^{x}n_{b}^{y}$. Furthermore, on each site $x\in V$  a particle of type $b$ is replaced with a particle of type $a$ at rate $\Gamma_{x}\alpha_{a}^{x}n_{b}^{x}$. For the sake of notation we denote $|\alpha^{x}|=\sum_{a=1}^{N}\alpha_{a}^{x}$. 
+See Figure \ref{fig:1} and  Figure \ref{fig:2} for a visualisation of the dyamics. 
 \begin{figure}
     \centering
     \includegraphics[scale=0.45]{BulkStirring.eps}
@@ -273,7 +273,7 @@ The process described by the generator \eqref{Generator} is reversible with resp
 \end{equation}
 when for any $a\in\{1,\ldots,N\}$
 \begin{equation}\label{reversibilityCondition}
-\alpha_{a}^{x}=\alpha_{a}\qquad \forall x\in V
+\alpha_{a}^{x}=\alpha_{a}\qquad \forall x\in V\,.
 \end{equation}
 This measure has marginals $\mu_{rev}^{x}$ given by 
 \begin{equation}
@@ -285,40 +285,43 @@ namely
 \end{equation}
 where we denote $|\alpha|=\sum_{a=1}^{N}\alpha_{a}$. 
 This can be proved just by imposing the detailed balance conditions for the edge and for the site generators. If condition \eqref{reversibilityCondition} is not met, then reversibility is lost: each reservoir at site $x$ wants to fix its own density $\alpha^{x}=(\alpha_{1}^{x},\ldots,\alpha_{N}^{x})$ and currents will arise when at least two of them are different. 
+
+{\color{red}add/improve explanaition of entire subsection}
 \subsection{The Lie algebraic description}
 
 
 Consider the Lie algebra $gl(N)$ with generators denoted by $\EE_{ab}$ with $a,b\in \{1,\ldots,N\}$ and commutation relations
 \begin{equation}\label{eq:comgl}
-\left[\EE_{ab},\EE_{cd}\right]=\EE_{ad}\delta_{cb}-\EE_{cb}\delta_{ad}\qquad \forall a,b\in \{1,\ldots,N\}
+\left[\EE_{ab},\EE_{cd}\right]=\EE_{ad}\delta_{cb}-\EE_{cb}\delta_{ad}\qquad \forall a,b\in \{1,\ldots,N\}\,.
 \end{equation}
-The finite-dimensional representations are labelled by partitions $\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_N)$ of $\nu$ with $\lambda_i\in \mathbb{N}$ and $\sum_{i=1}^N \lambda_i = \nu$. We assume $\lambda_i\geq \lambda_{i+1}$ without loss of generality.
+The finite-dimensional representations are labelled by partitions $\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_N)$ of $\nu$ with $\lambda_i\in \mathbb{N}$, $\lambda_i\geq \lambda_{i+1}$ and $\sum_{i=1}^N \lambda_i = \nu$.  
 We are interested in the {\em symmetric} finite-dimensional representations with 
 \begin{equation}\label{eq:dynkin}
-    \lambda=(\twoj,0,\ldots,0) \qquad\text{where}\qquad \twoj\in\mathbb{N}
+    \lambda=(\twoj,0,\ldots,0) \qquad\text{where}\qquad \twoj\in\mathbb{N}\,.
 \end{equation} 
-The dimension $M$ of this symmetric representations is given by the combination of $N$ objects in $\twoj$ positions with repetition, namely
+The dimension $M_\twoj$ of this symmetric representations is given by the combination of $N$ objects in $\twoj$ positions with repetition, namely
 \begin{equation}
-	M= \frac{(N+\twoj-1)!}{\twoj  !(N-1)!}
+	M_\twoj= \frac{(N+\twoj-1)!}{\twoj  !(N-1)!}
 \end{equation} 
-The basis elements of the vector space $\mathbb{C}^{M}$ are the column vectors 
+The basis elements of the vector space $\mathbb{C}^{M_\twoj}$ are the column vectors denoted by
 \begin{equation}
-  |n\rangle=  |n_{1},\ldots,n_{N}\rangle,\quad \text{with}\quad n_{i}\in\mathbb{N}_{0}\quad \text{sucht that}\quad \sum_{i=1}^{N}n_{i}=\nu
+  |n\rangle=  |n_{1},\ldots,n_{N}\rangle,\quad \text{with}\quad n_{i}\in\mathbb{N}_{0}\quad \text{sucht that}\quad \sum_{i=1}^{N}n_{i}=\nu\,.
 \end{equation}
 %where $\sum_{a=1}^{N}n_{i}=\nu$. 
-This basis vector satisfy the orthogonality relation with respect to the Euclidean scalar product 
+The basis vectors satisfy the orthogonality relation with respect to the Euclidean scalar product 
 \begin{equation}\label{ortho}
    \langle m|n \rangle =\langle m_{1},\ldots,m_{N}|n_{1},\ldots,n_{N}\rangle=\prod_{a=1}^{N}\delta_{\xi_{a},n_{a}}
 \end{equation}
-where  $ \langle m_{1},\ldots,m_{N}|$ is the row vector obtained by transposing $|m_{1},\ldots,m_{N}\rangle$ and $\delta_{\xi_{a},n_{a}}$ is the Kronhecker delta. 
-The explicit actions of the algebra generators on the vectors $|n\rangle$ are the following:
+where  $ \langle m_{1},\ldots,m_{N}|$ is the row vector obtained by transposing $|m_{1},\ldots,m_{N}\rangle$ and $\delta_{\xi_{a},n_{a}}$ is the Kronecker delta. 
+The explicit action of the algebra generators on the basis  vectors $|n\rangle$ is the following:
 \begin{equation}\label{actionE}
 	\begin{cases}
 		E_{ab}|n_{1},\ldots,n_{a},\ldots,n_{b},\ldots,n_{N}\rangle =n_{b}|n_{1},\ldots,n_{a}+1,\ldots,n_{b}-1,\ldots,n_{N}\rangle\quad a\neq b\\[0.1cm]
-		E_{aa}|n_{1},\ldots,n_{a},\ldots,n_{b},\ldots,n_{N}\rangle = n_{a} |n_{1},\ldots,n_{a},\ldots,n_{b},\ldots,n_{N}\rangle\quad a=b
-	\end{cases}
+		E_{aa}|n_{1},\ldots,n_{a},\ldots,n_{N}\rangle = n_{a} |n_{1},\ldots,n_{a},\ldots,n_{N}\rangle
+	\end{cases}\,.
 \end{equation}  
-One can check that the matrices defined in this way satisfy the commutation relations \eqref{eq:comgl} and yield Dynkin weight \eqref{eq:dynkin}. \\
+The matrices defined in this way satisfy the commutation relations \eqref{eq:comgl} and yield Dynkin weight \eqref{eq:dynkin}. \\
+{\color{red} Is this remark relevant for us?}
 \newline 
 \textbf{Remark}: it is possible to define these matrices in terms of creation and annihilation operators: see Appendix \ref{appA}.
 \\ \\
@@ -430,8 +433,8 @@ E_{ab}&\to E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
 \end{equation} acting on sites $x,y$ and used that $C_{2}|n\rangle=\twoj(\twoj+N)|n\rangle$. 
 \end{comment}
  
-
-
+\subsection{Integrable process on a line segment}
+{\color{red}Introduce integrable model here}
 
 \section{Duality}\label{sectionDuality}
 \subsection{Definition}
