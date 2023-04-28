@@ -314,7 +314,7 @@ The basis vectors satisfy the orthogonality relation with respect to the Euclide
 \begin{equation}\label{ortho}
    \langle m|n \rangle =\langle m_{1},\ldots,m_{N}|n_{1},\ldots,n_{N}\rangle=\prod_{a=1}^{N}\delta_{\xi_{a},n_{a}}
 \end{equation}
-where  $ \langle m_{1},\ldots,m_{N}|$ is the row vector obtained by transposing $|m_{1},\ldots,m_{N}\rangle$ and $\delta_{\xi_{a},n_{a}}$ is the Kronecker delta. 
+where  $ \langle m_{1},\ldots,m_{N}|$ is the row vectors obtained by transposing $|m_{1},\ldots,m_{N}\rangle$ and $\delta_{\xi_{a},n_{a}}$ is the Kronecker delta. 
 The explicit action of the algebra generators on the basis  vectors $|n\rangle$ is the following:
 \begin{equation}\label{actionE}
 	\begin{cases}
@@ -458,7 +458,7 @@ In the specific case where $\mathcal{L}=\widetilde{\mathcal{L}}$ we say that the
 \newline
 \newline
 \textbf{Remark}:
-when the state spaces of the dual processes is finite, the generators and the duality function are matrices with elements $\mathcal{L}(\eta,\eta^{'})$, $\widetilde{\mathcal{L}}(\xi,\xi^{'})$ and $D(\eta,\xi)$ for arbitrary $\eta,\eta^{'}\in\Omega$ and $\xi,\xi^{'}\in \widetilde{\Omega}$. Therefore, we can write the duality relation \eqref{dualityRelationGenerator} as 
+when the state spaces of the dual processes is finite, the generators and the duality function can be represented as with elements $\mathcal{L}(\eta,\eta^{'})$, $\widetilde{\mathcal{L}}(\xi,\xi^{'})$ and $D(\eta,\xi)$ for arbitrary $\eta,\eta^{'}\in\Omega$ and $\xi,\xi^{'}\in \widetilde{\Omega}$. Therefore, we can write the duality relation \eqref{dualityRelationGenerator} as 
 \begin{equation}
     \sum_{\eta^{'}\in\,\Omega}\mathcal{L}(\eta,\eta^{'})D(\eta^{'},\xi)=\sum_{\xi^{'}\in\, \widetilde{\Omega}}\widetilde{\mathcal{L}}(\xi,\xi^{'})D(\eta,\xi^{'})
 \end{equation}
@@ -466,7 +466,7 @@ that can be read as
 \begin{equation}\label{dualityIntertwines}
     \mathcal{L}D=D\widetilde{\mathcal{L}}^{\,T}
 \end{equation}
-where the superscript $T$ denotes the matrix transposition. Therefore, the duality relation \eqref{dualityIntertwines} is an intertwining between two linear operators $\mathcal{L}$ and $\widetilde{\mathcal{L}}$. Working with the Hamiltonian operators the duality relation \eqref{dualityIntertwines} reads 
+where the superscript $T$ denotes the matrix transposition. Therefore, the duality relation \eqref{dualityIntertwines} is an intertwining between two linear operators $\mathcal{L}$ and $\widetilde{\mathcal{L}}$. Working in terms of the Hamiltonian operators the duality relation \eqref{dualityIntertwines} reads 
 \begin{equation}\label{DualityRelation}
     H^{T}D=D\widetilde{H}
 \end{equation}
@@ -496,7 +496,7 @@ where we denote the \textit{density} of the species $a\in \{2,\ldots,N\}$ impose
 \begin{equation}
 \rho_{a}^{x}:=\frac{\alpha_{a}^{x}}{|\alpha^{x}|}
 \end{equation}
-The dual process is defined by its generator, which reads
+The dual process is defined by its Markov generator, which reads
  \begin{equation}\label{DualGenerator}
     \widetilde{\mathcal{L}}=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}+\sum_{x\in V}\Gamma_{x}\widetilde{\mathcal{L}}_{x}
 \end{equation}
@@ -506,7 +506,7 @@ $\mathcal{L}_{x,y}$ is defined in \eqref{edgeGenerator} and, for any function $f
     \widetilde{\mathcal{L}}_{x}f(\bm{\xi})=|\alpha^{x}|\sum_{a=2}^{N}\xi_{a}^{x}\left(f(\bm{\xi}-\bm{\delta}_{a}^{x}+\bm{\delta}_{1}^{x}+\bm{\delta}_{a}^{u(x)})-f(\bm{\xi})\right)
 \end{equation}
 \newline
-Therefore the dual dynamics is described as follows. On one hand, the edge part $\mathcal{L}_{x,y}$ of the dual generator gives rise to  the multi-species stirring dynamics on the graph. On the other hand, the site
+Therefore the dual dynamics is described as follows. On one hand, the edge part $\mathcal{L}_{x,y}$ of the dual Markov generator gives rise to  the multi-species stirring dynamics on the graph. On the other hand, the site
 part $\widetilde{\mathcal{L}}_{x}$ of the dual generator replaces a particle of any type $a\in\{2,\ldots,N\}$ at site $x$ with a particle of type $1$ and creates a particle of the same type $a$ at the extra-site $u(x)$. This last transition is performed with rate $|\alpha^{x}|\xi_{a}^{x}$. This means that eventually the dual process voids the graph, putting all the dual particles of species $\{2,\ldots,N\}$ in the extra-sites. In other words the extra-sites play the role of absorbing boundaries. 
 \newline \newline
 \textbf{Remark}: in the reversible situation, i.e. when $\forall x\in V$ $\rho_{a}^{x}=\rho_{a}$, the expectation  of the duality function  $D(\bm{n},\bm{\xi})$ with   $\bm{n}$ distributed as  $\mu_{rev} = \bigtimes_{x\in V}\text{Multinomial}\left(\twoj, \rho_{1},\ldots,\rho_{N}\right)$ is
@@ -515,8 +515,8 @@ part $\widetilde{\mathcal{L}}_{x}$ of the dual generator replaces a particle of 
 \end{equation}
 
 \subsection{Proof of duality}
-To prove duality between $(\bm{n}(t))_{t\geq 0}$ and $(\bm{\xi}(t))_{t\geq 0}$ we  show that \eqref{dualityIntertwines} is fulfilled.  To show this, we will use the Hamiltonians (linked with the generators by \eqref{Hamiltonian-Generator}) and their Lie algebraic description. Indeed, in this formalism the proof reduces to finding symmetries and exponential transformation of generators of the Lie algebra.\\
-To each configuration $\bm{\xi}$ of the configuration space  \eqref{dualStateSpace} of the dual process we associate the vector
+To prove duality between $(\bm{n}(t))_{t\geq 0}$ and $(\bm{\xi}(t))_{t\geq 0}$ we  show that \eqref{dualityIntertwines} is fulfilled.  To show this, we will use the Hamiltonians (linked with the Markov generators by \eqref{Hamiltonian-Generator}) and their Lie algebraic description. Indeed, in this formalism the proof reduces to finding symmetries and group like transformation of generators of the Lie algebra.\\
+To a configuration $\bm{\xi}$ of the configuration space  \eqref{dualStateSpace} of a dual process we associate the vector
 \begin{equation}
     |\bm{\xi}\rangle=\bigotimes_{x\in V}\left(|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\otimes |\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle\right)
 \end{equation}
@@ -528,7 +528,7 @@ where $\mathcal{H}_{x,y}$ is the one defined in \eqref{edgeHamiltonian}, while
 \begin{equation}\label{siteDualHamiltonian}
     \widetilde{H}_{x}=|\alpha^{x}|\sum_{a=2}^{N}\left((a^{\dagger})_{a}^{u(x)}\,E_{1a}^{x}-E_{aa}^{x}\right)
 \end{equation}
-Here we introduced bosonic creation operator $a^{\dagger}$ acting as $a^{\dagger}|q\rangle=|q+1\rangle$ on a generic vector $|q\rangle$ with $q\in \mathbb{N}_{0}$, so that in \eqref{siteDualHamiltonian} 
+Here we introduced bosonic creation operator $a^{\dagger}$ acting on the left-hand-side as $\langle q|a^{\dagger}=\langle q+1|$ on a generic vector $\langle q|$ with $q\in \mathbb{N}_{0}$, so that in \eqref{siteDualHamiltonian} 
 $(a^{\dagger})_{a}^{u(x)}$ denotes a copy of $a^{\dagger}$ acting on the extra-site $u(x)$ and on the species $a\in\{2,\ldots,N\}$. \\
 We will show below that the Hamiltonians \eqref{OriginalHamiltonian} and \eqref{DualHamiltonian} are dual in the sense of \eqref{DualityRelation}. The duality matrix $D$ is described as 
 \begin{equation}\label{dualityMatrix}
@@ -559,7 +559,7 @@ and
 \begin{equation}\label{siteDualRelation}
     H_{x}^{T}D=D\widetilde{H}_{x}\qquad \forall x\in V.
 \end{equation}
-We perform the duality proof in three steps: first we will show that matrix \eqref{dualityMatrix} has elements \eqref{dualityElements}; second we will prove \eqref{edgeDualRealtion}; finally we will show\eqref{siteDualRelation}. 
+We perform the proof of duality in three steps: first we will show that matrix \eqref{dualityMatrix} has elements \eqref{dualityElements}; second we will prove \eqref{edgeDualRealtion}; finally we will show \eqref{siteDualRelation}. 
 As a preliminary result we note that 
 \begin{equation}\label{transpositionPropertyR}
 (E_{ba}^{x})^{T}=R_{x}E_{ab}^{x}R_{x}^{-1}\qquad \forall x\in V
@@ -587,7 +587,7 @@ where in the up to last equation we used the orthogonality relation \eqref{ortho
 with $D(\bm{n},\bm{\xi})$ defined in \eqref{dualityElements}. 
 Fix an arbitrary site $x\in V$, then we have that 
 \begin{align*}
-	 &\langle n^{x}|d_{x}\otimes \dd|\xi^{x}\rangle\\&=\langle n_{1}^{x},\ldots,n_{N}^{x}| (\exp{(E_{12}^{x}+\ldots+E_{1N}^{x}}))^{T}R_{x}\otimes\sum_{q_{2}^{u(x)},\ldots,q_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|
+	 &\langle n^{x}|d_{x}\otimes \dd|\xi^{x}\rangle\\=&\langle n_{1}^{x},\ldots,n_{N}^{x}| (\exp{(E_{12}^{x}+\ldots+E_{1N}^{x}}))^{T}R_{x}\otimes\sum_{q_{2}^{u(x)},\ldots,q_{N}^{u(x)}=0}^{\infty}\prod_{a=2}^{N}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|
 	 \\&|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle \otimes |\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle
 \end{align*}
 where we used \eqref{transpositionPropertyR}. \\
@@ -625,7 +625,7 @@ We first look for the similarity between $\mathcal{H}_{x,y}$ and its transposed.
 therefore we have found the similarity transformation between $\mathcal{H}_{x,y}$ and its transposed. \\
 We now look for a symmetry of $\mathcal{H}_{x,y}$, i.e. a matrix $S_{x,y}$ of the same dimension such that it satisfies 
 \begin{equation}
-	\mathcal{H}_{x,y}S_{x,y}=S_{s,y}\mathcal{H}_{x,y}\quad \Leftrightarrow \quad [\mathcal{H}_{x,y},S_{x,y}]=0
+	\mathcal{H}_{x,y}S_{x,y}=S_{x,y}\mathcal{H}_{x,y}\quad \Leftrightarrow \quad [\mathcal{H}_{x,y},S_{x,y}]=0
 \end{equation}
 Using \eqref{hamiltonianCasimir}, we observe that $\mathcal{H}_{x,y}$ is proportional to the coproduct of the second Casimir, up to a diagonal term. Therefore, it is enough to look for a symmetry of $\Delta (C_{2})$. Using the bilinearity of the coproduct operator and the fact that $C_{2}$ belongs to the centre of the Lie algebra, it is easy to show that for any matrix $E\in gl(N)$ it holds
 \begin{equation}
@@ -859,7 +859,7 @@ We further assume that the maximal occupancy in each site is $\nu=1$, i.e. that 
 We will denote the element of the representation of the $gl(N)$ Lie algebra by lowercase letters, i.e. $(e_{ab})_{a,b\in\{1,\ldots,N\}}$, to highlight that we are in  the fundamental representation of the algebra.
 The Hamiltonian is
 \begin{equation}\label{hamiltonian}
-	H=H_{1}+H_{bulk}+H_{L}
+	H=H_{left}+H_{bulk}+H_{right}
 \end{equation}
 where
 \begin{equation}
@@ -883,7 +883,7 @@ The action of $\mathcal{H}$ amounts to the permutation of the occupations the tw
 \end{equation}
 The boundary terms are given by 
 \begin{equation}
-	H_{1}=\begin{pmatrix}
+	H_{left}=\begin{pmatrix}
 		\alpha_{1}-1&\alpha_{1}&\alpha_{1}&\ldots&\ldots&\alpha_{1}\\
 		\alpha_{2}&\alpha_{2}-1&\alpha_{2}&\ldots&\ldots&\alpha_{2}\\
 		\vdots&\vdots& &\ddots& &\vdots\\
@@ -892,7 +892,7 @@ The boundary terms are given by
 	\end{pmatrix}
 \end{equation}
 \begin{equation}
-	H_{L}=\begin{pmatrix}
+	H_{right}=\begin{pmatrix}
 		\beta_{1}-1&\beta_{1}&\beta_{1}&\ldots&\ldots&\beta_{1}\\
 		\beta_{2}&\beta_{2}-1&\beta_{2}&\ldots&\ldots&\beta_{2}\\
 		\vdots&\vdots& &\ddots& &\vdots\\
@@ -921,7 +921,7 @@ e_{ab}^T= e_{ba}
 \end{equation}
 and the dual Hamiltonian 
 \begin{equation}
-	\widetilde{H}=\widetilde{H}_{1}+\sum_{x=1}^{L-1}\mathcal{H}_{x,x+1}+\widetilde{H}_{L}
+	\widetilde{H}=\widetilde{H}_{left}+\sum_{x=1}^{L-1}\mathcal{H}_{x,x+1}+\widetilde{H}_{right}
 \end{equation}
 In the long-time limit, the dual process voids the chain, and all particles are eventually absorbed at the extra-sites $0$ and $L+1$.
 \paragraph{Matrix Product Ansatz (MPA).} The matrix product ansatz for the non-equilibrium steady state has been formulated in \cite{vanicat2017exact}, here we briefly recall it.
@@ -937,7 +937,7 @@ We denote by $|\Psi\rangle$ the column vector that gives the stationary distribu
 \end{equation}
 The MPA states the following
 \begin{equation}
-	|\Psi\rangle=\frac{1}{Z^{L}}\langle W|\begin{pmatrix}
+	|\Psi\rangle=\frac{1}{Z_{L}}\langle W|\begin{pmatrix}
 		X_{1}\\
 		\vdots\\
 		X_{N}
@@ -966,7 +966,7 @@ Without loss of generality, we further assume that $\langle W|V\rangle=1$.
 \newline \newline
 \textbf{Remark}: only $N-1$ of the $N$ equations \eqref{leftBoundary}  are independent. This can be seen by summing them over the species $a\in \{1,\ldots,N\}$:
 	\begin{equation}
-		\sum_{a=1}^{N}	\langle W|\left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=\sum_{a=1}^{N}\lambda_{a}\langle W|
+		\sum_{a=1}^{N}	\langle W|\left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=\sum_{a=1}^{N}\lambda_{a}\langle W|=0
 	\end{equation}
 	and using  \eqref{ratesConditions} and \eqref{lambdaConditions}.
  Similarly for the right boundary  \eqref{rightBoundary} there are only  $N-1$ independent equations.
@@ -1010,7 +1010,7 @@ S_{1}=\prod_{x=1}^{L}d_{x}^{T}
 \end{equation}
  This $S_{1}$ is invertible, then we introduce 
 \begin{equation}\label{hatHamiltonian}
-   H^{'}:=H^{'}_{1}+H_{bulk}+H^{'}_{L}
+   H^{'}:=H^{'}_{left}+H_{bulk}+H^{'}_{L}
 \end{equation}
 that is related to $H$ by
 \begin{equation}\label{similarV}
@@ -1018,12 +1018,12 @@ that is related to $H$ by
 \end{equation}
 The bulk part of the Hamiltonian is left unchanged while the boundaries are given by 
 \begin{equation}
-	H^{'}_{1}=\sum_{a=2}^{N}\left(\alpha_{a}e_{a1}^{1}-e_{aa}^{1}\right)\qquad H^{'}_{L}=\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}\right)
+	H^{'}_{left}=\sum_{a=2}^{N}\left(\alpha_{a}e_{a1}^{1}-e_{aa}^{1}\right)\qquad H^{'}_{L}=\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}\right)
 \end{equation}
 Indeed, using \eqref{HadTransfBoundary}, \eqref{ratesConditions} and \eqref{transpostionPropertyFund}, we obtain for the left boundary
 \begin{equation}
 	\begin{split}
-		H_{1}^{'}&=S_{1}H_{1}S_{1}^{-1}=\exp{\left(\sum_{c=2}^{N}e_{1c}^{1}\right)}\sum_{a,b=1}^{N}\alpha_{a}\left(e_{ab}^{1}-e_{bb}^{1}\right)\exp{\left(-\sum_{c=2}^{N}e_{1c}^{1}\right)}
+		H_{left}^{'}&=S_{1}H_{left}S_{1}^{-1}=\exp{\left(\sum_{c=2}^{N}e_{1c}^{1}\right)}\sum_{a,b=1}^{N}\alpha_{a}\left(e_{ab}^{1}-e_{bb}^{1}\right)\exp{\left(-\sum_{c=2}^{N}e_{1c}^{1}\right)}
 		\\&=
 		\left\{\exp{\left(-\sum_{c=2}^{N}e_{c1}^{1}\right)}\sum_{a,b=1}^{N}\alpha_{a}\left(e_{ba}^{1}-e_{bb}^{1}\right)\exp{\left(\sum_{c=2}^{N}e_{c1}^{1}\right)}\right\}^{T}
 		\\&=
@@ -1034,9 +1034,9 @@ Indeed, using \eqref{HadTransfBoundary}, \eqref{ratesConditions} and \eqref{tran
 \end{equation}
 Similarly, for the right boundary we have 
 \begin{equation}
-H_{1}^{'}=\exp{\left(\sum_{c=2}^{N}e_{1c}^{1}\right)}\sum_{a,b=1}^{N}\alpha_{a}\left(e_{ab}^{1}-e_{bb}^{1}\right)\exp{\left(-\sum_{c=2}^{N}e_{1c}^{1}\right)}=\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}\right)
+H_{left}^{'}=\exp{\left(\sum_{c=2}^{N}e_{1c}^{1}\right)}\sum_{a,b=1}^{N}\alpha_{a}\left(e_{ab}^{1}-e_{bb}^{1}\right)\exp{\left(-\sum_{c=2}^{N}e_{1c}^{1}\right)}=\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}\right)
 \end{equation}
-\textbf{Remark:} the boundary Hamiltonians $H_{1}^{'}$ and $H_{L}^{'}$ relates to the transposed of  $\widetilde{H}_{1}$ and $\widetilde{H}_{L}$, the boundary part of the dual Hamiltonian  defined in \eqref{siteDualHamiltonian}. They are obtained replacing the  extra-site bosonic creation operators $(a^{\dagger})_{a}^{0}$  (resp. $(a^{\dagger})_{a}^{L+1}$) with the corresponding reservoir parameters $\alpha_a$ (resp. $\beta_a$).
+\textbf{Remark:} the boundary Hamiltonians $H_{left}^{'}$ and $H_{right}^{'}$ relates to the transposed of  $\widetilde{H}_{left}$ and $\widetilde{H}_{right}$, the boundary part of the dual Hamiltonian  defined in \eqref{siteDualHamiltonian}. They are obtained replacing the  extra-site bosonic creation operators $(a^{\dagger})_{a}^{0}$  (resp. $(a^{\dagger})_{a}^{L+1}$) with the corresponding reservoir parameters $\alpha_a$ (resp. $\beta_a$).
 \newline\newline
 Obviously
 \begin{equation}\label{S1-Inverse}
@@ -1055,7 +1055,7 @@ By taking the product over the chain we also define
 \end{equation}
 We define 
 \begin{equation}
-	H^{''}=H_{1}^{''}+H_{bulk}+H_{L}^{''}
+	H^{''}=H_{left}^{''}+H_{bulk}+H_{right}^{''}
 \end{equation}
 that is related to $H'$ by
 \begin{equation}
@@ -1063,9 +1063,9 @@ that is related to $H'$ by
 \end{equation}
 The boundary Hamiltonians of $H^{''}$ reads
 \begin{align}
-	H_{1}^{''}=e_{11}^{1}-\mathbbm{1}^{1}+\sum_{a=2}^{N}(\alpha_{a}-\beta_{a})e_{a1}^{1}\qquad H_{L}^{''}=e_{11}^{L}-\mathbbm{1}^{L}
+	H_{left}^{''}=e_{11}^{1}-\mathbbm{1}^{1}+\sum_{a=2}^{N}(\alpha_{a}-\beta_{a})e_{a1}^{1}\qquad H_{right}^{''}=e_{11}^{L}-\mathbbm{1}^{L}
 \end{align}
-i.e. the left one is lower triangular and depends on the differences between boundary parameters, while the right one is diagonal. The expressions of $H_{1}^{''}$ and $H_{L}^{''}$ are proved using the Hadamard formula \eqref{HadamardFormula} with $B=\sum_{c=2}^{N}\beta_{c}e_{c1}$ and $A=e_{a1},$ and $A=e_{aa}$. We compute
+i.e. the left one is lower triangular and depends on the differences between boundary parameters, while the right one is diagonal. The expressions of $H_{left}^{''}$ and $H_{right}^{''}$ are proved using the Hadamard formula \eqref{HadamardFormula} with $B=\sum_{c=2}^{N}\beta_{c}e_{c1}$ and $A=e_{a1},$ and $A=e_{aa}$. We compute
 \begin{enumerate}
 	\item $A=e_{a1}$ with $a\neq 1$
 	\begin{equation}
@@ -1083,7 +1083,7 @@ Indeed
 Therefore, we have for the left boundary
 \begin{equation}
 	\begin{split}
-		H_{1}^{''}&=S_{2}H_{1}^{'}S_{2}^{-1}=\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{1}\right)}\sum_{a=2}^{N}\left(\alpha_{a}e_{a1}^{1}-e_{aa}^{1}\right)\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{1}\right)}
+		H_{left}^{''}&=S_{2}H_{left}^{'}S_{2}^{-1}=\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{1}\right)}\sum_{a=2}^{N}\left(\alpha_{a}e_{a1}^{1}-e_{aa}^{1}\right)\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{1}\right)}
 		\\&=
 		\sum_{a=2}^{N}\left(\alpha_{a}e_{a1}^{1}-e_{aa}^{1}-\beta_{a}e_{a1}^{1}\right)
 		\\&=
@@ -1093,7 +1093,7 @@ Therefore, we have for the left boundary
 Similarly, for the right boundary
 \begin{equation}
 	\begin{split}
-			H_{L}^{''}&=\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{L}\right)}\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}\right)\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{L}\right)}
+			H_{right}^{''}&=\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{L}\right)}\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}\right)\exp{\left(-\sum_{c=2}^{N}\beta_{c}e_{c1}^{L}\right)}
 			\\&=
 			\sum_{a=2}^{N}\left(\beta_{a}e_{a1}^{L}-e_{aa}^{L}-\beta_{a}e_{a1}^{L}\right)=
 			\\&=
@@ -1803,11 +1803,11 @@ In Section \ref{sectionIntegrabiliy} we have shown that, on the geometry of a ch
 \subsection{Steady state correlations and duality}
 We consider a chain of length $L$ where the end sites $1$ and $L$ are connected with two reservoirs. Now, each site can host $\nu\geq 1$ particles, chosen among the $N$ types. The generator reads as
 \begin{equation}
-	\mathcal{L}=\mathcal{L}_{1}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\mathcal{L}_{L}
+	\mathcal{L}=\mathcal{L}_{left}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\mathcal{L}_{right}
 \end{equation} 
 where at the boundaries 
 \begin{equation}
-	\mathcal{L}_{1}f(\bm{n})=\sum_{a,b=0}^{N}\alpha_{a}n_{b}^{1}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-f(\bm{n})\right)\qquad \mathcal{L}_{L}f(\bm{n})=\sum_{a,b=0}^{N}\beta_{a}n_{b}^{L}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\\bm{delta}_{a}^{x})-f(\bm{n})\right)
+	\mathcal{L}_{left}f(\bm{n})=\sum_{a,b=0}^{N}\alpha_{a}n_{b}^{1}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-f(\bm{n})\right)\qquad \mathcal{L}_{right}f(\bm{n})=\sum_{a,b=0}^{N}\beta_{a}n_{b}^{L}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{delta}_{a}^{x})-f(\bm{n})\right)
 \end{equation}
 while the bulk generator is 
 \begin{equation}
@@ -1819,12 +1819,12 @@ This process is dual to $(\bm{\xi}(t))_{t\geq0} $ on the enlarged configuration 
 \end{equation}
 The dual generator is 
 \begin{equation}
-	\widetilde{\mathcal{L}}=\widetilde{\mathcal{L}}_{1}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\widetilde{\mathcal{L}}_{L}
+	\widetilde{\mathcal{L}}=\widetilde{\mathcal{L}}_{left}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\widetilde{\mathcal{L}}_{right}
 \end{equation} 
 with absorbing boundaries, i.e. 
 \begin{equation}
 	\begin{split}
-		\widetilde{\mathcal{L}}_{1}f(\bm{\xi})&=|\alpha|\sum_{a=2}^{N}\xi_{a}^{1}\left(f(\bm{\xi}-\bm{\delta}_{a}^{1}+\bm{\delta}_{a}^{0}+\bm{\delta}_{a}^{1})f(\bm{\xi})\right)\\\widetilde{\mathcal{L}}_{L}f(\bm{\xi})&=\sum_{i=1}^{L}\beta_{i}\sum_{a=2}^{N}\xi_{a}^{L}\left(f(\bm{\xi}-\bm{\delta}_{a}^{L}+\bm{\delta}_{a}^{L+1}+\bm{\delta}_{a}^{L})-f(\bm{\xi})\right)
+		\widetilde{\mathcal{L}}_{left}f(\bm{\xi})&=|\alpha|\sum_{a=2}^{N}\xi_{a}^{1}\left(f(\bm{\xi}-\bm{\delta}_{a}^{1}+\bm{\delta}_{a}^{0}+\bm{\delta}_{a}^{1})f(\bm{\xi})\right)\\\widetilde{\mathcal{L}}_{right}f(\bm{\xi})&=\sum_{i=1}^{L}\beta_{i}\sum_{a=2}^{N}\xi_{a}^{L}\left(f(\bm{\xi}-\bm{\delta}_{a}^{L}+\bm{\delta}_{a}^{L+1}+\bm{\delta}_{a}^{L})-f(\bm{\xi})\right)
 	\end{split}
 \end{equation}
 where $0$ and $L+1$ are the extra-sites. The duality function on the chain is
@@ -1858,7 +1858,7 @@ We have that $\widehat{\bm{\xi}}=\delta_{s}^{x}$, then
 Thus
 \begin{equation}\label{OnePtsCORR}
 	\begin{split}
-		\langle n_{s}^{x}\rangle_{\text{stat}}&=\frac{1}{\nu}\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\delta_{a}^{x})\right]\\&=\frac{1}{\nu}\sum_{i_{s}=0}^{1}\left(\rho_{s}^{L}\right)^{i_{s}}\left(\rho_{s}^{R}\right)^{1-i_{s}}\mathbb{P}_{\delta_{s}^{x}}\left(\xi_{\infty}=i_{s}\delta_{0}+(1-i_{s})\delta_{L+1}\right)
+		\langle n_{s}^{x}\rangle_{\text{stat}}&=\frac{1}{\nu}\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\delta_{s}^{x})\right]\\&=\frac{1}{\nu}\sum_{i_{s}=0}^{1}\left(\rho_{s}^{L}\right)^{i_{s}}\left(\rho_{s}^{R}\right)^{1-i_{s}}\mathbb{P}_{\delta_{s}^{x}}\left(\xi_{\infty}=i_{s}\delta_{0}+(1-i_{s})\delta_{L+1}\right)
 	\end{split}
 \end{equation}
 we want to determine $a^{x}_{s}(1)=\mathbb{P}_{\delta_{s}^{x}}\left(\xi_{\infty}=i_{s}\delta_{0}+(1-i_{s})\delta_{L+1}\right)$ is the probability of a random walker on the chain $\{1,\ldots,L\}$ with absorbing boundaries. Therefore, this $a_{s}^{x}(1)$ fulfils the following equations 
@@ -1918,7 +1918,7 @@ provided that $n_{1}+\ldots+n_{N}=\nu$ and $n_{1},\ldots,n_{N}\in \mathbb{N}_{0}
 \subsubsection{Thermalized multi-species stirring process}
 The thermalized multi-species stirring process is defined on the configuration space $\Omega$ introduced in \eqref{stateSpace} and its generator reads
 \begin{equation}\label{thermalizedGenerator}
-	\mathcal{L}^{TH}=\mathcal{L}_{1}^{TH}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{TH}+\mathcal{L}_{L}^{TH}
+	\mathcal{L}^{TH}=\mathcal{L}_{left}^{TH}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{TH}+\mathcal{L}_{right}^{TH}
 \end{equation}
 where 
 \begin{equation}\label{bulkThermalized}
@@ -1931,7 +1931,7 @@ where
 while
 \begin{equation}\label{boundaryThermalized}
 	\begin{split}
-		\mathcal{L}_{1}^{TH}f(\bm{n})=&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}\}}\left\{f(\bm{r},n^{2},\ldots,n^{L})-f(\bm{n})\right\}\\&
+		\mathcal{L}_{left}^{TH}f(\bm{n})=&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}\}}\left\{f(\bm{r},n^{2},\ldots,n^{L})-f(\bm{n})\right\}\\&
 		\binom{\nu}{r_{1},\ldots, r_{N}}\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{\nu}
 		\end{split}
 	\end{equation}
@@ -1939,15 +1939,15 @@ The right boundary generator is defined in a similar way. The $\alpha$'s are rep
 \subsubsection{The dual thermalized process}
 The thermalized dual process $(\bm{\xi}(t))_{t\geq 0}$ is defined on the enlarged configuration space $\widetilde{\Omega}$ introduced in \eqref{dualStateSpace}. Its generator reads
 \begin{equation}
-		\widetilde{\mathcal{L}}^{TH}=\widetilde{\mathcal{L}}_{1}^{TH}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{TH}+\widetilde{\mathcal{L}}_{L}^{TH}
+		\widetilde{\mathcal{L}}^{TH}=\widetilde{\mathcal{L}}_{left}^{TH}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{TH}+\widetilde{\mathcal{L}}_{right}^{TH}
 \end{equation}
-where $\mathcal{L}^{TH}_{x,x+1}$ is \eqref{bulkThermalized} and $\widetilde{\mathcal{L}}_{1}^{TH}$ and $\widetilde{\mathcal{L}}_{L}^{TH}$ are absorbing with rate $1$, i.e. 
+where $\mathcal{L}^{TH}_{x,x+1}$ is \eqref{bulkThermalized} and $\widetilde{\mathcal{L}}_{left}^{TH}$ and $\widetilde{\mathcal{L}}_{right}^{TH}$ are absorbing with rate $1$, i.e. 
 \begin{equation}
 	\begin{split}
-		\widetilde{\mathcal{L}}_{1}^{TH}f(\bm{\xi})=\left\{f(\xi^{0}+\xi^{1},0,\xi^{2},\ldots,\xi^{N})-f(\bm{\xi})\right\}
+		\widetilde{\mathcal{L}}_{left}^{TH}f(\bm{\xi})=\left\{f(\xi^{0}+\xi^{1},0,\xi^{2},\ldots,\xi^{N})-f(\bm{\xi})\right\}
 	\end{split}
 \end{equation}
-and similarly $\widetilde{\mathcal{L}}_{L}^{TH}$. 
+and similarly $\widetilde{\mathcal{L}}_{right}^{TH}$. 
 The duality function is 
 \begin{equation}
 	D(\bm{n},\bm{\xi})=\prod_{a=2}^{N}\left(\rho_{a}^{L}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(\nu-\sum_{a=2}^{N}\xi_{a}^{x})!}{\nu!}\prod_{a=2}^{N}\frac{\eta_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=2}^{N}\left(\rho_{a}^{R}\right)^{\xi_{a}^{L+1}}
@@ -1961,9 +1961,9 @@ Equation \eqref{bulkDualityTH} follows from the proof of the edge duality for th
 \begin{equation}
 	d_{x}(n^{x},\xi^{x}):=\frac{(\nu-\sum_{a=2}^{N}\xi_{a}^{x})!}{\nu!}\prod_{a=2}^{N}\frac{\eta_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}
 \end{equation}
-First, we act with $\mathcal{L}_{1}^{TH}$ on $D(\bm{n},\bm{\xi})$. This action gives
+First, we act with $\mathcal{L}_{left}^{TH}$ on $D(\bm{n},\bm{\xi})$. This action gives
 \begin{align}\label{ProvaBordoTH}
-	\left(\mathcal{L}_{1}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})=\nonumber&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{k}^{0}}\frac{\left(\nu-\sum_{c=2}^{N}\xi_{c}^{1}\right)!}{\nu!}\right.
+	\left(\mathcal{L}_{left}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})=\nonumber&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{k}^{0}}\frac{\left(\nu-\sum_{c=2}^{N}\xi_{c}^{1}\right)!}{\nu!}\right.
 	\\&\nonumber
 	\left.\prod_{b=2}^{N}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=2}^{N}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
 	\\&
@@ -1984,7 +1984,7 @@ Multiplying by $\prod_{a=2}^{N}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{r_{a}-r
 \end{equation}
 Therefore, replacing \eqref{pezzo1} and \eqref{pezzo2} in \eqref{ProvaBordoTH} we obtain 
 \begin{align}
-	\left(\mathcal{L}_{1}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left\{\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=2}^{N}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
+	\left(\mathcal{L}_{left}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left\{\prod_{a=2}^{N}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=2}^{N}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
 	\\&=
 	\left(\widetilde{\mathcal{L}}_{y}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})
 \end{align}
@@ -2233,7 +2233,7 @@ With this prove we answered the second and third questions stated at the beginni
 In subsection~\ref{subsection-exact}, for the case with geometry of one dimensional chain of length $L$ connected at the ends with two reservoris of parameters $(\alpha_{a})_{a=1,\ldots,N}$ and $(\beta_{a})_{a=1,\ldots,N}$, all the correlations have been written by \eqref{exactCorrelations} using integrability. When the maximal occupation of each site $\nu>1$, this nice property is lost. However, something about correlations can be said using duality. In this subsection we still consider the same geometry of \ref{subsection-exact}. As pointed out in section~\ref{sectionDuality}, the dual process voids the chain. Therefore, the problem of computing the average of the duality matrix with respect to the stationary distribution is reduced to computing the absorption probabilities of dual particles, as we will clarify below. In this context it is better to work agin with generators. We first write the generators for the original and the dual process and the duality matrix in the particular case of this geometry. \\
 We consider the process $(\bm{n}(t))_{t\geq 0}$ on a chain of length $L$ with the end sites connected with two reservoirs. This interaction with the external environment is described by the generators 
 \begin{equation}
-    \mathcal{L}_{1}f(\bm{n})=\sum_{a,b=0}^{N}\alpha_{a}n_{b}^{1}\left(f(\bm{n}-\delta_{b}^{x}+\delta_{a}^{x})-f(\bm{n})\right)\qquad \mathcal{L}_{L}f(\bm{n})=\sum_{a,b=0}^{N}\beta_{a}n_{b}^{L}\left(f(\bm{n}-\delta_{b}^{x}+\delta_{a}^{x})-f(\bm{n})\right)
+    \mathcal{L}_{left}f(\bm{n})=\sum_{a,b=0}^{N}\alpha_{a}n_{b}^{1}\left(f(\bm{n}-\delta_{b}^{x}+\delta_{a}^{x})-f(\bm{n})\right)\qquad \mathcal{L}_{right}f(\bm{n})=\sum_{a,b=0}^{N}\beta_{a}n_{b}^{L}\left(f(\bm{n}-\delta_{b}^{x}+\delta_{a}^{x})-f(\bm{n})\right)
 \end{equation}
 The bulk generator is 
 \begin{equation}
@@ -2242,7 +2242,7 @@ The bulk generator is
 This process is dual to $(\bm{\xi}(t))_{t\geq0} $ on the enlarged configuration space $\widetilde{\Omega}=N_{0}^{N-1}\times\bigtimes_{x=1}^{L} \Omega_{x}\times N_{0}^{L-1}$ with the same $\mathcal{L}_{\text{bula}}$ and with absorbing boundaries, i.e. 
 \begin{equation}
 \begin{split}
-        \widetilde{\mathcal{L}}_{1}f(\bm{\xi})&=|\alpha|\sum_{a=2}^{N}\xi_{a}^{1}\left(f(\bm{\xi}-\delta_{a}^{1}+\delta_{a}^{0}+\delta_{a}^{1})f(\bm{\xi})\right)\\\widetilde{\mathcal{L}}_{L}f(\bm{\xi})&=\sum_{i=1}^{L}\beta_{i}\sum_{a=2}^{N}\xi_{a}^{L}\left(f(\bm{\xi}-\delta_{a}^{L}+\delta_{a}^{L+1}+\delta_{a}^{L})-f(\bm{\xi})\right)
+        \widetilde{\mathcal{L}}_{left}f(\bm{\xi})&=|\alpha|\sum_{a=2}^{N}\xi_{a}^{1}\left(f(\bm{\xi}-\delta_{a}^{1}+\delta_{a}^{0}+\delta_{a}^{1})f(\bm{\xi})\right)\\\widetilde{\mathcal{L}}_{L}f(\bm{\xi})&=\sum_{i=1}^{L}\beta_{i}\sum_{a=2}^{N}\xi_{a}^{L}\left(f(\bm{\xi}-\delta_{a}^{L}+\delta_{a}^{L+1}+\delta_{a}^{L})-f(\bm{\xi})\right)
         \end{split}
 \end{equation}
 where $0$ and $L+1$ are the extra-sites. The duality function on the chain is
