@@ -1054,7 +1054,7 @@ By taking the product over the chain we also define
 	S_{2}=\prod_{x=1}^{L}S_{2}^{x}
 \end{equation}
 We define 
-\begin{equation}
+\begin{equation}\label{HSecond}
 	H^{''}=H_{left}^{''}+H_{bulk}+H_{right}^{''}
 \end{equation}
 that is related to $H'$ by
@@ -2380,6 +2380,213 @@ where
 \begin{equation}
 	U_{0}^{d}(x)=M_{0}(x)\widehat{K}_{0}^{d}(x)\widehat{M}_{0}(x)
 \end{equation}
+\subsection{Eigenvectors of the non equilibrium Hamiltonian}
+For simplicity we first consider the case with $N=3$. We make the following ansatz for the eigenvectors of the chain with left triangular and right diagonal boundaries described by the Hamiltonian $H^{''}$ introduced in \eqref{HSecond}. For the sake of notation, we restrict to the case with $N=3$ and we denote by $\Delta_{2}=\alpha_{2}-\beta_{2}$ and $\Delta_{3}=\alpha_{3}-\beta_{3}$. The eigenvectors are the following: 
+\begin{equation}
+	|\Psi_{m_{2},m_{3}}^{\Delta}\rangle=\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+\end{equation}
+
+We replace the above eigenvectors in 
+\begin{equation}
+	T_{\Delta}(x)|\Psi_{m_{2},m_{3}}^{\Delta}\rangle=\Lambda_{m_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{\Delta}\rangle
+\end{equation}
+and we obtain
+\begin{align*}
+	&\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}+1}\Delta_{3}^{k_{3}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+	\\&
+	+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}+1}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+	\\&=
+	\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}\Lambda_{m_{1},m_{2}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+\end{align*}
+after a change of summation indexes we obtain
+\begin{align*}
+	&\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+	\\+&
+	\sum_{k_{2}=1}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle+\Delta_{2}^{m_{2}+1}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{m_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+	\\+&
+	\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=1}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle+\Delta_{3}^{m_{3}+1}\sum_{k_{2}=0}^{m_{2}}\Delta_{2}^{k_{2}}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+	\\=&
+	\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}\Lambda_{m_{1},m_{2}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle.
+\end{align*}
+We impose the powers of $\Delta_{2}\Delta_{3}$ to be equal. We obtain the following conditions 
+\begin{enumerate}
+	\item $k_{2}=0$ and $k_{3}=0$
+	\begin{equation}\label{cond1}
+		T_{0}(x)G_{m_{2},m_{3},\epsilon}^{0,0}(x)|\Psi_{m_{1},m_{2}}^{0}\rangle|_{\epsilon=0}=\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3},\epsilon}^{0,0}(x)|\Psi_{m_{1},m_{2}}^{0}\rangle|_{\epsilon=0}
+	\end{equation}
+	\item $k_{2}=m_{2}+1$ and $k_{3}\in \{0,\ldots,m_{3}\}$
+	\begin{equation}\label{cond2}
+		\begin{split}
+			B_{2}(x)G_{m_{2},m_{3},\epsilon}^{m_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}=0
+		\end{split}
+	\end{equation}
+	\item $k_{2}\in\{0,\ldots,m_{2}\}$ and $k_{3}=m_{3}+1$
+	\begin{equation}\label{cond3}
+		\begin{split}
+			B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}=0
+		\end{split}
+	\end{equation}
+	\item $k_{2}\in \{0,\ldots,m_{2}\}$ and $k_{3}\in\{0,\ldots,m_{3}\}$
+	\begin{equation}\label{cond4}
+		\begin{split}
+			&\left(G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)+B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)\right)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+			\\=&
+			\left(\Lambda_{m_{2},m_{3}}(x)-T_{0}(x)\right)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+		\end{split}
+	\end{equation} 
+%	\item $k_{2}=0$ and $k_{3}\in\{1,\ldots,m_{3}\}$
+	%\begin{equation}\label{cond5}
+	%	\begin{split}
+	%		&\left(T_{0}(x)G_{m_{2},m_{3},\epsilon}^{0,k_{3}}(x)+B_{3}(x)G_{m_{2},m_{3},\epsilon}^{0,k_{3}-1}(x)\right)|\Psi_{m_{2},m_{3}}^{0}\rangle
+	%		=
+	%		\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3},\epsilon}^{0,k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+	%	\end{split}
+%	\end{equation}
+%	\begin{equation}\label{cond6}
+	%	\begin{split}
+	%		&\left(T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},0}(x)+B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,0}(x)\right)|\Psi_{m_{2},m_{3}}^{0}\rangle
+	%		=
+	%		\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},0}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
+	%	\end{split}
+%	\end{equation}
+\end{enumerate}
+To find the function $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ we must fulfil the conditions \eqref{cond1},\eqref{cond2},\eqref{cond3},\eqref{cond4}.
+% \end{itemize}
+\subsubsection{Explicit solution for $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$}
+\begin{equation}
+	\begin{split}
+		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=&\sum_{i_{1}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{1}+\ldots+i_{k_{2}+k_{3}}=k_{2}\}}
+		\\&
+		\prod_{s=1}^{k_{2}+k_{3}}\left\{\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{2}(x)\right\}^{i_{s}}\left\{\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{3}(x)\right\}^{1-i_{s}}
+	\end{split}
+\end{equation}
+We show that it fulfils condition \eqref{cond4}. For the sake of notation we denote by 
+\begin{equation}
+	\begin{split}
+	A_{2}= \left\{\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{2}(x)\right\}\\
+	A_{3}=\left\{\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{3}(x)\right\}
+	\end{split}
+\end{equation}
+Therefore we rewrite \eqref{cond4} as 
+\begin{equation}
+	\begin{split}
+		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
+	\end{split}
+\end{equation}
+The left-hand-side is 
+\begin{equation}
+		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=\sum_{i_{1}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{1}+\ldots+i_{k_{2}+k_{3}}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+\end{equation}
+while, on the right-hand-side we have
+\begin{equation}
+	\begin{split}
+A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)&=A_{2}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{2}+i_{k_{2}+\cdots+k_{3}}=k_{2}-1\}}\prod_{s=2}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+\\&=
+\sum_{i_{1}=1}^{1}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{k_{2}+k_{3}}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+	\end{split}
+\end{equation}
+and similarly 
+\begin{equation}
+	\begin{split}
+		A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&=A_{2}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{2}+\cdots+i_{k_{2}+k_{3}}=k_{2}\}}\prod_{s=2}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+		\\&=
+		\sum_{i_{1}=0}^{0}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{k_{2}+k_{3}}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}.
+	\end{split}
+\end{equation}
+Therefore,
+\begin{equation}
+	\begin{split}
+A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&=\sum_{i_{1}=1}^{1}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{k_{2}+k_{3}}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+\\&+
+	\sum_{i_{1}=0}^{0}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{k_{2}+k_{3}}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+	\\&=
+	\sum_{i_{1}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{1}+\ldots+i_{k_{2}+k_{3}}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+	\\&=
+		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)
+	\end{split}
+\end{equation}
+We can generalize it to arbitrary number of species writing
+\begin{equation}
+	\begin{split}
+	|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle=\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{n}}\Delta_{2}^{k_{2}}\cdots\Delta_{N}^{k_{N}}G_{m_{2}\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{N}\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+	\end{split}
+\end{equation}
+Denoting by
+\begin{equation}
+A_{j}=	\left\{\left((\Lambda_{m_{2}\ldots,m_{N}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{j}(x)\right\}\qquad \forall j\in \{2,\ldots,N\}
+\end{equation}
+the explicit formula for $G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)$ reads
+\begin{equation}
+	\begin{split}
+G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=&\sum_{i_{1}^{2}=0}^{1}\ldots\sum_{i_{1}^{N}=0}^{1}\sum_{i_{2}^{2}=0}^{1}\ldots\sum_{i_{2}^{N}=0}^{1}\ldots\sum_{i_{k_{2}+\ldots+k_{N}}^{2}=0}^{1}\ldots \sum_{i_{k_{2}+\ldots+k_{N}}^{N}=0}^{1}
+\\&
+\left(\prod_{s=1}^{k_{2}+\cdots+k_{N}}\mathbbm{1}_{\{i_{s}^{2}+\cdots+i_{s}^{N}=1\}}\right)\left(\prod_{q=2}^{N}\mathbbm{1}_{\{i_{1}^{q}+\cdots+i_{k_{2}+\cdots+k_{N}}^{q}=k_{q}\}}\right)
+\\&
+\prod_{s=1}^{k_{2}+\cdots+k_{N}}\prod_{q=2}^{N}A_{q}^{i_{s}^{q}}
+	\end{split}
+\end{equation}
+Condition \eqref{cond4} becomes
+\begin{equation}\label{cond4General}
+	G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{N}}(x)=\sum_{j=2}^{N}A_{j}G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{j}-1,\ldots,k_{N}}(x)
+\end{equation}
+Arguing as in the case $N=3$ we observe that 
+\begin{equation}
+	\begin{split}
+		A_{j}G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{j}-1,\ldots,k_{N}}(x)=&\sum_{i_{1}^{j}=1}^{1}\sum_{i_{2}^{2}=0}^{1}\ldots\sum_{i_{2}^{N}=0}^{1}\ldots\sum_{i_{k_{2}+\ldots+k_{N}}^{2}=0}^{1}\ldots \sum_{i_{k_{2}+\ldots+k_{N}}^{N}=0}^{1}
+	\\&
+	\left(\prod_{s=1}^{k_{2}+\cdots+k_{N}}\mathbbm{1}_{\{i_{s}^{2}+\cdots+i_{s}^{N}=1\}}\right)\left(\prod_{q=2}^{N}\mathbbm{1}_{\{i_{1}^{q}+\cdots+i_{k_{2}+\cdots+k_{N}}^{q}=k_{q}\}}\right)
+	\\&
+	\prod_{s=1}^{k_{2}+\cdots+k_{N}}\prod_{q=2}^{N}A_{q}^{i_{s}^{q}}
+	\end{split}
+\end{equation}
+therefore \eqref{cond4General} is fulfilled. 
+\begin{comment}
+We show that, if these previous conditions are satisfied, then the $|\Psi^{\Delta}_{m_{2},m_{3}}\rangle$ are indeed eigenvalues of $H^{''}$. 
+\begin{align*}
+T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
+\\&+
+\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\\&+\ldots+	\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0} 
+\\&+\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}+1}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{2}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\\&+\ldots +
+\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}+1}(2x+N)B_{N}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\end{align*}
+we replace $k_{i}\to k_{i}+1$ $\forall i\in\{2,\ldots,N\}$ in the proper summation. Then,
+\begin{align*}
+T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
+\\&+
+\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\\&+\ldots+	\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\\&+\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{2}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2}-1,\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\\&+\ldots
+\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{N}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}-1}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\\&+
+\Delta_{2}^{m_{2}+1}\sum_{a_{3}=0}^{m_{3}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{3}^{k_{3}}\Delta_{N}^{k_{N}}(2x+N)B_{2}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{m_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\\&+\ldots +
+\Delta_{N}^{m_{N}+1}\sum_{a_{2}=0}^{m_{3}}\ldots\sum_{a_{N-1}=0}^{m_{N-1}}\Delta_{3}^{k_{2}}\Delta_{N-1}^{k_{N-1}}(2x+N)B_{2}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\end{align*}
+We use prperties \eqref{SecondProperty} and \eqref{FirstProperty}:
+\begin{align*}
+T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
+\\&+
+\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\\&+\ldots+	\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\\&+\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left[\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\\&+\ldots +
+\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left[\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\end{align*}
+then
+\begin{align*}
+T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=
+\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
+\\&+
+\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\\&+\ldots+	\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\\&=
+\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle
+\end{align*} 
+\end{comment}
+\subsection{Charges}
 Then we have
 \begin{equation}
 	\begin{split}
@@ -2550,6 +2757,7 @@ These two matrices $Q_{2}^{0}$ and $Q_{2}^{\Delta}$ are such that
 \begin{equation}
 Q_{2}=Q_{2}^{0}+Q_{2}^{\Delta}
 \end{equation}
+\begin{comment}
 \subsection{Eigenvector for the diagonal-triangular chain}
 In \cite{belliard2011nested}  the eigenvectors and eigenvalues hae been computed for the $gl(N)$ spin chain with diagonal boundaries, therfore we know 
 \begin{equation}
@@ -2736,7 +2944,7 @@ For $i\neq 1$ we have
 \\&=\sum_{j=2}^N( 2E_{aj} E_{j1}+ [E_{j1}, E_{aj}])=2\sum_{j=2}^N E_{aj} E_{j1}-(N-1)E_{a1}
  \end{split}
 \end{equation} 
-
+\end{comment}
 \subsection{Bethe ansatz solution}
 
 Describe eigenvalues of $T_0$ following 
