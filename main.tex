@@ -2457,7 +2457,7 @@ To find the function $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ we must fulfil 
 \subsubsection{Explicit solution for $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$}
 \begin{equation}
 	\begin{split}
-		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=&\sum_{i_{1}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{1}+\ldots+i_{k_{2}+k_{3}}=k_{2}\}}
+		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=&\sum_{i_{1}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+\ldots+i_{(k_{2}+k_{3})}=k_{2}\}}
 		\\&
 		\prod_{s=1}^{k_{2}+k_{3}}\left\{\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{2}(x)\right\}^{i_{s}}\left\{\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{3}(x)\right\}^{1-i_{s}}
 	\end{split}
@@ -2478,32 +2478,32 @@ Therefore we rewrite \eqref{cond4} as
 \end{equation}
 The left-hand-side is 
 \begin{equation}
-		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=\sum_{i_{1}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{1}+\cdots+i_{k_{2}+k_{3}}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=\sum_{i_{1}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
 \end{equation}
 while, on the right-hand-side we have
 \begin{equation}
 	\begin{split}
-A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)&=A_{2}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{2}+i_{k_{2}+\cdots+k_{3}}=k_{2}-1\}}\prod_{s=2}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)&=A_{2}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{2}+i_{k_{2}}+\cdots+i_{(k_{2}+k_{3})}=k_{2}-1\}}\prod_{s=2}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
 \\&=
-\sum_{i_{1}=1}^{1}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{k_{2}+k_{3}}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+\sum_{i_{1}=1}^{1}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
 	\end{split}
 \end{equation}
 and similarly 
 \begin{equation}
 	\begin{split}
-		A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&=A_{3}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{2}+\cdots+i_{k_{2}+k_{3}}=k_{2}\}}\prod_{s=2}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+		A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&=A_{3}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=2}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
 		\\&=
-		\sum_{i_{1}=0}^{0}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{k_{2}+k_{3}}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}.
+		\sum_{i_{1}=0}^{0}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}.
 	\end{split}
 \end{equation}
 Therefore,
 \begin{equation}
 	\begin{split}
-A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&=\sum_{i_{1}=1}^{1}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{k_{2}+k_{3}}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&=\sum_{i_{1}=1}^{1}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
 \\&+
-	\sum_{i_{1}=0}^{0}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{k_{2}+k_{3}}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+	\sum_{i_{1}=0}^{0}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
 	\\&=
-	\sum_{i_{1}=0}^{1}\ldots\sum_{i_{k_{2}+k_{3}}=0}^{1}\mathbbm{1}_{\{i_{1}+\cdots+i_{k_{2}+k_{3}}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+	\sum_{i_{1}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
 	\\&=
 		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)
 	\end{split}
@@ -2525,7 +2525,7 @@ the explicit formula for $G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x
 	\begin{split}
 G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=&\sum_{i_{1}^{2}=0}^{1}\ldots\sum_{i_{1}^{N}=0}^{1}\sum_{i_{2}^{2}=0}^{1}\ldots\sum_{i_{2}^{N}=0}^{1}\ldots\sum_{i_{k_{2}+\ldots+k_{N}}^{2}=0}^{1}\ldots \sum_{i_{k_{2}+\ldots+k_{N}}^{N}=0}^{1}
 \\&
-\left(\prod_{s=1}^{k_{2}+\cdots+k_{N}}\mathbbm{1}_{\{i_{s}^{2}+\cdots+i_{s}^{N}=1\}}\right)\left(\prod_{q=2}^{N}\mathbbm{1}_{\{i_{1}^{q}+\cdots+i_{k_{2}+\cdots+k_{N}}^{q}=\,k_{q}\}}\right)
+\left(\prod_{s=1}^{k_{2}+\cdots+k_{N}}\mathbbm{1}_{\{i_{s}^{2}+\cdots+i_{s}^{N}=1\}}\right)\left(\prod_{q=2}^{N}\mathbbm{1}_{\{i_{1}^{q}+\cdots+i_{(k_{2}+\cdots+k_{N})}^{q}=\,k_{q}\}}\right)
 \\&
 \prod_{s=1}^{k_{2}+\cdots+k_{N}}\prod_{q=2}^{N}A_{q}^{i_{s}^{q}}
 	\end{split}
@@ -2539,7 +2539,7 @@ Arguing as in the case $N=3$ we observe that
 	\begin{split}
 		A_{j}G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{j}-1,\ldots,k_{N}}(x)=&\sum_{i_{1}^{j}=1}^{1}\sum_{i_{2}^{2}=0}^{1}\ldots\sum_{i_{2}^{N}=0}^{1}\ldots\sum_{i_{k_{2}+\ldots+k_{N}}^{2}=0}^{1}\ldots \sum_{i_{k_{2}+\ldots+k_{N}}^{N}=0}^{1}
 	\\&
-	\left(\prod_{s=1}^{k_{2}+\cdots+k_{N}}\mathbbm{1}_{\{i_{s}^{2}+\cdots+i_{s}^{N}=1\}}\right)\left(\prod_{q=2}^{N}\mathbbm{1}_{\{i_{1}^{q}+\cdots+i_{k_{2}+\cdots+k_{N}}^{q}=k_{q}\}}\right)
+	\left(\prod_{s=1}^{k_{2}+\cdots+k_{N}}\mathbbm{1}_{\{i_{s}^{2}+\cdots+i_{s}^{N}=1\}}\right)\left(\prod_{q=2}^{N}\mathbbm{1}_{\{i_{1}^{q}+\cdots+i_{(k_{2}+\cdots+k_{N})}^{q}=k_{q}\}}\right)
 	\\&
 	\prod_{s=1}^{k_{2}+\cdots+k_{N}}\prod_{q=2}^{N}A_{q}^{i_{s}^{q}}
 	\end{split}
