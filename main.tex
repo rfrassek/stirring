@@ -2455,8 +2455,59 @@ We impose the powers of $\Delta_{2}\Delta_{3}$ to be equal. We obtain the follow
 To find the function $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ we must fulfil the conditions \eqref{cond1}, \eqref{cond2}, \eqref{cond3}, \eqref{cond4}, \eqref{cond5}, \eqref{cond6}.
 % \end{itemize}
 \subsubsection{Explicit solution for $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ using symmetric group}
-TO ADD
-\subsubsection{Explicit solution for $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$}
+ For the sake of notation we denote by 
+\begin{equation}
+	\begin{split}
+		A_{2}= \left\{\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{2}(x)\right\}\\
+		A_{3}=\left\{\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{3}(x)\right\}
+	\end{split}
+\end{equation}
+where the dependence of $A_{2},A_{3}$ on $x$ and $\epsilon$ is understood. Condition \eqref{cond4} becomes
+\begin{equation}\label{cond4A}
+	\begin{split}
+		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
+	\end{split}
+\end{equation}
+To write its solution we define
+\begin{equation}
+	\chi^{k_{2},k_{3}}:=\left\{\left(i_{1},\ldots,i_{(k_{2}+k_{3})}\right)\in \{2,3\}^{k_{2}+k_{3}}\;:\;\sum_{s=1}^{k_{2}+k_{3}}\delta_{i_{s},2}=k_{2}\right\}
+\end{equation}
+We introduce the following notation: for any fixed configuration $(i_{1},\ldots,i_{(k_{2}+k_{3})})\in \chi^{k_{2},k_{3}}$ 
+\begin{equation}
+	\mathcal{A}(i_{1},\ldots,i_{(k_{2}+k_{3})})=A_{i_{1}}A_{i_{2}}\cdots A_{i_{(k_{2}+k_{3})}}
+\end{equation}
+We introduce $\text{SYM}\left(\chi^{k_{2},k_{3}}\right)$ the \textit{symmetric group} on $\chi^{k_{2},k_{3}}$ and we denote by $\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)$ the permutation of an element of the group. \\
+The following expression solves \eqref{cond4A}
+\begin{equation}
+	G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=\sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}})}\mathcal{A}\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right).
+\end{equation}
+Indeed
+\begin{align}
+A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&= A_{2}\sum_{\sigma\in \text{SYM}(\chi^{k_{2}-1,k_{3}})}\mathcal{A}\left(\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
+\\&+
+ A_{3}\sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}-1})}\mathcal{A}\left(\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
+ \\&=
+ \sum_{\sigma\in \text{SYM}(\chi^{k_{2}-1,k_{3}})}\mathcal{A}\left(2,\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
+ \\&+
+ \sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}-1})}\mathcal{A}\left(3,\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
+ \\&=
+ \sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}})}\mathcal{A}\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
+ \\&=
+ 	G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)
+\end{align}
+where in the up to last equality we used the fact that $i_{1}\in \{2,3\}$. 
+\paragraph{Generalization to arbitrary $N$}
+For arbitrary $N\geq2$ we have 
+\begin{equation}
+	\chi^{k_{2}\ldots,k_{N}}:=\left\{\left(i_{1},\ldots,i_{(k_{2}+\cdots+k_{N})}\right)\in \{2,\ldots,N\}^{k_{2}+\cdots+k_{N}}\;:\;\sum_{s=1}^{k_{2}+\cdots+k_{N}}\delta_{i_{s},q}=k_{q},\;\forall \in \{2,\ldots,N\}\right\}
+\end{equation}
+
+Thus the explicit expression becomes
+\begin{equation}
+G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=\sum_{\sigma\in \text{SYM}(\chi^{k_{2},\ldots,k_{N}})}\mathcal{A}\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+\cdots+k_{3})})\right)
+\end{equation}
+with the same notation as in $N=3$ case. 
+\subsubsection{Explicit solution for $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ with sums and products}
 \begin{equation}
 	\begin{split}
 		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=&\sum_{i_{1}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+\ldots+i_{(k_{2}+k_{3})}=k_{2}\}}
