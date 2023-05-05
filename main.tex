@@ -2724,15 +2724,15 @@ Moreover, $\forall j=2,\ldots,L$ and for $i=1$
 where the coefficient is 
 \begin{equation}\label{b}
 \begin{split}
-	B_{j}^{2L-1}&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-e_{j1}^{[a]}e_{jj}^{[b]}-\sum_{a=2\,:\,k\neq j}^{N}e_{a1}^{[a]}e_{ja}^{[b]}\right)\\
-	&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-\sum_{a=2}^{N}e_{a1}^{[a]}e_{ja}^{[b]}\right)
+	B_{j}^{2L-1}&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-e_{j1}^{[a]}e_{jj}^{[b]}-\sum_{k=2\,:\,k\neq j}^{N}e_{k1}^{[a]}e_{jk}^{[b]}\right)\\
+	&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-\sum_{k=2}^{N}e_{k1}^{[a]}e_{jk}^{[b]}\right)
 \end{split}
 \end{equation}
 then
 \begin{equation}
 \begin{split}
 	\boxed{B_{j}^{2L-1}=2e_{j1}^{tot}+
-	2\sum_{a,b=1\,:\, a<b}^{L}e_{j1}^{[a]}e_{11}^{[b]}-2\sum_{a,b=1\,:\, a>b}^{L}\sum_{a=2}^{N}e_{ja}^{[a]}e_{a1}^{[b]}}
+	2\sum_{a,b=1\,:\, a<b}^{L}\left(e_{j1}^{[a]}e_{11}^{[b]}\right)-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=2}^{N}\left( e_{jk}^{[a]}e_{k1}^{[b]}\right)}
 \end{split}
 \end{equation}
 \textbf{Remark}: it is easy to see that, when restricted to the case of 2 species,  \eqref{a2lp},\eqref{a2l},\eqref{a2lm1} correspond to the one compute in \cite{frassek2020eigenstates}. \\ \\
