@@ -2658,53 +2658,55 @@ where the coefficients
 \end{equation}\begin{equation}\label{a2l}
 	D_{ii}^{2L}=I^{tot}-2e_{ii}^{tot}
 \end{equation}
-\begin{equation}\label{a2lm1}
-	\begin{split}
-		D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}\right)-2\sum_{a\neq b}e_{ii}^{[a]}e_{ii}^{[b]}-2\sum_{a\neq b}\sum_{j=2\,:\,j\neq i}^{N}e_{ij}^{[a]}e_{ji}^{[b]}\\
-		&=e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=2}^{N}e_{ij}^{[a]}e_{ji}^{[b]}\\
-	%&=e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2e_{ii}^{tot}\\
-		%&=2e_{11}^{tot}+2e_{ii}^{tot}-C_1
-		&=e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=2}^{N}e_{ij}^{[a]}e_{ji}^{[b]}\\ 
-	\end{split}
-\end{equation}
+% \begin{equation}\label{a2lm1}
+% 	\begin{split}
+% 		D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}\right)-2\sum_{a\neq b}e_{ii}^{[a]}e_{ii}^{[b]}-2\sum_{a\neq b}\sum_{j=2\,:\,j\neq i}^{N}e_{ij}^{[a]}e_{ji}^{[b]}\\
+% 		&=e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=2}^{N}e_{ij}^{[a]}e_{ji}^{[b]}\\
+% 	%&=e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2e_{ii}^{tot}\\
+% 		%&=2e_{11}^{tot}+2e_{ii}^{tot}-C_1
+% 		&=e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=2}^{N}e_{ij}^{[a]}e_{ji}^{[b]}\\ 
+% 	\end{split}
+% \end{equation}
 
 We rewrite
-\begin{equation}
-	\begin{split}
-	D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}\right)-2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}+2(N-1)e_{ii}^{tot}
-\end{split}
-\end{equation}
-then
+% \begin{equation}
+% 	\begin{split}
+% 	D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}\right)-2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}+2(N-1)e_{ii}^{tot}
+% \end{split}
+% \end{equation}
+% then
 \begin{equation}
 \begin{split}
-\boxed{D_{ii}^{2L-1}=	2Ne_{ii}^{tot}+\left(e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}\right)-2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}}
+\boxed{D_{ii}^{2L-1}=	2Ne_{ii}^{tot}+e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}-2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}}
 	\end{split}
 \end{equation}
-{\color{blue} In case of a chain $L=2$ and $N=3$ and choosing $i=2$ this reads as 
-\begin{equation*}
-	D_{22}^{2L-1}=6e_{22}^{tot}+e_{11}^{tot}-e_{22}^{tot}-e_{33}^{tot}-2e_{22}^{tot}e_{22}^{tot}-2e_{23}^{tot}e_{32}^{tot}
-\end{equation*}
-where
-\begin{equation*}
-	e_{ab}^{tot}=e_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes e_{ab}\qquad \forall a,b\in \{1,2,3\}
-\end{equation*}
-This gives exactly
-\begin{equation*}
-	D_{22}^{2L-1}=\left(
-	\begin{array}{ccccccccc}
-		2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-		0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-		0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 \\
-		0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 & 0 \\
-		0 & 0 & 0 & 0 & 0 & 0 & 0 & -2 & 0 \\
-		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-		0 & 0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 \\
-		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -2 \\
-	\end{array}
-	\right)
-\end{equation*}
-}
+{\color{blue}ok}
+
+% {\color{blue} In case of a chain $L=2$ and $N=3$ and choosing $i=2$ this reads as 
+% \begin{equation*}
+% 	D_{22}^{2L-1}=6e_{22}^{tot}+e_{11}^{tot}-e_{22}^{tot}-e_{33}^{tot}-2e_{22}^{tot}e_{22}^{tot}-2e_{23}^{tot}e_{32}^{tot}
+% \end{equation*}
+% where
+% \begin{equation*}
+% 	e_{ab}^{tot}=e_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes e_{ab}\qquad \forall a,b\in \{1,2,3\}
+% \end{equation*}
+% This gives exactly
+% \begin{equation*}
+% 	D_{22}^{2L-1}=\left(
+% 	\begin{array}{ccccccccc}
+% 		2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+% 		0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+% 		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+% 		0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 \\
+% 		0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 & 0 \\
+% 		0 & 0 & 0 & 0 & 0 & 0 & 0 & -2 & 0 \\
+% 		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+% 		0 & 0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 \\
+% 		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -2 \\
+% 	\end{array}
+% 	\right)
+% \end{equation*}
+% }
 \textbf{Observation}: it seems to me that, although not diagonal, the $D_{ii}^{2L-1}$ does not chaing the exitation of the chain since we have $e_{ij}^{tot}e_{ji}^{tot}$!\\
 %The following \textit{lower diagonal} elements of $U_{0}(x)$, $\forall i=2,\ldots,L$ and for $j=1$
 %\begin{equation}
