@@ -2462,6 +2462,7 @@ To find the function $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ we must fulfil 
 		A_{3}=\left\{\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{3}(x)\right\}
 	\end{split}
 \end{equation}
+{\color{red}Are we missing the prefactor $(N+2x)$?}
 where the dependence of $A_{2},A_{3}$ on $x$ and $\epsilon$ is understood. Condition \eqref{cond4} becomes
 \begin{equation}\label{cond4A}
 	\begin{split}
@@ -2792,8 +2793,8 @@ The interesting charges (we only look for the first non trivial one) take the fo
 
 
 \begin{align}
-	Q_{2L+2}&=A^{2L+1}-\sum_{i=2}^{N}D_{ii}^{2L+1}\\
-	Q_{2L+1}&=NA^{2L+1}+A^{2L}-\sum_{i=2}^{N}D_{ii}^{2L}\\
+	Q_{2L+2}&=A^{2L+1}-\sum_{i=2}^{N}D_{ii}^{2L+1}{\color{red}=N}\\
+	Q_{2L+1}&=NA^{2L+1}+A^{2L}-\sum_{i=2}^{N}D_{ii}^{2L}={\color{red}2+2N}\\
 	Q_{2L\phantom{+}}&=NA^{2L}+A^{2L-1}-\sum_{i=2}^{N}D_{ii}^{2L-1}+\sum_{i=2}^{N}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
 \end{align}
 The charges $Q_{2L+2}$ and $Q_{2L+1}$ are proportional to the identity matrix, while $Q_{2L}$ contains non diagonal matrices and the boundary parameters $\alpha_{i},\beta_{i}$ $\forall i=2,\ldots,N$.\\
@@ -2812,7 +2813,29 @@ that is
 Q_{2L}^{0}&=NI^{tot}+2e_{11}^{tot}(e_{11}^{tot}+I^{tot})-(N+2)\sum_{j=2}^{N}e_{jj}^{tot}+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}
 \end{split}
 \end{equation}
-it has the property that commute with the equilibrium Hamiltonian. In case of $N=2$ it differs with respect to the $Q_{2L}^{0}$ computed in formula (2.28) of \cite{frassek2020eigenstates} by the following matrix 
+it has the property that commute with the equilibrium Hamiltonian. 
+
+All terms are diagonal except the last one which can  be  identified with the second Casimir of the $gl(n-1)$ subalgebra
+\begin{equation}
+\hat C_2^{N-1} \sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}
+\end{equation} 
+On the Bethe states (and on the irrep decomposition of the spin chain) it acts diagonally with eigenvalues given in terms of shifted weights 
+\begin{equation}
+ C_2^{N-1}=\sum\prod\frac{1}{\ell-\ell}
+\end{equation} 
+Thus the eigenvalues of the transfer matrix can be writen as 
+\begin{equation}
+ \Lambda(x)=N x^{2L+2}+2(N+1) x^{2L+1}+ \left(N+2m_1(m_1+1)-(N+2)\sum_{j=2}^{N}m_j+2C_{2}^{N-1}\right)x^{2L}+\ldots
+\end{equation} 
+Thus the difference is of order $2L$ and becomes
+\begin{equation}
+ \lambda(x)-T_0(x)=x^{2L}....
+\end{equation} 
+
+
+
+
+In case of $N=2$ it differs with respect to the $Q_{2L}^{0}$ computed in formula (2.28) of \cite{frassek2020eigenstates} by the following matrix 
 \begin{equation}
 Q_{2L}^{0,Francesco}-Q_{2L}^{0,Rouven}=	\begin{pmatrix}
 		2&0&0&0\\
