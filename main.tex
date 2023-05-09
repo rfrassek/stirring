@@ -2825,12 +2825,20 @@ On the Bethe states (and on the irrep decomposition of the spin chain) it acts d
 \end{equation} 
 Thus the eigenvalues of the transfer matrix can be writen as 
 \begin{equation}
- \Lambda(x)=N x^{2L+2}+2(N+1) x^{2L+1}+ \left(N+2m_1(m_1+1)-(N+2)\sum_{j=2}^{N}m_j+2C_{2}^{N-1}\right)x^{2L}+\ldots
+\begin{split}
+ \Lambda(x)&= \Lambda_{2L+2} x^{2L+2}+ \Lambda_{2L+1} x^{2L+1}+ \Lambda_{2L}x^{2L}+\ldots
+ \\&=N x^{2L+2}+2(N+1) x^{2L+1}+ \left(N+2m_1(m_1+1)-(N+2)\sum_{j=2}^{N}m_j+2C_{2}^{N-1}\right)x^{2L}+\ldots
+ \end{split}
 \end{equation} 
 Thus the difference is of order $2L$ and becomes
 \begin{equation}
- \lambda(x)-T_0(x)=x^{2L}....
+ \Lambda(x)-T_0(x)=x^{2L}\left(\Lambda_{2L}-Q_{2L}^0\right)+\ldots
 \end{equation} 
+We can take the limit
+\begin{equation}
+ \lim_{x\to\infty}\frac{2x+N}{\Lambda(x)-T_0(x)}B_{i}(x)=\frac{2}{\Lambda_{2L}-Q_{2L}^0}B_i^{2L-1}
+\end{equation} 
+{\color{blue}ok?}
 
 
 
