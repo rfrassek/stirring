@@ -2698,7 +2698,8 @@ then
 \begin{equation}
 	\boxed{A^{2L-1}=e_{11}^{tot}\left(2e_{11}^{tot}+I^{tot}\right)-\sum_{j=2}^{N}e_{jj}^{tot}}=2e_{11}^{tot}\left(e_{11}^{tot}+I^{tot}\right)-L
 \end{equation}
-{\color{blue}ok?}
+{\color{blue}ok?}where we used $
+ \sum_{i=1}^Ne_{ii}^{tot}=L$. 
 
 While, $\forall i=2,\ldots,N$
 
@@ -2811,11 +2812,9 @@ that is
 \begin{equation}
 \begin{split}
 Q_{2L}^{0}&=NI^{tot}+2e_{11}^{tot}(e_{11}^{tot}+I^{tot})-(N+2)\sum_{j=2}^{N}e_{jj}^{tot}+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
-&=N+2e_{11}^{tot}(e_{11}^{tot}+1)-(N+2)(L-e_{11}^{tot})+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
+&=N+2e_{11}^{tot}(e_{11}^{tot}+1)+(N+2)(e_{11}^{tot}-L)+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
 \end{split}
-\end{equation}
-where we used $
- \sum_{i=1}^N m_i=L$. 
+\end{equation} 
 
 %  It has the property that commute with the equilibrium Hamiltonian. 
 
