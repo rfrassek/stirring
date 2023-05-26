@@ -2455,6 +2455,7 @@ We impose the powers of $\Delta_{2}\Delta_{3}$ to be equal. We obtain the follow
 To find the function $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ we must fulfil the conditions \eqref{cond1}, \eqref{cond2}, \eqref{cond3}, \eqref{cond4}, \eqref{cond5}, \eqref{cond6}.
 % \end{itemize}
 \subsubsection{Explicit solution for $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ using symmetric group}
+
  For the sake of notation we denote by 
 \begin{equation}
 	\begin{split}
@@ -2462,13 +2463,50 @@ To find the function $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ we must fulfil 
 		A_{3}=\left\{(2x+N)\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{3}(x)\right\}
 	\end{split}
 \end{equation}
-{\color{red}Are we missing the prefactor $(N+2x)$?}
+%{\color{red}Are we missing the prefactor $(N+2x)$?}
 where the dependence of $A_{2},A_{3}$ on $x$ and $\epsilon$ is understood. Condition \eqref{cond4} becomes
+
 \begin{equation}\label{cond4A}
 	\begin{split}
 		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
 	\end{split}
 \end{equation}
+We introduce the following indices
+\begin{equation}
+	i_{1}=\ldots=i_{k_{2}}=2\qquad i_{k_{2}+1}=\ldots =i_{k_{2}+k_{3}}=3
+\end{equation}
+Then, we introduce the permutation 
+\begin{equation}
+	\sigma(i_{j})=i_{k}\qquad \forall j,k=1,\ldots,k_{2}+k_{3}
+\end{equation}
+We write
+\begin{equation}
+	G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=\frac{1}{k_{2}!k_{3}!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}
+\end{equation}
+where we denoted by $\text{SYM}$ the symmetric group on $\{i_{1},\ldots,i_{k_{2}+k_{3}}\}$.\\
+It solves \eqref{cond4A}, indeed
+\begin{align*}
+	&A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
+	\\=&A_{2}\frac{k_{2}}{k_{2}}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}\frac{k_{3}}{k_{3}}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
+	\\=&
+	A_{2}\frac{k_{2}}{k_{2}}\frac{1}{(k_{2}-1)!k_{3}!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{2})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}\\+&A_{3}\frac{k_{3}}{k_{3}}\frac{1}{k_{2}!(k_{3}-1)!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}})}A_{\sigma(k_{2}+2)}\cdots A_{\sigma(i_{k_{2}+k_{3}})}
+	\\=&
+	\frac{1}{k_{2}!k_{3}!}\left(\sum_{\sigma \in \text{SYM}}k_{2}A_{2}A_{\sigma(i_{2})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}+ \sum_{\sigma \in \text{SYM}}k_{3}A_{3}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}})}A_{\sigma(k_{2}+2)}\cdots A_{\sigma(i_{k_{2}+k_{3}})}\right)
+	\\=&
+	\frac{1}{k_{2}!k_{3}!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}
+	\\=&
+		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)
+\end{align*}
+where in the up to last equality we used the fact that the quantity first summation is symmetric with respect to the exchange of $A_{2}$ and thus we have $k_{2}$ equal terms. Similarly, for the second summation using the symmetry with respect to $A_{3}$. \\
+This argument can be generalized for $N>2$ species introducing
+\begin{equation}
+	G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=\frac{1}{k_{2}!\cdots k_{N}!}\sum_{\sigma\in \text{SYM}}A_{i_{1}}\cdots A_{i_{k_{2}+\cdots+k_{N}}}
+\end{equation}
+where we assumed 
+\begin{equation}
+	i_{1}=\cdots=i_{k_{2}}=2,\qquad \ldots \qquad i_{k_{2}+\cdots+k_{N-1}}=\cdots=i_{k_{2}+\ldots+k_{N}}=N
+\end{equation}
+\begin{comment}
 To write its solution we define
 \begin{equation}
 	\chi^{k_{2},k_{3}}:=\left\{\left(i_{1},\ldots,i_{(k_{2}+k_{3})}\right)\in \{2,3\}^{k_{2}+k_{3}}\;:\;\sum_{s=1}^{k_{2}+k_{3}}\delta_{i_{s},2}=k_{2}\right\}
@@ -2508,6 +2546,7 @@ Thus the explicit expression becomes
 G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=\sum_{\sigma\in \text{SYM}(\chi^{k_{2},\ldots,k_{N}})}\mathcal{A}\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+\cdots+k_{3})})\right)
 \end{equation}
 with the same notation as in $N=3$ case. 
+\end{comment}
 \subsubsection{Explicit solution for $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ with sums and products}
 \begin{equation}
 	\begin{split}
@@ -2803,7 +2842,7 @@ The interesting charges (we only look for the first non trivial one) take the fo
 
 \begin{align}
 	Q_{2L+2}&=A^{2L+1}-\sum_{i=2}^{N}D_{ii}^{2L+1}{\color{red}=N}\\
-	Q_{2L+1}&=NA^{2L+1}+A^{2L}-\sum_{i=2}^{N}D_{ii}^{2L}={\color{red}2+2N}\\
+	Q_{2L+1}&=NA^{2L+1}+A^{2L}-\sum_{i=2}^{N}D_{ii}^{2L}={\color{red}N+2L-1}\\
 	Q_{2L\phantom{+}}&=NA^{2L}+A^{2L-1}-\sum_{i=2}^{N}D_{ii}^{2L-1}+\sum_{i=2}^{N}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
 \end{align}
 The charges $Q_{2L+2}$ and $Q_{2L+1}$ are proportional to the identity matrix, while $Q_{2L}$ contains non diagonal matrices and the boundary parameters $\alpha_{i},\beta_{i}$ $\forall i=2,\ldots,N$.\\
@@ -2823,7 +2862,14 @@ Q_{2L}^{0}&=NI^{tot}+2e_{11}^{tot}(e_{11}^{tot}+I^{tot})-(N+2)\sum_{j=2}^{N}e_{j
 &=N+2e_{11}^{tot}(e_{11}^{tot}+1)+(N+2)(e_{11}^{tot}-L)+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
 \end{split}
 \end{equation} 
-
+we also introduce 
+\begin{equation}
+	\mathcal{Q}_{2L}=\sum_{i=2}^{N}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
+\end{equation}
+therefore we can write 
+\begin{equation}
+	Q_{2L}=Q_{2L}^{0}+\mathcal{Q}_{2L}
+\end{equation}
 %  It has the property that commute with the equilibrium Hamiltonian. 
 
 All terms are diagonal except the last one which can  be  identified with the second Casimir of the $gl(N-1)$ subalgebra
@@ -2834,7 +2880,7 @@ On the Bethe states (and on the irrep decomposition of the spin chain) it acts d
 \begin{equation}
  C_2^{N-1}=\sum_{j=1}^{N-1}\ell_j(\ell_j -N+2)+\frac{1}{6}(N-1)(N-2)(N-3)
 \end{equation} 
-{\color{blue}to be checked}, see e.g. [Das,Okubo].
+{\color{blue}to be checked...} {\color{blue} It works!!}, see e.g. [Das,Okubo].
 Thus the eigenvalues of the transfer matrix can be writen as 
 \begin{equation}
 \begin{split}
@@ -2851,11 +2897,11 @@ We can take the limit
 \begin{equation}
  \lim_{x\to\infty}\frac{2x+N}{\Lambda(x)-T_0(x)}B_{i}(x)=\frac{2}{\Lambda_{2L}-Q_{2L}^0}B_i^{2L-1}
 \end{equation} 
-{\color{blue}ok?}
+{\color{blue}ok}
 
 
 
-
+\begin{comment}
 In case of $N=2$ it differs with respect to the $Q_{2L}^{0}$ computed in formula (2.28) of \cite{frassek2020eigenstates} by the following matrix 
 \begin{equation}
 Q_{2L}^{0,Francesco}-Q_{2L}^{0,Rouven}=	\begin{pmatrix}
@@ -2890,6 +2936,7 @@ These two matrices $Q_{2}^{0}$ and $Q_{2}^{\Delta}$ are such that
 Q_{2}=Q_{2}^{0}+Q_{2}^{\Delta}
 \end{equation}
 {\color{blue}Adopt notation here}
+\end{comment}
 \begin{comment}
 \subsection{Eigenvector for the diagonal-triangular chain}
 In \cite{belliard2011nested}  the eigenvectors and eigenvalues hae been computed for the $gl(N)$ spin chain with diagonal boundaries, therfore we know 
