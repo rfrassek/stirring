@@ -2857,11 +2857,18 @@ Q_{2L}^{0}:=NA^{2L}+A^{2L-1}-\sum_{i=2}^{N}D_{ii}^{2L-1}
 \end{equation}
 that is 
 \begin{equation}
-\begin{split}
-Q_{2L}^{0}&=NI^{tot}+2e_{11}^{tot}(e_{11}^{tot}+I^{tot})-(N+2)\sum_{j=2}^{N}e_{jj}^{tot}+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
-&=N+2e_{11}^{tot}(e_{11}^{tot}+1)+(N+2)(e_{11}^{tot}-L)+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
-\end{split}
-\end{equation} 
+	\begin{split}
+	Q_{2L}^{0}&=N(I^{tot}+e_{11}^{tot})+e_{11}^{tot}(2e_{11}^{tot}+I^{tot})-\sum_{k=2}^{N}e_{kk}^{tot}-2N\sum_{k=2}^{N}e_{kk}^{tot}+\sum_{k=2}^{N}\left\{e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+\sum_{j=2}^{N}e_{kj}^{tot}e_{jk}^{tot}\right\}
+	\\&=
+	(N-NL-2L)I^{tot}+2(N+2)e_{11}^{tot}+2e_{11}^{tot}e_{11}^{tot}+2\sum_{j,k=2}^{N}e_{kj}^{tot}e_{jk}^{tot}
+	\end{split}
+\end{equation}
+%\begin{equation}	
+%\begin{split}
+%Q_{2L}^{0}&=NI^{tot}+2e_{11}^{tot}(e_{11}^{tot}+I^{tot})-(N+2)\sum_{j=2}^{N}e_{jj}^{tot}+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
+%&=N+2e_{11}^{tot}(e_{11}^{tot}+1)+(N+2)(e_{11}^{tot}-L)+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
+%\end{split}
+%\end{equation} 
 we also introduce 
 \begin{equation}
 	\mathcal{Q}_{2L}=\sum_{i=2}^{N}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
