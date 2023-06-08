@@ -2359,6 +2359,30 @@ We write $U_{0}(x)$ in the canonical basis of $V_{0}$ and we rename the elements
 		C_{N}(x)&D_{N2}(x)&\ldots&D_{NN}(x)
 	\end{pmatrix}
 \end{equation}
+The exchange relations for the elements of the above matrix are the following
+\begin{itemize}
+	\item for $j\neq N$ 
+\begin{equation}
+	\begin{split}
+	B_{j}(x)D_{jj}(y)=&\frac{(x+y)(1+x-y)}{(x-y)(1+x+y)}D_{jj}(y)B_{j}(x)-\frac{1}{(1+x+y)}\sum_{i=1\,:\,i\neq j}^{N-1}B_{i}(x)D_{i1}(y)
+	\\-&\frac{(x+y)}{(x-y)(1+x+y)}D_{jj}(x)B_{j}(y)-\frac{1}{(1+x+y)}D_{NN}(x)B_{j}(y)
+	\end{split}
+\end{equation}
+\item for $i,j\neq N$
+\begin{equation}
+	\begin{split}
+		B_{i}(x)D_{jj}(y)=D_{jj}(y)B_{j}(x)+\frac{1}{(x-y)}\left(D_{ji}(y)B_{j}(x)-D_{ji}(x)B_{j}(y)\right)
+	\end{split}
+\end{equation}
+\item for $j\neq N$
+\begin{equation}
+	\begin{split}
+		B_{j}(x)D_{NN}(y)&=\frac{(x-y)(1+x+y)}{(x+y)(1+x-y)}D_{NN}(y)B_{j}(x)+\frac{(x-y)}{(x+y)(1+x-y)}\sum_{i=1}^{N-1}B_{i}(y)D_{ij}(x)
+		\\&+
+		\frac{1}{(1+x-y)}B_{j}(y)D_{NN}(x)
+	\end{split}
+\end{equation}
+\end{itemize}
 In order to carry out the mapping of non equilibrium onto equilibrium we should consider the K-matrices after the transformation \eqref{similarS}, i.e. when the left boundary is lower triangular a end the right one is diagonal. We properly rescale them and we obtain
 \begin{equation}
 	\widehat{K}_{0}^{d}(x)=(1+x)\left(I+\frac{2x}{x+1}\widetilde{B}_{L}\right)=\begin{pmatrix}
