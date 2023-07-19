@@ -2417,6 +2417,423 @@ where
 	&h_{1}(x,y)=-\frac{(x+y+2)}{(x-y)(1+x+y)}\quad&h_{2}(x,y)=\frac{(2+x-y)}{(x-y)(1+x+y)}\nonumber
 	\\&h_{3}(x,y)=\frac{2}{(x-y)(1+x+y)}
 \end{align}
+\subsection{Charges}
+Then we have
+\begin{equation}
+	\begin{split}
+		T^{\Delta}(x)=tr_{0}&\left(\begin{pmatrix}
+			-x&0&0&\ldots&0&(N+2x)(\alpha_{1}-\beta_{1})\\
+			0&-x&0&\ldots&0&(N+2x)(\alpha_{2}-\beta_{2})\\
+			\vdots&\vdots&\ddots&\vdots&\vdots&\vdots\\
+			0&0&0&\ldots&-x&(N+2x)(\alpha_{N-1}-\beta_{N-1})\\
+			0&0&0&\ldots&0&1+x
+		\end{pmatrix}\right.
+		\\& \left.
+		\;\;\;\begin{pmatrix}
+			D_{1,1}(x)&D_{1,2}(x)&\ldots&D_{1,N-1}(x)&C_{1}(x)\\
+			D_{2,1}(x)&D_{2,2}(x)&\ldots&D_{2,N-1}(x)&C_{2}(x)\\
+			\vdots&\vdots&\ddots&\vdots&\vdots\\
+			D_{N-1,1}&D_{N-1,2}&\ldots&D_{N-1,N-1}(x)&C_{N-1}\\
+			B_{1}(x)&B_{N-1}(x)&\ldots&D_{N,N-1}(x)&D_{N,N}(x)
+		\end{pmatrix}\right)
+	\end{split}
+\end{equation}
+Therefore we can write the polynomial expansion
+\begin{equation}
+	\begin{split}
+		T^{\Delta}(x)=&
+		(N+x)D_{N,N}(x)-\sum_{i=1}^{N-1}xD_{ii}(x)+\sum_{i=1}^{N-1}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)=
+		\sum_{k=0}^{2L+2}Q_{k}x^{k}
+	\end{split}
+\end{equation}
+We call these $Q_{k}$, with $k=0,\ldots,2L+2$, the \textit{charges}. \\
+We can also introduce 
+\begin{equation}
+	T_{0}(x)=(N+x)D_{N,N}(x)-\sum_{i=1}^{N-1}xD_{ii}(x)\quad\text{such that}\quad T_{\Delta}(x)=T_{0}(x)+\sum_{i=2}^{N}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)
+\end{equation}For large $x$, we compute them by expanding $U_{0}^{d}(x)$ in a polynomial: 
+\begin{equation}
+	D_{N,N}(x)=\sum_{a=0}^{2L+1}D_{N,N}^{a}x^{a}\quad D_{ii}(x)=\sum_{a=0}^{2L+1}D_{ii}^{a}x^{a}\quad B_{i}(x)=\sum_{a=0}^{2L-1}B_{i}^{a}x^{a}
+\end{equation}
+The coefficients that we need are the following:
+\begin{equation}
+	D_{N,N}(x)=D_{N,N}^{2L+1}x^{2L+1}+D_{N,N}^{2L}x^{2L+1}+D_{N,N}^{2L-1}x^{2L-1}+\ldots
+\end{equation}
+where 
+\begin{equation}
+	D_{N,N}^{2L+1}=I^{tot}
+\end{equation}
+\begin{equation}
+	D_{N,N}^{2L}=I^{tot}+2e_{NN}^{tot}
+\end{equation}
+\begin{equation}
+	\begin{split}
+		D_{N,N}^{2L-1}=3e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2\sum_{a\neq b}e_{NN}^{[a]}e_{NN}^{[b]}
+	\end{split}
+\end{equation}
+{\color{blue}ok}
+
+We observe that $\forall i,j=1,\ldots,N-1$
+\begin{equation}
+	\sum_{a\neq b}e_{ij}^{[a]}e_{ji}^{[b]}=e_{ij}^{tot}e_{ji}^{tot}-e_{ii}^{tot}
+\end{equation}
+then 
+\begin{equation}
+	D_{N,N}^{2L-1}=e_{NN}^{tot}\left(2e_{NN}^{tot}+I^{tot}\right)-\sum_{j=1}^{N}e_{jj}^{tot}%=2e_{NN}^{tot}\left(e_{NN}^{tot}+I^{tot}\right)-L
+\end{equation}
+Then
+\begin{equation}
+	\boxed{D_{N,N}^{2L-1}	=2e_{NN}^{tot}\left(e_{NN}^{tot}+I^{tot}\right)-L}
+\end{equation}
+{\color{blue}ok?}where we used $
+\sum_{i=1}^Ne_{ii}^{tot}=L$. 
+
+While, $\forall i=1,\ldots,N-1$
+
+
+\begin{equation}
+	D_{ii}(x)=D_{ii}^{2L+1}x^{2L+1}+D_{ii}^{2L}x^{2L}+D_{ii}^{2L-1}x^{2L-1}+\ldots
+\end{equation}
+where the coefficients
+\begin{equation}\label{a2lp}
+	D_{ii}^{2L+1}=-I^{tot}
+\end{equation}\begin{equation}\label{a2l}
+	D_{ii}^{2L}=I^{tot}-2e_{ii}^{tot}
+\end{equation}
+\begin{equation}\label{a2lm1}
+	\begin{split}
+		D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{a\neq b}e_{ii}^{[a]}e_{ii}^{[b]}-2\sum_{a\neq b}\sum_{j=1\,:\,j\neq i}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\
+		&=e_{11}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=1}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\
+		%&=e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2e_{ii}^{tot}\\
+		%&=2e_{11}^{tot}+2e_{ii}^{tot}-C_1
+		&=e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=1}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\ 
+	\end{split}
+\end{equation}
+
+We rewrite
+\begin{equation}
+	\begin{split}
+		D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{j=1}^{N-1}e_{ij}^{tot}e_{ji}^{tot}+2(N-1)e_{ii}^{tot}
+	\end{split}
+\end{equation}
+then
+\begin{equation}
+	\begin{split}
+		D_{ii}^{2L-1}=	2Ne_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}%=2Ne_{ii}^{tot}+ 2e_{NN}^{tot}-L -2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}
+	\end{split}
+\end{equation}
+Then 
+\begin{equation}
+	\boxed{D_{ii}^{2L-1}=2Ne_{ii}^{tot}+ 2e_{NN}^{tot}-L -2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}}
+\end{equation}
+{\color{blue}ok}
+%blue} In case of a chain $L=2$ and $N=3$ and choosing $i=2$ this reads as 
+%\begin{equation*}
+%	D_{22}^{2L-1}=6e_{22}^{tot}+e_{11}^{tot}-e_{22}^{tot}-e_{33}^{tot}-2e_{22}^{tot}e_{22}^{tot}-2e_{23}^{tot}e_{32}^{tot}
+%\end{equation*}
+%where
+%\begin{equation*}
+%	e_{ab}^{tot}=e_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes e_{ab}\qquad \forall a,b\in \{1,2,3\}
+%\end{equation*}
+%This gives exactly
+%\begin{equation*}
+%	D_{22}^{2L-1}=\left(
+%	\begin{array}{ccccccccc}
+%		2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+%		0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+%		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+%		0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 \\
+%		0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 & 0 \\
+%		0 & 0 & 0 & 0 & 0 & 0 & 0 & -2 & 0 \\
+%		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+%		0 & 0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 \\
+%		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -2 \\
+%	\end{array}
+%	\right)
+%\end{equation*}
+%}
+%\textbf{Observation}: it seems to me that, although not diagonal, the $D_{ii}^{2L-1}$ does not chaing the exitation of the chain since we have $e_{ij}^{tot}e_{ji}^{tot}$!\\
+%The following \textit{lower diagonal} elements of $U_{0}(x)$, $\forall i=2,\ldots,L$ and for $j=1$
+%\begin{equation}
+%	C_{i}(x)=C_{i}^{2L-1}x^{2L-1}+\ldots
+%\end{equation}
+%where the coefficient is
+%\begin{equation}\label{c}
+%	C_{i}^{2L-1}=2e_{1i}^{tot}+2\sum_{a< b}\left(e_{1i}^{[a]}e_{11}^{[b]}-e_{1i}^{[a]}e_{ii}^{[b]}-\sum_{a=2\,:\,k\neq j}^{N}e_{1a}^{[a]}e_{ai}^{[b]}\right)
+%\end{equation}
+Moreover, $\forall j=2,\ldots,L$ and for $i=1$
+\begin{equation}
+B_{j}(x)=B_{j}^{2L-1}x^{2L-1}+\ldots
+\end{equation}
+where the coefficient is 
+\begin{equation}\label{b}
+\begin{split}
+B_{j}^{2L-1}&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-e_{j1}^{[a]}e_{jj}^{[b]}-\sum_{k=2\,:\,k\neq j}^{N}e_{k1}^{[a]}e_{jk}^{[b]}\right)\\
+&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-\sum_{k=2}^{N}e_{k1}^{[a]}e_{jk}^{[b]}\right)
+\end{split}
+\end{equation}
+then
+\begin{equation}
+\begin{split}
+B_{j}^{2L-1}=2e_{j1}^{tot}+
+2\sum_{a,b=1\,:\, a<b}^{L}\left(e_{j1}^{[a]}e_{11}^{[b]}\right)-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=2}^{N}\left( e_{jk}^{[a]}e_{k1}^{[b]}\right)
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+B_{j}^{2L-1}&=
+2\sum_{a,b=1}^{L}\left(e_{j1}^{[a]}e_{11}^{[b]}\right)-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N}\left( e_{jk}^{[a]}e_{k1}^{[b]}\right)\\
+%	&=
+%	2e_{j1}^{tot}e_{11}^{tot}-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N} e_{jk}^{[a]}e_{k1}^{[b]}
+\end{split}
+\end{equation}
+Thus
+\begin{equation}
+\boxed{	B_{j}^{2L-1}=	2e_{j1}^{tot}e_{11}^{tot}-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N} e_{jk}^{[a]}e_{k1}^{[b]}}
+\end{equation}
+Finally, for every $i,j=2,\ldots,N$ such that $i\neq j$, we have that 
+\begin{equation}
+\boxed{D_{i,j}^{2L}=-2e_{ji}^{tot}}
+\end{equation}
+\textbf{Remark}: it is easy to see that, when restricted to the case of 2 species,  \eqref{a2lp},\eqref{a2l},\eqref{a2lm1} correspond to the one compute in \cite{frassek2020eigenstates}. \\ \\
+The interesting charges (we only look for the first non trivial one) take the following form  
+
+
+
+\begin{align}
+Q_{2L+2}&=D_{N,N}^{2L+1}-\sum_{i=1}^{N-1}D_{ii}^{2L+1}=N\\
+Q_{2L+1}&=ND_{N,N}^{2L+1}+A^{2L}-\sum_{i=1}^{N-1}D_{ii}^{2L}=N+2L-1\\
+Q_{2L\phantom{+}}&=ND_{N,N}^{2L}+D_{N,N}^{2L-1}-\sum_{i=1}^{N-1}D_{ii}^{2L-1}+\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
+\end{align}
+The charges $Q_{2L+2}$ and $Q_{2L+1}$ are proportional to the identity matrix, while $Q_{2L}$ contains non diagonal matrices and the boundary parameters $\alpha_{i},\beta_{i}$ $\forall i=2,\ldots,N$.\\
+It is easy to show that 
+\begin{equation}
+\left[Q_{2L},H^{''}\right]=Q_{2L}H^{''}-H^{''}Q_{2L}=0
+\end{equation}
+The commutation with the Hamiltonian $H^{''}$ for $Q_{2L+2}$ and $Q_{2L+1}$ is trivial. \\
+We introduce the following:
+\begin{equation}
+Q_{2L}^{0}:=ND_{N,N}^{2L}+D_{N,N}^{2L-1}-\sum_{i=1}^{N-1}D_{ii}^{2L-1}
+\end{equation}
+that is 
+\begin{equation}
+\begin{split}
+Q_{2L}^{0}&=N(I^{tot}+e_{NN}^{tot})+e_{NN}^{tot}(2e_{NN}^{tot}+I^{tot})-\sum_{j=1}^{N-1}e_{jj}^{tot}-2N\sum_{j=1}^{N-1}e_{jj}^{tot}+\sum_{k=1}^{N-1}\left\{e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+\sum_{j=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}\right\}
+\\&=
+(N-NL-2L)I^{tot}+2(N+2)e_{NN}^{tot}+2e_{NN}^{tot}e_{NN}^{tot}+2\sum_{j,k=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}
+\end{split}
+\end{equation}
+%\begin{equation}	
+%\begin{split}
+%Q_{2L}^{0}&=NI^{tot}+2e_{11}^{tot}(e_{11}^{tot}+I^{tot})-(N+2)\sum_{j=2}^{N}e_{jj}^{tot}+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
+%&=N+2e_{11}^{tot}(e_{11}^{tot}+1)+(N+2)(e_{11}^{tot}-L)+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
+%\end{split}
+%\end{equation} 
+we also introduce 
+\begin{equation}
+\mathcal{Q}_{2L}=\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
+\end{equation}
+therefore we can write 
+\begin{equation}
+Q_{2L}=Q_{2L}^{0}+\mathcal{Q}_{2L}
+\end{equation}
+Observe that $Q_{2L}$ and $Q_{2L}^{0}$ are isospectral. \\
+%  It has the property that commute with the equilibrium Hamiltonian. 
+
+All terms are diagonal except the last one which can  be  identified with the second Casimir of the $gl(N-1)$ subalgebra
+\begin{equation}
+\hat C_2^{N-1}= \sum_{i,j=1}^{N-1}e_{ij}^{tot}e_{ji}^{tot}
+\end{equation} 
+On the Bethe states (and on the irrep decomposition of the spin chain) it acts diagonally with eigenvalues given in terms of shifted weights 
+\begin{equation}
+C_2^{N-1}=\sum_{j=1}^{N-1}\ell_j(\ell_j -N+2)+\frac{1}{6}(N-1)(N-2)(N-3)
+\end{equation} 
+{\color{blue}to be checked...} {\color{blue} It works!!}, see e.g. [Das,Okubo].
+Thus the eigenvalues of the transfer matrix can be writen as 
+\begin{equation}
+\begin{split}
+\Lambda(x)&= \Lambda_{2L+2} x^{2L+2}+ \Lambda_{2L+1} x^{2L+1}+ \Lambda_{2L}x^{2L}+\ldots
+\\&=N x^{2L+2}+2(N+1) x^{2L+1}+ \left(N+2m_1(m_1+1)-(N+2)(L-m_1)+2C_{2}^{N-1}\right)x^{2L}+\ldots
+\end{split}
+\end{equation} 
+
+Thus the difference is of order $2L$ and becomes
+\begin{equation}
+\Lambda(x)-T_0(x)=x^{2L}\left(\Lambda_{2L}-Q_{2L}^0\right)+\ldots
+\end{equation} 
+We can take the limit
+\begin{equation}
+\lim_{x\to\infty}\frac{2x+N}{\Lambda(x)-T_0(x)}B_{i}(x)=\frac{2}{\Lambda_{2L}-Q_{2L}^0}B_i^{2L-1}
+\end{equation} 
+{\color{blue}ok}
+\subsubsection{Exchange relations between charges}
+Using \eqref{EX1}, \eqref{EX2} and \eqref{EX3} we obtain for every $i,j\in\{1,\ldots,N-1\}$ 
+\begin{equation}
+Q_{0}^{2L}B_{i}^{2L-1}=B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})\right)-2\sum_{j=1\,:\,j\neq i}^{N-1}B_{j}^{2L-1}D_{j,i}^{2L}
+\end{equation}
+%In particular for the case $N=3$ we have
+%\begin{equation}
+%	\begin{split}
+%	Q_{0}^{2L}B_{1}^{2L-1}&=B_{1}^{2L-1}\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{3,3}^{2L})\right)-2B_{2}^{2L-1}D_{2,1}^{2L}
+%	\\
+%	Q_{0}^{2L}B_{2}^{2L-1}&=B_{2}^{2L-1}\left(Q_{0}^{2L}-2(D_{2,2}^{2L}+D_{3,3}^{2L})\right)-2B_{1}^{2L-1}D_{1,2}^{2L}
+%	\end{split}
+%\end{equation}
+Other useful exchange relations are 
+\begin{equation}
+\begin{split}
+D_{N,N}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}\left(D_{N,N}^{2L}+D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%\\
+%D_{33}^{2L}B_{2}^{2L}&=B_{2}^{2L}\left(D_{33}^{2L}+D_{22}^{2L+1}-D_{33}^{2L+1}\right)
+\end{split}
+\end{equation}
+and
+\begin{equation}
+\begin{split}
+D_{i,i}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}\left(D_{i,i}^{2L}+D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%\\
+%D_{22}^{2L}B_{2}^{2L}&=B_{2}^{2L}\left(D_{22}^{2L}+D_{22}^{2L+1}-D_{33}^{2L+1}\right)
+\end{split}
+\end{equation}
+and finally
+\begin{equation}
+\begin{split}
+D_{i,j}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}D_{i,j}^{2L}+B_{j}^{2L-1}\left(D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%	D_{21}^{2L}B_{2}^{2L-1}&=B_{2}^{2L-1}D_{21}^{2L}+B_{2}^{2L-1}\left(D_{22}^{2L+1}-D_{33}^{2L+1}\right)
+\end{split}
+\end{equation}
+While, for $i,j\in\{1,\ldots,N-1\}$ such that $i\neq j$
+\begin{equation}
+\left[D_{j,j}^{2L},B_{i}^{2L-1}\right]=0\qquad \left[B_{i}^{2L-1},B_{j}^{2L-1}\right]=0\qquad \left[B_{i}^{2L-1},D_{j,i}^{2L}\right]=0%\qquad \left[D_{12}^{2L},B_{2}^{2L-1}\right]=0\qquad \left[D_{11}^{2L},B_{2}^{2L-1}\right]=0
+\end{equation}
+{\color{blue}Using them we also have 
+\begin{equation}
+\begin{split}
+	&Q_{0}^{2L}B_{1}^{2L-1}Q_{0}^{2L}B_{2}^{2L-1}\\=&B_{1}^{2L-1}B_{2}^{2L-1}\left(Q_{0}^{2L}-2(D_{11}^{2L}+D_{22}^{2L}+2D_{33}^{2L})+4(D_{33}^{2L+1}-D_{11}^{2L+1})\right.\\-&\left.2B_{1}^{2L-1}B_{1}^{2L-1}D_{12}^{2L}-2B_{2}^{2L-1}B_{2}^{2L-1}D_{21}^{2L}\right)\left(Q_{0}^{2L}-2(D_{22}^{2L}+D_{33}^{2L})\right)
+	\\&+
+	\left(-2B_{1}^{2L-1}B_{1}^{2L-1}\left(Q_{0}^{2L}-2(D_{11}^{2L}+D_{33}^{2L})+4(D_{33}^{2L+1}-D_{11}^{2L+1})\right)+8B_{1}^{2L-1}B_{2}^{2L-1}D_{21}^{2L}\right)D_{12}^{2L}
+\end{split}
+\end{equation}}{\color{blue}Probably it is not useful}
+
+\subsection{The non local transformation}
+We define the equilibrium Hamiltonian as
+\begin{equation}
+	H^{0}=H_{left}^{0}+H_{bulk}+H^{''}_{right}
+\end{equation}
+where
+\begin{equation}
+		H_{left}^{0}=e_{NN}^{1}-\mathbbm{1}^{1}\qquad H_{right}^{''}=e_{NN}^{L}-\mathbbm{1}^{L}
+\end{equation}
+Therefore we have that
+\begin{equation}
+	H^{''}=H^{0}+H^{B}
+\end{equation}
+where
+\begin{equation}
+	H^{B}=\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1}
+\end{equation}
+We look for a matrix $W$ such that 
+\begin{equation}\label{GoalWH}
+	H^{''}W=WH_{0}
+\end{equation}
+We have that 
+\begin{equation}
+	\left[H_{0},Q^{0}_{2L}\right]=0\qquad \left[H^{''},Q_{2L}\right]=0
+\end{equation}
+thus it is enough to look for a matrix $W$ such that 
+\begin{equation}\label{GoalWQ}
+	Q^{2L}W=WQ_{2L}^{0}
+\end{equation}
+To find a matrix $W$ such that \eqref{GoalWH} is fulfilled we use the \textit{resolvent operator} defined as
+\begin{equation}
+	R(z,H):=\left(zI-H\right)^{-1}
+\end{equation}
+where $z$ must be in the resolvent set, i.e. the subset of $\mathbb{C}$ such that the resolvent is well defined. 
+The above equation implies that 
+\begin{equation}
+	(z-H)R(H,z)=1
+\end{equation}
+In order to be well defined we must $z$ must not be an eigenvalue of $H$ (and thus of $H_{0}$). We denote by $\bm{m}=(m_{1},\ldots,m_{N})$ an $N-$dimensional vector where each $m_{i}$ means the total occupation over the chain of each species $i\in\{1,\ldots,N\}$. Therefore, we call $\Lambda_{\bm{m}}$ and $|\Psi_{\bm{m}}^{0}\rangle$ the eigenvalue and the eigenvector of $H^{0}$ that correspond to a certain $\bm{m}$. We take $z=\Lambda_{\bm{m}}+\epsilon$ 
+\begin{equation}
+	(\Lambda_{\bm{m}}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)=1
+\end{equation}
+We multiply both sides by $|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|$
+\begin{equation}
+	(\Lambda_{\bm{m}}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+We sum over all possible $m$ 
+\begin{equation}
+	\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\Lambda_{m}+\epsilon-H)R(H,\Lambda_{m}+\epsilon)|\Psi_{m}^{0}\rangle \langle \Psi_{m}^{0}|=\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+We multiply both sides by $\epsilon$ 
+\begin{equation}
+	\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\Lambda_{m}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{m}^{0}|=\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+We take the limit for $\epsilon\to 0$ on both sides 
+\begin{equation}
+	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L} (\Lambda_{\bm{m}}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+Observe that 
+\begin{equation}
+	\lim_{\epsilon\to 0}\left(\Lambda_{\bm{m}}+\epsilon-H\right)=\left(\Lambda_{\bm{m}}-H\right)<\infty
+\end{equation}
+and using the following power expansion
+\begin{equation}\label{veryUsefulSeries}
+	(A-B)^{-1}=\sum_{n=0}^{\infty}(A^{-1}B)^{n}A^{-1}
+\end{equation}
+we have that for each $\bm{m}$ 
+\begin{equation}
+	\begin{split}
+		&\lim_{\epsilon\to 0}\epsilon\left(\Lambda_{\bm{m}}+\epsilon-H\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\sum_{n=0}^{\infty}\left((\Lambda_{\bm{m}}+\epsilon)^{-1}H\right)^{n}(\Lambda_{\bm{m}}+\epsilon)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|
+		\\=&
+		\lim_{\epsilon\to 0}\epsilon\sum_{n=0}^{\infty}\left((\Lambda_{\bm{m}}+\epsilon)^{-1}\Lambda_{\bm{m}}\right)^{n}(\Lambda_{m}+\epsilon)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\epsilon\left(\Lambda_{\bm{m}}+\epsilon-\Lambda_{\bm{m}}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|\\=&|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|<\infty
+	\end{split}
+\end{equation}
+therefore the limit of the product is the product of the limit and we obtain that 
+\begin{equation}
+	\sum_{m=0}^{L}  (\Lambda_{\bm{m}}-H)\lim_{\epsilon\to 0}\epsilon R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=0
+\end{equation}
+Since the limit of the sum is the sum of the limit we have   
+\begin{equation}
+	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  \Lambda_{\bm{m}}R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|= H\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+thus 
+\begin{equation}
+	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)H_{0}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|= H\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+Since $H_{0}=H_{0}^{T}$ 
+\begin{equation}
+	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|H_{0}= H\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+By calling 
+\begin{equation}\label{W-extended}
+	W= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}+\epsilon-H\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+we finally obtain 
+\begin{equation}
+	WH_{0}=HW
+\end{equation}
+Power expanding the transfer matrix by charges and considering the limit for $x\to\infty$ we have that 
+\begin{equation}
+	\begin{split}
+		W&= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|\\&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}-\mathcal{Q}_{2L}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+		\end{split}
+\end{equation}
+and also satisfies \eqref{GoalWQ}. We now write the power expansion with respect to $B_{i}^{2L-1}$ of $W$. We obtain that, using the multi-variate version of \eqref{veryUsefulSeries},
+\begin{equation}
+	\begin{split}
+	W=&\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
+	\\&
+	\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{split}
+\end{equation} 
+we further observe that in the limit for $\epsilon\to 0$ the quantity 
+\begin{equation}
+\lim_{\epsilon\to 0}	\epsilon\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle=|\Psi_{\bm{m}}^{0}\rangle
+\end{equation}
+therefore we have that 
+\begin{equation}
+	\begin{split}
+		W=&\lim_{\epsilon\to 0}\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
+		|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+	\end{split}
+\end{equation}
 \begin{comment}
 \begin{itemize}
 	\item for $j\neq N$ 
@@ -2452,6 +2869,7 @@ where
 %\begin{equation}
 %	U_{0}^{d}(x)=M_{0}(x)\widehat{K}_{0}^{d}(x)\widehat{M}_{0}(x)
 %\end{equation}
+{\color{blue}
 \subsection{Eigenvectors of the non equilibrium Hamiltonian}
 For simplicity we first consider the case with $N=3$. We make the following ansatz for the eigenvectors of the chain with left triangular and right diagonal boundaries described by the Hamiltonian $H^{''}$ introduced in \eqref{HSecond}. We denote by $\Delta_{2}=\alpha_{2}-\beta_{2}$ and $\Delta_{3}=\alpha_{3}-\beta_{3}$. The eigenvectors are the following: 
 \begin{equation}
@@ -2709,570 +3127,10 @@ Arguing as in the case $N=3$ we observe that
 	\prod_{s=1}^{k_{2}+\cdots+k_{N}}\prod_{q=2}^{N}A_{q}^{i_{s}^{q}}
 	\end{split}
 \end{equation}
-therefore \eqref{cond4General} is fulfilled. Again, the equivalent of conditions \eqref{cond1}, e\eqref{cond5} and \eqref{cond6} are trivially satisfied. The equivalents of conditions \eqref{cond2} and \eqref{cond3} are satisfied because $B_{j}(x)$ are rising operators for all $j\in \{2,\ldots,N\}$. 
-\begin{comment}
-We show that, if these previous conditions are satisfied, then the $|\Psi^{\Delta}_{m_{2},m_{3}}\rangle$ are indeed eigenvalues of $H^{''}$. 
-\begin{align*}
-T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
-\\&+
-\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\\&+\ldots+	\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0} 
-\\&+\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}+1}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{2}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\\&+\ldots +
-\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}+1}(2x+N)B_{N}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\end{align*}
-we replace $k_{i}\to k_{i}+1$ $\forall i\in\{2,\ldots,N\}$ in the proper summation. Then,
-\begin{align*}
-T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
-\\&+
-\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\\&+\ldots+	\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\\&+\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{2}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2}-1,\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\\&+\ldots
-\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{N}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}-1}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\\&+
-\Delta_{2}^{m_{2}+1}\sum_{a_{3}=0}^{m_{3}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{3}^{k_{3}}\Delta_{N}^{k_{N}}(2x+N)B_{2}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{m_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\\&+\ldots +
-\Delta_{N}^{m_{N}+1}\sum_{a_{2}=0}^{m_{3}}\ldots\sum_{a_{N-1}=0}^{m_{N-1}}\Delta_{3}^{k_{2}}\Delta_{N-1}^{k_{N-1}}(2x+N)B_{2}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\end{align*}
-We use prperties \eqref{SecondProperty} and \eqref{FirstProperty}:
-\begin{align*}
-T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
-\\&+
-\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\\&+\ldots+	\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\\&+\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left[\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\\&+\ldots +
-\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left[\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\end{align*}
-then
-\begin{align*}
-T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=
-\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
-\\&+
-\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\\&+\ldots+	\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\\&=
-\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle
-\end{align*} 
-\end{comment}
-\subsection{Charges}
-Then we have
-\begin{equation}
-	\begin{split}
-	T^{\Delta}(x)=tr_{0}&\left(\begin{pmatrix}
-		-x&0&0&\ldots&0&(N+2x)(\alpha_{1}-\beta_{1})\\
-		0&-x&0&\ldots&0&(N+2x)(\alpha_{2}-\beta_{2})\\
-		\vdots&\vdots&\ddots&\vdots&\vdots&\vdots\\
-		0&0&0&\ldots&-x&(N+2x)(\alpha_{N-1}-\beta_{N-1})\\
-		0&0&0&\ldots&0&1+x
-	\end{pmatrix}\right.
-\\& \left.
-\;\;\;\begin{pmatrix}
-	D_{1,1}(x)&D_{1,2}(x)&\ldots&D_{1,N-1}(x)&C_{1}(x)\\
-	D_{2,1}(x)&D_{2,2}(x)&\ldots&D_{2,N-1}(x)&C_{2}(x)\\
-	\vdots&\vdots&\ddots&\vdots&\vdots\\
-	D_{N-1,1}&D_{N-1,2}&\ldots&D_{N-1,N-1}(x)&C_{N-1}\\
-	B_{1}(x)&B_{N-1}(x)&\ldots&D_{N,N-1}(x)&D_{N,N}(x)
-\end{pmatrix}\right)
-\end{split}
-\end{equation}
-Therefore we can write the polynomial expansion
-\begin{equation}
-	\begin{split}
-		T^{\Delta}(x)=&
-		(N+x)D_{N,N}(x)-\sum_{i=1}^{N-1}xD_{ii}(x)+\sum_{i=1}^{N-1}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)=
-		\sum_{k=0}^{2L+2}Q_{k}x^{k}
-	\end{split}
-\end{equation}
-We call these $Q_{k}$, with $k=0,\ldots,2L+2$, the \textit{charges}. \\
-We can also introduce 
-\begin{equation}
-	T_{0}(x)=(N+x)D_{N,N}(x)-\sum_{i=1}^{N-1}xD_{ii}(x)\quad\text{such that}\quad T_{\Delta}(x)=T_{0}(x)+\sum_{i=2}^{N}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)
-\end{equation}For large $x$, we compute them by expanding $U_{0}^{d}(x)$ in a polynomial: 
-\begin{equation}
-	D_{N,N}(x)=\sum_{a=0}^{2L+1}D_{N,N}^{a}x^{a}\quad D_{ii}(x)=\sum_{a=0}^{2L+1}D_{ii}^{a}x^{a}\quad B_{i}(x)=\sum_{a=0}^{2L-1}B_{i}^{a}x^{a}
-\end{equation}
-The coefficients that we need are the following:
-\begin{equation}
-	D_{N,N}(x)=D_{N,N}^{2L+1}x^{2L+1}+D_{N,N}^{2L}x^{2L+1}+D_{N,N}^{2L-1}x^{2L-1}+\ldots
-\end{equation}
-where 
-\begin{equation}
-	D_{N,N}^{2L+1}=I^{tot}
-\end{equation}
-\begin{equation}
-	D_{N,N}^{2L}=I^{tot}+2e_{NN}^{tot}
-\end{equation}
-\begin{equation}
-	\begin{split}
-		D_{N,N}^{2L-1}=3e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2\sum_{a\neq b}e_{NN}^{[a]}e_{NN}^{[b]}
-	\end{split}
-\end{equation}
-{\color{blue}ok}
-
-We observe that $\forall i,j=1,\ldots,N-1$
-\begin{equation}
-	\sum_{a\neq b}e_{ij}^{[a]}e_{ji}^{[b]}=e_{ij}^{tot}e_{ji}^{tot}-e_{ii}^{tot}
-\end{equation}
-then 
-\begin{equation}
-	D_{N,N}^{2L-1}=e_{NN}^{tot}\left(2e_{NN}^{tot}+I^{tot}\right)-\sum_{j=1}^{N}e_{jj}^{tot}%=2e_{NN}^{tot}\left(e_{NN}^{tot}+I^{tot}\right)-L
-\end{equation}
-Then
-\begin{equation}
-\boxed{D_{N,N}^{2L-1}	=2e_{NN}^{tot}\left(e_{NN}^{tot}+I^{tot}\right)-L}
-\end{equation}
-{\color{blue}ok?}where we used $
- \sum_{i=1}^Ne_{ii}^{tot}=L$. 
-
-While, $\forall i=1,\ldots,N-1$
-
-
-\begin{equation}
-	D_{ii}(x)=D_{ii}^{2L+1}x^{2L+1}+D_{ii}^{2L}x^{2L}+D_{ii}^{2L-1}x^{2L-1}+\ldots
-\end{equation}
-where the coefficients
-\begin{equation}\label{a2lp}
-	D_{ii}^{2L+1}=-I^{tot}
-\end{equation}\begin{equation}\label{a2l}
-	D_{ii}^{2L}=I^{tot}-2e_{ii}^{tot}
-\end{equation}
-\begin{equation}\label{a2lm1}
-	\begin{split}
-		D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{a\neq b}e_{ii}^{[a]}e_{ii}^{[b]}-2\sum_{a\neq b}\sum_{j=1\,:\,j\neq i}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\
-		&=e_{11}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=1}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\
-	%&=e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2e_{ii}^{tot}\\
-		%&=2e_{11}^{tot}+2e_{ii}^{tot}-C_1
-		&=e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=1}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\ 
-	\end{split}
-\end{equation}
-
-We rewrite
-\begin{equation}
-	\begin{split}
-	D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{j=1}^{N-1}e_{ij}^{tot}e_{ji}^{tot}+2(N-1)e_{ii}^{tot}
-\end{split}
-\end{equation}
-then
-\begin{equation}
-\begin{split}
-D_{ii}^{2L-1}=	2Ne_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}%=2Ne_{ii}^{tot}+ 2e_{NN}^{tot}-L -2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}
-	\end{split}
-\end{equation}
-Then 
-\begin{equation}
-\boxed{D_{ii}^{2L-1}=2Ne_{ii}^{tot}+ 2e_{NN}^{tot}-L -2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}}
-\end{equation}
-{\color{blue}ok}
-%blue} In case of a chain $L=2$ and $N=3$ and choosing $i=2$ this reads as 
-%\begin{equation*}
-%	D_{22}^{2L-1}=6e_{22}^{tot}+e_{11}^{tot}-e_{22}^{tot}-e_{33}^{tot}-2e_{22}^{tot}e_{22}^{tot}-2e_{23}^{tot}e_{32}^{tot}
-%\end{equation*}
-%where
-%\begin{equation*}
-%	e_{ab}^{tot}=e_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes e_{ab}\qquad \forall a,b\in \{1,2,3\}
-%\end{equation*}
-%This gives exactly
-%\begin{equation*}
-%	D_{22}^{2L-1}=\left(
-%	\begin{array}{ccccccccc}
-%		2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-%		0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 0 & 0 & 0 & 0 & -2 & 0 \\
-%		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -2 \\
-%	\end{array}
-%	\right)
-%\end{equation*}
-%}
-%\textbf{Observation}: it seems to me that, although not diagonal, the $D_{ii}^{2L-1}$ does not chaing the exitation of the chain since we have $e_{ij}^{tot}e_{ji}^{tot}$!\\
-%The following \textit{lower diagonal} elements of $U_{0}(x)$, $\forall i=2,\ldots,L$ and for $j=1$
-%\begin{equation}
-%	C_{i}(x)=C_{i}^{2L-1}x^{2L-1}+\ldots
-%\end{equation}
-%where the coefficient is
-%\begin{equation}\label{c}
-%	C_{i}^{2L-1}=2e_{1i}^{tot}+2\sum_{a< b}\left(e_{1i}^{[a]}e_{11}^{[b]}-e_{1i}^{[a]}e_{ii}^{[b]}-\sum_{a=2\,:\,k\neq j}^{N}e_{1a}^{[a]}e_{ai}^{[b]}\right)
-%\end{equation}
-Moreover, $\forall j=2,\ldots,L$ and for $i=1$
-\begin{equation}
-	B_{j}(x)=B_{j}^{2L-1}x^{2L-1}+\ldots
-\end{equation}
-where the coefficient is 
-\begin{equation}\label{b}
-\begin{split}
-	B_{j}^{2L-1}&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-e_{j1}^{[a]}e_{jj}^{[b]}-\sum_{k=2\,:\,k\neq j}^{N}e_{k1}^{[a]}e_{jk}^{[b]}\right)\\
-	&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-\sum_{k=2}^{N}e_{k1}^{[a]}e_{jk}^{[b]}\right)
-\end{split}
-\end{equation}
-then
-\begin{equation}
-\begin{split}
-	B_{j}^{2L-1}=2e_{j1}^{tot}+
-	2\sum_{a,b=1\,:\, a<b}^{L}\left(e_{j1}^{[a]}e_{11}^{[b]}\right)-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=2}^{N}\left( e_{jk}^{[a]}e_{k1}^{[b]}\right)
-\end{split}
-\end{equation}
-\begin{equation}
-\begin{split}
-	B_{j}^{2L-1}&=
-	2\sum_{a,b=1}^{L}\left(e_{j1}^{[a]}e_{11}^{[b]}\right)-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N}\left( e_{jk}^{[a]}e_{k1}^{[b]}\right)\\
-%	&=
-%	2e_{j1}^{tot}e_{11}^{tot}-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N} e_{jk}^{[a]}e_{k1}^{[b]}
-\end{split}
-\end{equation}
-Thus
-\begin{equation}
-\boxed{	B_{j}^{2L-1}=	2e_{j1}^{tot}e_{11}^{tot}-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N} e_{jk}^{[a]}e_{k1}^{[b]}}
-\end{equation}
-Finally, for every $i,j=2,\ldots,N$ such that $i\neq j$, we have that 
-\begin{equation}
-	\boxed{D_{i,j}^{2L}=-2e_{ji}^{tot}}
-\end{equation}
-\textbf{Remark}: it is easy to see that, when restricted to the case of 2 species,  \eqref{a2lp},\eqref{a2l},\eqref{a2lm1} correspond to the one compute in \cite{frassek2020eigenstates}. \\ \\
-The interesting charges (we only look for the first non trivial one) take the following form  
+therefore \eqref{cond4General} is fulfilled. Again, the equivalent of conditions \eqref{cond1}, e\eqref{cond5} and \eqref{cond6} are trivially satisfied. The equivalents of conditions \eqref{cond2} and \eqref{cond3} are satisfied because $B_{j}(x)$ are rising operators for all $j\in \{2,\ldots,N\}$. }
 
 
 
-\begin{align}
-	Q_{2L+2}&=D_{N,N}^{2L+1}-\sum_{i=1}^{N-1}D_{ii}^{2L+1}=N\\
-	Q_{2L+1}&=ND_{N,N}^{2L+1}+A^{2L}-\sum_{i=1}^{N-1}D_{ii}^{2L}=N+2L-1\\
-	Q_{2L\phantom{+}}&=ND_{N,N}^{2L}+D_{N,N}^{2L-1}-\sum_{i=1}^{N-1}D_{ii}^{2L-1}+\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
-\end{align}
-The charges $Q_{2L+2}$ and $Q_{2L+1}$ are proportional to the identity matrix, while $Q_{2L}$ contains non diagonal matrices and the boundary parameters $\alpha_{i},\beta_{i}$ $\forall i=2,\ldots,N$.\\
-It is easy to show that 
-\begin{equation}
-	\left[Q_{2L},H^{''}\right]=Q_{2L}H^{''}-H^{''}Q_{2L}=0
-\end{equation}
-The commutation with the Hamiltonian $H^{''}$ for $Q_{2L+2}$ and $Q_{2L+1}$ is trivial. \\
-We introduce the following:
-\begin{equation}
-Q_{2L}^{0}:=ND_{N,N}^{2L}+D_{N,N}^{2L-1}-\sum_{i=1}^{N-1}D_{ii}^{2L-1}
-\end{equation}
-that is 
-\begin{equation}
-	\begin{split}
-	Q_{2L}^{0}&=N(I^{tot}+e_{NN}^{tot})+e_{NN}^{tot}(2e_{NN}^{tot}+I^{tot})-\sum_{j=1}^{N-1}e_{jj}^{tot}-2N\sum_{j=1}^{N-1}e_{jj}^{tot}+\sum_{k=1}^{N-1}\left\{e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+\sum_{j=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}\right\}
-	\\&=
-	(N-NL-2L)I^{tot}+2(N+2)e_{NN}^{tot}+2e_{NN}^{tot}e_{NN}^{tot}+2\sum_{j,k=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}
-	\end{split}
-\end{equation}
-%\begin{equation}	
-%\begin{split}
-%Q_{2L}^{0}&=NI^{tot}+2e_{11}^{tot}(e_{11}^{tot}+I^{tot})-(N+2)\sum_{j=2}^{N}e_{jj}^{tot}+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
-%&=N+2e_{11}^{tot}(e_{11}^{tot}+1)+(N+2)(e_{11}^{tot}-L)+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
-%\end{split}
-%\end{equation} 
-we also introduce 
-\begin{equation}
-	\mathcal{Q}_{2L}=\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
-\end{equation}
-therefore we can write 
-\begin{equation}
-	Q_{2L}=Q_{2L}^{0}+\mathcal{Q}_{2L}
-\end{equation}
-%  It has the property that commute with the equilibrium Hamiltonian. 
-
-All terms are diagonal except the last one which can  be  identified with the second Casimir of the $gl(N-1)$ subalgebra
-\begin{equation}
-\hat C_2^{N-1}= \sum_{i,j=1}^{N-1}e_{ij}^{tot}e_{ji}^{tot}
-\end{equation} 
-On the Bethe states (and on the irrep decomposition of the spin chain) it acts diagonally with eigenvalues given in terms of shifted weights 
-\begin{equation}
- C_2^{N-1}=\sum_{j=1}^{N-1}\ell_j(\ell_j -N+2)+\frac{1}{6}(N-1)(N-2)(N-3)
-\end{equation} 
-{\color{blue}to be checked...} {\color{blue} It works!!}, see e.g. [Das,Okubo].
-Thus the eigenvalues of the transfer matrix can be writen as 
-\begin{equation}
-\begin{split}
- \Lambda(x)&= \Lambda_{2L+2} x^{2L+2}+ \Lambda_{2L+1} x^{2L+1}+ \Lambda_{2L}x^{2L}+\ldots
- \\&=N x^{2L+2}+2(N+1) x^{2L+1}+ \left(N+2m_1(m_1+1)-(N+2)(L-m_1)+2C_{2}^{N-1}\right)x^{2L}+\ldots
- \end{split}
-\end{equation} 
-
-Thus the difference is of order $2L$ and becomes
-\begin{equation}
- \Lambda(x)-T_0(x)=x^{2L}\left(\Lambda_{2L}-Q_{2L}^0\right)+\ldots
-\end{equation} 
-We can take the limit
-\begin{equation}
- \lim_{x\to\infty}\frac{2x+N}{\Lambda(x)-T_0(x)}B_{i}(x)=\frac{2}{\Lambda_{2L}-Q_{2L}^0}B_i^{2L-1}
-\end{equation} 
-{\color{blue}ok}
-\subsubsection{Exchange relations between charges}
-Using \eqref{EX1}, \eqref{EX2} and \eqref{EX3} we obtain for every $i,j\in\{1,\ldots,N-1\}$ 
-\begin{equation}
-	Q_{0}^{2L}B_{i}^{2L-1}=B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})\right)-2\sum_{j=1\,:\,j\neq i}^{N-1}B_{j}^{2L-1}D_{j,i}^{2L}
-\end{equation}
-%In particular for the case $N=3$ we have
-%\begin{equation}
-%	\begin{split}
-	%	Q_{0}^{2L}B_{1}^{2L-1}&=B_{1}^{2L-1}\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{3,3}^{2L})\right)-2B_{2}^{2L-1}D_{2,1}^{2L}
-	%	\\
-	%	Q_{0}^{2L}B_{2}^{2L-1}&=B_{2}^{2L-1}\left(Q_{0}^{2L}-2(D_{2,2}^{2L}+D_{3,3}^{2L})\right)-2B_{1}^{2L-1}D_{1,2}^{2L}
-%	\end{split}
-%\end{equation}
-Other useful exchange relations are 
-\begin{equation}
-	\begin{split}
-		D_{N,N}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}\left(D_{N,N}^{2L}+D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%\\
-		%D_{33}^{2L}B_{2}^{2L}&=B_{2}^{2L}\left(D_{33}^{2L}+D_{22}^{2L+1}-D_{33}^{2L+1}\right)
-	\end{split}
-\end{equation}
-and
-\begin{equation}
-	\begin{split}
-		D_{i,i}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}\left(D_{i,i}^{2L}+D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%\\
-		%D_{22}^{2L}B_{2}^{2L}&=B_{2}^{2L}\left(D_{22}^{2L}+D_{22}^{2L+1}-D_{33}^{2L+1}\right)
-	\end{split}
-\end{equation}
-and finally
-\begin{equation}
-	\begin{split}
-		D_{i,j}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}D_{i,j}^{2L}+B_{j}^{2L-1}\left(D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%	D_{21}^{2L}B_{2}^{2L-1}&=B_{2}^{2L-1}D_{21}^{2L}+B_{2}^{2L-1}\left(D_{22}^{2L+1}-D_{33}^{2L+1}\right)
-	\end{split}
-\end{equation}
-While, for $i,j\in\{1,\ldots,N-1\}$ such that $i\neq j$
-\begin{equation}
-	\left[D_{j,j}^{2L},B_{i}^{2L-1}\right]=0\qquad \left[B_{i}^{2L-1},B_{j}^{2L-1}\right]=0\qquad \left[B_{i}^{2L-1},D_{j,i}^{2L}\right]=0%\qquad \left[D_{12}^{2L},B_{2}^{2L-1}\right]=0\qquad \left[D_{11}^{2L},B_{2}^{2L-1}\right]=0
-\end{equation}
-{\color{blue}Using them we also have 
-\begin{equation}
-	\begin{split}
-		&Q_{0}^{2L}B_{1}^{2L-1}Q_{0}^{2L}B_{2}^{2L-1}\\=&B_{1}^{2L-1}B_{2}^{2L-1}\left(Q_{0}^{2L}-2(D_{11}^{2L}+D_{22}^{2L}+2D_{33}^{2L})+4(D_{33}^{2L+1}-D_{11}^{2L+1})\right.\\-&\left.2B_{1}^{2L-1}B_{1}^{2L-1}D_{12}^{2L}-2B_{2}^{2L-1}B_{2}^{2L-1}D_{21}^{2L}\right)\left(Q_{0}^{2L}-2(D_{22}^{2L}+D_{33}^{2L})\right)
-		\\&+
-		\left(-2B_{1}^{2L-1}B_{1}^{2L-1}\left(Q_{0}^{2L}-2(D_{11}^{2L}+D_{33}^{2L})+4(D_{33}^{2L+1}-D_{11}^{2L+1})\right)+8B_{1}^{2L-1}B_{2}^{2L-1}D_{21}^{2L}\right)D_{12}^{2L}
-	\end{split}
-\end{equation}}{\color{blue}Probably it is not useful}
-
-\begin{comment}
-In case of $N=2$ it differs with respect to the $Q_{2L}^{0}$ computed in formula (2.28) of \cite{frassek2020eigenstates} by the following matrix 
-\begin{equation}
-Q_{2L}^{0,Francesco}-Q_{2L}^{0,Rouven}=	\begin{pmatrix}
-		2&0&0&0\\
-		0&-2&0&0\\
-		0&0&-2&0\\
-		0&0&0&2
-	\end{pmatrix}
-\end{equation}
-\begin{equation}
-\widetilde{H}_{0}:=\widetilde{B}_{1}^{0}+\mathcal{H}+\widetilde{B}_{L}
-\end{equation}
-where 
-\begin{equation}
-\widetilde{B}_{1}^{0}=\begin{pmatrix}
-0&0&\ldots&0\\
-0&-1&\ldots&0\\
-\vdots&\vdots&\ddots&\vdots\\
-0&0&\ldots&-1
-\end{pmatrix}
-\end{equation}
-i.e.
-\begin{equation}
-\left[Q_{2}^{0},\widetilde{H}_{0}\right]=Q_{2}^{0}\widetilde{H}_{0}-\widetilde{H}_{0}Q_{2}^{0}=0
-\end{equation}
-We also introduce 
-\begin{equation}
-Q_{2}^{\Delta}:=\sum_{i=2}^{N}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
-\end{equation}
-These two matrices $Q_{2}^{0}$ and $Q_{2}^{\Delta}$ are such that
-\begin{equation}
-Q_{2}=Q_{2}^{0}+Q_{2}^{\Delta}
-\end{equation}
-{\color{blue}Adopt notation here}
-\end{comment}
-\begin{comment}
-\subsection{Eigenvector for the diagonal-triangular chain}
-In \cite{belliard2011nested}  the eigenvectors and eigenvalues hae been computed for the $gl(N)$ spin chain with diagonal boundaries, therfore we know 
-\begin{equation}
-T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle =\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
-\end{equation}
-where $m_{2},\ldots,m_{N}$ denote the total occupation along the chain of species $2,\ldots,N$. Let us notice that $m_{1}=L-\sum_{a=2}^{N}\xi_{a}$.\\
-For the sake of notation, we restrict to the case with $N=3$ and we denote by $\Delta_{2}=\alpha_{2}-\beta_{2}$ and $\Delta_{3}=\alpha_{3}-\beta_{3}$ and we further assume that $\Delta_{2}=\Delta_{3}=\Delta$. 
-We make the following ansatz for the eigevectors of the diagonal-triangular spin chain. Consider the whole chain of dimension $L$. Then, $m=m_{2}+m_{3}$ sites have particles of a type $2$ or $3$ and the remaining $L-m$ are empty. For fixed $m$ there is a one to one correspondence between empty and occupeid sites. Therefore, our ansatz is that $\forall m\in \{0,\ldots,L\}$ 
-\begin{equation}\label{ansatzEigenvectorDelta}
-|\Psi_{L-m}^{\Delta}\rangle=\mathbbm{1}_{\{m_{2}+m_{3}=m\}}\sum_{a_{2}=0}^{m_{2}}\sum_{a_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{2}}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
-\end{equation}
-We fix arbitrary $m,m_{2},m_{3}\in \{0,\ldots,L\}$ such that $m=m_{2}+m_{3}$.  We replace the above eigenvectors in 
-\begin{equation}\label{eigDELTA}
-T_{\Delta}(x)|\Psi_{L-m}^{\Delta}\rangle=\Lambda_{m_{2},m_{3}}(x)|\Psi_{L-m}^{\Delta}\rangle
-\end{equation}
-and we obtain
-\begin{align*}
-&\sum_{a_{2}=0}^{m_{2}}\sum_{a_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
-\\+&
-\sum_{a_{2}=0}^{m_{2}}\sum_{a_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{3}+1}\left(B_{2}(x)+B_{3}(x)\right)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
-\\=&
-\sum_{a_{2}=0}^{m_{2}}\sum_{a_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{3}}\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3}\epsilon}^{k_{2},k_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
-\end{align*}
-We assume that $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=G_{m_{2},m_{3},\epsilon}^{k_{2}+k_{3}}(x)$, i.e. it only depends on the sum of $k_{2}$ and $k_{3}$. We make an shift of summation indexes such that 
-\begin{equation}
-k_{2}+k_{3}\to k_{2}+k_{3}+1
-\end{equation}
-then we obtain
-\begin{align*}
-&\sum_{a_{2}=0}^{m_{2}}\sum_{a_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x) |\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
-\\+&
-\sum_{a_{2}=0}^{m_{2}}\sum_{a_{3}=0}^{m_{3}}\mathbbm{1}_{\{k_{2}+k_{3}\neq 0\}}\Delta^{k_{2}+k_{3}}\left(B_{2}(x)+B_{3}(x)\right)G_{m_{2},m_{3},\epsilon}^{k_{2}+k_{3}-1}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
-\\+&
-\Delta^{m_{2}+m_{3}+1}\left(B_{2}(x)+B_{3}(x)\right)G_{m_{2},m_{3},\epsilon}^{m_{2}+m_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
-\\=&
-\sum_{a_{2}=0}^{m_{2}}\sum_{a_{3}=0}^{m_{3}}\Delta^{k_{2}+k_{3}}\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3}\epsilon}^{k_{2},k_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
-\end{align*}
-By equalizing the powers of $\Delta$ we obtain the following condition that must be fulfilled to have that \eqref{ansatzEigenvectorDelta} are indeed the eigenvectors for the triangular-diagonal spin chain:
-\begin{enumerate}
-\item for $k_{2}=k_{3}=0$
-\begin{equation}\label{condition1}
-T_{0}(x)|\Psi_{m_{2},m_{3}}^{0}|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}=\Lambda_{m_{2},m_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
-\end{equation}
-\item for $k_{2}+k_{3}\neq 0$
-\begin{equation}\label{condition2}
-\begin{split}
-\left[\left(\Lambda_{m_{2},m_{3}}(x)+\epsilon\right)I-T_{0}(x)\right]^{-1}&G_{m_{2},m_{3},\epsilon}^{k_{2}+k_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}\\&=\left(B_{2}(x)+B_{3}(x)\right)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}
-\end{split}
-\end{equation}
-\item finally
-\begin{equation}\label{condition3}
-\left(B_{2}(x)+B_{3}(x)\right)G_{m_{2},m_{3},\epsilon}^{m_{2},m_{3}}(x)|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}=0
-\end{equation}
-\end{enumerate}
-By chosing 
-\begin{equation}\label{G-solution}
-G_{m_{2},m_{3},\epsilon}^{k_{2}+k_{3}}(x)=\left\{\left[\left(\Lambda_{m_{2},m_{3}}(x)+\epsilon\right)I-T_{0}^{x}\right]^{-1}\left(B_{2}(x)+B_{3}(x)\right)\right\}^{k_{2}+k_{3}}
-\end{equation}
-conditions \eqref{condition1} and \eqref{condition2} are easilly satisfied. To fulfill condition \eqref{condition3} we observe that, under the condition that $m=m_{2}+m_{3}$ we have that the action of \eqref{G-solution} on $|\Psi_{L-m}^{0}\rangle|_{\epsilon=0}$ leads to a completely occupied state (with both species $2$ and $3$). Therefore, applying to it the rising operator$\left(B_{2}(x)+B_{3}(x)\right)$ we obtain zero.
-
-
-{\color{blue}We make the following ansatz for the eigenvectors of the chain with left triangular and right diagonal boundaries. For the sake of notation, we restrict to the case with $N=3$ and we denote by $\Delta_{2}=\alpha_{2}-\beta_{2}$ and $\Delta_{3}=\alpha_{3}-\beta_{3}$.
-\begin{equation}
-|\Psi_{m_{2},m_{3}}^{\Delta}\rangle=\sum_{a_{2}=0}^{m_{2}}\sum_{a_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-\end{equation}
-
-We replace the above eigenvectors in 
-\begin{equation}
-T_{\Delta}(x)|\Psi_{m_{2},m_{3}}^{\Delta}\rangle=\Lambda_{m_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{\Delta}\rangle
-\end{equation}
-and we obtain
-\begin{align*}
-&\sum_{a_{2}=0}^{m_{2}}\sum_{a_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle+\sum_{a_{2}=0}^{m_{2}}\sum_{a_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}+1}\Delta_{3}^{k_{3}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
-\\&
-+\sum_{a_{2}=0}^{m_{2}}\sum_{a_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}+1}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
-\\&=
-\sum_{a_{2}=0}^{m_{2}}\sum_{a_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}\Lambda_{m_{1},m_{2}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
-\end{align*}
-after a change of summation indexes we obtain
-\begin{align*}
-&\sum_{a_{2}=0}^{m_{2}}\sum_{a_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
-\\+&
-\sum_{a_{2}=1}^{m_{2}}\sum_{a_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle+\Delta_{2}^{m_{2}+1}\sum_{a_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{m_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
-\\+&
-\sum_{a_{2}=0}^{m_{2}}\sum_{a_{3}=1}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle+\Delta_{3}^{m_{3}+1}\sum_{a_{2}=0}^{m_{2}}\Delta_{2}^{k_{2}}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
-\\=&
-\sum_{a_{2}=0}^{m_{2}}\sum_{a_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}\Lambda_{m_{1},m_{2}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
-\end{align*}
-we impose the powers of $\Delta_{2}\Delta_{3}$ to be equal. We obtain the following conditions 
-\begin{enumerate}
-\item $k_{2}=0$ and $k_{3}=0$
-\begin{equation}\label{cond1}
-T_{0}(x)G_{m_{2},m_{3},\epsilon}^{0,0}(x)|\Psi_{m_{1},m_{2}}^{0}\rangle=\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3},\epsilon}^{0,0}(x)|\Psi_{m_{1},m_{2}}^{0}\rangle
-\end{equation}
-\item $k_{2}=m_{2}+1$ and $k_{3}\in \{0,\ldots,m_{3}\}$
-\begin{equation}\label{cond2}
-\begin{split}
-B_{2}(x)G_{m_{2},m_{3},\epsilon}^{m_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle=0
-\end{split}
-\end{equation}
-\item $k_{2}\in\{0,\ldots,m_{2}\}$ and $k_{3}=m_{3}+1$
-\begin{equation}\label{cond3}
-\begin{split}
-B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle=0
-\end{split}
-\end{equation}
-\item $k_{2}\in \{1,\ldots,m_{2}\}$ and $k_{3}\in\{1,\ldots,m_{3}\}$
-\begin{equation}\label{cond4}
-\begin{split}
-&\left(T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)+B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)\right)|\Psi_{m_{2},m_{3}}^{0}\rangle
-\\=&
-\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
-\end{split}
-\end{equation} 
-\item $k_{2}=0$ and $k_{3}\in\{1,\ldots,m_{3}\}$
-\begin{equation}\label{cond5}
-\begin{split}
-&\left(T_{0}(x)G_{m_{2},m_{3},\epsilon}^{0,k_{3}}(x)+B_{3}(x)G_{m_{2},m_{3},\epsilon}^{0,k_{3}-1}(x)\right)|\Psi_{m_{2},m_{3}}^{0}\rangle
-=
-\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3},\epsilon}^{0,k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
-\end{split}
-\end{equation}
-\item $k_{2}\in\{1,\ldots,m_{2}\}$ and $k_{3}=0$
-\begin{equation}\label{cond6}
-\begin{split}
-&\left(T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},0}(x)+B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,0}(x)\right)|\Psi_{m_{2},m_{3}}^{0}\rangle
-=
-\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},0}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle
-\end{split}
-\end{equation}
-\end{enumerate}
-To find the function $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ we must fulfil the conditions \eqref{cond1},\eqref{cond2},\eqref{cond3},\eqref{cond4}, \eqref{cond5},\eqref{cond6}.
-{\color{blue}This second property can be proved by using a lower weight representation }
-% \end{itemize}
-We prove the ansatz:
-\begin{align*}
-	T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
-	\\&+
-	\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots+	\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0} 
-	\\&+\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}+1}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{2}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots +
-	\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}+1}(2x+N)B_{N}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\end{align*}
-we replace $k_{i}\to k_{i}+1$ $\forall i\in\{2,\ldots,N\}$ in the proper summation. Then,
-\begin{align*}
-	T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
-	\\&+
-	\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots+	\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{2}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2}-1,\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots
-	\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}(2x+N)B_{N}(x)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}-1}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+
-	\Delta_{2}^{m_{2}+1}\sum_{a_{3}=0}^{m_{3}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{3}^{k_{3}}\Delta_{N}^{k_{N}}(2x+N)B_{2}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{m_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots +
-	\Delta_{N}^{m_{N}+1}\sum_{a_{2}=0}^{m_{3}}\ldots\sum_{a_{N-1}=0}^{m_{N-1}}\Delta_{3}^{k_{2}}\Delta_{N-1}^{k_{N-1}}(2x+N)B_{2}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\end{align*}
-We use prperties \eqref{SecondProperty} and \eqref{FirstProperty}:
-\begin{align*}
-		T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=T_{0}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
-	\\&+
-	\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots+	\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}T_{0}(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left[\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots +
-	\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left[\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)I-T_{0}(x)\right]G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\end{align*}
-then
-\begin{align*}
-T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=
-		\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle
-	\\&+
-	\sum_{a_{2}=1}^{m_{2}}\ldots\sum_{a_{N}=0}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)(x)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&+\ldots+	\sum_{a_{2}=0}^{m_{2}}\ldots\sum_{a_{N}=1}^{m_{N}}\Delta_{2}^{k_{2}}\ldots \Delta_{N}^{k_{N}}\left(\Lambda_{m_{2},m_{N}}(x)+\epsilon\right)G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\\&=
-	\Lambda_{m_{2},\ldots,m_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle
-\end{align*}
-}
-For $i\neq 1$ we have
-\begin{equation}
-\begin{split}
- \sum_{i,j=2}^N [E_{ij}E_{ji},E_{a1}]&=\sum_{i,j=2}^N E_{ij} [E_{ji},E_{a1}]+\sum_{i,j=2}^N  [E_{ij},E_{a1}]E_{ji}=\sum_{j=2}^N( E_{aj} E_{j1}+ E_{j1} E_{aj})
-\\&=\sum_{j=2}^N( 2E_{aj} E_{j1}+ [E_{j1}, E_{aj}])=2\sum_{j=2}^N E_{aj} E_{j1}-(N-1)E_{a1}
- \end{split}
-\end{equation} 
-\end{comment}
 \subsection{Bethe ansatz solution}
 
 Describe eigenvalues of $T_0$ following 
