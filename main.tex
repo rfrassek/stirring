@@ -2,7 +2,7 @@
 
 
  
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{mathtools,amsmath,amssymb}
 \usepackage{graphicx}
@@ -2298,21 +2298,38 @@ where $\Delta_{x}^{L}$ is the discrete Laplace operator on the chain of length $
 that gives back \eqref{one-pts-corr}.  
 \end{comment}
 \section{Mapping to equilibrium?}
-{\color{red}
 check also Appendix A in
-\cite{Alcaraz:1992zc} }
+\cite{Alcaraz:1992zc} \cite{Sklyanin:1988yz} 
 
-\cite{Sklyanin:1988yz}
 \subsection{Quantum inverse scattering method}
-We can apply the \textit{quantum inverse scattering method} to this process. We introduce the quantum space as $V=V_{1}\otimes\ldots\otimes V_{j}\otimes\ldots\otimes V_{L}$ and the auxiliary space $V_{0}$. In this specific case $V_{j}=\mathbb{C}^{N}$ $\forall j=0,1,\ldots ,L$. We introduce the following matrices acting on the spaces with indices $a,b=0,1,\ldots,L$
+We can apply the \textit{quantum inverse scattering method} to this process. We introduce the quantum space as $V=V_{1}\otimes\ldots\otimes V_{j}\otimes\ldots\otimes V_{L}$ and the auxiliary space $V_{0}$. In this specific case $V_{j}=\mathbb{C}^{N}$ $\forall j=0,1,\ldots ,L$. We introduce the following matrices acting on the tensor product of spaces with indices $a,b=0,1,\ldots,L$
 \begin{equation}\label{Rmatrix}
 R_{ab}(x)=\frac{(P_{ab}+Ix)}{x+1}
 \end{equation}
-\begin{equation}\label{KmatrixHAT}
+\begin{comment}
+\begin{equation}
 \widehat{K}_{a}(x)=I+\frac{2x}{(x+1)}B_{L}
 \end{equation}
-\begin{equation}\label{Kmatrix}
+\begin{equation}
 K_{a}(x)=\left((2x+N)B_{1}+(x+N)I\right)\frac{1}{(x+1)^{2}(2x+N)}
+\end{equation}
+\end{comment}
+\begin{equation}\label{KmatrixHAT}
+	\widehat{K}_{0}(x)=(1+x)\left(I+\frac{2x}{x+1}H^{''}_{right}\right)=\begin{pmatrix}
+		1-x&0&\ldots&0\\
+		0&1-x&\ldots&0\\
+		\vdots&\vdots&\ddots&\vdots\\
+		0&0&\ldots&1+x
+	\end{pmatrix}
+\end{equation}
+\begin{equation}\label{Kmatrix}
+	K_{0}=\left((2x+N)H^{''}_{left}+(x+N)I\right)\frac{(1+x)^{2}(2x+N)}{(x+1)^{2}(2x+N)}=\begin{pmatrix}
+		-x&0&0&\ldots&0&(N+2x)(\alpha_{1}-\beta_{1})\\
+		0&-x&0&\ldots&0&(N+2x)(\alpha_{2}-\beta_{2})\\
+		\vdots&\vdots&\ddots&\vdots&\vdots&\vdots\\
+		0&0&0&\ldots&-x&(N+2x)(\alpha_{N-1}-\beta_{N-1})\\
+		0&0&0&\ldots&0&1+x
+	\end{pmatrix}
 \end{equation}
 The above matrices satisfy the following equations
 \begin{itemize}
@@ -2331,7 +2348,7 @@ K_{b}(y) R_{ab}(-x-y-N) K_{a}(x)R_{ab}(y-x)=R_{ab}(y-x)K_{a}(x)R_{ab}(-x-y-N)K_{
 \end{itemize}
 We define the following \textit{transfer matrix}
 \begin{equation}
-	T(x)=tr_{0}\left(K_{0}(x)U_{0}(x)\right)
+	T^{\Delta}(x)=tr_{0}\left(K_{0}(x)U_{0}(x)\right)
 \end{equation}
 where we used the double row monodromy
 \begin{equation}
@@ -2342,24 +2359,65 @@ where
 	M_{0}(x)=R_{01}(x)\ldots R_{0L}(x)\qquad \widehat{M}_{0}=R_{0L}(x)\ldots R_{01}(x)
 \end{equation}
 This double row monodromy satisfies the following exchange relation
-\begin{equation}
+\begin{equation}\label{RURU}
 	R_{ab}(x-y)U_{a}(x)R_{ab}(x+y)U_{b}(y)=U_{b}(y)R_{ab}(x+y)U_{a}(x)R_{ab}(x-y)
 \end{equation}
 This trasfer matrix has the following properties
 \begin{equation}
-	\left[T(x),T(y)\right]=0\qquad \frac{\partial}{\partial x}\log (T(0))=C_{1}H+C_{2}I
+	\left[T^{\Delta}(x),T^{\Delta}(y)\right]=0\qquad \frac{\partial}{\partial x}\log (T^{\Delta}(0))=C_{1}H^{''}+C_{2}I
 \end{equation}
 with $C_{1},C_{2}>0$. \\
 We write $U_{0}(x)$ in the canonical basis of $V_{0}$ and we rename the elements, each of them acting on the quantum space $V$, has follows
+\begin{comment}
 \begin{equation}
 	U_{0}(x)=\begin{pmatrix}
-		A(x)&B_{2}(x)&\ldots&B_{N}(x)\\
+		D_{11}(x)&B_{2}(x)&\ldots&B_{N}(x)\\
 		C_{2}(x)&D_{22}(x)&\ldots&D_{2N}(x)\\
 		\vdots&\vdots&\ddots&\vdots\\
 		C_{N}(x)&D_{N2}(x)&\ldots&D_{NN}(x)
 	\end{pmatrix}
 \end{equation}
-The exchange relations for the elements of the above matrix are the following
+\end{comment}
+\begin{equation}
+	U_{0}(x)=\begin{pmatrix}
+		D_{1,1}(x)&D_{1,2}(x)&\ldots&D_{1,N-1}(x)&C_{1}(x)\\
+		D_{2,1}(x)&D_{2,2}(x)&\ldots&D_{2,N-1}(x)&C_{2}(x)\\
+		\vdots&\vdots&\ddots&\vdots&\vdots\\
+		D_{N-1,1}&D_{N-1,2}&\ldots&D_{N-1,N-1}(x)&C_{N-1}\\
+		B_{1}(x)&B_{N-1}(x)&\ldots&D_{N,N-1}(x)&D_{N,N}(x)
+	\end{pmatrix}
+\end{equation}
+The exchange relations for the elements of the above matrix can be found using \eqref{RURU}
+\begin{itemize}
+	\item for every $i\in\{1,\ldots,N-1\}$
+	\begin{equation}\label{EX1}
+		\begin{split}
+		D_{N,N}(y)B_{i}(y)&=f(x,y)D_{N,N}(x)B_{i}(y)+f_{1}(x,y)B_{i}(x)D_{N,N}(y)\\&+f_{2}(x,y)\left(B_{i}(x)D_{i,i}(y)+\sum_{k=1\,:\,k\neq i}^{N-1}B_{k}(x)D_{k,i}(y)\right)
+		\end{split}	
+	\end{equation}
+\begin{equation}\label{EX2}
+	\begin{split}
+		D_{i,i}(x)B_{i}(x)&=h(x,y)B_{i}(y)D_{i,i}(x)+h_{1}(x,y)B_{i}(x)D_{i,i}(y)\\&+h_{2}(x,y)B_{1}(x)D_{N,N}(y)+h_{3}(x,y)B_{i}(y)D_{N,N}(x)\\&+\frac{1}{2}h_{3}(x,y)\sum_{k=1\,:\, k\neq i}^{N-1}B_{k}(x)D_{k,i}(y)+h_{4}(x,y)\sum_{k=1\,:\, k\neq i}^{N-1}B_{k}(y)D_{k,i}(x)
+	\end{split}
+\end{equation}
+\item  for every $i,j\in \{1,\ldots,N-1\}$ such that $i\neq j$
+\begin{equation}\label{EX3}
+	\begin{split}
+		D_{j,j}(x)B_{i}(y)&=B_{i}(x)D_{j,j}(y)+\frac{1}{2}h_{3}(x,y)\left(B_{i}(x)D_{i,i}(y)+B_{i}(y)D_{N,N}(x)\right)
+		\\&-
+		\frac{1}{2}h_{3}(x,y)\left(B_{i}(y)D_{i,i}(x)+B_{i}(x)D_{N,N}(y)\right)
+		\\&+
+		h_{1}(x,y)\sum_{k=1\,:\, k\neq i}^{N-1}\left(B_{k}(x)D_{k,i}(y)-B_{k}(y)D_{k,i}(x)\right)
+	\end{split}
+\end{equation}
+\end{itemize}
+where
+\begin{align}
+	&f(x,y)=\frac{(x+y)(x-y-1)}{(x-y)(1+x+y)}&f_{1}(x,y)=\frac{(x+y)}{(x-y)(1+x+y)}\quad&f_{2}(x,y)=\frac{1}{(1+x+y)}\nonumber\\&h(x,y)=\frac{(1+x-y)(x+y+2)}{(x-y)(1+x+y)}
+	&h_{1}(x,y)=-\frac{(x+y+2)}{(x-y)(1+x+y)}\quad&h_{2}(x,y)=\frac{(2+x-y)}{(x-y)(1+x+y)}\nonumber
+	\\&h_{3}(x,y)=\frac{2}{(x-y)(1+x+y)}
+\end{align}
+\begin{comment}
 \begin{itemize}
 	\item for $j\neq N$ 
 \begin{equation}
@@ -2383,31 +2441,17 @@ The exchange relations for the elements of the above matrix are the following
 	\end{split}
 \end{equation}
 \end{itemize}
-In order to carry out the mapping of non equilibrium onto equilibrium we should consider the K-matrices after the transformation \eqref{similarS}, i.e. when the left boundary is lower triangular a end the right one is diagonal. We properly rescale them and we obtain
-\begin{equation}
-	\widehat{K}_{0}^{d}(x)=(1+x)\left(I+\frac{2x}{x+1}\widetilde{B}_{L}\right)=\begin{pmatrix}
-		1+x&0&\ldots&0\\
-		0&1-x&\ldots&0\\
-		\vdots&\vdots&\ddots&\vdots\\
-		0&0&\ldots&1-x
-	\end{pmatrix}
-\end{equation}
-\begin{equation}
-	K_{0}^{\Delta}=\left((2x+N)\widetilde{B}_{1}+(x+N)I\right)\frac{(1+x)^{2}(2x+N)}{(x+1)^{2}(2x+N)}=\begin{pmatrix}
-		N+x&0&\ldots&0\\
-		(2x+N)(\alpha_{2}-\beta_{2})&-x&\ldots&0\\
-		\vdots&\vdots&\ddots&\vdots\\
-		(2x+N)(\alpha_{N}-\beta_{N})&0&\ldots&-x
-	\end{pmatrix}
-\end{equation}
-Then we obtain the correspondent transfer matrix as
-\begin{equation}
-	T^{\Delta}(x)=tr_{0}\left(K_{0}^{\Delta}(x)U_{0}^{d}(x)\right)
-\end{equation}
-where
-\begin{equation}
-	U_{0}^{d}(x)=M_{0}(x)\widehat{K}_{0}^{d}(x)\widehat{M}_{0}(x)
-\end{equation}
+\end{comment}
+%In order to carry out the mapping of non equilibrium onto equilibrium we should consider the K-matrices after the transformation \eqref{similarS}, i.e. when the left boundary is lower triangular a end the right one is diagonal. We properly rescale them and we obtain
+
+%Then, we obtain the correspondent transfer matrix as
+%\begin{equation}
+%	T^{\Delta}(x)=tr_{0}\left(K_{0}^{\Delta}(x)U_{0}^{d}(x)\right)
+%\end{equation}
+%where
+%\begin{equation}
+%	U_{0}^{d}(x)=M_{0}(x)\widehat{K}_{0}^{d}(x)\widehat{M}_{0}(x)
+%\end{equation}
 \subsection{Eigenvectors of the non equilibrium Hamiltonian}
 For simplicity we first consider the case with $N=3$. We make the following ansatz for the eigenvectors of the chain with left triangular and right diagonal boundaries described by the Hamiltonian $H^{''}$ introduced in \eqref{HSecond}. We denote by $\Delta_{2}=\alpha_{2}-\beta_{2}$ and $\Delta_{3}=\alpha_{3}-\beta_{3}$. The eigenvectors are the following: 
 \begin{equation}
@@ -2716,59 +2760,73 @@ T_{\Delta}(x)|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle&=
 Then we have
 \begin{equation}
 	\begin{split}
-	T^{\Delta}(x)&=tr_{0}\left(\begin{pmatrix}
-		N+x&0&\ldots&0\\
-		(2x+N)(\alpha_{2}-\beta_{2})&-x&\ldots&0\\
-		\vdots&\vdots&\ddots&\vdots\\
-		(2x+N)(\alpha_{N}-\beta_{N})&0&\ldots&-x
-	\end{pmatrix}\begin{pmatrix}
-	A(x)&B_{2}(x)&\ldots&B_{N}(x)\\
-	C_{2}(x)&D_{22}(x)&\ldots&D_{2N}(x)\\
-	\vdots&\vdots&\ddots&\vdots\\
-	C_{N}(x)&D_{N2}(x)&\ldots&D_{NN}(x)
-\end{pmatrix}\right)\\&=
-(N+x)A(x)-\sum_{i=2}^{N}xD_{ii}(x)+\sum_{i=2}^{N}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)\\&=
-Q_{2L+2}x^{2L+2}+Q_{2L+1}x^{2L+1}+Q_{2L}x^{2L}+\ldots
+	T^{\Delta}(x)=tr_{0}&\left(\begin{pmatrix}
+		-x&0&0&\ldots&0&(N+2x)(\alpha_{1}-\beta_{1})\\
+		0&-x&0&\ldots&0&(N+2x)(\alpha_{2}-\beta_{2})\\
+		\vdots&\vdots&\ddots&\vdots&\vdots&\vdots\\
+		0&0&0&\ldots&-x&(N+2x)(\alpha_{N-1}-\beta_{N-1})\\
+		0&0&0&\ldots&0&1+x
+	\end{pmatrix}\right.
+\\& \left.
+\;\;\;\begin{pmatrix}
+	D_{1,1}(x)&D_{1,2}(x)&\ldots&D_{1,N-1}(x)&C_{1}(x)\\
+	D_{2,1}(x)&D_{2,2}(x)&\ldots&D_{2,N-1}(x)&C_{2}(x)\\
+	\vdots&\vdots&\ddots&\vdots&\vdots\\
+	D_{N-1,1}&D_{N-1,2}&\ldots&D_{N-1,N-1}(x)&C_{N-1}\\
+	B_{1}(x)&B_{N-1}(x)&\ldots&D_{N,N-1}(x)&D_{N,N}(x)
+\end{pmatrix}\right)
 \end{split}
 \end{equation}
-We call these $Q_{a}$, with $k=0,\ldots,2L+2$, the \textit{charges}. \\
+Therefore we can write the polynomial expansion
+\begin{equation}
+	\begin{split}
+		T^{\Delta}(x)=&
+		(N+x)D_{N,N}(x)-\sum_{i=1}^{N-1}xD_{ii}(x)+\sum_{i=1}^{N-1}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)=
+		\sum_{k=0}^{2L+2}Q_{k}x^{k}
+	\end{split}
+\end{equation}
+We call these $Q_{k}$, with $k=0,\ldots,2L+2$, the \textit{charges}. \\
 We can also introduce 
 \begin{equation}
-	T_{0}(x)=(N+x)A(x)-\sum_{i=2}^{N}xD_{ii}(x)\quad\text{such that}\quad T_{\Delta}(x)=T_{0}(x)+\sum_{i=2}^{N}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)
+	T_{0}(x)=(N+x)D_{N,N}(x)-\sum_{i=1}^{N-1}xD_{ii}(x)\quad\text{such that}\quad T_{\Delta}(x)=T_{0}(x)+\sum_{i=2}^{N}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)
 \end{equation}For large $x$, we compute them by expanding $U_{0}^{d}(x)$ in a polynomial: 
 \begin{equation}
-	A(x)=\sum_{a=0}^{2L+1}A^{a}x^{a}\quad D_{ii}(x)=\sum_{a=0}^{2L+1}D_{ii}^{a}x^{a}\quad B_{i}(x)=\sum_{a=0}^{2L-1}B_{i}^{a}x^{a}
+	D_{N,N}(x)=\sum_{a=0}^{2L+1}D_{N,N}^{a}x^{a}\quad D_{ii}(x)=\sum_{a=0}^{2L+1}D_{ii}^{a}x^{a}\quad B_{i}(x)=\sum_{a=0}^{2L-1}B_{i}^{a}x^{a}
 \end{equation}
 The coefficients that we need are the following:
 \begin{equation}
-	A(x)=A^{2L+1}x^{2L+1}+A^{2L}x^{2L+1}+A^{2L-1}x^{2L-1}+\ldots
+	D_{N,N}(x)=D_{N,N}^{2L+1}x^{2L+1}+D_{N,N}^{2L}x^{2L+1}+D_{N,N}^{2L-1}x^{2L-1}+\ldots
 \end{equation}
-where .
+where 
 \begin{equation}
-	A^{2L+1}=I^{tot}
+	D_{N,N}^{2L+1}=I^{tot}
 \end{equation}
 \begin{equation}
-	A^{2L}=I^{tot}+2e_{11}^{tot}
+	D_{N,N}^{2L}=I^{tot}+2e_{NN}^{tot}
 \end{equation}
 \begin{equation}
 	\begin{split}
-		A^{2L-1}=3e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2\sum_{a\neq b}e_{11}^{[a]}e_{11}^{[b]}
+		D_{N,N}^{2L-1}=3e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2\sum_{a\neq b}e_{NN}^{[a]}e_{NN}^{[b]}
 	\end{split}
 \end{equation}
 {\color{blue}ok}
 
-We observe that $\forall i,j=1,2,\ldots,N$
+We observe that $\forall i,j=1,\ldots,N-1$
 \begin{equation}
-	\sum_{a,b=1}^{L}e_{ij}^{[a]}e_{ji}^{[b]}=e_{ij}^{tot}e_{ji}^{tot}-e_{ii}^{tot}
+	\sum_{a\neq b}e_{ij}^{[a]}e_{ji}^{[b]}=e_{ij}^{tot}e_{ji}^{tot}-e_{ii}^{tot}
 \end{equation}
 then 
 \begin{equation}
-	\boxed{A^{2L-1}=e_{11}^{tot}\left(2e_{11}^{tot}+I^{tot}\right)-\sum_{j=2}^{N}e_{jj}^{tot}}=2e_{11}^{tot}\left(e_{11}^{tot}+I^{tot}\right)-L
+	D_{N,N}^{2L-1}=e_{NN}^{tot}\left(2e_{NN}^{tot}+I^{tot}\right)-\sum_{j=1}^{N}e_{jj}^{tot}%=2e_{NN}^{tot}\left(e_{NN}^{tot}+I^{tot}\right)-L
+\end{equation}
+Then
+\begin{equation}
+\boxed{D_{N,N}^{2L-1}	=2e_{NN}^{tot}\left(e_{NN}^{tot}+I^{tot}\right)-L}
 \end{equation}
 {\color{blue}ok?}where we used $
  \sum_{i=1}^Ne_{ii}^{tot}=L$. 
 
-While, $\forall i=2,\ldots,N$
+While, $\forall i=1,\ldots,N-1$
 
 
 \begin{equation}
@@ -2782,27 +2840,31 @@ where the coefficients
 \end{equation}
 \begin{equation}\label{a2lm1}
 	\begin{split}
-		D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}\right)-2\sum_{a\neq b}e_{ii}^{[a]}e_{ii}^{[b]}-2\sum_{a\neq b}\sum_{j=2\,:\,j\neq i}^{N}e_{ij}^{[a]}e_{ji}^{[b]}\\
-		&=e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=2}^{N}e_{ij}^{[a]}e_{ji}^{[b]}\\
+		D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{a\neq b}e_{ii}^{[a]}e_{ii}^{[b]}-2\sum_{a\neq b}\sum_{j=1\,:\,j\neq i}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\
+		&=e_{11}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=1}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\
 	%&=e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2e_{ii}^{tot}\\
 		%&=2e_{11}^{tot}+2e_{ii}^{tot}-C_1
-		&=e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=2}^{N}e_{ij}^{[a]}e_{ji}^{[b]}\\ 
+		&=e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=1}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\ 
 	\end{split}
 \end{equation}
 
 We rewrite
 \begin{equation}
 	\begin{split}
-	D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}\right)-2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}+2(N-1)e_{ii}^{tot}
+	D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{j=1}^{N-1}e_{ij}^{tot}e_{ji}^{tot}+2(N-1)e_{ii}^{tot}
 \end{split}
 \end{equation}
 then
 \begin{equation}
 \begin{split}
-\boxed{D_{ii}^{2L-1}=	2Ne_{ii}^{tot}+\left(e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}\right)-2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}}=	2Ne_{ii}^{tot}+ 2e_{11}^{tot}-L -2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}
+D_{ii}^{2L-1}=	2Ne_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}%=2Ne_{ii}^{tot}+ 2e_{NN}^{tot}-L -2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}
 	\end{split}
 \end{equation}
-{\color{blue}ok?}
+Then 
+\begin{equation}
+\boxed{D_{ii}^{2L-1}=2Ne_{ii}^{tot}+ 2e_{NN}^{tot}-L -2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}}
+\end{equation}
+{\color{blue}ok}
 %blue} In case of a chain $L=2$ and $N=3$ and choosing $i=2$ this reads as 
 %\begin{equation*}
 %	D_{22}^{2L-1}=6e_{22}^{tot}+e_{11}^{tot}-e_{22}^{tot}-e_{33}^{tot}-2e_{22}^{tot}e_{22}^{tot}-2e_{23}^{tot}e_{32}^{tot}
@@ -2828,7 +2890,7 @@ then
 %	\right)
 %\end{equation*}
 %}
-\textbf{Observation}: it seems to me that, although not diagonal, the $D_{ii}^{2L-1}$ does not chaing the exitation of the chain since we have $e_{ij}^{tot}e_{ji}^{tot}$!\\
+%\textbf{Observation}: it seems to me that, although not diagonal, the $D_{ii}^{2L-1}$ does not chaing the exitation of the chain since we have $e_{ij}^{tot}e_{ji}^{tot}$!\\
 %The following \textit{lower diagonal} elements of $U_{0}(x)$, $\forall i=2,\ldots,L$ and for $j=1$
 %\begin{equation}
 %	C_{i}(x)=C_{i}^{2L-1}x^{2L-1}+\ldots
@@ -2851,21 +2913,25 @@ where the coefficient is
 then
 \begin{equation}
 \begin{split}
-	\boxed{B_{j}^{2L-1}=2e_{j1}^{tot}+
-	2\sum_{a,b=1\,:\, a<b}^{L}\left(e_{j1}^{[a]}e_{11}^{[b]}\right)-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=2}^{N}\left( e_{jk}^{[a]}e_{k1}^{[b]}\right)}
+	B_{j}^{2L-1}=2e_{j1}^{tot}+
+	2\sum_{a,b=1\,:\, a<b}^{L}\left(e_{j1}^{[a]}e_{11}^{[b]}\right)-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=2}^{N}\left( e_{jk}^{[a]}e_{k1}^{[b]}\right)
 \end{split}
 \end{equation}
 \begin{equation}
 \begin{split}
 	B_{j}^{2L-1}&=
 	2\sum_{a,b=1}^{L}\left(e_{j1}^{[a]}e_{11}^{[b]}\right)-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N}\left( e_{jk}^{[a]}e_{k1}^{[b]}\right)\\
-	&=
-	2e_{j1}^{tot}e_{11}^{tot}-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N} e_{jk}^{[a]}e_{k1}^{[b]}
+%	&=
+%	2e_{j1}^{tot}e_{11}^{tot}-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N} e_{jk}^{[a]}e_{k1}^{[b]}
 \end{split}
+\end{equation}
+Thus
+\begin{equation}
+\boxed{	B_{j}^{2L-1}=	2e_{j1}^{tot}e_{11}^{tot}-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N} e_{jk}^{[a]}e_{k1}^{[b]}}
 \end{equation}
 Finally, for every $i,j=2,\ldots,N$ such that $i\neq j$, we have that 
 \begin{equation}
-	D_{i,j}^{2L}=-2e_{ji}^{tot}
+	\boxed{D_{i,j}^{2L}=-2e_{ji}^{tot}}
 \end{equation}
 \textbf{Remark}: it is easy to see that, when restricted to the case of 2 species,  \eqref{a2lp},\eqref{a2l},\eqref{a2lm1} correspond to the one compute in \cite{frassek2020eigenstates}. \\ \\
 The interesting charges (we only look for the first non trivial one) take the following form  
@@ -2873,26 +2939,26 @@ The interesting charges (we only look for the first non trivial one) take the fo
 
 
 \begin{align}
-	Q_{2L+2}&=A^{2L+1}-\sum_{i=2}^{N}D_{ii}^{2L+1}{\color{red}=N}\\
-	Q_{2L+1}&=NA^{2L+1}+A^{2L}-\sum_{i=2}^{N}D_{ii}^{2L}={\color{red}N+2L-1}\\
-	Q_{2L\phantom{+}}&=NA^{2L}+A^{2L-1}-\sum_{i=2}^{N}D_{ii}^{2L-1}+\sum_{i=2}^{N}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
+	Q_{2L+2}&=D_{N,N}^{2L+1}-\sum_{i=1}^{N-1}D_{ii}^{2L+1}=N\\
+	Q_{2L+1}&=ND_{N,N}^{2L+1}+A^{2L}-\sum_{i=1}^{N-1}D_{ii}^{2L}=N+2L-1\\
+	Q_{2L\phantom{+}}&=ND_{N,N}^{2L}+D_{N,N}^{2L-1}-\sum_{i=1}^{N-1}D_{ii}^{2L-1}+\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
 \end{align}
 The charges $Q_{2L+2}$ and $Q_{2L+1}$ are proportional to the identity matrix, while $Q_{2L}$ contains non diagonal matrices and the boundary parameters $\alpha_{i},\beta_{i}$ $\forall i=2,\ldots,N$.\\
 It is easy to show that 
 \begin{equation}
-	\left[Q_{2L},\widetilde{H}\right]=Q_{2L}\widetilde{H}-\widetilde{H}Q_{2L}=0
+	\left[Q_{2L},H^{''}\right]=Q_{2L}H^{''}-H^{''}Q_{2L}=0
 \end{equation}
-The commutation with the Hamiltonian $\widetilde{H}$ for $Q_{2L+2}$ and $Q_{2L+1}$ is trivial. \\
+The commutation with the Hamiltonian $H^{''}$ for $Q_{2L+2}$ and $Q_{2L+1}$ is trivial. \\
 We introduce the following:
 \begin{equation}
-Q_{2L}^{0}:=NA^{2L}+A^{2L-1}-\sum_{i=2}^{N}D_{ii}^{2L-1}
+Q_{2L}^{0}:=ND_{N,N}^{2L}+D_{N,N}^{2L-1}-\sum_{i=1}^{N-1}D_{ii}^{2L-1}
 \end{equation}
 that is 
 \begin{equation}
 	\begin{split}
-	Q_{2L}^{0}&=N(I^{tot}+e_{11}^{tot})+e_{11}^{tot}(2e_{11}^{tot}+I^{tot})-\sum_{k=2}^{N}e_{kk}^{tot}-2N\sum_{k=2}^{N}e_{kk}^{tot}+\sum_{k=2}^{N}\left\{e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+\sum_{j=2}^{N}e_{kj}^{tot}e_{jk}^{tot}\right\}
+	Q_{2L}^{0}&=N(I^{tot}+e_{NN}^{tot})+e_{NN}^{tot}(2e_{NN}^{tot}+I^{tot})-\sum_{j=1}^{N-1}e_{jj}^{tot}-2N\sum_{j=1}^{N-1}e_{jj}^{tot}+\sum_{k=1}^{N-1}\left\{e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+\sum_{j=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}\right\}
 	\\&=
-	(N-NL-2L)I^{tot}+2(N+2)e_{11}^{tot}+2e_{11}^{tot}e_{11}^{tot}+2\sum_{j,k=2}^{N}e_{kj}^{tot}e_{jk}^{tot}
+	(N-NL-2L)I^{tot}+2(N+2)e_{NN}^{tot}+2e_{NN}^{tot}e_{NN}^{tot}+2\sum_{j,k=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}
 	\end{split}
 \end{equation}
 %\begin{equation}	
@@ -2903,7 +2969,7 @@ that is
 %\end{equation} 
 we also introduce 
 \begin{equation}
-	\mathcal{Q}_{2L}=\sum_{i=2}^{N}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
+	\mathcal{Q}_{2L}=\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
 \end{equation}
 therefore we can write 
 \begin{equation}
@@ -2913,7 +2979,7 @@ therefore we can write
 
 All terms are diagonal except the last one which can  be  identified with the second Casimir of the $gl(N-1)$ subalgebra
 \begin{equation}
-\hat C_2^{N-1}= \sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}
+\hat C_2^{N-1}= \sum_{i,j=1}^{N-1}e_{ij}^{tot}e_{ji}^{tot}
 \end{equation} 
 On the Bethe states (and on the irrep decomposition of the spin chain) it acts diagonally with eigenvalues given in terms of shifted weights 
 \begin{equation}
@@ -2937,8 +3003,51 @@ We can take the limit
  \lim_{x\to\infty}\frac{2x+N}{\Lambda(x)-T_0(x)}B_{i}(x)=\frac{2}{\Lambda_{2L}-Q_{2L}^0}B_i^{2L-1}
 \end{equation} 
 {\color{blue}ok}
-
-
+\subsubsection{Exchange relations between charges}
+Using \eqref{EX1}, \eqref{EX2} and \eqref{EX3} we obtain for every $i,j\in\{1,\ldots,N-1\}$ 
+\begin{equation}
+	Q_{0}^{2L}B_{i}^{2L-1}=B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})\right)-2\sum_{j=1\,:\,j\neq i}^{N-1}B_{j}^{2L-1}D_{j,i}^{2L}
+\end{equation}
+%In particular for the case $N=3$ we have
+%\begin{equation}
+%	\begin{split}
+	%	Q_{0}^{2L}B_{1}^{2L-1}&=B_{1}^{2L-1}\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{3,3}^{2L})\right)-2B_{2}^{2L-1}D_{2,1}^{2L}
+	%	\\
+	%	Q_{0}^{2L}B_{2}^{2L-1}&=B_{2}^{2L-1}\left(Q_{0}^{2L}-2(D_{2,2}^{2L}+D_{3,3}^{2L})\right)-2B_{1}^{2L-1}D_{1,2}^{2L}
+%	\end{split}
+%\end{equation}
+Other useful exchange relations are 
+\begin{equation}
+	\begin{split}
+		D_{N,N}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}\left(D_{N,N}^{2L}+D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%\\
+		%D_{33}^{2L}B_{2}^{2L}&=B_{2}^{2L}\left(D_{33}^{2L}+D_{22}^{2L+1}-D_{33}^{2L+1}\right)
+	\end{split}
+\end{equation}
+and
+\begin{equation}
+	\begin{split}
+		D_{i,i}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}\left(D_{i,i}^{2L}+D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%\\
+		%D_{22}^{2L}B_{2}^{2L}&=B_{2}^{2L}\left(D_{22}^{2L}+D_{22}^{2L+1}-D_{33}^{2L+1}\right)
+	\end{split}
+\end{equation}
+and finally
+\begin{equation}
+	\begin{split}
+		D_{i,j}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}D_{i,j}^{2L}+B_{j}^{2L-1}\left(D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%	D_{21}^{2L}B_{2}^{2L-1}&=B_{2}^{2L-1}D_{21}^{2L}+B_{2}^{2L-1}\left(D_{22}^{2L+1}-D_{33}^{2L+1}\right)
+	\end{split}
+\end{equation}
+While, for $i,j\in\{1,\ldots,N-1\}$ such that $i\neq j$
+\begin{equation}
+	\left[D_{j,j}^{2L},B_{i}^{2L-1}\right]=0\qquad \left[B_{i}^{2L-1},B_{j}^{2L-1}\right]=0\qquad \left[B_{i}^{2L-1},D_{j,i}^{2L}\right]=0%\qquad \left[D_{12}^{2L},B_{2}^{2L-1}\right]=0\qquad \left[D_{11}^{2L},B_{2}^{2L-1}\right]=0
+\end{equation}
+{\color{blue}Using them we also have 
+\begin{equation}
+	\begin{split}
+		&Q_{0}^{2L}B_{1}^{2L-1}Q_{0}^{2L}B_{2}^{2L-1}\\=&B_{1}^{2L-1}B_{2}^{2L-1}\left(Q_{0}^{2L}-2(D_{11}^{2L}+D_{22}^{2L}+2D_{33}^{2L})+4(D_{33}^{2L+1}-D_{11}^{2L+1})\right.\\-&\left.2B_{1}^{2L-1}B_{1}^{2L-1}D_{12}^{2L}-2B_{2}^{2L-1}B_{2}^{2L-1}D_{21}^{2L}\right)\left(Q_{0}^{2L}-2(D_{22}^{2L}+D_{33}^{2L})\right)
+		\\&+
+		\left(-2B_{1}^{2L-1}B_{1}^{2L-1}\left(Q_{0}^{2L}-2(D_{11}^{2L}+D_{33}^{2L})+4(D_{33}^{2L+1}-D_{11}^{2L+1})\right)+8B_{1}^{2L-1}B_{2}^{2L-1}D_{21}^{2L}\right)D_{12}^{2L}
+	\end{split}
+\end{equation}}{\color{blue}Probably it is not useful}
 
 \begin{comment}
 In case of $N=2$ it differs with respect to the $Q_{2L}^{0}$ computed in formula (2.28) of \cite{frassek2020eigenstates} by the following matrix 
