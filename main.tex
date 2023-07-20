@@ -1105,7 +1105,7 @@ Obviously
 	|\Psi^{'}\rangle = S_{2}^{-1}|\Psi^{''}\rangle
 \end{equation}
 and $|\Psi^{''}\rangle$ solves
-\begin{equation}
+\begin{equation}\label{steadyS-SECOND-def}
 	H^{''}|\Psi^{''}\rangle=0
 \end{equation}
 It is convenient to introduce also the transformation
@@ -2836,6 +2836,24 @@ therefore we have that
 		W=&\lim_{\epsilon\to 0}\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
 		|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 	\end{split}
+\end{equation}
+Considering the empty state as 
+\begin{equation}
+	|\Psi_{0}^{0}\rangle:=\begin{pmatrix}
+		0\\
+		\vdots\\
+		0\\
+		1
+	\end{pmatrix}\otimes \cdots \otimes\begin{pmatrix}
+	0\\
+	\vdots\\
+	0\\
+	1
+\end{pmatrix}
+\end{equation}
+then, we can map via $W$ the above vector to the steady state $|\Psi^{''}\rangle$ of $H^{''}$ defined in \eqref{steadyS-SECOND-def}, namely
+\begin{equation}
+	|\Psi^{''}\rangle=W|\Psi_{0}^{0}\rangle
 \end{equation}
 \begin{comment}
 \begin{itemize}
