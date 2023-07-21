@@ -2403,13 +2403,16 @@ The exchange relations for the elements of the above matrix can be found using \
 \item  for every $i,j\in \{1,\ldots,N-1\}$ such that $i\neq j$
 \begin{equation}\label{EX3}
 	\begin{split}
-		D_{j,j}(x)B_{i}(y)&=B_{i}(x)D_{j,j}(y)+\frac{1}{2}h_{3}(x,y)\left(B_{i}(x)D_{i,i}(y)+B_{i}(y)D_{N,N}(x)\right)
-		\\&-
-		\frac{1}{2}h_{3}(x,y)\left(B_{i}(y)D_{i,i}(x)+B_{i}(x)D_{N,N}(y)\right)
+		D_{j,j}(x)B_{i}(y)&=B_{i}(x)D_{j,j}(y)+\frac{1}{2}h_{3}(x,y)\left(B_{i}(y)D_{i,i}(x)-B_{i}(x)D_{i,i}(y)\right)
 		\\&+
-		h_{1}(x,y)\sum_{k=1\,:\, k\neq i}^{N-1}\left(B_{k}(x)D_{k,i}(y)-B_{k}(y)D_{k,i}(x)\right)
+		\frac{1}{2}h_{3}(x,y)\left(B_{i}(x)D_{N,N}(y)-B_{i}(y)D_{N,N}(x)\right)
+		\\&+
+	h_{1}(x,y)\left(B_{j}(x)D_{j,i}(y)-B_{j}(y)D_{i,j}(x)\right)
+	\\&+
+	\frac{1}{2}h_{3}(x,y)\sum_{k=1\,:\,k\neq i,j}\left(B_{k}(y)D_{k,i}(x)-B_{k}(x)D_{k,i}(y)\right)
 	\end{split}
 \end{equation}
+
 \end{itemize}
 where
 \begin{align}
