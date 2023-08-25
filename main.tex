@@ -1403,14 +1403,14 @@ where
 			\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{y}\right)\right)^{c_{y}}\beta_{\tau_{y}}^{(1-c_{y})(1-\delta_{\tau_{y},1})}
 		\end{split}
 	\end{equation} 
-	\com{Double check this. Sum looks strange}
-and where
- \begin{equation}\label{CiEquation}
-	c_{y}=\begin{cases}
-		1\quad \text{if}\quad \tau_{y}\neq 1\\
-		0\quad \text{if}\quad \tau_{y}=1
-	\end{cases}\qquad \forall y\in \{1,\ldots,L\}
-\end{equation}
+	%\com{Double check this. Sum looks strange}
+%and where
+% \begin{equation}\label{CiEquation}
+%	c_{y}=\begin{cases}
+%		1\quad \text{if}\quad \tau_{y}\neq 1\\
+%		0\quad \text{if}\quad \tau_{y}=1
+%	\end{cases}\qquad \forall y\in \{1,\ldots,L\}
+%\end{equation}
 \paragraph{Proof of formula \eqref{ABS-vect}} As a consequence of \eqref{S2-Inverse}, we only need to show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Here is more convenient to consider the matrix $\mathcal{S}_{2}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and make explicitly the tensor product over the chain. This matrix $\mathcal{S}_{2}$ is given by 
 \begin{equation}
    \mathcal{S}_{2}^{-1}=\mathbbm{1}+\sum_{a=2}^{N}\beta_{a}e_{a1}
@@ -1551,165 +1551,7 @@ Finally, considering all possible $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, 
 \begin{flushright}
     $\square$
 \end{flushright}
-\subsubsection{The steady state of $H$}\label{subsectionSSH}
-The steady state $|\Psi\rangle$ of the Hamiltonian $H$ is given by 
-\begin{equation}\label{steadyStateH}
-    |\Psi\rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\Psi(\bm{\tau})|\bm{\tau}\rangle
-\end{equation}
-where for every $(\tau_{1},\ldots,\tau_{L})=\bm{\tau}$
-\begin{equation}
-	\begin{split}
- \Psi(\bm{\tau})&=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\tau_{y}}^{(1-c_{y})(1-\delta_{\tau_{y},1})}
-\\&+
-\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{\tau_{q_{r}},1}\right) 
-\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{b}}=2}^{N}
-\\&
-\sum_{c_{1}=0}^{1-\delta_{\eta_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{\eta_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\eta_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\eta_{y}}^{(1-c_{y})(1-\delta_{\eta_{y},1})}
-	\end{split}
-\end{equation}
-where we have introduced, $\forall x\in \{1,\ldots,L\}$
-\begin{equation}
-	\eta_{x}(b)=\begin{cases}
-		\tau_{x}\qquad &\text{if}\quad x\notin \{q_{1},\ldots,q_{b}\}\\
-		d_{x}\qquad &\text{otherwise}
-	\end{cases}%\qquad \theta_{x}=\begin{cases}
-		%\tau_{x}\qquad &\text{if}\quad x\neq 1,\ldots,b\\
-	%	1 \qquad &\text{otherwise}
-	%\end{cases}
-\end{equation}
-The dependence of $\eta_{x}(b)$ with respect to $b$ is usually understood for the sake of notation. 
-{\color{blue}
-\begin{equation}\label{steadyStateH-coeff}
-    \begin{split}
-        \Psi(\bm{\tau})&=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\tau_{y}}^{(1-c_{y})(1-\delta_{\tau_{y},1})}
-        \\&+
-        \sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{s=1}^{b}\delta_{s_{q_{r}},1}\right) 
-        \sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{b}}=2}^{N}
-\\&
-\sum_{x=1\,:\, x\neq q_{1},\ldots,q_{b}}^{L}\sum_{c_{x}=0}^{1-\delta_{\tau_{x},1}}\sum_{c_{q_{1}}=1}^{1}\ldots\sum_{c_{q_{b}}=0}^{1}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(2+L)}
-  \prod_{y=1\,:\, y\neq q_{1},\ldots,q_{b}}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}
- \\ &
- \beta_{\tau_{y}}^{(1-c_{y})(1-\delta_{\tau_{y},1})}
- \prod_{t=1}^{b}\lambda_{d_{q_{t}}}\left(2+L-q_{t}-\sum_{j=q_{t}}^{L}c_{j}\right)^{c_{q_{t}}}\beta_{d_{q_{t}}}^{(1-c_{q_{t}})}
-    \end{split}
-\end{equation}
-}
-\textbf{Remark}: we observe that if no holes are present in \eqref{steadyStateH-coeff}, i.e. if $\tau_{x}\neq 1$ $\forall x\in \{1,\ldots,L\}$, then the second addend vanishes and
-\begin{equation}\label{LinkABS-corr}
-\Psi(\bm{\tau})=\Psi^{'}(\bm{\tau})
-\end{equation}
-When the configuration has holes, the presence of the second addend is motivated by the dependence of the "empty" in a fixed site from all others types in the same site.
 
-\paragraph{Proof of formula \eqref{steadyStateH}} As a consequence of \eqref{S1-Inverse}, we only need to show how the transformation $S_{1}^{-1}$ acts on the vector $|\Psi^{'}\rangle$. Here is more convenient to consider the matrix $\mathcal{S}_{1}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and make explicitly the tensor product over the chain. This matrix $\mathcal{S}_{1}$ is given by
-\begin{equation}\label{S1-L1}
-	\mathcal{S}_{1}^{-1}=\sum_{\tau_{1}=1}^{N}e_{\tau_{1}}^{\tau_{1}}+(-1)\delta_{\tau_{1},1}\sum_{d_{1}=2}^{N}e_{1}^{d_{1}}
-\end{equation}
-Using the notation introduced in \eqref{notation1} and \eqref{notation2} we have that 
-\begin{equation}
-	\begin{split}
-		\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}&=\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}\right.
-		\\&
-		+\left.\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{r}}=2}^{N}e_{\eta_{1},\ldots,\eta_{L}}^{\theta_{1},\ldots,\theta_{L}}\right\} 
-	\end{split}
-\end{equation}
-where we have introduced, $\forall x\in \{1,\ldots,L\}$
-\begin{equation}
-	%\eta_{x}=\begin{cases}
-	%	\tau_{x}\qquad &\text{if}\quad x\neq 1,\ldots,b\\
-	%	d_{x}\qquad &\text{otherwise}
-	%\end{cases}\qquad
-	 \theta_{x}(b)=\begin{cases}
-		\tau_{x}\qquad &\text{if}\quad x\notin \{q_{1},\ldots,q_{b}\}\\
-		1 \qquad &\text{otherwise}
-\end{cases}
-\end{equation}
-The dependence of $\theta(b)$ with respect to $b$ is usually understood for the sake of notation. 
-  %$e_{\ldots,\tau_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,\tau_{x},\ldots,\,d_{q_{r}}\,,\ldots}$ denotes the matrix $e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}$ where the subscripts $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by "1" and the superscripts $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. \\
-This is proved by induction. Indeed, for $L=1$ it is trivially true, by \eqref{S1-L1}. We assume that it is true for arbitrary $L\in \mathbb{N}$ and we prove that it holds for $L+1$. 
-\begin{align*}
-\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}\otimes \mathcal{S}_{1}^{-1}&=
-\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}\right. \\&+\left. \sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{r}}=2}^{N}e_{\theta_{1},\ldots,\theta_{L}}^{\eta_{1},\ldots,\eta_{L}}\right\}
-\\&\otimes
-\left\{ \sum_{\tau_{1}=1}^{N}e_{\tau_{L+1}}^{\tau_{L+1}}+(-1)\delta_{\tau_{L+1},1}\sum_{d_{L+1}=2}^{N}e_{1}^{d_{L+1}}\right\}
-\\&=
-	\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L+1}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L+1}}^{\tau_{1},\ldots,\tau_{L+1}}\right. \\&+\left. \sum_{b=1}^{L+1}(-1)^{b}\sum_{q_{1}=1}^{L+1}\sum_{q_{2}=q_{1}+1}^{L+1}\ldots\sum_{q_{b}=q_{b-1}+1}^{L+1}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{b}}=2}^{N}e_{\theta_{1},\ldots,\theta_{L+1}}^{\eta_{1},\ldots,\eta_{L+1}}\right\}
-\end{align*}
-\begin{comment}
-
-
-\begin{equation}
-    F=\left(V^{-1}\right)^{T}
-\end{equation}
-and thus 
-\begin{equation}
-    \mathcal{F}=F^{\otimes L}
-\end{equation}
-By direct computations and using the notation introduced in \eqref{notation1} and \eqref{notation2} we have 
-\begin{equation}
-    F=\sum_{\tau_{1}=1}^{N}e_{\tau_{1}}^{\tau_{1}}+\delta_{\tau_{1},1}(-1)\sum_{d_{1}=2}^{N}e_{1}^{d_{1}}
-\end{equation}
-Taking the tensor product over two sites we obtain 
-\begin{equation}
-\begin{split}
-    F\otimes F&=\sum_{\tau_{1},s_{2}=1}^{N}\left(e_{\tau_{1},s_{2}}^{\tau_{1},s_{2}}+(-1)\delta_{s_{2},1}\sum_{d_{2}=2}^{N}e_{\tau_{1},1}^{\tau_{1},d_{2}}
-     \right.\\ &+\left. 
-    (-1)\delta_{\tau_{1},1}\sum_{d_{1}=2}^{N}e_{1,s_{2}}^{d_{1},s_{2}}+(-1)^{2}\delta_{\tau_{1},1}\delta_{s_{2},1}\sum_{d_{1},d_{2}=2}^{N}e_{1,1}^{d_{1},d_{2}}\right)
-    \end{split}
-\end{equation}
-therefore, fixing a raw with indices $\tau_{1},s_{2}\in \{1,\ldots,N\}$ of the matrix $F\otimes F$ we obtain 
-\begin{equation}
-\begin{split}
-    \left(F\otimes F\right)_{\tau_{1},s_{2}}&=e_{\tau_{1},s_{2}}^{\tau_{1},s_{2}}+(-1)\delta_{s_{2},1}\sum_{d_{2}=2}^{N}e_{\tau_{1},1}^{\tau_{1},d_{2}}
-    \\&+
-    (-1)\delta_{\tau_{1},1}\sum_{d_{1}=2}^{N}e_{1,s_{2}}^{d_{1},s_{2}}+(-1)^{2}\delta_{\tau_{1},1}\delta_{s_{2},1}\sum_{d_{1},d_{2}=2}^{N}e_{1,1}^{d_{1},d_{2}}
-    \\&=
-    \sum_{q_{1}=1}^{2}\prod_{r=1}^{1}\delta_{s_{q_{r}},1}\sum_{r=1}^{1}\sum_{d_{q_{r}}=2}^{N}e_{\tau_{x},1}^{\tau_{x}d_{q_{r}}}
-    +
-    (-1)\sum_{q_{1}=1}^{2}\sum_{q_{2}=q_{1}+1}^{2}\prod_{r=1}^{2}\delta_{s_{q_{r}},1}\sum_{r=1}^{2}\sum_{d_{q_{r}}=2}^{N}e_{\tau_{x},1}^{\tau_{x}d_{q_{r}}}
-    \end{split}
-\end{equation}
-where $e_{\tau_{x},d_{q_{r}}}$ denotes the matrix $e_{\tau_{1},s_{2}}^{\tau_{1},s_{2}}$ where the subscripts $s_{q_{r}}$ have been replaced by "1" and the superscript $s_{q_{r}}$ have been replaced by $d_{q_{r}}$, with $r=1,2$. \\
-We generalize this tensor product to an arbitrary number of sites $L$ obtaining the matrix $\mathcal{F}$. We write the expression of a fixed raw with indices $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$ as 
-\begin{equation}
-    \begin{split}
-        \mathcal{F}_{\tau_{1},\ldots,\tau_{L}}&=e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}
-        \\&
-        +\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{r=1}^{b}\sum_{d_{q_{r}}=2}^{N}e_{\ldots,\tau_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,\tau_{x},\ldots,\,d_{q_{r}}\,,\ldots}
-    \end{split}
-\end{equation}
-where $e_{\ldots,\tau_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,\tau_{x},\ldots,\,d_{q_{r}}\,,\ldots}$ denotes the matrix $e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}$ where the subscripts $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by "1" and the superscripts $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. \\
-\end{comment}
-The product $\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\Psi^{'}\rangle$ gives a vector whose component are denoted by $\Psi(\bm{\tau})$. 
-To find this elements we need to fix the rows correspondent to $\bm{\tau}$. Consider a string $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})$ with $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, then the corresponding row of the vector $\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\Psi^{'}\rangle$ reads
-\begin{equation}
-    \begin{split}
-       \Psi(\bm{\tau}) &=\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}_{\bm{\tau}}|\Psi{'}\rangle=\Psi{'}(\tau_{1},\ldots,\tau_{L})+ 
-        \\&
-        +\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{r}}=2}^{N}\Psi{'}(\eta_{1},\ldots,\eta_{L})
-    \end{split}
-\end{equation}
-%where $\Psi{'}(\ldots,\tau_{x},\ldots,d_{q_{r}},\ldots)$ denotes the component $\Psi{'}(\tau_{1},\ldots,\tau_{L})$ where the occupations  $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. 
-Using \eqref{elementsABS} we have 
-\begin{equation}
-  \begin{split}
-	\Psi{'}(\eta_{1},\ldots,\eta_{L})=&\sum_{c_{1}=0}^{1-\delta_{\eta_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{\eta_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}
-	\\&
-	\prod_{y=1}^{L}\left(\lambda_{\eta_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\eta_{y}}^{(1-c_{y})(1-\delta_{\eta_{y},1})}
-\end{split}
-\end{equation}
-{\color{blue}
-\begin{equation}
-    \begin{split}
-  &\Psi{'}(\ldots,\tau_{x},\ldots,d_{q_{r}},\ldots)=\sum_{x=1\,:\, x\neq q_{1},\ldots,q_{l}}^{L}\sum_{c_{x}=0}^{1-\delta_{\tau_{x},1}}\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{c_{q_{p}}=0}^{1}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(2+L)}
-\\&  
-\prod_{y=1\,:\, y\neq q_{1},\ldots,q_{b}}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\tau_{y}}^{(1-c_{y})(1-\delta_{\tau_{y},1})}
-\\&
-  \prod_{t=1}^{b}\lambda_{d_{q_{t}}}\left(2+L-q_{t}-\sum_{j=q_{t}}^{L}c_{j}\right)^{c_{q_{t}}}\beta_{d_{q_{t}}}^{(1-c_{q_{t}})}
-    \end{split}
-\end{equation}} indeed, in each coordinate $q_{r}$ with $r=1,\ldots b$ the species $1$ is replaced by all other possible species from $2$ to $N$.  Finally, considering all possible $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, we obtain \eqref{steadyStateH}. 
-\begin{flushright}
-    $\square$
-\end{flushright}
 \subsection{Exact steady state correlations}\label{correlation-section}
 In this section we write a formula for the stationary steady state correlations between $m$- points of the chain, each of them occupied by a non empty species, i.e. a species with label from $2$ to $N$. This is motivated by interest of understanding how actual particles of the chain are correlated among each others and also because the holes depends on the occupation of all other species, as a consequence of the constraint $n_{1}^{x}=\nu-\sum_{b=2}^{N}n_{b}^{x}$ for arbitrary $x\in \{1,\ldots,L\}$. Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $\bm{x}=(y_{1},\ldots,y_{m})$, such that $x_{i}<x_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$. In each of these points there is a particle of species $a_{i}\in \{2,\ldots,N\}$. Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
 \begin{equation}\label{exactCorrelations}
@@ -1752,6 +1594,7 @@ Using formula \eqref{ABS} for a configuration where all $\tau_{i}$ are non-empty
 	\langle n_{a_{1}}^{x_{1}}\cdots n_{a_{m}}^{x_{m}} \rangle_{stat}=\langle\hat{\bm{\xi}}\rangle_{stat,dual}=\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{\tau_{k}}^{c_{k}}\beta_{\tau_{k}}^{1-c_{k}}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}
 \end{equation}
 Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,x_{k},c_{k},\ldots,c_{m})$ and using $\tau_{i}=a_{i}$ $\forall i=1,\ldots,m$, we have the formulas for arbitrary correlations.
+\begin{comment}
 {\color{blue}
  \paragraph{Proof of formula \eqref{exactCorrelations}}
  We aim to compute the correlations between the sites $\mathbf{x}=\left(x_{1},\ldots,x_{m}\right)$ occupied by the species $\mathbf{a}=\left(a_{1},\ldots,a_{m}\right)$, such that $a_{1},\ldots,a_{m}\in \{2,\ldots,N\}$ i.e. 
@@ -1779,7 +1622,7 @@ Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,x_{k},c_{k},\ldots,c_{m})$ an
 \begin{flushright}
     $\square$
 \end{flushright}}
-
+\end{comment}
 \subsubsection{Explicit examples of steady state correlations}
 We give some examples of correlations applying formula \eqref{exactCorrelations}.
 \paragraph{One point correlations}
@@ -1836,8 +1679,927 @@ Therefore, we obtain the third cumulant, i.e. the three-point connected correlat
 	-\frac{2x_{1}(L+1-2x_{2})(L+1-x_{3})}{(L+1)^{3}(L-1)L}(\alpha_{a_{1}}-\beta_{a_{1}})(\alpha_{a_{2}}-\beta_{a_{2}})(\alpha_{a_{3}}-\beta_{a_{3}})
 \end{align}
 \textbf{Remark}: the first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, are exactly the ones found in subsection 4.3 of \cite{vanicat2017exact}. 
+\section{Mapping to equilibrium}
+check also Appendix A in
+\cite{Alcaraz:1992zc} \cite{Sklyanin:1988yz} 
+\subsection{The non local transformation}\label{SectionNonLocalTrasformation}
+We define the equilibrium Hamiltonian as
+\begin{equation}
+	H^{0}=H_{left}^{0}+H_{bulk}+H^{''}_{right}
+\end{equation}
+where
+\begin{equation}
+	H_{left}^{0}=e_{NN}^{1}-\mathbbm{1}^{1}\qquad H_{right}^{''}=e_{NN}^{L}-\mathbbm{1}^{L}
+\end{equation}
+Therefore we have that
+\begin{equation}
+	H^{''}=H^{0}+H^{B}
+\end{equation}
+where
+\begin{equation}
+	H^{B}=\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1}
+\end{equation}
+We look for a matrix $W$ such that 
+\begin{equation}\label{GoalWH}
+	H^{''}W=WH_{0}
+\end{equation}
+This matrix is 
+\begin{equation}\label{W-extended}
+	W= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}+\epsilon-H\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+%We have that 
+%\begin{equation}
+%	\left[H_{0},Q^{0}_{2L}\right]=0\qquad \left[H^{''},Q_{2L}\right]=0
+%\end{equation}
+%thus it is enough to look for a matrix $W$ such that 
+%\begin{equation}\label{GoalWQ}
+%	Q^{2L}W=WQ_{2L}^{0}
+%\end{equation}
+To find a matrix $W$ such that \eqref{GoalWH} is fulfilled we use the \textit{resolvent operator} defined as
+\begin{equation}
+	R(z,H):=\left(zI-H\right)^{-1}
+\end{equation}
+where $z$ must be in the resolvent set, i.e. the subset of $\mathbb{C}$ such that the resolvent is well defined. 
+The above equation implies that 
+\begin{equation}
+	(z-H)R(H,z)=1
+\end{equation}
+In order to be well defined we must $z$ must not be an eigenvalue of $H$ (and thus of $H_{0}$). We denote by $\bm{m}=(m_{1},\ldots,m_{N})$ an $N-$dimensional vector where each $m_{i}$ means the total occupation over the chain of each species $i\in\{1,\ldots,N\}$. Therefore, we call $\Lambda_{\bm{m}}$ and $|\Psi_{\bm{m}}^{0}\rangle$ the eigenvalue and the eigenvector of $H^{0}$ that correspond to a certain $\bm{m}$. We take $z=\Lambda_{\bm{m}}+\epsilon$ 
+\begin{equation}
+	(\Lambda_{\bm{m}}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)=1
+\end{equation}
+We multiply both sides by $|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|$
+\begin{equation}
+	(\Lambda_{\bm{m}}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+We sum over all possible $m$ 
+\begin{equation}
+	\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\Lambda_{m}+\epsilon-H)R(H,\Lambda_{m}+\epsilon)|\Psi_{m}^{0}\rangle \langle \Psi_{m}^{0}|=\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+We multiply both sides by $\epsilon$ 
+\begin{equation}
+	\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\Lambda_{m}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{m}^{0}|=\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+We take the limit for $\epsilon\to 0$ on both sides 
+\begin{equation}
+	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L} (\Lambda_{\bm{m}}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+Observe that 
+\begin{equation}
+	\lim_{\epsilon\to 0}\left(\Lambda_{\bm{m}}+\epsilon-H\right)=\left(\Lambda_{\bm{m}}-H\right)<\infty
+\end{equation}
+and using the following power expansion
+\begin{equation}\label{veryUsefulSeries}
+	(A-B)^{-1}=\sum_{n=0}^{\infty}(A^{-1}B)^{n}A^{-1}
+\end{equation}
+we have that for each $\bm{m}$ 
+\begin{equation}
+	\begin{split}
+		&\lim_{\epsilon\to 0}\epsilon\left(\Lambda_{\bm{m}}+\epsilon-H\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\sum_{n=0}^{\infty}\left((\Lambda_{\bm{m}}+\epsilon)^{-1}H\right)^{n}(\Lambda_{\bm{m}}+\epsilon)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|
+		\\=&
+		\lim_{\epsilon\to 0}\epsilon\sum_{n=0}^{\infty}\left((\Lambda_{\bm{m}}+\epsilon)^{-1}\Lambda_{\bm{m}}\right)^{n}(\Lambda_{m}+\epsilon)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\epsilon\left(\Lambda_{\bm{m}}+\epsilon-\Lambda_{\bm{m}}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|\\=&|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|<\infty
+	\end{split}
+\end{equation}
+therefore the limit of the product is the product of the limit and we obtain that 
+\begin{equation}
+	\sum_{m=0}^{L}  (\Lambda_{\bm{m}}-H)\lim_{\epsilon\to 0}\epsilon R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=0
+\end{equation}
+Since the limit of the sum is the sum of the limit we have   
+\begin{equation}
+	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  \Lambda_{\bm{m}}R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|= H\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+thus 
+\begin{equation}
+	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)H_{0}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|= H\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+Since $H_{0}=H_{0}^{T}$ 
+\begin{equation}
+	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|H_{0}= H\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+By calling 
+\begin{equation}\label{W-extended}
+	W= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}+\epsilon-H\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+we finally obtain 
+\begin{equation}
+	WH_{0}=HW
+\end{equation}
+Formula \eqref{W-extended} comes from standard perturbation theory. However, since the process is integrable it is possible to express $W$ in function of the conserved charges of the system. This expression, as it will be show in the following sections, allows to find explicit expression of the eigenvector by the Bethe ansatz and also allows to retrieve again the steady state of $H^{''}$ by applying $W$ to the ground state. To find it, we use the Quantum Inverse Scattering Method (QISM). We first present the simpler case of $gl(2)$, then we try to adapt the proof the general $gl(N)$. 
+\subsection{Quantum inverse scattering method}
+We can apply the \textit{quantum inverse scattering method} to this process. We introduce the quantum space as $V=V_{1}\otimes\ldots\otimes V_{j}\otimes\ldots\otimes V_{L}$ and the auxiliary space $V_{0}$. In this specific case $V_{j}=\mathbb{C}^{N}$ $\forall j=0,1,\ldots ,L$. We introduce the following $R$-matrices acting on the tensor product of spaces with indices $a,b=0,1,\ldots,L$
+\begin{equation}\label{Rmatrix}
+	R_{ab}(x)=\frac{(P_{ab}+Ix)}{x+1}
+\end{equation}
+and the $K$-matrices
+\begin{comment}
+	\begin{equation}
+		\widehat{K}_{a}(x)=I+\frac{2x}{(x+1)}B_{L}
+	\end{equation}
+	\begin{equation}
+		K_{a}(x)=\left((2x+N)B_{1}+(x+N)I\right)\frac{1}{(x+1)^{2}(2x+N)}
+	\end{equation}
+\end{comment}
+\begin{equation}\label{KmatrixHAT}
+	\widehat{K}_{0}(x)=(1+x)\left(I+\frac{2x}{x+1}H^{''}_{right}\right)=\begin{pmatrix}
+		1-x&0&\ldots&0\\
+		0&1-x&\ldots&0\\
+		\vdots&\vdots&\ddots&\vdots\\
+		0&0&\ldots&1+x
+	\end{pmatrix}
+\end{equation}
+\begin{equation}\label{Kmatrix}
+	K_{0}=\left((2x+N)H^{''}_{left}+(x+N)I\right)\frac{(1+x)^{2}(2x+N)}{(x+1)^{2}(2x+N)}=\begin{pmatrix}
+		-x&0&0&\ldots&0&(N+2x)(\alpha_{1}-\beta_{1})\\
+		0&-x&0&\ldots&0&(N+2x)(\alpha_{2}-\beta_{2})\\
+		\vdots&\vdots&\ddots&\vdots&\vdots&\vdots\\
+		0&0&0&\ldots&-x&(N+2x)(\alpha_{N-1}-\beta_{N-1})\\
+		0&0&0&\ldots&0&1+x
+	\end{pmatrix}
+\end{equation}
+The above matrices satisfy the following equations
+\begin{itemize}
+	\item \textit{Yang-Baxter-Equation}
+	\begin{equation}
+		R_{ab}(x-y)R_{ac}(x-z)R_{bc}(y-x)=R_{bc}(y-z)R_{ac}(x-z)R_{ab}(x-y)
+	\end{equation}
+	\item \textit{Boundary-Yang-Baxter-Equation}
+	\begin{equation}
+		R_{ab}(x-y)\widehat{K}_{a}(x)R_{ab}(x+y)\widehat{K}_{2}(y)=\widehat{K}_{b}(y)R_{ab}(x+y)\widehat{K}_{a}(x)R_{ab}(x-y)
+	\end{equation}
+	\item \textit{Dual Boundary-Yang-Baxter-Equation}
+	\begin{equation}
+		K_{b}(y) R_{ab}(-x-y-N) K_{a}(x)R_{ab}(y-x)=R_{ab}(y-x)K_{a}(x)R_{ab}(-x-y-N)K_{b}(y)
+	\end{equation}
+\end{itemize}
+We define the \textit{transfer matrix}
+\begin{equation}
+	T^{\Delta}(x)=tr_{0}\left(K_{0}(x)U_{0}(x)\right)
+\end{equation}
+where we used the double row monodromy defined as
+\begin{equation}
+	U_{0}(x)=M_{0}(x)\widehat{K}(x)\widehat{M}_{0}(x)
+\end{equation}
+where 
+\begin{equation}
+	M_{0}(x)=R_{01}(x)\ldots R_{0L}(x)\qquad \widehat{M}_{0}=R_{0L}(x)\ldots R_{01}(x)
+\end{equation}
+This double row monodromy satisfies the following exchange relation
+\begin{equation}\label{RURU}
+	R_{ab}(x-y)U_{a}(x)R_{ab}(x+y)U_{b}(y)=U_{b}(y)R_{ab}(x+y)U_{a}(x)R_{ab}(x-y)
+\end{equation}
+This trasfer matrix has the following properties
+\begin{equation}
+	\left[T^{\Delta}(x),T^{\Delta}(y)\right]=0\qquad \frac{\partial}{\partial x}\log (T^{\Delta}(0))=C_{1}H^{''}+C_{2}I
+\end{equation}
+with $C_{1},C_{2}>0$. \\
+We write $U_{0}(x)$ in the canonical basis of $V_{0}$ and we rename the elements, each of them acting on the quantum space $V$, has follows
+\begin{comment}
+	\begin{equation}
+		U_{0}(x)=\begin{pmatrix}
+			D_{11}(x)&B_{2}(x)&\ldots&B_{N}(x)\\
+			C_{2}(x)&D_{22}(x)&\ldots&D_{2N}(x)\\
+			\vdots&\vdots&\ddots&\vdots\\
+			C_{N}(x)&D_{N2}(x)&\ldots&D_{NN}(x)
+		\end{pmatrix}
+	\end{equation}
+\end{comment}
+\begin{equation}
+	U_{0}(x)=\begin{pmatrix}
+		D_{1,1}(x)&D_{1,2}(x)&\ldots&D_{1,N-1}(x)&C_{1}(x)\\
+		D_{2,1}(x)&D_{2,2}(x)&\ldots&D_{2,N-1}(x)&C_{2}(x)\\
+		\vdots&\vdots&\ddots&\vdots&\vdots\\
+		D_{N-1,1}&D_{N-1,2}&\ldots&D_{N-1,N-1}(x)&C_{N-1}\\
+		B_{1}(x)&B_{N-1}(x)&\ldots&D_{N,N-1}(x)&D_{N,N}(x)
+	\end{pmatrix}
+\end{equation}
+The exchange relations for the elements of the above matrix can be found using \eqref{RURU}
+\begin{itemize}
+	\item for every $i\in\{1,\ldots,N-1\}$
+	\begin{equation}\label{EX1}
+		\begin{split}
+			D_{N,N}(y)B_{i}(y)&=f(x,y)D_{N,N}(x)B_{i}(y)+f_{1}(x,y)B_{i}(x)D_{N,N}(y)\\&+f_{2}(x,y)\left(B_{i}(x)D_{i,i}(y)+\sum_{k=1\,:\,k\neq i}^{N-1}B_{k}(x)D_{k,i}(y)\right)
+		\end{split}	
+	\end{equation}
+	\begin{equation}\label{EX2}
+		\begin{split}
+			D_{i,i}(x)B_{i}(x)&=h(x,y)B_{i}(y)D_{i,i}(x)+h_{1}(x,y)B_{i}(x)D_{i,i}(y)\\&+h_{2}(x,y)B_{1}(x)D_{N,N}(y)+h_{3}(x,y)B_{i}(y)D_{N,N}(x)\\&+\frac{1}{2}h_{3}(x,y)\sum_{k=1\,:\, k\neq i}^{N-1}B_{k}(x)D_{k,i}(y)+h_{4}(x,y)\sum_{k=1\,:\, k\neq i}^{N-1}B_{k}(y)D_{k,i}(x)
+		\end{split}
+	\end{equation}
+	\item  for every $i,j\in \{1,\ldots,N-1\}$ such that $i\neq j$
+	\begin{equation}\label{EX3}
+		\begin{split}
+			D_{j,j}(x)B_{i}(y)&=B_{i}(x)D_{j,j}(y)+\frac{1}{2}h_{3}(x,y)\left(B_{i}(y)D_{i,i}(x)-B_{i}(x)D_{i,i}(y)\right)
+			\\&+
+			\frac{1}{2}h_{3}(x,y)\left(B_{i}(x)D_{N,N}(y)-B_{i}(y)D_{N,N}(x)\right)
+			\\&+
+			h_{1}(x,y)\left(B_{j}(x)D_{j,i}(y)-B_{j}(y)D_{i,j}(x)\right)
+			\\&+
+			\frac{1}{2}h_{3}(x,y)\sum_{k=1\,:\,k\neq i,j}\left(B_{k}(y)D_{k,i}(x)-B_{k}(x)D_{k,i}(y)\right)
+		\end{split}
+	\end{equation}
+	
+\end{itemize}
+where
+\begin{align}
+	&f(x,y)=\frac{(x+y)(x-y-1)}{(x-y)(1+x+y)}&f_{1}(x,y)=\frac{(x+y)}{(x-y)(1+x+y)}\quad&f_{2}(x,y)=\frac{1}{(1+x+y)}\nonumber\\&h(x,y)=\frac{(1+x-y)(x+y+2)}{(x-y)(1+x+y)}
+	&h_{1}(x,y)=-\frac{(x+y+2)}{(x-y)(1+x+y)}\quad&h_{2}(x,y)=\frac{(2+x-y)}{(x-y)(1+x+y)}\nonumber
+	\\&h_{3}(x,y)=\frac{2}{(x-y)(1+x+y)}
+\end{align}
+\subsection{Charges}
+Then we have
+\begin{equation}
+	\begin{split}
+		T^{\Delta}(x)=tr_{0}&\left(\begin{pmatrix}
+			-x&0&0&\ldots&0&(N+2x)(\alpha_{1}-\beta_{1})\\
+			0&-x&0&\ldots&0&(N+2x)(\alpha_{2}-\beta_{2})\\
+			\vdots&\vdots&\ddots&\vdots&\vdots&\vdots\\
+			0&0&0&\ldots&-x&(N+2x)(\alpha_{N-1}-\beta_{N-1})\\
+			0&0&0&\ldots&0&1+x
+		\end{pmatrix}\right.
+		\\& \left.
+		\;\;\;\begin{pmatrix}
+			D_{1,1}(x)&D_{1,2}(x)&\ldots&D_{1,N-1}(x)&C_{1}(x)\\
+			D_{2,1}(x)&D_{2,2}(x)&\ldots&D_{2,N-1}(x)&C_{2}(x)\\
+			\vdots&\vdots&\ddots&\vdots&\vdots\\
+			D_{N-1,1}&D_{N-1,2}&\ldots&D_{N-1,N-1}(x)&C_{N-1}\\
+			B_{1}(x)&B_{2}(x)&\ldots&B_{N-1}(x)&D_{N,N}(x)
+		\end{pmatrix}\right)
+	\end{split}
+\end{equation}
+Therefore we can write the polynomial expansion
+\begin{equation}
+	\begin{split}
+		T^{\Delta}(x)=&
+		(N+x)D_{N,N}(x)-\sum_{i=1}^{N-1}xD_{ii}(x)+\sum_{i=1}^{N-1}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)=
+		\sum_{k=0}^{2L+2}Q_{k}x^{k}
+	\end{split}
+\end{equation}
+We call these $Q_{k}$, with $k=0,\ldots,2L+2$, the \textit{charges}. \\
+We can also introduce 
+\begin{equation}
+	T_{0}(x)=(N+x)D_{N,N}(x)-\sum_{i=1}^{N-1}xD_{ii}(x)\quad\text{such that}\quad T_{\Delta}(x)=T_{0}(x)+\sum_{i=2}^{N}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)
+\end{equation}For large $x$, we compute them by expanding $U_{0}^{d}(x)$ in a polynomial: 
+\begin{equation}
+	D_{N,N}(x)=\sum_{a=0}^{2L+1}D_{N,N}^{a}x^{a}\quad D_{ii}(x)=\sum_{a=0}^{2L+1}D_{ii}^{a}x^{a}\quad B_{i}(x)=\sum_{a=0}^{2L-1}B_{i}^{a}x^{a}\quad D_{i,j}(x)=\sum_{a=0}^{2L}D_{i,j}^{a}x^{a}
+\end{equation}
+In the following it will be clear that only the first three coefficients of the diagonal elements and only the first coefficient of the non diagonal element are needed. 
+\begin{itemize}
+	\item For the element $D_{N,N}(x)$: 
+%The coefficients that we need are the following:
+%\begin{equation}
+%	D_{N,N}(x)=D_{N,N}^{2L+1}x^{2L+1}+D_{N,N}^{2L}x^{2L+1}+D_{N,N}^{2L-1}x^{2L-1}+\ldots
+%\end{equation}
+where 
+\begin{equation}
+	D_{N,N}^{2L+1}=I^{tot}
+\end{equation}
+\begin{equation}
+	D_{N,N}^{2L}=I^{tot}+2e_{NN}^{tot}
+\end{equation}
+\begin{equation}
+	D_{N,N}^{2L-1}	=2e_{NN}^{tot}\left(e_{NN}^{tot}+I^{tot}\right)-L
+\end{equation}
+%\begin{equation}
+%	\begin{split}
+	%	D_{N,N}^{2L-1}=3e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2\sum_{a\neq b}e_{NN}^{[a]}e_{NN}^{[b]}
+%	\end{split}
+%\end{equation}
+\begin{comment}
+{\color{blue}ok}
 
-\section{Non-integrable chain}
+We observe that $\forall i,j=1,\ldots,N-1$
+\begin{equation}
+	\sum_{a\neq b}e_{ij}^{[a]}e_{ji}^{[b]}=e_{ij}^{tot}e_{ji}^{tot}-e_{ii}^{tot}
+\end{equation}
+then 
+\begin{equation}
+	D_{N,N}^{2L-1}=e_{NN}^{tot}\left(2e_{NN}^{tot}+I^{tot}\right)-\sum_{j=1}^{N}e_{jj}^{tot}%=2e_{NN}^{tot}\left(e_{NN}^{tot}+I^{tot}\right)-L
+\end{equation}
+Then
+
+{\color{blue}ok?}where we used $
+\sum_{i=1}^Ne_{ii}^{tot}=L$. 
+\end{comment}
+\item For $D_{i,i}(x)$ with arbitrary $ i\in\{1,\ldots,N-1\}$ 
+%\begin{equation}
+%	D_{ii}(x)=D_{ii}^{2L+1}x^{2L+1}+D_{ii}^{2L}x^{2L}+D_{ii}^{2L-1}x^{2L-1}+\ldots
+%\end{equation}
+%where the coefficients
+\begin{equation}\label{a2lp}
+	D_{ii}^{2L+1}=-I^{tot}
+\end{equation}\begin{equation}\label{a2l}
+	D_{ii}^{2L}=I^{tot}-2e_{ii}^{tot}
+\end{equation}
+\begin{equation}
+	D_{ii}^{2L-1}=2Ne_{ii}^{tot}+ 2e_{NN}^{tot}-L -2\sum_{j=1}^{N-1}e_{ij}^{tot}e_{ji}^{tot}
+\end{equation}
+%\begin{equation}\label{a2lm1}
+%	\begin{split}
+	%	D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{a\neq b}e_{ii}^{[a]}e_{ii}^{[b]}-2\sum_{a\neq b}\sum_{j=1\,:\,j\neq i}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\
+	%	&=e_{11}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=1}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\
+	%	%&=e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2e_{ii}^{tot}\\
+		%&=2e_{11}^{tot}+2e_{ii}^{tot}-C_1
+%		&=e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=1}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\ 
+%	\end{split}
+%\end{equation}
+
+%We rewrite
+%\begin{equation}
+%	\begin{split}
+	%	D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{j=1}^{N%-1}e_{ij}^{tot}e_{ji}^{tot}+2(N-1)e_{ii}^{tot}
+%	\end{split}
+%\end{equation}
+%then
+%\begin{equation}
+%	\begin{split}
+%		D_{ii}^{2L-1}=	2Ne_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}%=2Ne_{ii}^{tot}+ 2e_{NN}^{tot}-L -2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}
+%	\end{split}
+%\end{equation}
+
+
+%blue} In case of a chain $L=2$ and $N=3$ and choosing $i=2$ this reads as 
+%\begin{equation*}
+%	D_{22}^{2L-1}=6e_{22}^{tot}+e_{11}^{tot}-e_{22}^{tot}-e_{33}^{tot}-2e_{22}^{tot}e_{22}^{tot}-2e_{23}^{tot}e_{32}^{tot}
+%\end{equation*}
+%where
+%\begin{equation*}
+%	e_{ab}^{tot}=e_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes e_{ab}\qquad \forall a,b\in \{1,2,3\}
+%\end{equation*}
+%This gives exactly
+%\begin{equation*}
+%	D_{22}^{2L-1}=\left(
+%	\begin{array}{ccccccccc}
+%		2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+%		0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+%		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+%		0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 \\
+%		0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 & 0 \\
+%		0 & 0 & 0 & 0 & 0 & 0 & 0 & -2 & 0 \\
+%		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+%		0 & 0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 \\
+%		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -2 \\
+%	\end{array}
+%	\right)
+%\end{equation*}
+%}
+%\textbf{Observation}: it seems to me that, although not diagonal, the $D_{ii}^{2L-1}$ does not chaing the exitation of the chain since we have $e_{ij}^{tot}e_{ji}^{tot}$!\\
+%The following \textit{lower diagonal} elements of $U_{0}(x)$, $\forall i=2,\ldots,L$ and for $j=1$
+%\begin{equation}
+%	C_{i}(x)=C_{i}^{2L-1}x^{2L-1}+\ldots
+%\end{equation}
+%where the coefficient is
+%\begin{equation}\label{c}
+%	C_{i}^{2L-1}=2e_{1i}^{tot}+2\sum_{a< b}\left(e_{1i}^{[a]}e_{11}^{[b]}-e_{1i}^{[a]}e_{ii}^{[b]}-\sum_{a=2\,:\,k\neq j}^{N}e_{1a}^{[a]}e_{ai}^{[b]}\right)
+%\end{equation}
+\item For $B_{j}(x)$  $\forall j=2,\ldots,L$ 
+\begin{equation}
+		B_{j}^{2L-1}=	2e_{j1}^{tot}e_{11}^{tot}-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N} e_{jk}^{[a]}e_{k1}^{[b]}
+\end{equation}
+\begin{comment}
+\begin{equation}
+B_{j}(x)=B_{j}^{2L-1}x^{2L-1}+\ldots
+\end{equation}
+where the coefficient is 
+\begin{equation}\label{b}
+\begin{split}
+B_{j}^{2L-1}&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-e_{j1}^{[a]}e_{jj}^{[b]}-\sum_{k=2\,:\,k\neq j}^{N}e_{k1}^{[a]}e_{jk}^{[b]}\right)\\
+&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-\sum_{k=2}^{N}e_{k1}^{[a]}e_{jk}^{[b]}\right)
+\end{split}
+\end{equation}
+then
+\begin{equation}
+\begin{split}
+B_{j}^{2L-1}=2e_{j1}^{tot}+
+2\sum_{a,b=1\,:\, a<b}^{L}\left(e_{j1}^{[a]}e_{11}^{[b]}\right)-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=2}^{N}\left( e_{jk}^{[a]}e_{k1}^{[b]}\right)
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+B_{j}^{2L-1}&=
+2\sum_{a,b=1}^{L}\left(e_{j1}^{[a]}e_{11}^{[b]}\right)-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N}\left( e_{jk}^{[a]}e_{k1}^{[b]}\right)\\
+%	&=
+%	2e_{j1}^{tot}e_{11}^{tot}-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N} e_{jk}^{[a]}e_{k1}^{[b]}
+\end{split}
+\end{equation}
+Thus
+\begin{equation}
+\boxed{	B_{j}^{2L-1}=	2e_{j1}^{tot}e_{11}^{tot}-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N} e_{jk}^{[a]}e_{k1}^{[b]}}
+\end{equation}
+\end{comment}
+\item For $D_{i,j}(x)$ with $i,j=2,\ldots,N$ such that $i\neq j$
+\begin{equation}
+D_{i,j}^{2L}=-2e_{ji}^{tot}
+\end{equation}
+\end{itemize}
+\textbf{Remark}: it is easy to see that, when restricted to the case of 2 species,  \eqref{a2lp},\eqref{a2l},\eqref{a2lm1} correspond to the one compute in \cite{frassek2020eigenstates}. \\ \\
+The interesting charges (we only look for the first non trivial one) take the following form  
+
+
+
+\begin{align}
+Q_{2L+2}&=D_{N,N}^{2L+1}-\sum_{i=1}^{N-1}D_{ii}^{2L+1}=N\\
+Q_{2L+1}&=ND_{N,N}^{2L+1}+A^{2L}-\sum_{i=1}^{N-1}D_{ii}^{2L}=N+2L-1\\
+Q_{2L\phantom{+}}&=ND_{N,N}^{2L}+D_{N,N}^{2L-1}-\sum_{i=1}^{N-1}D_{ii}^{2L-1}+\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
+\end{align}
+The charges $Q_{2L+2}$ and $Q_{2L+1}$ are proportional to the identity matrix, while $Q_{2L}$ contains non diagonal matrices and the boundary parameters $\alpha_{i},\beta_{i}$ $\forall i=2,\ldots,N$.\\
+It is easy to show that 
+\begin{equation}
+\left[Q_{2L},H^{''}\right]=Q_{2L}H^{''}-H^{''}Q_{2L}=0
+\end{equation}
+The commutation with the Hamiltonian $H^{''}$ for $Q_{2L+2}$ and $Q_{2L+1}$ is trivial. \\
+We introduce the following:
+\begin{equation}
+Q_{2L}^{0}:=ND_{N,N}^{2L}+D_{N,N}^{2L-1}-\sum_{i=1}^{N-1}D_{ii}^{2L-1}
+\end{equation}
+that is 
+%\begin{equation}
+%\begin{split}
+%Q_{2L}^{0}&=N(I^{tot}+e_{NN}^{tot})+e_{NN}^{tot}(2e_{NN}^{tot}+I^{tot})-\sum_{j=1}^{N-1}e_{jj}^{tot}-2N\sum_{j=1}^{N-1}e_{jj}^{tot}+\sum_{k=1}^{N-1}\left\{e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+\sum_{j=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}\right\}
+%\end{split}
+%\end{equation}
+\begin{equation}\label{Q0Exp}
+\begin{split}
+Q_{2L}^{0}=(N-NL-2L)I^{tot}+2(N+2)e_{NN}^{tot}+2e_{NN}^{tot}e_{NN}^{tot}+2\sum_{j,k=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}
+\end{split}
+\end{equation}
+%\begin{equation}	
+%\begin{split}
+%Q_{2L}^{0}&=NI^{tot}+2e_{11}^{tot}(e_{11}^{tot}+I^{tot})-(N+2)\sum_{j=2}^{N}e_{jj}^{tot}+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
+%&=N+2e_{11}^{tot}(e_{11}^{tot}+1)+(N+2)(e_{11}^{tot}-L)+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
+%\end{split}
+%\end{equation} 
+We also introduce 
+\begin{equation}
+\mathcal{Q}_{2L}=\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
+\end{equation}
+therefore we can write 
+\begin{equation}
+Q_{2L}=Q_{2L}^{0}+\mathcal{Q}_{2L}
+\end{equation}
+Observe that $Q_{2L}$ and $Q_{2L}^{0}$ are isospectral. \\
+%  It has the property that commute with the equilibrium Hamiltonian. 
+
+Consider the matrix $Q_{0}^{2L}$ defined in \eqref{Q0Exp}. All terms are diagonal except the last one. However, this last non-diagonal term acts diagonally on the states. Indeed, can be identified with the second Casimir of the $gl(N-1)$ subalgebra. We denote it by $\hat{C}_{2}$ and it reads
+\begin{equation}
+\hat C_2^{N-1}= \sum_{i,j=1}^{N-1}e_{ij}^{tot}e_{ji}^{tot}
+\end{equation} 
+We denote its eigenvector by $C_{2}^{N-1}$. On the Bethe states (and on the irrep decomposition of the spin chain) it acts diagonally with eigenvalues $C_{2}^{N-1}$ given in terms of shifted weights, i.e. 
+\begin{equation}
+C_2^{N-1}=\sum_{j=1}^{N-1}\ell_j(\ell_j -N+2)+\frac{1}{6}(N-1)(N-2)(N-3)
+\end{equation} 
+ where 
+ \begin{equation}
+ 	\ell_{j}=\mu_{j}+N-j
+ \end{equation}
+with $\mu_{j}$ the representation labels of tensor product over the chain of the fundamental representation of $gl(N)$ (it can be decomposed by branching rule).  
+Thus the eigenvalues of the transfer matrix can be writen as 
+\begin{equation}
+\begin{split}
+\Lambda(x)&= \Lambda_{2L+2} x^{2L+2}+ \Lambda_{2L+1} x^{2L+1}+ \Lambda_{2L}x^{2L}+\ldots
+\\&=N x^{2L+2}+2(N+1) x^{2L+1}+ \left(N+2m_1(m_1+1)-(N+2)(L-m_1)+2C_{2}^{N-1}\right)x^{2L}+\ldots
+\end{split}
+\end{equation} 
+Thus the difference is of order $2L$ and becomes
+\begin{equation}
+\Lambda(x)-T_0(x)=x^{2L}\left(\Lambda_{2L}-Q_{2L}^0\right)+\ldots
+\end{equation} 
+By taking the limit we obtain
+\begin{equation}
+\lim_{x\to\infty}\frac{2x+N}{\Lambda(x)-T_0(x)}B_{i}(x)=\frac{2}{\Lambda_{2L}-Q_{2L}^0}B_i^{2L-1}
+\end{equation} 
+\paragraph{Exchange relations between charges}
+Using \eqref{EX1}, \eqref{EX2} and \eqref{EX3} we obtain for every $i,j\in\{1,\ldots,N-1\}$ 
+\begin{equation}\label{ExQ0B-charges}
+Q_{0}^{2L}B_{i}^{2L-1}=B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})\right)-2\sum_{j=1\,:\,j\neq i}^{N-1}B_{j}^{2L-1}D_{j,i}^{2L}
+\end{equation}
+%In particular for the case $N=3$ we have
+%\begin{equation}
+%	\begin{split}
+%	Q_{0}^{2L}B_{1}^{2L-1}&=B_{1}^{2L-1}\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{3,3}^{2L})\right)-2B_{2}^{2L-1}D_{2,1}^{2L}
+%	\\
+%	Q_{0}^{2L}B_{2}^{2L-1}&=B_{2}^{2L-1}\left(Q_{0}^{2L}-2(D_{2,2}^{2L}+D_{3,3}^{2L})\right)-2B_{1}^{2L-1}D_{1,2}^{2L}
+%	\end{split}
+%\end{equation}
+Other useful exchange relations are 
+\begin{equation}\label{ExDNB-charges}
+\begin{split}
+D_{N,N}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}\left(D_{N,N}^{2L}+D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%\\
+%D_{33}^{2L}B_{2}^{2L}&=B_{2}^{2L}\left(D_{33}^{2L}+D_{22}^{2L+1}-D_{33}^{2L+1}\right)
+\end{split}
+\end{equation}
+and
+\begin{equation}\label{ExDiB-charges}
+\begin{split}
+D_{i,i}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}\left(D_{i,i}^{2L}+D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%\\
+%D_{22}^{2L}B_{2}^{2L}&=B_{2}^{2L}\left(D_{22}^{2L}+D_{22}^{2L+1}-D_{33}^{2L+1}\right)
+\end{split}
+\end{equation}
+and finally
+\begin{equation}\label{ExDijB-charges}
+\begin{split}
+D_{i,j}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}D_{i,j}^{2L}+B_{j}^{2L-1}\left(D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%	D_{21}^{2L}B_{2}^{2L-1}&=B_{2}^{2L-1}D_{21}^{2L}+B_{2}^{2L-1}\left(D_{22}^{2L+1}-D_{33}^{2L+1}\right)
+\end{split}
+\end{equation}
+While, for $i,j\in\{1,\ldots,N-1\}$ such that $i\neq j$
+\begin{equation}
+\left[D_{j,j}^{2L},B_{i}^{2L-1}\right]=0\qquad \left[B_{i}^{2L-1},B_{j}^{2L-1}\right]=0\qquad \left[B_{i}^{2L-1},D_{j,i}^{2L}\right]=0%\qquad \left[D_{12}^{2L},B_{2}^{2L-1}\right]=0\qquad \left[D_{11}^{2L},B_{2}^{2L-1}\right]=0
+\end{equation}
+{\color{blue}Using them we also have 
+\begin{equation}
+\begin{split}
+	&Q_{0}^{2L}B_{1}^{2L-1}Q_{0}^{2L}B_{2}^{2L-1}\\=&B_{1}^{2L-1}B_{2}^{2L-1}\left(Q_{0}^{2L}-2(D_{11}^{2L}+D_{22}^{2L}+2D_{33}^{2L})+4(D_{33}^{2L+1}-D_{11}^{2L+1})\right.\\-&\left.2B_{1}^{2L-1}B_{1}^{2L-1}D_{12}^{2L}-2B_{2}^{2L-1}B_{2}^{2L-1}D_{21}^{2L}\right)\left(Q_{0}^{2L}-2(D_{22}^{2L}+D_{33}^{2L})\right)
+	\\&+
+	\left(-2B_{1}^{2L-1}B_{1}^{2L-1}\left(Q_{0}^{2L}-2(D_{11}^{2L}+D_{33}^{2L})+4(D_{33}^{2L+1}-D_{11}^{2L+1})\right)+8B_{1}^{2L-1}B_{2}^{2L-1}D_{21}^{2L}\right)D_{12}^{2L}
+\end{split}
+\end{equation}}{\color{blue}Probably it is not useful}
+\section{Conserved charges form of W}
+By using the QISM results found in the previous section it is possible to rewrite $W$ in function of first non-trivial conserved charges of the system. This is possible because , thanks to integrability
+\begin{equation}
+	[H,T(x)]=0
+\end{equation}
+and moreover $T(x)=\sum_{a=0}^{2L}Q^{2L}x^{a}$ with the property that, the first non-diagonal charge $Q^{2L}$ commutes with $H^{''}$ and thus we can look for a matrix $W$ such that 
+\begin{equation}
+	Q^{2L}W=WQ_{0}^{2L}
+\end{equation}
+Arguing as in section \ref{SectionNonLocalTrasformation}, we can show that 
+\begin{equation}\label{WInCharges}
+	\begin{split}
+	W&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\;|\bm{m}|=1}\left(\Lambda_{m}+\epsilon-Q^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|\\&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\;|\bm{m}|=1}\left(\Lambda_{m}+\epsilon-Q^{2L}_{0}-\mathcal{Q}^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|
+\end{split}
+\end{equation}
+Since $Q^{2L}$ and $H$ are isospectral the above matrix $W$ still maps the non-equilibrium eigenvectors onto the equilibrium ones. The advantage is that now we can do more with this more with this expression. Hopefully, using exchange relation between charges, we could try to handle \eqref{WInCharges} and rewrite it independently from the equilibrium eigenvectors. Moreover, we can use it to extract the steady state by rising the vacum state. 
+\subsection{The gl(2) case}
+In this simpler situation the double row monodromy reads
+\begin{equation}
+	U_{0}=\begin{pmatrix}
+		D_{1,1}(x)&C_{1}(x)\\
+		B_{1}(x)&D_{2,2}(x)
+	\end{pmatrix}
+\end{equation}
+Therefore, using the conserved charges and formula \eqref{WInCharges} we have
+\begin{equation}\label{W}
+	W=\lim_{\epsilon\to 0}\epsilon\sum_{m=0}^{L}\left((\Lambda_{m}^{Q}+\epsilon)-Q_{0}^{2L}-2\Delta B_{1}^{2L-1}\right)^{-1}|\Psi_{m}^{0}\rangle \langle \Psi_{m}^{0}|
+\end{equation}
+Power expanding the matrix $W$ with respect to $\Delta=(\alpha-\beta)$ and making it act on 
+\begin{equation}\label{LinkWG}
+	\begin{split}
+		W=&\lim_{\epsilon\to 0}\epsilon\sum_{m=0}^{L}\left((\Lambda_{m}^{Q}+\epsilon)-Q_{0}^{2L}-2\Delta B_{1}^{2L-1}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|\\
+		=&\lim_{\epsilon\to 0}\sum_{m=0}^{L}\epsilon\sum_{k=0}^{L}\Delta^{k}2^{k}\left\{\left((\Lambda_{m}^{Q}+\epsilon)I-Q_{0}^{2L}\right)^{-1}B_{1}^{2L-1}\right\}^{k}\left((\Lambda_{m}^{Q}+\epsilon)I-Q_{0}^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|
+		\\=&
+		\lim_{\epsilon\to0}\sum_{m=0}^{L}\sum_{k=0}^{L}\Delta^{k}2^{k}\left\{\left((\lambda_{m}^{Q}+\epsilon)I-Q_{0}^{2L}\right)^{-1}B_{1}^{2L-1}\right\}^{k}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|
+	\end{split}
+\end{equation}
+where in the last equality we used 
+\begin{equation}
+	\lim_{\epsilon\to 0}\epsilon\left((\Lambda_{m}^{Q}+\epsilon)I-Q_{0}^{2L}\right)^{-1}=\text{diag}\left\{0,\ldots,0,1,0,\ldots,0\right\}
+\end{equation}
+Expression \eqref{LinkWG} can be rewritten using the adaptation to $gl(2)$ of the exchange relation between charges written in \eqref{ExQ0B-charges},\eqref{ExDNB-charges} and \eqref{ExDiB-charges}. These relation now read
+\begin{equation}\label{exchangeQ0B}
+	Q_{0}^{2L}B_{1}^{2L-1}=B_{1}^{2L-1}\left(Q_{0}^{2L}-2\left(D_{2,2}^{2L}+D_{1,1}^{2L}\right)\right)
+\end{equation}
+
+\begin{equation}
+	D_{2,2}^{2L}B_{1}^{2L-1}=B_{1}^{2L-1}\left(D_{2,2}^{2L}-Q_{0}^{2L+2}\right)
+\end{equation}
+and 
+\begin{equation}
+	D_{1,1}^{2L}B_{1}^{2L-1}=B_{1}^{2L-1}\left(D_{1,1}^{2L}-Q_{0}^{2L+2}\right)
+\end{equation}
+Therefore we obtain 
+\begin{equation}\label{exchangeQk}
+	\begin{split}
+		(Q_{0}^{2L}B_{1}^{2L-1})^{k}&=(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left(Q_{0}^{2L}-2j(D_{2,2}^{2L}+D_{1,1}^{2L})+\mathbbm{1}_{\{j>1\}}4\sum_{i=1}^{j-1}(j-i)Q_{0}^{2L+2}\right)\\
+		&=(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left(Q_{0}^{2L}-2j(D_{2,2}^{2L}+D_{1,1}^{2L})+2j(j-1)N\right)\\
+		&=(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left(Q_{0}^{2L}-4j(1+e_{11}^{tot}-e_{22}^{tot})+2j(j-1)N\right)
+	\end{split}
+\end{equation}
+We use the following power expansion
+\begin{equation}\label{veryUsefulSeries}
+	(A-B)^{-1}=\sum_{n=0}^{\infty}(A^{-1}B)^{n}A^{-1}
+\end{equation}
+We obtain
+\begin{equation}
+	\begin{split}
+		&\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{\left((\lambda_{m}^{Q}+\epsilon)-Q_{0}^{2L}\right)^{-1}B_{1}^{2L-1}\right\}^{k}=\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{\sum_{n=0}^{\infty}\left((\Lambda_{m}^{Q}+\epsilon)^{-1}Q_{0}^{2L}\right)^{n}(\Lambda_{m}^{Q}+\epsilon)^{-1}B_{1}^{2L-1}\right\}^{k}\\
+		=&
+		\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{(\Lambda_{m}^{Q}+\epsilon)^{-1-n}(Q_{0}^{2L})^{n}B_{1}^{2L-1}\right\}^{k}=\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{(\Lambda_{m}^{Q}+\epsilon)^{-1-n}B_{1}^{2L-1}\left(Q_{0}^{2L}-2(D_{2,2}^{2L}+D_{1,1}^{2L})\right)^{n}\right\}^{k}
+		\\=&
+		\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{B_{1}^{2L-1}\left((\Lambda_{m}^{Q}+\epsilon)-\left(Q_{0}^{2L}-2(D_{2,2}^{2L}+D_{1,1}^{2L})\right)\right)^{-1}\right\}^{k}
+	\end{split}
+\end{equation}
+where we used \eqref{exchangeQ0B}. We now need the exchange relations between $\left((\Lambda_{m}^{Q}+\epsilon)-\left(Q_{0}^{2L}-2(D_{2,2}^{2L}+D_{1,1}^{2L})\right)\right)^{-1}$ and $B^{2L-1}$. They follow from \eqref{exchangeQk} and by observing that 
+\begin{equation}
+	\left((\Lambda_{m}^{Q}+\epsilon)-\left(Q_{0}^{2L}-2(A^{2L}+D_{1,1}^{2L})\right)\right)^{-1}=\sum_{n=0}^{\infty}(\Lambda_{m}^{Q}+\epsilon)^{-1-n}\left(Q_{0}^{2L}-2(D_{2,2}^{2L}+D_{1,1}^{2L})\right)^{n}
+\end{equation}
+Finally we obtain 
+\begin{equation}\label{GoodBleft}
+	\begin{split}
+		W|\Psi_{m}^{0}\rangle=&\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left\{(\Lambda_{m}^{Q}+\epsilon)-\left(Q_{0}^{2L}-2j(D_{2,2}^{2L}+D_{1,1}^{2L})+4j(j-1)\right)\right\}^{-1}|\Psi_{m}^{0}\rangle|_{\epsilon=0}
+		\\=&
+		\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left\{(\Lambda_{m}^{Q}+\epsilon)-\left(Q_{0}^{2L}-4j(1+e_{11}^{tot}-e_{22}^{tot})+4j(j-1)\right)\right\}^{-1}|\Psi_{m}^{0}\rangle|_{\epsilon=0}
+		\\=&
+		\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left\{(\lambda_{m}^{Q}+\epsilon)-Q_{0}^{2L}+4j(e_{11}^{tot}-e_{22}^{tot})-4j^{2}+8j\right\}^{-1}|\Psi_{m}^{0}\rangle|_{\epsilon=0}
+	\end{split}
+\end{equation}
+Using again \eqref{veryUsefulSeries} and re-summing we obtain 
+\begin{equation}
+	\begin{split}
+		W|\Psi_{m}^{0}\rangle=&	\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left\{(\lambda_{m}^{Q}+\epsilon)-\Lambda_{m}^{Q}+4j(e_{11}^{tot}-e_{22}^{tot})-4j^{2}+8j\right\}^{-1}|\Psi_{m}^{0}\rangle|_{\epsilon=0}
+		\\=&
+		\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\frac{1}{4^{k}}\frac{1}{k!}\prod_{j=1}^{k}\left\{e_{11}^{tot}-e_{22}^{tot}+2-j\right\}^{-1}|\Psi_{m}^{0}\rangle
+	\end{split}
+\end{equation}
+Calling $m$ the magnon number of the chain and observing that $e_{22}^{tot}|\Psi_{m}^{0}\rangle=m|\Psi_{m}^{0}\rangle$ and $e_{11}^{tot}|\Psi_{m}^{0}\rangle=(L-m)|\Psi_{m}^{0}\rangle$ we obtain 
+\begin{equation}
+	\begin{split}
+		W|\Psi_{m}^{0}\rangle=&	\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left\{L-2m+2-j\right\}^{-1}|\Psi_{m}^{0}\rangle
+	\end{split}
+\end{equation}
+Since 
+\begin{equation}
+	(L+2m+2-j)=\frac{\Gamma(L-2m+2-j+1)}{\Gamma(L-2m+2-j)}\quad \Rightarrow\quad \prod_{j=1}^{k}(L-2m+2-j)^{-1}=\frac{\Gamma(L-2m+2-k)}{\Gamma(L-2m+2)}
+\end{equation}
+indeed
+\begin{equation}
+	\prod_{j=1}^{k}(L-2m+2-j)^{-1}=\frac{\Gamma(L-2m+2-1)}{\Gamma(L-2m+2)}\frac{\Gamma(L-2m+2-2)}{\Gamma(L-2m+2-2+1)}\cdots\frac{\Gamma(L-2m+2-k+1)}{\Gamma(L-2m+2-k+2)}\frac{\Gamma(L-2m+2-k)}{\Gamma(L-2m+2-k+1)}
+\end{equation}
+Finally, using again the property of $e_{11}^{tot}$ and $e_{22}^{tot}$ and using the Pauli matrix $\sigma_{0}^{tot}=e_{11}^{tot}-e_{22}^{tot}$, we obtain 
+\begin{equation}
+	\begin{split}
+		W|\Psi_{m}^{0}\rangle=&	\sum_{k=0}^{L}\frac{\Delta^{k}}{k!}\left(\frac{B_{1}^{2L-1}}{2}\right)^{k}\frac{\Gamma(\sigma_{0}^{tot}+2-k)}{\Gamma(\sigma_{0}^{tot}+2)}|\Psi_{m}^{0}\rangle
+	\end{split}
+\end{equation}
+This gives an explicit formula in term of the charge $B_{1}^{2L-1}$ of the matrix $W$. We stress the fact that these nice formula comes from the simple commutation relations between charges. Moreover, with such a formula it has been proved in \cite{frassek2020eigenstates} that the steady state $|\Psi^{''}\rangle$ can be found by acting on the vacum. 
+\subsection{The gl(N) case}
+Following the result in the simpler $gl(2)$ case, we aim to generalize it to higher rank chains. 
+{\color{blue}
+\subsection{Eigenvectors of the non equilibrium Hamiltonian}
+For simplicity we first consider the case with $N=3$. We make the following ansatz for the eigenvectors of the chain with left triangular and right diagonal boundaries described by the Hamiltonian $H^{''}$ introduced in \eqref{HSecond}. We denote by $\Delta_{2}=\alpha_{2}-\beta_{2}$ and $\Delta_{3}=\alpha_{3}-\beta_{3}$. The eigenvectors are the following: 
+\begin{equation}
+|\Psi_{m_{2},m_{3}}^{\Delta}\rangle=\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+\end{equation}
+
+We replace the above eigenvectors in 
+\begin{equation}
+T_{\Delta}(x)|\Psi_{m_{2},m_{3}}^{\Delta}\rangle=\Lambda_{m_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{\Delta}\rangle
+\end{equation}
+and we obtain
+\begin{align*}
+&\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}+1}\Delta_{3}^{k_{3}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+\\+&
+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}+1}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+\\=&
+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}\Lambda_{m_{1},m_{2}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+\end{align*}
+after a change of summation indices we obtain
+\begin{align*}
+&\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+\\+&
+\sum_{k_{2}=1}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}+\Delta_{2}^{m_{2}+1}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{m_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+\\+&
+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=1}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}+\Delta_{3}^{m_{3}+1}\sum_{k_{2}=0}^{m_{2}}\Delta_{2}^{k_{2}}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+\\=&
+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}\Lambda_{m_{1},m_{2}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}.
+\end{align*}
+We impose the powers of $\Delta_{2}\Delta_{3}$ to be equal. We obtain the following conditions 
+\begin{enumerate}
+\item $k_{2}=0$ and $k_{3}=0$
+\begin{equation}\label{cond1}
+	T_{0}(x)G_{m_{2},m_{3},\epsilon}^{0,0}(x)|\Psi_{m_{1},m_{2}}^{0}\rangle|_{\epsilon=0}=\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3},\epsilon}^{0,0}(x)|\Psi_{m_{1},m_{2}}^{0}\rangle|_{\epsilon=0}
+\end{equation}
+\item $k_{2}=m_{2}+1$ and $k_{3}\in \{0,\ldots,m_{3}\}$
+\begin{equation}\label{cond2}
+	\begin{split}
+		B_{2}(x)G_{m_{2},m_{3},\epsilon}^{m_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}=0
+	\end{split}
+\end{equation}
+\item $k_{2}\in\{0,\ldots,m_{2}\}$ and $k_{3}=m_{3}+1$
+\begin{equation}\label{cond3}
+	\begin{split}
+		B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}=0
+	\end{split}
+\end{equation}
+\item $k_{2}\in \{1,\ldots,m_{2}\}$ and $k_{3}\in\{1,\ldots,m_{3}\}$ 
+\begin{equation}\label{cond4}
+	\begin{split}
+		&\left(\Lambda_{m_{2},m_{3}}(x)-T_{0}(x)\right)^{-1}\left(B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)\right)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+		\\=&
+		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+	\end{split}
+\end{equation} 
+\item $k_{2}=0$ and $k_{3}\in\{1,\ldots,m_{3}\}$
+\begin{equation}\label{cond5}
+	\begin{split}
+		&	\left(\Lambda_{m_{2},m_{3}}(x)-T_{0}(x)\right)^{-1}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,0}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+		=
+		G_{m_{2},m_{3},\epsilon}^{k_{2},0}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+	\end{split}
+\end{equation}
+\item $k_{2}\in \{1,\ldots,m_{2}\}$ and $k_{3}=0$
+\begin{equation}\label{cond6}
+	\begin{split}
+		&\left(\Lambda_{m_{2},m_{3}}(x)-T_{0}(x)\right)^{-1}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{0,k_{3}-1}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+		=
+		G_{m_{2},m_{3},\epsilon}^{0,k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+	\end{split}
+\end{equation}
+
+\end{enumerate}
+To find the function $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ we must fulfil the conditions \eqref{cond1}, \eqref{cond2}, \eqref{cond3}, \eqref{cond4}, \eqref{cond5}, \eqref{cond6}.
+% \end{itemize}
+\subsubsection{Explicit solution for $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ using symmetric group}
+
+For the sake of notation we denote by 
+\begin{equation}
+\begin{split}
+A_{2}= \left\{(2x+N)\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{2}(x)\right\}\\
+A_{3}=\left\{(2x+N)\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{3}(x)\right\}
+\end{split}
+\end{equation}
+%{\color{red}Are we missing the prefactor $(N+2x)$?}
+where the dependence of $A_{2},A_{3}$ on $x$ and $\epsilon$ is understood. Condition \eqref{cond4} becomes
+
+\begin{equation}\label{cond4A}
+\begin{split}
+G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
+\end{split}
+\end{equation}
+We introduce the following indices
+\begin{equation}
+i_{1}=\ldots=i_{k_{2}}=2\qquad i_{k_{2}+1}=\ldots =i_{k_{2}+k_{3}}=3
+\end{equation}
+Then, we introduce the permutation 
+\begin{equation}
+\sigma(i_{j})=i_{k}\qquad \forall j,k=1,\ldots,k_{2}+k_{3}
+\end{equation}
+We write
+\begin{equation}
+G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=\frac{1}{k_{2}!k_{3}!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}
+\end{equation}
+where we denoted by $\text{SYM}$ the symmetric group on $\{i_{1},\ldots,i_{k_{2}+k_{3}}\}$.\\
+It solves \eqref{cond4A}, indeed
+\begin{align*}
+&A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
+\\=&A_{2}\frac{k_{2}}{k_{2}}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}\frac{k_{3}}{k_{3}}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
+\\=&
+A_{2}\frac{k_{2}}{k_{2}}\frac{1}{(k_{2}-1)!k_{3}!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{2})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}\\+&A_{3}\frac{k_{3}}{k_{3}}\frac{1}{k_{2}!(k_{3}-1)!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}})}A_{\sigma(k_{2}+2)}\cdots A_{\sigma(i_{k_{2}+k_{3}})}
+\\=&
+\frac{1}{k_{2}!k_{3}!}\left(\sum_{\sigma \in \text{SYM}}k_{2}A_{2}A_{\sigma(i_{2})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}+ \sum_{\sigma \in \text{SYM}}k_{3}A_{3}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}})}A_{\sigma(k_{2}+2)}\cdots A_{\sigma(i_{k_{2}+k_{3}})}\right)
+\\=&
+\frac{1}{k_{2}!k_{3}!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}
+\\=&
+G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)
+\end{align*}
+where in the up to last equality we used the fact that the quantity first summation is symmetric with respect to the exchange of $A_{2}$ and thus we have $k_{2}$ equal terms. Similarly, for the second summation using the symmetry with respect to $A_{3}$. \\
+This argument can be generalized for $N>2$ species introducing
+\begin{equation}
+G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=\frac{1}{k_{2}!\cdots k_{N}!}\sum_{\sigma\in \text{SYM}}A_{i_{1}}\cdots A_{i_{k_{2}+\cdots+k_{N}}}
+\end{equation}
+where we assumed 
+\begin{equation}
+i_{1}=\cdots=i_{k_{2}}=2,\qquad \ldots \qquad i_{k_{2}+\cdots+k_{N-1}}=\cdots=i_{k_{2}+\ldots+k_{N}}=N
+\end{equation}
+\begin{comment}
+To write its solution we define
+\begin{equation}
+\chi^{k_{2},k_{3}}:=\left\{\left(i_{1},\ldots,i_{(k_{2}+k_{3})}\right)\in \{2,3\}^{k_{2}+k_{3}}\;:\;\sum_{s=1}^{k_{2}+k_{3}}\delta_{i_{s},2}=k_{2}\right\}
+\end{equation}
+We introduce the following notation: for any fixed configuration $(i_{1},\ldots,i_{(k_{2}+k_{3})})\in \chi^{k_{2},k_{3}}$ 
+\begin{equation}
+\mathcal{A}(i_{1},\ldots,i_{(k_{2}+k_{3})})=A_{i_{1}}A_{i_{2}}\cdots A_{i_{(k_{2}+k_{3})}}
+\end{equation}
+We introduce $\text{SYM}\left(\chi^{k_{2},k_{3}}\right)$ the \textit{symmetric group} on $\chi^{k_{2},k_{3}}$ and we denote by $\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)$ the permutation of an element of the group. \\
+The following expression solves \eqref{cond4A}
+\begin{equation}
+G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=\sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}})}\mathcal{A}\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right).
+\end{equation}
+Indeed
+\begin{align}
+A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&= A_{2}\sum_{\sigma\in \text{SYM}(\chi^{k_{2}-1,k_{3}})}\mathcal{A}\left(\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
+\\&+
+A_{3}\sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}-1})}\mathcal{A}\left(\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
+\\&=
+\sum_{\sigma\in \text{SYM}(\chi^{k_{2}-1,k_{3}})}\mathcal{A}\left(2,\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
+\\&+
+\sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}-1})}\mathcal{A}\left(3,\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
+\\&=
+\sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}})}\mathcal{A}\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
+\\&=
+G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)
+\end{align}
+where in the up to last equality we used the fact that $i_{1}\in \{2,3\}$. 
+\paragraph{Generalization to arbitrary $N$}
+For arbitrary $N\geq2$ we have 
+\begin{equation}
+\chi^{k_{2}\ldots,k_{N}}:=\left\{\left(i_{1},\ldots,i_{(k_{2}+\cdots+k_{N})}\right)\in \{2,\ldots,N\}^{k_{2}+\cdots+k_{N}}\;:\;\sum_{s=1}^{k_{2}+\cdots+k_{N}}\delta_{i_{s},q}=k_{q},\;\forall \in \{2,\ldots,N\}\right\}
+\end{equation}
+
+Thus the explicit expression becomes
+\begin{equation}
+G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=\sum_{\sigma\in \text{SYM}(\chi^{k_{2},\ldots,k_{N}})}\mathcal{A}\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+\cdots+k_{3})})\right)
+\end{equation}
+with the same notation as in $N=3$ case. 
+\end{comment}
+\subsubsection{Explicit solution for $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ with sums and products}
+\begin{equation}
+\begin{split}
+G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=&\sum_{i_{1}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+\ldots+i_{(k_{2}+k_{3})}=k_{2}\}}
+\\&
+\prod_{s=1}^{k_{2}+k_{3}}\left\{\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{2}(x)\right\}^{i_{s}}\left\{\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{3}(x)\right\}^{1-i_{s}}
+\end{split}
+\end{equation}
+We show that it fulfils condition \eqref{cond4}. For the sake of notation we denote by 
+\begin{equation}
+\begin{split}
+A_{2}= \left\{(2x+N)\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{2}(x)\right\}\\
+A_{3}=\left\{\left(2x+N)((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{3}(x)\right\}
+\end{split}
+\end{equation}
+where the dependence of $A_{2},A_{3}$ on $x$ and $\epsilon$ is understood. 
+Therefore we rewrite \eqref{cond4} as 
+\begin{equation}
+\begin{split}
+G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
+\end{split}
+\end{equation}
+The left-hand-side is 
+\begin{equation}
+G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=\sum_{i_{1}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+\end{equation}
+while, on the right-hand-side we have
+\begin{equation}
+\begin{split}
+A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)&=A_{2}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{2}+i_{k_{2}}+\cdots+i_{(k_{2}+k_{3})}=k_{2}-1\}}\prod_{s=2}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+\\&=
+\sum_{i_{1}=1}^{1}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+\end{split}
+\end{equation}
+and similarly 
+\begin{equation}
+\begin{split}
+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&=A_{3}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=2}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+\\&=
+\sum_{i_{1}=0}^{0}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}.
+\end{split}
+\end{equation}
+Therefore,
+\begin{equation}
+\begin{split}
+A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&=\sum_{i_{1}=1}^{1}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+\\&+
+\sum_{i_{1}=0}^{0}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+\\&=
+\sum_{i_{1}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
+\\&=
+G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)
+\end{split}
+\end{equation}
+Conditions \eqref{cond1}, \eqref{cond5}, \eqref{cond6} are trivially fulfilled. Conditions \eqref{cond2} and \eqref{cond3} are satisfied because $B_{2}(x),B_{3}(x)$ are rising operators.
+
+\paragraph{Genearlization to $N$ species:} we can generalize the eigenvector formula for arbitrary number of species $N>2$ by writing
+\begin{equation}
+\begin{split}
+|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle=\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{n}}\Delta_{2}^{k_{2}}\cdots\Delta_{N}^{k_{N}}G_{m_{2}\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
+\end{split}
+\end{equation}
+Denoting by
+\begin{equation}
+A_{j}=	\left\{\left((2x+N)(\Lambda_{m_{2}\ldots,m_{N}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{j}(x)\right\}\qquad \forall j\in \{2,\ldots,N\}
+\end{equation}
+the explicit formula for $G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)$ reads
+\begin{equation}
+\begin{split}
+G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=&\sum_{i_{1}^{2}=0}^{1}\ldots\sum_{i_{1}^{N}=0}^{1}\sum_{i_{2}^{2}=0}^{1}\ldots\sum_{i_{2}^{N}=0}^{1}\ldots\sum_{i_{k_{2}+\ldots+k_{N}}^{2}=0}^{1}\ldots \sum_{i_{k_{2}+\ldots+k_{N}}^{N}=0}^{1}
+\\&
+\left(\prod_{s=1}^{k_{2}+\cdots+k_{N}}\mathbbm{1}_{\{i_{s}^{2}+\cdots+i_{s}^{N}=1\}}\right)\left(\prod_{q=2}^{N}\mathbbm{1}_{\{i_{1}^{q}+\cdots+i_{(k_{2}+\cdots+k_{N})}^{q}=\,k_{q}\}}\right)
+\\&
+\prod_{s=1}^{k_{2}+\cdots+k_{N}}\prod_{q=2}^{N}A_{q}^{i_{s}^{q}}
+\end{split}
+\end{equation}
+Condition \eqref{cond4} becomes
+\begin{equation}\label{cond4General}
+G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{N}}(x)=\sum_{j=2}^{N}A_{j}G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{j}-1,\ldots,k_{N}}(x)
+\end{equation}
+Arguing as in the case $N=3$ we observe that 
+\begin{equation}
+\begin{split}
+A_{j}G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{j}-1,\ldots,k_{N}}(x)=&\sum_{i_{1}^{j}=1}^{1}\sum_{i_{2}^{2}=0}^{1}\ldots\sum_{i_{2}^{N}=0}^{1}\ldots\sum_{i_{k_{2}+\ldots+k_{N}}^{2}=0}^{1}\ldots \sum_{i_{k_{2}+\ldots+k_{N}}^{N}=0}^{1}
+\\&
+\left(\prod_{s=1}^{k_{2}+\cdots+k_{N}}\mathbbm{1}_{\{i_{s}^{2}+\cdots+i_{s}^{N}=1\}}\right)\left(\prod_{q=2}^{N}\mathbbm{1}_{\{i_{1}^{q}+\cdots+i_{(k_{2}+\cdots+k_{N})}^{q}=k_{q}\}}\right)
+\\&
+\prod_{s=1}^{k_{2}+\cdots+k_{N}}\prod_{q=2}^{N}A_{q}^{i_{s}^{q}}
+\end{split}
+\end{equation}
+therefore \eqref{cond4General} is fulfilled. Again, the equivalent of conditions \eqref{cond1}, e\eqref{cond5} and \eqref{cond6} are trivially satisfied. The equivalents of conditions \eqref{cond2} and \eqref{cond3} are satisfied because $B_{j}(x)$ are rising operators for all $j\in \{2,\ldots,N\}$. }
+
+
+
+\subsection{Bethe ansatz solution}
+
+Describe eigenvalues of $T_0$ following 
+\cite{Belliard2} 
+\section{Extensions}
+\subsection{The non integrable chain}
 In Section \ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable thanks to integrability. This nice property is lost when we allow an arbitrary maximal occupation $\nu>1$, therefore it is natural to ask if we can still say something about correlations. Again, exploiting duality, steady state correlations can be expressed in terms of absorption probabilities of the dual particles.
 \subsection{Steady state correlations and duality}
 We consider a chain of length $L$ where the end sites $1$ and $L$ are connected with two reservoirs. Now, each site can host $\nu\geq 1$ particles, chosen among the $N$ types. The generator reads as
@@ -2027,7 +2789,7 @@ Therefore, replacing \eqref{pezzo1} and \eqref{pezzo2} in \eqref{ProvaBordoTH} w
 	\\&=
 	\left(\widetilde{\mathcal{L}}_{y}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})
 \end{align}
-\section{Multi-species stirring process with reaction}
+\subsection{Multi-species stirring process with reaction}
 In \cite{casini2022uphill} it has been defined a process whose evolution equation for the average occupation $\rho_{a}(x,t)$ of species $a\in \{2,3\}$ is given by a difference-differential equation with two discrete Laplacians (one for each species, multiplied for a proper diffusivity constant) and a linear reaction term (mutation), i.e.
 \begin{equation}\label{2SpeciesRD}
 	\partial \rho_{a}(x,t)=\sigma_{11}\Delta_{L}\rho_{a}(x,t)+\sigma_{12}\Delta_{L}\rho_{\overline{a}}(x,t)+\Upsilon\left(\rho_{\overline{a}}(x,t)-\rho_{a}(x,t)\right)
@@ -2336,868 +3098,7 @@ where $\Delta_{x}^{L}$ is the discrete Laplace operator on the chain of length $
 	\end{equation}
 that gives back \eqref{one-pts-corr}.  
 \end{comment}
-\section{Mapping to equilibrium?}
-check also Appendix A in
-\cite{Alcaraz:1992zc} \cite{Sklyanin:1988yz} 
 
-\subsection{Quantum inverse scattering method}
-We can apply the \textit{quantum inverse scattering method} to this process. We introduce the quantum space as $V=V_{1}\otimes\ldots\otimes V_{j}\otimes\ldots\otimes V_{L}$ and the auxiliary space $V_{0}$. In this specific case $V_{j}=\mathbb{C}^{N}$ $\forall j=0,1,\ldots ,L$. We introduce the following matrices acting on the tensor product of spaces with indices $a,b=0,1,\ldots,L$
-\begin{equation}\label{Rmatrix}
-R_{ab}(x)=\frac{(P_{ab}+Ix)}{x+1}
-\end{equation}
-\begin{comment}
-\begin{equation}
-\widehat{K}_{a}(x)=I+\frac{2x}{(x+1)}B_{L}
-\end{equation}
-\begin{equation}
-K_{a}(x)=\left((2x+N)B_{1}+(x+N)I\right)\frac{1}{(x+1)^{2}(2x+N)}
-\end{equation}
-\end{comment}
-\begin{equation}\label{KmatrixHAT}
-	\widehat{K}_{0}(x)=(1+x)\left(I+\frac{2x}{x+1}H^{''}_{right}\right)=\begin{pmatrix}
-		1-x&0&\ldots&0\\
-		0&1-x&\ldots&0\\
-		\vdots&\vdots&\ddots&\vdots\\
-		0&0&\ldots&1+x
-	\end{pmatrix}
-\end{equation}
-\begin{equation}\label{Kmatrix}
-	K_{0}=\left((2x+N)H^{''}_{left}+(x+N)I\right)\frac{(1+x)^{2}(2x+N)}{(x+1)^{2}(2x+N)}=\begin{pmatrix}
-		-x&0&0&\ldots&0&(N+2x)(\alpha_{1}-\beta_{1})\\
-		0&-x&0&\ldots&0&(N+2x)(\alpha_{2}-\beta_{2})\\
-		\vdots&\vdots&\ddots&\vdots&\vdots&\vdots\\
-		0&0&0&\ldots&-x&(N+2x)(\alpha_{N-1}-\beta_{N-1})\\
-		0&0&0&\ldots&0&1+x
-	\end{pmatrix}
-\end{equation}
-The above matrices satisfy the following equations
-\begin{itemize}
-\item \textit{Yang-Baxter-Equation}
-\begin{equation}
-R_{ab}(x-y)R_{ac}(x-z)R_{bc}(y-x)=R_{bc}(y-z)R_{ac}(x-z)R_{ab}(x-y)
-\end{equation}
-\item \textit{Boundary-Yang-Baxter-Equation}
-\begin{equation}
-R_{ab}(x-y)\widehat{K}_{a}(x)R_{ab}(x+y)\widehat{K}_{2}(y)=\widehat{K}_{b}(y)R_{ab}(x+y)\widehat{K}_{a}(x)R_{ab}(x-y)
-\end{equation}
-\item \textit{Dual Boundary-Yang-Baxter-Equation}
-\begin{equation}
-K_{b}(y) R_{ab}(-x-y-N) K_{a}(x)R_{ab}(y-x)=R_{ab}(y-x)K_{a}(x)R_{ab}(-x-y-N)K_{b}(y)
-\end{equation}
-\end{itemize}
-We define the following \textit{transfer matrix}
-\begin{equation}
-	T^{\Delta}(x)=tr_{0}\left(K_{0}(x)U_{0}(x)\right)
-\end{equation}
-where we used the double row monodromy
-\begin{equation}
-	U_{0}(x)=M_{0}(x)\widehat{K}(x)\widehat{M}_{0}(x)
-\end{equation}
-where 
-\begin{equation}
-	M_{0}(x)=R_{01}(x)\ldots R_{0L}(x)\qquad \widehat{M}_{0}=R_{0L}(x)\ldots R_{01}(x)
-\end{equation}
-This double row monodromy satisfies the following exchange relation
-\begin{equation}\label{RURU}
-	R_{ab}(x-y)U_{a}(x)R_{ab}(x+y)U_{b}(y)=U_{b}(y)R_{ab}(x+y)U_{a}(x)R_{ab}(x-y)
-\end{equation}
-This trasfer matrix has the following properties
-\begin{equation}
-	\left[T^{\Delta}(x),T^{\Delta}(y)\right]=0\qquad \frac{\partial}{\partial x}\log (T^{\Delta}(0))=C_{1}H^{''}+C_{2}I
-\end{equation}
-with $C_{1},C_{2}>0$. \\
-We write $U_{0}(x)$ in the canonical basis of $V_{0}$ and we rename the elements, each of them acting on the quantum space $V$, has follows
-\begin{comment}
-\begin{equation}
-	U_{0}(x)=\begin{pmatrix}
-		D_{11}(x)&B_{2}(x)&\ldots&B_{N}(x)\\
-		C_{2}(x)&D_{22}(x)&\ldots&D_{2N}(x)\\
-		\vdots&\vdots&\ddots&\vdots\\
-		C_{N}(x)&D_{N2}(x)&\ldots&D_{NN}(x)
-	\end{pmatrix}
-\end{equation}
-\end{comment}
-\begin{equation}
-	U_{0}(x)=\begin{pmatrix}
-		D_{1,1}(x)&D_{1,2}(x)&\ldots&D_{1,N-1}(x)&C_{1}(x)\\
-		D_{2,1}(x)&D_{2,2}(x)&\ldots&D_{2,N-1}(x)&C_{2}(x)\\
-		\vdots&\vdots&\ddots&\vdots&\vdots\\
-		D_{N-1,1}&D_{N-1,2}&\ldots&D_{N-1,N-1}(x)&C_{N-1}\\
-		B_{1}(x)&B_{N-1}(x)&\ldots&D_{N,N-1}(x)&D_{N,N}(x)
-	\end{pmatrix}
-\end{equation}
-The exchange relations for the elements of the above matrix can be found using \eqref{RURU}
-\begin{itemize}
-	\item for every $i\in\{1,\ldots,N-1\}$
-	\begin{equation}\label{EX1}
-		\begin{split}
-		D_{N,N}(y)B_{i}(y)&=f(x,y)D_{N,N}(x)B_{i}(y)+f_{1}(x,y)B_{i}(x)D_{N,N}(y)\\&+f_{2}(x,y)\left(B_{i}(x)D_{i,i}(y)+\sum_{k=1\,:\,k\neq i}^{N-1}B_{k}(x)D_{k,i}(y)\right)
-		\end{split}	
-	\end{equation}
-\begin{equation}\label{EX2}
-	\begin{split}
-		D_{i,i}(x)B_{i}(x)&=h(x,y)B_{i}(y)D_{i,i}(x)+h_{1}(x,y)B_{i}(x)D_{i,i}(y)\\&+h_{2}(x,y)B_{1}(x)D_{N,N}(y)+h_{3}(x,y)B_{i}(y)D_{N,N}(x)\\&+\frac{1}{2}h_{3}(x,y)\sum_{k=1\,:\, k\neq i}^{N-1}B_{k}(x)D_{k,i}(y)+h_{4}(x,y)\sum_{k=1\,:\, k\neq i}^{N-1}B_{k}(y)D_{k,i}(x)
-	\end{split}
-\end{equation}
-\item  for every $i,j\in \{1,\ldots,N-1\}$ such that $i\neq j$
-\begin{equation}\label{EX3}
-	\begin{split}
-		D_{j,j}(x)B_{i}(y)&=B_{i}(x)D_{j,j}(y)+\frac{1}{2}h_{3}(x,y)\left(B_{i}(y)D_{i,i}(x)-B_{i}(x)D_{i,i}(y)\right)
-		\\&+
-		\frac{1}{2}h_{3}(x,y)\left(B_{i}(x)D_{N,N}(y)-B_{i}(y)D_{N,N}(x)\right)
-		\\&+
-	h_{1}(x,y)\left(B_{j}(x)D_{j,i}(y)-B_{j}(y)D_{i,j}(x)\right)
-	\\&+
-	\frac{1}{2}h_{3}(x,y)\sum_{k=1\,:\,k\neq i,j}\left(B_{k}(y)D_{k,i}(x)-B_{k}(x)D_{k,i}(y)\right)
-	\end{split}
-\end{equation}
-
-\end{itemize}
-where
-\begin{align}
-	&f(x,y)=\frac{(x+y)(x-y-1)}{(x-y)(1+x+y)}&f_{1}(x,y)=\frac{(x+y)}{(x-y)(1+x+y)}\quad&f_{2}(x,y)=\frac{1}{(1+x+y)}\nonumber\\&h(x,y)=\frac{(1+x-y)(x+y+2)}{(x-y)(1+x+y)}
-	&h_{1}(x,y)=-\frac{(x+y+2)}{(x-y)(1+x+y)}\quad&h_{2}(x,y)=\frac{(2+x-y)}{(x-y)(1+x+y)}\nonumber
-	\\&h_{3}(x,y)=\frac{2}{(x-y)(1+x+y)}
-\end{align}
-\subsection{Charges}
-Then we have
-\begin{equation}
-	\begin{split}
-		T^{\Delta}(x)=tr_{0}&\left(\begin{pmatrix}
-			-x&0&0&\ldots&0&(N+2x)(\alpha_{1}-\beta_{1})\\
-			0&-x&0&\ldots&0&(N+2x)(\alpha_{2}-\beta_{2})\\
-			\vdots&\vdots&\ddots&\vdots&\vdots&\vdots\\
-			0&0&0&\ldots&-x&(N+2x)(\alpha_{N-1}-\beta_{N-1})\\
-			0&0&0&\ldots&0&1+x
-		\end{pmatrix}\right.
-		\\& \left.
-		\;\;\;\begin{pmatrix}
-			D_{1,1}(x)&D_{1,2}(x)&\ldots&D_{1,N-1}(x)&C_{1}(x)\\
-			D_{2,1}(x)&D_{2,2}(x)&\ldots&D_{2,N-1}(x)&C_{2}(x)\\
-			\vdots&\vdots&\ddots&\vdots&\vdots\\
-			D_{N-1,1}&D_{N-1,2}&\ldots&D_{N-1,N-1}(x)&C_{N-1}\\
-			B_{1}(x)&B_{N-1}(x)&\ldots&D_{N,N-1}(x)&D_{N,N}(x)
-		\end{pmatrix}\right)
-	\end{split}
-\end{equation}
-Therefore we can write the polynomial expansion
-\begin{equation}
-	\begin{split}
-		T^{\Delta}(x)=&
-		(N+x)D_{N,N}(x)-\sum_{i=1}^{N-1}xD_{ii}(x)+\sum_{i=1}^{N-1}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)=
-		\sum_{k=0}^{2L+2}Q_{k}x^{k}
-	\end{split}
-\end{equation}
-We call these $Q_{k}$, with $k=0,\ldots,2L+2$, the \textit{charges}. \\
-We can also introduce 
-\begin{equation}
-	T_{0}(x)=(N+x)D_{N,N}(x)-\sum_{i=1}^{N-1}xD_{ii}(x)\quad\text{such that}\quad T_{\Delta}(x)=T_{0}(x)+\sum_{i=2}^{N}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)
-\end{equation}For large $x$, we compute them by expanding $U_{0}^{d}(x)$ in a polynomial: 
-\begin{equation}
-	D_{N,N}(x)=\sum_{a=0}^{2L+1}D_{N,N}^{a}x^{a}\quad D_{ii}(x)=\sum_{a=0}^{2L+1}D_{ii}^{a}x^{a}\quad B_{i}(x)=\sum_{a=0}^{2L-1}B_{i}^{a}x^{a}
-\end{equation}
-The coefficients that we need are the following:
-\begin{equation}
-	D_{N,N}(x)=D_{N,N}^{2L+1}x^{2L+1}+D_{N,N}^{2L}x^{2L+1}+D_{N,N}^{2L-1}x^{2L-1}+\ldots
-\end{equation}
-where 
-\begin{equation}
-	D_{N,N}^{2L+1}=I^{tot}
-\end{equation}
-\begin{equation}
-	D_{N,N}^{2L}=I^{tot}+2e_{NN}^{tot}
-\end{equation}
-\begin{equation}
-	\begin{split}
-		D_{N,N}^{2L-1}=3e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2\sum_{a\neq b}e_{NN}^{[a]}e_{NN}^{[b]}
-	\end{split}
-\end{equation}
-{\color{blue}ok}
-
-We observe that $\forall i,j=1,\ldots,N-1$
-\begin{equation}
-	\sum_{a\neq b}e_{ij}^{[a]}e_{ji}^{[b]}=e_{ij}^{tot}e_{ji}^{tot}-e_{ii}^{tot}
-\end{equation}
-then 
-\begin{equation}
-	D_{N,N}^{2L-1}=e_{NN}^{tot}\left(2e_{NN}^{tot}+I^{tot}\right)-\sum_{j=1}^{N}e_{jj}^{tot}%=2e_{NN}^{tot}\left(e_{NN}^{tot}+I^{tot}\right)-L
-\end{equation}
-Then
-\begin{equation}
-	\boxed{D_{N,N}^{2L-1}	=2e_{NN}^{tot}\left(e_{NN}^{tot}+I^{tot}\right)-L}
-\end{equation}
-{\color{blue}ok?}where we used $
-\sum_{i=1}^Ne_{ii}^{tot}=L$. 
-
-While, $\forall i=1,\ldots,N-1$
-
-
-\begin{equation}
-	D_{ii}(x)=D_{ii}^{2L+1}x^{2L+1}+D_{ii}^{2L}x^{2L}+D_{ii}^{2L-1}x^{2L-1}+\ldots
-\end{equation}
-where the coefficients
-\begin{equation}\label{a2lp}
-	D_{ii}^{2L+1}=-I^{tot}
-\end{equation}\begin{equation}\label{a2l}
-	D_{ii}^{2L}=I^{tot}-2e_{ii}^{tot}
-\end{equation}
-\begin{equation}\label{a2lm1}
-	\begin{split}
-		D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{a\neq b}e_{ii}^{[a]}e_{ii}^{[b]}-2\sum_{a\neq b}\sum_{j=1\,:\,j\neq i}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\
-		&=e_{11}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=1}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\
-		%&=e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2e_{ii}^{tot}\\
-		%&=2e_{11}^{tot}+2e_{ii}^{tot}-C_1
-		&=e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=1}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\ 
-	\end{split}
-\end{equation}
-
-We rewrite
-\begin{equation}
-	\begin{split}
-		D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{j=1}^{N-1}e_{ij}^{tot}e_{ji}^{tot}+2(N-1)e_{ii}^{tot}
-	\end{split}
-\end{equation}
-then
-\begin{equation}
-	\begin{split}
-		D_{ii}^{2L-1}=	2Ne_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}%=2Ne_{ii}^{tot}+ 2e_{NN}^{tot}-L -2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}
-	\end{split}
-\end{equation}
-Then 
-\begin{equation}
-	\boxed{D_{ii}^{2L-1}=2Ne_{ii}^{tot}+ 2e_{NN}^{tot}-L -2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}}
-\end{equation}
-{\color{blue}ok}
-%blue} In case of a chain $L=2$ and $N=3$ and choosing $i=2$ this reads as 
-%\begin{equation*}
-%	D_{22}^{2L-1}=6e_{22}^{tot}+e_{11}^{tot}-e_{22}^{tot}-e_{33}^{tot}-2e_{22}^{tot}e_{22}^{tot}-2e_{23}^{tot}e_{32}^{tot}
-%\end{equation*}
-%where
-%\begin{equation*}
-%	e_{ab}^{tot}=e_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes e_{ab}\qquad \forall a,b\in \{1,2,3\}
-%\end{equation*}
-%This gives exactly
-%\begin{equation*}
-%	D_{22}^{2L-1}=\left(
-%	\begin{array}{ccccccccc}
-%		2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-%		0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 0 & 0 & 0 & 0 & -2 & 0 \\
-%		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -2 \\
-%	\end{array}
-%	\right)
-%\end{equation*}
-%}
-%\textbf{Observation}: it seems to me that, although not diagonal, the $D_{ii}^{2L-1}$ does not chaing the exitation of the chain since we have $e_{ij}^{tot}e_{ji}^{tot}$!\\
-%The following \textit{lower diagonal} elements of $U_{0}(x)$, $\forall i=2,\ldots,L$ and for $j=1$
-%\begin{equation}
-%	C_{i}(x)=C_{i}^{2L-1}x^{2L-1}+\ldots
-%\end{equation}
-%where the coefficient is
-%\begin{equation}\label{c}
-%	C_{i}^{2L-1}=2e_{1i}^{tot}+2\sum_{a< b}\left(e_{1i}^{[a]}e_{11}^{[b]}-e_{1i}^{[a]}e_{ii}^{[b]}-\sum_{a=2\,:\,k\neq j}^{N}e_{1a}^{[a]}e_{ai}^{[b]}\right)
-%\end{equation}
-Moreover, $\forall j=2,\ldots,L$ and for $i=1$
-\begin{equation}
-B_{j}(x)=B_{j}^{2L-1}x^{2L-1}+\ldots
-\end{equation}
-where the coefficient is 
-\begin{equation}\label{b}
-\begin{split}
-B_{j}^{2L-1}&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-e_{j1}^{[a]}e_{jj}^{[b]}-\sum_{k=2\,:\,k\neq j}^{N}e_{k1}^{[a]}e_{jk}^{[b]}\right)\\
-&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-\sum_{k=2}^{N}e_{k1}^{[a]}e_{jk}^{[b]}\right)
-\end{split}
-\end{equation}
-then
-\begin{equation}
-\begin{split}
-B_{j}^{2L-1}=2e_{j1}^{tot}+
-2\sum_{a,b=1\,:\, a<b}^{L}\left(e_{j1}^{[a]}e_{11}^{[b]}\right)-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=2}^{N}\left( e_{jk}^{[a]}e_{k1}^{[b]}\right)
-\end{split}
-\end{equation}
-\begin{equation}
-\begin{split}
-B_{j}^{2L-1}&=
-2\sum_{a,b=1}^{L}\left(e_{j1}^{[a]}e_{11}^{[b]}\right)-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N}\left( e_{jk}^{[a]}e_{k1}^{[b]}\right)\\
-%	&=
-%	2e_{j1}^{tot}e_{11}^{tot}-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N} e_{jk}^{[a]}e_{k1}^{[b]}
-\end{split}
-\end{equation}
-Thus
-\begin{equation}
-\boxed{	B_{j}^{2L-1}=	2e_{j1}^{tot}e_{11}^{tot}-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N} e_{jk}^{[a]}e_{k1}^{[b]}}
-\end{equation}
-Finally, for every $i,j=2,\ldots,N$ such that $i\neq j$, we have that 
-\begin{equation}
-\boxed{D_{i,j}^{2L}=-2e_{ji}^{tot}}
-\end{equation}
-\textbf{Remark}: it is easy to see that, when restricted to the case of 2 species,  \eqref{a2lp},\eqref{a2l},\eqref{a2lm1} correspond to the one compute in \cite{frassek2020eigenstates}. \\ \\
-The interesting charges (we only look for the first non trivial one) take the following form  
-
-
-
-\begin{align}
-Q_{2L+2}&=D_{N,N}^{2L+1}-\sum_{i=1}^{N-1}D_{ii}^{2L+1}=N\\
-Q_{2L+1}&=ND_{N,N}^{2L+1}+A^{2L}-\sum_{i=1}^{N-1}D_{ii}^{2L}=N+2L-1\\
-Q_{2L\phantom{+}}&=ND_{N,N}^{2L}+D_{N,N}^{2L-1}-\sum_{i=1}^{N-1}D_{ii}^{2L-1}+\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
-\end{align}
-The charges $Q_{2L+2}$ and $Q_{2L+1}$ are proportional to the identity matrix, while $Q_{2L}$ contains non diagonal matrices and the boundary parameters $\alpha_{i},\beta_{i}$ $\forall i=2,\ldots,N$.\\
-It is easy to show that 
-\begin{equation}
-\left[Q_{2L},H^{''}\right]=Q_{2L}H^{''}-H^{''}Q_{2L}=0
-\end{equation}
-The commutation with the Hamiltonian $H^{''}$ for $Q_{2L+2}$ and $Q_{2L+1}$ is trivial. \\
-We introduce the following:
-\begin{equation}
-Q_{2L}^{0}:=ND_{N,N}^{2L}+D_{N,N}^{2L-1}-\sum_{i=1}^{N-1}D_{ii}^{2L-1}
-\end{equation}
-that is 
-\begin{equation}
-\begin{split}
-Q_{2L}^{0}&=N(I^{tot}+e_{NN}^{tot})+e_{NN}^{tot}(2e_{NN}^{tot}+I^{tot})-\sum_{j=1}^{N-1}e_{jj}^{tot}-2N\sum_{j=1}^{N-1}e_{jj}^{tot}+\sum_{k=1}^{N-1}\left\{e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+\sum_{j=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}\right\}
-\end{split}
-\end{equation}
-\begin{equation}
-	\begin{split}
-\boxed{Q_{2L}^{0}=(N-NL-2L)I^{tot}+2(N+2)e_{NN}^{tot}+2e_{NN}^{tot}e_{NN}^{tot}+2\sum_{j,k=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}}
-\end{split}
-\end{equation}
-%\begin{equation}	
-%\begin{split}
-%Q_{2L}^{0}&=NI^{tot}+2e_{11}^{tot}(e_{11}^{tot}+I^{tot})-(N+2)\sum_{j=2}^{N}e_{jj}^{tot}+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
-%&=N+2e_{11}^{tot}(e_{11}^{tot}+1)+(N+2)(e_{11}^{tot}-L)+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
-%\end{split}
-%\end{equation} 
-we also introduce 
-\begin{equation}
-\mathcal{Q}_{2L}=\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
-\end{equation}
-therefore we can write 
-\begin{equation}
-Q_{2L}=Q_{2L}^{0}+\mathcal{Q}_{2L}
-\end{equation}
-Observe that $Q_{2L}$ and $Q_{2L}^{0}$ are isospectral. \\
-%  It has the property that commute with the equilibrium Hamiltonian. 
-
-All terms are diagonal except the last one which can  be  identified with the second Casimir of the $gl(N-1)$ subalgebra
-\begin{equation}
-\hat C_2^{N-1}= \sum_{i,j=1}^{N-1}e_{ij}^{tot}e_{ji}^{tot}
-\end{equation} 
-On the Bethe states (and on the irrep decomposition of the spin chain) it acts diagonally with eigenvalues given in terms of shifted weights 
-\begin{equation}
-C_2^{N-1}=\sum_{j=1}^{N-1}\ell_j(\ell_j -N+2)+\frac{1}{6}(N-1)(N-2)(N-3)
-\end{equation} 
-{\color{blue}to be checked...} {\color{blue} It works!!}, see e.g. [Das,Okubo].
-Thus the eigenvalues of the transfer matrix can be writen as 
-\begin{equation}
-\begin{split}
-\Lambda(x)&= \Lambda_{2L+2} x^{2L+2}+ \Lambda_{2L+1} x^{2L+1}+ \Lambda_{2L}x^{2L}+\ldots
-\\&=N x^{2L+2}+2(N+1) x^{2L+1}+ \left(N+2m_1(m_1+1)-(N+2)(L-m_1)+2C_{2}^{N-1}\right)x^{2L}+\ldots
-\end{split}
-\end{equation} 
-
-Thus the difference is of order $2L$ and becomes
-\begin{equation}
-\Lambda(x)-T_0(x)=x^{2L}\left(\Lambda_{2L}-Q_{2L}^0\right)+\ldots
-\end{equation} 
-We can take the limit
-\begin{equation}
-\lim_{x\to\infty}\frac{2x+N}{\Lambda(x)-T_0(x)}B_{i}(x)=\frac{2}{\Lambda_{2L}-Q_{2L}^0}B_i^{2L-1}
-\end{equation} 
-{\color{blue}ok}
-\subsubsection{Exchange relations between charges}
-Using \eqref{EX1}, \eqref{EX2} and \eqref{EX3} we obtain for every $i,j\in\{1,\ldots,N-1\}$ 
-\begin{equation}
-Q_{0}^{2L}B_{i}^{2L-1}=B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})\right)-2\sum_{j=1\,:\,j\neq i}^{N-1}B_{j}^{2L-1}D_{j,i}^{2L}
-\end{equation}
-%In particular for the case $N=3$ we have
-%\begin{equation}
-%	\begin{split}
-%	Q_{0}^{2L}B_{1}^{2L-1}&=B_{1}^{2L-1}\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{3,3}^{2L})\right)-2B_{2}^{2L-1}D_{2,1}^{2L}
-%	\\
-%	Q_{0}^{2L}B_{2}^{2L-1}&=B_{2}^{2L-1}\left(Q_{0}^{2L}-2(D_{2,2}^{2L}+D_{3,3}^{2L})\right)-2B_{1}^{2L-1}D_{1,2}^{2L}
-%	\end{split}
-%\end{equation}
-Other useful exchange relations are 
-\begin{equation}
-\begin{split}
-D_{N,N}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}\left(D_{N,N}^{2L}+D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%\\
-%D_{33}^{2L}B_{2}^{2L}&=B_{2}^{2L}\left(D_{33}^{2L}+D_{22}^{2L+1}-D_{33}^{2L+1}\right)
-\end{split}
-\end{equation}
-and
-\begin{equation}
-\begin{split}
-D_{i,i}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}\left(D_{i,i}^{2L}+D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%\\
-%D_{22}^{2L}B_{2}^{2L}&=B_{2}^{2L}\left(D_{22}^{2L}+D_{22}^{2L+1}-D_{33}^{2L+1}\right)
-\end{split}
-\end{equation}
-and finally
-\begin{equation}
-\begin{split}
-D_{i,j}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}D_{i,j}^{2L}+B_{j}^{2L-1}\left(D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%	D_{21}^{2L}B_{2}^{2L-1}&=B_{2}^{2L-1}D_{21}^{2L}+B_{2}^{2L-1}\left(D_{22}^{2L+1}-D_{33}^{2L+1}\right)
-\end{split}
-\end{equation}
-While, for $i,j\in\{1,\ldots,N-1\}$ such that $i\neq j$
-\begin{equation}
-\left[D_{j,j}^{2L},B_{i}^{2L-1}\right]=0\qquad \left[B_{i}^{2L-1},B_{j}^{2L-1}\right]=0\qquad \left[B_{i}^{2L-1},D_{j,i}^{2L}\right]=0%\qquad \left[D_{12}^{2L},B_{2}^{2L-1}\right]=0\qquad \left[D_{11}^{2L},B_{2}^{2L-1}\right]=0
-\end{equation}
-{\color{blue}Using them we also have 
-\begin{equation}
-\begin{split}
-	&Q_{0}^{2L}B_{1}^{2L-1}Q_{0}^{2L}B_{2}^{2L-1}\\=&B_{1}^{2L-1}B_{2}^{2L-1}\left(Q_{0}^{2L}-2(D_{11}^{2L}+D_{22}^{2L}+2D_{33}^{2L})+4(D_{33}^{2L+1}-D_{11}^{2L+1})\right.\\-&\left.2B_{1}^{2L-1}B_{1}^{2L-1}D_{12}^{2L}-2B_{2}^{2L-1}B_{2}^{2L-1}D_{21}^{2L}\right)\left(Q_{0}^{2L}-2(D_{22}^{2L}+D_{33}^{2L})\right)
-	\\&+
-	\left(-2B_{1}^{2L-1}B_{1}^{2L-1}\left(Q_{0}^{2L}-2(D_{11}^{2L}+D_{33}^{2L})+4(D_{33}^{2L+1}-D_{11}^{2L+1})\right)+8B_{1}^{2L-1}B_{2}^{2L-1}D_{21}^{2L}\right)D_{12}^{2L}
-\end{split}
-\end{equation}}{\color{blue}Probably it is not useful}
-
-\subsection{The non local transformation}
-We define the equilibrium Hamiltonian as
-\begin{equation}
-	H^{0}=H_{left}^{0}+H_{bulk}+H^{''}_{right}
-\end{equation}
-where
-\begin{equation}
-		H_{left}^{0}=e_{NN}^{1}-\mathbbm{1}^{1}\qquad H_{right}^{''}=e_{NN}^{L}-\mathbbm{1}^{L}
-\end{equation}
-Therefore we have that
-\begin{equation}
-	H^{''}=H^{0}+H^{B}
-\end{equation}
-where
-\begin{equation}
-	H^{B}=\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1}
-\end{equation}
-We look for a matrix $W$ such that 
-\begin{equation}\label{GoalWH}
-	H^{''}W=WH_{0}
-\end{equation}
-We have that 
-\begin{equation}
-	\left[H_{0},Q^{0}_{2L}\right]=0\qquad \left[H^{''},Q_{2L}\right]=0
-\end{equation}
-thus it is enough to look for a matrix $W$ such that 
-\begin{equation}\label{GoalWQ}
-	Q^{2L}W=WQ_{2L}^{0}
-\end{equation}
-To find a matrix $W$ such that \eqref{GoalWH} is fulfilled we use the \textit{resolvent operator} defined as
-\begin{equation}
-	R(z,H):=\left(zI-H\right)^{-1}
-\end{equation}
-where $z$ must be in the resolvent set, i.e. the subset of $\mathbb{C}$ such that the resolvent is well defined. 
-The above equation implies that 
-\begin{equation}
-	(z-H)R(H,z)=1
-\end{equation}
-In order to be well defined we must $z$ must not be an eigenvalue of $H$ (and thus of $H_{0}$). We denote by $\bm{m}=(m_{1},\ldots,m_{N})$ an $N-$dimensional vector where each $m_{i}$ means the total occupation over the chain of each species $i\in\{1,\ldots,N\}$. Therefore, we call $\Lambda_{\bm{m}}$ and $|\Psi_{\bm{m}}^{0}\rangle$ the eigenvalue and the eigenvector of $H^{0}$ that correspond to a certain $\bm{m}$. We take $z=\Lambda_{\bm{m}}+\epsilon$ 
-\begin{equation}
-	(\Lambda_{\bm{m}}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)=1
-\end{equation}
-We multiply both sides by $|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|$
-\begin{equation}
-	(\Lambda_{\bm{m}}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
-\end{equation}
-We sum over all possible $m$ 
-\begin{equation}
-	\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\Lambda_{m}+\epsilon-H)R(H,\Lambda_{m}+\epsilon)|\Psi_{m}^{0}\rangle \langle \Psi_{m}^{0}|=\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
-\end{equation}
-We multiply both sides by $\epsilon$ 
-\begin{equation}
-	\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\Lambda_{m}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{m}^{0}|=\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
-\end{equation}
-We take the limit for $\epsilon\to 0$ on both sides 
-\begin{equation}
-	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L} (\Lambda_{\bm{m}}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
-\end{equation}
-Observe that 
-\begin{equation}
-	\lim_{\epsilon\to 0}\left(\Lambda_{\bm{m}}+\epsilon-H\right)=\left(\Lambda_{\bm{m}}-H\right)<\infty
-\end{equation}
-and using the following power expansion
-\begin{equation}\label{veryUsefulSeries}
-	(A-B)^{-1}=\sum_{n=0}^{\infty}(A^{-1}B)^{n}A^{-1}
-\end{equation}
-we have that for each $\bm{m}$ 
-\begin{equation}
-	\begin{split}
-		&\lim_{\epsilon\to 0}\epsilon\left(\Lambda_{\bm{m}}+\epsilon-H\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\sum_{n=0}^{\infty}\left((\Lambda_{\bm{m}}+\epsilon)^{-1}H\right)^{n}(\Lambda_{\bm{m}}+\epsilon)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|
-		\\=&
-		\lim_{\epsilon\to 0}\epsilon\sum_{n=0}^{\infty}\left((\Lambda_{\bm{m}}+\epsilon)^{-1}\Lambda_{\bm{m}}\right)^{n}(\Lambda_{m}+\epsilon)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\epsilon\left(\Lambda_{\bm{m}}+\epsilon-\Lambda_{\bm{m}}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|\\=&|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|<\infty
-	\end{split}
-\end{equation}
-therefore the limit of the product is the product of the limit and we obtain that 
-\begin{equation}
-	\sum_{m=0}^{L}  (\Lambda_{\bm{m}}-H)\lim_{\epsilon\to 0}\epsilon R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=0
-\end{equation}
-Since the limit of the sum is the sum of the limit we have   
-\begin{equation}
-	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  \Lambda_{\bm{m}}R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|= H\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
-\end{equation}
-thus 
-\begin{equation}
-	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)H_{0}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|= H\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
-\end{equation}
-Since $H_{0}=H_{0}^{T}$ 
-\begin{equation}
-	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|H_{0}= H\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
-\end{equation}
-By calling 
-\begin{equation}\label{W-extended}
-	W= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}+\epsilon-H\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
-\end{equation}
-we finally obtain 
-\begin{equation}
-	WH_{0}=HW
-\end{equation}
-Power expanding the transfer matrix by charges and considering the limit for $x\to\infty$ we have that 
-\begin{equation}
-	\begin{split}
-		W&= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|\\&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}-\mathcal{Q}_{2L}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
-		\end{split}
-\end{equation}
-and also satisfies \eqref{GoalWQ}. We now write the power expansion with respect to $B_{i}^{2L-1}$ of $W$. We obtain that, using the multi-variate version of \eqref{veryUsefulSeries},
-\begin{equation}
-	\begin{split}
-	W=&\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
-	\\&
-	\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
-\end{split}
-\end{equation} 
-we further observe that in the limit for $\epsilon\to 0$ the quantity 
-\begin{equation}
-\lim_{\epsilon\to 0}	\epsilon\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle=|\Psi_{\bm{m}}^{0}\rangle
-\end{equation}
-therefore we have that 
-\begin{equation}
-	\begin{split}
-		W=&\lim_{\epsilon\to 0}\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
-		|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
-	\end{split}
-\end{equation}
-Considering the empty state as 
-\begin{equation}
-	|\Psi_{0}^{0}\rangle:=\begin{pmatrix}
-		0\\
-		\vdots\\
-		0\\
-		1
-	\end{pmatrix}\otimes \cdots \otimes\begin{pmatrix}
-	0\\
-	\vdots\\
-	0\\
-	1
-\end{pmatrix}
-\end{equation}
-then, we can map via $W$ the above vector to the steady state $|\Psi^{''}\rangle$ of $H^{''}$ defined in \eqref{steadyS-SECOND-def}, namely
-\begin{equation}
-	|\Psi^{''}\rangle=W|\Psi_{0}^{0}\rangle
-\end{equation}
-\begin{comment}
-\begin{itemize}
-	\item for $j\neq N$ 
-\begin{equation}
-	\begin{split}
-	B_{j}(x)D_{jj}(y)=&\frac{(x+y)(1+x-y)}{(x-y)(1+x+y)}D_{jj}(y)B_{j}(x)-\frac{1}{(1+x+y)}\sum_{i=1\,:\,i\neq j}^{N-1}B_{i}(x)D_{i1}(y)
-	\\-&\frac{(x+y)}{(x-y)(1+x+y)}D_{jj}(x)B_{j}(y)-\frac{1}{(1+x+y)}D_{NN}(x)B_{j}(y)
-	\end{split}
-\end{equation}
-\item for $i,j\neq N$
-\begin{equation}
-	\begin{split}
-		B_{i}(x)D_{jj}(y)=D_{jj}(y)B_{j}(x)+\frac{1}{(x-y)}\left(D_{ji}(y)B_{j}(x)-D_{ji}(x)B_{j}(y)\right)
-	\end{split}
-\end{equation}
-\item for $j\neq N$
-\begin{equation}
-	\begin{split}
-		B_{j}(x)D_{NN}(y)&=\frac{(x-y)(1+x+y)}{(x+y)(1+x-y)}D_{NN}(y)B_{j}(x)+\frac{(x-y)}{(x+y)(1+x-y)}\sum_{i=1}^{N-1}B_{i}(y)D_{ij}(x)
-		\\&+
-		\frac{1}{(1+x-y)}B_{j}(y)D_{NN}(x)
-	\end{split}
-\end{equation}
-\end{itemize}
-\end{comment}
-%In order to carry out the mapping of non equilibrium onto equilibrium we should consider the K-matrices after the transformation \eqref{similarS}, i.e. when the left boundary is lower triangular a end the right one is diagonal. We properly rescale them and we obtain
-
-%Then, we obtain the correspondent transfer matrix as
-%\begin{equation}
-%	T^{\Delta}(x)=tr_{0}\left(K_{0}^{\Delta}(x)U_{0}^{d}(x)\right)
-%\end{equation}
-%where
-%\begin{equation}
-%	U_{0}^{d}(x)=M_{0}(x)\widehat{K}_{0}^{d}(x)\widehat{M}_{0}(x)
-%\end{equation}
-{\color{blue}
-\subsection{Eigenvectors of the non equilibrium Hamiltonian}
-For simplicity we first consider the case with $N=3$. We make the following ansatz for the eigenvectors of the chain with left triangular and right diagonal boundaries described by the Hamiltonian $H^{''}$ introduced in \eqref{HSecond}. We denote by $\Delta_{2}=\alpha_{2}-\beta_{2}$ and $\Delta_{3}=\alpha_{3}-\beta_{3}$. The eigenvectors are the following: 
-\begin{equation}
-	|\Psi_{m_{2},m_{3}}^{\Delta}\rangle=\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-\end{equation}
-
-We replace the above eigenvectors in 
-\begin{equation}
-	T_{\Delta}(x)|\Psi_{m_{2},m_{3}}^{\Delta}\rangle=\Lambda_{m_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{\Delta}\rangle
-\end{equation}
-and we obtain
-\begin{align*}
-	&\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}+1}\Delta_{3}^{k_{3}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-	\\+&
-	\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}+1}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-	\\=&
-	\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}\Lambda_{m_{1},m_{2}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-\end{align*}
-after a change of summation indices we obtain
-\begin{align*}
-	&\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-	\\+&
-	\sum_{k_{2}=1}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}+\Delta_{2}^{m_{2}+1}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{m_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-	\\+&
-	\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=1}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}+\Delta_{3}^{m_{3}+1}\sum_{k_{2}=0}^{m_{2}}\Delta_{2}^{k_{2}}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-	\\=&
-	\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}\Lambda_{m_{1},m_{2}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}.
-\end{align*}
-We impose the powers of $\Delta_{2}\Delta_{3}$ to be equal. We obtain the following conditions 
-\begin{enumerate}
-	\item $k_{2}=0$ and $k_{3}=0$
-	\begin{equation}\label{cond1}
-		T_{0}(x)G_{m_{2},m_{3},\epsilon}^{0,0}(x)|\Psi_{m_{1},m_{2}}^{0}\rangle|_{\epsilon=0}=\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3},\epsilon}^{0,0}(x)|\Psi_{m_{1},m_{2}}^{0}\rangle|_{\epsilon=0}
-	\end{equation}
-	\item $k_{2}=m_{2}+1$ and $k_{3}\in \{0,\ldots,m_{3}\}$
-	\begin{equation}\label{cond2}
-		\begin{split}
-			B_{2}(x)G_{m_{2},m_{3},\epsilon}^{m_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}=0
-		\end{split}
-	\end{equation}
-	\item $k_{2}\in\{0,\ldots,m_{2}\}$ and $k_{3}=m_{3}+1$
-	\begin{equation}\label{cond3}
-		\begin{split}
-			B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}=0
-		\end{split}
-	\end{equation}
-	\item $k_{2}\in \{1,\ldots,m_{2}\}$ and $k_{3}\in\{1,\ldots,m_{3}\}$ 
-	\begin{equation}\label{cond4}
-		\begin{split}
-			&\left(\Lambda_{m_{2},m_{3}}(x)-T_{0}(x)\right)^{-1}\left(B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)\right)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-			\\=&
-			G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-		\end{split}
-	\end{equation} 
-\item $k_{2}=0$ and $k_{3}\in\{1,\ldots,m_{3}\}$
-\begin{equation}\label{cond5}
-	\begin{split}
-		&	\left(\Lambda_{m_{2},m_{3}}(x)-T_{0}(x)\right)^{-1}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,0}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-		=
-	G_{m_{2},m_{3},\epsilon}^{k_{2},0}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-	\end{split}
-\end{equation}
-\item $k_{2}\in \{1,\ldots,m_{2}\}$ and $k_{3}=0$
-	\begin{equation}\label{cond6}
-		\begin{split}
-			&\left(\Lambda_{m_{2},m_{3}}(x)-T_{0}(x)\right)^{-1}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{0,k_{3}-1}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-			=
-	G_{m_{2},m_{3},\epsilon}^{0,k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-		\end{split}
-	\end{equation}
-	
-\end{enumerate}
-To find the function $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ we must fulfil the conditions \eqref{cond1}, \eqref{cond2}, \eqref{cond3}, \eqref{cond4}, \eqref{cond5}, \eqref{cond6}.
-% \end{itemize}
-\subsubsection{Explicit solution for $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ using symmetric group}
-
- For the sake of notation we denote by 
-\begin{equation}
-	\begin{split}
-		A_{2}= \left\{(2x+N)\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{2}(x)\right\}\\
-		A_{3}=\left\{(2x+N)\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{3}(x)\right\}
-	\end{split}
-\end{equation}
-%{\color{red}Are we missing the prefactor $(N+2x)$?}
-where the dependence of $A_{2},A_{3}$ on $x$ and $\epsilon$ is understood. Condition \eqref{cond4} becomes
-
-\begin{equation}\label{cond4A}
-	\begin{split}
-		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
-	\end{split}
-\end{equation}
-We introduce the following indices
-\begin{equation}
-	i_{1}=\ldots=i_{k_{2}}=2\qquad i_{k_{2}+1}=\ldots =i_{k_{2}+k_{3}}=3
-\end{equation}
-Then, we introduce the permutation 
-\begin{equation}
-	\sigma(i_{j})=i_{k}\qquad \forall j,k=1,\ldots,k_{2}+k_{3}
-\end{equation}
-We write
-\begin{equation}
-	G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=\frac{1}{k_{2}!k_{3}!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}
-\end{equation}
-where we denoted by $\text{SYM}$ the symmetric group on $\{i_{1},\ldots,i_{k_{2}+k_{3}}\}$.\\
-It solves \eqref{cond4A}, indeed
-\begin{align*}
-	&A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
-	\\=&A_{2}\frac{k_{2}}{k_{2}}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}\frac{k_{3}}{k_{3}}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
-	\\=&
-	A_{2}\frac{k_{2}}{k_{2}}\frac{1}{(k_{2}-1)!k_{3}!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{2})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}\\+&A_{3}\frac{k_{3}}{k_{3}}\frac{1}{k_{2}!(k_{3}-1)!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}})}A_{\sigma(k_{2}+2)}\cdots A_{\sigma(i_{k_{2}+k_{3}})}
-	\\=&
-	\frac{1}{k_{2}!k_{3}!}\left(\sum_{\sigma \in \text{SYM}}k_{2}A_{2}A_{\sigma(i_{2})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}+ \sum_{\sigma \in \text{SYM}}k_{3}A_{3}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}})}A_{\sigma(k_{2}+2)}\cdots A_{\sigma(i_{k_{2}+k_{3}})}\right)
-	\\=&
-	\frac{1}{k_{2}!k_{3}!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}
-	\\=&
-		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)
-\end{align*}
-where in the up to last equality we used the fact that the quantity first summation is symmetric with respect to the exchange of $A_{2}$ and thus we have $k_{2}$ equal terms. Similarly, for the second summation using the symmetry with respect to $A_{3}$. \\
-This argument can be generalized for $N>2$ species introducing
-\begin{equation}
-	G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=\frac{1}{k_{2}!\cdots k_{N}!}\sum_{\sigma\in \text{SYM}}A_{i_{1}}\cdots A_{i_{k_{2}+\cdots+k_{N}}}
-\end{equation}
-where we assumed 
-\begin{equation}
-	i_{1}=\cdots=i_{k_{2}}=2,\qquad \ldots \qquad i_{k_{2}+\cdots+k_{N-1}}=\cdots=i_{k_{2}+\ldots+k_{N}}=N
-\end{equation}
-\begin{comment}
-To write its solution we define
-\begin{equation}
-	\chi^{k_{2},k_{3}}:=\left\{\left(i_{1},\ldots,i_{(k_{2}+k_{3})}\right)\in \{2,3\}^{k_{2}+k_{3}}\;:\;\sum_{s=1}^{k_{2}+k_{3}}\delta_{i_{s},2}=k_{2}\right\}
-\end{equation}
-We introduce the following notation: for any fixed configuration $(i_{1},\ldots,i_{(k_{2}+k_{3})})\in \chi^{k_{2},k_{3}}$ 
-\begin{equation}
-	\mathcal{A}(i_{1},\ldots,i_{(k_{2}+k_{3})})=A_{i_{1}}A_{i_{2}}\cdots A_{i_{(k_{2}+k_{3})}}
-\end{equation}
-We introduce $\text{SYM}\left(\chi^{k_{2},k_{3}}\right)$ the \textit{symmetric group} on $\chi^{k_{2},k_{3}}$ and we denote by $\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)$ the permutation of an element of the group. \\
-The following expression solves \eqref{cond4A}
-\begin{equation}
-	G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=\sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}})}\mathcal{A}\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right).
-\end{equation}
-Indeed
-\begin{align}
-A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&= A_{2}\sum_{\sigma\in \text{SYM}(\chi^{k_{2}-1,k_{3}})}\mathcal{A}\left(\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
-\\&+
- A_{3}\sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}-1})}\mathcal{A}\left(\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
- \\&=
- \sum_{\sigma\in \text{SYM}(\chi^{k_{2}-1,k_{3}})}\mathcal{A}\left(2,\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
- \\&+
- \sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}-1})}\mathcal{A}\left(3,\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
- \\&=
- \sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}})}\mathcal{A}\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
- \\&=
- 	G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)
-\end{align}
-where in the up to last equality we used the fact that $i_{1}\in \{2,3\}$. 
-\paragraph{Generalization to arbitrary $N$}
-For arbitrary $N\geq2$ we have 
-\begin{equation}
-	\chi^{k_{2}\ldots,k_{N}}:=\left\{\left(i_{1},\ldots,i_{(k_{2}+\cdots+k_{N})}\right)\in \{2,\ldots,N\}^{k_{2}+\cdots+k_{N}}\;:\;\sum_{s=1}^{k_{2}+\cdots+k_{N}}\delta_{i_{s},q}=k_{q},\;\forall \in \{2,\ldots,N\}\right\}
-\end{equation}
-
-Thus the explicit expression becomes
-\begin{equation}
-G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=\sum_{\sigma\in \text{SYM}(\chi^{k_{2},\ldots,k_{N}})}\mathcal{A}\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+\cdots+k_{3})})\right)
-\end{equation}
-with the same notation as in $N=3$ case. 
-\end{comment}
-\subsubsection{Explicit solution for $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ with sums and products}
-\begin{equation}
-	\begin{split}
-		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=&\sum_{i_{1}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+\ldots+i_{(k_{2}+k_{3})}=k_{2}\}}
-		\\&
-		\prod_{s=1}^{k_{2}+k_{3}}\left\{\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{2}(x)\right\}^{i_{s}}\left\{\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{3}(x)\right\}^{1-i_{s}}
-	\end{split}
-\end{equation}
-We show that it fulfils condition \eqref{cond4}. For the sake of notation we denote by 
-\begin{equation}
-	\begin{split}
-	A_{2}= \left\{(2x+N)\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{2}(x)\right\}\\
-	A_{3}=\left\{\left(2x+N)((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{3}(x)\right\}
-	\end{split}
-\end{equation}
-where the dependence of $A_{2},A_{3}$ on $x$ and $\epsilon$ is understood. 
-Therefore we rewrite \eqref{cond4} as 
-\begin{equation}
-	\begin{split}
-		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
-	\end{split}
-\end{equation}
-The left-hand-side is 
-\begin{equation}
-		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=\sum_{i_{1}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
-\end{equation}
-while, on the right-hand-side we have
-\begin{equation}
-	\begin{split}
-A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)&=A_{2}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{2}+i_{k_{2}}+\cdots+i_{(k_{2}+k_{3})}=k_{2}-1\}}\prod_{s=2}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
-\\&=
-\sum_{i_{1}=1}^{1}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
-	\end{split}
-\end{equation}
-and similarly 
-\begin{equation}
-	\begin{split}
-		A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&=A_{3}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=2}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
-		\\&=
-		\sum_{i_{1}=0}^{0}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}.
-	\end{split}
-\end{equation}
-Therefore,
-\begin{equation}
-	\begin{split}
-A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&=\sum_{i_{1}=1}^{1}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
-\\&+
-	\sum_{i_{1}=0}^{0}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
-	\\&=
-	\sum_{i_{1}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
-	\\&=
-		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)
-	\end{split}
-\end{equation}
-Conditions \eqref{cond1}, \eqref{cond5}, \eqref{cond6} are trivially fulfilled. Conditions \eqref{cond2} and \eqref{cond3} are satisfied because $B_{2}(x),B_{3}(x)$ are rising operators.
-
-\paragraph{Genearlization to $N$ species:} we can generalize the eigenvector formula for arbitrary number of species $N>2$ by writing
-\begin{equation}
-	\begin{split}
-	|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle=\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{n}}\Delta_{2}^{k_{2}}\cdots\Delta_{N}^{k_{N}}G_{m_{2}\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-	\end{split}
-\end{equation}
-Denoting by
-\begin{equation}
-A_{j}=	\left\{\left((2x+N)(\Lambda_{m_{2}\ldots,m_{N}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{j}(x)\right\}\qquad \forall j\in \{2,\ldots,N\}
-\end{equation}
-the explicit formula for $G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)$ reads
-\begin{equation}
-	\begin{split}
-G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=&\sum_{i_{1}^{2}=0}^{1}\ldots\sum_{i_{1}^{N}=0}^{1}\sum_{i_{2}^{2}=0}^{1}\ldots\sum_{i_{2}^{N}=0}^{1}\ldots\sum_{i_{k_{2}+\ldots+k_{N}}^{2}=0}^{1}\ldots \sum_{i_{k_{2}+\ldots+k_{N}}^{N}=0}^{1}
-\\&
-\left(\prod_{s=1}^{k_{2}+\cdots+k_{N}}\mathbbm{1}_{\{i_{s}^{2}+\cdots+i_{s}^{N}=1\}}\right)\left(\prod_{q=2}^{N}\mathbbm{1}_{\{i_{1}^{q}+\cdots+i_{(k_{2}+\cdots+k_{N})}^{q}=\,k_{q}\}}\right)
-\\&
-\prod_{s=1}^{k_{2}+\cdots+k_{N}}\prod_{q=2}^{N}A_{q}^{i_{s}^{q}}
-	\end{split}
-\end{equation}
-Condition \eqref{cond4} becomes
-\begin{equation}\label{cond4General}
-	G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{N}}(x)=\sum_{j=2}^{N}A_{j}G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{j}-1,\ldots,k_{N}}(x)
-\end{equation}
-Arguing as in the case $N=3$ we observe that 
-\begin{equation}
-	\begin{split}
-		A_{j}G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{j}-1,\ldots,k_{N}}(x)=&\sum_{i_{1}^{j}=1}^{1}\sum_{i_{2}^{2}=0}^{1}\ldots\sum_{i_{2}^{N}=0}^{1}\ldots\sum_{i_{k_{2}+\ldots+k_{N}}^{2}=0}^{1}\ldots \sum_{i_{k_{2}+\ldots+k_{N}}^{N}=0}^{1}
-	\\&
-	\left(\prod_{s=1}^{k_{2}+\cdots+k_{N}}\mathbbm{1}_{\{i_{s}^{2}+\cdots+i_{s}^{N}=1\}}\right)\left(\prod_{q=2}^{N}\mathbbm{1}_{\{i_{1}^{q}+\cdots+i_{(k_{2}+\cdots+k_{N})}^{q}=k_{q}\}}\right)
-	\\&
-	\prod_{s=1}^{k_{2}+\cdots+k_{N}}\prod_{q=2}^{N}A_{q}^{i_{s}^{q}}
-	\end{split}
-\end{equation}
-therefore \eqref{cond4General} is fulfilled. Again, the equivalent of conditions \eqref{cond1}, e\eqref{cond5} and \eqref{cond6} are trivially satisfied. The equivalents of conditions \eqref{cond2} and \eqref{cond3} are satisfied because $B_{j}(x)$ are rising operators for all $j\in \{2,\ldots,N\}$. }
-
-
-
-\subsection{Bethe ansatz solution}
-
-Describe eigenvalues of $T_0$ following 
-\cite{Belliard2} 
 
 
 
@@ -3231,6 +3132,166 @@ Therefore, we have that
 		E_{ab}=\oad_{a}\oa_{b}\qquad \forall a,b=1,\ldots N
 \end{equation} 
 fulfil the action on the basis vector \eqref{actionE} and the commutation relation \eqref{eq:comgl} 
+\section{Exact steady state of $H$}\label{subsectionSSH}
+
+The steady state $|\Psi\rangle$ of the Hamiltonian $H$ is given by 
+\begin{equation}\label{steadyStateH}
+	|\Psi\rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\Psi(\bm{\tau})|\bm{\tau}\rangle
+\end{equation}
+where for every $(\tau_{1},\ldots,\tau_{L})=\bm{\tau}$
+\begin{equation}
+	\begin{split}
+		\Psi(\bm{\tau})&=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\tau_{y}}^{(1-c_{y})(1-\delta_{\tau_{y},1})}
+		\\&+
+		\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{\tau_{q_{r}},1}\right) 
+		\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{b}}=2}^{N}
+		\\&
+		\sum_{c_{1}=0}^{1-\delta_{\eta_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{\eta_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\eta_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\eta_{y}}^{(1-c_{y})(1-\delta_{\eta_{y},1})}
+	\end{split}
+\end{equation}
+where we have introduced, $\forall x\in \{1,\ldots,L\}$
+\begin{equation}
+	\eta_{x}(b)=\begin{cases}
+		\tau_{x}\qquad &\text{if}\quad x\notin \{q_{1},\ldots,q_{b}\}\\
+		d_{x}\qquad &\text{otherwise}
+	\end{cases}%\qquad \theta_{x}=\begin{cases}
+		%\tau_{x}\qquad &\text{if}\quad x\neq 1,\ldots,b\\
+		%	1 \qquad &\text{otherwise}
+		%\end{cases}
+	\end{equation}
+	The dependence of $\eta_{x}(b)$ with respect to $b$ is usually understood for the sake of notation. 
+	{\color{blue}
+		\begin{equation}\label{steadyStateH-coeff}
+			\begin{split}
+				\Psi(\bm{\tau})&=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\tau_{y}}^{(1-c_{y})(1-\delta_{\tau_{y},1})}
+				\\&+
+				\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{s=1}^{b}\delta_{s_{q_{r}},1}\right) 
+				\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{b}}=2}^{N}
+				\\&
+				\sum_{x=1\,:\, x\neq q_{1},\ldots,q_{b}}^{L}\sum_{c_{x}=0}^{1-\delta_{\tau_{x},1}}\sum_{c_{q_{1}}=1}^{1}\ldots\sum_{c_{q_{b}}=0}^{1}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(2+L)}
+				\prod_{y=1\,:\, y\neq q_{1},\ldots,q_{b}}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}
+				\\ &
+				\beta_{\tau_{y}}^{(1-c_{y})(1-\delta_{\tau_{y},1})}
+				\prod_{t=1}^{b}\lambda_{d_{q_{t}}}\left(2+L-q_{t}-\sum_{j=q_{t}}^{L}c_{j}\right)^{c_{q_{t}}}\beta_{d_{q_{t}}}^{(1-c_{q_{t}})}
+			\end{split}
+		\end{equation}
+	}
+	\textbf{Remark}: we observe that if no holes are present in \eqref{steadyStateH-coeff}, i.e. if $\tau_{x}\neq 1$ $\forall x\in \{1,\ldots,L\}$, then the second addend vanishes and
+	\begin{equation}\label{LinkABS-corr}
+		\Psi(\bm{\tau})=\Psi^{'}(\bm{\tau})
+	\end{equation}
+	When the configuration has holes, the presence of the second addend is motivated by the dependence of the "empty" in a fixed site from all others types in the same site.
+	
+	\paragraph{Proof of formula \eqref{steadyStateH}} As a consequence of \eqref{S1-Inverse}, we only need to show how the transformation $S_{1}^{-1}$ acts on the vector $|\Psi^{'}\rangle$. Here is more convenient to consider the matrix $\mathcal{S}_{1}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and make explicitly the tensor product over the chain. This matrix $\mathcal{S}_{1}$ is given by
+	\begin{equation}\label{S1-L1}
+		\mathcal{S}_{1}^{-1}=\sum_{\tau_{1}=1}^{N}e_{\tau_{1}}^{\tau_{1}}+(-1)\delta_{\tau_{1},1}\sum_{d_{1}=2}^{N}e_{1}^{d_{1}}
+	\end{equation}
+	Using the notation introduced in \eqref{notation1} and \eqref{notation2} we have that 
+	\begin{equation}
+		\begin{split}
+			\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}&=\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}\right.
+			\\&
+			+\left.\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{r}}=2}^{N}e_{\eta_{1},\ldots,\eta_{L}}^{\theta_{1},\ldots,\theta_{L}}\right\} 
+		\end{split}
+	\end{equation}
+	where we have introduced, $\forall x\in \{1,\ldots,L\}$
+	\begin{equation}
+		%\eta_{x}=\begin{cases}
+			%	\tau_{x}\qquad &\text{if}\quad x\neq 1,\ldots,b\\
+			%	d_{x}\qquad &\text{otherwise}
+			%\end{cases}\qquad
+			\theta_{x}(b)=\begin{cases}
+				\tau_{x}\qquad &\text{if}\quad x\notin \{q_{1},\ldots,q_{b}\}\\
+				1 \qquad &\text{otherwise}
+			\end{cases}
+		\end{equation}
+		The dependence of $\theta(b)$ with respect to $b$ is usually understood for the sake of notation. 
+		%$e_{\ldots,\tau_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,\tau_{x},\ldots,\,d_{q_{r}}\,,\ldots}$ denotes the matrix $e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}$ where the subscripts $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by "1" and the superscripts $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. \\
+		This is proved by induction. Indeed, for $L=1$ it is trivially true, by \eqref{S1-L1}. We assume that it is true for arbitrary $L\in \mathbb{N}$ and we prove that it holds for $L+1$. 
+		\begin{align*}
+			\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}\otimes \mathcal{S}_{1}^{-1}&=
+			\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}\right. \\&+\left. \sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{r}}=2}^{N}e_{\theta_{1},\ldots,\theta_{L}}^{\eta_{1},\ldots,\eta_{L}}\right\}
+			\\&\otimes
+			\left\{ \sum_{\tau_{1}=1}^{N}e_{\tau_{L+1}}^{\tau_{L+1}}+(-1)\delta_{\tau_{L+1},1}\sum_{d_{L+1}=2}^{N}e_{1}^{d_{L+1}}\right\}
+			\\&=
+			\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L+1}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L+1}}^{\tau_{1},\ldots,\tau_{L+1}}\right. \\&+\left. \sum_{b=1}^{L+1}(-1)^{b}\sum_{q_{1}=1}^{L+1}\sum_{q_{2}=q_{1}+1}^{L+1}\ldots\sum_{q_{b}=q_{b-1}+1}^{L+1}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{b}}=2}^{N}e_{\theta_{1},\ldots,\theta_{L+1}}^{\eta_{1},\ldots,\eta_{L+1}}\right\}
+		\end{align*}
+		\begin{comment}
+			
+			
+			\begin{equation}
+				F=\left(V^{-1}\right)^{T}
+			\end{equation}
+			and thus 
+			\begin{equation}
+				\mathcal{F}=F^{\otimes L}
+			\end{equation}
+			By direct computations and using the notation introduced in \eqref{notation1} and \eqref{notation2} we have 
+			\begin{equation}
+				F=\sum_{\tau_{1}=1}^{N}e_{\tau_{1}}^{\tau_{1}}+\delta_{\tau_{1},1}(-1)\sum_{d_{1}=2}^{N}e_{1}^{d_{1}}
+			\end{equation}
+			Taking the tensor product over two sites we obtain 
+			\begin{equation}
+				\begin{split}
+					F\otimes F&=\sum_{\tau_{1},s_{2}=1}^{N}\left(e_{\tau_{1},s_{2}}^{\tau_{1},s_{2}}+(-1)\delta_{s_{2},1}\sum_{d_{2}=2}^{N}e_{\tau_{1},1}^{\tau_{1},d_{2}}
+					\right.\\ &+\left. 
+					(-1)\delta_{\tau_{1},1}\sum_{d_{1}=2}^{N}e_{1,s_{2}}^{d_{1},s_{2}}+(-1)^{2}\delta_{\tau_{1},1}\delta_{s_{2},1}\sum_{d_{1},d_{2}=2}^{N}e_{1,1}^{d_{1},d_{2}}\right)
+				\end{split}
+			\end{equation}
+			therefore, fixing a raw with indices $\tau_{1},s_{2}\in \{1,\ldots,N\}$ of the matrix $F\otimes F$ we obtain 
+			\begin{equation}
+				\begin{split}
+					\left(F\otimes F\right)_{\tau_{1},s_{2}}&=e_{\tau_{1},s_{2}}^{\tau_{1},s_{2}}+(-1)\delta_{s_{2},1}\sum_{d_{2}=2}^{N}e_{\tau_{1},1}^{\tau_{1},d_{2}}
+					\\&+
+					(-1)\delta_{\tau_{1},1}\sum_{d_{1}=2}^{N}e_{1,s_{2}}^{d_{1},s_{2}}+(-1)^{2}\delta_{\tau_{1},1}\delta_{s_{2},1}\sum_{d_{1},d_{2}=2}^{N}e_{1,1}^{d_{1},d_{2}}
+					\\&=
+					\sum_{q_{1}=1}^{2}\prod_{r=1}^{1}\delta_{s_{q_{r}},1}\sum_{r=1}^{1}\sum_{d_{q_{r}}=2}^{N}e_{\tau_{x},1}^{\tau_{x}d_{q_{r}}}
+					+
+					(-1)\sum_{q_{1}=1}^{2}\sum_{q_{2}=q_{1}+1}^{2}\prod_{r=1}^{2}\delta_{s_{q_{r}},1}\sum_{r=1}^{2}\sum_{d_{q_{r}}=2}^{N}e_{\tau_{x},1}^{\tau_{x}d_{q_{r}}}
+				\end{split}
+			\end{equation}
+			where $e_{\tau_{x},d_{q_{r}}}$ denotes the matrix $e_{\tau_{1},s_{2}}^{\tau_{1},s_{2}}$ where the subscripts $s_{q_{r}}$ have been replaced by "1" and the superscript $s_{q_{r}}$ have been replaced by $d_{q_{r}}$, with $r=1,2$. \\
+			We generalize this tensor product to an arbitrary number of sites $L$ obtaining the matrix $\mathcal{F}$. We write the expression of a fixed raw with indices $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$ as 
+			\begin{equation}
+				\begin{split}
+					\mathcal{F}_{\tau_{1},\ldots,\tau_{L}}&=e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}
+					\\&
+					+\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{r=1}^{b}\sum_{d_{q_{r}}=2}^{N}e_{\ldots,\tau_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,\tau_{x},\ldots,\,d_{q_{r}}\,,\ldots}
+				\end{split}
+			\end{equation}
+			where $e_{\ldots,\tau_{x},\ldots,\underbrace{1}_{q_{r}},\ldots}^{\ldots,\tau_{x},\ldots,\,d_{q_{r}}\,,\ldots}$ denotes the matrix $e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}$ where the subscripts $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by "1" and the superscripts $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. \\
+		\end{comment}
+		The product $\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\Psi^{'}\rangle$ gives a vector whose component are denoted by $\Psi(\bm{\tau})$. 
+		To find this elements we need to fix the rows correspondent to $\bm{\tau}$. Consider a string $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})$ with $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, then the corresponding row of the vector $\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\Psi^{'}\rangle$ reads
+		\begin{equation}
+			\begin{split}
+				\Psi(\bm{\tau}) &=\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}_{\bm{\tau}}|\Psi{'}\rangle=\Psi{'}(\tau_{1},\ldots,\tau_{L})+ 
+				\\&
+				+\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{s_{q_{r}},1}\right)\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{d_{q_{r}}=2}^{N}\Psi{'}(\eta_{1},\ldots,\eta_{L})
+			\end{split}
+		\end{equation}
+		%where $\Psi{'}(\ldots,\tau_{x},\ldots,d_{q_{r}},\ldots)$ denotes the component $\Psi{'}(\tau_{1},\ldots,\tau_{L})$ where the occupations  $\tau_{q_{1}},\ldots,\tau_{q_{b}}$ have been replaced by $d_{q_{1}},\ldots,d_{q_{b}}$. 
+		Using \eqref{elementsABS} we have 
+		\begin{equation}
+			\begin{split}
+				\Psi{'}(\eta_{1},\ldots,\eta_{L})=&\sum_{c_{1}=0}^{1-\delta_{\eta_{1},1}}\ldots\sum_{c_{L}=0}^{1-\delta_{\eta_{L},1}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}
+				\\&
+				\prod_{y=1}^{L}\left(\lambda_{\eta_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\eta_{y}}^{(1-c_{y})(1-\delta_{\eta_{y},1})}
+			\end{split}
+		\end{equation}
+		{\color{blue}
+			\begin{equation}
+				\begin{split}
+					&\Psi{'}(\ldots,\tau_{x},\ldots,d_{q_{r}},\ldots)=\sum_{x=1\,:\, x\neq q_{1},\ldots,q_{l}}^{L}\sum_{c_{x}=0}^{1-\delta_{\tau_{x},1}}\sum_{d_{q_{1}}=2}^{N}\ldots\sum_{c_{q_{p}}=0}^{1}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(2+L)}
+					\\&  
+					\prod_{y=1\,:\, y\neq q_{1},\ldots,q_{b}}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\tau_{y}}^{(1-c_{y})(1-\delta_{\tau_{y},1})}
+					\\&
+					\prod_{t=1}^{b}\lambda_{d_{q_{t}}}\left(2+L-q_{t}-\sum_{j=q_{t}}^{L}c_{j}\right)^{c_{q_{t}}}\beta_{d_{q_{t}}}^{(1-c_{q_{t}})}
+				\end{split}
+		\end{equation}} indeed, in each coordinate $q_{r}$ with $r=1,\ldots b$ the species $1$ is replaced by all other possible species from $2$ to $N$.  Finally, considering all possible $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, we obtain \eqref{steadyStateH}. 
+		\begin{flushright}
+			$\square$
+		\end{flushright}
 \begin{comment}
 \section{Representation}
 The approach we use to find duality relations is the Lie algebraic one. The main idea is to describe the infinitesimal generator (or better, its transposed, i.e. the Hamiltonian operator) via a proper combination of the basis of a certain Lie algebra. Then, duality will be found by symmetry argument.\\
