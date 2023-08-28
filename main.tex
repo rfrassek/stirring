@@ -2129,10 +2129,11 @@ Q_{2L}^{0}=(N-NL-2L)I^{tot}+2(N+2)e_{NN}^{tot}+2e_{NN}^{tot}e_{NN}^{tot}+2\sum_{
 %\end{split}
 %\end{equation} 
 We also introduce 
-\begin{equation}
-\mathcal{Q}_{2L}=\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
+\begin{equation}\label{Q-nonDiag}
+\mathcal{Q}_{2L}=\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}=\sum_{i=1}^{N-1}2\Delta_{i}B_{i}^{2L-1}
 \end{equation}
-therefore we can write 
+where $\Delta_{i}=(\alpha_{i}-\beta_{i})$. 
+Therefore we can write 
 \begin{equation}
 Q_{2L}=Q_{2L}^{0}+\mathcal{Q}_{2L}
 \end{equation}
@@ -2331,7 +2332,55 @@ Finally, using again the property of $e_{11}^{tot}$ and $e_{22}^{tot}$ and using
 \end{equation}
 This gives an explicit formula in term of the charge $B_{1}^{2L-1}$ of the matrix $W$. We stress the fact that these nice formula comes from the simple commutation relations between charges. Moreover, with such a formula it has been proved in \cite{frassek2020eigenstates} that the steady state $|\Psi^{''}\rangle$ can be found by acting on the vacum. 
 \subsection{The gl(N) case}
-Following the result in the simpler $gl(2)$ case, we aim to generalize it to higher rank chains. 
+Following the result in the simpler $gl(2)$ case, we aim to generalize it to higher rank chains. Repeating the computations we find that 
+\begin{equation}\label{W-extended}
+	W= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}+\epsilon-H\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+\end{equation}
+Using the fact that $\left[H^{'},Q^{2L}\right]=0$ we can determine the matrix $W$ in function of the first non-trivial conserved charge $Q^{2L}$ as
+\begin{equation}
+	\begin{split}
+		W&= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|\\&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}-\mathcal{Q}_{2L}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+	\end{split}
+\end{equation}
+ Recalling the expression of $\mathcal{Q}^{2L}$ given in \eqref{Q-nonDiag} we write the multi-variable power expansion with respect to $\Delta_{i} B_{i}^{2L-1}$ for all $i\in\{1,\ldots,N-1\}$. We obtain that, using the multi-variate version of \eqref{veryUsefulSeries},
+\begin{equation}
+	\begin{split}
+		W=&\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM_{k_{1},\ldots,k_{N-1}}\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}\right)
+		\\&
+		\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+	\end{split}
+\end{equation} 
+Here $SYM$ is the following transformation. Introduce, the following $i_{j}$ with $j=1,\ldots,k_{1}+\ldots+k_{N}$ indices, such that 
+\begin{equation}
+	\begin{split}
+		&i_{1}=\ldots=i_{k_{1}}=1\\
+	&	i_{k_{1}+1}=\ldots=i_{k_{1}+k_{2}}=2\\
+		&\vdots\\
+		&i_{k_{1}+\ldots+k_{N-2}+1}=\ldots=i_{k_{1}+\ldots+k_{N-1}}=N-1
+	\end{split}
+\end{equation}
+By denoting with 
+\begin{equation}
+	A_{i_{j}}=\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{i_{j}}^{2L-1}\right\}
+\end{equation}
+then 
+\begin{equation}
+	\begin{split}
+&SYM_{k_{1},\ldots,k_{N-1}}\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}\right)\\&:=\frac{1}{k_{1}!\cdots k_{N-1}!}\sum_{\sigma\in Sym}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{1}+\ldots+k_{N-1}})}
+	\end{split}
+\end{equation}
+where $Sym$ is the symmetric group. 
+We further observe that in the limit for $\epsilon\to 0$ the quantity 
+\begin{equation}
+	\lim_{\epsilon\to 0}	\epsilon\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle=|\Psi_{\bm{m}}^{0}\rangle
+\end{equation}
+therefore we have that 
+\begin{equation}
+	\begin{split}
+		W=&\lim_{\epsilon\to 0}\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
+		|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+	\end{split}
+\end{equation}
 {\color{blue}
 \subsection{Eigenvectors of the non equilibrium Hamiltonian}
 For simplicity we first consider the case with $N=3$. We make the following ansatz for the eigenvectors of the chain with left triangular and right diagonal boundaries described by the Hamiltonian $H^{''}$ introduced in \eqref{HSecond}. We denote by $\Delta_{2}=\alpha_{2}-\beta_{2}$ and $\Delta_{3}=\alpha_{3}-\beta_{3}$. The eigenvectors are the following: 
