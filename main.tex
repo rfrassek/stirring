@@ -1018,7 +1018,7 @@ We introduce the first transformation as
 \end{equation}
 that is composed by a copy of $\mathcal{S}_{1}$ (introduced in \eqref{S1Gen}) acting at site $x$ and with identities acting at all other sites of the chain. 
 Observe that $\mathcal{S}_{1}^{x}$ is the transposed of the bulk part of the duality matrix $d_{x}$  at site $x\in \{1,\ldots,L\}$ (see \eqref{bulkElementDualityMatrix}). By taking the product over the chain we define
-\begin{equation}
+\begin{equation}\label{S1-Whole}
     S_{1}=\prod_{x=1}^{L}\mathcal{S}_{1}^{x}
 \end{equation}
 that is related with the duality matrix by 
@@ -1067,7 +1067,7 @@ We introduce the second transformation as
  \end{equation}
 that is composed by a copy of $\mathcal{S}_{2}$ (introduced in \eqref{S2Gen}) acting at site $x$ and with identities acting at all other sites of the chain. 
 By taking the product over the chain we also define
-\begin{equation}
+\begin{equation}\label{S2-Whole}
 	S_{2}=\prod_{x=1}^{L}S_{2}^{x}
 \end{equation}
 We define 
@@ -1784,7 +1784,7 @@ we finally obtain
 \begin{equation}
 	WH_{0}=HW
 \end{equation}
-Formula \eqref{W-extended} comes from standard perturbation theory. However, since the process is integrable it is possible to express $W$ in function of the conserved charges of the system. This expression, as it will be show in the following sections, allows to find explicit expression of the eigenvector by the Bethe ansatz and also allows to retrieve again the steady state of $H^{''}$ by applying $W$ to the ground state. To find it, we use the Quantum Inverse Scattering Method (QISM). We first present the simpler case of $gl(2)$, then we try to adapt the proof the general $gl(N)$. 
+Formula \eqref{W-extended} may be evaluated by perturbation theory. Moreover, since the process is integrable it is possible to express $W$ in function of the conserved charges of the system and of the eigenvectors of the equilibrium steady state, that are known in literature by Bethe ansatz. This expression, as it will be show in the following sections, allows a simpler treatment of the mapping and furthermore we can use it to retrieve the steady state of $H^{''}$ by applying $W$ to the ground state. To write formula \eqref{W-extended} using the charges of the system, we the Quantum Inverse Scattering Method (QISM). We first present the simpler case of $gl(2)$, then we try to adapt the proof the general $gl(N)$. 
 \subsection{Quantum inverse scattering method}
 We can apply the \textit{quantum inverse scattering method} to this process. We introduce the quantum space as $V=V_{1}\otimes\ldots\otimes V_{j}\otimes\ldots\otimes V_{L}$ and the auxiliary space $V_{0}$. In this specific case $V_{j}=\mathbb{C}^{N}$ $\forall j=0,1,\ldots ,L$. We introduce the following $R$-matrices acting on the tensor product of spaces with indices $a,b=0,1,\ldots,L$
 \begin{equation}\label{Rmatrix}
@@ -2052,7 +2052,7 @@ Then
 %	C_{i}^{2L-1}=2e_{1i}^{tot}+2\sum_{a< b}\left(e_{1i}^{[a]}e_{11}^{[b]}-e_{1i}^{[a]}e_{ii}^{[b]}-\sum_{a=2\,:\,k\neq j}^{N}e_{1a}^{[a]}e_{ai}^{[b]}\right)
 %\end{equation}
 \item For $B_{j}(x)$  $\forall j=2,\ldots,L$ 
-\begin{equation}
+\begin{equation}\label{B-charge}
 		B_{j}^{2L-1}=	2e_{j1}^{tot}e_{11}^{tot}-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N} e_{jk}^{[a]}e_{k1}^{[b]}
 \end{equation}
 \begin{comment}
@@ -2228,7 +2228,7 @@ Arguing as in section \ref{SectionNonLocalTrasformation}, we can show that
 	W&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\;|\bm{m}|=1}\left(\Lambda_{m}+\epsilon-Q^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|\\&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\;|\bm{m}|=1}\left(\Lambda_{m}+\epsilon-Q^{2L}_{0}-\mathcal{Q}^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|
 \end{split}
 \end{equation}
-Since $Q^{2L}$ and $H$ are isospectral the above matrix $W$ still maps the non-equilibrium eigenvectors onto the equilibrium ones. The advantage is that now we can do more with this more with this expression. Hopefully, using exchange relation between charges, we could try to handle \eqref{WInCharges} and rewrite it independently from the equilibrium eigenvectors. Moreover, we can use it to extract the steady state by rising the vacum state. 
+Since $Q^{2L}$ and $H$ are isospectral the above matrix $W$ still maps the non-equilibrium eigenvectors onto the equilibrium ones. The advantage is that now we can do more with this more with this expression. Hopefully, using exchange relation between charges, we could try to handle \eqref{WInCharges} and rewrite it independently from the equilibrium eigenvectors. Moreover, we can use it to extract the steady state by rising the vacuum state. 
 \subsection{The gl(2) case}
 In this simpler situation the double row monodromy reads
 \begin{equation}
@@ -2241,7 +2241,7 @@ Therefore, using the conserved charges and formula \eqref{WInCharges} we have
 \begin{equation}\label{W}
 	W=\lim_{\epsilon\to 0}\epsilon\sum_{m=0}^{L}\left((\Lambda_{m}^{Q}+\epsilon)-Q_{0}^{2L}-2\Delta B_{1}^{2L-1}\right)^{-1}|\Psi_{m}^{0}\rangle \langle \Psi_{m}^{0}|
 \end{equation}
-Power expanding the matrix $W$ with respect to $\Delta=(\alpha-\beta)$ and making it act on 
+Power expanding the matrix $W$ with respect to $\Delta=(\alpha-\beta)$ and
 \begin{equation}\label{LinkWG}
 	\begin{split}
 		W=&\lim_{\epsilon\to 0}\epsilon\sum_{m=0}^{L}\left((\Lambda_{m}^{Q}+\epsilon)-Q_{0}^{2L}-2\Delta B_{1}^{2L-1}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|\\
@@ -2274,7 +2274,7 @@ Therefore we obtain
 		&=(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left(Q_{0}^{2L}-4j(1+e_{11}^{tot}-e_{22}^{tot})+2j(j-1)N\right)
 	\end{split}
 \end{equation}
-We use the following power expansion
+We use the following series expansion
 \begin{equation}\label{veryUsefulSeries}
 	(A-B)^{-1}=\sum_{n=0}^{\infty}(A^{-1}B)^{n}A^{-1}
 \end{equation}
@@ -2325,14 +2325,14 @@ indeed
 	\prod_{j=1}^{k}(L-2m+2-j)^{-1}=\frac{\Gamma(L-2m+2-1)}{\Gamma(L-2m+2)}\frac{\Gamma(L-2m+2-2)}{\Gamma(L-2m+2-2+1)}\cdots\frac{\Gamma(L-2m+2-k+1)}{\Gamma(L-2m+2-k+2)}\frac{\Gamma(L-2m+2-k)}{\Gamma(L-2m+2-k+1)}
 \end{equation}
 Finally, using again the property of $e_{11}^{tot}$ and $e_{22}^{tot}$ and using the Pauli matrix $\sigma_{0}^{tot}=e_{11}^{tot}-e_{22}^{tot}$, we obtain 
-\begin{equation}
+\begin{equation}\label{Nice-W2}
 	\begin{split}
 		W|\Psi_{m}^{0}\rangle=&	\sum_{k=0}^{L}\frac{\Delta^{k}}{k!}\left(\frac{B_{1}^{2L-1}}{2}\right)^{k}\frac{\Gamma(\sigma_{0}^{tot}+2-k)}{\Gamma(\sigma_{0}^{tot}+2)}|\Psi_{m}^{0}\rangle
 	\end{split}
 \end{equation}
 This gives an explicit formula in term of the charge $B_{1}^{2L-1}$ of the matrix $W$. We stress the fact that these nice formula comes from the simple commutation relations between charges. Moreover, with such a formula it has been proved in \cite{frassek2020eigenstates} that the steady state $|\Psi^{''}\rangle$ can be found by acting on the vacum. 
 \subsection{The gl(N) case}
-Following the result in the simpler $gl(2)$ case, we aim to generalize it to higher rank chains. Repeating the computations we find that 
+Following the result in the simpler $gl(2)$ case, we aim to generalize it to higher rank chains ($N>2$). Repeating the computations we find that 
 \begin{equation}\label{W-extended}
 	W= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}+\epsilon-H\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
@@ -2342,7 +2342,7 @@ Using the fact that $\left[H^{'},Q^{2L}\right]=0$ we can determine the matrix $W
 		W&= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|\\&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}-\mathcal{Q}_{2L}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 	\end{split}
 \end{equation}
- Recalling the expression of $\mathcal{Q}^{2L}$ given in \eqref{Q-nonDiag} we write the multi-variable power expansion with respect to $\Delta_{i} B_{i}^{2L-1}$ for all $i\in\{1,\ldots,N-1\}$. We obtain that, using the multi-variate version of \eqref{veryUsefulSeries},
+ Recalling the expression of $\mathcal{Q}^{2L}$ given in \eqref{Q-nonDiag} we write the multi-variable power expansion with respect to $\Delta_{i} B_{i}^{2L-1}$ for all $i\in\{1,\ldots,N-1\}$. We obtain that, using also the multi-variate version of \eqref{veryUsefulSeries},
 \begin{equation}
 	\begin{split}
 		W=&\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM_{k_{1},\ldots,k_{N-1}}\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}\right)
@@ -2350,7 +2350,7 @@ Using the fact that $\left[H^{'},Q^{2L}\right]=0$ we can determine the matrix $W
 		\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 	\end{split}
 \end{equation} 
-Here $SYM$ is the following transformation. Introduce, the following $i_{j}$ with $j=1,\ldots,k_{1}+\ldots+k_{N}$ indices, such that 
+Here $SYM$ is the following transformation. We introduce, the following indices $i_{j}$ with $j=1,\ldots,k_{1}+\ldots+k_{N}$, such that 
 \begin{equation}
 	\begin{split}
 		&i_{1}=\ldots=i_{k_{1}}=1\\
@@ -2360,13 +2360,15 @@ Here $SYM$ is the following transformation. Introduce, the following $i_{j}$ wit
 	\end{split}
 \end{equation}
 By denoting with 
-\begin{equation}
+\begin{equation}\label{definitionA}
 	A_{i_{j}}=\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{i_{j}}^{2L-1}\right\}
 \end{equation}
 then 
 \begin{equation}
 	\begin{split}
-&SYM_{k_{1},\ldots,k_{N-1}}\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}\right)\\&:=\frac{1}{k_{1}!\cdots k_{N-1}!}\sum_{\sigma\in Sym}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{1}+\ldots+k_{N-1}})}
+&SYM_{k_{1},\ldots,k_{N-1}}\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}\right)\\=&
+SYM_{k_{1},\ldots,k_{N-1}}\left(A_{1},\ldots,A_{N-1}\right)\\
+=&\frac{1}{k_{1}!\cdots k_{N-1}!}\sum_{\sigma\in Sym}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{1}+\ldots+k_{N-1}})}
 	\end{split}
 \end{equation}
 where $Sym$ is the symmetric group. 
@@ -2381,268 +2383,66 @@ therefore we have that
 		|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 	\end{split}
 \end{equation}
-{\color{blue}
-\subsection{Eigenvectors of the non equilibrium Hamiltonian}
-For simplicity we first consider the case with $N=3$. We make the following ansatz for the eigenvectors of the chain with left triangular and right diagonal boundaries described by the Hamiltonian $H^{''}$ introduced in \eqref{HSecond}. We denote by $\Delta_{2}=\alpha_{2}-\beta_{2}$ and $\Delta_{3}=\alpha_{3}-\beta_{3}$. The eigenvectors are the following: 
+In this case, the commutation relations between $Q_{0}^{2L}$ and $B_{i}^{2L-1}$ are given by \eqref{ExQ0B-charges}. Exchanging $Q_{0}^{2L}$ with $B_{i}^{2L-1}$ generates also charges $B_{j}^{2L-1}$ with $j\neq 1$. Therefore, it is hard to obtain the multivariate equivalent of \eqref{Nice-W2}. 
+\subsection{Non-equilibrium steady state from the W transformation}
+By using $W$ it is possible to obtain all the non-equilibrium eigenvectors by the knowledge of the equilibrium ones. As a consequence, also the non-equilibrium steady state can by found by using $W$. For the $N=2$ chain, this property has been proved in \cite{frassek2020eigenstates}. Also for the $gl(N)$ case, we can retrieve the non-equilibrium steady state of the Hamiltonian $H^{''}$ given in \eqref{ResulsBasis}, by acting with $W$ on the vacuum state 
 \begin{equation}
-|\Psi_{m_{2},m_{3}}^{\Delta}\rangle=\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
+	|\Psi_{0}^{0}\rangle:=\underbrace{\begin{pmatrix}
+		0\\
+		\vdots\\
+		0\\
+		1
+	\end{pmatrix}\otimes \cdots \otimes\begin{pmatrix}
+		0\\
+		\vdots\\
+		0\\
+		1
+	\end{pmatrix}}_{L-\text{times}}
 \end{equation}
-
-We replace the above eigenvectors in 
+Therefore, we have that 
 \begin{equation}
-T_{\Delta}(x)|\Psi_{m_{2},m_{3}}^{\Delta}\rangle=\Lambda_{m_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{\Delta}\rangle
+	|\Psi^{''}\rangle=W|\Psi_{0}^{0}\rangle
 \end{equation}
-and we obtain
-\begin{align*}
-&\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}+\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}+1}\Delta_{3}^{k_{3}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-\\+&
-\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}+1}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-\\=&
-\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}\Lambda_{m_{1},m_{2}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-\end{align*}
-after a change of summation indices we obtain
-\begin{align*}
-&\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}T_{0}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-\\+&
-\sum_{k_{2}=1}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}+\Delta_{2}^{m_{2}+1}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{m_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-\\+&
-\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=1}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}+\Delta_{3}^{m_{3}+1}\sum_{k_{2}=0}^{m_{2}}\Delta_{2}^{k_{2}}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-\\=&
-\sum_{k_{2}=0}^{m_{2}}\sum_{k_{3}=0}^{m_{3}}\Delta_{2}^{k_{2}}\Delta_{3}^{k_{3}}\Lambda_{m_{1},m_{2}}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}.
-\end{align*}
-We impose the powers of $\Delta_{2}\Delta_{3}$ to be equal. We obtain the following conditions 
-\begin{enumerate}
-\item $k_{2}=0$ and $k_{3}=0$
-\begin{equation}\label{cond1}
-	T_{0}(x)G_{m_{2},m_{3},\epsilon}^{0,0}(x)|\Psi_{m_{1},m_{2}}^{0}\rangle|_{\epsilon=0}=\Lambda_{m_{2},m_{3}}(x)G_{m_{2},m_{3},\epsilon}^{0,0}(x)|\Psi_{m_{1},m_{2}}^{0}\rangle|_{\epsilon=0}
+We do not write the full proof, but only the result for the first non-trivial case, i.e. a chain of length $L=2$ with $N=3$ species. We set $3$ as the empty species.  
+\paragraph{Steady state for a $L=2$ and $N=3$ chain}
+Here we have 
+\begin{equation}
+	|\Psi_{0}^{0}\rangle=\begin{pmatrix}
+		0\\0\\1
+	\end{pmatrix}\otimes \begin{pmatrix}
+	0\\0\\1
+\end{pmatrix}=|\phi_{33}\rangle
 \end{equation}
-\item $k_{2}=m_{2}+1$ and $k_{3}\in \{0,\ldots,m_{3}\}$
-\begin{equation}\label{cond2}
+where we denoted by $(|\phi_{i}\rangle)_{j}=\delta_{j,i}$ the canonical basis of $\mathbb{C}^{3}$ and $|\phi_{ij}\rangle=|\phi_{i}\rangle\otimes|\phi_{j}\rangle$ the basis of the tensor product space $\mathbb{C}^{3}\otimes\mathbb{C}^{3}$. We have
+\begin{equation}
 	\begin{split}
-		B_{2}(x)G_{m_{2},m_{3},\epsilon}^{m_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}=0
+|\Psi^{''}\rangle=&	W|\Psi_{0}^{0}\rangle =\lim_{\epsilon\to 0}\sum_{k_{1}=0}^{2}\sum_{k_{2}=0}^{2}\Delta_{1}^{k_{1}}\Delta_{2}^{k_{2}}2^{k_{1}+k_{2}}SYM_{k_{1},k_{2}}\left(A_{1},A_{2}\right)|\Psi_{0}^{0}\rangle
+	\\=&\lim_{\epsilon\to 0}\left\{I+2\Delta_{1}A_{1}+2\Delta_{2}A_{2}+4\Delta_{1}^{2}A_{1}^{2}+4\Delta_{2}^{2}A_{2}^{2}+4\Delta_{1}\Delta_{2}\left(A_{1}A_{2}+A_{2}A_{1}\right)\right\}|\Psi_{0}^{0}\rangle
 	\end{split}
 \end{equation}
-\item $k_{2}\in\{0,\ldots,m_{2}\}$ and $k_{3}=m_{3}+1$
-\begin{equation}\label{cond3}
+where we recall $A_{i}$ defined in \eqref{definitionA}. We need to compute the action of each addend in the last equality on the state $|\Psi_{0}^{0}\rangle$.\\
+Using the charges computed in \eqref{B-charge} and \eqref{Q0Exp} we obtain that 
+\begin{equation}
 	\begin{split}
-		B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},m_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}=0
+A_{i}=	&\left(\Lambda_{0}^{Q}+\epsilon-Q_{0}\right)^{-1}B_{i}^{2L-1}\\=&\left((28+\epsilon)I^{tot}-10e_{33}^{tot}-2(e_{11}^{tot}e_{11}^{tot}+e_{22}^{tot}e_{22}^{tot}+e_{33}e_{33}^{tot})-2(e_{12}^{tot}e_{21}^{tot}+e_{21}^{tot}e_{12}^{tot})\right)^{-1}\\&\left(2e_{i3}^{tot}+2e_{i3}^{tot}e_{33}-2(e_{ii}^{[1]}e_{i3}^{[b]}+e_{i2}^{[2]}e_{23}^{[1]})\right)
 	\end{split}
 \end{equation}
-\item $k_{2}\in \{1,\ldots,m_{2}\}$ and $k_{3}\in\{1,\ldots,m_{3}\}$ 
-\begin{equation}\label{cond4}
-	\begin{split}
-		&\left(\Lambda_{m_{2},m_{3}}(x)-T_{0}(x)\right)^{-1}\left(B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+B_{3}(x)G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)\right)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-		\\=&
-		G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-	\end{split}
-\end{equation} 
-\item $k_{2}=0$ and $k_{3}\in\{1,\ldots,m_{3}\}$
-\begin{equation}\label{cond5}
-	\begin{split}
-		&	\left(\Lambda_{m_{2},m_{3}}(x)-T_{0}(x)\right)^{-1}B_{2}(x)G_{m_{2},m_{3},\epsilon}^{k_{2}-1,0}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-		=
-		G_{m_{2},m_{3},\epsilon}^{k_{2},0}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-	\end{split}
-\end{equation}
-\item $k_{2}\in \{1,\ldots,m_{2}\}$ and $k_{3}=0$
-\begin{equation}\label{cond6}
-	\begin{split}
-		&\left(\Lambda_{m_{2},m_{3}}(x)-T_{0}(x)\right)^{-1}B_{3}(x)G_{m_{2},m_{3},\epsilon}^{0,k_{3}-1}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-		=
-		G_{m_{2},m_{3},\epsilon}^{0,k_{3}}(x)|\Psi_{m_{2},m_{3}}^{0}\rangle|_{\epsilon=0}
-	\end{split}
-\end{equation}
-
-\end{enumerate}
-To find the function $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ we must fulfil the conditions \eqref{cond1}, \eqref{cond2}, \eqref{cond3}, \eqref{cond4}, \eqref{cond5}, \eqref{cond6}.
-% \end{itemize}
-\subsubsection{Explicit solution for $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ using symmetric group}
-
-For the sake of notation we denote by 
-\begin{equation}
-\begin{split}
-A_{2}= \left\{(2x+N)\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{2}(x)\right\}\\
-A_{3}=\left\{(2x+N)\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{3}(x)\right\}
-\end{split}
-\end{equation}
-%{\color{red}Are we missing the prefactor $(N+2x)$?}
-where the dependence of $A_{2},A_{3}$ on $x$ and $\epsilon$ is understood. Condition \eqref{cond4} becomes
-
-\begin{equation}\label{cond4A}
-\begin{split}
-G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
-\end{split}
-\end{equation}
-We introduce the following indices
-\begin{equation}
-i_{1}=\ldots=i_{k_{2}}=2\qquad i_{k_{2}+1}=\ldots =i_{k_{2}+k_{3}}=3
-\end{equation}
-Then, we introduce the permutation 
-\begin{equation}
-\sigma(i_{j})=i_{k}\qquad \forall j,k=1,\ldots,k_{2}+k_{3}
-\end{equation}
-We write
-\begin{equation}
-G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=\frac{1}{k_{2}!k_{3}!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}
-\end{equation}
-where we denoted by $\text{SYM}$ the symmetric group on $\{i_{1},\ldots,i_{k_{2}+k_{3}}\}$.\\
-It solves \eqref{cond4A}, indeed
-\begin{align*}
-&A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
-\\=&A_{2}\frac{k_{2}}{k_{2}}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}\frac{k_{3}}{k_{3}}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
-\\=&
-A_{2}\frac{k_{2}}{k_{2}}\frac{1}{(k_{2}-1)!k_{3}!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{2})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}\\+&A_{3}\frac{k_{3}}{k_{3}}\frac{1}{k_{2}!(k_{3}-1)!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}})}A_{\sigma(k_{2}+2)}\cdots A_{\sigma(i_{k_{2}+k_{3}})}
-\\=&
-\frac{1}{k_{2}!k_{3}!}\left(\sum_{\sigma \in \text{SYM}}k_{2}A_{2}A_{\sigma(i_{2})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}+ \sum_{\sigma \in \text{SYM}}k_{3}A_{3}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}})}A_{\sigma(k_{2}+2)}\cdots A_{\sigma(i_{k_{2}+k_{3}})}\right)
-\\=&
-\frac{1}{k_{2}!k_{3}!}\sum_{\sigma \in \text{SYM}}A_{\sigma(i_{1})}\cdots A_{\sigma(i_{k_{2}+k_{3}})}
-\\=&
-G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)
-\end{align*}
-where in the up to last equality we used the fact that the quantity first summation is symmetric with respect to the exchange of $A_{2}$ and thus we have $k_{2}$ equal terms. Similarly, for the second summation using the symmetry with respect to $A_{3}$. \\
-This argument can be generalized for $N>2$ species introducing
-\begin{equation}
-G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=\frac{1}{k_{2}!\cdots k_{N}!}\sum_{\sigma\in \text{SYM}}A_{i_{1}}\cdots A_{i_{k_{2}+\cdots+k_{N}}}
-\end{equation}
-where we assumed 
-\begin{equation}
-i_{1}=\cdots=i_{k_{2}}=2,\qquad \ldots \qquad i_{k_{2}+\cdots+k_{N-1}}=\cdots=i_{k_{2}+\ldots+k_{N}}=N
-\end{equation}
-\begin{comment}
-To write its solution we define
-\begin{equation}
-\chi^{k_{2},k_{3}}:=\left\{\left(i_{1},\ldots,i_{(k_{2}+k_{3})}\right)\in \{2,3\}^{k_{2}+k_{3}}\;:\;\sum_{s=1}^{k_{2}+k_{3}}\delta_{i_{s},2}=k_{2}\right\}
-\end{equation}
-We introduce the following notation: for any fixed configuration $(i_{1},\ldots,i_{(k_{2}+k_{3})})\in \chi^{k_{2},k_{3}}$ 
-\begin{equation}
-\mathcal{A}(i_{1},\ldots,i_{(k_{2}+k_{3})})=A_{i_{1}}A_{i_{2}}\cdots A_{i_{(k_{2}+k_{3})}}
-\end{equation}
-We introduce $\text{SYM}\left(\chi^{k_{2},k_{3}}\right)$ the \textit{symmetric group} on $\chi^{k_{2},k_{3}}$ and we denote by $\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)$ the permutation of an element of the group. \\
-The following expression solves \eqref{cond4A}
-\begin{equation}
-G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=\sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}})}\mathcal{A}\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right).
-\end{equation}
-Indeed
+By the help of an algebraic manipulator we obtain 
 \begin{align}
-A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&= A_{2}\sum_{\sigma\in \text{SYM}(\chi^{k_{2}-1,k_{3}})}\mathcal{A}\left(\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
-\\&+
-A_{3}\sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}-1})}\mathcal{A}\left(\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
-\\&=
-\sum_{\sigma\in \text{SYM}(\chi^{k_{2}-1,k_{3}})}\mathcal{A}\left(2,\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
-\\&+
-\sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}-1})}\mathcal{A}\left(3,\sigma(i_{2}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
-\\&=
-\sum_{\sigma\in \text{SYM}(\chi^{k_{2},k_{3}})}\mathcal{A}\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+k_{3})})\right)
-\\&=
-G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)
+	\lim_{\epsilon\to 0}2\Delta_{1}A_{1}|\phi_{33}\rangle&=\frac{2}{3}\Delta_{1}|\phi_{13}\rangle+\frac{1}{3}\Delta_{1}|\phi_{31}\rangle\\
+	\lim_{\epsilon\to 0}2\Delta_{2}A_{2}|\phi_{33}\rangle&=\frac{2}{3}\Delta_{2}|\phi_{23}\rangle+\frac{1}{3}\Delta_{3}|\phi_{32}\rangle\\
+\lim_{\epsilon\to 0}	4\Delta_{1}^{2}A_{1}^{2}|\phi_{33}\rangle&=\frac{1}{6}\Delta_{1}^{2}|\phi_{11}\rangle\\
+\lim_{\epsilon\to 0}	4\Delta_{1}^{2}A_{2}^{2}|\phi_{33}\rangle&=\frac{1}{6}\Delta_{2}^{2}|\phi_{22}\rangle\\
+\lim_{\epsilon\to 0}	4\Delta_{1}\Delta_{2}\left(A_{1}A_{2}+A_{2}A_{1}\right)|\phi_{33}\rangle&=\frac{1}{6}\Delta_{1}\Delta_{2}|\phi_{12}\rangle+\frac{1}{6}\Delta_{21}|\phi_{21}\rangle
 \end{align}
-where in the up to last equality we used the fact that $i_{1}\in \{2,3\}$. 
-\paragraph{Generalization to arbitrary $N$}
-For arbitrary $N\geq2$ we have 
+therefore, we have that
 \begin{equation}
-\chi^{k_{2}\ldots,k_{N}}:=\left\{\left(i_{1},\ldots,i_{(k_{2}+\cdots+k_{N})}\right)\in \{2,\ldots,N\}^{k_{2}+\cdots+k_{N}}\;:\;\sum_{s=1}^{k_{2}+\cdots+k_{N}}\delta_{i_{s},q}=k_{q},\;\forall \in \{2,\ldots,N\}\right\}
+	\begin{split}
+	W|\Psi_{0}^{0}\rangle=&|\phi_{33}\rangle+\frac{2}{3}\Delta_{1}|\phi_{13}\rangle+\frac{1}{3}\Delta_{1}|\phi_{31}\rangle+\frac{2}{3}\Delta_{2}|\phi_{23}\rangle+\frac{1}{3}\Delta_{3}|\phi_{32}\rangle\\+&\frac{1}{6}\Delta_{1}^{2}|\phi_{11}\rangle+\frac{1}{6}\Delta_{2}^{2}|\phi_{22}\rangle+\frac{1}{6}\Delta_{1}\Delta_{2}|\phi_{12}\rangle+\frac{1}{6}\Delta_{21}|\phi_{21}\rangle
+	\\=& \left(\frac{1}{6}\Delta_{1}^{2},\;\frac{1}{6}\Delta_{1}\Delta_{2},\;\frac{2}{3}\Delta_{1},\;\frac{1}{6}\Delta_{1}\Delta_{2},\;\frac{1}{6}\Delta_{2}^{2},\;\frac{2}{3}\Delta_{2}\;\frac{1}{3}\Delta_{1},\;\frac{1}{3}\Delta_{2},\;1\right)\\=& |\Psi^{''}\rangle
+	\end{split}
 \end{equation}
-
-Thus the explicit expression becomes
-\begin{equation}
-G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=\sum_{\sigma\in \text{SYM}(\chi^{k_{2},\ldots,k_{N}})}\mathcal{A}\left(\sigma(i_{1}),\ldots,\sigma(i_{(k_{2}+\cdots+k_{3})})\right)
-\end{equation}
-with the same notation as in $N=3$ case. 
-\end{comment}
-\subsubsection{Explicit solution for $G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)$ with sums and products}
-\begin{equation}
-\begin{split}
-G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=&\sum_{i_{1}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+\ldots+i_{(k_{2}+k_{3})}=k_{2}\}}
-\\&
-\prod_{s=1}^{k_{2}+k_{3}}\left\{\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{2}(x)\right\}^{i_{s}}\left\{\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{3}(x)\right\}^{1-i_{s}}
-\end{split}
-\end{equation}
-We show that it fulfils condition \eqref{cond4}. For the sake of notation we denote by 
-\begin{equation}
-\begin{split}
-A_{2}= \left\{(2x+N)\left((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{2}(x)\right\}\\
-A_{3}=\left\{\left(2x+N)((\Lambda_{m_{2},m_{3}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{3}(x)\right\}
-\end{split}
-\end{equation}
-where the dependence of $A_{2},A_{3}$ on $x$ and $\epsilon$ is understood. 
-Therefore we rewrite \eqref{cond4} as 
-\begin{equation}
-\begin{split}
-G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)
-\end{split}
-\end{equation}
-The left-hand-side is 
-\begin{equation}
-G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)=\sum_{i_{1}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
-\end{equation}
-while, on the right-hand-side we have
-\begin{equation}
-\begin{split}
-A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)&=A_{2}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{2}+i_{k_{2}}+\cdots+i_{(k_{2}+k_{3})}=k_{2}-1\}}\prod_{s=2}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
-\\&=
-\sum_{i_{1}=1}^{1}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
-\end{split}
-\end{equation}
-and similarly 
-\begin{equation}
-\begin{split}
-A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&=A_{3}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=2}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
-\\&=
-\sum_{i_{1}=0}^{0}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}.
-\end{split}
-\end{equation}
-Therefore,
-\begin{equation}
-\begin{split}
-A_{2}G_{m_{2},m_{3},\epsilon}^{k_{2}-1,k_{3}}(x)+A_{3}G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}-1}(x)&=\sum_{i_{1}=1}^{1}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
-\\&+
-\sum_{i_{1}=0}^{0}\sum_{i_{2}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+i_{2}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
-\\&=
-\sum_{i_{1}=0}^{1}\ldots\sum_{i_{(k_{2}+k_{3})}=0}^{1}\mathbbm{1}_{\{i_{1}+\cdots+i_{(k_{2}+k_{3})}=k_{2}\}}\prod_{s=1}^{k_{2}+k_{3}}A_{2}^{i_{s}}A_{3}^{1-i_{s}}
-\\&=
-G_{m_{2},m_{3},\epsilon}^{k_{2},k_{3}}(x)
-\end{split}
-\end{equation}
-Conditions \eqref{cond1}, \eqref{cond5}, \eqref{cond6} are trivially fulfilled. Conditions \eqref{cond2} and \eqref{cond3} are satisfied because $B_{2}(x),B_{3}(x)$ are rising operators.
-
-\paragraph{Genearlization to $N$ species:} we can generalize the eigenvector formula for arbitrary number of species $N>2$ by writing
-\begin{equation}
-\begin{split}
-|\Psi_{m_{2},\ldots,m_{N}}^{\Delta}\rangle=\sum_{k_{2}=0}^{m_{2}}\ldots\sum_{k_{N}=0}^{m_{n}}\Delta_{2}^{k_{2}}\cdots\Delta_{N}^{k_{N}}G_{m_{2}\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)|\Psi_{m_{2},\ldots,m_{N}}^{0}\rangle|_{\epsilon=0}
-\end{split}
-\end{equation}
-Denoting by
-\begin{equation}
-A_{j}=	\left\{\left((2x+N)(\Lambda_{m_{2}\ldots,m_{N}}(x)+\epsilon)I-T_{0}(x)\right)^{-1}B_{j}(x)\right\}\qquad \forall j\in \{2,\ldots,N\}
-\end{equation}
-the explicit formula for $G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)$ reads
-\begin{equation}
-\begin{split}
-G_{m_{2},\ldots,m_{N},\epsilon}^{k_{2},\ldots,k_{N}}(x)=&\sum_{i_{1}^{2}=0}^{1}\ldots\sum_{i_{1}^{N}=0}^{1}\sum_{i_{2}^{2}=0}^{1}\ldots\sum_{i_{2}^{N}=0}^{1}\ldots\sum_{i_{k_{2}+\ldots+k_{N}}^{2}=0}^{1}\ldots \sum_{i_{k_{2}+\ldots+k_{N}}^{N}=0}^{1}
-\\&
-\left(\prod_{s=1}^{k_{2}+\cdots+k_{N}}\mathbbm{1}_{\{i_{s}^{2}+\cdots+i_{s}^{N}=1\}}\right)\left(\prod_{q=2}^{N}\mathbbm{1}_{\{i_{1}^{q}+\cdots+i_{(k_{2}+\cdots+k_{N})}^{q}=\,k_{q}\}}\right)
-\\&
-\prod_{s=1}^{k_{2}+\cdots+k_{N}}\prod_{q=2}^{N}A_{q}^{i_{s}^{q}}
-\end{split}
-\end{equation}
-Condition \eqref{cond4} becomes
-\begin{equation}\label{cond4General}
-G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{N}}(x)=\sum_{j=2}^{N}A_{j}G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{j}-1,\ldots,k_{N}}(x)
-\end{equation}
-Arguing as in the case $N=3$ we observe that 
-\begin{equation}
-\begin{split}
-A_{j}G_{m_{2},\ldots,m_{N}\epsilon}^{k_{2},\ldots,k_{j}-1,\ldots,k_{N}}(x)=&\sum_{i_{1}^{j}=1}^{1}\sum_{i_{2}^{2}=0}^{1}\ldots\sum_{i_{2}^{N}=0}^{1}\ldots\sum_{i_{k_{2}+\ldots+k_{N}}^{2}=0}^{1}\ldots \sum_{i_{k_{2}+\ldots+k_{N}}^{N}=0}^{1}
-\\&
-\left(\prod_{s=1}^{k_{2}+\cdots+k_{N}}\mathbbm{1}_{\{i_{s}^{2}+\cdots+i_{s}^{N}=1\}}\right)\left(\prod_{q=2}^{N}\mathbbm{1}_{\{i_{1}^{q}+\cdots+i_{(k_{2}+\cdots+k_{N})}^{q}=k_{q}\}}\right)
-\\&
-\prod_{s=1}^{k_{2}+\cdots+k_{N}}\prod_{q=2}^{N}A_{q}^{i_{s}^{q}}
-\end{split}
-\end{equation}
-therefore \eqref{cond4General} is fulfilled. Again, the equivalent of conditions \eqref{cond1}, e\eqref{cond5} and \eqref{cond6} are trivially satisfied. The equivalents of conditions \eqref{cond2} and \eqref{cond3} are satisfied because $B_{j}(x)$ are rising operators for all $j\in \{2,\ldots,N\}$. }
-
-
-
+that is exactly the steady state $|\Psi^{''}\rangle$ computed in \eqref{ResulsBasis} in the case $L=2$ and $N=3$. To obtain the steady state $|\Psi\rangle$ of $H$ we only need to invert the transformations $S_{1}$ and $S_{2}$ defined in \eqref{S1-Whole} and \eqref{S2-Whole}. 
 \subsection{Bethe ansatz solution}
 
 Describe eigenvalues of $T_0$ following 
@@ -2657,7 +2457,7 @@ We consider a chain of length $L$ where the end sites $1$ and $L$ are connected 
 \end{equation} 
 where at the boundaries 
 \begin{equation}
-	\mathcal{L}_{left}f(\bm{n})=\sum_{a,b=0}^{N}\alpha_{a}n_{b}^{1}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-f(\bm{n})\right)\qquad \mathcal{L}_{right}f(\bm{n})=\sum_{a,b=0}^{N}\beta_{a}n_{b}^{L}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{delta}_{a}^{x})-f(\bm{n})\right)
+	\mathcal{L}_{left}f(\bm{n})=\sum_{a,b=0}^{N}\alpha_{a}n_{b}^{1}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-f(\bm{n})\right)\qquad \mathcal{L}_{right}f(\bm{n})=\sum_{a,b=0}^{N}\beta_{a}n_{b}^{L}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-f(\bm{n})\right)
 \end{equation}
 while the bulk generator is 
 \begin{equation}
