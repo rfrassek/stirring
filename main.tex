@@ -1568,13 +1568,18 @@ In this section we write a formula for the stationary steady state correlations 
 	\end{equation}
 \textbf{Remark}: Using the Binomial Theorem we rewrite the \eqref{exactCorrelations} as 
 \begin{equation}
-\langle n^{x_{1}}_{a_{1}}\cdots n^{x_{m}}_{a_{m}}\rangle_{\text{stat}}=\sum_{c_{1},\ldots,c_{m}=0}^{1}
+\begin{split}
+\langle n^{x_{1}}_{a_{1}}\cdots n^{x_{m}}_{a_{m}}\rangle_{\text{stat}}=&\sum_{c_{1},\ldots,c_{m}=0}^{1}
 f(L,c_{1},\ldots,c_{m})\sum_{t_{1}=0}^{c_{1}}\ldots\sum_{t_{m}=0}^{c_{m}}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}\alpha_{a_{q}}^{t_{q}}\beta_{a_{q}}^{1-t_{q}}g_{q}(L,x_{q},c_{q},\ldots,c_{m})
+\end{split}
 \end{equation}
 By exchanging the summations we rewrite it as 
 \begin{equation}
-\langle n^{x_{1}}_{a_{1}}\cdots n^{x_{m}}_{a_{m}}\rangle_{\text{stat}}=\sum_{t_{1},\ldots,t_{m}=0}^{1}
-\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,x_{q},c_{q},\ldots,c_{m})\alpha_{a_{q}}^{t_{q}}\beta_{a_{q}}^{1-t_{q}}
+\begin{split}
+\langle n^{x_{1}}_{a_{1}}\cdots n^{x_{m}}_{a_{m}}\rangle_{\text{stat}}=&\sum_{t_{1},\ldots,t_{m}=0}^{1}
+\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,x_{q},c_{q},\ldots,c_{m})\alpha_{a_{q}}^{t_{q}}\beta_{a_{q}}^{1-t_{q}}\\
+=&\sum_{t_{1},\ldots,t_{m}=0}^{1}\prod_{q=1}^{m}\alpha_{q}^{t_{q}}\beta_{q}^{1-t_{q}}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,x_{q},c_{q},\ldots,c_{m})
+\end{split}
 \end{equation}
 Therefore, comparing this formula and \eqref{absProbabilitiesIntegrable}, we can determine the absorption probabilities 
 \begin{equation}
