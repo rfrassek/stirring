@@ -2382,7 +2382,7 @@ We further observe that in the limit for $\epsilon\to 0$ the quantity
 	\lim_{\epsilon\to 0}	\epsilon\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle=|\Psi_{\bm{m}}^{0}\rangle
 \end{equation}
 therefore we have that 
-\begin{equation}
+\begin{equation}\label{W-charges-Bad}
 	\begin{split}
 		W=&\lim_{\epsilon\to 0}\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
 		|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
@@ -2408,6 +2408,97 @@ Therefore, we have that
 \begin{equation}
 	|\Psi^{''}\rangle=W|\Psi_{0}^{0}\rangle
 \end{equation}
+To prove this statement we introduce the following notation. We identify each state by 
+\begin{equation}
+	|\tau_{1},\ldots,\tau_{L}\rangle\qquad \text{where}\qquad \tau_{x}\in\{1,\ldots,N\}\quad \forall x\in \{1,\ldots,L\}
+\end{equation}
+therefore the vacuum state reads
+\begin{equation}
+	|\Psi_{0}^{0}\rangle=|N,\ldots,N\rangle
+\end{equation}
+We first write some relations that will be useful in the proof.
+\begin{equation}\label{BActionVoid}
+	B_{i}^{2L-1}|\Psi_{0}^{0}\rangle=\sum_{x=1}^{L}2(L-x+1)|N,\ldots,\tau_{x}=i,\ldots,N\rangle
+\end{equation}
+\begin{equation}
+	D_{i,j}^{2L}|\Psi_{0}^{0}\rangle=0
+\end{equation}
+\begin{equation}
+	D_{i,j}^{2L}|\tau_{1},\ldots,\tau_{L}\rangle=-2|\tau_{1}^{'}\ldots,\tau_{L}^{'}\rangle \qquad \text{where}\qquad \tau^{'}_{x}=\begin{cases}
+		\tau_{x}\quad &\text{if}\quad \tau_{x}\neq i\\
+		j\quad &\text{if}\quad \tau_{x}=i
+	\end{cases}
+\end{equation}
+\begin{equation}\label{GoodRelation}
+	D_{i,j}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle=-2B_{j}^{2L-1}|\Psi_{0}^{0}\rangle
+\end{equation}
+Indeed
+\begin{align}
+	D_{i,j}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle&= D_{j,i}\sum_{x=1}^{L}2(L-x+1)|N,\ldots,\tau_{x}=i,\ldots,N\rangle\nonumber
+	\\&=
+	-2e_{ji}^{tot}\sum_{x=1}^{L}2(L-x+1)|N,\ldots,\tau_{x}=i,\ldots,N\rangle\nonumber
+	\\&=
+	-4\sum_{x=1}^{L}2(L-x+1)|N,\ldots,\tau_{x}=j,\ldots,N\rangle\nonumber
+	\\&=
+	-2B_{i}|\Psi_{0}^{0}\rangle
+\end{align}
+\begin{equation}
+	D_{k,j}^{2L}B_{i}^{L}|\Psi_{0}^{0}\rangle=0\qquad \forall k,j,i\in\{1,\ldots,N-1\}\;:\;k\neq i
+\end{equation}
+\begin{equation}
+	D_{i,i}^{2L}\Psi_{0}^{0}\rangle=-|\Psi_{0}^{0}\rangle \qquad \forall i\in \{1,\ldots,N-1\}
+\end{equation}
+Indeed,
+\begin{align}
+D_{i,i}^{2L}|\Psi_{0}^{0}\rangle=	(2e_{ii}^{tot}-I)|\Psi_{0}^{0}\rangle=-|\Psi_{0}^{0}\rangle
+\end{align}
+\begin{equation}\label{GainCommutationQ}
+	Q_{0}^{2L}|\Psi_{0}^{0}\rangle=(2L+N)(1+L)|\Psi_{0}^{0}\rangle
+\end{equation}
+Therefore, $Q_{0}^{2L}$ acts diagonally on the state $|\Psi_{0}^{0}\rangle$. Indeed,
+\begin{align}
+	Q_{0}^{2L}|\Psi_{0}^{0}\rangle&=\left((N-NL-2L)I^{tot}+2(N+2)e_{NN}^{tot}+2e_{NN}^{tot}e_{NN}^{tot}+2\sum_{j,k=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}\right)|\Psi_{0}^{0}\rangle\\&=
+		\left((N-NL-2L)I^{tot}+2(N+2)e_{NN}^{tot}+2e_{NN}^{tot}e_{NN}^{tot}\right)|\Psi_{0}^{0}\rangle
+		\\&=
+		(N-NL-2L+2(N+1)L+2L^{2})|\Psi_{0}^{0}\rangle
+\end{align}
+since 
+\begin{equation}
+\sum_{j,k=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}|\Psi_{0}^{0}\rangle=0\qquad e_{NN}^{tot}|\Psi_{0}^{0}\rangle=L|\Psi_{0}^{0}\rangle
+\end{equation}
+Using \eqref{BActionVoid} and \eqref{GainCommutationQ} we have that for all $i,j,k\in\{1,\ldots,N-1\}$
+\begin{equation}\label{Three-Relation}
+	Q_{0}^{2L}B_{k}^{2L-1}Q_{0}^{2L}B_{j}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle=B_{i}^{2L-1}B_{j}^{2L-1}B_{k}^{2L-1}\prod_{j=}^{3}\left(Q_{0}^{2L}-2j(D_{11}^{2L}+D_{NN}^{2L})+4j(j-1)\right)|\Psi_{0}^{0}\rangle
+\end{equation}
+Observe that \eqref{Three-Relation} also implies that 
+\begin{equation}
+	Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{j}^{2L-1}|\Psi_{0}^{0}\rangle=Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle
+\end{equation}
+i.e. $Q_{0}^{2L}B_{i}^{2L-1}$ and $Q_{0}^{2L}B_{j}^{2L-1}$ do commute. This simplify formula \eqref{W-charges-Bad} as
+\begin{equation}
+	\begin{split}
+	W|\Psi_{0}^{0}\rangle=&\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}}^{L}\mathbbm{1}_{\{k_{1}+\ldots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots \Delta_{N-1}^{k_{N-1}}\binom{k_{1}+\ldots+k_{N-1}}{k_{1},\ldots,k_{N-1}}\\&\left\{\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{1}\right\}^{k_{1}}\cdots\;\left\{\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{N-1}\right\}^{k_{N-1}}|\Psi_{0}^{0}\rangle
+\end{split}
+\end{equation}
+Therefore, we can generalize \eqref{Three-Relation} and find 
+\begin{equation}
+	\begin{split}
+		W|\Psi_{0}^{0}\rangle =&\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}}^{L}\mathbbm{1}_{\{k_{1}+\ldots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots \Delta_{N-1}^{k_{N-1}}\binom{k_{1}+\ldots+k_{N-1}}{k_{1},\ldots,k_{N-1}}\\&
+		\left(B_{1}^{2L-1}\right)^{k_{1}}\cdots\left( B_{N-1}^{2L-1}\right)^{k_{N-1}}\prod_{j=1}^{k_{1}+\ldots k_{N-1}}\left\{(\Lambda_{0}+\epsilon)-Q_{0}^{2L}+2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle
+	\end{split}
+\end{equation}
+where 
+\begin{equation}
+	\binom{k_{1}+\ldots+k_{N-1}}{k_{1},\ldots,k_{N-1}}=\frac{	(k_{1}+\ldots+k_{N-1})!}{k_{1}!\cdots k_{N-1}}
+\end{equation}
+This can be written as
+\begin{equation}
+	\begin{split}
+		|\Psi^{''}\rangle=&	\;W|\Psi_{0}^{0}\rangle =\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}}^{L}\mathbbm{1}_{\{k_{1}+\ldots+k_{N-1}\leq L\}}\frac{\Delta_{1}^{k_{1}}\cdots \Delta_{N-1}^{k_{N-1}}}{k_{1}!\cdots k_{N-1}!}\\&
+		\left(\frac{B_{1}^{2L-1}}{2^{k_{1}}}\right)^{k_{1}}\cdots\left( \frac{B_{N-1}^{2L-1}}{2^{k_{N-1}}}\right)^{k_{N-1}}\frac{\Gamma\left(e_{NN}^{tot}+2-(k_{1}+\ldots+k_{N-1})\right)}{\Gamma\left(e_{NN}^{tot}+2\right)}|\Psi_{0}^{0}\rangle
+	\end{split}
+\end{equation}
+\begin{comment}
 We do not write the full proof, but only the result for the first non-trivial case, i.e. a chain of length $L=2$ with $N=3$ species. We set $3$ as the empty species.  
 \paragraph{Steady state for a $L=2$ and $N=3$ chain}
 Here we have 
@@ -2448,6 +2539,7 @@ therefore, we have that
 	\end{split}
 \end{equation}
 that is exactly the steady state $|\Psi^{''}\rangle$ computed in \eqref{ResulsBasis} in the case $L=2$ and $N=3$. To obtain the steady state $|\Psi\rangle$ of $H$ we only need to invert the transformations $S_{1}$ and $S_{2}$ defined in \eqref{S1-Whole} and \eqref{S2-Whole}. 
+\end{comment}
 \subsection{Bethe ansatz solution}
 
 Describe eigenvalues of $T_0$ following 
