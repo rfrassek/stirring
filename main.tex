@@ -2420,7 +2420,7 @@ We first write some relations that will be useful in the proof.
 \begin{equation}\label{BActionVoid}
 	B_{i}^{2L-1}|\Psi_{0}^{0}\rangle=\sum_{x=1}^{L}2(L-x+1)|N,\ldots,\tau_{x}=i,\ldots,N\rangle
 \end{equation}
-\begin{equation}
+\begin{equation}\label{Dij-ref}
 	D_{i,j}^{2L}|\Psi_{0}^{0}\rangle=0
 \end{equation}
 \begin{equation}
@@ -2442,10 +2442,10 @@ Indeed
 	\\&=
 	-2B_{i}|\Psi_{0}^{0}\rangle
 \end{align}
-\begin{equation}
+\begin{equation}\label{DijBk-different}
 	D_{k,j}^{2L}B_{i}^{L}|\Psi_{0}^{0}\rangle=0\qquad \forall k,j,i\in\{1,\ldots,N-1\}\;:\;k\neq i
 \end{equation}
-\begin{equation}
+\begin{equation}\label{Dii-ref}
 	D_{i,i}^{2L}\Psi_{0}^{0}\rangle=-|\Psi_{0}^{0}\rangle \qquad \forall i\in \{1,\ldots,N-1\}
 \end{equation}
 Indeed,
@@ -2466,11 +2466,29 @@ since
 \begin{equation}
 \sum_{j,k=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}|\Psi_{0}^{0}\rangle=0\qquad e_{NN}^{tot}|\Psi_{0}^{0}\rangle=L|\Psi_{0}^{0}\rangle
 \end{equation}
-Using \eqref{BActionVoid} and \eqref{GainCommutationQ} we have that for all $i,j,k\in\{1,\ldots,N-1\}$
-\begin{equation}\label{Three-Relation}
-	Q_{0}^{2L}B_{k}^{2L-1}Q_{0}^{2L}B_{j}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle=B_{i}^{2L-1}B_{j}^{2L-1}B_{k}^{2L-1}\prod_{j=}^{3}\left(Q_{0}^{2L}-2j(D_{11}^{2L}+D_{NN}^{2L})+4j(j-1)\right)|\Psi_{0}^{0}\rangle
+Using \eqref{BActionVoid} and \eqref{GainCommutationQ} we have that for all $i,j\in\{1,\ldots,N-1\}$
+\begin{equation}\label{Two-Relation}
+	Q_{0}^{2L}B_{j}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle=B_{i}^{2L-1}B_{j}^{2L-1}\prod_{j=}^{2}\left(Q_{0}^{2L}-2j(D_{11}^{2L}+D_{NN}^{2L})+4j(j-1)\right)|\Psi_{0}^{0}\rangle
 \end{equation}
-Observe that \eqref{Three-Relation} also implies that 
+Indeed, consider \eqref{ExQ0B-charges} then we can write 
+\begin{align}
+	&Q_{0}^{2L}B_{j}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle=\left\{B_{j}^{2L-1}\left(Q_{0}^{2L}-2(D_{j,j}^{2L}+D_{N,N}^{2L})\right)-2\sum_{\ell=1\,\ell\neq j}^{N-1}B_{\ell}^{2L-1}D_{\ell,j}^{2L}\right\}\nonumber\\&\left\{B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})\right)-2\sum_{\ell=1\,\ell\neq i}^{N-1}B_{\ell}^{2L-1}D_{\ell,i}^{2L}\right\}|\Psi_{0}^{0}\rangle
+\end{align}
+Using \eqref{Dij-ref}, and \eqref{Dii-ref} we obtain 
+\begin{align}
+	&Q_{0}^{2L}B_{j}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle=\left\{B_{j}^{2L-1}\left(Q_{0}^{2L}-2(D_{j,j}^{2L}+D_{N,N}^{2L})\right)-2\sum_{\ell=1\,\ell\neq j}^{N-1}B_{\ell}^{2L-1}D_{\ell,j}^{2L}\right\}\nonumber\\&\left\{B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)\right\}|\Psi_{0}^{0}\rangle
+\end{align}
+Now two different cases are possible:
+\begin{itemize}
+	\item \textit{Case 1}: $i=j$ therefore using \eqref{DijBk-different} we obtain 
+	\begin{align}
+		&Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle=\left\{B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})\right)-2\sum_{\ell=1\,\ell\neq i}^{N-1}B_{\ell}^{2L-1}D_{\ell,j}^{2L}\right\}\nonumber\\&B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)|\Psi_{0}^{0}\rangle
+		\\=&
+		B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})\right)B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)|\Psi_{0}^{0}\rangle
+	\end{align}
+Using again 
+\end{itemize}
+Observe that \eqref{Two-Relation} also implies that 
 \begin{equation}
 	Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{j}^{2L-1}|\Psi_{0}^{0}\rangle=Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle
 \end{equation}
