@@ -2207,7 +2207,7 @@ D_{i,j}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}D_{i,j}^{2L}+B_{j}^{2L-1}\left(D_{i,i}^{2L
 \end{split}
 \end{equation}
 While, for $i,j\in\{1,\ldots,N-1\}$ such that $i\neq j$
-\begin{equation}
+\begin{equation}\label{Commuting-Charges}
 \left[D_{j,j}^{2L},B_{i}^{2L-1}\right]=0\qquad \left[B_{i}^{2L-1},B_{j}^{2L-1}\right]=0\qquad \left[B_{i}^{2L-1},D_{j,i}^{2L}\right]=0%\qquad \left[D_{12}^{2L},B_{2}^{2L-1}\right]=0\qquad \left[D_{11}^{2L},B_{2}^{2L-1}\right]=0
 \end{equation}
 {\color{blue}Using them we also have 
@@ -2452,7 +2452,7 @@ Indeed,
 \begin{align}
 D_{i,i}^{2L}|\Psi_{0}^{0}\rangle=	(2e_{ii}^{tot}-I)|\Psi_{0}^{0}\rangle=-|\Psi_{0}^{0}\rangle
 \end{align}
-\begin{equation}\label{GainCommutationQ}
+\begin{equation}\label{Diagonal-Q-void}
 	Q_{0}^{2L}|\Psi_{0}^{0}\rangle=(2L+N)(1+L)|\Psi_{0}^{0}\rangle
 \end{equation}
 Therefore, $Q_{0}^{2L}$ acts diagonally on the state $|\Psi_{0}^{0}\rangle$. Indeed,
@@ -2486,31 +2486,73 @@ Now two different cases are possible:
 		\\=&
 		B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})\right)B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)|\Psi_{0}^{0}\rangle
 	\end{align}
-Using again 
+Using \eqref{ExQ0B-charges}, \eqref{ExDiB-charges} and \eqref{ExDNB-charges} we obtain 
+\begin{align}
+	&Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle\nonumber\\&=B_{i}^{2L-1}\left\{B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})-2(D_{i,i}^{2L}+D_{N,N}^{2L}+2(D_{i,i}^{2L+1}-D_{N,N}^{2L+1}))\right)-2\sum_{\ell=0\;\ell\neq i}B_{\ell}^{2L-1}D_{\ell,i}\right\}\nonumber\\&
+	\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)|\Psi_{0}^{0}\rangle
+\end{align}
+By using \eqref{Dij-ref}, \eqref{Dii-ref} and observing that 
+\begin{equation}\label{D2Lp1}
+	D_{i,i}^{2L+1}-D_{N,N}^{2L+1}=-2I
+\end{equation}
+we have 
+\begin{align}
+	&Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle\nonumber=\left(B_{i}^{2L-1}\right)^{2}\left(Q_{0}^{2L}-4(D_{1,1}^{2L}+D_{N,N}^{2L})+8\right)\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)|\Psi_{0}^{0}\rangle
+\end{align}
+that can be rewritten as \eqref{Two-Relation}.
+\item \textit{Case 2}: $i\neq j$. Using \eqref{GoodRelation} we have
+\begin{align}
+	&Q_{0}^{2L}B_{j}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle=\left\{B_{j}^{2L-1}\left(Q_{0}^{2L}-2(D_{j,j}^{2L}+D_{N,N}^{2L})\right)+4B_{j}^{2L-1}\right\}\nonumber\\&B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)|\Psi_{0}^{0}\rangle
+\end{align} 
+thus we have 
+\begin{align}
+ &Q_{0}^{2L}B_{j}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle=B_{j}^{2L-1}\left(Q_{0}^{2L}-2(D_{j,j}^{2L}+D_{N,N}^{2L})+4\right)\nonumber\\&B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)|\Psi_{0}^{0}\rangle
+\end{align}
+Using \eqref{ExQ0B-charges}, \eqref{ExDiB-charges}, \eqref{ExDNB-charges}, \eqref{Commuting-Charges} and \eqref{D2Lp1} we obtain 
+\begin{align}
+	&Q_{0}^{2L}B_{j}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle\nonumber\\=&B_{j}^{2L-1}B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})+4-2D_{j,j}^{2L}-2(D_{N,N}^{2L}+D_{i,i}^{2L+1}-D_{N,N}^{2L+1})\right)\nonumber\\&\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)|\Psi_{0}^{0}\rangle\nonumber
+	\\=&
+	B_{j}^{2L-1}B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{j,j}^{2L}+2D_{N,N}^{2L}+8)\right)\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)|\Psi_{0}^{0}\rangle\nonumber
+	\\=&
+	B_{j}^{2L-1}B_{i}^{2L-1}\left(Q_{0}^{2L}-4(D_{1,1}^{2L}+D_{N,N}^{2L}+8)\right)\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)|\Psi_{0}^{0}\rangle
+\end{align}
+that can be written as \eqref{Two-Relation}. 
 \end{itemize}
 Observe that \eqref{Two-Relation} also implies that 
-\begin{equation}
+\begin{equation}\label{Commutativity-Gained}
 	Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{j}^{2L-1}|\Psi_{0}^{0}\rangle=Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle
 \end{equation}
-i.e. $Q_{0}^{2L}B_{i}^{2L-1}$ and $Q_{0}^{2L}B_{j}^{2L-1}$ do commute. This simplify formula \eqref{W-charges-Bad} as
+i.e. $Q_{0}^{2L}B_{i}^{2L-1}$ and $Q_{0}^{2L}B_{j}^{2L-1}$ do commute.
+For fixed $k_{1},\ldots,k_{N-1}\in \mathbb{N}_{0}$, \eqref{Two-Relation} and \eqref{Commutativity-Gained} allow to write 
+\begin{equation}\label{k-times-QB}
+	\begin{split}
+		\prod_{\ell=1}^{N-1}\left(Q_{0}^{2L}B_{\ell}^{2L-1}\right)^{k_{\ell}}|\Psi_{0}^{0}\rangle=\prod_{\ell=1}^{N-1}\left(B_{\ell}^{2L-1}\right)^{k_{\ell}}\prod_{j=1}^{k_{1}+\ldots+k_{N-1}}\left(Q_{0}^{2L}-2j(D_{11}^{2L}+D_{NN}^{2L})+4j(j-1)\right)|\Psi_{0}^{0}\rangle
+	\end{split}
+\end{equation}
+Therefore, using \eqref{veryUsefulSeries}, we obtain
+\begin{equation}\label{k-times-LQB}
+	\begin{split}
+		&\prod_{\ell=1}^{N-1}\left((\Lambda_{0}+\epsilon-Q_{0}^{2L})^{-1}B_{\ell}^{2L-1}\right)^{k_{\ell}}|\Psi_{0}^{0}\rangle\\=&\prod_{\ell=1}^{N-1}\left(B_{\ell}^{2L-1}\right)^{k_{\ell}}\prod_{j=1}^{k_{1}+\ldots+k_{N-1}}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}+2j(D_{11}^{2L}+D_{NN}^{2L})-4j(j-1)\right)^{-1}|\Psi_{0}^{0}\rangle
+	\end{split}
+\end{equation}
+ %This simplify formula \eqref{W-charges-Bad} as
+%\begin{equation}
+%	\begin{split}
+%	W|\Psi_{0}^{0}\rangle=&\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}}^{L}\mathbbm{1}_{\{k_{1}+\ldots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots \Delta_{N-1}^{k_{N-1}}\binom{k_{1}+\ldots+k_{N-1}}{k_{1},\ldots,k_{N-1}}\\&\left\{\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{1}\right\}^{k_{1}}\cdots\;\left\{\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{N-1}\right\}^{k_{N-1}}|\Psi_{0}^{0}\rangle
+%\end{split}
+%\end{equation}
+%where 
+%\begin{equation}
+	%\binom{k_{1}+\ldots+k_{N-1}}{k_{1},\ldots,k_{N-1}}=\frac{	(k_{1}+\ldots+k_{N-1})!}{k_{1}!\cdots k_{N-1}}
+%\end{equation}
+Therefore, we find 
 \begin{equation}
 	\begin{split}
-	W|\Psi_{0}^{0}\rangle=&\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}}^{L}\mathbbm{1}_{\{k_{1}+\ldots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots \Delta_{N-1}^{k_{N-1}}\binom{k_{1}+\ldots+k_{N-1}}{k_{1},\ldots,k_{N-1}}\\&\left\{\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{1}\right\}^{k_{1}}\cdots\;\left\{\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{N-1}\right\}^{k_{N-1}}|\Psi_{0}^{0}\rangle
-\end{split}
-\end{equation}
-where 
-\begin{equation}
-	\binom{k_{1}+\ldots+k_{N-1}}{k_{1},\ldots,k_{N-1}}=\frac{	(k_{1}+\ldots+k_{N-1})!}{k_{1}!\cdots k_{N-1}}
-\end{equation}
-Therefore, we can generalize \eqref{Three-Relation} and find 
-\begin{equation}
-	\begin{split}
-		W|\Psi_{0}^{0}\rangle =&\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}}^{L}\mathbbm{1}_{\{k_{1}+\ldots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots \Delta_{N-1}^{k_{N-1}}\frac{	(k_{1}+\ldots+k_{N-1})!}{k_{1}!\cdots k_{N-1}}\\&
+		W|\Psi_{0}^{0}\rangle =&\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}}^{L}\mathbbm{1}_{\{k_{1}+\ldots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots \Delta_{N-1}^{k_{N-1}}\frac{	(k_{1}+\ldots+k_{N-1})!}{k_{1}!\cdots k_{N-1}!}\\&
 		\left(B_{1}^{2L-1}\right)^{k_{1}}\cdots\left( B_{N-1}^{2L-1}\right)^{k_{N-1}}\prod_{j=1}^{k_{1}+\ldots k_{N-1}}\left\{(\Lambda_{0}+\epsilon)-Q_{0}^{2L}+2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle|_{\epsilon=0}
 	\end{split}
 \end{equation}
-
-This can be written as
+Using \eqref{veryUsefulSeries} and \eqref{Diagonal-Q-void} we obtain 
 \begin{equation}
 	\begin{split}
 		|\Psi^{''}\rangle=&	\;W|\Psi_{0}^{0}\rangle =\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}}^{L}\mathbbm{1}_{\{k_{1}+\ldots+k_{N-1}\leq L\}}\frac{\Delta_{1}^{k_{1}}\cdots \Delta_{N-1}^{k_{N-1}}}{k_{1}!\cdots k_{N-1}!}\\&
