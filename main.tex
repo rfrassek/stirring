@@ -2466,7 +2466,7 @@ The proof is trivial from \eqref{Dij-Charge}.
 	\\&=
 	-4\sum_{x=1}^{L}2(L-x+1)|N,\ldots,\tau_{x}=j,\ldots,N\rangle\nonumber
 	\\&=
-	-2B_{i}|\Psi_{0}^{0}\rangle
+	-2B_{j}|\Psi_{0}^{0}\rangle
 \end{align}
 \begin{flushright}
 	$\square$
@@ -2563,7 +2563,7 @@ Observe that \eqref{Two-Relation} also implies that
 \begin{equation}\label{Commutativity-Gained}
 	Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{j}^{2L-1}|\Psi_{0}^{0}\rangle=Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle
 \end{equation}
-i.e. $Q_{0}^{2L}B_{i}^{2L-1}$ and $Q_{0}^{2L}B_{j}^{2L-1}$ do commute.
+i.e. $Q_{0}^{2L}B_{i}^{2L-1}$ and $Q_{0}^{2L}B_{j}^{2L-1}$ do commute when acting on $|\Psi_{0}^{0}\rangle$.
 \paragraph{3. Generalization for arbitrary number of indices} For fixed $k_{1},\ldots,k_{N-1}\in \mathbb{N}_{0}$, \eqref{Two-Relation} and \eqref{Commutativity-Gained} allow to write 
 \begin{equation}\label{k-times-QB}
 	\begin{split}
@@ -2601,8 +2601,8 @@ As a consequence of \eqref{veryUsefulSeries} and of \eqref{Two-Relation}, it is 
 \paragraph{4. Final formula.} Using \eqref{Commutativity-Gained} and \eqref{k-times-QB} the symmetrization operator written in \eqref{W-charges-Bad} acting on the vacuum state $|\Psi_{0}^{0}\rangle$ reads, for all $k_{1},\ldots,k_{N-1}\in\mathbb{N}_{0}$
 \begin{align}
 	&SYM\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
-	|\Psi_{0}^{0}\rangle
-	\\=&\frac{	(k_{1}+\ldots+k_{N-1})!}{k_{1}!\cdots k_{N-1}!}	\prod_{\ell=1}^{N-1}\left(Q_{0}^{2L}B_{\ell}^{2L-1}\right)^{k_{\ell}}|\Psi_{0}^{0}\rangle
+	|\Psi_{0}^{0}\rangle\nonumber
+	\\=&\frac{	(k_{1}+\ldots+k_{N-1})!}{k_{1}!\cdots k_{N-1}!}	\prod_{\ell=1}^{N-1}\left(Q_{0}^{2L}B_{\ell}^{2L-1}\right)^{k_{\ell}}|\Psi_{0}^{0}\rangle\nonumber
 	\\=&\frac{	(k_{1}+\ldots+k_{N-1})!}{k_{1}!\cdots k_{N-1}!}\prod_{\ell=1}^{N-1}\left(B_{\ell}^{2L-1}\right)^{k_{\ell}}\prod_{j=1}^{k_{1}+\ldots+k_{N-1}}\left(Q_{0}^{2L}-2j(D_{11}^{2L}+D_{NN}^{2L})+4j(j-1)\right)|\Psi_{0}^{0}\rangle
 \end{align}
 Therefore, the action of the matrix $W$ on $|\Psi_{0}^{0}\rangle$ is given by
@@ -2619,22 +2619,22 @@ Using \eqref{veryUsefulSeries} and observing that  we have that $2j(D_{1,1}^{2L}
 \end{align}
 We observe that
 \begin{equation}
-	\lim_{\epsilon\to 0}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}\Psi_{0}^{0}=|\Psi_{0}^{0}\rangle
+	\lim_{\epsilon\to 0}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}|\Psi_{0}^{0}\rangle=|\Psi_{0}^{0}\rangle
 \end{equation}
 therefore, re-summing the series we obtain
 \begin{align}
-	&\lim_{\epsilon\to 0}\left\{(\Lambda_{0}+\epsilon)-Q_{0}^{2L}+2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle|_{\epsilon=0}
+	&\lim_{\epsilon\to 0}\left\{(\Lambda_{0}+\epsilon)-Q_{0}^{2L}+2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle|_{\epsilon=0}\nonumber
 	\\=&
-	\lim_{\epsilon\to 0}\sum_{t=0}^{\infty}\left\{Q_{0}^{2L}-2j(D_{1,1}^{2L}+D_{N,N}^{2L})+4j(j-1)\right\}^{-t}\left(\Lambda_{0}+\epsilon\right)^{-t-1}\Psi_{0}^{0}
+	\lim_{\epsilon\to 0}\sum_{t=0}^{\infty}\left\{Q_{0}^{2L}-2j(D_{1,1}^{2L}+D_{N,N}^{2L})+4j(j-1)\right\}^{-t}\left(\Lambda_{0}+\epsilon\right)^{-t-1}|\Psi_{0}^{0}\rangle\nonumber
 	\\=&
-	\lim_{\epsilon\to 0}\left\{\Lambda_{0}+\epsilon-\Lambda_{0}+2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle
+	\lim_{\epsilon\to 0}\left\{\Lambda_{0}+\epsilon-\Lambda_{0}+2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle\nonumber
 	\\=&
 	\left\{2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle
 \end{align}
 Using \eqref{Dii-ref} we have 
 \begin{align}
-	&\left\{2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle
-	\\=&\left\{2j(2L+2)-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle
+	&\left\{2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle\nonumber
+	\\=&\left\{2j(2L+2)-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle\nonumber
 	\\=&
 	\frac{1}{4j}\left\{L-j+2\right\}^{-1}|\Psi_{0}^{0}\rangle
 \end{align}
