@@ -2563,7 +2563,47 @@ Observe that \eqref{Two-Relation} also implies that
 \begin{equation}\label{Commutativity-Gained}
 	Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{j}^{2L-1}|\Psi_{0}^{0}\rangle=Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle
 \end{equation}
-i.e. $Q_{0}^{2L}B_{i}^{2L-1}$ and $Q_{0}^{2L}B_{j}^{2L-1}$ do commute when acting on $|\Psi_{0}^{0}\rangle$.
+i.e. $Q_{0}^{2L}B_{i}^{2L-1}$ and $Q_{0}^{2L}B_{j}^{2L-1}$ do commute when acting on $|\Psi_{0}^{0}\rangle$.\\
+We further observe that 
+\begin{align}\label{Two-Points-m1}
+	&\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{j}^{2L-1}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle\nonumber
+	\\=&
+	B_{i}^{2L-1}B_{j}^{2L-1}\prod_{j=1}^{2}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}+2j(D_{11}^{2L}+D_{NN}^{2L})-4j(j-1)\right)^{-1}|\Psi_{0}^{0}\rangle
+\end{align}
+Indeed, as a consequence of \eqref{veryUsefulSeries}, we have 
+\begin{align}
+	&\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{j}^{2L-1}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle\nonumber
+\\=&
+\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{j}^{2L-1}\sum_{n=0}^{\infty}\left\{\left(\Lambda_{0}+\epsilon\right)^{-1}Q_{0}^{2L}\right\}^{n}\left(\Lambda_{0}+\epsilon\right)^{-1}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle\nonumber
+\\=&
+\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{j}^{2L-1}\sum_{n=0}^{\infty}\left(\Lambda_{0}+\epsilon\right)^{-1-n}(Q_{0}^{2L})^{n}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle\nonumber
+\end{align}
+We have that, using \eqref{GoodRelation}, \eqref{Dij-ref} and \eqref{Dii-ref},
+\begin{align}
+&(Q_{0}^{2L})^{n}B_{j}^{2L-1}|\Psi_{0}^{0}\rangle=(Q_{0}^{2L})^{n-1}\left\{B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})\right)-2\sum_{k=1\,:\,k\neq i}^{N-1}B_{k}^{2L-1}D_{k,i}^{2L}\right\}|\Psi_{0}^{0}\rangle\nonumber
+\\=&
+(Q_{0}^{2L})^{n-1}B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)|\Psi_{0}^{0}\rangle\nonumber
+\\=&
+B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)^{n}|\Psi_{0}^{0}\rangle
+\end{align}
+Therefore
+\begin{align}
+&\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{j}^{2L-1}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle\nonumber
+\\=&
+\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{j}^{2L-1}B_{i}^{2L-1}\sum_{n=0}^{\infty}\left(\Lambda_{0}+\epsilon\right)^{-1-n}\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)^{n}|\Psi_{0}^{0}\rangle\nonumber
+\\=&
+\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{j}^{2L-1}B_{i}^{2L-1}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}+2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)^{-1}|\Psi_{0}^{0}\rangle\nonumber
+\\=&
+B_{j}^{2L-1}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}+2(D_{j,j}^{2L}+D_{N,N}^{2L})\right)^{-1}B_{i}^{2L-1}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}+2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)^{-1}|\Psi_{0}^{0}\rangle
+\end{align}
+Using again \eqref{veryUsefulSeries} and applying the same argument we have 
+\begin{align}
+&\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{j}^{2L-1}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle\nonumber
+\\=&
+B_{j}^{2L-1}\sum_{n=0}^{\infty}\left\{\left(\Lambda_{0}+\epsilon\right)^{-1}\left(Q_{0}^{2L}-2(D_{j,j}^{2L}+D_{N,N}^{2L})\right)\right\}^{n}\left(\Lambda_{0}+\epsilon\right)^{-1}B_{i}^{2L-1}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}+2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)^{-1}|\Psi_{0}^{0}\rangle\nonumber
+\\=&
+B_{i}^{2L-1}B_{j}^{2L-1}\prod_{j=1}^{2}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}+2j(D_{11}^{2L}+D_{NN}^{2L})-4j(j-1)\right)^{-1}|\Psi_{0}^{0}\rangle
+\end{align}
 \paragraph{3. Generalization for arbitrary number of indices} For fixed $k_{1},\ldots,k_{N-1}\in \mathbb{N}_{0}$, \eqref{Two-Relation} and \eqref{Commutativity-Gained} allow to write 
 \begin{equation}\label{k-times-QB}
 	\begin{split}
@@ -2582,7 +2622,7 @@ it is also true. This can be shown by applying repeatedly \eqref{Two-Relation}.
 \begin{flushright}
 	$\square$
 \end{flushright}
-As a consequence of \eqref{veryUsefulSeries} and of \eqref{Two-Relation}, it is easy to prove that for all  $k_{1},\ldots,k_{N-1}\in\mathbb{N}$
+As a consequence of \eqref{Two-Points-m1} we have that for all  $k_{1},\ldots,k_{N-1}\in\mathbb{N}$
 \begin{equation}\label{k-times-LQB}
 	\begin{split}
 		&\prod_{\ell=1}^{N-1}\left((\Lambda_{0}+\epsilon-Q_{0}^{2L})^{-1}B_{\ell}^{2L-1}\right)^{k_{\ell}}|\Psi_{0}^{0}\rangle\\=&\prod_{\ell=1}^{N-1}\left(B_{\ell}^{2L-1}\right)^{k_{\ell}}\prod_{j=1}^{k_{1}+\ldots+k_{N-1}}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}+2j(D_{11}^{2L}+D_{NN}^{2L})-4j(j-1)\right)^{-1}|\Psi_{0}^{0}\rangle
@@ -2615,13 +2655,9 @@ Therefore, the action of the matrix $W$ on $|\Psi_{0}^{0}\rangle$ is given by
 Using \eqref{veryUsefulSeries} and observing that  we have that $2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)$ is diagonal we have that, for all $j\in{1,\ldots,k_{1}+\ldots+k_{N-1}}$ 
 \begin{align}
 &\left\{(\Lambda_{0}+\epsilon)-Q_{0}^{2L}+2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle|_{\epsilon=0}\\=&
-\sum_{t=0}^{\infty}\left\{2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-t}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-t-1}|\Psi_{0}^{0}\rangle
+\sum_{t=0}^{\infty}\left\{Q_{0}^{2L}-2j(D_{1,1}^{2L}+D_{N,N}^{2L})+4j(j-1)\right\}^{-t}\left(\Lambda_{0}+\epsilon\right)^{-t-1}|\Psi_{0}^{0}\rangle
 \end{align}
-We observe that
-\begin{equation}
-	\lim_{\epsilon\to 0}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}|\Psi_{0}^{0}\rangle=|\Psi_{0}^{0}\rangle
-\end{equation}
-therefore, re-summing the series we obtain
+Therefore, re-summing the series we obtain
 \begin{align}
 	&\lim_{\epsilon\to 0}\left\{(\Lambda_{0}+\epsilon)-Q_{0}^{2L}+2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle|_{\epsilon=0}\nonumber
 	\\=&
