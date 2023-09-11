@@ -1708,48 +1708,41 @@ We look for a matrix $W$ such that
 \begin{equation}\label{GoalWH}
 	H^{''}W=WH_{0}
 \end{equation}
-This matrix is 
+We will prove that 
 \begin{equation}\label{W-extended}
-	W= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}+\epsilon-H\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+	W= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}+\epsilon-H^{''}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
-%We have that 
-%\begin{equation}
-%	\left[H_{0},Q^{0}_{2L}\right]=0\qquad \left[H^{''},Q_{2L}\right]=0
-%\end{equation}
-%thus it is enough to look for a matrix $W$ such that 
-%\begin{equation}\label{GoalWQ}
-%	Q^{2L}W=WQ_{2L}^{0}
-%\end{equation}
-To find a matrix $W$ such that \eqref{GoalWH} is fulfilled we use the \textit{resolvent operator} defined as
+\paragraph{Construction of matrix W}
+We aim to show that \eqref{W-extended} fulfils \eqref{GoalWH}. Consider the \textit{resolvent operator}
 \begin{equation}
-	R(z,H):=\left(zI-H\right)^{-1}
+	R(z,H^{''}):=\left(z-H^{''}\right)^{-1}
 \end{equation}
 where $z$ must be in the resolvent set, i.e. the subset of $\mathbb{C}$ such that the resolvent is well defined. 
 The above equation implies that 
 \begin{equation}
-	(z-H)R(H,z)=1
+	(z-H^{''})R(H^{''},z)=I
 \end{equation}
-In order to be well defined we must $z$ must not be an eigenvalue of $H$ (and thus of $H_{0}$). We denote by $\bm{m}=(m_{1},\ldots,m_{N})$ an $N-$dimensional vector where each $m_{i}$ means the total occupation over the chain of each species $i\in\{1,\ldots,N\}$. Therefore, we call $\Lambda_{\bm{m}}$ and $|\Psi_{\bm{m}}^{0}\rangle$ the eigenvalue and the eigenvector of $H^{0}$ that correspond to a certain $\bm{m}$. We take $z=\Lambda_{\bm{m}}+\epsilon$ 
+In order to be well defined $z$ must not be an eigenvalue of $H^{''}$. We denote by $\bm{m}=(m_{1},\ldots,m_{N})$ an $N-$dimensional vector where each $m_{i}$ means the total occupation over the chain of each species $i\in\{1,\ldots,N\}$. Therefore, we call $\Lambda_{\bm{m}}$ and $|\Psi_{\bm{m}}^{0}\rangle$ the eigenvalue and the eigenvector of $H^{0}$ that correspond to a certain $\bm{m}$. We chose $z=\Lambda_{\bm{m}}+\epsilon$ 
 \begin{equation}
-	(\Lambda_{\bm{m}}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)=1
+	(\Lambda_{\bm{m}}+\epsilon-H^{''})R(H^{''},\Lambda_{\bm{m}}+\epsilon)=1
 \end{equation}
 We multiply both sides by $|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|$
 \begin{equation}
-	(\Lambda_{\bm{m}}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+	(\Lambda_{\bm{m}}+\epsilon-H^{''})R(H^{''},\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|,
 \end{equation}
-We sum over all possible $m$ 
+we sum over all possible $\bm{m}$'s 
 \begin{equation}
-	\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\Lambda_{m}+\epsilon-H)R(H,\Lambda_{m}+\epsilon)|\Psi_{m}^{0}\rangle \langle \Psi_{m}^{0}|=\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+	\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\Lambda_{m}+\epsilon-H)R(H,\Lambda_{m}+\epsilon)|\Psi_{m}^{0}\rangle \langle \Psi_{m}^{0}|=\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|,
 \end{equation}
-We multiply both sides by $\epsilon$ 
+we multiply both sides by $\epsilon$ 
 \begin{equation}
-	\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\Lambda_{m}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{m}^{0}|=\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+	\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\Lambda_{m}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{m}^{0}|=\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|,
 \end{equation}
-We take the limit for $\epsilon\to 0$ on both sides 
+we take the limit for $\epsilon\to 0$ on both sides 
 \begin{equation}
 	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L} (\Lambda_{\bm{m}}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
-Observe that 
+Observe that, trivially,
 \begin{equation}
 	\lim_{\epsilon\to 0}\left(\Lambda_{\bm{m}}+\epsilon-H\right)=\left(\Lambda_{\bm{m}}-H\right)<\infty
 \end{equation}
@@ -1782,16 +1775,16 @@ Since $H_{0}=H_{0}^{T}$
 	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|H_{0}= H\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
 By calling 
-\begin{equation}\label{W-extended}
+\begin{equation}
 	W= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}+\epsilon-H\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
 we finally obtain 
 \begin{equation}
 	WH_{0}=HW
 \end{equation}
-Formula \eqref{W-extended} may be evaluated by perturbation theory. Moreover, since the process is integrable it is possible to express $W$ in function of the conserved charges of the system and of the eigenvectors of the equilibrium steady state, that are known in literature by Bethe ansatz. This expression, as it will be show in the following sections, allows a simpler treatment of the mapping and furthermore we can use it to retrieve the steady state of $H^{''}$ by applying $W$ to the ground state. To write formula \eqref{W-extended} using the charges of the system, we the Quantum Inverse Scattering Method (QISM). We first present the simpler case of $gl(2)$, then we try to adapt the proof the general $gl(N)$. 
+Formula \eqref{W-extended} may be evaluated by perturbation theory. Moreover, since the process is integrable it is possible to express $W$ in function of the conserved charges of the system and of the eigenvectors of the equilibrium steady state, that are known in literature by Bethe ansatz. This expression, as it will be show in the following sections, allows a simpler treatment of the mapping and furthermore we can use it to retrieve the steady state of $H^{''}$ by applying $W$ to the ground state of $H_{0}$. To write formula \eqref{W-extended} using the conserved charges of the system, we use Quantum Inverse Scattering Method (QISM). We first present the simpler case of $gl(2)$, then we adapt the proof to the general $gl(N)$. 
 \subsection{Quantum inverse scattering method}
-We can apply the \textit{quantum inverse scattering method} to this process. We introduce the quantum space as $V=V_{1}\otimes\ldots\otimes V_{j}\otimes\ldots\otimes V_{L}$ and the auxiliary space $V_{0}$. In this specific case $V_{j}=\mathbb{C}^{N}$ $\forall j=0,1,\ldots ,L$. We introduce the following $R$-matrices acting on the tensor product of spaces with indices $a,b=0,1,\ldots,L$
+ We introduce the \textit{quantum space} $V=V_{1}\otimes\ldots\otimes V_{j}\otimes\ldots\otimes V_{L}$ and the \textit{auxiliary space} $V_{0}$. In this specific case $V_{j}=\mathbb{C}^{N}$ $\forall j=0,1,\ldots ,L$. We define the following $R$-matrices acting on the tensor product of spaces with indices $a,b=0,1,\ldots,L$
 \begin{equation}\label{Rmatrix}
 	R_{ab}(x)=\frac{(P_{ab}+Ix)}{x+1}
 \end{equation}
@@ -1821,7 +1814,7 @@ and the $K$-matrices
 		0&0&0&\ldots&0&1+x
 	\end{pmatrix}
 \end{equation}
-The above matrices satisfy the following equations
+The above matrices satisfy
 \begin{itemize}
 	\item \textit{Yang-Baxter-Equation}
 	\begin{equation}
@@ -1836,11 +1829,16 @@ The above matrices satisfy the following equations
 		K_{b}(y) R_{ab}(-x-y-N) K_{a}(x)R_{ab}(y-x)=R_{ab}(y-x)K_{a}(x)R_{ab}(-x-y-N)K_{b}(y)
 	\end{equation}
 \end{itemize}
-We define the \textit{transfer matrix}
+We introduce the \textit{transfer matrix}
 \begin{equation}
 	T^{\Delta}(x)=tr_{0}\left(K_{0}(x)U_{0}(x)\right)
 \end{equation}
-where we used the double row monodromy defined as
+that satisfies
+\begin{equation}
+	\left[T^{\Delta}(x),T^{\Delta}(y)\right]=0\qquad \frac{\partial}{\partial x}\log (T^{\Delta}(0))=C_{1}H^{''}+C_{2}I
+\end{equation}
+with $C_{1},C_{2}>0$. \\
+The double row monodromy is given by
 \begin{equation}
 	U_{0}(x)=M_{0}(x)\widehat{K}(x)\widehat{M}_{0}(x)
 \end{equation}
@@ -1848,15 +1846,11 @@ where
 \begin{equation}
 	M_{0}(x)=R_{01}(x)\ldots R_{0L}(x)\qquad \widehat{M}_{0}=R_{0L}(x)\ldots R_{01}(x)
 \end{equation}
-This double row monodromy satisfies the following exchange relation
+$U_{0}(x)$ satisfies the following exchange relation
 \begin{equation}\label{RURU}
 	R_{ab}(x-y)U_{a}(x)R_{ab}(x+y)U_{b}(y)=U_{b}(y)R_{ab}(x+y)U_{a}(x)R_{ab}(x-y)
 \end{equation}
-This trasfer matrix has the following properties
-\begin{equation}
-	\left[T^{\Delta}(x),T^{\Delta}(y)\right]=0\qquad \frac{\partial}{\partial x}\log (T^{\Delta}(0))=C_{1}H^{''}+C_{2}I
-\end{equation}
-with $C_{1},C_{2}>0$. \\
+
 We write $U_{0}(x)$ in the canonical basis of $V_{0}$ and we rename the elements, each of them acting on the quantum space $V$, has follows
 \begin{comment}
 	\begin{equation}
@@ -1874,7 +1868,7 @@ We write $U_{0}(x)$ in the canonical basis of $V_{0}$ and we rename the elements
 		D_{2,1}(x)&D_{2,2}(x)&\ldots&D_{2,N-1}(x)&C_{2}(x)\\
 		\vdots&\vdots&\ddots&\vdots&\vdots\\
 		D_{N-1,1}&D_{N-1,2}&\ldots&D_{N-1,N-1}(x)&C_{N-1}\\
-		B_{1}(x)&B_{N-1}(x)&\ldots&D_{N,N-1}(x)&D_{N,N}(x)
+		B_{1}(x)&B_{2}(x)&\ldots&B_{N-1}(x)&D_{N,N}(x)
 	\end{pmatrix}
 \end{equation}
 The exchange relations for the elements of the above matrix can be found using \eqref{RURU}
@@ -1911,7 +1905,7 @@ where
 	\\&h_{3}(x,y)=\frac{2}{(x-y)(1+x+y)}
 \end{align}
 \subsection{Charges}
-Then we have
+The transfer matrix $T^{\Delta}(x)$ reads
 \begin{equation}
 	\begin{split}
 		T^{\Delta}(x)=tr_{0}&\left(\begin{pmatrix}
@@ -1928,33 +1922,30 @@ Then we have
 			\vdots&\vdots&\ddots&\vdots&\vdots\\
 			D_{N-1,1}&D_{N-1,2}&\ldots&D_{N-1,N-1}(x)&C_{N-1}\\
 			B_{1}(x)&B_{2}(x)&\ldots&B_{N-1}(x)&D_{N,N}(x)
-		\end{pmatrix}\right)
+		\end{pmatrix}\right)\\
+	=&
+	(N+x)D_{N,N}(x)-\sum_{i=1}^{N-1}xD_{ii}(x)+\sum_{i=1}^{N-1}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)
 	\end{split}
 \end{equation}
-Therefore we can write the polynomial expansion
+therefore, it is a polynomial in $x$ with exponents from $0$ to $2L+2$ 
 \begin{equation}
 	\begin{split}
-		T^{\Delta}(x)=&
-		(N+x)D_{N,N}(x)-\sum_{i=1}^{N-1}xD_{ii}(x)+\sum_{i=1}^{N-1}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)=
+		T^{\Delta}(x)=
 		\sum_{k=0}^{2L+2}Q_{k}x^{k}
 	\end{split}
 \end{equation}
-We call these $Q_{k}$, with $k=0,\ldots,2L+2$, the \textit{charges}. \\
-We can also introduce 
+where, for all $k\in\{0,\ldots,2L+2\}$, we call these $Q_{k}$ the \textit{conserved charges} of the system. We also introduce 
 \begin{equation}
 	T_{0}(x)=(N+x)D_{N,N}(x)-\sum_{i=1}^{N-1}xD_{ii}(x)\quad\text{such that}\quad T_{\Delta}(x)=T_{0}(x)+\sum_{i=2}^{N}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)
-\end{equation}For large $x$, we compute them by expanding $U_{0}^{d}(x)$ in a polynomial: 
+\end{equation}
+Arguing similarly we write the elements of $U_{0}(x)$ in a polynomial expansion as 
 \begin{equation}
 	D_{N,N}(x)=\sum_{a=0}^{2L+1}D_{N,N}^{a}x^{a}\quad D_{ii}(x)=\sum_{a=0}^{2L+1}D_{ii}^{a}x^{a}\quad B_{i}(x)=\sum_{a=0}^{2L-1}B_{i}^{a}x^{a}\quad D_{i,j}(x)=\sum_{a=0}^{2L}D_{i,j}^{a}x^{a}
 \end{equation}
-In the following it will be clear that only the first three coefficients of the diagonal elements and only the first coefficient of the non diagonal element are needed. 
+ Only the first three coefficients of the diagonal elements and the first coefficient of the non diagonal elements do survive when $x\to \infty$, therefore we only compute them. We obtain:
 \begin{itemize}
-	\item For the element $D_{N,N}(x)$: 
-%The coefficients that we need are the following:
-%\begin{equation}
-%	D_{N,N}(x)=D_{N,N}^{2L+1}x^{2L+1}+D_{N,N}^{2L}x^{2L+1}+D_{N,N}^{2L-1}x^{2L-1}+\ldots
-%\end{equation}
-where 
+	\item For $D_{N,N}(x)$: 
+
 \begin{equation}
 	D_{N,N}^{2L+1}=I^{tot}
 \end{equation}
@@ -1964,32 +1955,9 @@ where
 \begin{equation}
 	D_{N,N}^{2L-1}	=2e_{NN}^{tot}\left(e_{NN}^{tot}+I^{tot}\right)-L
 \end{equation}
-%\begin{equation}
-%	\begin{split}
-	%	D_{N,N}^{2L-1}=3e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2\sum_{a\neq b}e_{NN}^{[a]}e_{NN}^{[b]}
-%	\end{split}
-%\end{equation}
-\begin{comment}
-{\color{blue}ok}
 
-We observe that $\forall i,j=1,\ldots,N-1$
-\begin{equation}
-	\sum_{a\neq b}e_{ij}^{[a]}e_{ji}^{[b]}=e_{ij}^{tot}e_{ji}^{tot}-e_{ii}^{tot}
-\end{equation}
-then 
-\begin{equation}
-	D_{N,N}^{2L-1}=e_{NN}^{tot}\left(2e_{NN}^{tot}+I^{tot}\right)-\sum_{j=1}^{N}e_{jj}^{tot}%=2e_{NN}^{tot}\left(e_{NN}^{tot}+I^{tot}\right)-L
-\end{equation}
-Then
-
-{\color{blue}ok?}where we used $
-\sum_{i=1}^Ne_{ii}^{tot}=L$. 
-\end{comment}
 \item For $D_{i,i}(x)$ with arbitrary $ i\in\{1,\ldots,N-1\}$ 
-%\begin{equation}
-%	D_{ii}(x)=D_{ii}^{2L+1}x^{2L+1}+D_{ii}^{2L}x^{2L}+D_{ii}^{2L-1}x^{2L-1}+\ldots
-%\end{equation}
-%where the coefficients
+
 \begin{equation}\label{a2lp}
 	D_{ii}^{2L+1}=-I^{tot}
 \end{equation}\begin{equation}\label{Dii-charge}
@@ -1998,107 +1966,19 @@ Then
 \begin{equation}
 	D_{ii}^{2L-1}=2Ne_{ii}^{tot}+ 2e_{NN}^{tot}-L -2\sum_{j=1}^{N-1}e_{ij}^{tot}e_{ji}^{tot}
 \end{equation}
-%\begin{equation}\label{a2lm1}
-%	\begin{split}
-	%	D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{a\neq b}e_{ii}^{[a]}e_{ii}^{[b]}-2\sum_{a\neq b}\sum_{j=1\,:\,j\neq i}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\
-	%	&=e_{11}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=1}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\
-	%	%&=e_{11}^{tot}-\sum_{j=2}^{N}e_{jj}^{tot}+2e_{ii}^{tot}\\
-		%&=2e_{11}^{tot}+2e_{ii}^{tot}-C_1
-%		&=e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+2e_{ii}^{tot}-2\sum_{a\neq b}\sum_{j=1}^{N-1}e_{ij}^{[a]}e_{ji}^{[b]}\\ 
-%	\end{split}
-%\end{equation}
 
-%We rewrite
-%\begin{equation}
-%	\begin{split}
-	%	D_{ii}^{2L-1}&=2e_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{j=1}^{N%-1}e_{ij}^{tot}e_{ji}^{tot}+2(N-1)e_{ii}^{tot}
-%	\end{split}
-%\end{equation}
-%then
-%\begin{equation}
-%	\begin{split}
-%		D_{ii}^{2L-1}=	2Ne_{ii}^{tot}+\left(e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}\right)-2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}%=2Ne_{ii}^{tot}+ 2e_{NN}^{tot}-L -2\sum_{j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}
-%	\end{split}
-%\end{equation}
-
-
-%blue} In case of a chain $L=2$ and $N=3$ and choosing $i=2$ this reads as 
-%\begin{equation*}
-%	D_{22}^{2L-1}=6e_{22}^{tot}+e_{11}^{tot}-e_{22}^{tot}-e_{33}^{tot}-2e_{22}^{tot}e_{22}^{tot}-2e_{23}^{tot}e_{32}^{tot}
-%\end{equation*}
-%where
-%\begin{equation*}
-%	e_{ab}^{tot}=e_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes e_{ab}\qquad \forall a,b\in \{1,2,3\}
-%\end{equation*}
-%This gives exactly
-%\begin{equation*}
-%	D_{22}^{2L-1}=\left(
-%	\begin{array}{ccccccccc}
-%		2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-%		0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 0 & 0 & 0 & 0 & -2 & 0 \\
-%		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 \\
-%		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -2 \\
-%	\end{array}
-%	\right)
-%\end{equation*}
-%}
-%\textbf{Observation}: it seems to me that, although not diagonal, the $D_{ii}^{2L-1}$ does not chaing the exitation of the chain since we have $e_{ij}^{tot}e_{ji}^{tot}$!\\
-%The following \textit{lower diagonal} elements of $U_{0}(x)$, $\forall i=2,\ldots,L$ and for $j=1$
-%\begin{equation}
-%	C_{i}(x)=C_{i}^{2L-1}x^{2L-1}+\ldots
-%\end{equation}
-%where the coefficient is
-%\begin{equation}\label{c}
-%	C_{i}^{2L-1}=2e_{1i}^{tot}+2\sum_{a< b}\left(e_{1i}^{[a]}e_{11}^{[b]}-e_{1i}^{[a]}e_{ii}^{[b]}-\sum_{a=2\,:\,k\neq j}^{N}e_{1a}^{[a]}e_{ai}^{[b]}\right)
-%\end{equation}
 \item For $B_{j}(x)$  $\forall j=1,\ldots,N-1$ 
 \begin{equation}\label{B-charge}
 		B_{j}^{2L-1}=	2e_{jN}^{tot}e_{NN}^{tot}-2\sum_{a,b=1\,:\, a<b}^{L}\,\sum_{k=1}^{N}e_{kN}^{[a]} e_{jk}^{[b]}
 \end{equation}
-\begin{comment}
-\begin{equation}
-B_{j}(x)=B_{j}^{2L-1}x^{2L-1}+\ldots
-\end{equation}
-where the coefficient is 
-\begin{equation}\label{b}
-\begin{split}
-B_{j}^{2L-1}&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-e_{j1}^{[a]}e_{jj}^{[b]}-\sum_{k=2\,:\,k\neq j}^{N}e_{k1}^{[a]}e_{jk}^{[b]}\right)\\
-&=2e_{j1}^{tot}+2\sum_{a< b}\left(e_{j1}^{[a]}e_{11}^{[b]}-\sum_{k=2}^{N}e_{k1}^{[a]}e_{jk}^{[b]}\right)
-\end{split}
-\end{equation}
-then
-\begin{equation}
-\begin{split}
-B_{j}^{2L-1}=2e_{j1}^{tot}+
-2\sum_{a,b=1\,:\, a<b}^{L}\left(e_{j1}^{[a]}e_{11}^{[b]}\right)-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=2}^{N}\left( e_{jk}^{[a]}e_{k1}^{[b]}\right)
-\end{split}
-\end{equation}
-\begin{equation}
-\begin{split}
-B_{j}^{2L-1}&=
-2\sum_{a,b=1}^{L}\left(e_{j1}^{[a]}e_{11}^{[b]}\right)-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N}\left( e_{jk}^{[a]}e_{k1}^{[b]}\right)\\
-%	&=
-%	2e_{j1}^{tot}e_{11}^{tot}-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N} e_{jk}^{[a]}e_{k1}^{[b]}
-\end{split}
-\end{equation}
-Thus
-\begin{equation}
-\boxed{	B_{j}^{2L-1}=	2e_{j1}^{tot}e_{11}^{tot}-2\sum_{a,b=1\,:\, a>b}^{L}\,\sum_{k=1}^{N} e_{jk}^{[a]}e_{k1}^{[b]}}
-\end{equation}
-\end{comment}
+
 \item For $D_{i,j}(x)$ with $i,j=2,\ldots,N$ such that $i\neq j$
 \begin{equation}\label{Dij-Charge}
 D_{i,j}^{2L}=-2e_{ji}^{tot}
 \end{equation}
 \end{itemize}
-\textbf{Remark}: it is easy to see that, when restricted to the case of 2 species,  \eqref{a2lp},\eqref{a2l},\eqref{a2lm1} correspond to the one compute in \cite{frassek2020eigenstates}. \\ \\
-The interesting charges (we only look for the first non trivial one) take the following form  
-
+\textbf{Remark}: it is easy to see that, when restricted to the case of 2 species,  we obtain equations (2.24)-(2.30) of \cite{frassek2020eigenstates}. \\ \\
+Using these polynomial expansions we write the first three charges
 
 
 \begin{align}
@@ -2107,7 +1987,7 @@ Q_{2L+1}&=ND_{N,N}^{2L+1}+A^{2L}-\sum_{i=1}^{N-1}D_{ii}^{2L}=N+2L-1\\
 Q_{2L\phantom{+}}&=ND_{N,N}^{2L}+D_{N,N}^{2L-1}-\sum_{i=1}^{N-1}D_{ii}^{2L-1}+\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
 \end{align}
 The charges $Q_{2L+2}$ and $Q_{2L+1}$ are proportional to the identity matrix, while $Q_{2L}$ contains non diagonal matrices and the boundary parameters $\alpha_{i},\beta_{i}$ $\forall i=2,\ldots,N$.\\
-It is easy to show that 
+By construction it follows that 
 \begin{equation}
 \left[Q_{2L},H^{''}\right]=Q_{2L}H^{''}-H^{''}Q_{2L}=0
 \end{equation}
@@ -2116,23 +1996,13 @@ We introduce the following:
 \begin{equation}
 Q_{2L}^{0}:=ND_{N,N}^{2L}+D_{N,N}^{2L-1}-\sum_{i=1}^{N-1}D_{ii}^{2L-1}
 \end{equation}
-that is 
-%\begin{equation}
-%\begin{split}
-%Q_{2L}^{0}&=N(I^{tot}+e_{NN}^{tot})+e_{NN}^{tot}(2e_{NN}^{tot}+I^{tot})-\sum_{j=1}^{N-1}e_{jj}^{tot}-2N\sum_{j=1}^{N-1}e_{jj}^{tot}+\sum_{k=1}^{N-1}\left\{e_{NN}^{tot}-\sum_{j=1}^{N-1}e_{jj}^{tot}+\sum_{j=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}\right\}
-%\end{split}
-%\end{equation}
+that is, using the coefficients previously computed, 
 \begin{equation}\label{Q0Exp}
 \begin{split}
 Q_{2L}^{0}=(N-NL-2L)I^{tot}+2(N+2)e_{NN}^{tot}+2e_{NN}^{tot}e_{NN}^{tot}+2\sum_{j,k=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}
 \end{split}
 \end{equation}
-%\begin{equation}	
-%\begin{split}
-%Q_{2L}^{0}&=NI^{tot}+2e_{11}^{tot}(e_{11}^{tot}+I^{tot})-(N+2)\sum_{j=2}^{N}e_{jj}^{tot}+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
-%&=N+2e_{11}^{tot}(e_{11}^{tot}+1)+(N+2)(e_{11}^{tot}-L)+2\sum_{i,j=2}^{N}e_{ij}^{tot}e_{ji}^{tot}\\
-%\end{split}
-%\end{equation} 
+
 We also introduce 
 \begin{equation}\label{Q-nonDiag}
 \mathcal{Q}_{2L}=\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}=\sum_{i=1}^{N-1}2\Delta_{i}B_{i}^{2L-1}
@@ -2145,11 +2015,11 @@ Q_{2L}=Q_{2L}^{0}+\mathcal{Q}_{2L}
 Observe that $Q_{2L}$ and $Q_{2L}^{0}$ are isospectral. \\
 %  It has the property that commute with the equilibrium Hamiltonian. 
 
-Consider the matrix $Q_{0}^{2L}$ defined in \eqref{Q0Exp}. All terms are diagonal except the last one. However, this last non-diagonal term acts diagonally on the states. Indeed, can be identified with the second Casimir of the $gl(N-1)$ subalgebra. We denote it by $\hat{C}_{2}$ and it reads
+Consider the matrix $Q_{0}^{2L}$ defined in \eqref{Q0Exp}. All terms are diagonal except the last one. However, this last non-diagonal term acts diagonally on the states. Indeed, can be identified with the second Casimir of the $gl(N-1)$ subalgebra. We denote it by $\hat{C}_{2}^{N-1}$ and it reads
 \begin{equation}
 \hat C_2^{N-1}= \sum_{i,j=1}^{N-1}e_{ij}^{tot}e_{ji}^{tot}
 \end{equation} 
-We denote its eigenvector by $C_{2}^{N-1}$. On the Bethe states (and on the irrep decomposition of the spin chain) it acts diagonally with eigenvalues $C_{2}^{N-1}$ given in terms of shifted weights, i.e. 
+We denote its eigenvector by $C_{2}^{N-1}$. On the Bethe states (and on the decomposition into irreducible representation of the spin chain) it acts diagonally with eigenvalues $C_{2}^{N-1}$ given in terms of shifted weights, i.e. 
 \begin{equation}
 C_2^{N-1}=\sum_{j=1}^{N-1}\ell_j(\ell_j -N+2)+\frac{1}{6}(N-1)(N-2)(N-3)
 \end{equation} 
@@ -2338,7 +2208,7 @@ Finally, using again the property of $e_{11}^{tot}$ and $e_{22}^{tot}$ and using
 This gives an explicit formula in term of the charge $B_{1}^{2L-1}$ of the matrix $W$. We stress the fact that these nice formula comes from the simple commutation relations between charges. Moreover, with such a formula it has been proved in \cite{frassek2020eigenstates} that the steady state $|\Psi^{''}\rangle$ can be found by acting on the vacum. 
 \subsection{The gl(N) case}
 Following the result in the simpler $gl(2)$ case, we aim to generalize it to higher rank chains ($N>2$). Repeating the computations we find that 
-\begin{equation}\label{W-extended}
+\begin{equation}
 	W= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}+\epsilon-H\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
 Using the fact that $\left[H^{'},Q^{2L}\right]=0$ we can determine the matrix $W$ in function of the first non-trivial conserved charge $Q^{2L}$ as
