@@ -2684,7 +2684,7 @@ where
 and where $D(\bm{n},\bm{\xi})$ is the duality function defined in \eqref{dualityFunctionChain}. Here, we denote by $|\hat{\xi}_{a}|=\sum_{x=1}^{L}\hat{\xi}_{a}^{x}$ and by $i_{a}$ the number of dual particles of species $a\in\{1,\ldots,N-1\}$ absorbed at left, thus we denote by $|\hat{\xi}_{a}|-i_{a}$ the number of particles of the same type absorbed at right.\\
 The duality function \eqref{dualityFunctionChain} computed in the dual configurations $\bm{\hat{\xi}}$ is given by 
 \begin{equation}
-	D(\bm{n},\bm{\hat{\xi}})= \frac{\prod_{x=1}^{m}n_{s_{a}}^{y_{x}}}{(\nu-m+1)}
+	D(\bm{n},\bm{\hat{\xi}})= \frac{\prod_{x=1}^{m}n_{s_{x}}^{y_{x}}}{(\nu-m+1)}
 \end{equation}
 Therefore, up to a constant, $\mathbb{E}_{\mu^{\text{stat}}}\left[D(\bm{n},\bm{\hat{\xi}})\right]$ gives the non-equilibrium stationary state $m-$points correlations between non-empty species of types $s_{i}\in\{1,\ldots,N-1\}$ situated at sites $y_{x}\in\{1,\ldots,L\}$ with $x\in \{1,\ldots,m\}$. This expectation is computed by \eqref{ExptationSS} once the absorption probabilities is known. The issue is that these absorption probabilities fulfil some difference equations that are not easy to solve. For example, we report here the solution for the one points correlations. 
 \paragraph{One point correlations for the non-integrable case}
@@ -2769,7 +2769,7 @@ while
 \begin{equation}\label{boundaryThermalized}
 	\begin{split}
 		\mathcal{L}_{left}^{TH}f(\bm{n})=&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{f(\bm{r},n^{2},\ldots,n^{L})-f(\bm{n})\right\}\\&
-		\binom{\nu}{r_{1},\ldots, r_{N}}\prod_{a=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{\nu}
+		\binom{\nu}{r_{1},\ldots, r_{N}}\prod_{a=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{N}}\right)^{r_{k}}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu}
 		\end{split}
 	\end{equation}
 The right boundary generator is defined in a similar way. The $\alpha$'s are replaced by $\beta$'s and the action is only on site $L$. 
@@ -2840,7 +2840,7 @@ This equation is endowed with boundary conditions $\rho_{a}^{0},\rho_{\overline{
 	\item Is it possible to extend the duality result to the boundary-driven case in order to have an absorbing dual process?
 \end{enumerate}
 The aim of this section is to give an answer to these questions. We first define the process on a chain in order to obtain average occupation evolution equations with $N-1$ discrete Laplacians and a reaction term. Second we construct the Lie algebraic description and we use it to prove absorbing duality in this general case. 
-\subsection{The process on a finite graph}
+\subsection{The process on a chain}
 We consider the geometry of a chain of length $L$, where we assume that a reservoir with parameters $(\alpha_{a})_{a\in\{1,\ldots,N\}}$ is attached at left of site $1$ and a reservoir with parameters $(\beta_{a})_{a\in\{1,\ldots,N\}}$ is attached at right of site $L$. The generator reads
 \begin{equation}\label{RDGenerator}
 	\mathcal{L}^{rd}=+\mathcal{L}_{right}^{rd}\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{rd}+\mathcal{L}_{right}^{rd}
@@ -2890,7 +2890,7 @@ and where, for every $x\in V$, we further assume that
 \end{equation}
 The boundary generator $\mathcal{L}_{right}^{rd}$ is defined analugosly, but the $\alpha$'s are replaced by $\beta$'s. \\ \\
 \textbf{Remark}: observe that the site generator $\mathcal{L}_{left}^{rd}$ has the form of the one of the multi-species stirring process \eqref{siteGenerator}. We wrote it with the uppercase 'rd' in order to underline the fact that we need a specific choice of the reservoirs parameters $\alpha_{a}$, as specified above. 
-\paragraph{Action on the occupation variable of $\mathcal{L}_{x,y}^{rd}$}
+\paragraph{Action on the occupation variable of $\mathcal{L}_{x,+1}^{rd}$}
 For arbitrary site $x\in \{1,\ldots,L\}$, the action on the occupation variable $f(\bm{n})=n_{d}^{x}$ of particle of type $d\in \{1,\ldots,N-1\}$ reads
 \begin{equation}\label{actionGraphRD}
 	\begin{split}
@@ -2962,7 +2962,7 @@ This measure has marginals $\Lambda_{rev}^{x}$ given by
 \end{equation}
 where 
 \begin{equation}
-	\rho=\rho_{a}=\frac{\alpha}{\alpha_{1}+(N-1)\alpha}\quad \forall a\in \{1,\ldots,N-1\}\qquad \text{and}\qquad \rho_{N}=\frac{\alpha_{1}}{\alpha_{1}+(N-1)\alpha}
+	\rho=\rho_{a}=\frac{\alpha}{\alpha_{N}+(N-1)\alpha}\quad \forall a\in \{1,\ldots,N-1\}\qquad \text{and}\qquad \rho_{N}=\frac{\alpha_{N}}{\alpha_{1}+(N-1)\alpha}
 \end{equation}
 Namely,
 \begin{equation}
