@@ -1685,7 +1685,14 @@ Therefore, we obtain the third cumulant, i.e. the three-point connected correlat
 \textbf{Remark}: the first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, are exactly the ones found in subsection 4.3 of \cite{vanicat2017exact}. 
 \section{Mapping to equilibrium} \label{Section-Mapping}
 check also Appendix A in
-\cite{Alcaraz:1992zc} \cite{Sklyanin:1988yz} 
+\cite{Alcaraz:1992zc} \cite{Sklyanin:1988yz} \\
+As observed in Subsection \ref{subsection-exact}, we have found two similarity transformations, namely $S_{1}$ and $S_{2}$ that map the original Hamiltonian $H$ onto a simpler one $H^{''}$, that although non-stochastic, allows to compute the explicit expression of the steady state correlations. To complete the picture, in this section we aim to find a further similarity transformation, called $W$, that maps $H^{''}$ onto $H_{0}$ that will be defined as the original Hamiltonian where the boundaries are set diagonal. Therefore, these boundaries do not produce any current and this $H_{0}$ is called \textit{equilibrium Hamiltonian}. For this reason, we say that the process is mapped onto equilibrium, indeed, using the sequence of transformations one can go from non-equilibrium to equilibrium and back.
+This can be represented by the following diagram 
+\begin{equation}
+	H\;\xleftrightarrow{S_{1}}\;H^{'}\;\xleftrightarrow{S_{2}}\;H^{''}\xleftrightarrow{W}\;H_{0}
+\end{equation} 
+The eigenvectors and the eigenvalues of $H_{0}$ are known and they have been found in \cite{belliard2} and \cite{belliard2011nested} using the nested Bethe ansatz. 
+As a consequence, this allows to find again the steady state of $H$, by applying the sequence of transformation to the vacuum state, i.e. a state where all the sites are empty. This transformation $W$ is non-local and requires a joint work of perturbation theory and integrability, via the Quantum Inverse Scattering Method (QISM). 
 \subsection{The non local transformation}\label{SectionNonLocalTrasformation}
 We define the equilibrium Hamiltonian as
 \begin{equation}
@@ -1707,9 +1714,9 @@ We look for a matrix $W$ such that
 \begin{equation}\label{GoalWH}
 	H^{''}W=WH_{0}
 \end{equation}
-We will prove that 
+ We denote by $\bm{m}=(m_{1},\ldots,m_{N})$ an $N-$dimensional vector where each $m_{i}$ means the total occupation over the chain of each species $i\in\{1,\ldots,N\}$. Therefore, we call $\mathcal{E}_{\bm{m}}$ and $|\Psi_{\bm{m}}^{0}\rangle$ the eigenvalue and the eigenvector of $H^{0}$ that correspond to a certain $\bm{m}$. We prove that 
 \begin{equation}\label{W-extended}
-	W= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}+\epsilon-H^{''}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+	W= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\mathcal{E}_{\bm{m}}+\epsilon-H^{''}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
 \paragraph{Construction of matrix W}
 We aim to show that \eqref{W-extended} fulfils \eqref{GoalWH}. Consider the \textit{resolvent operator}
@@ -1721,29 +1728,29 @@ The above equation implies that
 \begin{equation}
 	(z-H^{''})R(H^{''},z)=I
 \end{equation}
-In order to be well defined $z$ must not be an eigenvalue of $H^{''}$. We denote by $\bm{m}=(m_{1},\ldots,m_{N})$ an $N-$dimensional vector where each $m_{i}$ means the total occupation over the chain of each species $i\in\{1,\ldots,N\}$. Therefore, we call $\Lambda_{\bm{m}}$ and $|\Psi_{\bm{m}}^{0}\rangle$ the eigenvalue and the eigenvector of $H^{0}$ that correspond to a certain $\bm{m}$. We chose $z=\Lambda_{\bm{m}}+\epsilon$ 
+In order to be well defined $z$ must not be an eigenvalue of $H^{''}$. We chose $z=\mathcal{E}_{\bm{m}}+\epsilon$ 
 \begin{equation}
-	(\Lambda_{\bm{m}}+\epsilon-H^{''})R(H^{''},\Lambda_{\bm{m}}+\epsilon)=1
+	(\mathcal{E}_{\bm{m}}+\epsilon-H^{''})R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)=1
 \end{equation}
 We multiply both sides by $|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|$
 \begin{equation}
-	(\Lambda_{\bm{m}}+\epsilon-H^{''})R(H^{''},\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|,
+	(\mathcal{E}_{\bm{m}}+\epsilon-H^{''})R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|,
 \end{equation}
 we sum over all possible $\bm{m}$'s 
 \begin{equation}
-	\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\Lambda_{m}+\epsilon-H)R(H,\Lambda_{m}+\epsilon)|\Psi_{m}^{0}\rangle \langle \Psi_{m}^{0}|=\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|,
+	\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\mathcal{E}_{\bm{m}}+\epsilon-H^{''})R(H^{''},\Lambda_{m}+\epsilon)|\Psi_{m}^{0}\rangle \langle \Psi_{m}^{0}|=\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|,
 \end{equation}
 we multiply both sides by $\epsilon$ 
 \begin{equation}
-	\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\Lambda_{m}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{m}^{0}|=\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|,
+	\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\mathcal{E}_{\bm{m}}+\epsilon-H^{''})R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{m}^{0}|=\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|,
 \end{equation}
 we take the limit for $\epsilon\to 0$ on both sides 
 \begin{equation}
-	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L} (\Lambda_{\bm{m}}+\epsilon-H)R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L} (\mathcal{E}_{\bm{m}}+\epsilon-H^{''})R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
 Observe that, trivially,
 \begin{equation}
-	\lim_{\epsilon\to 0}\left(\Lambda_{\bm{m}}+\epsilon-H\right)=\left(\Lambda_{\bm{m}}-H\right)<\infty
+	\lim_{\epsilon\to 0}\left(\mathcal{E}_{\bm{m}}+\epsilon-H^{''}\right)=\left(\Lambda_{\bm{m}}-H^{''}\right)<\infty
 \end{equation}
 and using the following power expansion
 \begin{equation}\label{veryUsefulSeries}
@@ -1752,34 +1759,34 @@ and using the following power expansion
 we have that for each $\bm{m}$ 
 \begin{equation}
 	\begin{split}
-		&\lim_{\epsilon\to 0}\epsilon\left(\Lambda_{\bm{m}}+\epsilon-H\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\sum_{n=0}^{\infty}\left((\Lambda_{\bm{m}}+\epsilon)^{-1}H\right)^{n}(\Lambda_{\bm{m}}+\epsilon)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|
+		&\lim_{\epsilon\to 0}\epsilon\left(\mathcal{E}_{\bm{m}}+\epsilon-H^{''}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\sum_{n=0}^{\infty}\left((\mathcal{E}_{\bm{m}}+\epsilon)^{-1}H^{''}\right)^{n}(\mathcal{E}_{\bm{m}}+\epsilon)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|
 		\\=&
-		\lim_{\epsilon\to 0}\epsilon\sum_{n=0}^{\infty}\left((\Lambda_{\bm{m}}+\epsilon)^{-1}\Lambda_{\bm{m}}\right)^{n}(\Lambda_{m}+\epsilon)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\epsilon\left(\Lambda_{\bm{m}}+\epsilon-\Lambda_{\bm{m}}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|\\=&|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|<\infty
+		\lim_{\epsilon\to 0}\epsilon\sum_{n=0}^{\infty}\left((\Lambda_{\bm{m}}+\epsilon)^{-1}\mathcal{E}_{\bm{m}}\right)^{n}(\mathcal{E}_{\bm{m}}+\epsilon)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\epsilon\left(\mathcal{E}_{\bm{m}}+\epsilon-\mathcal{E}_{\bm{m}}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|\\=&|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|<\infty
 	\end{split}
 \end{equation}
 therefore the limit of the product is the product of the limit and we obtain that 
 \begin{equation}
-	\sum_{m=0}^{L}  (\Lambda_{\bm{m}}-H)\lim_{\epsilon\to 0}\epsilon R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=0
+	\sum_{m=0}^{L}  (\mathcal{E}_{\bm{m}}-H^{''})\lim_{\epsilon\to 0}\epsilon R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=0
 \end{equation}
 Since the limit of the sum is the sum of the limit we have   
 \begin{equation}
-	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  \Lambda_{\bm{m}}R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|= H\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  \Lambda_{\bm{m}}R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|= H^{''}\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
 thus 
 \begin{equation}
-	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)H_{0}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|= H\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)H_{0}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|= H^{''}\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
 Since $H_{0}=H_{0}^{T}$ 
 \begin{equation}
-	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|H_{0}= H\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H,\Lambda_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|H_{0}= H^{''}\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
 By calling 
 \begin{equation}
-	W= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\Lambda_{\bm{m}}+\epsilon-H\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+	W= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\mathcal{E}_{\bm{m}}+\epsilon-H^{''}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
 we finally obtain 
 \begin{equation}
-	WH_{0}=HW
+	WH_{0}=H^{''}W
 \end{equation}
 Formula \eqref{W-extended} may be evaluated by perturbation theory. Moreover, since the process is integrable it is possible to express $W$ in function of the conserved charges of the system and of the eigenvectors of the equilibrium steady state, that are known in literature by Bethe ansatz. This expression, as it will be show in the following sections, allows a simpler treatment of the mapping and furthermore we can use it to retrieve the steady state of $H^{''}$ by applying $W$ to the ground state of $H_{0}$. To write formula \eqref{W-extended} using the conserved charges of the system, we use Quantum Inverse Scattering Method (QISM). We first present the simpler case of $gl(2)$, then we adapt the proof to the general $gl(N)$. 
 \subsection{Quantum inverse scattering method}
@@ -2100,7 +2107,7 @@ and moreover $T(x)=\sum_{a=0}^{2L}Q^{2L}x^{a}$ with the property that, the first
 \begin{equation}
 	Q^{2L}W=WQ_{0}^{2L}
 \end{equation}
-Arguing as in section \ref{SectionNonLocalTrasformation} and using the resolvent operator of $Q_{2L}$, one can show that 
+Arguing as in section \ref{SectionNonLocalTrasformation} and using the resolvent operator of $Q_{2L}$ with eigenvalues $\Lambda_{m}$, one can show that 
 \begin{equation}\label{WInCharges}
 	\begin{split}
 	W&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\;|\bm{m}|=1}\left(\Lambda_{m}+\epsilon-Q^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|\\&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\;|\bm{m}|=1}\left(\Lambda_{m}+\epsilon-Q^{2L}_{0}-\mathcal{Q}^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|
@@ -2135,20 +2142,20 @@ In this simpler situation the double row monodromy reads
 \end{equation}
 Using \eqref{Q-nonDiag} we rewrite \eqref{WInCharges} as
 \begin{equation}\label{W}
-	W=\lim_{\epsilon\to 0}\epsilon\sum_{m=0}^{L}\left((\Lambda_{m}^{Q}+\epsilon)-Q_{0}^{2L}-2\Delta B_{1}^{2L-1}\right)^{-1}|\Psi_{m}^{0}\rangle \langle \Psi_{m}^{0}|
+	W=\lim_{\epsilon\to 0}\epsilon\sum_{m=0}^{L}\left((\Lambda_{m}+\epsilon)-Q_{0}^{2L}-2\Delta B_{1}^{2L-1}\right)^{-1}|\Psi_{m}^{0}\rangle \langle \Psi_{m}^{0}|
 \end{equation}
 Power expanding the matrix $W$ with respect to $\Delta=(\alpha-\beta)$ we obtain 
 \begin{equation}\label{LinkWG}
 	\begin{split}
-		W=&\lim_{\epsilon\to 0}\epsilon\sum_{m=0}^{L}\left((\Lambda_{m}^{Q}+\epsilon)-Q_{0}^{2L}-2\Delta B_{1}^{2L-1}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|\\
-		=&\lim_{\epsilon\to 0}\sum_{m=0}^{L}\epsilon\sum_{k=0}^{L}\Delta^{k}2^{k}\left\{\left((\Lambda_{m}^{Q}+\epsilon)I-Q_{0}^{2L}\right)^{-1}B_{1}^{2L-1}\right\}^{k}\left((\Lambda_{m}^{Q}+\epsilon)I-Q_{0}^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|
+		W=&\lim_{\epsilon\to 0}\epsilon\sum_{m=0}^{L}\left((\Lambda_{m}+\epsilon)-Q_{0}^{2L}-2\Delta B_{1}^{2L-1}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|\\
+		=&\lim_{\epsilon\to 0}\sum_{m=0}^{L}\epsilon\sum_{k=0}^{L}\Delta^{k}2^{k}\left\{\left((\Lambda_{m}+\epsilon)I-Q_{0}^{2L}\right)^{-1}B_{1}^{2L-1}\right\}^{k}\left((\Lambda_{m}+\epsilon)I-Q_{0}^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|
 		\\=&
-		\lim_{\epsilon\to0}\sum_{m=0}^{L}\sum_{k=0}^{L}\Delta^{k}2^{k}\left\{\left((\lambda_{m}^{Q}+\epsilon)I-Q_{0}^{2L}\right)^{-1}B_{1}^{2L-1}\right\}^{k}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|
+		\lim_{\epsilon\to0}\sum_{m=0}^{L}\sum_{k=0}^{L}\Delta^{k}2^{k}\left\{\left((\lambda_{m}+\epsilon)I-Q_{0}^{2L}\right)^{-1}B_{1}^{2L-1}\right\}^{k}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|
 	\end{split}
 \end{equation}
 where in the last equality we used 
 \begin{equation}
-	\lim_{\epsilon\to 0}\epsilon\left((\Lambda_{m}^{Q}+\epsilon)I-Q_{0}^{2L}\right)^{-1}=\text{diag}\left\{0,\ldots,0,1,0,\ldots,0\right\}
+	\lim_{\epsilon\to 0}\epsilon\left((\Lambda_{m}+\epsilon)I-Q_{0}^{2L}\right)^{-1}=\text{diag}\left\{0,\ldots,0,1,0,\ldots,0\right\}
 \end{equation}
 Expression \eqref{LinkWG} can be rewritten using the adaptation to $gl(2)$ of the exchange relation between charges written in \eqref{ExQ0B-charges},\eqref{ExDNB-charges} and \eqref{ExDiB-charges}. These relation now read
 \begin{equation}\label{exchangeQ0B}
@@ -2184,11 +2191,11 @@ we obtain
 Therefore we have that 
 \begin{equation}\label{intermediate-Wgl2}
 	\begin{split}
-		&\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{\left((\lambda_{m}^{Q}+\epsilon)-Q_{0}^{2L}\right)^{-1}B_{1}^{2L-1}\right\}^{k}=\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{\sum_{n=0}^{\infty}\left((\Lambda_{m}^{Q}+\epsilon)^{-1}Q_{0}^{2L}\right)^{n}(\Lambda_{m}^{Q}+\epsilon)^{-1}B_{1}^{2L-1}\right\}^{k}\\
+		&\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{\left((\lambda_{m}+\epsilon)-Q_{0}^{2L}\right)^{-1}B_{1}^{2L-1}\right\}^{k}=\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{\sum_{n=0}^{\infty}\left((\Lambda_{m}+\epsilon)^{-1}Q_{0}^{2L}\right)^{n}(\Lambda_{m}+\epsilon)^{-1}B_{1}^{2L-1}\right\}^{k}\\
 		=&
-		\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{(\Lambda_{m}^{Q}+\epsilon)^{-1-n}(Q_{0}^{2L})^{n}B_{1}^{2L-1}\right\}^{k}=\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{(\Lambda_{m}^{Q}+\epsilon)^{-1-n}B_{1}^{2L-1}\left(Q_{0}^{2L}-2(D_{2,2}^{2L}+D_{1,1}^{2L})\right)^{n}\right\}^{k}
+		\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{(\Lambda_{m}+\epsilon)^{-1-n}(Q_{0}^{2L})^{n}B_{1}^{2L-1}\right\}^{k}=\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{(\Lambda_{m}+\epsilon)^{-1-n}B_{1}^{2L-1}\left(Q_{0}^{2L}-2(D_{2,2}^{2L}+D_{1,1}^{2L})\right)^{n}\right\}^{k}
 		\\=&
-		\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{B_{1}^{2L-1}\left((\Lambda_{m}^{Q}+\epsilon)-\left(Q_{0}^{2L}-2(D_{2,2}^{2L}+D_{1,1}^{2L})\right)\right)^{-1}\right\}^{k}
+		\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{B_{1}^{2L-1}\left((\Lambda_{m}+\epsilon)-\left(Q_{0}^{2L}-2(D_{2,2}^{2L}+D_{1,1}^{2L})\right)\right)^{-1}\right\}^{k}
 	\end{split}
 \end{equation}
 By replacing \eqref{intermediate-Wgl2} in \eqref{LinkWG}, we obtain 
@@ -2231,10 +2238,11 @@ Finally, using the Pauli matrix $\sigma_{0}^{tot}=e_{11}^{tot}-e_{22}^{tot}$, we
 In the general case of $N>2$ species we have that \eqref{WInCharges} reads 
 \begin{equation}\label{W-charges-Bad}
 	\begin{split}
-		W=&\lim_{\epsilon\to 0}\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
+		W=&\lim_{\epsilon\to 0}\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM\left(\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
 		|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 	\end{split}
 \end{equation}
+where $\Lambda_{\bm{m}}$ are the eigenvectors of $Q_{0}^{2L}$ corresponding to a configuration $\bm{m}$ of the chain. \\
 Indeed, since the exchange relation \eqref{ExQ0B-charges} has an extra creation operator
 \begin{equation}
 	-2\sum_{k=1\,:\,k\neq i}^{N-1}B_{k}^{2L-1}D_{k,i}^{2L}
@@ -2244,9 +2252,9 @@ that gives rise to a proliferation of terms that does not vanish, thus only part
 Following the result in the simpler $gl(2)$ case, we write the multi-variable power expansion with respect to $\Delta_{i} B_{i}^{2L-1}$ for all $i\in\{1,\ldots,N-1\}$. We obtain that, using also the multi-variate version of \eqref{veryUsefulSeries},
 \begin{equation}
 	\begin{split}
-		W=&\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM_{k_{1},\ldots,k_{N-1}}\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}\right)
+		W=&\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM_{k_{1},\ldots,k_{N-1}}\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\},\ldots,\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}\right)
 		\\&
-		\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+		\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 	\end{split}
 \end{equation} 
 Here $SYM$ is the following transformation. We introduce, the following indices $i_{j}$ with $j=1,\ldots,k_{1}+\ldots+k_{N}$, such that 
@@ -2261,19 +2269,19 @@ Here $SYM$ is the following transformation. We introduce, the following indices 
 We define
 \begin{equation}
 	\begin{split}
-&SYM_{k_{1},\ldots,k_{N-1}}\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}\right)\\
-=&\frac{1}{k_{1}!\cdots k_{N-1}!}\sum_{\sigma\in Sym}\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{\sigma(i_{1})}^{2L-1}\right\}\cdots \left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{\sigma(i_{k_{1}}+\ldots+i_{k_{N-1}})}^{2L-1}\right\}
+&SYM_{k_{1},\ldots,k_{N-1}}\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\},\ldots,\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}\right)\\
+=&\frac{1}{k_{1}!\cdots k_{N-1}!}\sum_{\sigma\in Sym}\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{\sigma(i_{1})}^{2L-1}\right\}\cdots \left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{\sigma(i_{k_{1}}+\ldots+i_{k_{N-1}})}^{2L-1}\right\}
 	\end{split}
 \end{equation}
 where $Sym$ is the symmetric group. \\
 Observing that 
 \begin{equation}
-	\lim_{\epsilon\to 0}	\epsilon\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle=|\Psi_{\bm{m}}^{0}\rangle
+	\lim_{\epsilon\to 0}	\epsilon\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle=|\Psi_{\bm{m}}^{0}\rangle
 \end{equation}
 we finally have 
 \begin{equation}
 	\begin{split}
-		W=&\lim_{\epsilon\to 0}\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
+		W=&\lim_{\epsilon\to 0}\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM\left(\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
 		|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 	\end{split}
 \end{equation}
@@ -2294,7 +2302,7 @@ Using \eqref{W-charges-Bad}, it is possible to find an explicit expression of th
 			0\\
 			1
 	\end{pmatrix}}_{L-\text{times}}
-\end{equation} 
+\end{equation} whose eigenvalue is $\Lambda_{0}$. 
 This steady state reads 
 \begin{equation}\label{SteadyState-W-Good}
 	\begin{split}
@@ -2531,7 +2539,7 @@ As a consequence of \eqref{Two-Points-m1} we have that for all  $k_{1},\ldots,k_
 %\end{equation}
 \paragraph{4. Final formula.} Using \eqref{Commutativity-Gained} and \eqref{k-times-QB} the symmetrization operator written in \eqref{W-charges-Bad} acting on the vacuum state $|\Psi_{0}^{0}\rangle$ reads, for all $k_{1},\ldots,k_{N-1}\in\mathbb{N}_{0}$
 \begin{align}
-	&SYM\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
+	&SYM\left(\left\{\left(\Lambda_{0}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{0}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
 	|\Psi_{0}^{0}\rangle\nonumber
 	\\=&\frac{	(k_{1}+\ldots+k_{N-1})!}{k_{1}!\cdots k_{N-1}!}	\prod_{\ell=1}^{N-1}\left(Q_{0}^{2L}B_{\ell}^{2L-1}\right)^{k_{\ell}}|\Psi_{0}^{0}\rangle\nonumber
 	\\=&\frac{	(k_{1}+\ldots+k_{N-1})!}{k_{1}!\cdots k_{N-1}!}\prod_{\ell=1}^{N-1}\left(B_{\ell}^{2L-1}\right)^{k_{\ell}}\prod_{j=1}^{k_{1}+\ldots+k_{N-1}}\left(Q_{0}^{2L}-2j(D_{11}^{2L}+D_{NN}^{2L})+4j(j-1)\right)|\Psi_{0}^{0}\rangle
@@ -2633,11 +2641,11 @@ More explicitly we have
 \begin{equation}
 	H_{0}=W^{-1}\,S_{2}\,S_{1}\,H\,S_{1}^{-1}\,S_{2}^{-1}\,W
 \end{equation}
-as a consequence we have that, for a fixed configuration $\bm{m}$, the non-equilibrium eigenvectors can be mapped to the equilibrium ones as
+As a consequence we have that, for a fixed configuration $\bm{m}$, the non-equilibrium eigenvectors can be mapped to the equilibrium ones as
 \begin{equation}
 	|\Psi_{\bm{m}}\rangle=S_{1}^{-1}S_{2}^{-1}W|\Psi_{\bm{m}}^{0}\rangle
 \end{equation}
-and using \eqref{SteadyState-W-Good} the steady state of $H$ defined in \eqref{definition-SteadyStateH} can be obtained from the vacuum state $|\Psi_{0}^{0}\rangle$ defined in \eqref{Vacuum-state} as
+Moreover, using \eqref{SteadyState-W-Good} the steady state of $H$ defined in \eqref{definition-SteadyStateH} can be obtained from the vacuum state $|\Psi_{0}^{0}\rangle$ defined in \eqref{Vacuum-state} as
 \begin{align}
 	|\Psi\rangle=&\text{exp}\left(-\sum_{x=1}^{L}\sum_{a=1}^{N-1}e_{Na}^{x}\right)\text{exp}\left(\sum_{x=1}^{L}\sum_{a=1}^{N-1}\beta_{a}e_{aN}^{x}\right)\\&
 	\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}}^{L}\mathbbm{1}_{\{k_{1}+\ldots+k_{N-1}\leq L\}}\frac{(\alpha_{1}-\beta_{1})^{k_{1}}\cdots (\alpha_{N-1}-\beta_{N-1})^{k_{N-1}}}{k_{1}!\cdots k_{N-1}!}\\&
@@ -2856,7 +2864,7 @@ This equation is endowed with boundary conditions $\rho_{a}^{0},\rho_{\overline{
 			\item Does this process shares the same $gl(N)$ Lie-algebraic structure?
 	\item Is it possible to extend the duality result to the boundary-driven case in order to have an absorbing dual process?
 \end{enumerate}
-The aim of this section is to give an answer to these questions. We first define the process on a chain in order to obtain average occupation evolution equations with $N-1$ discrete Laplacians and a reaction term. Second we construct the Lie algebraic description and we use it to prove absorbing duality in this general case. 
+The aim of this section is to answer to these questions. We first define the process on a chain in order to obtain average occupation evolution equations with $N-1$ discrete Laplacians and a reaction term. Second we construct the Lie algebraic description and we use it to prove absorbing duality in this general case. 
 \subsubsection{The process on a chain}
 We consider the geometry of a chain of length $L$, where we assume that a reservoir with parameters $(\alpha_{a})_{a\in\{1,\ldots,N\}}$ is attached at left of site $1$ and a reservoir with parameters $(\beta_{a})_{a\in\{1,\ldots,N\}}$ is attached at right of site $L$. The generator reads
 \begin{equation}\label{RDGenerator}
