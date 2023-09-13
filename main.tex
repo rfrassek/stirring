@@ -949,7 +949,7 @@ The matrix product ansatz for the non-equilibrium steady state has been formulat
 \end{equation}
 This Markov chain is positive recurrent, therefore there exists a unique stationary measure, that will be reached when time goes to infinity, regardless of the initial distribution. 
 We denote by $|\Psi\rangle$ the column vector that gives the stationary distribution. This vector is the right eigenvector with vanishing eigenvalue of $H$, i.e. it solves 
-\begin{equation}
+\begin{equation}\label{definition-SteadyStateH}
 	H|\Psi\rangle =0
 \end{equation}
 The MPA states the following
@@ -992,7 +992,7 @@ The MPA gives an abstract form of the steady state in terms of an algebra of ope
 Here we follow the approach of working with the abstract commutation  relations. We will show that the duality property established in Section \ref{sectionDuality} simplifies substantially the  use of commutators in the actual
 computation. The idea is summarized as follows. We define a sequence of similarity transformation such that 
 \begin{equation}
-	H\;\xrightarrow{S_{1}}\;H^{'}\;\xrightarrow{S_{2}}\;H^{''}
+	H\;\xleftrightarrow{S_{1}}\;H^{'}\;\xleftrightarrow{S_{2}}\;H^{''}
 \end{equation} 
 where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Thanks to these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} of the operators $(X_{a})_{a\in\{1,\ldots,N\}}$ of the MPA become simpler, therefore, the right eigenvector with vanishing eigenvalue $|\Psi^{''}\rangle$ of $H^{''}$ will be written explicitly. Then, reversing the transformations we will retrieve $|\Psi\rangle$.
 
@@ -1031,7 +1031,7 @@ S_{1}=\prod_{x=1}^{L}d_{x}^{T}
 \end{equation}
 that is related to $H$ by
 \begin{equation}\label{similarV}
-   H^{'}=S_{1}H^{'}S_{1}^{-1}
+   H^{'}=S_{1}HS_{1}^{-1}
 \end{equation}
 The bulk part of the Hamiltonian is left unchanged while the boundaries are given by 
 \begin{equation}
@@ -2622,9 +2622,27 @@ therefore, we have that
 that is exactly the steady state $|\Psi^{''}\rangle$ computed in \eqref{ResulsBasis} in the case $L=2$ and $N=3$. To obtain the steady state $|\Psi\rangle$ of $H$ we only need to invert the transformations $S_{1}$ and $S_{2}$ defined in \eqref{S1-Whole} and \eqref{S2-Whole}. 
 \end{comment}
 \subsection{Bethe ansatz solution}
-
 Describe eigenvalues of $T_0$ following 
 \cite{Belliard2} 
+\subsection{A sequence of similarity transformation}
+In Subsection \ref{subsection-exact} and \ref{SectionNonLocalTrasformation} we have found three similarity transformations, namely $S_{1}$, $S_{2}$ and $W$ between operators $H$, $H^{'},H^{''}$ and $H_{0}$. Using them simultaneously one can map the non-equilibrium Hamiltonian $H$ onto the equilibrium one as
+\begin{equation}
+	H\;\xleftrightarrow{S_{1}}\;H^{'}\;\xleftrightarrow{S_{2}}\;H^{''}\xleftrightarrow{W}\;H_{0}
+\end{equation} 
+More explicitly we have 
+\begin{equation}
+	H_{0}=W^{-1}\,S_{2}\,S_{1}\,H\,S_{1}^{-1}\,S_{2}^{-1}\,W
+\end{equation}
+as a consequence we have that, for a fixed configuration $\bm{m}$, the non-equilibrium eigenvectors can be mapped to the equilibrium ones as
+\begin{equation}
+	|\Psi_{\bm{m}}\rangle=S_{1}^{-1}S_{2}^{-1}W|\Psi_{\bm{m}}^{0}\rangle
+\end{equation}
+and using \eqref{SteadyState-W-Good} the steady state of $H$ defined in \eqref{definition-SteadyStateH} can be obtained from the vacuum state $|\Psi_{0}^{0}\rangle$ defined in \eqref{Vacuum-state} as
+\begin{align}
+	|\Psi\rangle=&\text{exp}\left(-\sum_{x=1}^{L}\sum_{a=1}^{N-1}e_{Na}^{x}\right)\text{exp}\left(\sum_{x=1}^{L}\sum_{a=1}^{N-1}\beta_{a}e_{aN}^{x}\right)\\&
+	\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}}^{L}\mathbbm{1}_{\{k_{1}+\ldots+k_{N-1}\leq L\}}\frac{(\alpha_{1}-\beta_{1})^{k_{1}}\cdots (\alpha_{N-1}-\beta_{N-1})^{k_{N-1}}}{k_{1}!\cdots k_{N-1}!}\\&
+	\left(\frac{B_{1}^{2L-1}}{2^{k_{1}}}\right)^{k_{1}}\cdots\left( \frac{B_{N-1}^{2L-1}}{2^{k_{N-1}}}\right)^{k_{N-1}}\frac{\Gamma\left(e_{NN}^{tot}+2-(k_{1}+\ldots+k_{N-1})\right)}{\Gamma\left(e_{NN}^{tot}+2\right)}|\Psi_{0}^{0}\rangle
+\end{align}
 \section{Extensions for the non-integrable chain}
 The aim of this section is studying some extension to the analysis previously done when integrability property is lost. 
 In particular, Sections \ref{sectionIntegrabiliy} and \ref{Section-Mapping} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable thanks to integrability.  
@@ -2827,11 +2845,11 @@ where we used again the multinomial theorem. Therefore, replacing \eqref{pezzo1}
 	\left(\widetilde{\mathcal{L}}_{y}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})
 \end{align}
 \subsection{Multi-species stirring process with reaction} \label{Subsection-RD}
-In \cite{casini2022uphill} it has been defined a process whose evolution equation for the average occupation $\rho_{a}(x,t)$ of species $a\in \{2,3\}$ is given by a difference-differential equation with two discrete Laplacians (one for each species, multiplied for a proper diffusivity constant) and a linear reaction term (mutation), i.e.
+In \cite{casini2022uphill} it has been defined a process whose evolution equation for the average occupation $\rho_{a}(x,t)$ of species $a\in \{1,2\}$ is given by a difference-differential equation with two discrete Laplacians (one for each species, multiplied for a proper diffusivity constant) and a linear reaction term (mutation), i.e.
 \begin{equation}\label{2SpeciesRD}
 	\partial \rho_{a}(x,t)=\sigma_{11}\Delta_{L}\rho_{a}(x,t)+\sigma_{12}\Delta_{L}\rho_{\overline{a}}(x,t)+\Upsilon\left(\rho_{\overline{a}}(x,t)-\rho_{a}(x,t)\right)
 \end{equation} 
-for $ x\in\{1,\ldots,L\}\quad a\in\{2,3\}$  and where $\overline{a}=3$ if $a=2$ and $\overline{a}=2$ if $a=3$.
+for $ x\in\{1,\ldots,L\}\quad a\in\{1,2\}$  and where $\overline{a}=1$ if $a=2$ and $\overline{a}=1$ if $a=2$.
 This equation is endowed with boundary conditions $\rho_{a}^{0},\rho_{\overline{a}}^{0}$ on the left and $\rho_{a}^{L+1},\rho_{\overline{a}}^{L+1}$ \\The generator of this model consists in a sum of three Markov generators: a stirring, a stirring-mutation and a pure mutation one (see section 4 of \cite{casini2022uphill}). For the lattice $\mathbb{Z}$, self-duality has been showed and the duality function is exactly \eqref{elementsABS} in case of hard-core exclusion (see section 5 of \cite{casini2022uphill}). In view of what have been proved in the previous section of this work, some questions arise naturally:
 \begin{enumerate}
 		\item Is it possible to extend the results to a case with arbitrary number of species $N\in \mathbb{N}$ and arbitrary maximal site occupation $\nu\in \mathbb{N}$?
