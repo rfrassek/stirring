@@ -1596,11 +1596,11 @@ This means that the $m$-point correlations can also be written in terms of these
  \begin{equation}
  	\langle n_{a_{1}}^{x_{1}}\cdots n_{a_{m}}^{x_{m}} \rangle_{stat}=\langle\hat{\bm{\xi}}\rangle_{stat,dual}
  \end{equation} 
-Using formula \eqref{ABS} for a configuration where all $\tau_{i}$ are non-empty species, we obtain that 
+Using formula \eqref{ABS} for a configuration where all $\tau_{x_{i}}=a_{i}$  for $i=1,\ldots,m$ and $\tau_{j}=N$ for $j\in\{1,\ldots,L\}\setminus \{x_{1},\ldots,x_{m}\}$, we obtain 
 \begin{equation}
-	\langle n_{a_{1}}^{x_{1}}\cdots n_{a_{m}}^{x_{m}} \rangle_{stat}=\langle\hat{\bm{\xi}}\rangle_{stat,dual}=\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{\tau_{k}}^{c_{k}}\beta_{\tau_{k}}^{1-c_{k}}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}
+ \langle\hat{\bm{\xi}}\rangle_{stat,dual}=\Psi^{''}(\tau_{1},\ldots,\tau_{L})=\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{\tau_{k}}^{c_{k}}\beta_{\tau_{k}}^{1-c_{k}}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}
 \end{equation}
-Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,x_{k},c_{k},\ldots,c_{m})$ and using $\tau_{i}=a_{i}$ $\forall i=1,\ldots,m$, we have the formulas for arbitrary correlations.
+Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,x_{k},c_{k},\ldots,c_{m})$ we have \eqref{exactCorrelations}.
 \begin{comment}
 {\color{blue}
  \paragraph{Proof of formula \eqref{exactCorrelations}}
@@ -1823,7 +1823,7 @@ and the $K$-matrices
 		0&0&0&\ldots&0&1+x
 	\end{pmatrix}
 \end{equation}
-The above matrices satisfy
+The above matrices satisfy:
 \begin{itemize}
 	\item \textit{Yang-Baxter-Equation}
 	\begin{equation}
@@ -2110,10 +2110,10 @@ and moreover $T(x)=\sum_{a=0}^{2L}Q^{2L}x^{a}$ with the property that, the first
 \begin{equation}
 	Q^{2L}W=WQ_{0}^{2L}
 \end{equation}
-Arguing as in section \ref{SectionNonLocalTrasformation} and using the resolvent operator of $Q_{2L}$ with eigenvalues $\Lambda_{m}$, one can show that 
+Arguing as in section \ref{SectionNonLocalTrasformation} and using the resolvent operator of $Q_{2L}$ with eigenvalues $\Lambda_{\bm{m}}$, one can show that 
 \begin{equation}\label{WInCharges}
 	\begin{split}
-	W&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\;|\bm{m}|=1}\left(\Lambda_{m}+\epsilon-Q^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|\\&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\;|\bm{m}|=1}\left(\Lambda_{m}+\epsilon-Q^{2L}_{0}-\mathcal{Q}^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|
+	W&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\;|\bm{m}|=1}\left(\Lambda_{\bm{m}}+\epsilon-Q^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|\\&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\;|\bm{m}|=1}\left(\Lambda_{\bm{m}}+\epsilon-Q^{2L}_{0}-\mathcal{Q}^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|
 \end{split}
 \end{equation}
 Since $Q^{2L}$ and $H^{''}$ are isospectral the above matrix $W$ still maps the non-equilibrium eigenvectors onto the equilibrium ones. The advantage is that now we can do more with the above expression. Firstly the eigenvalues $\Lambda_{\bm{m}}$ can be explicitly computed and secondly, using exchange relation between charges, we rewrite \eqref{WInCharges} in a better form that can be used to extract the steady state by rising the vacuum state. We first show the procedure in the $gl(2)$ case, and then we generalize it to arbitrary number of species $N$. 
@@ -2153,7 +2153,7 @@ Power expanding the matrix $W$ with respect to $\Delta=(\alpha-\beta)$ we obtain
 		W=&\lim_{\epsilon\to 0}\epsilon\sum_{m=0}^{L}\left((\Lambda_{m}+\epsilon)-Q_{0}^{2L}-2\Delta B_{1}^{2L-1}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|\\
 		=&\lim_{\epsilon\to 0}\sum_{m=0}^{L}\epsilon\sum_{k=0}^{L}\Delta^{k}2^{k}\left\{\left((\Lambda_{m}+\epsilon)I-Q_{0}^{2L}\right)^{-1}B_{1}^{2L-1}\right\}^{k}\left((\Lambda_{m}+\epsilon)I-Q_{0}^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|
 		\\=&
-		\lim_{\epsilon\to0}\sum_{m=0}^{L}\sum_{k=0}^{L}\Delta^{k}2^{k}\left\{\left((\lambda_{m}+\epsilon)I-Q_{0}^{2L}\right)^{-1}B_{1}^{2L-1}\right\}^{k}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|
+		\lim_{\epsilon\to0}\sum_{m=0}^{L}\sum_{k=0}^{L}\Delta^{k}2^{k}\left\{\left((\Lambda_{m}+\epsilon)I-Q_{0}^{2L}\right)^{-1}B_{1}^{2L-1}\right\}^{k}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|
 	\end{split}
 \end{equation}
 where in the last equality we used 
@@ -2194,7 +2194,7 @@ we obtain
 Therefore we have that 
 \begin{equation}\label{intermediate-Wgl2}
 	\begin{split}
-		&\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{\left((\lambda_{m}+\epsilon)-Q_{0}^{2L}\right)^{-1}B_{1}^{2L-1}\right\}^{k}=\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{\sum_{n=0}^{\infty}\left((\Lambda_{m}+\epsilon)^{-1}Q_{0}^{2L}\right)^{n}(\Lambda_{m}+\epsilon)^{-1}B_{1}^{2L-1}\right\}^{k}\\
+		&\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{\left((\Lambda_{m}+\epsilon)-Q_{0}^{2L}\right)^{-1}B_{1}^{2L-1}\right\}^{k}=\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{\sum_{n=0}^{\infty}\left((\Lambda_{m}+\epsilon)^{-1}Q_{0}^{2L}\right)^{n}(\Lambda_{m}+\epsilon)^{-1}B_{1}^{2L-1}\right\}^{k}\\
 		=&
 		\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{(\Lambda_{m}+\epsilon)^{-1-n}(Q_{0}^{2L})^{n}B_{1}^{2L-1}\right\}^{k}=\sum_{k=0}^{L}2^{k}\Delta^{k}\left\{(\Lambda_{m}+\epsilon)^{-1-n}B_{1}^{2L-1}\left(Q_{0}^{2L}-2(D_{2,2}^{2L}+D_{1,1}^{2L})\right)^{n}\right\}^{k}
 		\\=&
@@ -2204,17 +2204,17 @@ Therefore we have that
 By replacing \eqref{intermediate-Wgl2} in \eqref{LinkWG}, we obtain 
 \begin{equation}\label{GoodBleft}
 	\begin{split}
-		W|\Psi_{m}^{0}\rangle=&\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left\{(\Lambda_{m}^{Q}+\epsilon)-\left(Q_{0}^{2L}-2j(D_{2,2}^{2L}+D_{1,1}^{2L})+4j(j-1)\right)\right\}^{-1}|\Psi_{m}^{0}\rangle|_{\epsilon=0}
+		W|\Psi_{m}^{0}\rangle=&\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left\{(\Lambda_{m}+\epsilon)-\left(Q_{0}^{2L}-2j(D_{2,2}^{2L}+D_{1,1}^{2L})+4j(j-1)\right)\right\}^{-1}|\Psi_{m}^{0}\rangle|_{\epsilon=0}
 		\\=&
-		\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left\{(\Lambda_{m}^{Q}+\epsilon)-\left(Q_{0}^{2L}-4j(1+e_{11}^{tot}-e_{22}^{tot})+4j(j-1)\right)\right\}^{-1}|\Psi_{m}^{0}\rangle|_{\epsilon=0}
+		\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left\{(\Lambda_{m}+\epsilon)-\left(Q_{0}^{2L}-4j(1+e_{11}^{tot}-e_{22}^{tot})+4j(j-1)\right)\right\}^{-1}|\Psi_{m}^{0}\rangle|_{\epsilon=0}
 		\\=&
-		\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left\{(\lambda_{m}^{Q}+\epsilon)-Q_{0}^{2L}+4j(e_{11}^{tot}-e_{22}^{tot})-4j^{2}+8j\right\}^{-1}|\Psi_{m}^{0}\rangle|_{\epsilon=0}
+		\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left\{(\Lambda_{m}+\epsilon)-Q_{0}^{2L}+4j(e_{11}^{tot}-e_{22}^{tot})-4j^{2}+8j\right\}^{-1}|\Psi_{m}^{0}\rangle|_{\epsilon=0}
 	\end{split}
 \end{equation}
 Using again \eqref{veryUsefulSeries} and re-summing the series we obtain 
 \begin{equation}
 	\begin{split}
-		W|\Psi_{m}^{0}\rangle=&	\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left\{(\lambda_{m}^{Q}+\epsilon)-\Lambda_{m}^{Q}+4j(e_{11}^{tot}-e_{22}^{tot})-4j^{2}+8j\right\}^{-1}|\Psi_{m}^{0}\rangle|_{\epsilon=0}
+		W|\Psi_{m}^{0}\rangle=&	\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left\{(\Lambda_{m}+\epsilon)-\Lambda_{m}+4j(e_{11}^{tot}-e_{22}^{tot})-4j^{2}+8j\right\}^{-1}|\Psi_{m}^{0}\rangle|_{\epsilon=0}
 		\\=&
 		\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\frac{1}{4^{k}}\frac{1}{k!}\prod_{j=1}^{k}\left\{e_{11}^{tot}-e_{22}^{tot}+2-j\right\}^{-1}|\Psi_{m}^{0}\rangle
 	\end{split}
