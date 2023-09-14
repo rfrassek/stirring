@@ -1143,7 +1143,7 @@ and, obviously
 	|\Psi\rangle=S^{-1}|\Psi^{''}\rangle
 \end{equation}
 \textbf{Notation}: sometimes, in the following, we will denote differently the configuration of this hard-core chain in order to alleviate notation. Each configuration can be written as
-\begin{equation}
+\begin{equation}\label{Tau-Notation}
 	|\bm{\tau}\rangle=|\tau_{1},\ldots,\tau_{L}\rangle =\begin{pmatrix}
 		\tau_{1}\\
 		\vdots\\
@@ -2246,12 +2246,28 @@ In the general case of $N>2$ species we have that \eqref{WInCharges} reads
 		|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 	\end{split}
 \end{equation}
-where $\Lambda_{\bm{m}}$ are the eigenvectors of $Q_{0}^{2L}$ corresponding to a configuration $\bm{m}$ of the chain. \\
-Indeed, since the exchange relation \eqref{ExQ0B-charges} has an extra creation operator
+where $\Lambda_{\bm{m}}$ are the eigenvectors of $Q_{0}^{2L}$ corresponding to a configuration $\bm{m}$ of the chain. Here $SYM$ is the following transformation. We introduce, the indices $i_{j}$ with $j=1,\ldots,k_{1}+\ldots+k_{N}$, such that 
+\begin{equation}
+	\begin{split}
+		&i_{1}=\ldots=i_{k_{1}}=1\\
+		&	i_{k_{1}+1}=\ldots=i_{k_{1}+k_{2}}=2\\
+		&\vdots\\
+		&i_{k_{1}+\ldots+k_{N-2}+1}=\ldots=i_{k_{1}+\ldots+k_{N-1}}=N-1
+	\end{split}
+\end{equation}
+We define
+\begin{equation}
+	\begin{split}
+		&SYM_{k_{1},\ldots,k_{N-1}}\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\},\ldots,\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}\right)\\
+		=&\frac{1}{k_{1}!\cdots k_{N-1}!}\sum_{\sigma\in Sym}\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{\sigma(i_{1})}^{2L-1}\right\}\cdots \left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{\sigma(i_{k_{1}}+\ldots+i_{k_{N-1}})}^{2L-1}\right\}
+	\end{split}
+\end{equation}
+where $Sym$ is the symmetric group among $N-1$ objects. \\
+In this case we do not have a closed formula as in the case of $gl(2)$. Indeed, the exchange relation \eqref{ExQ0B-charges} has an extra creation operator
 \begin{equation}
 	-2\sum_{k=1\,:\,k\neq i}^{N-1}B_{k}^{2L-1}D_{k,i}^{2L}
 \end{equation}
-that gives rise to a proliferation of terms that does not vanish, thus only part of the argument done in the $N=2$ case can be followed. However, as we will show in subsection \ref{subsection-NONSS-W}, a closed formula for the steady state can be written, since when acting on the vacuum the exchange relations do remain simple. 
+This extra creation operator, mixes up the species different from $N$.  However, as we will show in subsection \ref{subsection-NONSS-W}, a closed formula for the non-equilibrium steady state can be written, since when acting on the vacuum the exchange relations do remain simple. 
 \paragraph{Proof of formula \eqref{W-charges-Bad}}
 Following the result in the simpler $gl(2)$ case, we write the multi-variable power expansion with respect to $\Delta_{i} B_{i}^{2L-1}$ for all $i\in\{1,\ldots,N-1\}$. We obtain that, using also the multi-variate version of \eqref{veryUsefulSeries},
 \begin{equation}
@@ -2261,39 +2277,22 @@ Following the result in the simpler $gl(2)$ case, we write the multi-variable po
 		\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 	\end{split}
 \end{equation} 
-Here $SYM$ is the following transformation. We introduce, the following indices $i_{j}$ with $j=1,\ldots,k_{1}+\ldots+k_{N}$, such that 
-\begin{equation}
-	\begin{split}
-		&i_{1}=\ldots=i_{k_{1}}=1\\
-	&	i_{k_{1}+1}=\ldots=i_{k_{1}+k_{2}}=2\\
-		&\vdots\\
-		&i_{k_{1}+\ldots+k_{N-2}+1}=\ldots=i_{k_{1}+\ldots+k_{N-1}}=N-1
-	\end{split}
-\end{equation}
-We define
-\begin{equation}
-	\begin{split}
-&SYM_{k_{1},\ldots,k_{N-1}}\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\},\ldots,\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}\right)\\
-=&\frac{1}{k_{1}!\cdots k_{N-1}!}\sum_{\sigma\in Sym}\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{\sigma(i_{1})}^{2L-1}\right\}\cdots \left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{\sigma(i_{k_{1}}+\ldots+i_{k_{N-1}})}^{2L-1}\right\}
-	\end{split}
-\end{equation}
-where $Sym$ is the symmetric group. \\
 Observing that 
 \begin{equation}
 	\lim_{\epsilon\to 0}	\epsilon\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle=|\Psi_{\bm{m}}^{0}\rangle
 \end{equation}
-we finally have 
-\begin{equation}
-	\begin{split}
-		W=&\lim_{\epsilon\to 0}\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM\left(\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
-		|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
-	\end{split}
-\end{equation}
+we finally obtain \eqref{W-charges-Bad}. 
+%\begin{equation}
+%	\begin{split}
+%		W=&\lim_{\epsilon\to 0}\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM\left(\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
+%		|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
+%	\end{split}
+%\end{equation}
 \begin{flushright}
 	$\square$
 \end{flushright}
 \subsection{Non-equilibrium steady state from the W transformation}\label{subsection-NONSS-W}
-Using \eqref{W-charges-Bad}, it is possible to find an explicit expression of the steady state $|\Psi^{''}\rangle$ of $H^{''}$ when $N>2$ by actin with $W$ on the vacuum state 
+Using \eqref{W-charges-Bad}, it is possible to find an explicit expression of the steady state $|\Psi^{''}\rangle$ of $H^{''}$ when $N>2$ by acting with $W$ on the vacuum state 
 \begin{equation}\label{Vacuum-state}
 	|\Psi_{0}^{0}\rangle:=\underbrace{\begin{pmatrix}
 			0\\
@@ -2307,18 +2306,18 @@ Using \eqref{W-charges-Bad}, it is possible to find an explicit expression of th
 			1
 	\end{pmatrix}}_{L-\text{times}}
 \end{equation} whose eigenvalue is $\Lambda_{0}$. 
-This steady state reads 
+We obtain 
 \begin{equation}\label{SteadyState-W-Good}
 	\begin{split}
 		|\Psi^{''}\rangle=&	\;W|\Psi_{0}^{0}\rangle =\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}}^{L}\mathbbm{1}_{\{k_{1}+\ldots+k_{N-1}\leq L\}}\frac{\Delta_{1}^{k_{1}}\cdots \Delta_{N-1}^{k_{N-1}}}{k_{1}!\cdots k_{N-1}!}\\&
 		\left(\frac{B_{1}^{2L-1}}{2^{k_{1}}}\right)^{k_{1}}\cdots\left( \frac{B_{N-1}^{2L-1}}{2^{k_{N-1}}}\right)^{k_{N-1}}\frac{\Gamma\left(e_{NN}^{tot}+2-(k_{1}+\ldots+k_{N-1})\right)}{\Gamma\left(e_{NN}^{tot}+2\right)}|\Psi_{0}^{0}\rangle
 	\end{split}
 \end{equation}
-\textbf{Remark}: relation \eqref{SteadyState-W-Good} holds only for the action of $W$ on the vacuum state $|\Psi_{0}^{0}\rangle$. Acting on different equilibrium eigenstates, exchange relations between $B_{i}^{2L-1}$ and $Q_{0}^{2L}$ are more difficult and we cannot rewrite \eqref{W-charges-Bad} in such a simple form. 
+\textbf{Remark}: relation \eqref{SteadyState-W-Good} holds only for the action of $W$ on the vacuum state $|\Psi_{0}^{0}\rangle$. Acting on different equilibrium eigenstates, exchange relations between $B_{i}^{2L-1}$ and $Q_{0}^{2L}$ are more difficult because of the presence of creation operators that mixes up species and we cannot rewrite \eqref{W-charges-Bad} in such a simple form. 
 \subsubsection{Proof of \eqref{SteadyState-W-Good}}
-To prove \eqref{SteadyState-W-Good} we do four steps. 
+We prove \eqref{SteadyState-W-Good} in four steps. 
 \paragraph{1. Useful relations}
-We introduce the following notation:
+We recall the following notation, already used in \eqref{Tau-Notation}:
 \begin{equation}
 	|\tau_{1},\ldots,\tau_{L}\rangle\qquad \text{where}\qquad \tau_{x}\in\{1,\ldots,N\}\quad \forall x\in \{1,\ldots,L\}
 \end{equation}
@@ -2326,7 +2325,7 @@ therefore the vacuum state reads
 \begin{equation}
 	|\Psi_{0}^{0}\rangle=|N,\ldots,N\rangle
 \end{equation}
-We first write some relations that will be useful in the proof:
+We first write and prove some relations that will be useful:
 \begin{itemize}
 	\item For all $i\in\{1,\ldots,N-1\}$
 	\begin{equation}\label{BActionVoid}
@@ -2354,7 +2353,7 @@ where we used the fact that
 The proof is trivial from the definition of \eqref{Dij-Charge}. 
 \item For all $i,j\in\{1,\ldots,N-1\}$ with $i\neq j$ and for all $x\in\{1,\ldots,L\}$ 
 \begin{equation}
-	D_{i,j}^{2L}||N,\ldots,\tau_{x}=i,\ldots,N\rangle=-2|N,\ldots,\tau_{x}=j,\ldots,N\rangle
+	D_{i,j}^{2L}|N,\ldots,\tau_{x}=i,\ldots,N\rangle=-2|N,\ldots,\tau_{x}=j,\ldots,N\rangle
 \end{equation}
 The proof is trivial from \eqref{Dij-Charge}. 
 \item For all $i,j\in\{1,\ldots,N-1\}$ with $i\neq j$ 
@@ -2381,7 +2380,7 @@ The proof is trivial from \eqref{Dij-Charge}.
 The proof is trivial following the one of \eqref{GoodRelation}. 
 \item For all $ \forall i\in \{1,\ldots,N-1\}$
 \begin{equation}\label{Dii-ref}
-	D_{i,i}^{2L}\Psi_{0}^{0}\rangle=|\Psi_{0}^{0}\rangle\qquad D_{N,N}^{2L}\Psi_{0}^{0}\rangle=(1+2L)|\Psi_{0}^{0}
+	D_{i,i}^{2L}|\Psi_{0}^{0}\rangle=|\Psi_{0}^{0}\rangle\qquad D_{N,N}^{2L}|\Psi_{0}^{0}\rangle=(1+2L)|\Psi_{0}^{0}
 \end{equation}
 The proof is trivial using \eqref{Dii-charge} and \eqref{DNN-charge}. 
 \item $Q_{0}^{2L}$ acts diagonally on the state $|\Psi_{0}^{0}\rangle$
@@ -2390,8 +2389,8 @@ The proof is trivial using \eqref{Dii-charge} and \eqref{DNN-charge}.
 \end{equation}
 \textbf{Proof of \eqref{Diagonal-Q-void}:}
 \begin{align}
-	Q_{0}^{2L}|\Psi_{0}^{0}\rangle&=\left((N-NL-2L)I^{tot}+2(N+2)e_{NN}^{tot}+2e_{NN}^{tot}e_{NN}^{tot}+2\sum_{j,k=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}\right)|\Psi_{0}^{0}\rangle\\&=
-	\left((N-NL-2L)I^{tot}+2(N+2)e_{NN}^{tot}+2e_{NN}^{tot}e_{NN}^{tot}\right)|\Psi_{0}^{0}\rangle
+	Q_{0}^{2L}|\Psi_{0}^{0}\rangle&=\left((N-NL-2L)I^{tot}+2(N+2)e_{NN}^{tot}+2e_{NN}^{tot}e_{NN}^{tot}+2\sum_{j,k=1}^{N-1}e_{kj}^{tot}e_{jk}^{tot}\right)|\Psi_{0}^{0}\rangle\nonumber\\&=
+	\left((N-NL-2L)I^{tot}+2(N+2)e_{NN}^{tot}+2e_{NN}^{tot}e_{NN}^{tot}\right)|\Psi_{0}^{0}\rangle\nonumber
 	\\&=
 	(N-NL-2L+2(N+1)L+2L^{2})|\Psi_{0}^{0}\rangle
 \end{align}
@@ -2428,7 +2427,7 @@ Now two different cases are possible:
 	\end{align}
 Using \eqref{ExQ0B-charges}, \eqref{ExDiB-charges} and \eqref{ExDNB-charges} we obtain 
 \begin{align}
-	&Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle\nonumber\\&=B_{i}^{2L-1}\left\{B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})-2(D_{i,i}^{2L}+D_{N,N}^{2L}+2(D_{i,i}^{2L+1}-D_{N,N}^{2L+1}))\right)-2\sum_{\ell=0\;\ell\neq i}B_{\ell}^{2L-1}D_{\ell,i}\right\}\nonumber\\&
+	&Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle\nonumber\\&=B_{i}^{2L-1}\left\{B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})-2(D_{i,i}^{2L}+D_{N,N}^{2L}+2(D_{i,i}^{2L+1}-D_{N,N}^{2L+1}))\right)\right.\nonumber\\&\left.-2B_{i}^{2L-1}\sum_{\ell=1\;\ell\neq i}^{N-1}B_{\ell}^{2L-1}D_{\ell,i}^{2L}\right\}|\Psi_{0}^{0}\rangle
 	\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)|\Psi_{0}^{0}\rangle
 \end{align}
 By using \eqref{Dij-ref}, \eqref{Dii-ref} and observing that 
@@ -2462,7 +2461,7 @@ that can be written as \eqref{Two-Relation}.
 \begin{flushright}
 	$\square$
 \end{flushright}
-Observe that \eqref{Two-Relation} also implies that 
+Observe that \eqref{Two-Relation} also implies
 \begin{equation}\label{Commutativity-Gained}
 	Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{j}^{2L-1}|\Psi_{0}^{0}\rangle=Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle
 \end{equation}
@@ -2481,7 +2480,7 @@ Indeed, as a consequence of \eqref{veryUsefulSeries}, we have
 \\=&
 \left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{j}^{2L-1}\sum_{n=0}^{\infty}\left(\Lambda_{0}+\epsilon\right)^{-1-n}(Q_{0}^{2L})^{n}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle
 \end{align}
-We have that, using \eqref{GoodRelation}, \eqref{Dij-ref} and \eqref{Dii-ref},
+Moreover, using \eqref{GoodRelation}, \eqref{Dij-ref} and \eqref{Dii-ref},
 \begin{align}
 &(Q_{0}^{2L})^{n}B_{j}^{2L-1}|\Psi_{0}^{0}\rangle=(Q_{0}^{2L})^{n-1}\left\{B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})\right)-2\sum_{k=1\,:\,k\neq i}^{N-1}B_{k}^{2L-1}D_{k,i}^{2L}\right\}|\Psi_{0}^{0}\rangle\nonumber
 \\=&
@@ -2555,7 +2554,7 @@ Therefore, the action of the matrix $W$ on $|\Psi_{0}^{0}\rangle$ is given by
 		\left(B_{1}^{2L-1}\right)^{k_{1}}\cdots\left( B_{N-1}^{2L-1}\right)^{k_{N-1}}\prod_{j=1}^{k_{1}+\ldots k_{N-1}}\left\{(\Lambda_{0}+\epsilon)-Q_{0}^{2L}+2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle|_{\epsilon=0}
 	\end{split}
 \end{equation}
-Using \eqref{veryUsefulSeries} and observing that  we have that $2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)$ is diagonal we have that, for all $j\in{1,\ldots,k_{1}+\ldots+k_{N-1}}$ 
+Using \eqref{veryUsefulSeries} and observing that  we have that $2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)$ is diagonal we have, for all $j\in{1,\ldots,k_{1}+\ldots+k_{N-1}}$ 
 \begin{align}
 &\left\{(\Lambda_{0}+\epsilon)-Q_{0}^{2L}+2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle|_{\epsilon=0}\\=&
 \sum_{t=0}^{\infty}\left\{Q_{0}^{2L}-2j(D_{1,1}^{2L}+D_{N,N}^{2L})+4j(j-1)\right\}^{-t}\left(\Lambda_{0}+\epsilon\right)^{-t-1}|\Psi_{0}^{0}\rangle
@@ -2635,9 +2634,9 @@ that is exactly the steady state $|\Psi^{''}\rangle$ computed in \eqref{ResulsBa
 \end{comment}
 \subsection{Bethe ansatz solution}
 Describe eigenvalues of $T_0$ following 
-\cite{Belliard2} 
+\cite{belliard2} 
 \subsection{A sequence of similarity transformation}
-In Subsection \ref{subsection-exact} and \ref{SectionNonLocalTrasformation} we have found three similarity transformations, namely $S_{1}$, $S_{2}$ and $W$ between operators $H$, $H^{'},H^{''}$ and $H_{0}$. Using them simultaneously one can map the non-equilibrium Hamiltonian $H$ onto the equilibrium one as
+In Subsection \ref{subsection-exact} and \ref{SectionNonLocalTrasformation} we have found three similarity transformations, namely $S_{1}$, $S_{2}$ and $W$ between operators $H$, $H^{'},H^{''}$ and $H_{0}$. Using them simultaneously one can map the non-equilibrium Hamiltonian $H$ onto the equilibrium one (i.e. $H_{0}$) as
 \begin{equation}
 	H\;\xleftrightarrow{S_{1}}\;H^{'}\;\xleftrightarrow{S_{2}}\;H^{''}\xleftrightarrow{W}\;H_{0}
 \end{equation} 
@@ -2645,7 +2644,7 @@ More explicitly we have
 \begin{equation}
 	H_{0}=W^{-1}\,S_{2}\,S_{1}\,H\,S_{1}^{-1}\,S_{2}^{-1}\,W
 \end{equation}
-As a consequence we have that, for a fixed configuration $\bm{m}$, the non-equilibrium eigenvectors can be mapped to the equilibrium ones as
+As a consequence for a fixed configuration $\bm{m}$, the non-equilibrium eigenvectors can be mapped to the equilibrium ones as
 \begin{equation}
 	|\Psi_{\bm{m}}\rangle=S_{1}^{-1}S_{2}^{-1}W|\Psi_{\bm{m}}^{0}\rangle
 \end{equation}
@@ -3179,6 +3178,7 @@ that gives back \eqref{one-pts-corr}.
 
 
 \appendix
+{\color{blue}
 \section{Oscillator realization}\label{appA}
 
  The basis element $ (E_{ab})_{a,b\in\{1,\ldots,N\}}$ of $gl(N)$ can also be thought as proper compositions of the rising, and lowering operators of th Heisenberg Lie algebra
@@ -3196,7 +3196,7 @@ Therefore, we have that
 \begin{equation}
 		E_{ab}=\oad_{a}\oa_{b}\qquad \forall a,b=1,\ldots N
 \end{equation} 
-fulfil the action on the basis vector \eqref{actionE} and the commutation relation \eqref{eq:comgl} 
+fulfil the action on the basis vector \eqref{actionE} and the commutation relation \eqref{eq:comgl} }
 \section{Exact steady state of $H$}\label{appB}
 
 The steady state $|\Psi\rangle$ of the Hamiltonian $H$ is given by 
