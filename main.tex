@@ -1907,7 +1907,20 @@ The exchange relations for the elements of the above matrix can be found using \
 			\frac{1}{2}h_{3}(x,y)\sum_{k=1\,:\,k\neq i,j}\left(B_{k}(y)D_{k,i}(x)-B_{k}(x)D_{k,i}(y)\right)
 		\end{split}
 	\end{equation}
-	
+\item for every $i,j\in \{1,\ldots,N-1\}$ such that $i\neq j$
+\begin{equation}\label{EX4}
+	\begin{split}
+		D_{i,j}(x)B_{i}(y)=&-(x-y)h_{1}(x,y)B_{i}(y)D_{i,j}(x)+f_{2}(x,y)\sum_{k=1\,:\,k\neq i}^{N-1}B_{k}(y)D_{k,j}(x)\\+&\frac{1}{(x-y)}\left(B_{j}(y)D_{i,i}(x)-B_{j}(x)D_{i,i}(y)\right)\\+&\frac{1}{2}h_{3}(x,y)\left((1+x-y)B_{j}(x)D_{N,N}(y)-B_{j}(y)D_{N,N}(x)\right)
+	\end{split}
+\end{equation}
+and
+\begin{equation}\label{EX5}
+	D_{i,j}(x)B_{j}(y)=\frac{(x-y)}{(x-y-1)}B_{j}D_{i,j}(x)+\frac{1}{(y+1-x)}D_{i,j}(y)B_{j}(x)
+\end{equation}
+\item  for every $i,j,k\in \{1,\ldots,N-1\}$ such that $i\neq j\neq k$
+\begin{equation}\label{EX6}
+	D_{i,j}(x)B_{k}(y)=B_{k}(y)D_{i,j}(x)+\frac{1}{(x-y)}\left(B_{k}(y)D_{j,i}(x)-B_{k}(x)D_{j,i}(y)\right)
+\end{equation}
 \end{itemize}
 where
 \begin{align}
@@ -2058,7 +2071,7 @@ In the following it will be useful to compute the quantity
 \lim_{x\to\infty}\frac{2x+N}{\Lambda(x)-T_0(x)}B_{i}(x)=\frac{2}{\Lambda_{2L}-Q_{2L}^0}B_i^{2L-1}
 \end{equation} }
 \paragraph{Exchange relations between charges}
-Using \eqref{EX1}, \eqref{EX2} and \eqref{EX3} we obtain for every $i,j\in\{1,\ldots,N-1\}$ 
+Using \eqref{EX1}, \eqref{EX2}, \eqref{EX3}, \eqref{EX4},\eqref{EX5} and \eqref{EX6} we obtain for every $i,j\in\{1,\ldots,N-1\}$ 
 \begin{equation}\label{ExQ0B-charges}
 Q_{0}^{2L}B_{i}^{2L-1}=B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})\right)-2\sum_{j=1\,:\,j\neq i}^{N-1}B_{j}^{2L-1}D_{j,i}^{2L}
 \end{equation}
