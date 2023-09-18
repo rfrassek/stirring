@@ -259,13 +259,13 @@ See Figure \ref{fig:1} and  Figure \ref{fig:2} for a visualisation of the dyamic
 \begin{figure}
     \centering
     \includegraphics[scale=0.45]{BulkStirring.eps}
-    \caption{The edge dynamics. Maximal occupation is $\nu=6$. A particle of type "square" is removed in $x$ and placed in $y$. A particle of type "triangle" is removed in $y$ and placed in $x$. This transition occurs at rate $n_{square}^{x}n_{triangle}^{y}=2\cdot 3$.}
+    \caption{The edge dynamics. Maximal occupation is $\nu=6$. A particle of type $2$ is removed in $x$ and placed in $y$. A particle of type $3$ is removed in $y$ and placed in $x$. This transition occurs at rate $n_{2}^{x}n_{3}^{y}=2\cdot 3$.}
     \label{fig:1}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[scale=0.4]{BoundaryStirring.eps}
-    \caption{The site dynamics. Here the maxiaml occupation is $\nu=6$. The reservoir, represented by a square "box" containing all types of particles, remove a type "square" from site $x$ and replace it with a type "triangle". This transition occurs at rate $\alpha_{triangle}^{x}n_{square}^{y}$.}
+    \caption{The site dynamics. Here the maxiaml occupation is $\nu=6$. The reservoir, represented by a square "box" containing all types of particles, remove a type $2$ from site $x$ and replace it with a type $3$. This transition occurs at rate $\alpha_{3}^{x}n_{2}^{x}$.}
     \label{fig:2}
 \end{figure}
 \subsection{Reversible measures}
@@ -323,9 +323,9 @@ The explicit action of the algebra generators on the basis  vectors $|n\rangle$ 
 	\end{cases}\,.
 \end{equation}  
 The matrices defined in this way satisfy the commutation relations \eqref{eq:comgl} and yield Dynkin weight \eqref{eq:dynkin}. \\
-{\color{red} Is this remark relevant for us?}
-\newline 
-\textbf{Remark}: it is possible to define these matrices in terms of creation and annihilation operators: see Appendix \ref{appA}.
+%{\color{red} Is this remark relevant for us?}
+%\newline 
+%\textbf{Remark}: it is possible to define these matrices in terms of creation and annihilation operators: see Appendix \ref{appA}.
 \\ \\
 \textbf{Remark}: The symmetric representations $\lambda=(\twoj,0,\ldots,0)$ are dual to the representations $\lambda=(\twoj,\ldots,\twoj,0)$ that can be obtained via 
 \begin{equation}
@@ -2282,7 +2282,7 @@ In this case we do not have a closed formula as in the case of $gl(2)$. Indeed, 
 \end{equation}
 This extra creation operator, mixes up the species different from $N$.  However, as we will show in subsection \ref{subsection-NONSS-W}, a closed formula for the non-equilibrium steady state can be written, since when acting on the vacuum the exchange relations do remain simple. 
 \paragraph{Proof of formula \eqref{W-charges-Bad}}
-Following the result in the simpler $gl(2)$ case, we write the multi-variable power expansion with respect to $\Delta_{i} B_{i}^{2L-1}$ for all $i\in\{1,\ldots,N-1\}$. We obtain that, using also the multi-variate version of \eqref{veryUsefulSeries},
+Following the result in the simpler $gl(2)$ case, we write the multi-variable power expansion with respect to $\Delta_{i} B_{i}^{2L-1}$ for all $i\in\{1,\ldots,N-1\}$. Using also the multi-variate version of \eqref{veryUsefulSeries}, we obtain
 \begin{equation}
 	\begin{split}
 		W=&\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}=0}^{L}\mathbbm{1}_{\{k_{1}+\cdots+k_{N-1}\leq L\}}2^{k_{1}+\ldots+k_{N-1}}\Delta_{1}^{k_{1}}\cdots\Delta_{N-1}^{k_{N-1}}\\&SYM_{k_{1},\ldots,k_{N-1}}\left(\left\{\left(\Lambda_{\bm{m}}^{Q}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\},\ldots,\left\{\left(\Lambda_{\bm{m}}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}\right)
@@ -2935,7 +2935,7 @@ The boundary generator $\mathcal{L}_{right}^{rd}$ is defined analugosly, but the
 For arbitrary site $x\in \{1,\ldots,L\}$, the action on the occupation variable $f(\bm{n})=n_{d}^{x}$ of particle of type $d\in \{1,\ldots,N-1\}$ reads
 \begin{equation}\label{actionGraphRD}
 	\begin{split}
-		\mathcal{L}_{x,x+1}^{rd}n_{d}^{x}&=\nu \sigma_{11}(n_{d}^{x+1}-n_{d}^{x})+\nu\sigma_{12}\sum_{q=2\,:	,q\neq d}^{N}(n_{c}^{x+1}-n_{d}^{x})+(\Upsilon-2\nu\sigma_{12})\sum_{b=2}^{N}(n_{b}^{x}-n_{\alpha}^{x})
+		\mathcal{L}_{x,x+1}^{rd}n_{d}^{x}&=\nu \sigma_{11}(n_{d}^{x+1}-n_{d}^{x})+\nu\sigma_{12}\sum_{q=2\,:	,q\neq d}^{N}(n_{q}^{x+1}-n_{d}^{x})+(\Upsilon-2\nu\sigma_{12})\sum_{b=2}^{N}(n_{b}^{x}-n_{\alpha}^{x})
 	\end{split}
 \end{equation}
 Indeed
@@ -3183,6 +3183,7 @@ that gives back \eqref{one-pts-corr}.
 
 
 \appendix
+\begin{comment}
 {\color{blue}
 \section{Oscillator realization}\label{appA}
 
@@ -3202,6 +3203,7 @@ Therefore, we have that
 		E_{ab}=\oad_{a}\oa_{b}\qquad \forall a,b=1,\ldots N
 \end{equation} 
 fulfil the action on the basis vector \eqref{actionE} and the commutation relation \eqref{eq:comgl} }
+\end{comment}
 \section{Exact steady state of $H$}\label{appB}
 
 The steady state $|\Psi\rangle$ of the Hamiltonian $H$ is given by 
