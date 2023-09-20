@@ -1515,22 +1515,22 @@ and
     
     \begin{equation}\label{InverseS2}
     	\begin{split}
-    		\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}&=\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},N})e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}}\beta_{\tau_{q_{1}}}\right. 
-    		\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})e^{\varphi_{1},\ldots,\varphi_{L}}_{\tau_{1},\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}\right.
+    		\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}&=\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},N})e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1}^{1},\ldots,\varphi_{L}^{1}}\beta_{\tau_{q_{1}}}\right. 
+    		\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})e^{\varphi_{1}^{2},\ldots,\varphi_{L}^{2}}_{\tau_{1},\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}\right.
     		\\&+\left.
-    		\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{\tau_{q_{t}},N})\right)e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}}
+    		\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{\tau_{q_{t}},N})\right)e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1}^{L-1},\ldots,\varphi_{L}^{L-1}}
     		\right. \\&+ \left. 
-    		\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}} \right\}
+    		\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1}^{L},\ldots,\varphi_{L}^{L}} \right\}
     	\end{split}
     \end{equation}
 where, $\forall x\in\{1,\ldots,L\}$, we have introduced
 \begin{equation}
-	\varphi_{x}(q_{1},\ldots,q_{L})=\begin{cases}
-		\tau_{x}\qquad &\text{if}\quad x\notin\{q_{1},\ldots,q_{L}\}\\
+	\varphi_{x}^{i}(q_{1},\ldots,q_{i})=\begin{cases}
+		\tau_{x}\qquad &\text{if}\quad x\notin\{q_{1},\ldots,q_{i}\}\\
 		N\qquad &\text{otherwise}\\
 	\end{cases}
 \end{equation}
-The dependence of $\varphi_{x}(q_{1},\ldots,q_{L})$ with respect to $q_{1},\ldots,q_{L}$ is usually understood for the sake of notation.
+where $i\in\{1,\ldots,L\}$. The dependence of $\varphi_{x}^{i}(q_{1},\ldots,q_{i})$ with respect to $q_{1},\ldots,q_{i}$ is usually understood for the sake of notation.
     We prove it by induction. When $L=1$ it is true, indeed
     \begin{equation}
     	\mathcal{S}_{2}^{-1}=\sum_{\tau_{1}=1}^{N}\left\{e_{\tau_{1}}^{\tau_{1}}+(1-\delta_{\tau_{1},N})\sum_{q_{1}=1}^{1}\beta_{\tau_{q_{1}}}e_{\tau_{q_{1}}}^{1}\right\}
@@ -1543,21 +1543,21 @@ The dependence of $\varphi_{x}(q_{1},\ldots,q_{L})$ with respect to $q_{1},\ldot
     	%\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{s_{q_{t}},1})\right)e_{\tau_{1},\ldots,s_{q_{L-1}\tau_{L}}}^{1,\ldots,1,\tau_{L}}
     	%\right. \\&+ \left. 
     	%\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},1})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L}}^{1,\ldots,1} \right\}
-    	\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},N})e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}}\beta_{\tau_{q_{1}}}\right. 
-    	\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})e^{\varphi_{1},\ldots,\varphi_{L}}_{\tau_{1},\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}\right.
+    	\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},N})e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1}^{1},\ldots,\varphi_{L}^{1}}\beta_{\tau_{q_{1}}}\right. 
+    	\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})e^{\varphi_{1}^{2},\ldots,\varphi_{L}^{2}}_{\tau_{1},\ldots,\tau_{L}}\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}\right.
     	\\&+\left.
-    	\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{\tau_{q_{t}},N})\right)e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}}
+    	\ldots+	\sum_{q_{1},\ldots,q_{L-1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L-1}(1-\delta_{\tau_{q_{t}},N})\right)e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1}^{L-1},\ldots,\varphi_{L}^{L-1}}
     	\right. \\&+ \left. 
-    	\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}} \right\}
+    	\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1}^{L},\ldots,\varphi_{L}^{L}} \right\}
     	\\&
     	\otimes \sum_{\tau_{L+1}=1}^{N}\left\{e_{\tau_{L+1}}^{\tau_{L+1}}+(1-\delta_{\tau_{L+1},N})\sum_{q_{1}=1}^{1}\beta_{\tau_{q_{1}}}e_{\tau_{q_{1}}}^{1}\right\}
     	\\&=
-    	\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L+1}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L+1}}^{\tau_{1},\ldots,\tau_{L+1}}+\sum_{q_{1}=1}^{L+1}(1-\delta_{\tau_{q_{1}},N})e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1},\ldots,\varphi_{L+1}}\beta_{\tau_{q_{1}}}\right. 
-    	\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L+1}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1},\ldots,\varphi_{L+1}}\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}\right.
+    	\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L+1}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L+1}}^{\tau_{1},\ldots,\tau_{L+1}}+\sum_{q_{1}=1}^{L+1}(1-\delta_{\tau_{q_{1}},N})e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1}^{1},\ldots,\varphi_{L+1}^{1}}\beta_{\tau_{q_{1}}}\right. 
+    	\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L+1}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1}^{2},\ldots,\varphi_{L+1}^{2}}\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}\right.
     	\\&+\left.
-    	\ldots+	\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L}(1-\delta_{s_{q_{t}},N})\right)e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1},\ldots,\varphi_{L+1}}
+    	\ldots+	\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L}(1-\delta_{s_{q_{t}},N})\right)e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1}^{L},\ldots,\varphi_{L+1}^{L}}
     	\right. \\&+ \left. 
-    	\sum_{q_{1},\ldots,q_{L+1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{x=1}^{L+1}(1-\delta_{\tau_{x},N})\right)\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1},\ldots,\varphi_{L+1}} \right\}
+    	\sum_{q_{1},\ldots,q_{L+1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{x=1}^{L+1}(1-\delta_{\tau_{x},N})\right)\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1}^{L+1},\ldots,\varphi_{L+1}^{L+1}} \right\}
     	\\&=
     	\left(\mathcal{S}_{2}^{\otimes L+1}\right)^{-1}
 \end{align*}
@@ -1599,30 +1599,30 @@ The product $\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}|\Psi^{''}\rangle$ giv
 To find these elements we need to fix the rows correspondent to $\bm{\tau}$ in the matrix $\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}$. Consider a string $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})$ with $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, then the corresponding row reads
 \begin{equation}
 	\begin{split}
-\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}_{\bm{\tau}}&=\,e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},N})e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}}\beta_{\tau_{q_{1}}}\\&+\sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}}\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}
+\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}_{\bm{\tau}}&=\,e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},N})e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1}^{1},\ldots,\varphi_{L}^{1}}\beta_{\tau_{q_{1}}}\\&+\sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1}^{2},\ldots,\varphi_{L}^{2}}\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}
   \\&+
-  \ldots+\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\;\text{if}\;i\neq j}^{L}\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\left(\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},1}}e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1},\ldots,\varphi_{L}}
+  \ldots+\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\;\text{if}\;i\neq j}^{L}\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\left(\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},1}}e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1}^{L},\ldots,\varphi_{L}^{L}}
 	\end{split}
 \end{equation}
 
 Therefore, we have that 
 \begin{equation}\label{ABS_intermediate}
 	\begin{split}
-		\Psi^{'}(\bm{\tau})&=(\mathcal{S}_{2}^{-1})_{\bm{\tau}}^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\varphi_{1},\ldots,\varphi_{L})\beta_{q_{1}}\\&+
-		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\varphi_{1},\ldots,\varphi_{L})\beta_{a_{1}}\beta_{a_{2}}\\&+\ldots+\Psi^{''}(1,\ldots,1)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\left(\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}
+		\Psi^{'}(\bm{\tau})&=(\mathcal{S}_{2}^{-1})_{\bm{\tau}}^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\varphi_{1}^{1},\ldots,\varphi_{L}^{1})\beta_{q_{1}^{1}}\\&+
+		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\varphi_{1}^{2},\ldots,\varphi_{L}^{2})\beta_{a_{1}}\beta_{a_{2}}\\&+\ldots+\Psi^{''}(1,\ldots,1)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\left(\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}
 	\end{split}
 \end{equation}
 For a fixed configuration $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})$, using equation \eqref{ResulsBasis} and observing that 
 \begin{equation}
-  \left(1+\sum_{j=y}^{L}\delta_{s_{j},1}\right) =\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{\tau_{y},1})\right)
+  \left(1+\sum_{j=y}^{L}\delta_{\tau_{j},N}\right) =\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{\tau_{y},N})\right)
 \end{equation}
 we obtain 
     \begin{equation}
-\Psi^{''}(\bm{\tau})=\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\tau_{x},1})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{\tau_{y},1})\right)\right)^{1-\delta_{\tau_{y},1}}
+\Psi^{''}(\bm{\tau})=\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\tau_{x},N})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{\tau_{y},N})\right)\right)^{1-\delta_{\tau_{y},N}}
 \end{equation}
 Introducing
 \begin{equation}
-	c_{y}=(1-\delta_{\tau_{y},1}) \qquad \forall y\in \{1,\ldots L\}
+	c_{y}=(1-\delta_{\tau_{y},N}) \qquad \forall y\in \{1,\ldots L\}
 \end{equation}
 and replacing $\Psi^{'}(\bm{\tau})$ computed above in \eqref{ABS_intermediate} we obtain 
 
@@ -1640,10 +1640,10 @@ Finally, considering all possible $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, 
 \end{flushright}
 
 \subsection{Exact steady state correlations}\label{correlation-section}
-In this section we write a formula for the stationary steady state correlations between $m$- points of the chain, each of them occupied by a non empty species, i.e. a species with label from $1$ to $N-1$. This is motivated by interest of understanding how actual particles of the chain are correlated among each others and also because the holes depends on the occupation of all other species, as a consequence of the constraint $n_{N}^{x}=\nu-\sum_{b=1}^{N-1}n_{b}^{x}$ for arbitrary $x\in \{1,\ldots,L\}$. Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $\bm{y}=(y_{1},\ldots,y_{m})$, such that $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$. In each of these points there is a particle of species $a_{i}\in \{1,\ldots,N-1\}$. Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
+In this section we write a formula for the stationary steady state correlations between $m$- points of the chain, each of them occupied by a non empty species, i.e. a species with label from $1$ to $N-1$. This is motivated by interest of understanding how actual particles of the chain are correlated among each others and also because the holes depends on the occupation of all other species, as a consequence of the constraint $n_{N}^{x}=\nu-\sum_{b=1}^{N-1}n_{b}^{x}$ for arbitrary $x\in \{1,\ldots,L\}$. Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $\bm{y}=(y_{1},\ldots,y_{m})$, such that $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$. In each of these points there is a particle of species $s_{i}\in \{1,\ldots,N-1\}$. Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
 \begin{equation}\label{exactCorrelations}
-		\langle n^{y_{1}}_{a_{1}}\cdots n^{y_{m}}_{a_{m}}\rangle_{\text{stat}}=\sum_{c_{1},\ldots,c_{m}=0}^{1}
-			f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}(\alpha_{a_{k}}-\beta_{a_{k}})^{c_{k}}\beta_{a_{k}}^{1-c_{k}}g_{k}(L,y_{k},c_{k},\ldots,c_{m})
+		\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{c_{1},\ldots,c_{m}=0}^{1}
+			f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(L,y_{k},c_{k},\ldots,c_{m})
 	\end{equation}
 	where 
 	\begin{equation}\label{powerCoeffSpecies}
@@ -1656,31 +1656,32 @@ In this section we write a formula for the stationary steady state correlations 
 \textbf{Remark}: using binomial theorem we rewrite the \eqref{exactCorrelations} as 
 \begin{equation}
 \begin{split}
-\langle n^{y_{1}}_{a_{1}}\cdots n^{y_{m}}_{a_{m}}\rangle_{\text{stat}}=&
+\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=&
 \sum_{c_{1},\ldots,c_{m}=0}^{1}
-f(L,c_{1},\ldots,c_{m})\prod_{q=1}^{m}\left(\sum_{t_{k}=0}^{c_{k}}(-1)^{c_{q}-t_{q}}\alpha_{a_{q}}^{t_{q}}\beta_{a_{q}}^{1-t_{q}}g_{q}(L,y_{q},c_{q},\ldots,c_{m})\right)\\
+f(L,c_{1},\ldots,c_{m})\prod_{q=1}^{m}\left(\sum_{t_{k}=0}^{c_{k}}(-1)^{c_{q}-t_{q}}\alpha_{s_{q}}^{t_{q}}\beta_{s_{q}}^{1-t_{q}}g_{q}(L,y_{q},c_{q},\ldots,c_{m})\right)\\
 =&\sum_{c_{1},\ldots,c_{m}=0}^{1}
-f(L,c_{1},\ldots,c_{m})\sum_{t_{1}=0}^{c_{1}}\ldots\sum_{t_{m}=0}^{c_{m}}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}\alpha_{a_{q}}^{t_{q}}\beta_{a_{q}}^{1-t_{q}}g_{q}(L,y_{q},c_{q},\ldots,c_{m})
+f(L,c_{1},\ldots,c_{m})\sum_{t_{1}=0}^{c_{1}}\ldots\sum_{t_{m}=0}^{c_{m}}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}\alpha_{s_{q}}^{t_{q}}\beta_{s_{q}}^{1-t_{q}}g_{q}(L,y_{q},c_{q},\ldots,c_{m})
 \end{split}
 \end{equation}
 By exchanging the summations we rewrite it as 
 \begin{equation}
 \begin{split}
-\langle n^{y_{1}}_{a_{1}}\cdots n^{y_{m}}_{a_{m}}\rangle_{\text{stat}}=&\sum_{t_{1},\ldots,t_{m}=0}^{1}
-\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,y_{q},c_{q},\ldots,c_{m})\alpha_{a_{q}}^{t_{q}}\beta_{a_{q}}^{1-t_{q}}\\
-=&\sum_{t_{1},\ldots,t_{m}=0}^{1}\prod_{q=1}^{m}\alpha_{q}^{t_{q}}\beta_{q}^{1-t_{q}}\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,y_{q},c_{q},\ldots,c_{m})
+\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=&\sum_{t_{1},\ldots,t_{m}=0}^{1}
+\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,y_{q},c_{q},\ldots,c_{m})\alpha_{s_{q}}^{t_{q}}\beta_{s_{q}}^{1-t_{q}}\\
+=&\sum_{t_{1},\ldots,t_{m}=0}^{1}\prod_{q=1}^{m}\alpha_{s_{q}}^{t_{q}}\beta_{s_{q}}^{1-t_{q}}\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,y_{q},c_{q},\ldots,c_{m})
 \end{split}
 \end{equation}
 Therefore, comparing this formula and \eqref{absProbabilitiesIntegrable}, we can determine the absorption probabilities 
 \begin{equation}
 	\mathcal{P}(t_{1},\ldots,t_{m},\hat{\bm{\xi}})=\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,x_{q},c_{q},\ldots,c_{m})
 \end{equation}
-where $\hat{\bm{\xi}}=\sum_{i=1}^{m}\delta_{a_{i}}^{x_{i}}$.  
-\paragraph{Proof of formula \eqref{exactCorrelations}} Consider $m$ particles of non-empty types $a_{i}\in\{1,\ldots,N-1\}$ in positions $y_{i}\in\{1,\ldots,L\}$ for all $i=1,\ldots,m$. We aim to compute the non-equilibrium stationary state correlation $\langle n_{a_{1}}^{y_{1}}\cdots n_{a_{m}}^{y_{m}} \rangle_{stat}$. By using duality, we showed in \eqref{CorrelationByABS-prob} that
+where $\hat{\bm{\xi}}=\sum_{i=1}^{m}\delta_{s_{i}}^{y_{i}}$.  
+\paragraph{Proof of formula \eqref{exactCorrelations}} Consider $m$ particles of non-empty types $s_{i}\in\{1,\ldots,N-1\}$ in positions $y_{i}\in\{1,\ldots,L\}$ for all $i=1,\ldots,m$. We aim to compute the non-equilibrium stationary state correlation $\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}} \rangle_{stat}$. By using duality, we showed in \eqref{CorrelationByABS-prob} that
  \begin{equation}
- 	\langle n_{a_{1}}^{y_{1}}\cdots n_{a_{m}}^{y_{m}} \rangle_{stat}=\langle\hat{\bm{\xi}}\rangle_{stat,dual}
+ 	\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}} \rangle_{stat}=\langle\hat{\bm{\xi}}\rangle_{stat,dual}
  \end{equation} 
-Using formula \eqref{ABS} for a configuration where all $\tau_{y_{i}}=a_{i}$  for $i=1,\ldots,m$ and $\tau_{j}=N$ for $j\in\{1,\ldots,L\}\setminus \{y_{1},\ldots,y_{m}\}$, we obtain 
+where $\langle\hat{\bm{\xi}}\rangle_{stat,dual}$ we have denoted the stationary state of the dual process starting from the configuration $\hat{\bm{\xi}}$. 
+Using formula \eqref{ABS} for a configuration where all $\tau_{y_{i}}=s_{i}$  for $i=1,\ldots,m$ and $\tau_{j}=N$ for $j\in\{1,\ldots,L\}\setminus \{y_{1},\ldots,y_{m}\}$, we obtain 
 \begin{equation}
  \langle\hat{\bm{\xi}}\rangle_{stat,dual}=\Psi^{'}(\tau_{1},\ldots,\tau_{L})=\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{\tau_{k}}^{c_{k}}\beta_{\tau_{k}}^{1-c_{k}}\left(2+L-y_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}
 \end{equation}
