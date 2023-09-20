@@ -183,7 +183,8 @@ In this work we concentrate our effort in this last "single layer" case with a r
 {\color{red}
 The case of $\twoj=1$ distinguishes itself from other values of $\twoj$ as in this case the model can be mapped to an integrable higher rank $gl(n)$ Heisenberg XXX spin chain with open (non-diagonal) boundaries. Furthermore the matrix product ansatz \cite{derrida1993exact}  is applicable, see \cite{Crampe:2014aoa,vanicat2017exact}.
 }
-We will exploit the duality and the underlying symmetries of the model, to write explicitly all the correlations of this \textit{hard-core exclusion} case. The main tool that we will use is the Lie algebraic description of the process, that allows to find the duality as a proper symmetry of the generator. 
+We will exploit the duality and the underlying symmetries of the model, to write explicitly all the correlations of this \textit{hard-core exclusion} case. The main tool that we will use is the Lie algebraic description of the process, that allows to find the duality as a proper symmetry of the generator. \\
+ For a complete review of the quantum inverse scattering method see \cite{Sklyanin:1988yz} and \cite{faddeev1996algebraic}. For application of the QISM to interacting particle systems we refer to \cite{frassek2020eigenstates,frassek2019non,frassek2022exact,vanicat2017exact}. \\
 \paragraph{Organization of the paper}
 \section{The stirring process}
 \subsection{Informal description of the process}
@@ -1718,63 +1719,63 @@ Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,x_{k},c_{k},\ldots,c_{m})$ an
 \subsubsection{Explicit examples of steady state correlations}
 We give some examples of correlations applying formula \eqref{exactCorrelations}.
 \paragraph{One point correlations}
-The average with respect to the non equilibrium distribution of the occupation variable of the species $a_{1}\in \{1,\ldots,N-1\}$ at coordinate $y_{1}\in \{1,\ldots,L\}$ reads
+The average with respect to the non equilibrium distribution of the occupation variable of the species $s_{1}\in \{1,\ldots,N-1\}$ at coordinate $y_{1}\in \{1,\ldots,L\}$ reads
 \begin{equation}
-	\langle n_{a_{1}}^{y_{1}}\rangle_{\text{stat}}=\sum_{c_{1}=0}^{1}f(L,c_{1})(\alpha_{a_{1}}-\beta_{a_{1}})^{c_{1}}\beta_{a_{1}}^{1-c_{1}}g_{a_{1}}(L,y_{1},c_{1})
+	\langle n_{s_{1}}^{y_{1}}\rangle_{\text{stat}}=\sum_{c_{1}=0}^{1}f(L,c_{1})(\alpha_{s_{1}}-\beta_{s_{1}})^{c_{1}}\beta_{s_{1}}^{1-c_{1}}g_{s_{1}}(L,y_{1},c_{1})
 \end{equation}
 Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain 
 \begin{equation}\label{one-pts-corr}
-\langle n_{a_{1}}^{y_{1}}\rangle_{\text{stat}}=\frac{(L+1-y_{1})}{L+1}(\alpha_{a_{1}}-\beta_{a_{1}})+\beta_{a_{1}}
+\langle n_{s_{1}}^{y_{1}}\rangle_{\text{stat}}=\frac{(L+1-y_{1})}{L+1}(\alpha_{s_{1}}-\beta_{s_{1}})+\beta_{s_{1}}
 \end{equation}
 \paragraph{Two points correlations}
-The two points correlations with respect the non equilibrium distribution of the occupation variable of the species $a_{1},a_{2}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2}\in \{1,\ldots,L\}$ with $x_{1}< x_{2}$ reads 
+The two points correlations with respect the non equilibrium distribution of the occupation variable of the species $s_{1},s_{2}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2}\in \{1,\ldots,L\}$ with $x_{1}< x_{2}$ reads 
 \begin{equation}
 	\begin{split}
-	\langle n_{a_{1}}^{y_{1}}n_{a_{2}}^{y_{2}}\rangle_{\text{stat}}= \sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}f(L,c_{1},c_{2})\prod_{k=1}^{2}(\alpha_{a_{k}}-\beta_{a_{k}})^{c_{k}}\beta_{a_{k}}^{1-c_{k}}g_{k}(L,y_{k},c_{k},c_{2})
+	\langle n_{a_{1}}^{y_{1}}n_{a_{2}}^{y_{2}}\rangle_{\text{stat}}= \sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}f(L,c_{1},c_{2})\prod_{k=1}^{2}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(L,y_{k},c_{k},c_{2})
 	\end{split}
 \end{equation}
 Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain 
 \begin{equation}
 	\begin{split}
-	\langle n_{a_{1}}^{y_{2}} n_{a_{2}}^{y_{2}}\rangle_{\text{stat}}&=\beta_{a_{1}}\beta_{a_{2}}+\frac{(L+1-y_{1})}{L+1}(\alpha_{a_{1}}-\beta_{a_{1}})\beta_{a_{2}}+\frac{(L+1-y_{2})}{L+1}(\alpha_{a_{2}}-\beta_{a_{2}})\beta_{a_{1}}\\&+\frac{(L-y_{1})(L+1-y_{2})}{L(L+1)}(\alpha_{a_{1}}-\beta_{a_{1}})(\alpha_{a_{2}}-\beta_{a_{2}})
+	\langle n_{s_{1}}^{y_{2}} n_{s_{2}}^{y_{2}}\rangle_{\text{stat}}&=\beta_{s_{1}}\beta_{s_{2}}+\frac{(L+1-y_{1})}{L+1}(\alpha_{s_{1}}-\beta_{s_{1}})\beta_{s_{2}}+\frac{(L+1-y_{2})}{L+1}(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{1}}\\&+\frac{(L-y_{1})(L+1-y_{2})}{L(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})
 	\end{split}
 \end{equation}
 Therefore, we obtain the second cumulant, i.e. the two-point connected correlation as 
 \begin{equation}\label{two-pts-corr}
 	\begin{split}
-		\langle n_{a_{1}}^{y_{2}} n_{a_{2}}^{y_{2}}\rangle_{\text{stat}}^{c}=\mathbb{E}[n_{a_{1}}^{y_{1}}n_{a_{2}}^{y_{2}}]-\mathbb{E}[n_{a_{1}}^{y_{1}}]\mathbb{E}[n_{a_{2}}^{y_{2}}]=-\frac{x_{1}(L-y_{2}+1)}{L(L+1)^{2}}\left(\alpha_{a_{1}}-\beta_{a_{1}}\right)\left(\alpha_{a_{2}}-\beta_{a_{2}}\right)
+		\langle n_{s_{1}}^{y_{2}} n_{s_{2}}^{y_{2}}\rangle_{\text{stat}}^{c}=\mathbb{E}[n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}]-\mathbb{E}[n_{s_{1}}^{y_{1}}]\mathbb{E}[n_{s_{2}}^{y_{2}}]=-\frac{x_{1}(L-y_{2}+1)}{L(L+1)^{2}}\left(\alpha_{s_{1}}-\beta_{s_{1}}\right)\left(\alpha_{s_{2}}-\beta_{s_{2}}\right)
 	\end{split}
 \end{equation}
 \paragraph{Three points correlations}
-The three points correlations with respect the non equilibrium distribution of the occupation variable of the species $a_{1},a_{2},a_{3}\in \{1,\ldots,N-1\}$ at coordinates $y_{1},y_{2},y_{3}\in \{1,\ldots,L\}$ such that $y_{1}<y_{2}<y_{3}$
+The three points correlations with respect the non equilibrium distribution of the occupation variable of the species $s_{1},s_{2},s_{3}\in \{1,\ldots,N-1\}$ at coordinates $y_{1},y_{2},y_{3}\in \{1,\ldots,L\}$ such that $y_{1}<y_{2}<y_{3}$
 \begin{equation}
-    \langle n_{a_{1}}^{y_{1}}n_{a_{2}}^{y_{2}}n_{a_{3}}^{y_{3}}\rangle_{\text{stat}}=\sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}\sum_{c_{3}=0}^{1}f(L,c_{1},c_{2},c_{3})\prod_{k=1}^{2}(\alpha_{a_{k}}-\beta_{a_{k}})^{c_{k}}\beta_{a_{k}}^{1-c_{k}}g_{k}(L,y_{k},c_{k},\ldots,c_{3})
+    \langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}n_{s_{3}}^{y_{3}}\rangle_{\text{stat}}=\sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}\sum_{c_{3}=0}^{1}f(L,c_{1},c_{2},c_{3})\prod_{k=1}^{2}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(L,y_{k},c_{k},\ldots,c_{3})
 \end{equation}
 Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain 
 \begin{align}\label{three-pts-corr}
-        \langle n_{a_{1}}^{y_{1}}n_{a_{2}}^{y_{2}}n_{a_{3}}^{y_{3}}\rangle_{\text{stat}}&=\beta_{a_{1}}\beta_{a_{2}}\beta_{a_{3}}+\frac{(L+1-y_{1})}{(L+1)}(\alpha_{a_{1}}-\beta_{a_{1}})\beta_{a_{2}}\beta_{a_{3}}
+        \langle n_{a_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}n_{s_{3}}^{y_{3}}\rangle_{\text{stat}}&=\beta_{s_{1}}\beta_{s_{2}}\beta_{s_{3}}+\frac{(L+1-y_{1})}{(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})\beta_{s_{2}}\beta_{s_{3}}
         \\&+\nonumber
-        \frac{(L+1-y_{2})}{(L+1)}(\alpha_{a_{2}}-\beta_{a_{2}})\beta_{a_{1}}\beta_{a_{3}}+\frac{(L+1-y_{3})}{(L+1)}(\alpha_{a_{3}}-\beta_{a_{3}})\beta_{a_{1}}\beta_{a_{2}}
+        \frac{(L+1-y_{2})}{(L+1)}(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{1}}\beta_{s_{3}}+\frac{(L+1-y_{3})}{(L+1)}(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{1}}\beta_{s_{2}}
         \\&+\nonumber
-        \frac{(L-x_{2})(L-y_{3}+1)}{L(L+1)}(\alpha_{a_{2}}-\beta_{a_{2}})(\alpha_{a_{3}}-\beta_{a_{3}})\beta_{a_{1}}
+        \frac{(L-x_{2})(L-y_{3}+1)}{L(L+1)}(\alpha_{s_{2}}-\beta_{s_{2}})(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{1}}
         \\&+\nonumber
-        \frac{(L-y_{1})(L-y_{3}+1)}{L(L+1)}(\alpha_{a_{1}}-\beta_{a_{1}})(\alpha_{a_{3}}-\beta_{a_{3}})\beta_{a_{2}}
+        \frac{(L-y_{1})(L-y_{3}+1)}{L(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{2}}
         \\&+\nonumber
-        \frac{(L-y_{1})(L-y_{2}+1)}{L(L+1)}(\alpha_{a_{1}}-\beta_{a_{1}})(\alpha_{a_{2}}-\beta_{a_{2}})\beta_{a_{3}}
+        \frac{(L-y_{1})(L-y_{2}+1)}{L(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{3}}
         \\&+\nonumber
-        \frac{(L-y_{1}-1)(L-y_{2})(L-y_{3}+1)}{L(L-1)(L+1)}(\alpha_{a_{1}}-\beta_{a_{1}})(\alpha_{a_{2}}-\beta_{a_{2}})(\alpha_{a_{3}}-\beta_{a_{3}})
+        \frac{(L-y_{1}-1)(L-y_{2})(L-y_{3}+1)}{L(L-1)(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})(\alpha_{s_{3}}-\beta_{s_{3}})
 \end{align}
 Therefore, we obtain the third cumulant, i.e. the three-point connected correlation as 
 \begin{align}
-	\langle n_{a_{1}}^{y_{1}}n_{a_{2}}^{y_{2}}n_{a_{3}}^{y_{3}}\rangle_{stat}^{c}&=\mathbb{E}\left[n_{a_{1}}^{y_{1}}n_{a_{2}}^{y_{2}}\right]-\mathbb{E}\left[n_{a_{1}}^{y_{1}}n_{a_{2}}^{y_{2}}\right]\mathbb{E}\left[n_{a_{3}}^{y_{3}}\right]-\mathbb{E}\left[n_{a_{1}}^{y_{1}}n_{a_{3}}^{y_{3}}\right]\mathbb{E}\left[n_{a_{2}}^{y_{2}}\right]\\&-\mathbb{E}\left[n_{a_{3}}^{y_{3}}n_{a_{2}}^{y_{2}}\right]\mathbb{E}\left[n_{a_{1}}^{y_{1}}\right]+2\mathbb{E}\left[n_{a_{1}}^{y_{1}}\right]\mathbb{E}\left[n_{a_{2}}^{y_{2}}\right]\mathbb{E}\left[n_{a_{3}}^{y_{3}}\right]
+	\langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}n_{s_{3}}^{y_{3}}\rangle_{stat}^{c}&=\mathbb{E}\left[n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}\right]-\mathbb{E}\left[n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}\right]\mathbb{E}\left[n_{s_{3}}^{y_{3}}\right]-\mathbb{E}\left[n_{s_{1}}^{y_{1}}n_{s_{3}}^{y_{3}}\right]\mathbb{E}\left[n_{s_{2}}^{y_{2}}\right]\\&-\mathbb{E}\left[n_{s_{3}}^{y_{3}}n_{s_{2}}^{y_{2}}\right]\mathbb{E}\left[n_{s_{1}}^{y_{1}}\right]+2\mathbb{E}\left[n_{s_{1}}^{y_{1}}\right]\mathbb{E}\left[n_{s_{2}}^{y_{2}}\right]\mathbb{E}\left[n_{s_{3}}^{y_{3}}\right]
 	\\&=
-	-\frac{2y_{1}(L+1-2y_{2})(L+1-y_{3})}{(L+1)^{3}(L-1)L}(\alpha_{a_{1}}-\beta_{a_{1}})(\alpha_{a_{2}}-\beta_{a_{2}})(\alpha_{a_{3}}-\beta_{a_{3}})
+	-\frac{2y_{1}(L+1-2y_{2})(L+1-y_{3})}{(L+1)^{3}(L-1)L}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})(\alpha_{s_{3}}-\beta_{s_{3}})
 \end{align}
 \textbf{Remark}: the first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, are exactly the ones found in subsection 4.3 of \cite{vanicat2017exact}. 
 \section{Mapping to equilibrium} \label{Section-Mapping}
 {\color{blue}check also Appendix A in
 \cite{Alcaraz:1992zc} \cite{Sklyanin:1988yz}} \\
-In Subsection \ref{subsection-exact}, we have found two similarity transformations, namely $S_{1}$ and $S_{2}$, that map the original Hamiltonian $H$ onto a simpler one $H^{''}$, that although non-stochastic, allows to compute the explicit expression of the steady state correlations. To complete the picture, in this section we aim to find a further similarity transformation, called $W$, that maps $H^{''}$ onto $H_{0}$ that will be defined as the original Hamiltonian where the boundaries are set diagonal. These boundaries do not produce any current and thus $H_{0}$ is called \textit{equilibrium Hamiltonian}. For this reason, we say that the process is mapped onto equilibrium, indeed, using the sequence of transformations one can go from non-equilibrium to equilibrium and back.
+In Section \ref{sectionIntegrabiliy}, we have found two similarity transformations, namely $S_{1}$ and $S_{2}$, that map the original Hamiltonian $H$ onto a simpler one $H^{''}$, that although non-stochastic, allows to compute the explicit expression of the steady state correlations. To complete the picture, in this section we aim to find a further similarity transformation, called $W$, that maps $H^{''}$ onto $H_{0}$ that will be defined as the original Hamiltonian where the boundaries are set diagonal. These boundaries do not produce any current and thus $H_{0}$ is called \textit{equilibrium Hamiltonian}. For this reason, we say that the process is mapped onto equilibrium, indeed, using the sequence of transformations one can go from non-equilibrium to equilibrium and back.
 This can be represented by the following diagram 
 \begin{equation}
 	H\;\xleftrightarrow{S_{1}}\;H^{'}\;\xleftrightarrow{S_{2}}\;H^{''}\xleftrightarrow{W}\;H_{0}
@@ -1802,7 +1803,7 @@ We look for a matrix $W$ such that
 \begin{equation}\label{GoalWH}
 	H^{''}W=WH_{0}
 \end{equation}
- We denote by $\bm{m}=(m_{1},\ldots,m_{N})$ an $N-$dimensional vector where each $m_{i}=\sum_{x=1}^{L}n_{i}^{x}$, i.e. it means the total occupation over the chain of each species $i\in\{1,\ldots,N\}$. Observe that $|\bm{m}|=\sum_{i=1}^{N}m_{i}=L$. We call $\mathcal{E}_{\bm{m}}$ and $|\Psi_{\bm{m}}^{0}\rangle$ the eigenvalue and the eigenvector of $H^{0}$ that correspond to a certain $\bm{m}$. We prove that 
+ We denote by $\bm{m}=(m_{1},\ldots,m_{N})$ an $N-$dimensional vector where each $m_{i}=\sum_{x=1}^{L}n_{i}^{x}$, i.e. $m_{i}$ indicates the total occupation over the chain of each species $i\in\{1,\ldots,N\}$. Observe that $|\bm{m}|=\sum_{i=1}^{N}m_{i}=L$. We denote by $\mathcal{E}_{\bm{m}}$ and $|\Psi_{\bm{m}}^{0}\rangle$ the eigenvalue and the eigenvector of $H^{0}$ that correspond to a certain $\bm{m}$. We prove that 
 \begin{equation}\label{W-extended}
 	W= \lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  \left(\mathcal{E}_{\bm{m}}+\epsilon-H^{''}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
@@ -1816,7 +1817,7 @@ The above equation implies that
 \begin{equation}
 	(z-H^{''})R(H^{''},z)=I
 \end{equation}
-In order to be well defined $z$ must not be an eigenvalue of $H^{''}$. Fix with $\epsilon>0$ and arbitrary, then we chose $z=\mathcal{E}_{\bm{m}}+\epsilon$, 
+In order to be well defined $z$ must not be an eigenvalue of $H^{''}$. Fix an arbitrary $\epsilon>0$ and consider $z=\mathcal{E}_{\bm{m}}+\epsilon$, 
 \begin{equation}
 	(\mathcal{E}_{\bm{m}}+\epsilon-H^{''})R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)=1
 \end{equation}
@@ -1824,27 +1825,27 @@ We multiply both sides by $|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|$
 \begin{equation}
 	(\mathcal{E}_{\bm{m}}+\epsilon-H^{''})R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|,
 \end{equation}
-we sum over all possible $\bm{m}$'s 
+by summing over all possible $\bm{m}$'s such that $|\bm{m}|=L$ and multiply by $\epsilon$ both sides
+%\begin{equation}
+%	\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\mathcal{E}_{\bm{m}}+\epsilon-H^{''})R(H^{''},\Lambda_{m}+\epsilon)|\Psi_{m}^{0}\rangle \langle \Psi_{m}^{0}|=\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|,
+%\end{equation}
+%we multiply both sides by $\epsilon$ 
 \begin{equation}
-	\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\mathcal{E}_{\bm{m}}+\epsilon-H^{''})R(H^{''},\Lambda_{m}+\epsilon)|\Psi_{m}^{0}\rangle \langle \Psi_{m}^{0}|=\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|,
+	\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\mathcal{E}_{\bm{m}}+\epsilon-H^{''})R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{m}^{0}|=\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|.
 \end{equation}
-we multiply both sides by $\epsilon$ 
-\begin{equation}
-	\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  (\mathcal{E}_{\bm{m}}+\epsilon-H^{''})R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{m}^{0}|=\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|,
-\end{equation}
-we take the limit for $\epsilon\to 0$ on both sides 
+We take the limit for $\epsilon\to 0$ on both sides 
 \begin{equation}
 	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L} (\mathcal{E}_{\bm{m}}+\epsilon-H^{''})R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
-Observe that, trivially,
+We first observe that
 \begin{equation}
 	\lim_{\epsilon\to 0}\left(\mathcal{E}_{\bm{m}}+\epsilon-H^{''}\right)=\left(\Lambda_{\bm{m}}-H^{''}\right)<\infty
 \end{equation}
-and using the following power expansion
+Second, using the power expansion
 \begin{equation}\label{veryUsefulSeries}
 	(A-B)^{-1}=\sum_{n=0}^{\infty}(A^{-1}B)^{n}A^{-1}
 \end{equation}
-we have that for each $\bm{m}$ 
+we have that, for each $\bm{m}$, 
 \begin{equation}
 	\begin{split}
 		&\lim_{\epsilon\to 0}\epsilon\left(\mathcal{E}_{\bm{m}}+\epsilon-H^{''}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\sum_{n=0}^{\infty}\left((\mathcal{E}_{\bm{m}}+\epsilon)^{-1}H^{''}\right)^{n}(\mathcal{E}_{\bm{m}}+\epsilon)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|
@@ -1852,15 +1853,15 @@ we have that for each $\bm{m}$
 		\lim_{\epsilon\to 0}\epsilon\sum_{n=0}^{\infty}\left((\Lambda_{\bm{m}}+\epsilon)^{-1}\mathcal{E}_{\bm{m}}\right)^{n}(\mathcal{E}_{\bm{m}}+\epsilon)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|=\lim_{\epsilon\to 0}\epsilon\left(\mathcal{E}_{\bm{m}}+\epsilon-\mathcal{E}_{\bm{m}}\right)^{-1}|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|\\=&|\Psi_{\bm{m}}^{0}\rangle\langle\Psi_{\bm{m}}^{0}|<\infty
 	\end{split}
 \end{equation}
-therefore the limit of the product is the product of the limit and we obtain that 
+Since both factor are finite, the limit of the product is the product of the limit and we obtain
 \begin{equation}
 	\sum_{m=0}^{L}  (\mathcal{E}_{\bm{m}}-H^{''})\lim_{\epsilon\to 0}\epsilon R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|=0
 \end{equation}
-Since the limit of the sum is the sum of the limit we have   
+Since the limit of the sum is the sum of the limit   
 \begin{equation}
 	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  \mathcal{E}_{\bm{m}}R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|= H^{''}\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\, |\bm{m}|=L}  R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
-thus 
+Recalling that $|\Psi_{\bm{m}}^{0}\rangle$ are the eigenvectors with eigenvalue $\mathcal{E}_{\bm{m}}$ of $H_{0}$ we have 
 \begin{equation}
 	\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)H_{0}|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|= H^{''}\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\,|\bm{m}|=L}  R(H^{''},\mathcal{E}_{\bm{m}}+\epsilon)|\Psi_{\bm{m}}^{0}\rangle \langle \Psi_{\bm{m}}^{0}|
 \end{equation}
@@ -1876,9 +1877,9 @@ we finally obtain
 \begin{equation}
 	WH_{0}=H^{''}W
 \end{equation}
-Formula \eqref{W-extended} may be evaluated by perturbation theory. Moreover, since the process is integrable it is possible to express $W$ in function of the conserved charges of the system and of the eigenvectors of the equilibrium steady state, that are known in literature by Bethe ansatz. This expression, as it will be shown in the following sections, allows a simpler treatment of the mapping and furthermore we can use it to retrieve the steady state of $H^{''}$ by applying $W$ to the ground state of $H_{0}$. To write formula \eqref{W-extended} using the conserved charges of the system, we use Quantum Inverse Scattering Method (QISM). This will be presented in Subsection \ref{SubsectionQISM}. In Subsection \ref{SubsectionGL2} we first present the simpler case of $gl(2)$, then, in Subsection \ref{SubsectionGLN} we adapt the proof to the general $gl(N)$. 
+Formula \eqref{W-extended} may be evaluated by perturbation theory (see \cite{frassek2020duality}). Moreover, since the process is integrable it is possible to express $W$ in function of the conserved charges of the system. This expression allows a simpler treatment of the mapping and allows also to retrieve the steady state of $H^{''}$ by applying $W$ to the ground state of $H_{0}$. To write formula \eqref{W-extended} through the conserved charges of the system, we use Quantum Inverse Scattering Method (QISM) (see \ref{SubsectionQISM}). In Subsection \ref{SubsectionGL2} we first construct $W$ for the simpler case of $gl(2)$, then, in Subsection \ref{SubsectionGLN} we adapt the proof to the general $gl(N)$. 
 \subsection{Quantum inverse scattering method}\label{SubsectionQISM}
- We introduce the \textit{quantum space} $V=V_{1}\otimes\ldots\otimes V_{j}\otimes\ldots\otimes V_{L}$ and the \textit{auxiliary space} $V_{0}$. In this specific case $V_{j}=\mathbb{C}^{N}$ $\forall j=0,1,\ldots ,L$. We define the following $R$-matrices acting on the tensor product of spaces with indices $a,b=0,1,\ldots,L$
+We introduce the \textit{quantum space} $V=V_{1}\otimes\ldots\otimes V_{j}\otimes\ldots\otimes V_{L}$ and the \textit{auxiliary space} $V_{0}$. In this specific case $V_{j}=\mathbb{C}^{N}$ $\forall j=0,1,\ldots ,L$. We define the following $R$-matrices acting on the tensor product of spaces with indices $a,b=0,1,\ldots,L$
 \begin{equation}\label{Rmatrix}
 	R_{ab}(x)=\frac{(P_{ab}+Ix)}{x+1}
 \end{equation}
@@ -1908,7 +1909,7 @@ and the $K$-matrices
 		0&0&0&\ldots&0&N+x
 	\end{pmatrix}
 \end{equation}
-where the lower index $a$ means that they are written in the canonical basis of the space $V_{a}=\mathbb{C}^{N}$, for $a\in\{0,\ldots,L\}$ and where $x,y\in\mathbb{C}$ are called spectral parameters.  
+where the lower index $a\in\{0,\ldots,L\}$ means that these matrices are written in the canonical basis of the space $V_{a}=\mathbb{C}^{N}$. Variables $x,y\in\mathbb{C}$ are called spectral parameters.  
 The above matrices satisfy:
 \begin{itemize}
 	\item \textit{Yang-Baxter-Equation}
@@ -1933,7 +1934,7 @@ that satisfies
 	\left[T(x),T(y)\right]=0\qquad \frac{\partial}{\partial x}\log (T(x))\lvert_{x=0}=C_{1}H^{''}+C_{2}I
 \end{equation}
 with $C_{1},C_{2}>0$. \\
-The double row monodromy $U_{0}(x)$ is given by
+The matrix $U_{0}(x)$ used to construct $T(x)$ is called double row monodromy and it is given by
 \begin{equation}
 	U_{0}(x)=M_{0}(x)\widehat{K}(x)\widehat{M}_{0}(x)
 \end{equation}
@@ -1946,7 +1947,7 @@ $U_{0}(x)$ satisfies the following exchange relation
 	R_{ab}(x-y)U_{a}(x)R_{ab}(x+y)U_{b}(y)=U_{b}(y)R_{ab}(x+y)U_{a}(x)R_{ab}(x-y)
 \end{equation}
 
-We write $U_{0}(x)$ in the canonical basis of $V_{0}$ and we rename its elements, each of them acting on the quantum space $V$, has follows
+ $U_{0}(x)$ can be written in the canonical basis of $V_{0}$ 
 \begin{comment}
 	\begin{equation}
 		U_{0}(x)=\begin{pmatrix}
@@ -1957,7 +1958,7 @@ We write $U_{0}(x)$ in the canonical basis of $V_{0}$ and we rename its elements
 		\end{pmatrix}
 	\end{equation}
 \end{comment}
-\begin{equation}
+\begin{equation}\label{matrixForm-U}
 	U_{0}(x)=\begin{pmatrix}
 		D_{1,1}(x)&D_{1,2}(x)&\ldots&D_{1,N-1}(x)&C_{1}(x)\\
 		D_{2,1}(x)&D_{2,2}(x)&\ldots&D_{2,N-1}(x)&C_{2}(x)\\
@@ -1966,7 +1967,7 @@ We write $U_{0}(x)$ in the canonical basis of $V_{0}$ and we rename its elements
 		B_{1}(x)&B_{2}(x)&\ldots&B_{N-1}(x)&D_{N,N}(x)
 	\end{pmatrix}
 \end{equation}
-The exchange relations for the elements of the above matrix can be found using \eqref{RURU} and they read:
+where each of the above element acts on the quantum space $V$. These element satisfy some \textit{exchange relations} that can be found by \eqref{RURU} and they are given by: 
 \begin{itemize}
 	\item for every $i\in\{1,\ldots,N-1\}$
 	\begin{equation}\label{EX1}
@@ -2013,10 +2014,10 @@ where
 	\\&h_{3}(x,y)=\frac{2}{(x-y)(1+x+y)}
 \end{align}
 \subsection{Charges}
-The transfer matrix $T^{\Delta}(x)$ reads
+Using the matrix form of $U_{0}(x)$ written in \eqref{matrixForm-U}, the transfer matrix $T(x)$ reads
 \begin{equation}
 	\begin{split}
-		T^{\Delta}(x)=%tr_{0}&\left(\begin{pmatrix}
+		T(x)=%tr_{0}&\left(\begin{pmatrix}
 			%-x&0&0&\ldots&0&(N+2x)(\alpha_{1}-\beta_{1})\\
 		%	0&-x&0&\ldots&0&(N+2x)(\alpha_{2}-\beta_{2})\\
 		%	\vdots&\vdots&\ddots&\vdots&\vdots&\vdots\\
@@ -2034,25 +2035,24 @@ The transfer matrix $T^{\Delta}(x)$ reads
 	(N+x)D_{N,N}(x)-\sum_{i=1}^{N-1}xD_{ii}(x)+\sum_{i=1}^{N-1}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)
 	\end{split}
 \end{equation}
-By construction,$T(x)$ is a polynomial in $x$ with exponents from $0$ to $2L+2$ 
+By construction, $T(x)$ is a polynomial in $x$ with exponents from $0$ to $2L+2$, i.e. 
 \begin{equation}
 	\begin{split}
 		T(x)=
 		\sum_{k=0}^{2L+2}Q_{k}x^{k}
 	\end{split}
 \end{equation}
-where, for all $k\in\{0,\ldots,2L+2\}$, we call $Q_{k}$ the \textit{conserved charges} of the system. We also introduce 
+where, for all $k\in\{0,\ldots,2L+2\}$, we call the matrices $Q_{k}$ the \textit{conserved charges} of the system. We also introduce 
 \begin{equation}
 	T_{0}(x)=(N+x)D_{N,N}(x)-\sum_{i=1}^{N-1}xD_{ii}(x)\quad\text{such that}\quad T(x)=T_{0}(x)+\sum_{i=2}^{N}(2x+N)(\alpha_{i}-\beta_{i})B_{i}(x)
 \end{equation}
-Arguing similarly we write the elements of $U_{0}(x)$ in a polynomial expansion as 
+Arguing similarly we write the elements of $U_{0}(x)$  as polynomials in $x$ as 
 \begin{equation}
-	D_{N,N}(x)=\sum_{a=0}^{2L+1}D_{N,N}^{a}x^{a}\quad D_{ii}(x)=\sum_{a=0}^{2L+1}D_{ii}^{a}x^{a}\quad B_{i}(x)=\sum_{a=0}^{2L-1}B_{i}^{a}x^{a}\quad D_{i,j}(x)=\sum_{a=0}^{2L}D_{i,j}^{a}x^{a}
+	D_{N,N}(x)=\sum_{k=0}^{2L+1}D_{N,N}^{k}x^{k}\quad D_{i,i}(x)=\sum_{k=0}^{2L+1}D_{i,i}^{k}x^{k}\quad B_{i}(x)=\sum_{k=0}^{2L-1}B_{i}^{k}x^{k}\quad D_{i,j}(x)=\sum_{k=0}^{2L}D_{i,j}^{k}x^{k}
 \end{equation}
- In the following we will study the charge expansion of $T^{\Delta}(x)$ when $x\to \infty$. As it will be clear in the following, only the first three coefficients for the diagonal elements and only the first one for the non-diagonal elements will be needed. Therefore, using \eqref{RURU}, we compute: 
+ In the following we will need the charge expansion of $T(x)$. As it will be clear in the following, only the first three coefficients for the diagonal elements of $U_{0}(x)$ and only the first one for the non-diagonal elements of $U_{0}(x)$ will be needed. Therefore, using \eqref{RURU}, we compute: 
 \begin{itemize}
 	\item For $D_{N,N}(x)$: 
-
 \begin{equation}
 	D_{N,N}^{2L+1}=I^{tot}
 \end{equation}
@@ -2084,7 +2084,7 @@ Arguing similarly we write the elements of $U_{0}(x)$ in a polynomial expansion 
 D_{i,j}^{2L}=-2e_{ji}^{tot}
 \end{equation}
 \end{itemize}
-\textbf{Remark}: it is easy to see that, when restricted to the case of 2 species,  we obtain equations (2.24)-(2.30) of \cite{frassek2020eigenstates}. \\ \\
+\textbf{Remark}: when restricted to the case of 2 species, we obtain equations (2.24)-(2.30) of \cite{frassek2020eigenstates}. \\ \\
 Using these polynomial expansions we write the first three charges
 
 
@@ -2097,13 +2097,12 @@ Q_{2L+1}&=ND_{N,N}^{2L+1}+A^{2L}-\sum_{i=1}^{N-1}D_{ii}^{2L}=N+2L-1
 \begin{align}
 Q_{2L\phantom{+}}&=ND_{N,N}^{2L}+D_{N,N}^{2L-1}-\sum_{i=1}^{N-1}D_{ii}^{2L-1}+\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}
 \end{align}
-The charges $Q_{2L+2}$ and $Q_{2L+1}$ are proportional to the identity matrix, while $Q_{2L}$ contains non diagonal matrices and the boundary parameters $\alpha_{i},\beta_{i}$ $\forall i=2,\ldots,N$.\\
+The charges $Q_{2L+2}$ and $Q_{2L+1}$ are proportional to the identity matrix, while $Q_{2L}$ contains non diagonal matrices and the boundary parameters $\alpha_{i},\beta_{i}$ $\forall i=1,\ldots,N-1$.\\
 By construction it follows that 
 \begin{equation}
 \left[Q_{2L},H^{''}\right]=Q_{2L}H^{''}-H^{''}Q_{2L}=0
 \end{equation}
-The commutation with the Hamiltonian $H^{''}$ for $Q_{2L+2}$ and $Q_{2L+1}$ is trivial. \\
-We introduce the following:
+while the commutation with the Hamiltonian $H^{''}$ for $Q_{2L+2}$ and $Q_{2L+1}$ is trivial. We introduce the following matrix:
 \begin{equation}
 Q_{2L}^{0}:=ND_{N,N}^{2L}+D_{N,N}^{2L-1}-\sum_{i=1}^{N-1}D_{ii}^{2L-1}
 \end{equation}
@@ -2118,19 +2117,18 @@ We also introduce
 \begin{equation}\label{Q-nonDiag}
 \mathcal{Q}_{2L}=\sum_{i=1}^{N-1}2(\alpha_{i}-\beta_{i})B_{i}^{2L-1}=\sum_{i=1}^{N-1}2\Delta_{i}B_{i}^{2L-1}
 \end{equation}
-where $\Delta_{i}=(\alpha_{i}-\beta_{i})$. 
-Therefore we can write 
+where, for the sake of notation we denoted $\Delta_{i}=(\alpha_{i}-\beta_{i})$. Therefore we can write 
 \begin{equation}
 Q_{2L}=Q_{2L}^{0}+\mathcal{Q}_{2L}
 \end{equation}
 Observe that $Q_{2L}$ and $Q_{2L}^{0}$ are isospectral. \\
 %  It has the property that commute with the equilibrium Hamiltonian. 
 
-Consider the matrix $Q_{0}^{2L}$ defined in \eqref{Q0Exp}. All terms are diagonal except the last one. This last non-diagonal can be identified with the second Casimir of the $gl(N-1)$ subalgebra. We denote it by $\hat{C}_{2}^{N-1}$ and it reads
+Consider the matrix $Q_{0}^{2L}$ defined in \eqref{Q0Exp}. All terms are diagonal except the last one. This last non-diagonal can be identified with the second Casimir of the $gl(N-1)$ subalgebra. We denote it by $\hat{C}_{2}^{N-1}$, i.e.
 \begin{equation}
 \hat C_2^{N-1}= \sum_{i,j=1}^{N-1}e_{ij}^{tot}e_{ji}^{tot}
 \end{equation} 
-We denote its eigenvector by $C_{2}^{N-1}$. Since the configuration space of the process is given by the tensor product of the first fundamental representation of $gl(N)$, we can decompose it in a direct sum of irreducible representation of $gl(N)$. The Bethe states belong to the configurations space, and thus we can write them as a direct sum of vectors, each belonging to an irreducible representation of $gl(N)$. On these irreducible vectors . $\hat{C}_{2}^{N-1}$ acts diagonally with eigenvalues $C_{2}^{N-1}$ given in terms of shifted weights, i.e. 
+We denote its eigenvalues by $C_{2}^{N-1}$. Since the configuration space of the process is given by the tensor product of the first fundamental representation of $gl(N)$, we can decompose it in a direct sum of irreducible representation of $gl(N)$. As a consequence, the Bethe states (that belong to the configurations space) can be written as a direct sum of vectors, each of them belonging to an irreducible representation of $gl(N)$. On these irreducible vectors $\hat{C}_{2}^{N-1}$ acts diagonally with eigenvalues $C_{2}^{N-1}$ given in terms of shifted weights, i.e. 
 \begin{equation}
 C_2^{N-1}=\sum_{j=1}^{N-1}\ell_j(\ell_j -N+2)+\frac{1}{6}(N-1)(N-2)(N-3)
 \end{equation} 
@@ -2142,9 +2140,15 @@ with $\mu_{j}$ the representation labels of irreducible representation of $gl(N)
 \begin{equation}
 \begin{split}
 \Lambda(x)&= \Lambda_{2L+2} x^{2L+2}+ \Lambda_{2L+1} x^{2L+1}+ \Lambda_{2L}x^{2L}+\ldots
-\\&=N x^{2L+2}+2(N+1) x^{2L+1}+ \left(N+2m_1(m_1+1)-(N+2)(L-m_1)+2C_{2}^{N-1}\right)x^{2L}+\ldots
+\\&=N x^{2L+2}+2(N+1) x^{2L+1}+ \left(N+2m_1(m_N+1)-(N+2)(L-m_N)+2C_{2}^{N-1}\right)x^{2L}+\ldots
 \end{split}
 \end{equation} 
+where we denote by 
+\begin{equation}
+	\Lambda_{\bm{m}}:=N+2m_1(m_N+1)-(N+2)(L-m_{N})+2C_{2}^{N-1}
+\end{equation}
+the eigenvalues for arbitrary $\bm{m}$ of $Q_{0}^{2L}$. 
+\begin{comment}
 {\color{blue}
 Thus the following difference is of order $2L$
 \begin{equation}
@@ -2154,8 +2158,11 @@ In the following it will be useful to compute the quantity
 \begin{equation}
 \lim_{x\to\infty}\frac{2x+N}{\Lambda(x)-T_0(x)}B_{i}(x)=\frac{2}{\Lambda_{2L}-Q_{2L}^0}B_i^{2L-1}
 \end{equation} }
-\paragraph{Exchange relations between charges}
-Using \eqref{EX1}, \eqref{EX2}, \eqref{EX3}, \eqref{EX4},\eqref{EX5} and \eqref{EX6} we obtain for every $i,j\in\{1,\ldots,N-1\}$ 
+\end{comment}
+\paragraph{Exchange relations between charges} Since, in general, the coefficients of the polynomial form of the elements of $U_{0}(x)$ and the charges do not commute, it is useful to find explicit exchange relations among them. Using \eqref{EX1}, \eqref{EX2}, \eqref{EX3}, \eqref{EX4},\eqref{EX5} and \eqref{EX6} we obtain:
+\begin{itemize}
+	\item 
+for every $i,j\in\{1,\ldots,N-1\}$ 
 \begin{equation}\label{ExQ0B-charges}
 Q_{0}^{2L}B_{i}^{2L-1}=B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})\right)-2\sum_{j=1\,:\,j\neq i}^{N-1}B_{j}^{2L-1}D_{j,i}^{2L}
 \end{equation}
@@ -2187,10 +2194,11 @@ and finally
 D_{i,j}^{2L}B_{i}^{2L-1}&=B_{i}^{2L-1}D_{i,j}^{2L}+B_{j}^{2L-1}\left(D_{i,i}^{2L+1}-D_{N,N}^{2L+1}\right)%	D_{21}^{2L}B_{2}^{2L-1}&=B_{2}^{2L-1}D_{21}^{2L}+B_{2}^{2L-1}\left(D_{22}^{2L+1}-D_{33}^{2L+1}\right)
 \end{split}
 \end{equation}
-While, for $i,j,k\in\{1,\ldots,N-1\}$ such that $i\neq j$, $k\neq i,h$
+\item  for $i,j,k\in\{1,\ldots,N-1\}$ such that $i\neq j\neq k\neq i,$
 \begin{equation}\label{Commuting-Charges}
 \left[D_{j,j}^{2L},B_{i}^{2L-1}\right]=0\qquad \left[B_{i}^{2L-1},B_{j}^{2L-1}\right]=0\qquad \left[B_{i}^{2L-1},D_{j,i}^{2L}\right]=0\qquad \left[B_{k}^{2L-1},D_{j,i}^{2L}\right]=0%\left[D_{12}^{2L},B_{2}^{2L-1}\right]=0\qquad \left[D_{11}^{2L},B_{2}^{2L-1}\right]=0
 \end{equation}
+\end{itemize} 
 %{\color{blue}Using them we also have 
 %\begin{equation}
 %\begin{split}
@@ -2200,11 +2208,11 @@ While, for $i,j,k\in\{1,\ldots,N-1\}$ such that $i\neq j$, $k\neq i,h$
 %\end{split}
 %\end{equation}}{\color{blue}Probably it is not useful}
 \subsection{Conserved charges form of W}
-By using the QISM results found in the previous section it is possible to rewrite $W$ in function of first non-trivial conserved charges of the system. This is possible because, thanks to integrability
+Using the QISM results found in the previous subsections it is possible to rewrite $W$ in function of first non-trivial conserved charges of the system. Indeed, thanks to integrability
 \begin{equation}
 	[H^{''},T(x)]=0
 \end{equation}
-and moreover $T(x)=\sum_{a=0}^{2L}Q^{2L}x^{a}$ with the property that, the first non-diagonal charge $Q^{2L}$ commutes with $H^{''}$ and thus we can look for a matrix $W$ such that 
+Since $T(x)=\sum_{a=0}^{2L}Q^{2L}x^{a}$, the first non-diagonal charge $Q^{2L}$ commutes with $H^{''}$ and thus we can equivalently look for a matrix $W$ such that 
 \begin{equation}
 	Q^{2L}W=WQ_{0}^{2L}
 \end{equation}
@@ -2214,16 +2222,17 @@ Arguing as in section \ref{SectionNonLocalTrasformation} and using the resolvent
 	W&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\;|\bm{m}|=1}\left(\Lambda_{\bm{m}}+\epsilon-Q^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|\\&=\lim_{\epsilon\to 0}\epsilon\sum_{\bm{m}\,:\;|\bm{m}|=1}\left(\Lambda_{\bm{m}}+\epsilon-Q^{2L}_{0}-\mathcal{Q}^{2L}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|
 \end{split}
 \end{equation}
-Since $Q^{2L}$ and $H^{''}$ commutes the above matrix $W$ still maps the non-equilibrium eigenvectors onto the equilibrium ones. The advantage is that now we can do more with the above expression. Firstly the eigenvalues $\Lambda_{\bm{m}}$ can be explicitly computed and secondly, using exchange relation between charges, we rewrite \eqref{WInCharges} in a better form that can be used to extract the steady state by rising the vacuum state. We first show the procedure in the $gl(2)$ case, and then we generalize it to arbitrary number of species $N$. 
+This expression in function of charges carries some advantages: firstly the eigenvalues $\Lambda_{\bm{m}}$ can be more easily computed and secondly, using exchange relation between charges, we rewrite \eqref{WInCharges} in a form that can be used to extract the steady state by rising the vacuum state of $H_{0}$. We first show this last property in the $gl(2)$ case, and then we generalize it to arbitrary number of species $N$.\\ \\
+\textbf{Remark}: in the $gl(2)$ case a closed formula can be found for all the non-equilibrium eigenvectors (not just for the steady state), since the exchange relations between charges are simpler. However, in the general $gl(N)$ case, only the steady state can be found via a closed and simple relation. 
 \subsection{The gl(2) case}\label{SubsectionGL2}
-Here, the multi-species stirring process reduces to the Simple Symmetric Exclusion Process (SSEP). We have that for every magnon number $m\in\{0,\ldots,L\}$ non-equilibrium eigenvectors $|\Psi_{m}\rangle$ of $H^{''}$, are written in terms of the eigenvectors $|\Psi_{m}^{0}\rangle$ of the equilibrium Hamiltonian $H_{0}$ by the following formula 
+Here the multi-species stirring process reduces to the Simple Symmetric Exclusion Process (SSEP). We have that for every magnon number $m\in\{0,\ldots,L\}$ non-equilibrium eigenvectors $|\Psi_{m}\rangle$ of $H^{''}$, can be written in terms of the eigenvectors $|\Psi_{m}^{0}\rangle$ of the equilibrium Hamiltonian $H_{0}$ by the following formula 
 \begin{equation}\label{Nice-W2}
 	\begin{split}
 		|\Psi^{''}\rangle=W|\Psi_{m}^{0}\rangle=&	\sum_{k=0}^{L}\frac{\Delta^{k}}{k!}\left(\frac{B_{1}^{2L-1}}{2}\right)^{k}\frac{\Gamma(\sigma_{0}^{tot}+2-k)}{\Gamma(\sigma_{0}^{tot}+2)}|\Psi_{m}^{0}\rangle
 	\end{split}
 \end{equation}
-where $\sigma_{0}^{tot}=e_{11}^{tot}-e_{22}^{tot}$ is the Pauli matrix. \\
-Observe that, by taking as equilibrium eigenvector in \eqref{Nice-W2} the vacuum state 
+where $\sigma_{0}^{tot}=e_{11}^{tot}-e_{22}^{tot}$ is the Pauli matrix. \\ 
+In particular, by taking as equilibrium eigenvector in \eqref{Nice-W2} the vacuum state 
 \begin{equation}
 	|\Psi_{0}^{0}\rangle=\underbrace{\begin{pmatrix}
 		0\\1
@@ -2232,7 +2241,7 @@ Observe that, by taking as equilibrium eigenvector in \eqref{Nice-W2} the vacuum
 	1
 \end{pmatrix}}_{\text{L-times}}
 \end{equation} we retrieve the steady state $|\Psi^{''}\rangle$ of $H^{''}$ when $N=2$. \\
-Equation \eqref{Nice-W2} gives an explicit formula in term of the charge $B_{1}^{2L-1}$ of the matrix $W$. We stress the fact that these nice formula comes from the simple commutation relations between charges. \eqref{Nice-W2} was found with different arguments and up to some constants also in \cite{frassek2020duality} and \cite{frassek2020eigenstates}.
+Equation \eqref{Nice-W2} gives an explicit formula in term of the matrices $B_{1}^{2L-1}$ of the matrix $W$. We stress the fact that these closed formula for every non-equilibrium eigenvectors comes from the simple commutation relations between charges. We also notice that \eqref{Nice-W2} was found with other arguments also in \cite{frassek2020duality} and \cite{frassek2020eigenstates}, here we present a different technique to obtain it. 
 \subsubsection{Proof of formula \eqref{Nice-W2}}
 The double row monodromy reads
 \begin{equation}
@@ -2245,7 +2254,7 @@ Using \eqref{Q-nonDiag} we rewrite \eqref{WInCharges} as
 \begin{equation}\label{W}
 	W=\lim_{\epsilon\to 0}\epsilon\sum_{m=0}^{L}\left((\Lambda_{m}+\epsilon)-Q_{0}^{2L}-2\Delta B_{1}^{2L-1}\right)^{-1}|\Psi_{m}^{0}\rangle \langle \Psi_{m}^{0}|
 \end{equation}
-Power expanding the matrix $W$ with respect to $\Delta_{i}=(\alpha_{i}-\beta_{i})$ for all $i\in\{1,\ldots,N-1\}$ we obtain 
+Power expanding the matrix $W$ with respect to $\Delta_{1}=(\alpha_{1}-\beta_{1})$ we obtain 
 \begin{equation}\label{LinkWG}
 	\begin{split}
 		W=&\lim_{\epsilon\to 0}\epsilon\sum_{m=0}^{L}\left((\Lambda_{m}+\epsilon)-Q_{0}^{2L}-2\Delta B_{1}^{2L-1}\right)^{-1}|\Psi_{m}^{0}\rangle\langle \Psi_{m}^{0}|\\
@@ -2317,7 +2326,7 @@ Using again \eqref{veryUsefulSeries} and re-summing the series we obtain
 		\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\frac{1}{4^{k}}\frac{1}{k!}\prod_{j=1}^{k}\left\{e_{11}^{tot}-e_{22}^{tot}+2-j\right\}^{-1}|\Psi_{m}^{0}\rangle
 	\end{split}
 \end{equation}
-Calling $m$ the magnon number of the chain and observing that $e_{22}^{tot}|\Psi_{m}^{0}\rangle=m|\Psi_{m}^{0}\rangle$ and $e_{11}^{tot}|\Psi_{m}^{0}\rangle=(L-m)|\Psi_{m}^{0}\rangle$ we obtain 
+Observing that $e_{22}^{tot}|\Psi_{m}^{0}\rangle=m|\Psi_{m}^{0}\rangle$ and $e_{11}^{tot}|\Psi_{m}^{0}\rangle=(L-m)|\Psi_{m}^{0}\rangle$ we obtain 
 \begin{equation}
 	\begin{split}
 		W|\Psi_{m}^{0}\rangle=&	\sum_{k=0}^{L}2^{k}\Delta^{k}(B_{1}^{2L-1})^{k}\prod_{j=1}^{k}\left\{L-2m+2-j\right\}^{-1}|\Psi_{m}^{0}\rangle
@@ -2331,7 +2340,7 @@ indeed
 \begin{equation}
 	\prod_{j=1}^{k}(L-2m+2-j)^{-1}=\frac{\Gamma(L-2m+2-1)}{\Gamma(L-2m+2)}\frac{\Gamma(L-2m+2-2)}{\Gamma(L-2m+2-2+1)}\cdots\frac{\Gamma(L-2m+2-k+1)}{\Gamma(L-2m+2-k+2)}\frac{\Gamma(L-2m+2-k)}{\Gamma(L-2m+2-k+1)}
 \end{equation}
-Finally, using the Pauli matrix $\sigma_{0}^{tot}=e_{11}^{tot}-e_{22}^{tot}$, we obtain \eqref{Nice-W2}. 
+Finally, introducing the Pauli matrix $\sigma_{0}^{tot}=e_{11}^{tot}-e_{22}^{tot}$, we obtain \eqref{Nice-W2}. 
 \begin{flushright}
 	$\square$
 \end{flushright}
@@ -2360,7 +2369,7 @@ We define
 	\end{split}
 \end{equation}
 where $Sym$ is the symmetric group among $N-1$ objects. \\
-In this case we do not have a closed formula as in the case of $gl(2)$. Indeed, the exchange relation \eqref{ExQ0B-charges} has an extra creation operator
+In this case we do not have a closed formula for all non-equilibrium eigenvectors as in the case of $gl(2)$. Indeed, the exchange relation \eqref{ExQ0B-charges} has an extra creation operator
 \begin{equation}
 	-2\sum_{k=1\,:\,k\neq i}^{N-1}B_{k}^{2L-1}D_{k,i}^{2L}
 \end{equation}
@@ -2389,7 +2398,7 @@ we finally obtain \eqref{W-charges-Bad}.
 	$\square$
 \end{flushright}
 \subsection{Non-equilibrium steady state from the W transformation}\label{subsection-NONSS-W}
-Using \eqref{W-charges-Bad}, it is possible to find an explicit expression of the steady state $|\Psi^{''}\rangle$ of $H^{''}$ when $N>2$ by acting with $W$ on the vacuum state 
+Using \eqref{W-charges-Bad}, it is possible to find an explicit expression of the steady state $|\Psi^{''}\rangle$ of $H^{''}$ when $N>2$ by acting with $W$ on the vacuum state of the Hamiltonian $H_{0}$, i.e. 
 \begin{equation}\label{Vacuum-state}
 	|\Psi_{0}^{0}\rangle:=\underbrace{\begin{pmatrix}
 			0\\
@@ -2410,7 +2419,7 @@ We obtain
 		\left(\frac{B_{1}^{2L-1}}{2^{k_{1}}}\right)^{k_{1}}\cdots\left( \frac{B_{N-1}^{2L-1}}{2^{k_{N-1}}}\right)^{k_{N-1}}\frac{\Gamma\left(e_{NN}^{tot}+2-(k_{1}+\ldots+k_{N-1})\right)}{\Gamma\left(e_{NN}^{tot}+2\right)}|\Psi_{0}^{0}\rangle
 	\end{split}
 \end{equation}
-\textbf{Remark}: relation \eqref{SteadyState-W-Good} holds only for the action of $W$ on the vacuum state $|\Psi_{0}^{0}\rangle$. Acting on different equilibrium eigenstates, exchange relations between $B_{i}^{2L-1}$ and $Q_{0}^{2L}$ are more difficult because of the presence of creation operators that mixes up species and we cannot rewrite \eqref{W-charges-Bad} in such a simple form. 
+%\textbf{Remark}: relation \eqref{SteadyState-W-Good} holds only for the action of $W$ on the vacuum state $|\Psi_{0}^{0}\rangle$. Acting on different equilibrium eigenstates, exchange relations between $B_{i}^{2L-1}$ and $Q_{0}^{2L}$ are more difficult because of the presence of creation operators that mixes up species and we cannot rewrite \eqref{W-charges-Bad} in such a simple form. 
 \subsubsection{Proof of \eqref{SteadyState-W-Good}}
 We prove \eqref{SteadyState-W-Good} in four steps. 
 \paragraph{1. Useful relations}
@@ -2755,7 +2764,7 @@ Moreover, using \eqref{SteadyState-W-Good} the steady state of $H$ defined in \e
 In Sections \ref{sectionIntegrabiliy} and \ref{Section-Mapping} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable thanks to integrability.  
 The aim of this section is studying some extension to the analysis previously done when integrability property is lost. We fix $\nu>1$ and, for the sake of simplicity, we still study the geometry of chain. We provide the following extensions: 
 \begin{enumerate}
-	\item \textit{Arbitrary correlations}: exploiting duality, the steady state correlations can be expressed in terms of absorption probabilities of the dual particles. These probability are hard to find in this partial exclusion situation, however correlation can be formally written. Subsection \ref{Subsection-ss-nonI}.
+	%\item \textit{Arbitrary correlations}: exploiting duality, the steady state correlations can be expressed in terms of absorption probabilities of the dual particles. These probability are hard to find in this partial exclusion situation, however correlation can be formally written. Subsection \ref{Subsection-ss-nonI}.
 	\item \textit{Instantaneous thermalization}: starting from the multi-species stirring dynamics, we define the thermalized process, where particle are redistribute in each bond with a measure that is the reversible one conditioned to the conservation of the number of particles on this bond. Also for this thermalized process we prove duality. Subsection \ref{Subsection-Thermalized}.
 	\item \textit{Reaction-diffusion process}: a further dynamics is added. Particle can now change type. The model is constructed with the goal of having the average density evolving a system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Subsection \ref{Subsection-RD}
 \end{enumerate}
