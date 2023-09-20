@@ -2419,10 +2419,11 @@ We obtain
 		\left(\frac{B_{1}^{2L-1}}{2^{k_{1}}}\right)^{k_{1}}\cdots\left( \frac{B_{N-1}^{2L-1}}{2^{k_{N-1}}}\right)^{k_{N-1}}\frac{\Gamma\left(e_{NN}^{tot}+2-(k_{1}+\ldots+k_{N-1})\right)}{\Gamma\left(e_{NN}^{tot}+2\right)}|\Psi_{0}^{0}\rangle
 	\end{split}
 \end{equation}
+where $\Delta_{i}=(\alpha_{i}-\beta_{i})$ for every $i\in\{1,\ldots,N-1\}$. 
 %\textbf{Remark}: relation \eqref{SteadyState-W-Good} holds only for the action of $W$ on the vacuum state $|\Psi_{0}^{0}\rangle$. Acting on different equilibrium eigenstates, exchange relations between $B_{i}^{2L-1}$ and $Q_{0}^{2L}$ are more difficult because of the presence of creation operators that mixes up species and we cannot rewrite \eqref{W-charges-Bad} in such a simple form. 
 \subsubsection{Proof of \eqref{SteadyState-W-Good}}
 We prove \eqref{SteadyState-W-Good} in four steps. 
-\paragraph{1. Useful relations}
+\paragraph{1. Useful relations} Here we derive some relations that are needed in the following of the proof. 
 We recall the following notation, already used in \eqref{Tau-Notation}:
 \begin{equation}
 	|\tau_{1},\ldots,\tau_{L}\rangle\qquad \text{where}\qquad \tau_{x}\in\{1,\ldots,N\}\quad \forall x\in \{1,\ldots,L\}
@@ -2431,7 +2432,7 @@ therefore the vacuum state reads
 \begin{equation}
 	|\Psi_{0}^{0}\rangle=|N,\ldots,N\rangle
 \end{equation}
-We first write and prove some relations that will be useful:
+We prove the following:
 \begin{itemize}
 	\item For all $i\in\{1,\ldots,N-1\}$
 	\begin{equation}\label{BActionVoid}
@@ -2536,7 +2537,7 @@ Using \eqref{ExQ0B-charges}, \eqref{ExDiB-charges} and \eqref{ExDNB-charges} we 
 	&Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle\nonumber\\&=B_{i}^{2L-1}\left\{B_{i}^{2L-1}\left(Q_{0}^{2L}-2(D_{i,i}^{2L}+D_{N,N}^{2L})-2(D_{i,i}^{2L}+D_{N,N}^{2L}+2(D_{i,i}^{2L+1}-D_{N,N}^{2L+1}))\right)\right.\nonumber\\&\left.-2B_{i}^{2L-1}\sum_{\ell=1\;\ell\neq i}^{N-1}B_{\ell}^{2L-1}D_{\ell,i}^{2L}\right\}|\Psi_{0}^{0}\rangle
 	\left(Q_{0}^{2L}-2(D_{1,1}^{2L}+D_{N,N}^{2L})\right)|\Psi_{0}^{0}\rangle
 \end{align}
-By using \eqref{Dij-ref}, \eqref{Dii-ref} and observing that 
+Using \eqref{Dij-ref}, \eqref{Dii-ref} and observing that 
 \begin{equation}\label{D2Lp1}
 	D_{i,i}^{2L+1}-D_{N,N}^{2L+1}=-2I
 \end{equation}
@@ -2572,7 +2573,7 @@ Observe that \eqref{Two-Relation} also implies
 	Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{j}^{2L-1}|\Psi_{0}^{0}\rangle=Q_{0}^{2L}B_{i}^{2L-1}Q_{0}^{2L}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle
 \end{equation}
 i.e. $Q_{0}^{2L}B_{i}^{2L-1}$ and $Q_{0}^{2L}B_{j}^{2L-1}$ do commute when acting on $|\Psi_{0}^{0}\rangle$.\\
-We further observe that 
+As a further implication of \eqref{Two-Relation} we have
 \begin{align}\label{Two-Points-m1}
 	&\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{j}^{2L-1}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}\right)^{-1}B_{i}^{2L-1}|\Psi_{0}^{0}\rangle\nonumber
 	\\=&
@@ -2612,7 +2613,7 @@ B_{j}^{2L-1}\sum_{n=0}^{\infty}\left\{\left(\Lambda_{0}+\epsilon\right)^{-1}\lef
 \\=&
 B_{i}^{2L-1}B_{j}^{2L-1}\prod_{j=1}^{2}\left(\Lambda_{0}+\epsilon-Q_{0}^{2L}+2j(D_{11}^{2L}+D_{NN}^{2L})-4j(j-1)\right)^{-1}|\Psi_{0}^{0}\rangle
 \end{align}
-\paragraph{3. Generalization for arbitrary number of indices} For fixed $k_{1},\ldots,k_{N-1}\in \mathbb{N}_{0}$, \eqref{Two-Relation} and \eqref{Commutativity-Gained} allow to write 
+\paragraph{3. Generalization for arbitrary number of indices} For fixed $k_{1},\ldots,k_{N-1}\in \mathbb{N}_{0}$, exploiting \eqref{Two-Relation} and \eqref{Commutativity-Gained} we obtain 
 \begin{equation}\label{k-times-QB}
 	\begin{split}
 		\prod_{\ell=1}^{N-1}\left(Q_{0}^{2L}B_{\ell}^{2L-1}\right)^{k_{\ell}}|\Psi_{0}^{0}\rangle=\prod_{\ell=1}^{N-1}\left(B_{\ell}^{2L-1}\right)^{k_{\ell}}\prod_{j=1}^{k_{1}+\ldots+k_{N-1}}\left(Q_{0}^{2L}-2j(D_{11}^{2L}+D_{NN}^{2L})+4j(j-1)\right)|\Psi_{0}^{0}\rangle
@@ -2646,7 +2647,7 @@ As a consequence of \eqref{Two-Points-m1} we have that for all  $k_{1},\ldots,k_
 %\begin{equation}
 	%\binom{k_{1}+\ldots+k_{N-1}}{k_{1},\ldots,k_{N-1}}=\frac{	(k_{1}+\ldots+k_{N-1})!}{k_{1}!\cdots k_{N-1}}
 %\end{equation}
-\paragraph{4. Final formula.} Using \eqref{Commutativity-Gained} and \eqref{k-times-QB} the symmetrization operator written in \eqref{W-charges-Bad} acting on the vacuum state $|\Psi_{0}^{0}\rangle$ reads, for all $k_{1},\ldots,k_{N-1}\in\mathbb{N}_{0}$
+\paragraph{4. Final formula.} For all $k_{1},\ldots,k_{N-1}\in\mathbb{N}_{0}$, using \eqref{Commutativity-Gained} and \eqref{k-times-LQB} the symmetrization operator introduced in \eqref{W-charges-Bad} acting on the vacuum state $|\Psi_{0}^{0}\rangle$ reads
 \begin{align}
 	&SYM\left(\left\{\left(\Lambda_{0}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{1}^{2L-1}\right\}^{k_{1}},\ldots,\left\{\left(\Lambda_{0}+\epsilon-Q_{2L}^{0}\right)^{-1}B_{N-1}^{2L-1}\right\}^{k_{N-1}}\right)
 	|\Psi_{0}^{0}\rangle\nonumber
@@ -2660,9 +2661,9 @@ Therefore, the action of the matrix $W$ on $|\Psi_{0}^{0}\rangle$ is given by
 		\left(B_{1}^{2L-1}\right)^{k_{1}}\cdots\left( B_{N-1}^{2L-1}\right)^{k_{N-1}}\prod_{j=1}^{k_{1}+\ldots k_{N-1}}\left\{(\Lambda_{0}+\epsilon)-Q_{0}^{2L}+2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle|_{\epsilon=0}
 	\end{split}
 \end{equation}
-Using \eqref{veryUsefulSeries} and observing that  we have that $2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)$ is diagonal we have, for all $j\in{1,\ldots,k_{1}+\ldots+k_{N-1}}$ 
+Using \eqref{veryUsefulSeries} and observing that  we have that $2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)$ is diagonal we have, for all $j\in\{1,\ldots,k_{1}+\ldots+k_{N-1}\}$ 
 \begin{align}
-&\left\{(\Lambda_{0}+\epsilon)-Q_{0}^{2L}+2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle|_{\epsilon=0}\\=&
+&\left\{(\Lambda_{0}+\epsilon)-Q_{0}^{2L}+2j(D_{1,1}^{2L}+D_{N,N}^{2L})-4j(j-1)\right\}^{-1}|\Psi_{0}^{0}\rangle|_{\epsilon=0}\nonumber\\=&
 \sum_{t=0}^{\infty}\left\{Q_{0}^{2L}-2j(D_{1,1}^{2L}+D_{N,N}^{2L})+4j(j-1)\right\}^{-t}\left(\Lambda_{0}+\epsilon\right)^{-t-1}|\Psi_{0}^{0}\rangle
 \end{align}
 Therefore, re-summing the series we obtain
@@ -2682,7 +2683,7 @@ Using \eqref{Dii-ref} we have
 	\\=&
 	\frac{1}{4j}\left\{L-j+2\right\}^{-1}|\Psi_{0}^{0}\rangle
 \end{align}
-Using the Euler $\Gamma$-function we have 
+introducing the Euler $\Gamma$-function we have 
 \begin{align}
 \prod_{j=1}^{k_{1}+\ldots+k_{N-1}}\frac{1}{2j}\left\{L-j+2\right\}^{-1}|\Psi_{0}^{0}\rangle=\frac{1}{4^{k_{1}+\ldots+k_{N-1}}}\frac{1}{(k_{1}+\ldots+k_{N-1})!}\frac{\Gamma(L+2-(k_{1}+\ldots+k_{N-1}))}{\Gamma(L+2)}|\Psi_{0}^{0}\rangle
 \end{align}
@@ -2760,6 +2761,7 @@ Moreover, using \eqref{SteadyState-W-Good} the steady state of $H$ defined in \e
 	\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}}^{L}\mathbbm{1}_{\{k_{1}+\ldots+k_{N-1}\leq L\}}\frac{(\alpha_{1}-\beta_{1})^{k_{1}}\cdots (\alpha_{N-1}-\beta_{N-1})^{k_{N-1}}}{k_{1}!\cdots k_{N-1}!}\\&
 	\left(\frac{B_{1}^{2L-1}}{2^{k_{1}}}\right)^{k_{1}}\cdots\left( \frac{B_{N-1}^{2L-1}}{2^{k_{N-1}}}\right)^{k_{N-1}}\frac{\Gamma\left(e_{NN}^{tot}+2-(k_{1}+\ldots+k_{N-1})\right)}{\Gamma\left(e_{NN}^{tot}+2\right)}|\Psi_{0}^{0}\rangle
 \end{align}
+Observe that, while $S_{1}$ and $S_{2}$ are local, $W$ is not. 
 \section{Extensions for the non-integrable chain}
 In Sections \ref{sectionIntegrabiliy} and \ref{Section-Mapping} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable thanks to integrability.  
 The aim of this section is studying some extension to the analysis previously done when integrability property is lost. We fix $\nu>1$ and, for the sake of simplicity, we still study the geometry of chain. We provide the following extensions: 
