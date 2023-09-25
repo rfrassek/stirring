@@ -289,7 +289,7 @@ namely
 where we denote $|\alpha|=\sum_{a=1}^{N}\alpha_{a}$. 
 This can be proved just by imposing the detailed balance conditions for the edge and for the site generators. If condition \eqref{reversibilityCondition} is not met, then reversibility is lost: each reservoir at site $x$ wants to fix its own density $\alpha^{x}=(\alpha_{1}^{x},\ldots,\alpha_{N}^{x})$ and currents will arise when at least two of them are different. 
 
-{\color{red}add/improve explanaition of entire subsection}
+{\color{red}add/improve explanaition of entire subsection} {\color{blue}Is it not standard?}
 \subsection{The Lie algebraic description}
 
 
@@ -343,9 +343,7 @@ The process with generator \eqref{Generator} can be described in terms of $gl(n)
 \begin{equation}
 |{\bf n}\rangle=\left(\,\bigotimes_{x\in V}	|n_{1}^{x},\ldots,n_{N}^{x}\rangle\right)
 \end{equation}
-{\color{blue}
-where we require that $n_{a}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have $\sum_{a=1}^{N}n_{a}^{x}=\nu$. Sometimes it will bw convenient to write $|n^{x}\rangle$ to denote, for a fixed $x\in V$, the vector $|n_{1}^{x},\ldots,n_{N}^{x}\rangle$.}
-{\color{red}remove?}
+where we require that $n_{a}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have $\sum_{a=1}^{N}n_{a}^{x}=\nu$. Sometimes it will bw convenient to write $|n^{x}\rangle$ to denote, for a fixed $x\in V$, the vector $|n_{1}^{x},\ldots,n_{N}^{x}\rangle$.
 The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
 \begin{equation}
     \langle {\bf n}|{\bf m}\rangle =\prod_{x\in V}\prod_{a=1}^N\delta_{n^x_a,m^{x}_a}\,.
@@ -373,7 +371,7 @@ Following  \cite{belitsky2015self}, the Hamiltonian and the Markov generator are
 \begin{equation}\label{Hamiltonian-Generator}
 H=\mathcal{L}^{T}
 \end{equation}
-{\color{red} no minus sign?}
+{\color{red} no minus sign?} {\color{blue}I think we decided to keep it without minus sign}
 The action of the generator can also be expressed as 
 \begin{equation}
     \mathcal{L}f( {\bf n})=\langle f|H| {\bf n}\rangle
@@ -459,7 +457,7 @@ and the local inhomogeneities are
 \end{equation}
 We further assume that the maximal occupancy in each site is $\nu=1$, i.e. that there is an \textit{hard-core interaction}.
 We will denote the element of the representation of the $gl(N)$ Lie algebra by lowercase letters, i.e. $(e_{ab})_{a,b\in\{1,\ldots,N\}}$, to highlight that we are in the first fundamental representation of the algebra.
-The Hamiltonian is
+The Hamiltonian now reads
 \begin{equation}\label{hamiltonian}
 	H=H_{left}+H_{bulk}+H_{right}
 \end{equation}
@@ -477,7 +475,7 @@ with
 \begin{equation}
 	P=\sum_{a,b=1}^Ne_{ab}\otimes e_{ba}.
 \end{equation} 
-The action of $\mathcal{H}$ amounts to the permutation of the occupations the two sites, i.e.
+The action of $\mathcal{H}$ amounts to the permutation of the occupations of the two sites, i.e.
 \begin{equation}
 	\begin{split}
 		\mathcal{H}|n\rangle\otimes   |m\rangle&=|m\rangle \otimes |n\rangle-|n\rangle \otimes|m\rangle
@@ -519,7 +517,7 @@ Consider two Markov processes $(\eta_{t})_{t\geq 0}$ defined on a state space $\
 \begin{equation}\label{duality-expectation}
     \mathbb{E}_{\eta}\left[D(\eta_{t},\xi)\right]=\mathbb{E}_{\xi}\left[D(\eta,\xi_{t})\right]
 \end{equation}
-where $\mathbb{E}_{\eta}$ denotes the expectation with respect the law of the Markov process $(\eta_{t})_{t\geq 0}$ initialized with the particle configuration $\eta$, whereas $\mathbb{E}_{\xi}$ denotes the expectation with respect to the law of the Markov process $(\xi_{t})_{t\geq 0}$ initialized with the particle configuration $\xi$.
+where $\mathbb{E}_{\eta}$ denotes the expectation with respect to the law of the Markov process $(\eta_{t})_{t\geq 0}$ initialized with the particle configuration $\eta$, whereas $\mathbb{E}_{\xi}$ denotes the expectation with respect to the law of the Markov process $(\xi_{t})_{t\geq 0}$ initialized with the particle configuration $\xi$.
 The duality definition can also be formulated as a relation between the generators. Call $\mathcal{L}$ the generator of $(\eta_{t})_{t\geq0}$ and $\widetilde{\mathcal{L}}$ the generator of $(\xi_{t})_{t\geq 0}$, then we say that these two processes are dual with respect to the duality function $D:\Omega\times \widetilde{\Omega}\to \mathbb{R}$ if $\forall \eta\in\Omega$ and $\forall \xi\in\widetilde{\Omega}$
 \begin{equation}\label{dualityRelationGenerator}
     \left(\mathcal{L}D(\cdot,\xi)\right)(\eta)=\left(\widetilde{\mathcal{L}}D(\eta,\cdot)\right)(\xi)
@@ -901,7 +899,7 @@ Since the duality matrix \eqref{dualityMatrix} is product over sites, the above 
 $\square$
 \end{flushright}
 \subsection{Steady state correlations and duality}\label{Subsection-ss-nonI}
-As already pointed out in Subsection \ref{statementDualitySubsection}, the dual process voids the graph by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites and replacing them by types $N$. This property allows to characterize the steady state non-equilibrium distribution (assuming that it is unique) by the probability that dual particles are absorbed in the extra-sites, then called \textit{absorption probabilities}. Here we consider a chain of length $L$ where the end sites $1$ and $L$ are connected with two reservoirs. Each site can host $\nu\geq 1$ particles, chosen among the $N$ types. The process $\left(\bm{n}(t)\right)_{t\geq0}$ is defined on the space $\Omega=\bigtimes_{x=1}^{L} \Omega_{x}$ and the generator reads
+In this subsection we specialize the results of Subsection \ref{statementDualitySubsection} to a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can still host $\nu\geq 1$ particles, chosen among the $N$ types. Now the dual graph is still a chain, but where two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$) are present. As already pointed out the dual process eventually voids the graph by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites ($0$ and $L+1$) and replacing them by types $N$. This property allows to characterize the steady state non-equilibrium distribution (assuming that it is unique) by the probability that dual particles are absorbed in the extra-sites, then called \textit{absorption probabilities}. \\The process $\left(\bm{n}(t)\right)_{t\geq0}$ is defined on the space $\Omega=\bigtimes_{x=1}^{L} \Omega_{x}$ and its generator reads
 \begin{equation}
 	\mathcal{L}=\mathcal{L}_{left}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\mathcal{L}_{right}
 \end{equation} 
@@ -913,7 +911,7 @@ while at the boundaries
 \begin{equation}
 	\mathcal{L}_{left}f(\bm{n})=\sum_{a,b=0}^{N}\alpha_{a}n_{b}^{1}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-f(\bm{n})\right)\qquad \mathcal{L}_{right}f(\bm{n})=\sum_{a,b=0}^{N}\beta_{a}n_{b}^{L}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-f(\bm{n})\right)
 \end{equation}
-We specialize the results of Subsection \ref{statementDualitySubsection} to this chain. The process is dual with respect to $(\bm{\xi}(t))_{t\geq0} $ defined on the enlarged configuration space
+ The process is dual with respect to $(\bm{\xi}(t))_{t\geq0} $ defined on the enlarged configuration space
 \begin{equation}	
 	\widetilde{\Omega}=N_{0}^{N}\times\bigtimes_{x=1}^{L} \Omega_{x}\times N_{0}^{N}
 \end{equation}
@@ -933,7 +931,7 @@ where $0$ and $L+1$ are the extra-sites. The duality function reads
 \end{equation}
 where $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{|\alpha|}$ and where $\rho_{\alpha}^{R}=\frac{\beta_{a}}{|\beta|}$.\\
 The dual process has absorbing boundaries, i.e. all dual particles are eventually absorbed at $0$ or at $L+1$ with a certain probability. This implies that the chain is eventually voided and the steady state correlations of the original process can be written via the absorption probabilities of the dual process as explained in the following. 
-We call $\mu_{stat}$ the stationary measure of the the process $(\bm{n}(t))_{t\geq 0}$. We assume that it has an arbitrary configuration $\bm{n}$. For every $m\in\{1,\ldots,L\}$ we consider the dual configuration  $\bm{\widehat{\xi}}=\sum_{k=1}\delta_{s_{k}}^{y_{k}}$ with $y_{k}\in\{1,\ldots,L\}$ and $s_{k}\in \{1,\ldots,N-1\}$ for every $k\in \{1,\ldots,m\}$. The following  equalities holds thanks to the duality relation \eqref{duality-expectation}:
+We call $\mu_{stat}$ the stationary measure of the the process $(\bm{n}(t))_{t\geq 0}$. Consider an arbitrary initial configuration of $(\bm{n}(t))_{t\geq 0}$ denoted by $\bm{n}$. For every $m\in\{1,\ldots,L\}$ we consider the dual configuration  $\bm{\widehat{\xi}}=\sum_{k=1}\delta_{s_{k}}^{y_{k}}$ with $y_{k}\in\{1,\ldots,L\}$ and $s_{k}\in \{1,\ldots,N-1\}$ for every $k\in \{1,\ldots,m\}$. The following  equalities holds thanks to the duality relation \eqref{duality-expectation}:
 \begin{equation}\label{ExptationSS}
 	\begin{split}
 		\mathbb{E}_{\mu^{stat}}\left[D(\bm{n}(t),\hat{\bm{\xi}})\right]&=\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\hat{\bm{\xi}})\right]=\lim_{t\to\infty}\mathbb{E}_{\hat{\bm{\xi}}}\left[D(\bm{n},\bm{\xi}(t))\right]
@@ -950,7 +948,7 @@ The duality function \eqref{dualityFunctionChain} computed in the dual configura
 \begin{equation}
 	D(\bm{n},\bm{\hat{\xi}})= \frac{\prod_{k=1}^{m}n_{s_{k}}^{y_{k}}}{(\nu-m+1)}
 \end{equation}
-Therefore, up to a constant, $\mathbb{E}_{\mu^{\text{stat}}}\left[D(\bm{n},\bm{\hat{\xi}})\right]$ gives the non-equilibrium stationary state $m-$points correlations among non-empty species of types $s_{k}\in\{1,\ldots,N-1\}$ situated at sites $y_{k}\in\{1,\ldots,L\}$ with $k\in \{1,\ldots,m\}$. This expectation can be computed by \eqref{ExptationSS} once the absorption probabilities are known. The issue is that these absorption probabilities fulfil some difference equations that are not easy to solve. For example, we report here the solution for the simplest case of one point correlations, since the single dual particle behaves as an independent random walker. 
+Therefore, up to a constant, $\mathbb{E}_{\mu^{\text{stat}}}\left[D(\bm{n},\bm{\hat{\xi}})\right]$ gives the non-equilibrium stationary state $m-$points correlations among non-empty species of types $s_{k}\in\{1,\ldots,N-1\}$ situated at sites $y_{k}\in\{1,\ldots,L\}$ with $k\in \{1,\ldots,m\}$. Using \eqref{ExptationSS}, this expectation can be computed by \eqref{ExptationSS} once the absorption probabilities are known. However, these absorption probabilities fulfil some difference equations that are not easy to solve. For example, we report here the solution for the simplest case of one point correlations that is exactly solvable, since the single dual particle behaves as an independent random walker. 
 \paragraph{One point correlations for the $\nu\geq 1$ case}
 We consider $\widehat{\bm{\xi}}=\delta_{s}^{y}$, then 
 \begin{equation}
@@ -982,7 +980,7 @@ that is the same result obtained in \cite{vanicat2017exact}.
 \\
 \\ Already for two-point correlations the computations become more involving and hard to solve. In the following we specialize the chain to the integrable case $\nu=1$. As it will be shown, in such a situation the non-equilibrium steady state correlations can be computed with different techniques exploiting the integrability of the process (matrix product ansatz and quantum inverse scattering method) combined with duality and, as a by-product, all absorption probabilities can be explicitly found. 
 \subsection{Duality for the integrable process on a line segment}\label{integrableChain-duality}
-Here we consider the chain defined in Subsection \ref{subsection-description-process-LINE}. We recall that the geometry is again a one dimensional chain with sites $\{1,\ldots,L\}$ where reservoirs are attached to $1$ and $L$, but with the hard-core exclusion rule, i.e. $\nu=1$. The dynamics is described by an Hamiltonian that is written in terms of the first fundamental representation of $gl(N)$. Duality result stated in Subsection \ref{statementDualitySubsection} can be adapted. The extra-sites are denoted by $0$ and $L+1$, and they are connected with sites $1$ and $L$ of the chain respectively. The matrix $R_{x}$ defined in \eqref{Revmatrix} 
+Here we consider the chain defined in Subsection \ref{subsection-description-process-LINE}. We recall that the geometry is a one dimensional chain with sites $\{1,\ldots,L\}$ where reservoirs are attached to $1$ and $L$. Now we assume the hard-core exclusion rule, i.e. $\nu=1$. The dynamics is described by an Hamiltonian that is written in terms of the first fundamental representation of $gl(N)$. Duality result stated in Subsection \ref{statementDualitySubsection} can be adapted. The extra-sites are denoted by $0$ and $L+1$, and they are connected with sites $1$ and $L$ of the chain respectively. The matrix $R_{x}$ defined in \eqref{Revmatrix} 
 reduces to the identity, therefore the relation between the generators of the algebra and its transposed reduces to
 \begin{equation}\label{transpostionPropertyFund}
 	e_{ab}^T= e_{ba}
@@ -991,7 +989,8 @@ Therefore, duality matrix reads
 \begin{equation}
 	D=\mathcal{D}_{0}\otimes\prod_{x=1}^{L}\exp{\left(\sum_{a=1}^{N-1}e_{aN}^{x}\right)}\otimes \mathcal{D}_{L+1}
 \end{equation}
-and its elements are given by
+where $\mathcal{D}_{0}$ and $\mathcal{D}_{L+1}$ are given in \eqref{dualityMatrix2}. 
+The elements of this duality matrix are given by
 \begin{equation}\label{ElementsDualityMatrixChain}
 	D(\bm{n},\bm{\xi})=\prod_{a=1}^{N-1}\alpha_{a}^{\xi_{a}^{0}}\left(\prod_{x=1}^{L}\prod_{a=1}^{N-1}\mathbbm{1}_{\{n_{a}^{x}\geq \xi_{a}^{x}\}}\right)\prod_{a=1}^{N-1}\beta_{a}^{\xi_{a}^{L+1}}
 \end{equation}
@@ -1021,7 +1020,7 @@ where
 \begin{equation}\label{absProbabilitiesIntegrable}
 	\mathcal{P}(c_{1},\ldots,c_{m},\hat{\bm{\xi}}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(c_{k}\delta_{0}+(1-c_{k})\delta_{L+1}\right)\lvert \bm{\xi}(0)=\hat{\bm{\xi}}\right)
 \end{equation}
- namely the joint probability of having, for all $k=1,\ldots,m$, $c_{k}$ particles of species $s_{k}$ at site $y_{k}$ are absorbed at left and $1-c_{k}$ absorbed at right. Therefore, by computing these absorption probabilities we determine the arbitrary non-equilibrium steady state correlations of the integrable multi-species stirring process. 
+ namely the joint probability of having, for all $k=1,\ldots,m$, $c_{k}$ particles of species $s_{k}$ at site $y_{k}$ are absorbed at left and $1-c_{k}$ of the same particles absorbed at right. Therefore, by computing these absorption probabilities we determine the arbitrary non-equilibrium steady state correlations of the integrable multi-species stirring process. 
 
 
 
@@ -1031,13 +1030,13 @@ where
 \section{Exact steady state and arbitrary correlations for the integrable chain}\label{sectionIntegrabiliy}
 In this section we aim to use duality and the matrix product ansatz to determine the non equilibrium steady state and its arbitrary correlation for the integrable version of the multi-species stirring process, defined in Subsection \ref{integrableChain-duality}. As it will turn out, duality simplifies the commutation relations of the matrix product ansatz allowing to determined a closed formula for all correlations. As a by-product, absorption probabilities can be explicitly determined, giving a further probabilistic interpretation for the non-equilibrium steady state. 
 \subsection{The integrable chain and the matrix product ansatz}
-The matrix product ansatz for the non-equilibrium steady state has been formulated in \cite{vanicat2017exact}, here we briefly recall it.
+The matrix product ansatz has been formulated in \cite{vanicat2017exact}, here we briefly recall it.
  Denoting by $|\Psi(t)\rangle$ the column vector that encodes the probability distribution of the chain with Hamiltonian \eqref{hamiltonian} at time $t\geq 0$, its evolution equation is given by 
  the Master equation
 \begin{equation}
     \frac{d|{\Psi}(t)\rangle}{dt}=H|{\Psi}(t)\rangle
 \end{equation}
-This Markov chain is irreducible and positive recurrent, therefore there exists a unique stationary measure, that will be reached when time goes to infinity, regardless of the initial distribution. 
+This Markov chain is irreducible and positive recurrent, therefore there exists a unique stationary measure, that will be reached when time goes to infinity, regardless of the initial configuration. 
 We denote by $|\Psi\rangle$ the column vector that gives the stationary distribution. This vector is the right eigenvector with vanishing eigenvalue of $H$, i.e. it solves 
 \begin{equation}\label{definition-SteadyStateH}
 	H|\Psi\rangle =0
@@ -1078,13 +1077,13 @@ Without loss of generality, we further assume that $\langle V^{*}|V\rangle=1$.
 	and using  \eqref{ratesConditions} and \eqref{lambdaConditions}.
  Similarly for the right boundary  \eqref{rightBoundary} there are only  $N-1$ independent equations.
 \subsection{The explicit form of the steady state}\label{subsection-exact}
-The MPA gives an abstract form of the steady state in terms of an algebra of operators. However, to write explicitly the steady state one should provide a representation of this algebra. Another approach is to directly use the commutators and and the boundary actions compute correlations. This path has been followed in \cite{vanicat2017exact} to compute one-point and two-point correlations. 
+The MPA gives an abstract form of the steady state in terms of an algebra of operators. However, to write explicitly the steady state one should provide a representation of this algebra. Another approach is to directly use the commutators and the boundary actions to compute correlations. This path has been followed in \cite{vanicat2017exact} to find one-point and two-point correlations. 
 Here we follow the same approach. We will show that the duality property established in Section \ref{sectionDuality} simplifies substantially the  use of commutators in the
 computation. The idea is summarized as follows. We define a sequence of similarity transformation such that 
 \begin{equation}
 	H\;\xleftrightarrow{S_{1}}\;H^{'}\;\xleftrightarrow{S_{2}}\;H^{''}
 \end{equation} 
-where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Thanks to these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} of the operators $(X_{a})_{a\in\{1,\ldots,N\}}$ of the MPA become simpler, therefore, the right eigenvector with vanishing eigenvalue $|\Psi^{''}\rangle$ of $H^{''}$ will be written explicitly. Then, reversing the transformations we will retrieve $|\Psi\rangle$.
+where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Thanks to these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} of the operators $(X_{a})_{a\in\{1,\ldots,N\}}$ of the MPA become simpler, therefore, the right eigenvector with vanishing eigenvalue $|\Psi^{''}\rangle$ of $H^{''}$ will be written explicitly. Finally, reversing the transformations we will retrieve $|\Psi\rangle$.
 
 The first transformation $S_{1}$ is closely related to the dual matrix and we will see that $H^{'}$ is $\widetilde{H}^{T}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. The second transformation $S_{2}$ diagonalize the right boundary. Finally, the composition  $S_{2} S_{1}$ allows to simplify the commutators of the MPA algebra. \\
 
@@ -1102,11 +1101,11 @@ Consider the matrices
 	\mathcal{S}_{1}:=\exp{\left(\sum_{a=1}^{N-1}e_{Na}\right)}\label{S1Gen}\\
 	\mathcal{S}_{2}:=\exp{\left(-\sum_{a=1}^{N-1}\beta_{a}e_{aN}\right)}\label{S2Gen}
 \end{align}
-We introduce the first transformation as
+We introduce
 \begin{equation}\label{transformationV}
  \mathcal{S}_{1}^{x}:=\exp{\left(\sum_{a=1}^{N-1}e_{Na}^{x}\right)}%=\mathbbm{1}+\sum_{a=2}^{N}e_{1a}
 \end{equation}
-that is composed by a copy of $\mathcal{S}_{1}$ (introduced in \eqref{S1Gen}) acting at site $x$ and with identities acting at all other sites of the chain. 
+that is composed by a copy of $\mathcal{S}_{1}$ (see \eqref{S1Gen}) acting at site $x$ and with identities acting at all other sites of the chain. 
 Observe that $\mathcal{S}_{1}^{x}$ is the transposed of the bulk part of the duality matrix $d_{x}$  at site $x\in \{1,\ldots,L\}$ (see \eqref{bulkElementDualityMatrix}). By taking the product over the chain we define
 \begin{equation}\label{S1-Whole}
     S_{1}=\prod_{x=1}^{L}\mathcal{S}_{1}^{x}
@@ -1115,7 +1114,7 @@ that is related with the duality matrix by
 \begin{equation}
 S_{1}=\prod_{x=1}^{L}d_{x}^{T}
 \end{equation}
- This $S_{1}$ is invertible, then we introduce 
+ $S_{1}$ is invertible, then we introduce 
 \begin{equation}\label{hatHamiltonian}
    H^{'}:=H^{'}_{left}+H_{bulk}+H^{'}_{L}
 \end{equation}
@@ -1151,11 +1150,11 @@ Obviously
 \end{equation}
 where $|\Psi^{'}\rangle$ satisfies $H^{'}|\Psi^{'}\rangle=0$.
 
-We introduce the second transformation as 
+We introduce
  \begin{equation}
  	\mathcal{S}_{2}^{x}:=\exp{\left(-\sum_{a=1}^{N-1}\beta_{a}e_{aN}^{x}\right)}%=\mathbbm{1}-\sum_{a=2}^{N}\beta_{a}e_{a1}
  \end{equation}
-that is composed by a copy of $\mathcal{S}_{2}$ (introduced in \eqref{S2Gen}) acting at site $x$ and with identities acting at all other sites of the chain. 
+that is composed by a copy of $\mathcal{S}_{2}$ (see \eqref{S2Gen}) acting at site $x$ and with identities acting at all other sites of the chain. 
 By taking the product over the chain
 \begin{equation}\label{S2-Whole}
 	S_{2}=\prod_{x=1}^{L}S_{2}^{x}
@@ -1168,7 +1167,7 @@ that is related to $H'$ by
 \begin{equation}
 	H^{''}=S_{2}H^{'}S_{2}^{-1}
 \end{equation}
-The boundary Hamiltonians of $H^{''}$ reads
+The boundary Hamiltonians of $H^{''}$ read
 \begin{align}
 	H_{left}^{''}=e_{NN}^{1}-\mathbbm{1}^{1}+\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1}\qquad H_{right}^{''}=e_{NN}^{L}-\mathbbm{1}^{L}
 \end{align}
@@ -1227,7 +1226,7 @@ and, obviously
 \begin{equation}
 	|\Psi\rangle=S^{-1}|\Psi^{''}\rangle
 \end{equation}
-\textbf{Notation}: sometimes, in the following, we will denote differently the configuration of this hard-core chain in order to alleviate notation. Each configuration can be written as
+\textbf{Notation}: sometimes, in the following, we will denote differently the configuration of this hard-core chain. Each configuration can be written as
 \begin{equation}\label{Tau-Notation}
 	|\bm{\tau}\rangle=|\tau_{1},\ldots,\tau_{L}\rangle =\begin{pmatrix}
 		\tau_{1}\\
@@ -1326,7 +1325,7 @@ where
 \end{equation}
 %and the basis vector $|\bm{\tau}\rangle =\bigotimes_{x=1}^{L}|\tau_{x}\rangle$ with $\tau_{x}\in\{1,\ldots,N\}$ denotes the species that occupies the site $i\in \{1,\ldots,L\}$.
 \paragraph{Proof of formula \eqref{ResulsBasis}} 
-We consider the vector with elements the operators of the MPA $(X_{1},\ldots,X_{N})$ and we act on it with the similarity transformation $S=S_{2}S_{1}$ obtaining new operators $(\Xt_{1},\ldots,\Xt_{N})$ that will satisfy simpler commutators. 
+We consider the vector with elements given by the operators of the MPA $(X_{1},\ldots,X_{N})$ and we act on it with the similarity transformation $S=S_{2}S_{1}$ obtaining new operators $(\Xt_{1},\ldots,\Xt_{N})$ that will satisfy simpler commutators. 
 For the sake of notation, we denote by 
 \begin{equation}
     \begin{pmatrix}
@@ -1338,7 +1337,7 @@ For the sake of notation, we denote by
      X_{N}
 	\end{pmatrix}\quad \forall a\in \{1,\ldots,N-1\}
 \end{equation}
-We obtain 
+We have
 \begin{equation}\label{Xtildes2b}
 	\begin{pmatrix}
 		\Xt_{a}\\ 
@@ -1381,7 +1380,7 @@ Moreover using \eqref{Xtildes2b} and \eqref{Xes}, the action of $\Xt_{a}$ on the
 \begin{equation}\label{commRIGHT}
 	\Xt_{a} |V\rangle= \lambda_{a}|V\rangle\qquad\forall a=1,\ldots,N-1
 \end{equation} 
-Using the transformed operators $(\widetilde{X}_{a})_{a\in\{1,\ldots,N\}}$, the vector $|\Psi^{''}\rangle$ of the matrix product ansatz is written as:
+Using the transformed operators $(\widetilde{X}_{a})_{a\in\{1,\ldots,N\}}$, the vector $|\Psi^{''}\rangle$ of the matrix product ansatz is written as
 \begin{equation}\label{toDetermineTilde}
 	|\Psi^{''}\rangle = \frac{1}{Z_{L}}\sum_{\bm{n}\in \Omega}\langle V^{*}|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}
 	|V \rangle \,|\bm{n}\rangle
@@ -1390,13 +1389,13 @@ where the basis is
 $$
 |\bm{n}\rangle =|n_{1}^{1},\ldots,n_{N}^{1}\rangle \otimes \ldots\otimes |n_{1}^{L},\ldots,n_{N}^{L}\rangle
 $$
-such that, for each site $x\in \{1,\ldots,L\}$, $|n^{x}\rangle=|n_{1}^{x},\ldots,n_{N}^{x}\rangle\in \Omega_{x}$. 
+such that, for each site $x\in \{1,\ldots,L\}$, $|n^{x}\rangle=|n_{1}^{x},\ldots,n_{N}^{x}\rangle\in \Omega_{x}$. \\
 To determine the steady state \eqref{toDetermineTilde}, we need to compute the coefficient $\langle V^{*}|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{\xi_{a}^{x}}
 |V \rangle$ and the normalization $Z_{L}$. Using \eqref{commutationsBula} we have
 \begin{equation}\label{UsefulRelation}
 	\widetilde{X}_{a}\widetilde{X}_{N}=\lambda_{a}\widetilde{X}_{N}+\widetilde{X}_{N}\widetilde{X}_{a}
 \end{equation}
-Fixing $ a\in \{1,\ldots,N-1\}$ and for arbitrary $ \ell,n\in \mathbb{N}$ and applying many times \eqref{UsefulRelation} we have
+Fix $ a\in \{1,\ldots,N-1\}$ and arbitrary $ \ell,n\in \mathbb{N}$. By applying many times \eqref{UsefulRelation} we have
 \begin{align*}
 	\widetilde{X}_{a}^{n}\widetilde{X}_{N}^{\ell}&=\widetilde{X}_{a}^{n-1}\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{N}\widetilde{X}_{a}\right)\widetilde{X}_{N}^{\ell-1}
 	\\&=\lambda_{a}\widetilde{X}_{a}^{n-1}\widetilde{X}_{N}^{b}+\widetilde{X}_{a}^{n-1}\widetilde{X}_{N}\widetilde{X}_{a}\widetilde{X}_{N}^{\ell-1}
@@ -1411,7 +1410,7 @@ therefore
 \end{align*}
 By taking the product over the sites $x$ from $1$ to $L$ we obtain 
 \begin{equation}
-	\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}=\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{l}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\widetilde{X}_{a}+\lambda_{a}\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}
+	\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}=\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\widetilde{X}_{a}+\lambda_{a}\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}
 \end{equation}
 Multiplying by the boundary vectors we have 
 \begin{equation}
@@ -1427,7 +1426,7 @@ Using \eqref{commRIGHT}
 	\\&=
 	\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{l}}|V\rangle
 \end{align*}
-To determine the state we need to compute $\langle V^{*}|\widetilde{X}_{N}^{\sum_{x=1}^{L}n_{N}^{l}}|V\rangle$. Calling $\sum_{x=1}^{L}n_{N}^{x}=n_{N}$ and taking an arbitrary $a\in \{1,\ldots,N-1\}$ we have
+To determine the state we now need to compute $\langle V^{*}|\widetilde{X}_{N}^{\sum_{x=1}^{L}n_{N}^{l}}|V\rangle$. Calling $\sum_{x=1}^{L}n_{N}^{x}=n_{N}$ and taking an arbitrary $a\in \{1,\ldots,N-1\}$ we have
 \begin{align*}
 	\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle&=\langle V^{*}|\widetilde{X}_{N}\widetilde{X}_{N}^{n_{N}-1}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle +\langle V^{*}|\frac{1}{\lambda_{a}}\widetilde{X}_{a}\widetilde{X}_{N}^{n_{N}-1}|V\rangle
 	\\&=
@@ -1501,7 +1500,7 @@ where
 %		0\quad \text{if}\quad \tau_{y}=1
 %	\end{cases}\qquad \forall y\in \{1,\ldots,L\}
 %\end{equation}
-\paragraph{Proof of formula \eqref{ABS-vect}} As a consequence of \eqref{S2-Inverse}, we only need to show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Here it is more convenient to consider the matrix $\mathcal{S}_{2}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and then make explicitly the tensor product over the chain. This matrix $\mathcal{S}_{2}$ is given by 
+\paragraph{Proof of formula \eqref{ABS-vect}} As a consequence of \eqref{S2-Inverse}, we only need to show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Here it is more convenient to consider the matrix $\mathcal{S}_{2}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and then make explicitly the tensor product over the chain. Using the exponential series, the matrix $\mathcal{S}_{2}$ is given by 
 \begin{equation}
    \mathcal{S}_{2}^{-1}=\mathbbm{1}+\sum_{a=1}^{N-1}\beta_{a}e_{aN}
 \end{equation}
@@ -1557,9 +1556,9 @@ where $i\in\{1,\ldots,L\}$. The dependence of $\varphi_{x}^{i}(q_{1},\ldots,q_{i
     	\sum_{\tau_{1}=1}^{N}\ldots\sum_{\tau_{L+1}=1}^{N}\left\{e_{\tau_{1},\ldots,\tau_{L+1}}^{\tau_{1},\ldots,\tau_{L+1}}+\sum_{q_{1}=1}^{L+1}(1-\delta_{\tau_{q_{1}},N})e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1}^{1},\ldots,\varphi_{L+1}^{1}}\beta_{\tau_{q_{1}}}\right. 
     	\\&+\left. \sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L+1}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1}^{2},\ldots,\varphi_{L+1}^{2}}\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}\right.
     	\\&+\left.
-    	\ldots+	\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{t=1}^{L}(1-\delta_{s_{q_{t}},N})\right)e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1}^{L},\ldots,\varphi_{L+1}^{L}}
+    	\ldots+	\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L+1}\left(\prod_{t=1}^{L}(1-\delta_{s_{q_{t}},N})\right)e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1}^{L},\ldots,\varphi_{L+1}^{L}}
     	\right. \\&+ \left. 
-    	\sum_{q_{1},\ldots,q_{L+1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{x=1}^{L+1}(1-\delta_{\tau_{x},N})\right)\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1}^{L+1},\ldots,\varphi_{L+1}^{L+1}} \right\}
+    	\sum_{q_{1},\ldots,q_{L+1}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L+1}\left(\prod_{x=1}^{L+1}(1-\delta_{\tau_{x},N})\right)\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L+1}}^{\varphi_{1}^{L+1},\ldots,\varphi_{L+1}^{L+1}} \right\}
     	\\&=
     	\left(\mathcal{S}_{2}^{\otimes L+1}\right)^{-1}
 \end{align*}
@@ -1598,7 +1597,7 @@ where the subscripts $\tau_{1},s_{2}$ denote the raw and the superscript $q_{1},
 \end{equation}
 \end{comment}
 The product $\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}|\Psi^{''}\rangle$ gives a vector $|\Psi^{'}\rangle$ whose component are denoted by $\Psi^{'}(\bm{\tau})$. 
-To find these elements we need to fix the rows correspondent to $\bm{\tau}$ in the matrix $\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}$. Consider a string $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})$ with $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, then the corresponding row reads
+To find these quantities we need to fix the rows correspondent to $\bm{\tau}$ in the matrix $\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}$. Consider a string $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})$ with $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, then the corresponding row reads
 \begin{equation}
 	\begin{split}
 \left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}_{\bm{\tau}}&=\,e_{\tau_{1},\ldots,\tau_{L}}^{\tau_{1},\ldots,\tau_{L}}+\sum_{q_{1}=1}^{L}(1-\delta_{\tau_{q_{1}},N})e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1}^{1},\ldots,\varphi_{L}^{1}}\beta_{\tau_{q_{1}}}\\&+\sum_{q_{1},q_{2}=1\,:\,q_{1}\neq q_{2}}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1}^{2},\ldots,\varphi_{L}^{2}}\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}
