@@ -2918,7 +2918,7 @@ In \cite{casini2022uphill} it has been defined a process whose evolution equatio
 \begin{equation}\label{2SpeciesRD}
 	\frac{d}{dt} \rho_{a}(x,t)=\sigma_{11}\Delta_{L}\rho_{a}(x,t)+\sigma_{12}\Delta_{L}\rho_{\overline{a}}(x,t)+\Upsilon\left(\rho_{\overline{a}}(x,t)-\rho_{a}(x,t)\right)
 \end{equation} 
-for $ x\in\{1,\ldots,L\}\quad a\in\{1,2\}$  and where $\overline{a}=1$ if $a=2$ and $\overline{a}=1$ if $a=2$.
+for $ x\in\{1,\ldots,L\}\quad a\in\{1,2\}$  and where $\overline{a}=1$ if $a=2$ and $\overline{a}=1$ if $a=2$. Here $\Delta_{L}\rho(x,t)=\rho_{a}(x+1,t)+\rho_{a}(x-1,t)-2\rho_{a}(x,t)$.
 This equation is endowed with boundary conditions $\rho_{a}^{0},\rho_{\overline{a}}^{0}$ on the left and $\rho_{a}^{L+1},\rho_{\overline{a}}^{L+1}$ \\The generator of this model consists in a sum of three Markov generators: a stirring, a stirring-mutation and a pure mutation one (see section 4 of \cite{casini2022uphill}). For the lattice $\mathbb{Z}$, self-duality has been showed and the duality function is exactly \eqref{elementsABS} in case of hard-core exclusion (see section 5 of \cite{casini2022uphill}). In view of what have been proved in the previous section of this work, some questions arise naturally:
 \begin{enumerate}
 		\item Is it possible to extend the results of \cite{casini2022uphill} to a case with arbitrary number of species $N\in \mathbb{N}$ and arbitrary maximal site occupation $\nu\in \mathbb{N}$?
@@ -2930,9 +2930,9 @@ Therefore, we aim to find a process whose average occupations $\rho_{a}(x,t)$ fo
 	\frac{d}{dt} \rho_{a}(x,t)=\nu\sigma_{11}\Delta_{L}\rho_{a}(x,t)+\nu\sigma_{12}\sum_{b=1,b\neq a}^{N-1}\Delta_{L}\rho_{b}(x,t)+\Upsilon\sum_{b=1,b\neq a}^{N-1}\left(\rho_{b}(x,t)-\rho_{a}(x,t)\right)
 \end{equation} 
  We assume that the boundary conditions of the above difference differential system are given and denoted by $\rho_{a}^{0}$ and $\rho_{a}^{L+1}$ for all $a\in\{1,\ldots,N-1\}$ at left and right respectively, further assuming that $\sum_{a=1}^{N}\rho_{a}^{0}=\nu$.
- We first define the process on a chain in order to obtain \eqref{NSpeciesRD} for the evolution of the average occupation variable of type $a$. Once we have found such a process, we construct the Lie algebraic description and we use it to prove absorbing duality.
+ We construct the process on a chain in order to obtain \eqref{NSpeciesRD} for the evolution of the average occupation variable of type $a$. Once we have found such a process, we construct the Lie algebraic description and we use it to prove absorbing duality.
 \subsubsection{The process on a chain}
-We consider the geometry of a chain of length $L$, where we assume that a reservoir with parameters $(\alpha_{a})_{a\in\{1,\ldots,N\}}$ is attached at left of site $1$ and a reservoir with parameters $(\beta_{a})_{a\in\{1,\ldots,N\}}$ is attached at right of site $L$. The generator reads
+We consider the geometry of a chain of length $L$, where we assume that a reservoir with parameters $(\alpha_{a})_{a\in\{1,\ldots,N\}}$ is attached at site $1$ and a reservoir with parameters $(\beta_{a})_{a\in\{1,\ldots,N\}}$ is attached at site $L$. The state space is $\Omega$ given in \eqref{stateSpace-Chain} and the generator reads
 \begin{equation}\label{RDGenerator}
 	\mathcal{L}^{rd}=\mathcal{L}_{right}^{rd}\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{rd}+\mathcal{L}_{right}^{rd}
 \end{equation}
@@ -2940,7 +2940,7 @@ where
 \begin{equation}\label{edgeGeneratorRD}
 	\mathcal{L}_{x,x+1}^{rd}=\nu \sigma_{11}\mathcal{L}_{x,x+1}+\nu \sigma_{12}\sum_{c=1}^{N-2}\mathcal{L}_{x,x+1}^{c}+(\Upsilon-2\nu\sigma_{12})\mathcal{L}_{x,x+1}^{m}
 \end{equation}
-with $\mathcal{L}_{x,x+1}$ is the edge \eqref{edgeGenerator} of the multi-species stirring process and, for any function $f:\Omega\to \mathbb{R}$ and for any $c\in \{1,\ldots,N-2\}$
+with $\mathcal{L}_{x,x+1}$ is the edge \eqref{edgeGenerator} of the multi-species stirring process and, for any function $f:\Omega\to \mathbb{R}$ and for any $c\in \{1,\ldots,N-2\}$ we introduce
 \begin{equation}
 	\mathcal{L}_{x,x+1}^{c}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{x+1}\left(f(\bm{n}-\bm{\delta}_{a}^{x}+\bm{\delta}_{g_{c}(b)}^{x}+\bm{\delta}_{g_{c}(a)}^{x+1}-\bm{\delta}_{b}^{x+1})-f(\bm{n})\right)
 \end{equation}
@@ -2975,9 +2975,9 @@ where the $\alpha$'s parameters are defined in function of the given boundary co
 		\alpha_{N}&=\nu\left(\sigma_{11}+(N-2)\sigma_{12}\right)-\sum_{a=1}^{N-1}\alpha_{a}
 	\end{split}
 \end{equation}
-The boundary generator $\mathcal{L}_{right}^{rd}$ is defined analugosly, but the $\alpha$'s are replaced by $\beta$'s. \\ \\
+The boundary generator $\mathcal{L}_{right}^{rd}$ is defined analugosly, but the $\alpha$'s are replaced by $\beta$'s and the boundary densities are considered at site $L+1$. \\ \\
 \textbf{Remark}: observe that, up to a specific choice of the $\alpha$'s, the left boundary generator $\mathcal{L}_{left}^{rd}$ has the form of the one of the multi-species stirring process \eqref{siteGenerator}. 
-\paragraph{Action on the occupation variable of $\mathcal{L}_{x,+1}^{rd}$}
+\paragraph{Action of $\mathcal{L}_{x,+1}^{rd}$ on the occupation variable}
 For arbitrary site $x\in \{1,\ldots,L\}$, the action on the occupation variable $f(\bm{n})=n_{d}^{x}$ of particle of type $d\in \{1,\ldots,N-1\}$ reads
 \begin{equation}\label{actionGraphRD}
 	\begin{split}
@@ -3004,7 +3004,7 @@ Moreover
 	\mathcal{L}_{x,y}^{m}n_{d}^{x}=\sum_{a,b=1}^{N-1}n_{a}^{x}\left((n_{d}^{x}-\bm{\delta}_{a}^{x}+\bm{\delta}_{b}^{x})-n_{d}^{x}\right)=\sum_{b=1}^{N-1}(n_{b}^{x}-n_{d}^{x})
 \end{equation}
 Then, summing over all indices $c\in\{1,\ldots,N-2\}$, we obtain \eqref{actionGraphRD}.
-\paragraph{Action on the occupation variable of $\mathcal{L}_{left}^{rd}$}
+\paragraph{Action of $\mathcal{L}_{left}^{rd}$ on the occupation variable}
 Acting on $n_{d}^{1}$  with $\mathcal{L}_{left}^{rd}$ we obtain
 \begin{equation}\label{actionBoudaryRD}
 	\begin{split}
@@ -3035,7 +3035,7 @@ where $\mathbb{E}_{\mu}$ denotes the expectation with respect to the law of the 
 \begin{equation}
 	\frac{d \rho_{d}(x,t)}{dt}=\mathbb{E}_{\mu}\left[\mathcal{L}^{rd}n_{d}^{x}(t)\right]
 \end{equation} 
-Therefore, using the action of $\mathcal{L}^{rd}$ expressed by \eqref{DifferenceEquation} and \eqref{actionBDLine} we obtain a system of $N-1$ difference-differential equation where the discrete Laplacians of all species are coupled and linear reaction terms are present. For these reasons, this model is a generalization to $N$ species and to maximal occupation $\nu$ of the one studied in \cite{casini2022uphill}. This answers the first question we addressed to in the beginning of this section. 
+Therefore, using the action of $\mathcal{L}^{rd}$ expressed by \eqref{DifferenceEquation} and \eqref{actionBDLine} we obtain a system of $N-1$ difference-differential equation\eqref{NSpeciesRD} where the discrete Laplacians of all species are coupled and linear reaction terms are present that we aimed for. For these reasons, this model is a generalization to $N$ species and to maximal occupation $\nu$ of the one studied in \cite{casini2022uphill}. This answers the first question we addressed to in the beginning of this subsection. 
 
 \subsubsection{Reversible measure for the reaction-diffusion process} 
 The process described by the generator \eqref{RDGenerator} is reversible with respect to the homogeneus product measure \begin{equation}\label{reversibleMeasureRD}
@@ -3075,19 +3075,19 @@ By the arbitrariness of $a,b,$ it is true if and only if $\rho_{a}=\rho$ $\foral
 For the boundary transitions we have that, analogously to what happens for the multispecies stirring process, the reservoirs parameters must be such that $\beta_{a}=\alpha_{a}$.
 \subsubsection{Duality for the reaction-diffusion process}
 In this subsection we formulate duality for the multi-species stirring process $(\bm{n}(t))_{t\geq 0}$, defined by the generator \eqref{RDGenerator}.
-The dual  process $(\bm{\xi}(t))_{t\geq 0}$ takes values in the enlarged state space
-\begin{equation}
-	\widetilde{\Omega}=\mathbb{N}_{0}^{N-1}\times  \bigtimes_{x\in V} \Omega_{x}\times \mathbb{N}_{0}^{N-1}
-\end{equation}
-We associate an ``extra site'', denoted by $0$ and $L+1$ attached to $1$ and $L$ respectively,
-where dual particles will accumulate in the course of time. 
-We denote the configurations $\bm{\xi} \in \widetilde\Omega$  as
-\begin{equation}
-	\bm{\xi}=\left(\xi_{1}^{0},\ldots,\xi_{N}^{0}\right)\otimes\left(\xi_{1}^{x},\ldots,\xi_{N}^{x}\right)^{\otimes L}\otimes \left(\xi_{1}^{L+1},\ldots,\xi_{N}^{L+1}\right)
-\end{equation}
-where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles of type $a\in \{1,\ldots,N\}$ at site $x$, 
-and the component $\xi_{a}^{0},\xi_{a}^{L+1}$  give the number at the extra sites. \\
-The duality function is given by
+The dual  process $(\bm{\xi}(t))_{t\geq 0}$ still takes values in the enlarged state space \eqref{stateSpaceDUAL-Chain}
+%\begin{equation}
+%	\widetilde{\Omega}=\mathbb{N}_{0}^{N}\times  \bigtimes_{x\in V} \Omega_{x}\times \mathbb{N}_{0}^{N}
+%\end{equation}
+%We associate an ``extra site'', denoted by $0$ and $L+1$ attached to $1$ and $L$ respectively,
+%where dual particles will accumulate in the course of time. 
+We denote the configurations $\bm{\xi} \in \widetilde\Omega$ 
+%\begin{equation}
+%	\bm{\xi}=\left(\xi_{1}^{0},\ldots,\xi_{N}^{0}\right)\otimes\left(\xi_{1}^{x},\ldots,\xi_{N}^{x}\right)^{\otimes L}\otimes \left(\xi_{1}^{L+1},\ldots,\xi_{N}^{L+1}\right)
+%\end{equation}
+%where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles of type $a\in \{1,\ldots,N\}$ at site $x$, 
+%and the component $\xi_{a}^{0},\xi_{a}^{L+1}$  give the number at the extra sites. \\
+The duality function is still given by
 \begin{equation}
 	D(\bm{n},\bm{\xi})=\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{|\alpha|}\right)^{\xi_{a}^{0}}\left(\prod_{x=1}^{L}\frac{(\nu -\sum_{a=2}^{N}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\right)\prod_{a=1}^{N-1}\left(\frac{\beta_{a}}{|\beta|}\right)^{\xi_{a}^{L+1}}
 \end{equation}
@@ -3095,13 +3095,13 @@ The duality function is given by
 %\begin{equation}
 %	\rho_{a}^{x}:=\frac{\alpha_{a}^{x}}{|\alpha^{x}|}
 %\end{equation}
-The dual process is defined by its generator, which reads
+The dual process is defined by the dual generator
 \begin{equation}\label{DualGeneratorRD}
 	\widetilde{\mathcal{L}}_{left}^{rd}=\widetilde{\mathcal{L}}^{rd}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{rd}+\widetilde{\mathcal{L}}_{right}^{rd}
 \end{equation}
 where 
 $\mathcal{L}_{x,x+1}^{rd}$ is defined in \eqref{edgeGeneratorRD} and, $\widetilde{\mathcal{L}}_{left}^{rd}$ and $\widetilde{\mathcal{L}}_{right}^{rd}$ are again the absorbing dual generators $\widetilde{\mathcal{L}}_{x}$ defined in \eqref{abs-dual-boundary-chain}, with the choice of the reservoirs parameters \eqref{boundaryParamRD}.
-\subsubsection{Proof of duality}
+\paragraph{Proof of duality}
 We only need to prove duality for the bulk generator, since the boundary generators are the same as in Subsection \ref{Subsection-ss-nonI}. 
 In the spirit of Section \ref{sectionDuality}, it is convenient to write the Hamiltonian of the process, that is defined through the basis elements \eqref{actionE} of the $gl(N)$ Lie algebra as 
 \begin{equation}
@@ -3124,9 +3124,9 @@ It is enough of showing
 	&(\mathcal{H}_{x,x+1}^{c})^{T}D=D\mathcal{H}_{x,x+1}^{c}\qquad \forall c\in \{1,\ldots,N-2\}\label{cDualityRelation}\\
 	&(\mathcal{H}_{x,x+1}^{m})^{T}D=D\mathcal{H}_{x,x+1}^{m}\label{mDualityRelation}
 \end{align}
-Since the matrix $R_{x}$ is the same as in Section \ref{sectionDuality}, we shall show that $\mathcal{H}_{x,x+1}^{c}$ and $\mathcal{H}_{x,x+1}^{m}$ have $\exp{(E^{x})}\exp{(E^{x+1})}$ as a symmetry. 
-
-\paragraph{Duality for $H_{x,x+1}^{c}$} We compute the commutator between $\mathcal{H}_{x,x+1}^{c}$ and $\sum_{d=1}^{N-1}(E_{dN}^{x})\otimes \sum_{k=1}^{N-1}(E_{bN}^{x})$. Using \eqref{eq:comgl}, the bilinearity and associativity of the Kronecker product and the bilinearity of the brackets we obtain 
+Since the matrix $R_{x}$ is the same as in Section \ref{sectionDuality}, we shall show that $\mathcal{H}_{x,x+1}^{c}$ and $\mathcal{H}_{x,x+1}^{m}$ have $\exp{(E^{x})}\exp{(E^{x+1})}$ as a symmetry. \\
+%\paragraph{Duality for $H_{x,x+1}^{c}$}
+ We compute the commutator between $\mathcal{H}_{x,x+1}^{c}$ and $\sum_{d=1}^{N-1}(E_{dN}^{x})\otimes \sum_{k=1}^{N-1}(E_{bN}^{x})$. Using \eqref{eq:comgl}, the bilinearity and associativity of the Kronecker product and the bilinearity of the brackets we obtain 
 \begin{align*}
 	&\left[\left(\sum_{d=1}^{N-1}E_{dN}^{x}\otimes\sum_{k=1}^{N-1}E_{kN}^{x+1}\right), \sum_{a,b=1}^{N}\left(E_{g_{c}(b)a}^{x}\otimes E_{g_{c}(a)b}^{x+1} -E_{aa}^{x}\otimes E_{bb}^{x+1}\right)\right]
 	\\=&
@@ -3138,7 +3138,8 @@ Since the matrix $R_{x}$ is the same as in Section \ref{sectionDuality}, we shal
 	\\=&0
 \end{align*}
 where in the last equality we used the invertibility of the map $g_{c}(\cdot)$. \\
-\paragraph{Duality for $H_{x,x+1}^{m}$} We compute the commutator between $\mathcal{H}_{x,x+1}^{m}$ and $\sum_{d=1}^{N-1}(E_{dN}^{x})\otimes \sum_{k=1}^{N-1}E_{bN}^{x}$. The prof is similar and gives
+%\paragraph{Duality for $H_{x,x+1}^{m}$} 
+We compute the commutator between $\mathcal{H}_{x,x+1}^{m}$ and $\sum_{d=1}^{N-1}(E_{dN}^{x})\otimes \sum_{k=1}^{N-1}E_{bN}^{x}$. The prof is similar and gives
 \begin{equation}
 	\left[\sum_{a=1}^{N-1}E_{aN}^{x}\otimes \sum_{b=1}^{N-1}E_{bN}^{x},\;\sum_{i=1}^{N}\sum_{a,l=1}^{N}\left(E_{la}^{x}\otimes \mathbbm{1}^{x+1}-E_{aa}^{x}\otimes \mathbbm{1}^{x+1}\right)\right]=0
 \end{equation}
