@@ -899,7 +899,10 @@ Since the duality matrix \eqref{dualityMatrix} is product over sites, the above 
 $\square$
 \end{flushright}
 \subsection{Steady state correlations and duality}\label{Subsection-ss-nonI}
-In this subsection we specialize the results of Subsection \ref{statementDualitySubsection} to a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can still host $\nu\geq 1$ particles, chosen among the $N$ types. Now the dual graph is still a chain, but where two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$) are present. As already pointed out the dual process eventually voids the graph by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites ($0$ and $L+1$) and replacing them by types $N$. This property allows to characterize the steady state non-equilibrium distribution (assuming that it is unique) by the probability that dual particles are absorbed in the extra-sites, then called \textit{absorption probabilities}. \\The process $\left(\bm{n}(t)\right)_{t\geq0}$ is defined on the space $\Omega=\bigtimes_{x=1}^{L} \Omega_{x}$ and its generator reads
+In this subsection we specialize the results of Subsection \ref{statementDualitySubsection} to a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can still host $\nu\geq 1$ particles, chosen among the $N$ types. Now the dual graph is still a chain, but where two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$) are present. As already pointed out the dual process eventually voids the graph by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites ($0$ and $L+1$) and replacing them by types $N$. This property allows to characterize the steady state non-equilibrium distribution (assuming that it is unique) by the probability that dual particles are absorbed in the extra-sites, then called \textit{absorption probabilities}. \\The process $\left(\bm{n}(t)\right)_{t\geq0}$ is defined on the space
+ \begin{equation}\label{stateSpace-Chain}
+ 	\Omega=\bigtimes_{x=1}^{L} \Omega_{x}
+ \end{equation} and its generator reads
 \begin{equation}
 	\mathcal{L}=\mathcal{L}_{left}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\mathcal{L}_{right}
 \end{equation} 
@@ -912,7 +915,7 @@ while at the boundaries
 	\mathcal{L}_{left}f(\bm{n})=\sum_{a,b=0}^{N}\alpha_{a}n_{b}^{1}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-f(\bm{n})\right)\qquad \mathcal{L}_{right}f(\bm{n})=\sum_{a,b=0}^{N}\beta_{a}n_{b}^{L}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-f(\bm{n})\right)
 \end{equation}
  The process is dual with respect to $(\bm{\xi}(t))_{t\geq0} $ defined on the enlarged configuration space
-\begin{equation}	
+\begin{equation}\label{stateSpaceDUAL-Chain}	
 	\widetilde{\Omega}=N_{0}^{N}\times\bigtimes_{x=1}^{L} \Omega_{x}\times N_{0}^{N}
 \end{equation}
 whit dual generator
@@ -1779,12 +1782,20 @@ Therefore, we compute the third cumulant, i.e. the three-point connected correla
 {\color{blue}check also Appendix A in
 \cite{Alcaraz:1992zc} \cite{Sklyanin:1988yz}} \\
 In Section \ref{sectionIntegrabiliy}, we have found two similarity transformations, namely $S_{1}$ and $S_{2}$, that map the original Hamiltonian $H$ onto a simpler one $H^{''}$, that although non-stochastic, allows to compute the explicit expression of the steady state correlations. To complete the picture, in this section we aim to find a further similarity transformation, called $W$, that maps $H^{''}$ onto $H_{0}$ that will be defined as the original Hamiltonian where the boundaries are set diagonal. These diagonal boundaries do not produce any current and thus $H_{0}$ is called \textit{equilibrium Hamiltonian}. For this reason, we say that the process is mapped onto equilibrium.
-This can be represented by the following diagram 
+This can be represented by the diagram 
 \begin{equation}
 	H\;\xleftrightarrow{S_{1}}\;H^{'}\;\xleftrightarrow{S_{2}}\;H^{''}\xleftrightarrow{W}\;H_{0}
 \end{equation} 
+Namely, the following equation holds true
+\begin{equation}
+	H_{0}=W^{-1}\,S_{2}\,S_{1}\,H\,S_{1}^{-1}\,S_{2}^{-1}\,W
+\end{equation}
 The eigenvectors and the eigenvalues of $H_{0}$ have been found in \cite{belliard2} and \cite{belliard2011nested} using the nested Bethe ansatz. 
-As a consequence, using this sequence of transformations we can find all the eigenvectors of $H$ from the ones of $H_{0}$. Moreover, this allows to retrieve the steady state of $H$, by applying the sequence of transformation to the vacuum state of $H_{0}$, i.e. a state where all the sites are empty. This last transformation $W$ is non-local and to be constructed requires a joint work of perturbation theory and integrability, via the Quantum Inverse Scattering Method (QISM). 
+As a consequence, using this sequence of transformations we can find all the eigenvectors of $H$ from the ones of $H_{0}$
+\begin{equation}
+	|\Psi_{\bm{m}}\rangle=S_{1}^{-1}S_{2}^{-1}W|\Psi_{\bm{m}}^{0}\rangle
+\end{equation}
+Moreover, this allows to retrieve the steady state of $H$, by applying the sequence of transformation to the vacuum state of $H_{0}$, i.e. a state where all the sites are empty. This last transformation $W$ is non-local and to be constructed requires a joint work of perturbation theory and integrability, via the Quantum Inverse Scattering Method (QISM). 
 \subsection{The non local transformation}\label{SectionNonLocalTrasformation}
 We define the equilibrium Hamiltonian as
 \begin{equation}
@@ -2420,7 +2431,13 @@ We obtain
 		\left(\frac{B_{1}^{2L-1}}{2^{k_{1}}}\right)^{k_{1}}\cdots\left( \frac{B_{N-1}^{2L-1}}{2^{k_{N-1}}}\right)^{k_{N-1}}\frac{\Gamma\left(e_{NN}^{tot}+2-(k_{1}+\ldots+k_{N-1})\right)}{\Gamma\left(e_{NN}^{tot}+2\right)}|\Psi_{0}^{0}\rangle
 	\end{split}
 \end{equation}
-where $\Delta_{i}=(\alpha_{i}-\beta_{i})$ for every $i\in\{1,\ldots,N-1\}$. 
+where $\Delta_{i}=(\alpha_{i}-\beta_{i})$ for every $i\in\{1,\ldots,N-1\}$. \\
+As a consequence, the steady state of the original process $H$ reads
+\begin{align}
+	|\Psi\rangle=&\text{exp}\left(-\sum_{x=1}^{L}\sum_{a=1}^{N-1}e_{Na}^{x}\right)\text{exp}\left(\sum_{x=1}^{L}\sum_{a=1}^{N-1}\beta_{a}e_{aN}^{x}\right)\nonumber\\&
+	\sum_{k_{1}=0}^{L}\ldots\sum_{k_{N-1}}^{L}\mathbbm{1}_{\{k_{1}+\ldots+k_{N-1}\leq L\}}\frac{(\alpha_{1}-\beta_{1})^{k_{1}}\cdots (\alpha_{N-1}-\beta_{N-1})^{k_{N-1}}}{k_{1}!\cdots k_{N-1}!}\nonumber\\&
+	\left(\frac{B_{1}^{2L-1}}{2^{k_{1}}}\right)^{k_{1}}\cdots\left( \frac{B_{N-1}^{2L-1}}{2^{k_{N-1}}}\right)^{k_{N-1}}\frac{\Gamma\left(e_{NN}^{tot}+2-(k_{1}+\ldots+k_{N-1})\right)}{\Gamma\left(e_{NN}^{tot}+2\right)}|\Psi_{0}^{0}\rangle
+\end{align}
 %\textbf{Remark}: relation \eqref{SteadyState-W-Good} holds only for the action of $W$ on the vacuum state $|\Psi_{0}^{0}\rangle$. Acting on different equilibrium eigenstates, exchange relations between $B_{i}^{2L-1}$ and $Q_{0}^{2L}$ are more difficult because of the presence of creation operators that mixes up species and we cannot rewrite \eqref{W-charges-Bad} in such a simple form. 
 \subsubsection{Proof of \eqref{SteadyState-W-Good}}
 We prove \eqref{SteadyState-W-Good} in four steps. 
@@ -2739,7 +2756,7 @@ therefore, we have that
 	\end{split}
 \end{equation}
 that is exactly the steady state $|\Psi^{''}\rangle$ computed in \eqref{ResulsBasis} in the case $L=2$ and $N=3$. To obtain the steady state $|\Psi\rangle$ of $H$ we only need to invert the transformations $S_{1}$ and $S_{2}$ defined in \eqref{S1-Whole} and \eqref{S2-Whole}. 
-\end{comment}
+
 %\subsection{Bethe ansatz solution}
 %Describe eigenvalues of $T_0$ following 
 %\cite{belliard2} 
@@ -2763,13 +2780,14 @@ Moreover, using \eqref{SteadyState-W-Good} the steady state of $H$ defined in \e
 	\left(\frac{B_{1}^{2L-1}}{2^{k_{1}}}\right)^{k_{1}}\cdots\left( \frac{B_{N-1}^{2L-1}}{2^{k_{N-1}}}\right)^{k_{N-1}}\frac{\Gamma\left(e_{NN}^{tot}+2-(k_{1}+\ldots+k_{N-1})\right)}{\Gamma\left(e_{NN}^{tot}+2\right)}|\Psi_{0}^{0}\rangle
 \end{align}
 Observe that, while $S_{1}$ and $S_{2}$ are local, $W$ is not. 
+\end{comment}
 \section{Extensions for the non-integrable chain}
 In Sections \ref{sectionIntegrabiliy} and \ref{Section-Mapping} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable thanks to integrability.  
-The aim of this section is studying some extension of the analysis previously done when integrability property is lost. We fix $\nu\geq 1$ and, for the sake of simplicity, we keep the geometry of a chain. We provide the following extensions: 
+The aim of this section is studying some property of the process when integrability is lost. We fix $\nu\geq 1$ and, for the sake of simplicity, we keep the geometry of a chain. We provide the following extensions: 
 \begin{enumerate}
 	%\item \textit{Arbitrary correlations}: exploiting duality, the steady state correlations can be expressed in terms of absorption probabilities of the dual particles. These probability are hard to find in this partial exclusion situation, however correlation can be formally written. Subsection \ref{Subsection-ss-nonI}.
 	\item \textit{Instantaneous thermalization}: starting from the multi-species stirring dynamics, we define the thermalized process, where particle are redistribute in each bond with a measure that is the reversible one conditioned to the conservation of the number of particles on this bond. Also for this thermalized process we prove duality. Subsection \ref{Subsection-Thermalized}.
-	\item \textit{Reaction-diffusion process}: a further dynamics is added. Particle can now change type. The model is carefully constructed with the goal of having the average density evolving as a system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is proved. Subsection \ref{Subsection-RD}
+	\item \textit{Reaction-diffusion process}: a further dynamics is added. Particle can now change type. The model is carefully constructed with the goal of having the average densities evolving as a system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is also proved. Subsection \ref{Subsection-RD}
 \end{enumerate}
 
 
@@ -2811,7 +2829,7 @@ where we denote the multinomial coefficient
 \end{equation}
 provided that $n_{1}+\ldots+n_{N}=\nu$ and $n_{1},\ldots,n_{N}\in \mathbb{N}_{0}$. 
 \subsubsection{Thermalized multi-species stirring process}
-The thermalized multi-species stirring process is defined on the configuration space $\Omega$ introduced in \eqref{stateSpace} and its generator reads
+The thermalized multi-species stirring process is defined on the configuration space $\Omega$ introduced in \eqref{stateSpace-Chain} and its generator reads
 \begin{equation}\label{thermalizedGenerator}
 	\mathcal{L}^{TH}=\mathcal{L}_{left}^{TH}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{TH}+\mathcal{L}_{right}^{TH}
 \end{equation}
@@ -2837,9 +2855,9 @@ and
 		\binom{\nu}{r_{1},\ldots, r_{N}}\prod_{a=1}^{N-1}\left(\frac{\beta_{k}}{\beta_{N}}\right)^{r_{k}}\left(\frac{\beta_{N}}{|\beta|}\right)^{\nu}
 	\end{split}
 \end{equation}
-In the thermalized bulk generator particles on a bond $x$ and $x+1$ are redistribute according to the measure $\nu_{TH}(\bm{r}|\bm{\epsilon})$, while in the thermalized boundary generators the configuration at site $1$ (and $L$) $n_{1}$ is replaced by $\bm{r}$, according to a rate depending on the reservoirs parameters. 
+In the thermalized bulk generator particles on a bond $x$ and $x+1$ are redistribute according to the measure $\nu_{TH}(\bm{r}|\bm{\epsilon})$, while in the thermalized boundary generators the configuration at site $1$ (and $L$) $n^{1}$ is replaced by $\bm{r}$, according to a rate depending on the reservoirs parameters. 
 \subsubsection{The dual thermalized process}
-The thermalized dual process $(\bm{\xi}(t))_{t\geq 0}$ is defined on the enlarged configuration space $\widetilde{\Omega}$ introduced in \eqref{dualStateSpace}. Its generator reads
+The thermalized dual process $(\bm{\xi}(t))_{t\geq 0}$ is defined on the enlarged configuration space $\widetilde{\Omega}$ introduced in \eqref{stateSpaceDUAL-Chain}. Its generator reads
 \begin{equation}
 		\widetilde{\mathcal{L}}^{TH}=\widetilde{\mathcal{L}}_{left}^{TH}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{TH}+\widetilde{\mathcal{L}}_{right}^{TH}
 \end{equation}
@@ -2860,23 +2878,23 @@ The proof of the duality consists in showing
 \end{align}
 Equation \eqref{bulkDualityTH} follows from the proof of the edge duality for the multi-species stirring process. To prove \eqref{boundaryDualityTH} we directly apply the generators on the duality function. For the sake of notation, we introduce 
 \begin{equation}
-	d_{x}(n^{x},\xi^{x}):=\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}
+	d(n^{x},\xi^{x}):=\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}
 \end{equation}
 First, we act with $\mathcal{L}_{left}^{TH}$ on $D(\bm{n},\bm{\xi})$. This action gives
 \begin{align}\label{ProvaBordoTH}
 	\left(\mathcal{L}_{left}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})=\nonumber&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{\prod_{a=1}^{N-1}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{k}^{0}}\frac{\left(\nu-\sum_{c=1}^{N-1}\xi_{c}^{1}\right)!}{\nu!}\right.
 	\\&\nonumber
-	\left.\prod_{b=1}^{N-1}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
+	\left.\prod_{b=1}^{N-1}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\prod_{x=2}^{L}d(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
 	\\&
 	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{\nu}
 \end{align}
 We consider the first addend in the curly bracket of the previous equation. We multiplying it by $\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-r_{\ell}+r_{\ell}-\xi_{\ell}^{1}+\xi_{\ell}^{1}}$ and by $\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{\ell}}{|\alpha|}\right)^{\xi_{1}^{1}+\xi_{1}^{2}-\xi_{2}^{1}+\xi_{2}^{1}}$ and we have
 \begin{align}\label{pezzo1}
-	&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{|\alpha|}\right)^{\xi_{a}^{0}}\frac{\left(\nu-\sum_{c=1}^{N-1}\xi_{c}^{1}\right)!}{\nu!}\prod_{b=1}^{N-1}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}\right\}\nonumber\\&	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{N}}\right)^{r_{k}}\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-\xi_{\ell}^{1}+\xi_{\ell}^{1}-r_{\ell}+r_{\ell}}\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{\ell}}{|\alpha|}\right)^{\xi_{1}^{1}+\xi_{1}^{2}-\xi_{2}^{1}+\xi_{2}^{1}}\nonumber\\=&
-	\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{k}^{0}+\xi_{1}^{k}}\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}	\frac{\left(\nu-\xi_{1}^{1}-\ldots-\xi_{N-1}^{1}\right)!}{(r_{1}-\xi_{1}^{1})!\cdots(r_{N-1}-\xi_{N-1}^{1})!(\nu-r_{1}-\ldots-r_{N-1})!}\nonumber\\&
+	&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{|\alpha|}\right)^{\xi_{a}^{0}}\frac{\left(\nu-\sum_{c=1}^{N-1}\xi_{c}^{1}\right)!}{\nu!}\prod_{b=1}^{N-1}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\prod_{x=2}^{L}d(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}\right\}\nonumber\\&	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{N}}\right)^{r_{k}}\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-\xi_{\ell}^{1}+\xi_{\ell}^{1}-r_{\ell}+r_{\ell}}\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{\ell}}{|\alpha|}\right)^{\xi_{1}^{1}+\xi_{1}^{2}-\xi_{2}^{1}+\xi_{2}^{1}}\nonumber\\=&
+	\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{k}^{0}+\xi_{k}^{1}}\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}	\frac{\left(\nu-\xi_{1}^{1}-\ldots-\xi_{N-1}^{1}\right)!}{(r_{1}-\xi_{1}^{1})!\cdots(r_{N-1}-\xi_{N-1}^{1})!(\nu-r_{1}-\ldots-r_{N-1})!}\nonumber\\&
 	\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{\ell}}{|\alpha|}\right)^{r_{\ell}-\xi_{\ell}^{1}}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-r_{1}-\ldots-r_{N-1}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}\nonumber
 	\\=&
-	\prod_{k=1}^{N-1}\left(\rho_{k}^{L}\right)^{\xi_{k}^{0}+\xi_{1}^{k}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}
+	\prod_{k=1}^{N-1}\left(\rho_{k}^{L}\right)^{\xi_{k}^{0}+\xi_{k}^{1}}\prod_{x=2}^{L}d(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}
 \end{align}
 where in the last equality we used the multinomial theorem. \\ We now consider the second addend in the curly brackets.
 We multiplying it by $\prod_{a=1}^{N-1}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{r_{a}-r_{a}}$ 
