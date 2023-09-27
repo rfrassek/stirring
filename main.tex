@@ -142,7 +142,7 @@
 % \centering
 \begin{center}
  \begingroup\LARGE
-\bf Multispecies stirring process
+\bf Multispecies stirring process: duality and exact solution
 \par\endgroup
  \vspace{3.5em}
  \begingroup\large \bf
@@ -178,10 +178,10 @@
 
 \section{Introduction} 
 In the past years duality has been developed to study stochastic processes, especially in the boundary driven case, i.e. when the system is put in contact with boundaries that generate a non-equilibrium current. The literature is huge. We can address , for instance, to \cite{giardina2009duality,carinci2013duality,frassek2020duality}. One application of duality is the attempt to characterize the non equilibrium steady state of boundary driven process via the so called absorption probabilities. Indeed, there are many cases where the dual process has absorbing boundaries. This means that the the chain is eventually empty in the long time scale. Moreover, there are cases in which the steady state of a stochastic process can be computed explicitly, thanks to the integrability property of the system (quantum inverse scattering method, matrix product ansatz). In this direction, some examples can be found in \cite{derrida1993exact,frassek2019non,frassek2020eigenstates}. In the past, the focus has been on processes where one can distinguish, in each site of a certain graph, a (or many) particles or an empty state. However, this particles are indistinguishable, in the sense that you can pile up in a site just one type of particles. Some natural questions arise: what happens if we imagine to assign different colours to the particles? Is the duality property still holding? How far can we push our analysis for the characterization of the non equilibrium steady state?\\
-The way one can define a multi-type (or multi-species) interacting particle system is not unique. In the literature there are many. Two of them are the following. On one hand, the \textit{multi-layer models}, in which the process is constructed on a many layer graph where each graph correspond to a type and perform a kind of dynamic (independent jump, exclusion/inclusion walkers) and the layers communicate each other with some "switching probabilities". The state space of the Markov process is the Cartesian product of the state spaces of each layer, i.e. of the two species. For example see \cite{floreani2022switching,redig2022ergodic}. On the other hand, the \textit{single layer models}. Here, there is just one layer, where particles of each type can pile up, in a way that the exclusion dynamic concerns many species together. In other words, now the species can interact "directly", not just by switching layer. Here the state space contains all the species and it is not product anymore. Some examples of such a dynamic can be found in \cite{casini2022uphill,vanicat2017exact,zhou2021orthogonal}. \\
+The way one can define a multi-type (or multi-species) interacting particle system is not unique. In the literature there are many. Two of them are the following. On one hand, the \textit{multi-layer models}, in which the process is constructed on a many layer graph where each graph correspond to a type and perform a kind of dynamic (independent jump, exclusion/inclusion walkers) and the layers communicate each other with some "switching probabilities". The state space of the Markov process is the Cartesian product of the state spaces of each layer, i.e. of the two species. For example see \cite{floreani2022switching,redig2022ergodic,redig2023equilibrium}. On the other hand, the \textit{single layer models}. Here, there is just one layer, where particles of each type can pile up, in a way that the exclusion dynamic concerns many species together. In other words, now the species can interact "directly", not just by switching layer. Here the state space contains all the species and it is not product anymore. Some examples of such a dynamic can be found in \cite{casini2022uphill,vanicat2017exact,zhou2021orthogonal}. \\
 In this work we concentrate our effort in this last "single layer" case with a repulsive process, i.e. a dynamic in which a maximum amount of particles can be present in each site at each time. We will call this amount, the "maximal occupancy" and it will indicated with $\twoj$ where $\twoj\in\mathbb{N}$. Particle of any species can exchange their position in the graph, under this exclusion constraint. The system will be put out of equilibrium and some absorbing duality result are investigated. Moreover, we will use this duality, to study the out of equilibrium steady state. In particular, in case of $\twoj=1$ we retrieve the model studied in \cite{vanicat2017exact}. 
 {\color{red}
-The case of $\twoj=1$ distinguishes itself from other values of $\twoj$ as in this case the model can be mapped to an integrable higher rank $gl(n)$ Heisenberg XXX spin chain with open (non-diagonal) boundaries. Furthermore the matrix product ansatz \cite{derrida1993exact}  is applicable, see \cite{Crampe:2014aoa,vanicat2017exact}.
+The case of $\twoj=1$ distinguishes itself from other values of $\twoj$ as in this case the model can be mapped to an integrable higher rank $gl(N)$ Heisenberg XXX spin chain with open (non-diagonal) boundaries. Furthermore the matrix product ansatz \cite{derrida1993exact}  is applicable, see \cite{Crampe:2014aoa,vanicat2017exact}.
 }
 We will exploit the duality and the underlying symmetries of the model, to write explicitly all the correlations of this \textit{hard-core exclusion} case. The main tool that we will use is the Lie algebraic description of the process, that allows to find the duality as a proper symmetry of the generator. \\
  For a complete review of the quantum inverse scattering method see \cite{Sklyanin:1988yz} and \cite{faddeev1996algebraic}. For application of the QISM to interacting particle systems we refer to \cite{frassek2020eigenstates,frassek2019non,frassek2022exact,vanicat2017exact}. \\
@@ -257,14 +257,14 @@ where
 \end{equation}
 {\color{red} notation}
 This means that on the edge $(x,y)\in \mathcal{E}$  a particle of type $a$ at site $x$ is exchanged with a particle of type $b$ at site $y$ at rate $\omega_{x,y}n_{a}^{x}n_{b}^{y}$. Furthermore, on each site $x\in V$  a particle of type $b$ is replaced with a particle of type $a$ at rate $\Gamma_{x}\alpha_{a}^{x}n_{b}^{x}$. For the sake of notation we denote $|\alpha^{x}|=\sum_{a=1}^{N}\alpha_{a}^{x}$. 
-See Figure \ref{fig:1} and  Figure \ref{fig:2} for a visualisation of the dyamics. 
-\begin{figure}
+See Figure \ref{fig:1} and  Figure \ref{fig:2} for a visualisation of the dynamics. 
+\begin{figure}[h]
     \centering
     \includegraphics[scale=0.45]{BulkStirring.eps}
     \caption{The edge dynamics. Maximal occupation is $\nu=6$. A particle of type $2$ is removed in $x$ and placed in $y$. A particle of type $3$ is removed in $y$ and placed in $x$. This transition occurs at rate $n_{2}^{x}n_{3}^{y}=2\cdot 3$.}
     \label{fig:1}
 \end{figure}
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[scale=0.4]{BoundaryStirring.eps}
     \caption{The site dynamics. Here the maxiaml occupation is $\nu=6$. The reservoir, represented by a square "box" containing all types of particles, remove a type $2$ from site $x$ and replace it with a type $3$. This transition occurs at rate $\alpha_{3}^{x}n_{2}^{x}$.}
@@ -1779,7 +1779,7 @@ Therefore, we compute the third cumulant, i.e. the three-point connected correla
 \end{align}
 \textbf{Remark}: the first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, are exactly the ones found in subsection 4.3 of \cite{vanicat2017exact}. 
 \section{Mapping to equilibrium} \label{Section-Mapping}
-{\color{blue}check also Appendix A in
+{\color{red}check also Appendix A in
 \cite{Alcaraz:1992zc} \cite{Sklyanin:1988yz}} \\
 In Section \ref{sectionIntegrabiliy}, we have found two similarity transformations, namely $S_{1}$ and $S_{2}$, that map the original Hamiltonian $H$ onto a simpler one $H^{''}$, that although non-stochastic, allows to compute the explicit expression of the steady state correlations. To complete the picture, in this section we aim to find a further similarity transformation, called $W$, that maps $H^{''}$ onto $H_{0}$ that will be defined as the original Hamiltonian where the boundaries are set diagonal. These diagonal boundaries do not produce any current and thus $H_{0}$ is called \textit{equilibrium Hamiltonian}. For this reason, we say that the process is mapped onto equilibrium.
 This can be represented by the diagram 
@@ -2975,7 +2975,12 @@ where the $\alpha$'s parameters are defined in function of the given boundary co
 		\alpha_{N}&=\nu\left(\sigma_{11}+(N-2)\sigma_{12}\right)-\sum_{a=1}^{N-1}\alpha_{a}
 	\end{split}
 \end{equation}
-The boundary generator $\mathcal{L}_{right}^{rd}$ is defined analugosly, but the $\alpha$'s are replaced by $\beta$'s and the boundary densities are considered at site $L+1$. \\ \\
+As a consequence, we can define the boundary values in terms of the reservoir parameters as
+\begin{equation}
+	\rho_{a}^{0}=\frac{\alpha_{a}\sigma_{11}-\sigma_{12}\sum_{b=1\,:\,b\neq a}^{N-1}\alpha_{b}}{(\sigma_{11}-(N-2)\sigma_{12})(\sigma_{11}+(N-2)\sigma_{12})}\qquad \rho_{N}^{0}=\frac{\alpha_{N}}{(\sigma_{11}+(N-2)\sigma_{12})}
+\end{equation}
+for every $a\in\{1,\ldots,N\}$. Moreover, with this choice we have that $\sum_{a=1}^{N}\alpha_{a}=\nu(\sigma_{11}+(N-1)\sigma_{12})$ and $\sum_{a=1}^{N}\rho_{a}^{0}=\nu$. \\
+The boundary generator $\mathcal{L}_{right}^{rd}$ is defined analogously, but the $\alpha$'s are replaced by $\beta$'s and the boundary values are considered at site $L+1$. \\ \\
 \textbf{Remark}: observe that, up to a specific choice of the $\alpha$'s, the left boundary generator $\mathcal{L}_{left}^{rd}$ has the form of the one of the multi-species stirring process \eqref{siteGenerator}. 
 \paragraph{Action of $\mathcal{L}_{x,+1}^{rd}$ on the occupation variable}
 For arbitrary site $x\in \{1,\ldots,L\}$, the action on the occupation variable $f(\bm{n})=n_{d}^{x}$ of particle of type $d\in \{1,\ldots,N-1\}$ reads
@@ -3047,17 +3052,18 @@ when for any $a\in\{1,\ldots,N\}$
 \end{equation}
 This measure has marginals $\Lambda_{rev}^{x}$ given by 
 \begin{equation}
-	\Lambda^{x}_{rev}\sim \text{Multinomial}\left(\twoj,\rho_{1},\ldots,\rho_{N}\right)
+	\Lambda^{x}_{rev}\sim \text{Multinomial}\left(\twoj,p_{1},\ldots,p_{N}\right)
 \end{equation}
 where 
 \begin{equation}
-	\rho=\rho_{a}=\frac{\alpha}{\alpha_{N}+(N-1)\alpha}\quad \forall a\in \{1,\ldots,N-1\}\qquad \text{and}\qquad \rho_{N}=\frac{\alpha_{N}}{\alpha_{N}+(N-1)\alpha}
+	p=p_{a}=\frac{\alpha}{\alpha_{N}+(N-1)\alpha}\quad \forall a\in \{1,\ldots,N-1\}\qquad \text{and}\qquad p_{N}=\frac{\alpha_{N}}{\alpha_{N}+(N-1)\alpha}
 \end{equation}
 Namely,
 \begin{equation}
-	\Lambda_{rev}^{x}(n^{x})=\frac{\nu!}{\prod_{a=1}^{N}n_{a}^{x}!}\rho^{\sum_{a=1}^{N-1}n_{a}^{x}}\rho_{N}^{n_{N}^{x}}
+	\Lambda_{rev}^{x}(n^{x})=\frac{\nu!}{\prod_{a=1}^{N}n_{a}^{x}!}p^{\sum_{a=1}^{N-1}n_{a}^{x}}p^{n_{N}^{x}}
 \end{equation}
-This can be proved just by imposing the detailed balance conditions for the edge $x,x+1$ and for the boundary generators. For fixed site $x\in \{1,\ldots,L\}$ we only prove the detailed balance for  $\mathcal{L}_{x,x+1}^{c}$ with $c\in\{1,\ldots,N-2\}$ since for the other generators  $\mathcal{L}_{x,x+1}^{m}$, $\mathcal{L}_{left}^{rd}$ and $\mathcal{L}_{right}^{rd}$ the computation is similar. Consider the transition $\bm{n}\to \bm{n}-\delta_{a}^{x}+\delta_{g_{c}(b)}^{x}+\delta_{g_{c}(b)}^{x+1}-\delta_{b}^{x+1}$ for arbitrary $a,b\in\{1,\ldots,N-1\}$ and $c\in\{1,\ldots,N-2\}$; the detailed balance reads
+This can be proved just by imposing the detailed balance conditions for the edge $x,x+1$ and for the boundaries. For fixed site $x\in \{1,\ldots,L\}$ we only prove the detailed balance for  $\mathcal{L}_{x,x+1}^{c}$ with $c\in\{1,\ldots,N-2\}$ since for the generator $\mathcal{L}_{x,x+1}^{m}$ the computation is similar and has already been proved for $\mathcal{L}_{x,x+1}$ of the multi-species stirring. Consider the transition $\bm{n}\to \bm{n}-\delta_{a}^{x}+\delta_{g_{c}(b)}^{x}+\delta_{g_{c}(b)}^{x+1}-\delta_{b}^{x+1}$ for arbitrary $a,b\in\{1,\ldots,N-1\}$ and $c\in\{1,\ldots,N-2\}$; the detailed balance gives
+\begin{comment}
 \begin{equation}
 	\begin{split}
 		&n_{a}^{x}n_{b}^{x+1}\frac{\nu!}{n_{1}^{x}!\cdots n_{a}^{x}!\cdots n_{g_{c}(b)}^{x}!\ldots n_{N}^{x}!}\frac{\nu!}{n_{1}^{x+1}!\cdots n_{b}^{x+1}!\cdots n_{g_{c}(a)}^{x+1}!\ldots n_{N}^{x+1}!}\\&\rho_{1}^{n_{1}^{x}+n_{1}^{x+1}}\cdots \rho_{a}^{n_{a}^{x}}\cdots\rho_{g_{c}(b)}^{n_{g_{c}(b)}^{x}}\cdots\rho_{b}^{n_{b}^{x+1}}\cdots \rho_{g_{c}(a)}^{n_{g_{c}(a)}^{x+1}}\cdots \rho_{N}^{n_{N}^{x}+n_{N}^{x+1}}
@@ -3068,20 +3074,25 @@ This can be proved just by imposing the detailed balance conditions for the edge
 	\end{split}
 \end{equation}
 that simplifies to 
+\end{comment}
 \begin{equation}
-	\rho_{a}\rho_{b}=\rho_{g_{c}(a)}\rho_{g_{c}(b)}
+	p_{a}p_{b}=p_{g_{c}(a)}p_{g_{c}(b)}
 \end{equation}
-By the arbitrariness of $a,b,$ it is true if and only if $\rho_{a}=\rho$ $\forall a\in \{1,\ldots,N-1\}$.\\
-For the boundary transitions we have that, analogously to what happens for the multispecies stirring process, the reservoirs parameters must be such that $\beta_{a}=\alpha_{a}$.
+By the arbitrariness of $a,b,$ it is true if and only if
+\begin{equation}\label{p-equal}
+	p_{a}=p\qquad \forall a\in \{1,\ldots,N-1\}
+\end{equation}
+while $p_{N}=1-\sum_{a=1}^{N-1}p_{a}$\\
+For the boundary generators $\mathcal{L}_{left}^{rd}$ and $\mathcal{L}_{right}^{rd}$ we have that, analogously to what happens for the multispecies stirring process, the reservoirs parameters must be such that $\beta_{a}=\alpha_{a}$ and, due to \eqref{p-equal}, we also need $\alpha_{a}=\alpha$ for all $a\in\{1,\ldots,N-1\}$. 
 \subsubsection{Duality for the reaction-diffusion process}
 In this subsection we formulate duality for the multi-species stirring process $(\bm{n}(t))_{t\geq 0}$, defined by the generator \eqref{RDGenerator}.
-The dual  process $(\bm{\xi}(t))_{t\geq 0}$ still takes values in the enlarged state space \eqref{stateSpaceDUAL-Chain}
+The dual  process $(\bm{\xi}(t))_{t\geq 0}$ still takes values in the enlarged state space $\widetilde{\Omega}$ defined in \eqref{stateSpaceDUAL-Chain}
 %\begin{equation}
 %	\widetilde{\Omega}=\mathbb{N}_{0}^{N}\times  \bigtimes_{x\in V} \Omega_{x}\times \mathbb{N}_{0}^{N}
 %\end{equation}
 %We associate an ``extra site'', denoted by $0$ and $L+1$ attached to $1$ and $L$ respectively,
 %where dual particles will accumulate in the course of time. 
-We denote the configurations $\bm{\xi} \in \widetilde\Omega$ 
+%and we denote its configurations by $\bm{\xi} \in \widetilde\Omega$.
 %\begin{equation}
 %	\bm{\xi}=\left(\xi_{1}^{0},\ldots,\xi_{N}^{0}\right)\otimes\left(\xi_{1}^{x},\ldots,\xi_{N}^{x}\right)^{\otimes L}\otimes \left(\xi_{1}^{L+1},\ldots,\xi_{N}^{L+1}\right)
 %\end{equation}
@@ -3095,7 +3106,7 @@ The duality function is still given by
 %\begin{equation}
 %	\rho_{a}^{x}:=\frac{\alpha_{a}^{x}}{|\alpha^{x}|}
 %\end{equation}
-The dual process is defined by the dual generator
+The dual generator now reads
 \begin{equation}\label{DualGeneratorRD}
 	\widetilde{\mathcal{L}}_{left}^{rd}=\widetilde{\mathcal{L}}^{rd}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{rd}+\widetilde{\mathcal{L}}_{right}^{rd}
 \end{equation}
@@ -3119,27 +3130,27 @@ We need to prove that, for arbitrary $x\in\{1,\ldots,L\}$
 \begin{align}
 	(\mathcal{H}_{x,x+1}^{rd})^{T}D&=D\mathcal{H}_{x,x+1}^{rd}\label{edgeDualityRelationRD}
 \end{align}
-It is enough of showing 
+but it is enough of showing 
 \begin{align}
 	&(\mathcal{H}_{x,x+1}^{c})^{T}D=D\mathcal{H}_{x,x+1}^{c}\qquad \forall c\in \{1,\ldots,N-2\}\label{cDualityRelation}\\
 	&(\mathcal{H}_{x,x+1}^{m})^{T}D=D\mathcal{H}_{x,x+1}^{m}\label{mDualityRelation}
 \end{align}
 Since the matrix $R_{x}$ is the same as in Section \ref{sectionDuality}, we shall show that $\mathcal{H}_{x,x+1}^{c}$ and $\mathcal{H}_{x,x+1}^{m}$ have $\exp{(E^{x})}\exp{(E^{x+1})}$ as a symmetry. \\
 %\paragraph{Duality for $H_{x,x+1}^{c}$}
- We compute the commutator between $\mathcal{H}_{x,x+1}^{c}$ and $\sum_{d=1}^{N-1}(E_{dN}^{x})\otimes \sum_{k=1}^{N-1}(E_{bN}^{x})$. Using \eqref{eq:comgl}, the bilinearity and associativity of the Kronecker product and the bilinearity of the brackets we obtain 
+ We compute the commutator between $\mathcal{H}_{x,x+1}^{c}$ and $\sum_{d=1}^{N-1}(E_{dN}^{x})\otimes \sum_{k=1}^{N-1}(E_{bN}^{x+1})$. Using \eqref{eq:comgl}, the bilinearity and associativity of the Kronecker product and the bilinearity of the brackets we obtain 
 \begin{align*}
 	&\left[\left(\sum_{d=1}^{N-1}E_{dN}^{x}\otimes\sum_{k=1}^{N-1}E_{kN}^{x+1}\right), \sum_{a,b=1}^{N}\left(E_{g_{c}(b)a}^{x}\otimes E_{g_{c}(a)b}^{x+1} -E_{aa}^{x}\otimes E_{bb}^{x+1}\right)\right]
 	\\=&
-	\sum_{d,k=1}^{N-1}\sum_{a,b=1}^{N}\left\{\left((E_{da}^{x}\delta_{g_{c}(b)N}-E_{g_{c}(b)N}^{x}\delta_{ad})-(E_{da}^{x+1}\delta_{aN}-E_{aN}^{x+1}\delta_{da})\right)\right. \\ \otimes&\left. \left((E_{kb}^{y}\delta_{g_{c}(a)N}-E_{g_{c}N}^{x+1}\delta_{kb})-(E_{kb}^{x+1}\delta_{bN}-E_{bN}^{x+1}\delta_{kb})\right)\right\}
+	\sum_{d,k=1}^{N-1}\sum_{a,b=1}^{N}\left\{\left((E_{da}^{x}\delta_{g_{c}(b)N}-E_{g_{c}(b)N}^{x}\delta_{ad})-(E_{da}^{x}\delta_{aN}-E_{aN}^{x}\delta_{da})\right)\right. \\ \otimes&\left. \left((E_{kb}^{x+1}\delta_{g_{c}(a)N}-E_{g_{c}N}^{x+1}\delta_{kb})-(E_{kb}^{x+1}\delta_{bN}-E_{bN}^{x+1}\delta_{kb})\right)\right\}
 	\\=&
-	\sum_{d,k=1}^{N-1}\sum_{a,b=1}^{N}\left\{\left(E_{da}^{x}-E_{g_{c}(b)N}^{x}-E_{da}^{x}+E_{aN}^{x}\right)\otimes\left(E_{kb}^{x+1}-E_{g_{c}(a)N}^{x+1}-E_{kb}^{y}+E_{bN}^{x+1}\right)\right\}
+	\sum_{d,k=1}^{N-1}\sum_{a,b=1}^{N}\left\{\left(E_{da}^{x}-E_{g_{c}(b)N}^{x}-E_{da}^{x}+E_{aN}^{x}\right)\otimes\left(E_{kb}^{x+1}-E_{g_{c}(a)N}^{x+1}-E_{kb}^{x+1}+E_{bN}^{x+1}\right)\right\}
 	\\=&
 	\sum_{d,k=1}^{N-1}\sum_{a,b=1}^{N}\left\{\left(E_{aN}^{x}-E_{g_{c}(b)N}^{x}\right)\otimes \left(E_{bN}^{x+1}-E_{g_{c}(a)N}^{x+1}\right)\right\}
 	\\=&0
 \end{align*}
-where in the last equality we used the invertibility of the map $g_{c}(\cdot)$. \\
+where in the last equality we used the fact that map $g_{c}(\cdot)$ is surjective. \\
 %\paragraph{Duality for $H_{x,x+1}^{m}$} 
-We compute the commutator between $\mathcal{H}_{x,x+1}^{m}$ and $\sum_{d=1}^{N-1}(E_{dN}^{x})\otimes \sum_{k=1}^{N-1}E_{bN}^{x}$. The prof is similar and gives
+Concerning the commutator between $\mathcal{H}_{x,x+1}^{m}$ and $\sum_{d=1}^{N-1}(E_{dN}^{x})\otimes \sum_{k=1}^{N-1}(E_{bN}^{x+1})$, the proof is similar and gives
 \begin{equation}
 	\left[\sum_{a=1}^{N-1}E_{aN}^{x}\otimes \sum_{b=1}^{N-1}E_{bN}^{x},\;\sum_{i=1}^{N}\sum_{a,l=1}^{N}\left(E_{la}^{x}\otimes \mathbbm{1}^{x+1}-E_{aa}^{x}\otimes \mathbbm{1}^{x+1}\right)\right]=0
 \end{equation}
@@ -3221,8 +3232,11 @@ that gives back \eqref{one-pts-corr}.
 
 
 
-\section{Conclusion}
-
+\section{Conclusion and outlook}
+Multi-species version of non-compact chains. Extension of \cite{frassek2022exact},\cite{frassek2022integrable},\cite{frassek2020non},\cite{frassek2021duality}. \\
+Use exact solution to compute large deviation rate function extending to the multi-species case results proved in \cite{derrida1998exact}, \cite{mallick2022exact}. \\
+Extend the result to a-symmetric situation. See \cite{belitsky2018self}, \cite{belitsky2015quantum}, \cite{crampe2016integrable}, \cite{finn2018matrix}. \\
+Extend the QISM technique to models which include reaction trying to apply the method exposed in \cite{de2021yang} for stirring process with a proper reaction term. Extend the duality to stirring models with different mechanism of transition \cite{chatterjee2023multi}. 
 
 
 
@@ -3326,7 +3340,7 @@ where we have introduced, $\forall x\in \{1,\ldots,L\}$
 			%\end{cases}\qquad
 			\theta_{x}(b)=\begin{cases}
 				\tau_{x}\qquad &\text{if}\quad x\notin \{q_{1},\ldots,q_{b}\}\\
-				1 \qquad &\text{otherwise}
+				N \qquad &\text{otherwise}
 			\end{cases}
 		\end{equation}
 		The dependence of $\theta(b)$ with respect to $b$ is usually understood for the sake of notation. 
@@ -3414,7 +3428,7 @@ where we have introduced, $\forall x\in \{1,\ldots,L\}$
 				\end{split}
 		\end{equation}} 
 	\end{comment}
-indeed, in each coordinate $q_{r}$ with $r=1,\ldots b$ the species $1$ is replaced by all other possible species from $2$ to $N$.  Finally, considering all possible $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, we obtain \eqref{steadyStateH}. 
+indeed, in each coordinate $q_{r}$ with $r=1,\ldots b$ the species $N$ is replaced by all other possible species from $1$ to $N-1$.  Finally, considering all possible $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, we obtain \eqref{steadyStateH}. 
 		\begin{flushright}
 			$\square$
 		\end{flushright}
