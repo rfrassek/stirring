@@ -767,7 +767,6 @@ and
 \begin{align}
 	\left[B\left[B,A\right]\right]=&\left[\sum_{a=1}^{N-1}E_{aN},\delta_{cN}\sum_{b=1}^{N-1}E_{bd}-\delta_{d<N}E_{cN}\right]\nonumber\\=&
 	\sum_{a=1}^{N-1}\left(\delta_{cN}\sum_{b=1}^{N-1}\left[E_{aN},E_{bd}\right]-\delta_{d<N}\left[E_{aN},E_{cN}\right]\right)\nonumber\\=&
-	\sum_{a=1}^{N-1}\left(\delta_{cN}\sum_{b=1}^{N-1}\left(E_{ad}\delta_{bN}-\delta_{ad}E_{bN}\right)-\delta_{d<N}\left(E_{aN}\delta_{cN}-E_{cN}\delta_{aN}\right)\right)\nonumber\\=&
 	\sum_{a=1}^{N-1}\left(-\delta_{cN}\delta_{ad}\sum_{b=1}^{N-1}E_{bN}-\delta_{d<N}\delta_{cN}E_{aN}\right)\nonumber\\=&
 	-\left(-\delta_{cN}\delta_{d<N}-\delta_{d<N}\delta_{cN}\right)\sum_{b=1}^{N-1}E_{bN}\nonumber
 	\\=&
@@ -775,7 +774,7 @@ and
 \end{align}
 From the third commutator on we always obtain zero. All in all we have that 
  \begin{align}\label{HT-BA}
- 	\exp{\left(-\sum_{a=1}^{N-1}E_{aN}\right)}E_{cd}\exp{\left(\sum_{a=1}^{N-1}E_{aN}\right)}=E_{cd}-\left(\delta_{cN}\sum_{a=1}^{N-1}E_{ad}-\delta_{d<N}E_{cN}\right)-\delta_{cN}\delta_{d<N}\sum_{b=1}^{N-1}E_{bN}
+ 	\exp{\left(-\sum_{a=1}^{N-1}E_{aN}\right)}E_{cd}\exp{\left(\sum_{a=1}^{N-1}E_{aN}\right)}=E_{cd}-\delta_{cN}\sum_{a=1}^{N-1}E_{ad}+\delta_{d<N}E_{cN}-\delta_{cN}\delta_{d<N}\sum_{b=1}^{N-1}E_{bN}
  \end{align}
 \begin{comment}
 \begin{enumerate}
@@ -850,7 +849,7 @@ We multiply both sides by $R_{x}\exp{(E^{x})}$
     H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\sum_{a,b =1}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}
 \end{equation}
 %By inserting the identity $I=\exp{(E^{x})}\exp{(-E^{x})}$ and 
-By using \eqref{HT-BA} and the fact that the Casimir operator \eqref{secondCasimir} is central for the algebra we have 
+By using \eqref{HT-BA} and the fact that the first Casimir operator $C_{1}=\sum_{a,b=1}^{N}E_{ab}$ is central for the algebra we have 
 \begin{comment}
 then, in the right hand side
 \begin{equation}\label{intermediateTransposeSite}
