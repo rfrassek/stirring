@@ -1060,18 +1060,18 @@ where
 
 
 \section{Exact steady state and arbitrary correlations for the integrable chain}\label{sectionIntegrabiliy}
-In this section we aim to use duality and the matrix product ansatz to determine the non equilibrium steady state and its arbitrary correlation for the integrable version of the multi-species stirring process, defined in Subsection \ref{integrableChain-duality}. As it will turn out, duality simplifies the commutation relations of the matrix product ansatz allowing to determined a closed formula for all correlations. As a by-product, absorption probabilities can be explicitly determined, giving a further probabilistic interpretation for the non-equilibrium steady state. 
-\subsection{The integrable chain and the matrix product ansatz}
+In this section we aim to use duality and the matrix product ansatz (MPA) to determine the moments and correlations of the non-equilibrium steady state for the integrable version of the multi-species stirring process, defined in Subsection \ref{integrableChain-duality}. As it will turn out, the commutation relations of the matrix product ansatz allowing to determine a closed formula for all correlations. As a by-product, absorption probabilities can be explicitly found.%, giving a further probabilistic interpretation for the non-equilibrium steady state. 
+\subsection{The integrable chain and the non-equilibrium steady state}
 The matrix product ansatz has been formulated in \cite{vanicat2017exact}, here we briefly recall it.
  Denoting by $|\Psi(t)\rangle$ the column vector that encodes the probability distribution of the chain with Hamiltonian \eqref{hamiltonian} at time $t\geq 0$, its evolution equation is given by 
- the Master equation
+ the master equation
 \begin{equation}
-    \frac{d|{\Psi}(t)\rangle}{dt}=H|{\Psi}(t)\rangle
+    \frac{d|{\Psi}(t)\rangle}{dt}=H|{\Psi}(t)\rangle.
 \end{equation}
 This Markov chain is irreducible and positive recurrent, therefore there exists a unique stationary measure, that will be reached when time goes to infinity, regardless of the initial configuration. 
 We denote by $|\Psi\rangle$ the column vector that gives the stationary distribution. This vector is the right eigenvector with vanishing eigenvalue of $H$, i.e. it solves 
 \begin{equation}\label{definition-SteadyStateH}
-	H|\Psi\rangle =0
+	H|\Psi\rangle =0.
 \end{equation}
 The MPA states the following
 \begin{equation}
@@ -1087,39 +1087,39 @@ The MPA states the following
 \end{equation}
 with the normalization 
 \begin{equation}
-	Z_{L}=\langle V^{*}|(X_{1}+\ldots +X_{N})^{L}|V\rangle
+	Z_{L}=\langle V^{*}|(X_{1}+\ldots +X_{N})^{L}|V\rangle.
 \end{equation}
-where the operators $(X_{a})_{a\in \{1,\ldots,N\}}$ fulfill the commutators
+Here the operators $(X_{a})_{a\in \{1,\ldots,N\}}$ fulfil the commutators
 \begin{equation}\label{bulk}
 	\left[X_{a},X_{b}\right]=\lambda_{a}X_{b}-\lambda_{b}X_{a}\qquad\forall a,b=1,\ldots,N
 \end{equation}
 and their action on the boundary vectors are
 \begin{equation}\label{leftBoundary}
-	\langle V^{*}|\left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=\lambda_{a}\langle V^{*}|\qquad\forall a=1,\ldots,N
+	\langle V^{*}|\left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=\lambda_{a}\langle V^{*}|\qquad\forall a=1,\ldots,N,
 \end{equation}
 \begin{equation}\label{rightBoundary}
-	\left(\beta_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)|V\rangle=-\lambda_{a}|V\rangle\qquad\forall a=1,\ldots,N
+	\left(\beta_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)|V\rangle=-\lambda_{a}|V\rangle\qquad\forall a=1,\ldots,N.
 \end{equation}
 Without loss of generality, we further assume that $\langle V^{*}|V\rangle=1$. 
 \newline \newline
-\textbf{Remark}: only $N-1$ of the $N$ equations \eqref{leftBoundary}  are independent. This can be seen by summing them over the species $a\in \{1,\ldots,N\}$:
+\textbf{Remark}: Only $N-1$ of the $N$ equations \eqref{leftBoundary}  are independent. This can be seen by summing them over the species $a\in \{1,\ldots,N\}$, i.e.
 	\begin{equation}
-		\sum_{a=1}^{N}	\langle V^{*}|\left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=\sum_{a=1}^{N}\lambda_{a}\langle V^{*}|=0
+		\sum_{a=1}^{N}	\langle V^{*}|\left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=0,%\sum_{a=1}^{N}\lambda_{a}\langle V^{*}|=0
 	\end{equation}
 	and using  \eqref{ratesConditions} and \eqref{lambdaConditions}.
  Similarly for the right boundary  \eqref{rightBoundary} there are only  $N-1$ independent equations.
 \subsection{The explicit form of the steady state}\label{subsection-exact}
-The MPA gives an abstract form of the steady state in terms of an algebra of operators. However, to write explicitly the steady state one should provide a representation of this algebra. Another approach is to directly use the commutators and the boundary actions to compute correlations. This path has been followed in \cite{vanicat2017exact} to find one-point and two-point correlations. 
-Here we follow the same approach. We will show that the duality property established in Section \ref{sectionDuality} simplifies substantially the  use of commutators in the
+The MPA gives an abstract form of the steady state in terms of an algebra of operators. This path has been followed in \cite{vanicat2017exact} to find one and two-point correlations. 
+Here we follow the same approach. We will show that the existence of absorbing dual process established in Section \ref{sectionDuality} simplifies substantially the  use of commutators in the
 computation. The idea is summarized as follows. We define a sequence of similarity transformation such that 
 \begin{equation}
 	H\;\xleftrightarrow{S_{1}}\;H^{'}\;\xleftrightarrow{S_{2}}\;H^{''}
 \end{equation} 
-where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Thanks to these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} of the operators $(X_{a})_{a\in\{1,\ldots,N\}}$ of the MPA become simpler, therefore, the right eigenvector with vanishing eigenvalue $|\Psi^{''}\rangle$ of $H^{''}$ will be written explicitly. Finally, reversing the transformations we will retrieve $|\Psi\rangle$.
+where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Using these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} become simpler. As a consequence, the steady state $|\Psi^{''}\rangle$ of $H^{''}$ can be written explicitly. Finally, reversing the transformations we can retrieve $|\Psi\rangle$.
 
-The first transformation $S_{1}$ is closely related to the dual matrix and we will see that $H^{'}$ is $\widetilde{H}^{T}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. The second transformation $S_{2}$ diagonalize the right boundary. Finally, the composition  $S_{2} S_{1}$ allows to simplify the commutators of the MPA algebra. \\
+The first transformation $S_{1}$ is closely related to the duality matrix and we will see that $H^{'}$ is $\widetilde{H}^{T}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. The second transformation $S_{2}$ diagonalizes the right boundary. Finally, the composition  $S_{2} S_{1}$ allows to simplify the commutators of the MPA algebra. \\
 
-The computation are organized as follows: we first define the similarity transformations $S_{1},S_{2}$ and the Hamiltonians $H^{'},H^{''}$. Second, we compute right eigenvector with vanishing eigenvalue of $H^{''}$ thanks to the simpler commutators. Finally, we invert the similarities and retrieve the right eigenvector with vanishing eigenvalue of $H^{'}$ and  the arbitrary correlations in the non-equilibrium steady state. The explicit expression of the steady state $|\Psi\rangle$ of $H$ is reported in Appendix \ref{appB}. 
+The computation are organized as follows: we first define the similarity transformations $S_{1},S_{2}$ and the Hamiltonians $H^{'},H^{''}$. Second, we compute right eigenvector with vanishing eigenvalue of $H^{''}$ exploiting the simpler commutators. Finally, we invert the similarities and retrieve the right eigenvector of $H^{'}$ with vanishing eigenvalue and  the arbitrary correlations in the non-equilibrium steady state. The explicit expression of the steady state $|\Psi\rangle$ of $H$ is reported in Appendix \ref{appB}. 
 
 
 
@@ -1130,12 +1130,12 @@ The computation are organized as follows: we first define the similarity transfo
 \subsubsection{The similarity transformations}\label{subsectionSTransf}
 Consider the matrices
 \begin{align}
-	\mathcal{S}_{1}:=\exp{\left(\sum_{a=1}^{N-1}e_{Na}\right)}\label{S1Gen}\\
-	\mathcal{S}_{2}:=\exp{\left(-\sum_{a=1}^{N-1}\beta_{a}e_{aN}\right)}\label{S2Gen}
+	\mathcal{S}_{1}:=\exp{\left(\sum_{a=1}^{N-1}e_{Na}\right)}\label{S1Gen},\\
+	\mathcal{S}_{2}:=\exp{\left(-\sum_{a=1}^{N-1}\beta_{a}e_{aN}\right)}.\label{S2Gen}
 \end{align}
 We introduce
 \begin{equation}\label{transformationV}
- \mathcal{S}_{1}^{x}:=\exp{\left(\sum_{a=1}^{N-1}e_{Na}^{x}\right)}%=\mathbbm{1}+\sum_{a=2}^{N}e_{1a}
+ \mathcal{S}_{1}^{x}:=\exp{\left(\sum_{a=1}^{N-1}e_{Na}^{x}\right)},%=\mathbbm{1}+\sum_{a=2}^{N}e_{1a}
 \end{equation}
 that is composed by a copy of $\mathcal{S}_{1}$ (see \eqref{S1Gen}) acting at site $x$ and with identities acting at all other sites of the chain. 
 Observe that $\mathcal{S}_{1}^{x}$ is the transposed of the bulk part of the duality matrix $d_{x}$  at site $x\in \{1,\ldots,L\}$ (see \eqref{bulkElementDualityMatrix}). By taking the product over the chain we define
@@ -1146,9 +1146,9 @@ that is related with the duality matrix by
 \begin{equation}
 S_{1}=\prod_{x=1}^{L}d_{x}^{T}
 \end{equation}
- $S_{1}$ is invertible, then we introduce 
+ The transformation $S_{1}$ is invertible. We introduce 
 \begin{equation}\label{hatHamiltonian}
-   H^{'}:=H^{'}_{left}+H_{bulk}+H^{'}_{L}
+   H^{'}:=H^{'}_{left}+H_{bulk}+H^{'}_{right}
 \end{equation}
 that is related to $H$ by
 \begin{equation}\label{similarV}
@@ -1156,7 +1156,7 @@ that is related to $H$ by
 \end{equation}
 The bulk part of the Hamiltonian is left unchanged while the boundaries are given by 
 \begin{equation}
-	H^{'}_{left}=\sum_{a=1}^{N-1}\left(\alpha_{a}e_{aN}^{1}-e_{aa}^{1}\right)\qquad H^{'}_{L}=\sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}\right)
+	H^{'}_{left}=\sum_{a=1}^{N-1}\left(\alpha_{a}e_{aN}^{1}-e_{aa}^{1}\right)\qquad H^{'}_{right}=\sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}\right)
 \end{equation}
 Indeed, using \eqref{HadTransfBoundary}, \eqref{ratesConditions} and \eqref{transpostionPropertyFund}, we obtain for the left boundary
 \begin{equation}
@@ -1167,16 +1167,16 @@ Indeed, using \eqref{HadTransfBoundary}, \eqref{ratesConditions} and \eqref{tran
 		\\&=
 		\sum_{a=1}^{N-1}\left(\alpha_{a}e_{Na}^{1}-e_{aa}^{1}\right)^{T}
 		\\&=
-		\sum_{a=1}^{N-1}\left(\alpha_{a}e_{aN}^{1}-e_{aa}^{1}\right)
+		\sum_{a=1}^{N-1}\left(\alpha_{a}e_{aN}^{1}-e_{aa}^{1}\right).
 	\end{split}
 \end{equation}
 Similarly, for the right boundary we have 
 \begin{equation}
-H_{left}^{'}=\exp{\left(\sum_{c=1}^{N-1}e_{1N}^{1}\right)}\sum_{a,b=1}^{N}\alpha_{a}\left(e_{ab}^{1}-e_{bb}^{1}\right)\exp{\left(-\sum_{c=1}^{N-1}e_{Nc}^{1}\right)}=\sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}\right)
+H_{right}^{'}=\exp{\left(\sum_{c=1}^{N-1}e_{1N}^{L}\right)}\sum_{a,b=1}^{N}\alpha_{a}\left(e_{ab}^{L}-e_{bb}^{L}\right)\exp{\left(-\sum_{c=1}^{N-1}e_{Nc}^{L}\right)}=\sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}\right)
 \end{equation}
-\textbf{Remark:} the boundary Hamiltonians $H_{left}^{'}$ and $H_{right}^{'}$ relates to the transposed of  $\widetilde{H}_{left}$ and $\widetilde{H}_{right}$, i.e. to the transposed of the boundary part of the dual Hamiltonian  defined in \eqref{siteDualHamiltonian}. They are obtained replacing the  extra-site bosonic creation operators $(a^{\dagger})_{a}^{0}$  (resp. $(a^{\dagger})_{a}^{L+1}$) with the corresponding reservoir parameters $\alpha_a$ (resp. $\beta_a$).
+\textbf{Remark:} The boundary Hamiltonians $H_{left}^{'}$ and $H_{right}^{'}$ relates to the transposed of  $\widetilde{H}_{left}$ and $\widetilde{H}_{right}$, i.e. to the transposed of the boundary part of the dual Hamiltonian  defined in \eqref{siteDualHamiltonian}. They are obtained replacing the  extra-site bosonic creation operators $(a^{\dagger})_{a}^{0}$  (resp. $(a^{\dagger})_{a}^{L+1}$) with the corresponding reservoir parameters $\alpha_a$ (resp. $\beta_a$).
 \newline\newline
-Obviously
+We have the following correspondence between eigenvectors with zero eigenvalues
 \begin{equation}\label{S1-Inverse}
 	|\Psi\rangle =S_{1}^{-1}|\Psi^{'}\rangle
 \end{equation}
@@ -1187,9 +1187,9 @@ We introduce
  	\mathcal{S}_{2}^{x}:=\exp{\left(-\sum_{a=1}^{N-1}\beta_{a}e_{aN}^{x}\right)}%=\mathbbm{1}-\sum_{a=2}^{N}\beta_{a}e_{a1}
  \end{equation}
 that is composed by a copy of $\mathcal{S}_{2}$ (see \eqref{S2Gen}) acting at site $x$ and with identities acting at all other sites of the chain. 
-By taking the product over the chain
+Therefore, by taking the product over the chain we obtain 
 \begin{equation}\label{S2-Whole}
-	S_{2}=\prod_{x=1}^{L}S_{2}^{x}
+	S_{2}=\prod_{x=1}^{L}S_{2}^{x}.
 \end{equation}
 We define 
 \begin{equation}\label{HSecond}
@@ -1197,56 +1197,59 @@ We define
 \end{equation}
 that is related to $H'$ by
 \begin{equation}
-	H^{''}=S_{2}H^{'}S_{2}^{-1}
+	H^{''}=S_{2}H^{'}S_{2}^{-1}.
 \end{equation}
 The boundary Hamiltonians of $H^{''}$ read
-\begin{align}
-	H_{left}^{''}=e_{NN}^{1}-\mathbbm{1}^{1}+\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1}\qquad H_{right}^{''}=e_{NN}^{L}-\mathbbm{1}^{L}
+\begin{align}\label{tri-diag-boundaryHamiltonians}
+	H_{left}^{''}=e_{NN}^{1}-\mathbbm{1}+\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1}\qquad H_{right}^{''}=e_{NN}^{L}-\mathbbm{1}.
 \end{align}
-i.e. the left one is lower triangular and depends on the differences between boundary parameters, while the right one is diagonal. The expressions of $H_{left}^{''}$ and $H_{right}^{''}$ are proved using the Hadamard formula \eqref{HadamardFormula} with $B=\sum_{c=1}^{N-1}\beta_{c}e_{cN}$ and $A=e_{aN},$ and $A=e_{aa}$. We compute
+The left one is lower triangular and depends on the differences between the boundary parameters, while the right one is diagonal. Equations \eqref{tri-diag-boundaryHamiltonians} are proved using the Hadamard formula \eqref{HadamardFormula} with $B=\sum_{c=1}^{N-1}\beta_{c}e_{cN}$ and $A_{N}=e_{aN},$ and $A_{a}=e_{aa}$.
+\begin{comment}
+ We compute
 \begin{enumerate}
-	\item $A=e_{aN}$ with $a\neq 1$
+	\item $A_{N}=e_{aN}$ with $a\neq 1$
 	\begin{equation}
 		\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}\right)}e_{aN}\exp{\left(\sum_{c=1}^{N-1}\beta_{c}e_{cN}\right)}=e_{aN}
 	\end{equation}
-\item $A=e_{aa}$ with $a\neq 1$
+\item $A_{a}=e_{aa}$ with $a\neq 1$
 \begin{equation}
-		\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{x}\right)}e_{aa}^{x}\exp{\left(\sum_{c=1}^{N}\beta_{c}e_{cN}^{x}\right)}=e_{aa}^{x}+\beta_{a}e_{aN}^{x}
+		\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}\right)}e_{aa}\exp{\left(\sum_{c=1}^{N}\beta_{c}e_{cN}\right)}=e_{aa}+\beta_{a}e_{aN}
 	\end{equation}
 Indeed 
 \begin{equation}
 	\sum_{c=1}^{N-1}[e_{cN},e_{aa}]=\sum_{c=1}^{N-1}\beta_{c}\left(e_{ca}\delta_{aN}-e_{aN}\delta_{ca}\right)=-\beta_{a}e_{aN}
 \end{equation}
 \end{enumerate}
-Therefore, we have for the left boundary
+\end{comment}
+Therefore, using \eqref{HT-BA} we obtain for the left boundary 
 \begin{equation}
 	\begin{split}
 		H_{left}^{''}&=S_{2}H_{left}^{'}S_{2}^{-1}=\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{1}\right)}\sum_{a=1}^{N-1}\left(\alpha_{a}e_{aN}^{1}-e_{aa}^{1}\right)\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{1}\right)}
 		\\&=
 		\sum_{a=1}^{N-1}\left(\alpha_{a}e_{aN}^{1}-e_{aa}^{1}-\beta_{a}e_{aN}^{1}\right)
 		\\&=
-		e_{NN}^{1}-\mathbbm{1}^{1}+\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1}
+		e_{NN}^{1}-\mathbbm{1}+\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1}.
 	\end{split}
 \end{equation}
-Similarly, for the right boundary
+Similarly, using again \eqref{HT-BA} we have for the right boundary 
 \begin{equation}
 	\begin{split}
 			H_{right}^{''}&=\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{L}\right)}\sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}\right)\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{L}\right)}
 			\\&=
 			\sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}-\beta_{a}e_{aN}^{L}\right)=
 			\\&=
-			e_{NN}^{L}-\mathbbm{1}^{L}
+			e_{NN}^{L}-\mathbbm{1}.
 	\end{split}
 \end{equation}
-Obviously
+The relation between eigenvectors with vanishing eigenvalue is 
 \begin{equation}\label{S2-Inverse}
 	|\Psi^{'}\rangle = S_{2}^{-1}|\Psi^{''}\rangle
 \end{equation}
 and $|\Psi^{''}\rangle$ solves
 \begin{equation}\label{steadyS-SECOND-def}
-	H^{''}|\Psi^{''}\rangle=0
+	H^{''}|\Psi^{''}\rangle=0.
 \end{equation}
-It is convenient to introduce also the whole transformation
+It is convenient to introduce also the transformation
 \begin{equation}\label{similarity}
 	S=S_{2}S_{1}=\prod_{x=1}^{L}\exp{\left(-\sum_{a=1}^{N-1}\beta_{a}e_{aN}^{x}\right)}\exp{\left(\sum_{a=1}^{N-1}e_{aN}^{x}\right)}
 \end{equation}
@@ -1254,7 +1257,7 @@ This matrix $S$ connects $H$ with $H^{''}$ by
 \begin{equation}
 H=S^{-1}H^{''}S
 \end{equation}
-and, obviously
+and, the relation between eigenvectors with vanishing eigenvalue is
 \begin{equation}
 	|\Psi\rangle=S^{-1}|\Psi^{''}\rangle
 \end{equation}
