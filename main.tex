@@ -1711,7 +1711,31 @@ Therefore, comparing this formula and \eqref{absProbabilitiesIntegrable}, we can
 \begin{equation}
 	\mathcal{P}(t_{1},\ldots,t_{m},\hat{\bm{\xi}})=\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,x_{q},c_{q},\ldots,c_{m})
 \end{equation}
-where $\hat{\bm{\xi}}=\sum_{i=1}^{m}\delta_{s_{i}}^{y_{i}}$.  
+where $\hat{\bm{\xi}}=\sum_{i=1}^{m}\delta_{s_{i}}^{y_{i}}$. 
+\\ \\
+\textbf{Remark}: If we stop distinguishing the types of particles we retrieve the closed formula for correlations in the non-equilibrium steady state found in \cite{frassek2020eigenstates}. Indeed, introducing $q=\sum_{j=1}^{m}c_{i}$ in the colour-blind situation \eqref{exactCorrelations} becomes
+\begin{align}
+	\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=&\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\frac{\Gamma(L+2-q)}{\Gamma(L+2)}\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{m}=q\}}
+	\\&\prod_{k=1}^{m}\left(L+2-y_{k}-\sum_{i=k}^{m}c_{i}\right)^{c_{k}}\dt
+\end{align}
+We observe that, at most $q$ factors do survive in the product over $k$. Moreover, for a fixed $q$ we must consider all possible values of $(c_{i})_{i\in\{1,\ldots,m\}}$ such that its sum is equal to $q$. For each of these of these $(c_{i})_{i\in\{1,\ldots,m\}}$ we add a term given by  
+\begin{equation}
+	\prod_{k=1}^{m}\left(L+2-y_{k}-\sum_{i=k}^{m}c_{i}\right)^{c_{k}}\dt
+\end{equation}
+For any $q\in\{1,\ldots,m\}$, we can introduce $\ell_{1},\ldots,\ell_{q}\in\{1,\ldots,m\}$ such that $\ell_{1}<\ell_{2}<\cdots<\ell_{q}$ and write 
+\begin{equation}
+	\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{m}=q\}}\prod_{k=1}^{m}\left(L+2-y_{k}-\sum_{i=k}^{m}c_{i}\right)^{c_{k}}=\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\left(L+2-y_{\ell_{k}}-(q-k+1)\right)\dt
+\end{equation}
+Moreover, observing that 
+\begin{equation}
+	\frac{\Gamma(L+2-q)}{\Gamma(2+L)}=\prod_{k=1}^{q}\frac{1}{(2+L-k)}
+\end{equation}
+All in all we obtain 
+\begin{equation}
+\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-y_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
+\end{equation}
+that is exactly equation (4.26) of \cite{frassek2020eigenstates}.
+
 \paragraph{Proof of formula \eqref{exactCorrelations}} Consider $m$ particles of non-empty types $s_{i}\in\{1,\ldots,N-1\}$ in positions $y_{i}\in\{1,\ldots,L\}$ such that $y_{i}<y_{i+1}$ for all $i=1,\ldots,m$. We aim to compute the non-equilibrium stationary state correlation $\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}} \rangle_{stat}$. By using duality, we showed in \eqref{CorrelationByABS-prob} that
  \begin{equation}
  	\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}} \rangle_{stat}=\langle\hat{\bm{\xi}}\rangle_{stat,dual}
