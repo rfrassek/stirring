@@ -1424,7 +1424,7 @@ Using the transformed operators $(\widetilde{X}_{a})_{a\in\{1,\ldots,N\}}$, the 
 \end{equation}
 where the normalization is given by 
 \begin{align}
-		Z_{L}&=\langle V^{*}|(X_{1}+\ldots+X_{N})^{L}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{L}|V|\rangle\dt
+		Z_{L}&=\langle V^{*}|(X_{1}+\ldots+X_{N})^{L}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{L}|V\rangle\dt
 \end{align}
 The basis is 
 $$
@@ -1488,9 +1488,8 @@ with $	\langle V^{*}|\widetilde{X}_{N}^{0}|V\rangle=1$.
 Therefore, we obtain 
 \begin{align*}
 	\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle&=%\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle=\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\frac{\Gamma(2+n_{N}-1)}{\Gamma(2+n_{N}-2)}\langle V^{*}|\widetilde{X}_{N}^{n_{N}-2}|V\rangle\\&=
-	\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\frac{\Gamma(2+n_{N}-1)}{\Gamma(2+n_{N}-2)}\ldots \frac{\Gamma(2-1)}{\Gamma(2)}\langle V^{*}|\widetilde{X}_{N}^{0}|V\rangle
-	\\&=
-	\frac{\Gamma(2+n_{N})}{\Gamma(2)}
+	\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\frac{\Gamma(2+n_{N}-1)}{\Gamma(2+n_{N}-2)}\ldots \frac{\Gamma(2-1)}{\Gamma(2)}\langle V^{*}|\widetilde{X}_{N}^{0}|V\rangle=
+	\Gamma(2+n_{N})
 \end{align*}
 By using this result we have 
 \begin{equation}
@@ -1499,12 +1498,12 @@ By using this result we have
 \end{equation}
 The normalization constant is computed similarly as 
 \begin{align*}
-	Z_{L}&=\langle V^{*}|(X_{1}+\ldots+X_{N})^{L}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{L}|V|\rangle=
-	\frac{\Gamma(2+L)}{\Gamma(2)}
+	Z_{L}&=\langle V^{*}|(X_{1}+\ldots+X_{N})^{L}|V\rangle=\langle V^{*}\widetilde{X}_{N}^{L}|V|\rangle=
+	\Gamma(2+L)
 \end{align*}
 Therefore, we write the coefficients of the linear combination \eqref{toDetermineTilde} as 
 \begin{equation}\label{resulEsteady}
-	|\Psi^{''}\rangle= \sum_{\bm{n}\in \Omega}\frac{\Gamma(2+\sum_{i=1}^{L}n_{N}^{x})}{\Gamma(2+L)}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|\bm{n}\rangle
+	|\Psi^{''}\rangle= \sum_{\bm{n}\in \Omega}\frac{\Gamma(2+\sum_{i=1}^{L}n_{N}^{i})}{\Gamma(2+L)}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|\bm{n}\rangle
 \end{equation}
 Using the notation $\tau_{x}$, $|\bm{\tau}\rangle $ introduced in \eqref{notation} we have 
 \begin{equation}
@@ -1512,11 +1511,11 @@ Using the notation $\tau_{x}$, $|\bm{\tau}\rangle $ introduced in \eqref{notatio
 \end{equation}
 and 
 \begin{equation}
-	\frac{\Gamma(2+\sum_{x=1}^{L}n_{N}^{x})}{\Gamma(2+L)}=\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(L+2\right)}
+	\frac{\Gamma(2+\sum_{i=1}^{L}n_{N}^{i})}{\Gamma(2+L)}=\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}
 \end{equation}
 Therefore we obtain
 \begin{equation}
-|\Psi^{''}\rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(L+2\right)}\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}|\mathbf{\bm{\tau}}\rangle
+|\Psi^{''}\rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}|\mathbf{\bm{\tau}}\rangle
 \end{equation}
 \begin{flushright}
 $\square$
@@ -1554,7 +1553,7 @@ where
   \left(\mathcal{S}_{2}^{-1}\right)^{\otimes L} |\bm{\tau}\rangle=\left( |\tau_1\rangle+\delta_{N,\tau_1}\sum_{a=1}^{N-1}\beta_a|a\rangle\right)\otimes\ldots\otimes \left( |\tau_L\rangle+\delta_{N,\tau_L}\sum_{a=1}^{N-1}\beta_a|a\rangle\right)
 \end{equation} 
 \begin{equation}
-  \langle \bm{\mu}|\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L} |\bm{\tau}\rangle=\prod_{i=1}^L\left[ \delta_{\mu_i,\tau_i}+\delta_{N,\tau_i}\beta_{\mu_i} (1-\delta_{\mu_i,N)}\right]
+  \langle \bm{\mu}|\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L} |\bm{\tau}\rangle=\prod_{i=1}^L\left[ \delta_{\mu_i,\tau_i}+\delta_{N,\tau_i}\beta_{\mu_i} (1-\delta_{\mu_i,N})\right]
 \end{equation} 
 
 }
@@ -1675,7 +1674,7 @@ For a fixed configuration $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})$, using equation
 \end{equation}
 we obtain 
     \begin{equation}
-\Psi^{''}(\bm{\tau})=\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\tau_{x},N})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{\tau_{y},N})\right)\right)^{1-\delta_{\tau_{y},N}}
+\Psi^{''}(\bm{\tau})=\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\tau_{x},N})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{\tau_{j},N})\right)\right)^{1-\delta_{\tau_{y},N}}
 \end{equation}
 Introducing
 \begin{equation}
