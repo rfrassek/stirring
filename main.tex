@@ -1372,9 +1372,9 @@ The steady states $|\Psi\rangle$, $|\widehat{\Psi}\rangle$ and $|\widetilde{\Psi
 In the following subsections we will first compute the steady state $|\widetilde{\Psi}\rangle$. Then, using the transformation $\mathcal{T}$ we will retrieve $|\widehat{\Psi}\rangle$. Finally, using the transformation $\mathcal{V}$ we will find $|\Psi\rangle$. 
 \end{comment}
 \subsubsection{Explicit formula for $|\Psi^{''}\rangle$}\label{subsectionSSHsec}
-We state the following result: the steady state of the Hamiltonian $H^{''}$ is given by 
+We state the following result: the ground state of the Hamiltonian $H^{''}$ is given by 
 \begin{equation}\label{ResulsBasis}
-	|\Psi^{''} \rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(L+2\right)}\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}|\mathbf{\bm{\tau}}\rangle
+	|\Psi^{''} \rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}\right)|\mathbf{\bm{\tau}}\rangle
 \end{equation}
 where 
 \begin{equation}
@@ -1385,8 +1385,8 @@ where
 \end{equation}
 %and the basis vector $|\bm{\tau}\rangle =\bigotimes_{x=1}^{L}|\tau_{x}\rangle$ with $\tau_{x}\in\{1,\ldots,N\}$ denotes the species that occupies the site $i\in \{1,\ldots,L\}$.
 \paragraph{Proof of formula \eqref{ResulsBasis}} 
-We consider the vector with elements given by the operators of the MPA $(X_{1},\ldots,X_{N})$ and we act on it with the similarity transformation $S=S_{2}S_{1}$ obtaining new operators $(\Xt_{1},\ldots,\Xt_{N})$ that will satisfy simpler commutators. 
-For the sake of notation, we denote by 
+We consider the vector with elements given by the operators of the MPA $(X_{1},\ldots,X_{N})$ and we act on it with the similarity transformation $S=S_{2}S_{1}$ obtaining new operators $(\Xt_{1},\ldots,\Xt_{N})$ that will satisfy simpler commutation relations. 
+For the sake of notation 
 \begin{equation}
     \begin{pmatrix}
 		X_{a}\\ 
@@ -1397,7 +1397,7 @@ For the sake of notation, we denote by
      X_{N}
 	\end{pmatrix}\quad \forall a\in \{1,\ldots,N-1\}
 \end{equation}
-We have
+We define the transformed matrix product operators
 \begin{equation}\label{Xtildes2b}
 	\begin{pmatrix}
 		\Xt_{a}\\ 
@@ -1407,10 +1407,11 @@ We have
 	\end{pmatrix}=\begin{pmatrix} 
 		X_{a}-\beta_{a}(X_{1}+\ldots+X_{N})\\
 				X_{1}+\ldots +X_{N}\\
-	\end{pmatrix}=\begin{pmatrix} 
-		X_{a}-\beta_{a}\Xt_{N}\\ 
-			X_{1}+\ldots +X_{N}\\
-	\end{pmatrix}\qquad \forall a=1,\ldots N-1
+	\end{pmatrix}%=\begin{pmatrix} 
+	%	X_{a}-\beta_{a}\Xt_{N}\\ 
+		%	X_{1}+\ldots +X_{N}\\
+	%\end{pmatrix}
+	\qquad \forall a=1,\ldots N-1
 \end{equation}
 and, we can also reverse the transformation by $S^{-1}$ and get back: 
 \begin{equation}\label{Xes}
@@ -1425,11 +1426,12 @@ and, we can also reverse the transformation by $S^{-1}$ and get back:
 		\beta_N\Xt_{N}-(\Xt_{1}+\ldots+\Xt_{N-1})
 	\end{pmatrix}\qquad\forall a\in \{1,\ldots,N-1\}
 \end{equation}
-Summing over $b\in \{1,\ldots,N\}$ in \eqref{bulk} we have
+Summing over $b\in \{1,\ldots,N\}$ in commutation relations \eqref{bulk} we have
 \begin{equation} 
 	\left[X_{a},\Xt_{N}\right]=\lambda_{a}\Xt_{N}\qquad\forall a=1,\ldots,N
 \end{equation}
-therefore, we obtain the commutation relations for $\Xt_{a}$ 
+with $\widetilde{X}_{N}=\widetilde{X}_{1}+\ldots+\widetilde{X}_{1}$, see \eqref{Xtildes2b}. 
+Therefore, we obtain the commutation relations for $\Xt_{a}$ 
 \begin{equation}\label{commutationsBula}
 	\left[\Xt_{a},\Xt_{N}\right]=\lambda_{a}\Xt_{N}\qquad \forall a\in \{1,\ldots,N-1\}
 \end{equation}
@@ -1445,7 +1447,11 @@ Using the transformed operators $(\widetilde{X}_{a})_{a\in\{1,\ldots,N\}}$, the 
 	|\Psi^{''}\rangle = \frac{1}{Z_{L}}\sum_{\bm{n}\in \Omega}\langle V^{*}|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}
 	|V \rangle \,|\bm{n}\rangle
 \end{equation}
-where the basis is 
+where the normalization is given by 
+\begin{align}
+		Z_{L}&=\langle V^{*}|(X_{1}+\ldots+X_{N})^{L}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{L}|V\rangle\dt
+\end{align}
+The basis is 
 $$
 |\bm{n}\rangle =|n_{1}^{1},\ldots,n_{N}^{1}\rangle \otimes \ldots\otimes |n_{1}^{L},\ldots,n_{N}^{L}\rangle
 $$
@@ -1453,40 +1459,40 @@ such that, for each site $x\in \{1,\ldots,L\}$, $|n^{x}\rangle=|n_{1}^{x},\ldots
 To determine the steady state \eqref{toDetermineTilde}, we need to compute the coefficient $\langle V^{*}|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{\xi_{a}^{x}}
 |V \rangle$ and the normalization $Z_{L}$. Using \eqref{commutationsBula} we have
 \begin{equation}\label{UsefulRelation}
-	\widetilde{X}_{a}\widetilde{X}_{N}=\lambda_{a}\widetilde{X}_{N}+\widetilde{X}_{N}\widetilde{X}_{a}
+	\widetilde{X}_{a}\widetilde{X}_{N}=\widetilde{X}_{N}\left(\lambda_{a}+\widetilde{X}_{a}\right)
 \end{equation}
-Fix $ a\in \{1,\ldots,N-1\}$ and arbitrary $ \ell,n\in \mathbb{N}$. By applying many times \eqref{UsefulRelation} we have
-\begin{align*}
-	\widetilde{X}_{a}^{n}\widetilde{X}_{N}^{\ell}&=\widetilde{X}_{a}^{n-1}\left(\lambda_{a}\widetilde{X}_{1}+\widetilde{X}_{N}\widetilde{X}_{a}\right)\widetilde{X}_{N}^{\ell-1}
-	\\&=\lambda_{a}\widetilde{X}_{a}^{n-1}\widetilde{X}_{N}^{b}+\widetilde{X}_{a}^{n-1}\widetilde{X}_{N}\widetilde{X}_{a}\widetilde{X}_{N}^{\ell-1}
-	\\&=
-	\lambda_{a}\widetilde{X}_{a}^{n-2}\left(\lambda_{a}\widetilde{X}_{N}+\widetilde{X}_{N}\widetilde{X}_{a}\right)\widetilde{X}_{N}^{\ell-1}+\widetilde{X}_{a}^{n-2}\left(\lambda_{a}\widetilde{X}_{N}+\widetilde{X}_{N}\widetilde{X}_{a}\right)\left(\lambda_{a}\widetilde{X}_{N}+\widetilde{X}_{N}\widetilde{X}_{a}\right)\widetilde{X}_{N}^{\ell -1}
-	\\&=\ldots\\&=
-	\widetilde{X}_{N}^{\ell}\left(\widetilde{X}_{a}+\ell\lambda_{a}\right)^{n}
-\end{align*}
+Fix $ a\in \{1,\ldots,N-1\}$ and arbitrary $ \ell,n\in \mathbb{N}$. By applying the above formula \eqref{UsefulRelation} we have
+\begin{align}\label{usefulRelaton-many}
+	\widetilde{X}_{a}^{n}\widetilde{X}_{N}^{\ell}&=%\widetilde{X}_{a}^{n-1}\left(\lambda_{a}\widetilde{X}_{N}+\widetilde{X}_{N}\widetilde{X}_{a}\right)\widetilde{X}_{N}^{\ell-1}
+%	\\&=\lambda_{a}\widetilde{X}_{a}^{n-1}\widetilde{X}_{N}^{\ell}+\widetilde{X}_{a}^{n-1}\widetilde{X}_{N}\widetilde{X}_{a}\widetilde{X}_{N}^{\ell-1}
+%	\\&=
+%	\lambda_{a}\widetilde{X}_{a}^{n-2}\left(\lambda_{a}\widetilde{X}_{N}+\widetilde{X}_{N}\widetilde{X}_{a}\right)\widetilde{X}_{N}^{\ell-1}+\widetilde{X}_{a}^{n-2}\left(\lambda_{a}\widetilde{X}_{N}+\widetilde{X}_{N}\widetilde{X}_{a}\right)\left(\lambda_{a}\widetilde{X}_{N}+\widetilde{X}_{N}\widetilde{X}_{a}\right)\widetilde{X}_{N}^{\ell -1}
+%	\\&=\ldots\\&=
+	\widetilde{X}_{1}^{\ell}\left(\widetilde{X}_{a}+\ell\lambda_{a}\right)^{n}
+\end{align}
 therefore 
 \begin{align*}
-	\widetilde{X}_{N}^{n_{1}}\ldots\widetilde{X}_{N-1}^{n_{N-1}}\widetilde{X}_{N}^{n_{N}}=\widetilde{X}_{N}^{n_{N}}\prod_{a=1}^{N-1}\left(\widetilde{X}_{a}+n_{N}\lambda_{a}\right)^{n_{a}}
+	\widetilde{X}_{1}^{n_{1}}\ldots\widetilde{X}_{N-1}^{n_{N-1}}\widetilde{X}_{N}^{n_{N}}=\widetilde{X}_{N}^{n_{N}}\prod_{a=1}^{N-1}\left(\widetilde{X}_{a}+n_{N}\lambda_{a}\right)^{n_{a}}
 \end{align*}
 By taking the product over the sites $x$ from $1$ to $L$ we obtain 
 \begin{equation}
 	\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}=\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\widetilde{X}_{a}+\lambda_{a}\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}
 \end{equation}
-Multiplying by the boundary vectors we have 
-\begin{equation}
+Multiplying by the boundary vectors and by using \eqref{commRIGHT} we have 
+%\begin{equation}
+%	\langle V^{*}|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}
+%	|V \rangle=\langle %V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\widetilde{X}_{a}+\lambda_{a}\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|V\rangle
+%\end{equation}
+%Using 
+\begin{align}
 	\langle V^{*}|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}
-	|V \rangle=\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{l}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\widetilde{X}_{a}+\lambda_{a}\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|V\rangle
-\end{equation}
-Using \eqref{commRIGHT}
-\begin{align*}
-	\langle V^{*}|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}
-	|V \rangle&=\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{x}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}+\lambda_{a}\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|V\rangle
+	|V \rangle\nonumber&=\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{x}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}+\lambda_{a}\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|V\rangle\nonumber
 	\\&=
-	\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{l}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|V\rangle
+	\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|V\rangle\nonumber
 	\\&=
-	\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{l}}|V\rangle
-\end{align*}
-To determine the state we now need to compute $\langle V^{*}|\widetilde{X}_{N}^{\sum_{x=1}^{L}n_{N}^{l}}|V\rangle$. Calling $\sum_{x=1}^{L}n_{N}^{x}=n_{N}$ and taking an arbitrary $a\in \{1,\ldots,N-1\}$ we have
+	\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}|V\rangle
+\end{align}
+To determine the state we now need to compute $\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}|V\rangle$. Calling $\sum_{x=1}^{L}n_{N}^{x}=n_{N}$ and using \eqref{commLEFT} for $a\in \{1,\ldots,N-1\}$ we obtain 
 \begin{align*}
 	\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle&=\langle V^{*}|\widetilde{X}_{N}\widetilde{X}_{N}^{n_{N}-1}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle +\langle V^{*}|\frac{1}{\lambda_{a}}\widetilde{X}_{a}\widetilde{X}_{N}^{n_{N}-1}|V\rangle
 	\\&=
@@ -1498,19 +1504,17 @@ To determine the state we now need to compute $\langle V^{*}|\widetilde{X}_{N}^{
 	\\&=
 	\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\langle V^{*}|\widetilde{X}_{N}^{n_{1}-1}|V\rangle
 \end{align*}
+where in the second equality we used \eqref{usefulRelaton-many}. 
 This leads to the recursion relation
-\begin{equation}
-	\begin{cases}
-		\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle=\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle\\
-		\langle V^{*}|\widetilde{X}_{N}^{0}|V\rangle=1
-	\end{cases}
-\end{equation}
-that implies 
+\begin{align}
+		\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle=\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle
+\end{align}
+with $	\langle V^{*}|\widetilde{X}_{N}^{0}|V\rangle=1$. 
+Therefore, we obtain 
 \begin{align*}
-	\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle&=\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle=\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\frac{\Gamma(2+n_{N}-1)}{\Gamma(2+n_{N}-2)}\langle V^{*}|\widetilde{X}_{N}^{n_{N}-2}|V\rangle\\&=
-	\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\frac{\Gamma(2+n_{N}-1)}{\Gamma(2+n_{N}-2)}\ldots \frac{\Gamma(2-1)}{\Gamma(2)}\langle V^{*}|\widetilde{X}_{N}^{0}|V\rangle
-	\\&=
-	\frac{\Gamma(2+n_{N})}{\Gamma(2)}
+	\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle&=%\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle=\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\frac{\Gamma(2+n_{N}-1)}{\Gamma(2+n_{N}-2)}\langle V^{*}|\widetilde{X}_{N}^{n_{N}-2}|V\rangle\\&=
+	\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\frac{\Gamma(2+n_{N}-1)}{\Gamma(2+n_{N}-2)}\ldots \frac{\Gamma(2-1)}{\Gamma(2)}\langle V^{*}|\widetilde{X}_{N}^{0}|V\rangle=
+	\Gamma(2+n_{N})
 \end{align*}
 By using this result we have 
 \begin{equation}
@@ -1519,12 +1523,12 @@ By using this result we have
 \end{equation}
 The normalization constant is computed similarly as 
 \begin{align*}
-	Z_{L}&=\langle V^{*}|(X_{1}+\ldots+X_{N})^{L}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{L}|V|\rangle=
-	\frac{\Gamma(2+L)}{\Gamma(2)}
+	Z_{L}&=\langle V^{*}|(X_{1}+\ldots+X_{N})^{L}|V\rangle=\langle V^{*}\widetilde{X}_{N}^{L}|V|\rangle=
+	\Gamma(2+L)
 \end{align*}
 Therefore, we write the coefficients of the linear combination \eqref{toDetermineTilde} as 
 \begin{equation}\label{resulEsteady}
-	|\Psi^{''}\rangle= \sum_{\bm{n}\in \Omega}\frac{\Gamma(2+\sum_{i=1}^{L}n_{N}^{x})}{\Gamma(2+L)}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|\bm{n}\rangle
+	|\Psi^{''}\rangle= \sum_{\bm{n}\in \Omega}\frac{\Gamma(2+\sum_{i=1}^{L}n_{N}^{i})}{\Gamma(2+L)}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|\bm{n}\rangle
 \end{equation}
 Using the notation $\tau_{x}$, $|\bm{\tau}\rangle $ introduced in \eqref{notation} we have 
 \begin{equation}
@@ -1532,11 +1536,11 @@ Using the notation $\tau_{x}$, $|\bm{\tau}\rangle $ introduced in \eqref{notatio
 \end{equation}
 and 
 \begin{equation}
-	\frac{\Gamma(2+\sum_{x=1}^{L}n_{N}^{x})}{\Gamma(2+L)}=\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(L+2\right)}
+	\frac{\Gamma(2+\sum_{i=1}^{L}n_{N}^{i})}{\Gamma(2+L)}=\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}
 \end{equation}
 Therefore we obtain
 \begin{equation}
-|\Psi^{''}\rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(L+2\right)}\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}|\mathbf{\bm{\tau}}\rangle
+|\Psi^{''}\rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}|\mathbf{\bm{\tau}}\rangle
 \end{equation}
 \begin{flushright}
 $\square$
@@ -1564,6 +1568,22 @@ where
 \begin{equation}
    \mathcal{S}_{2}^{-1}=\mathbbm{1}+\sum_{a=1}^{N-1}\beta_{a}e_{aN}
 \end{equation}
+
+
+{\color{blue}
+\begin{equation}
+  \mathcal{S}_{2}^{-1} |\mu\rangle= |\mu\rangle+\delta_{N,\tau}\sum_{a=1}^{N-1}\beta_a|a\rangle
+\end{equation} 
+\begin{equation}
+  \left(\mathcal{S}_{2}^{-1}\right)^{\otimes L} |\bm{\mu}\rangle=\left( |\mu_1\rangle+\delta_{N,\mu_1}\sum_{a=1}^{N-1}\beta_a|a\rangle\right)\otimes\ldots\otimes \left( |\mu_L\rangle+\delta_{N,\mu_L}\sum_{a=1}^{N-1}\beta_a|a\rangle\right)
+\end{equation} 
+\begin{equation}
+  \langle \bm{\tau}|\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L} |\bm{\mu}\rangle=\prod_{i=1}^L\left[ \delta_{\tau_i,\mu_i}+\delta_{N,\mu_i}\beta_{\tau_i} (1-\delta_{\tau_i,N})\right]
+\end{equation} 
+
+}
+
+
 We introduce the following notation
 \begin{equation}\label{notation1}
     e_{ab}=e_{a}^{b}=\left(\delta_{ac}\delta_{bd}\right)_{c,d\in\{1,\ldots,N\}}\qquad \forall a,b\in \{1,\ldots,N\}
@@ -1679,11 +1699,11 @@ For a fixed configuration $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})$, using equation
 \end{equation}
 we obtain 
     \begin{equation}
-\Psi^{''}(\bm{\tau})=\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\tau_{x},N})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{\tau_{y},N})\right)\right)^{1-\delta_{\tau_{y},N}}
+\Psi^{''}(\bm{\tau})=\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\tau_{x},N})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{\tau_{j},N})\right)\right)^{1-\delta_{\tau_{y},N}}
 \end{equation}
 Introducing
 \begin{equation}
-	c_{y}=(1-\delta_{\tau_{y},N}) \qquad \forall y\in \{1,\ldots L\}
+	c_{y}\in\{0,1\} \qquad \forall y\in \{1,\ldots L\}
 \end{equation}
 and replacing $\Psi^{'}(\bm{\tau})$ computed above in \eqref{ABS_intermediate} we obtain 
 
@@ -1736,7 +1756,31 @@ Therefore, comparing this formula and \eqref{absProbabilitiesIntegrable}, we can
 \begin{equation}
 	\mathcal{P}(t_{1},\ldots,t_{m},\hat{\bm{\xi}})=\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,x_{q},c_{q},\ldots,c_{m})
 \end{equation}
-where $\hat{\bm{\xi}}=\sum_{i=1}^{m}\delta_{s_{i}}^{y_{i}}$.  
+where $\hat{\bm{\xi}}=\sum_{i=1}^{m}\delta_{s_{i}}^{y_{i}}$. 
+\\ \\
+\textbf{Remark}: If we stop distinguishing the types of particles we retrieve the closed formula for correlations in the non-equilibrium steady state found in \cite{frassek2020eigenstates}. Indeed, introducing $q=\sum_{j=1}^{m}c_{i}$ in the colour-blind situation \eqref{exactCorrelations} becomes
+\begin{align}
+	\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=&\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\frac{\Gamma(L+2-q)}{\Gamma(L+2)}\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{m}=q\}}
+	\\&\prod_{k=1}^{m}\left(L+2-y_{k}-\sum_{i=k}^{m}c_{i}\right)^{c_{k}}\dt
+\end{align}
+We observe that, at most $q$ factors do survive in the product over $k$. For any fixed $q$ we must consider all possible values of $(c_{i})_{i\in\{1,\ldots,m\}}$ such that its sum is equal to $q$. For each of these $(c_{i})_{i\in\{1,\ldots,m\}}$ we add a term given by  
+\begin{equation}
+	\prod_{k=1}^{m}\left(L+2-y_{k}-\sum_{i=k}^{m}c_{i}\right)^{c_{k}}\dt
+\end{equation}
+We can introduce $\ell_{1},\ldots,\ell_{q}\in\{1,\ldots,m\}$ such that $\ell_{1}<\ell_{2}<\cdots<\ell_{q}$ and write 
+\begin{equation}
+	\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{m}=q\}}\prod_{k=1}^{m}\left(L+2-y_{k}-\sum_{i=k}^{m}c_{i}\right)^{c_{k}}=\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\left(L+2-y_{\ell_{k}}-(q-k+1)\right)\dt
+\end{equation}
+Moreover, we observe that 
+\begin{equation}
+	\frac{\Gamma(L+2-q)}{\Gamma(2+L)}=\prod_{k=1}^{q}\frac{1}{(2+L-k)}\dt
+\end{equation}
+All in all we obtain 
+\begin{equation}
+\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-y_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
+\end{equation}
+that is exactly equation (4.26) of \cite{frassek2020eigenstates}.
+
 \paragraph{Proof of formula \eqref{exactCorrelations}} Consider $m$ particles of non-empty types $s_{i}\in\{1,\ldots,N-1\}$ in positions $y_{i}\in\{1,\ldots,L\}$ such that $y_{i}<y_{i+1}$ for all $i=1,\ldots,m$. We aim to compute the non-equilibrium stationary state correlation $\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}} \rangle_{stat}$. By using duality, we showed in \eqref{CorrelationByABS-prob} that
  \begin{equation}
  	\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}} \rangle_{stat}=\langle\hat{\bm{\xi}}\rangle_{stat,dual}
