@@ -1566,24 +1566,38 @@ where
 %\end{equation}
 \paragraph{Proof of formula \eqref{ABS-vect}} As a consequence of \eqref{S2-Inverse}, we only need to show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Here it is more convenient to consider the matrix $\mathcal{S}_{2}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and then make explicitly the tensor product over the chain. Using the exponential series, the matrix $\mathcal{S}_{2}$ is given by 
 \begin{equation}
-   \mathcal{S}_{2}^{-1}=\mathbbm{1}+\sum_{a=1}^{N-1}\beta_{a}e_{aN}
+   \mathcal{S}_{2}^{-1}=\mathbbm{1}+\sum_{a=1}^{N-1}\beta_{a}e_{aN}\co
 \end{equation}
-
-
-{\color{blue}
+which action on the occupation variable of a site is 
 \begin{equation}
-  \mathcal{S}_{2}^{-1} |\mu\rangle= |\mu\rangle+\delta_{N,\tau}\sum_{a=1}^{N-1}\beta_a|a\rangle
+  \mathcal{S}_{2}^{-1} |\mu\rangle= |\mu\rangle+\delta_{N,\mu}\sum_{a=1}^{N-1}\beta_a|a\rangle\dt
 \end{equation} 
+Therefore, taking the tensor product over the chain we obtain 
 \begin{equation}
   \left(\mathcal{S}_{2}^{-1}\right)^{\otimes L} |\bm{\mu}\rangle=\left( |\mu_1\rangle+\delta_{N,\mu_1}\sum_{a=1}^{N-1}\beta_a|a\rangle\right)\otimes\ldots\otimes \left( |\mu_L\rangle+\delta_{N,\mu_L}\sum_{a=1}^{N-1}\beta_a|a\rangle\right)
 \end{equation} 
-\begin{equation}
+By projecting over a vector $\langle \bm{\tau}|$ we have 
+\begin{equation}\label{goodTP-S2}
   \langle \bm{\tau}|\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L} |\bm{\mu}\rangle=\prod_{i=1}^L\left[ \delta_{\tau_i,\mu_i}+\delta_{N,\mu_i}\beta_{\tau_i} (1-\delta_{\tau_i,N})\right]
 \end{equation} 
-
-}
-
-
+For a fixed configuration $\bm{\mu}=(\mu_{1},\ldots,\mu_{L})$, using equation \eqref{ResulsBasis} and observing that 
+\begin{equation}
+	\left(1+\sum_{j=y}^{L}\delta_{\mu_{j},N}\right) =\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{\mu_{y},N})\right)
+\end{equation}
+we obtain 
+\begin{equation}
+	\Psi^{''}(\bm{\mu})=\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\mu_{x},N})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\mu_{x}}\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\mu_{j},N})\right)\right)^{1-\delta_{\mu_{x},N}}\dt
+\end{equation}
+Introducing $c_{x}$ defined as 
+\begin{equation}
+	c_{x}(\mu_{x})=(1-\delta_{\mu_{x},N}) \qquad \forall x\in \{1,\ldots L\}
+\end{equation}
+we obtain 
+\begin{equation}\label{coefficients-psiSec}
+	\Psi^{''}(\bm{\mu})=\frac{\Gamma(2+L-\sum_{x=1}^{L}c_{x})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\mu_{y}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}
+\end{equation}
+where, for the sake of notation we left understood the dependence on $\mu_{x}$ of $c_{x}$.
+\begin{comment}
 We introduce the following notation
 \begin{equation}\label{notation1}
     e_{ab}=e_{a}^{b}=\left(\delta_{ac}\delta_{bd}\right)_{c,d\in\{1,\ldots,N\}}\qquad \forall a,b\in \{1,\ldots,N\}
@@ -1604,14 +1618,16 @@ and
     		\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\,\text{if}\,i\neq j}^{L}\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\beta_{\tau_{x}}e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1}^{L},\ldots,\varphi_{L}^{L}} \right\}
     	\end{split}
     \end{equation}
-where, $\forall x\in\{1,\ldots,L\}$, we have introduced
+\end{comment}
+We introduce $\forall x\in\{1,\ldots,L\}$, for $i\in \{1,\ldots,L\}$ and $q_{1},\ldots,q_{i}\in\{1,\ldots,L\}$ the configuration 
 \begin{equation}
 	\varphi_{x}^{i}(q_{1},\ldots,q_{i})=\begin{cases}
 		\tau_{x}\qquad &\text{if}\quad x\notin\{q_{1},\ldots,q_{i}\}\\
 		N\qquad &\text{otherwise}\\
-	\end{cases}
+	\end{cases}\dt
 \end{equation}
-where $i\in\{1,\ldots,L\}$. The dependence of $\varphi_{x}^{i}(q_{1},\ldots,q_{i})$ with respect to $q_{1},\ldots,q_{i}$ is usually understood for the sake of notation.
+ This is a new configuration where  $\tau_{q_{1}},\ldots,\tau_{q_{i}}$ with $N$ and leaves the others sites with the same occupation.  The dependence of $\varphi_{x}^{i}(q_{1},\ldots,q_{i})$ with respect to $q_{1},\ldots,q_{i}$ is usually understood for the sake of notation.
+    \begin{comment}
     We prove it by induction. When $L=1$ it is true, indeed
     \begin{equation}
     	\mathcal{S}_{2}^{-1}=\sum_{\tau_{1}=1}^{N}\left\{e_{\tau_{1}}^{\tau_{1}}+(1-\delta_{\tau_{1},N})\sum_{q_{1}=1}^{1}\beta_{\tau_{q_{1}}}e_{\tau_{q_{1}}}^{1}\right\}
@@ -1642,6 +1658,7 @@ where $i\in\{1,\ldots,L\}$. The dependence of $\varphi_{x}^{i}(q_{1},\ldots,q_{i
     	\\&=
     	\left(\mathcal{S}_{2}^{\otimes L+1}\right)^{-1}
 \end{align*}
+\end{comment}
     \begin{comment}
     \begin{equation}
         S_{2}^{-1}=\sum_{\tau_{1}=1}^{N}e_{\tau_{1}}^{\tau_{1}}+Q
@@ -1675,7 +1692,7 @@ where the subscripts $\tau_{1},s_{2}$ denote the raw and the superscript $q_{1},
 \begin{equation}
 	\left(S_{2}^{-1}\otimes S_{2}^{-1}\right)_{\tau_{1},s_{2}}=e_{\tau_{1},s_{2}}^{\tau_{1},s_{2}}+(1-\delta_{s_{2},1})\beta_{s_{2}}e_{\tau_{1},s_{2}}^{\tau_{1},1}+(1-\delta_{\tau_{1},1})\beta_{\tau_{1}}e_{\tau_{1},s_{2}}^{1,s_{2}}+(1-\delta_{\tau_{1},1})(1-\delta_{s_{2},1})\beta_{\tau_{1}}\beta_{s_{2}}e_{\tau_{1},s_{2}}^{1,1}
 \end{equation}
-\end{comment}
+
 The product $\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}|\Psi^{''}\rangle$ gives a vector $|\Psi^{'}\rangle$ whose component are denoted by $\Psi^{'}(\bm{\tau})$. 
 To find these quantities we need to fix the rows correspondent to $\bm{\tau}$ in the matrix $\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L}$. Consider a string $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})$ with $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, then the corresponding row reads
 \begin{equation}
@@ -1685,33 +1702,22 @@ To find these quantities we need to fix the rows correspondent to $\bm{\tau}$ in
   \ldots+\sum_{q_{1},\ldots,q_{L}=1\,:\,q_{i}\neq q_{j}\;\text{if}\;i\neq j}^{L}\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\left(\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},1}}e_{\tau_{1},\ldots,\tau_{L}}^{\varphi_{1}^{L},\ldots,\varphi_{L}^{L}}
 	\end{split}
 \end{equation}
-
-Therefore, we have that 
+\end{comment}
+By considering a fixed $\langle\bm{\tau}|$, by taking \begin{equation}|\Psi^{''}\rangle=\sum_{\mu_{1},\ldots,\mu_{L}=1}^{N}\Psi^{''}(\bm{\mu})|\bm{\mu}\rangle\end{equation} with the coefficients \eqref{coefficients-psiSec} and by using \eqref{goodTP-S2} we write 
 \begin{equation}\label{ABS_intermediate}
 	\begin{split}
-		\Psi^{'}(\bm{\tau})&=(\mathcal{S}_{2}^{-1})_{\bm{\tau}}^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\varphi_{1}^{1},\ldots,\varphi_{L}^{1})\beta_{q_{1}^{1}}\\&+
-		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\varphi_{1}^{2},\ldots,\varphi_{L}^{2})\beta_{a_{1}}\beta_{a_{2}}\\&+\ldots+\Psi^{''}(1,\ldots,1)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\left(\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}
+		\Psi^{'}(\bm{\tau})&=\langle \bm{\tau}|(\mathcal{S}_{2}^{-1})^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\varphi_{1}^{1},\ldots,\varphi_{L}^{1})\beta_{q_{1}^{1}}\\&+
+		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\varphi_{1}^{2},\ldots,\varphi_{L}^{2})\beta_{a_{1}}\beta_{a_{2}}\\&+\ldots+\Psi^{''}(N,\ldots,N)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}\dt%^{1-\delta_{\tau_{x},N}}
 	\end{split}
 \end{equation}
-For a fixed configuration $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})$, using equation \eqref{ResulsBasis} and observing that 
-\begin{equation}
-  \left(1+\sum_{j=y}^{L}\delta_{\tau_{j},N}\right) =\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{\tau_{y},N})\right)
-\end{equation}
-we obtain 
-    \begin{equation}
-\Psi^{''}(\bm{\tau})=\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\tau_{x},N})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{\tau_{j},N})\right)\right)^{1-\delta_{\tau_{y},N}}
-\end{equation}
-Introducing
-\begin{equation}
-	c_{y}\in\{0,1\} \qquad \forall y\in \{1,\ldots L\}
-\end{equation}
-and replacing $\Psi^{'}(\bm{\tau})$ computed above in \eqref{ABS_intermediate} we obtain 
+
+Therefore, we have that equation \eqref{ABS_intermediate} becomes
 
 
 %Because of the exponent $(1-\delta_{\tau_{x},1})$, the element $\Psi^{''}(\bm{\tau})$ has, up the term $\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{\tau_{x},1})}{\Gamma(L+2)}$, a contribution of a factor $\lambda_{\tau_{x}}\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{x},1})\right)$ if the site is non empty, and a contribution of a factor "$1$" if the site is empty, it is convenient to introduce the $c_{i}$ of defined in \eqref{CiEquation}. Then, equation  \eqref{ABS_intermediate} reads 
 \begin{equation}\label{elementsABS}
 	\begin{split}
-		\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{\Gamma(2+L-\sum_{x=1}^{L}c_{x})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\left(\beta_{\tau_{y}}\right)^{(1-c_{y})(1-\delta_{\tau_{y},N})}
+		\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{\Gamma(2+L-\sum_{x=1}^{L}c_{x})}{\Gamma(2+L)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\left(\beta_{\tau_{y}}\right)^{(1-c_{y})(1-\delta_{\tau_{y},N})}
 	\end{split}
 \end{equation} 
 %Indeed, when $c_{i}=0$ this formula replaces the contribution in the square brackets with a $\beta_{\tau_{x}}$. 
