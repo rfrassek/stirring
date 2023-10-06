@@ -316,39 +316,44 @@ $$
 and  $|\alpha^x|=\sum_{a=1}^{N}\alpha_{a}$. 
 Currents will arise when at least two reservoirs have different densities. 
 
-\subsection{The Lie algebraic description}
+\subsection{Lie algebraic description}
 
+In this paper we will often use the fact that the Markov generator of the multispecies stirring process can be described in terms a Lie algebra of rank $N$.
+In this section we provide details about this.
 
 Consider the Lie algebra $gl(N)$ with generators denoted by $\EE_{ab}$ with $a,b\in \{1,\ldots,N\}$ and commutation relations
 \begin{equation}\label{eq:comgl}
 \left[\EE_{ab},\EE_{cd}\right]=\EE_{ad}\delta_{cb}-\EE_{cb}\delta_{ad}\qquad \forall a,b\in \{1,\ldots,N\}\,.
 \end{equation}
-The finite-dimensional representations are labelled by partitions $\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_N)$ of $\nu$ with  $\lambda_i\geq \lambda_{i+1}$,  $\lambda_i\in \mathbb{N}$ and $\sum_{i=1}^N \lambda_i = \nu$.  
+The finite-dimensional representations are labelled by partitions $\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_N)$ of $\nu$ with  $\lambda_i\geq \lambda_{i+1}$,  $\lambda_i\in \mathbb{N}$ and $\sum_{i=1}^N \lambda_i = \nu\in\mathbb{N}$.  
 We are interested in the {\em symmetric} finite-dimensional representations with 
 \begin{equation}\label{eq:dynkin}
-    \lambda=(\twoj,0,\ldots,0) \qquad\text{where}\qquad \twoj\in\mathbb{N}\,.
+    \lambda=(\twoj,0,\ldots,0) \;.
+    %\qquad\text{where}\qquad \twoj\in\mathbb{N}\,.
 \end{equation} 
 The dimension $M_\twoj$ of this symmetric representations is given by the combination of $N$ objects in $\twoj$ positions with repetition, namely
 \begin{equation}
 	M_\twoj= \frac{(N+\twoj-1)!}{\twoj  !(N-1)!}\dt
 \end{equation} 
 The generators of the symmetric representations will be denoted by $E_{ab}$.
-The basis elements of the vector space $\mathbb{C}^{M_\twoj}$ are the column vectors denoted by
+A basis of the vector space $\mathbb{C}^{M_\twoj}$ are the column vectors denoted by
 \begin{equation}
   |n\rangle=  |n_{1},\ldots,n_{N}\rangle,\quad \text{with}\quad n_{i}\in\mathbb{N}_{0}\quad \text{sucht that}\quad \sum_{i=1}^{N}n_{i}=\nu\,.
 \end{equation}
 %where $\sum_{a=1}^{N}n_{i}=\nu$. 
+{\color{red}
 The basis vectors satisfy the orthogonality relation with respect to the Euclidean scalar product 
 \begin{equation}\label{ortho}
    \langle m|n \rangle =\langle m_{1},\ldots,m_{N}|n_{1},\ldots,n_{N}\rangle=\prod_{a=1}^{N}\delta_{\xi_{a},n_{a}}\co
 \end{equation}
 where  $ \langle m_{1},\ldots,m_{N}|$ is the row vectors obtained by transposing $|m_{1},\ldots,m_{N}\rangle$ and $\delta_{\xi_{a},n_{a}}$ is the Kronecker delta. 
+}
 The explicit action of the algebra generators on the basis  vectors $|n\rangle$ is the following:
 \begin{equation}\label{actionE}
 	\begin{cases}
-		E_{ab}|n_{1},\ldots,n_{a},\ldots,n_{b},\ldots,n_{N}\rangle =n_{b}|n_{1},\ldots,n_{a}+1,\ldots,n_{b}-1,\ldots,n_{N}\rangle\quad a\neq b\\[0.1cm]
+		E_{ab}|n_{1},\ldots,n_{a},\ldots,n_{b},\ldots,n_{N}\rangle =n_{b}|n_{1},\ldots,n_{a}+1,\ldots,n_{b}-1,\ldots,n_{N}\rangle\qquad\qquad a\neq b\\[0.1cm]
 		E_{aa}|n_{1},\ldots,n_{a},\ldots,n_{N}\rangle = n_{a} |n_{1},\ldots,n_{a},\ldots,n_{N}\rangle\dt
-	\end{cases}\,.
+	\end{cases}
 \end{equation}  
 The matrices defined in this way satisfy the commutation relations \eqref{eq:comgl} and yield Dynkin weight \eqref{eq:dynkin}. \\
 %{\color{red} Is this remark relevant for us?}
@@ -360,7 +365,8 @@ The matrices defined in this way satisfy the commutation relations \eqref{eq:com
    \bar E_{ab}=\nu\delta_{ab}-E_{N-b+1,N-a+1}\dt
 \end{equation}
 {\color{red} This needs to be checked and give alternative form of Hamiltonian?}\\
-The process with generator \eqref{Generator} can be described in terms of $gl(n)$ Lie algebra generators. The state space \eqref{stateSpace} is given by the $|V|$-fold tensor product of the vector space with basis elements $|n^x\rangle$ at a given site, namely
+The process with generator \eqref{Generator} can be described in terms of $gl(N)$ Lie algebra generators. The state space \eqref{stateSpace} is given by the $|V|$-fold tensor product of the vector space with basis elements $|n^x\rangle$ at a given site. Namely,
+a vector $|{\bf n}\rangle \in \Omega$ can be written as
 %We now define the equivalent of \eqref{stateSpace} in the vector notation
 % \begin{equation}
 %	\Omega':=\left\{|n\rangle=|n_{1},\ldots,n_{N}\rangle \;:\;n\in\mathbb{N}_0^N,\;\;|n|=\twoj\right\}^{\otimes|V|}
@@ -369,14 +375,15 @@ The process with generator \eqref{Generator} can be described in terms of $gl(n)
 \begin{equation}
 |{\bf n}\rangle=\left(\,\bigotimes_{x\in V}	|n_{1}^{x},\ldots,n_{N}^{x}\rangle\right)
 \end{equation}
-where we require that $n_{a}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have $\sum_{a=1}^{N}n_{a}^{x}=\nu$. Sometimes it will bw convenient to write $|n^{x}\rangle$ to denote, for a fixed $x\in V$, the vector $|n_{1}^{x},\ldots,n_{N}^{x}\rangle$.
+%where we require that $n_{a}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have 
+with $\sum_{a=1}^{N}n_{a}^{x}=\nu$ for any $x\in V$. Sometimes it will bw convenient to write $|n^{x}\rangle$ to denote, for a fixed $x\in V$, the vector $|n_{1}^{x},\ldots,n_{N}^{x}\rangle$.
+{\color{red}
 The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
 \begin{equation}
     \langle {\bf n}|{\bf m}\rangle =\prod_{x\in V}\prod_{a=1}^N\delta_{n^x_a,m^{x}_a}\,.
 \end{equation}
+}
 
-
-{\color{red}Maybe some more text below}
 We introduce the Hamiltonian operator
 \begin{equation}\label{OriginalHamiltonian}
 	\begin{split}
@@ -397,21 +404,20 @@ Following  \cite{belitsky2015self}, the Hamiltonian and the Markov generator are
 \begin{equation}\label{Hamiltonian-Generator}
 H=\mathcal{L}^{T}\dt
 \end{equation}
-{\color{red} no minus sign?} {\color{blue}I think we decided to keep it without minus sign}
 The action of the generator can also be expressed as 
 \begin{equation}
     \mathcal{L}f( {\bf n})=\langle f|H| {\bf n}\rangle
 \end{equation}
 where 
 \begin{equation}
-    \langle f|=\sum_{ {{\bf n}\in \Omega}}f( {\bf n})\langle  {\bf n}|
+    \langle f|=\sum_{ {{\bf m}\in \Omega}}f( {\bf m})\langle  {\bf m}|
 \end{equation}
 
-We can write the edge Hamiltonian \eqref{edgeHamiltonian} as a function of the coproduct of the second Casimir of $gl(N)$
+We can write the edge Hamiltonian \eqref{edgeHamiltonian} as a function of the coproduct of the {\color{red} quadratic} Casimir of $gl(N)$
 \begin{equation}\label{secondCasimir}
-    C_{2}=\sum_{a,b=1}^{N}E_{ab}E_{ba}
+    C=\sum_{a,b=1}^{N}E_{ab}E_{ba}
 \end{equation}
-that acts diagonally as $C_{2}|\bm{n}\rangle=\twoj(\twoj+N)|\bm{n}\rangle$ and belogs to the center of $gl(N)$ (i.e. it commutes with all the algebra elements).  
+that acts diagonally as $C|\bm{n}\rangle=\twoj(\twoj+N)|\bm{n}\rangle$ and belogs to the center of $gl(N)$ (i.e. it commutes with all the algebra elements).  
 More precisely,  considering the standard coproduct 
 \begin{equation}
 \begin{split}
@@ -421,14 +427,13 @@ E_{ab}&\to E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
 \end{equation}
 we have 
 \begin{equation}
-\Delta(C_{2})=\sum_{a,b=1}^{N}\Delta(E_{ab})\Delta(E_{ba})=2\sum_{a,b=1}^{N}E_{ab}\otimes E_{ba}+C_{2}\otimes \mathbbm{1}+\mathbbm{1}\otimes C_{2}\,.
+\Delta(C)=\sum_{a,b=1}^{N}\Delta(E_{ab})\Delta(E_{ba})=2\sum_{a,b=1}^{N}E_{ab}\otimes E_{ba}+C\otimes \mathbbm{1}+\mathbbm{1}\otimes C\,.
 \end{equation}
 Then, one can check that 
 \begin{equation}\label{hamiltonianCasimir}
-	\mathcal{H}=\frac{1}{2}\Delta^{x,y}(C_{2})-\twoj(2\twoj+N)
+	\mathcal{H}_{x,y}=\frac{1}{2}\Delta_{x,y}(C)-\twoj(2\twoj+N)
 \end{equation}
-where $\Delta^{x,y}(C_2)$ denotes a {\color{blue}copy} of $\Delta(C_2)$ acting on  
-the edge $(x,y)\in \mathcal{E}$.
+where $\Delta_{x,y}(C)$ denotes a copy of $\Delta(C)$ acting on  the sites of edge $(x,y)\in \mathcal{E}$ and acting trivially on the other sites of the graph.
 
 
 \begin{comment}
@@ -467,14 +472,14 @@ E_{ab}&\to E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
 \end{comment}
  
 \subsection{Integrable process on a line segment}\label{subsection-description-process-LINE}
-In this section we specialize the multi-species stirring process to the geometry of the one dimensional chain with sites $\{1,\ldots,L\}$ where two reservoirs act at the boundary sites $1$ and $L$. These reservoirs, exchanging particle with the external environment, put the chain out of equilibrium. The Hamiltonian that we consider here is obtained by \eqref{OriginalHamiltonian} assuming that the conductances are
+In this section we specialize the multi-species stirring process to the geometry of the one dimensional chain with sites $\{1,\ldots,L\}$ where two reservoirs act at the boundary sites $1$ and $L$. These reservoirs, exchanging particle with the external environment, put the chain out of equilibrium. The Hamiltonian that we consider here is obtained from \eqref{OriginalHamiltonian} assuming that the conductances are
 \begin{equation}
 	\omega_{x,y}=\begin{cases}
 		1 \quad \text{if}\quad |x-y|=1\\
 		0\quad \text{otherwise}
 	\end{cases}
 \end{equation}
-and the local inhomogeneities are
+and the coupling to reservoirs are
 \begin{equation}
 	\Gamma_{x}=\begin{cases}
 		1\quad \text{if} \quad x\in \{1,L\}\\
@@ -482,7 +487,7 @@ and the local inhomogeneities are
 	\end{cases}
 \end{equation}
 We further assume that the maximal occupancy in each site is $\nu=1$, i.e. that there is an \textit{hard-core interaction}.
-We will denote the element of the representation of the $gl(N)$ Lie algebra by lowercase letters, i.e. $(e_{ab})_{a,b\in\{1,\ldots,N\}}$, to highlight that we are in the first fundamental representation of the algebra.
+We will denote the element of the representation of the $gl(N)$  Lie algebra with $\nu=1$ by lowercase letters, i.e. $(e_{ab})_{a,b\in\{1,\ldots,N\}}$, to highlight that we are in the first fundamental representation of the algebra.
 The Hamiltonian now reads
 \begin{equation}\label{hamiltonian}
 	H=H_{left}+H_{bulk}+H_{right}
@@ -491,7 +496,7 @@ where
 \begin{equation}
 	H_{bulk}=\sum_{x=1}^{L-1}\mathcal{H}_{x,x+1}
 \end{equation}
-Here $\mathcal{H}_{x,x+1}$  is a copy (acting on the edge $x,x+1$) of the two-site Hamiltonian
+Here $\mathcal{H}_{x,x+1}$  is a copy (acting on the vertices of the edge $x,x+1$) of the two-site Hamiltonian
 \begin{equation}\label{H-corsivo}
 	\begin{split}
 		\mathcal{H}=P-\id
@@ -534,7 +539,7 @@ We define also
 \begin{equation}\label{lambdaConditions}
 	\lambda_{a}=\alpha_{a}-\beta_{a}\quad\text{with}\quad \sum_{a=1}^{N}\lambda_{a}=0\,.
 \end{equation}
-Under these assumption the Hamiltonian is integrable (see \cite{vanicat2017exact} for its derivation within the Quantum Inverse Scattering method). 
+Under these assumption the Hamiltonian \ref{hamiltonian} is integrable (see \cite{vanicat2017exact} for its derivation within the Quantum Inverse Scattering method). 
 
 
 \section{Duality}\label{sectionDuality}
