@@ -142,7 +142,9 @@
 % \centering
 \begin{center}
  \begingroup\LARGE
-\bf Multispecies stirring process: duality and exact solution
+%\bf Multispecies stirring process: duality and exact solution
+\bf Multispecies stirring process \\
+ with open boundaries
 \par\endgroup
  \vspace{3.5em}
  \begingroup\large \bf
@@ -187,9 +189,14 @@ We will exploit the duality and the underlying symmetries of the model, to write
  For a complete review of the quantum inverse scattering method see \cite{Sklyanin:1988yz} and \cite{faddeev1996algebraic}. For application of the QISM to interacting particle systems we refer to \cite{frassek2020eigenstates,frassek2019non,frassek2022exact,vanicat2017exact}. \\
  A new technique to compute absorption probabilities has been proposed in \cite{floreani2023non}.
 \paragraph{Organization of the paper}
-\section{The stirring process}
+%
+%
+%
+%
+\section{The stirring process with open boundaries}
 \subsection{Informal description of the process}
-The process studied in this paper is the {\em multi-species stirring process}. 
+The process studied in this paper is the {\em multi-species stirring process}
+with open boundaries. 
 In words, the dynamics is described as follows. Each site
 of a connected graph can host up to $\nu\in \mathbb{N}$ particles.
 The particles have a {\em type} (sometimes called {\em species} or {\em color})
@@ -197,20 +204,21 @@ which can take $N$ values.
 Then, the dynamics has two parts: on each edge of the graph, 
 any two types are swapped at rate $1$; additionally, on each site $x$, 
 a particles of a given type (if present) is replaced with a
-particle of type $k$ at rate $\alpha_k^x >0$.
+particle of type $a$ at rate $\alpha_a^x >0$.
 The swap dynamics taking place on the edges is of Kawasaki-type 
 with $N$ conservation laws
 (the total number of particles of each type). 
-The site-dynamics is instead of Glauber-type 
-and, in the long-time limit, so-called non-equilibrium
+The site-dynamics is instead of Glauber-type. 
+In the long-time limit, a so-called non-equilibrium
 steady state sets in.
 
 
 \vspace{.5cm}
 \noindent
-{\bf Remark:} in the following we will often consider type $N$ as a distinguished type
+{\bf Remark.} In the following we will often consider type $N$ as a distinguished type
 (called `holes'), whose number at each site is fixed by the numbers of particles 
-of the remaining $N-1$ types (at the same site). It is interesting to observe that, in case we stop distinguishing the colors of the ``true'' particles of types $\{1,\ldots,N-1\}$, we retrieve the 
+of the remaining $N-1$ types. It is interesting to observe that, in case we stop distinguishing the types of the ``true'' particles of types 
+(those of types $\{1,\ldots,N-1\}$), we retrieve the 
 boundary-driven version of the partial symmetric exclusion process \cite{schutzSandow,carinci2013duality}.
 The choice of type $N$ for the distinguished type is arbitrary and does not affect
 the results. In particular, we shall see in Section \ref{sectionDuality} about duality, that
@@ -230,18 +238,19 @@ We now give the mathematical description of the multi-species stirring process.
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
 At each vertex site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ denotes the number of particles of species $a\in \{1,\ldots,N\}$. On each vertex we allow a total  maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space of the process on the graph $G$ is 
 \begin{equation}\label{stateSpace}
-    \Omega:=\bigtimes_{x\in V} \Omega_{x}
+    \Omega:=\bigotimes_{x\in V} \Omega_{x}
 \end{equation}
 where
 \begin{equation}
 \Omega_{x}:=\left\{n^x=(n_{1}^{x},\ldots,n_{N}^{x})\in\mathbb{N}_0^{N}\;:\; \sum_{a=1}^{N}n_{a}^{x}=\twoj\right\}\,.
 \end{equation}
-We denote a particle configuration as $\bm{n}\in \Omega$, where $\bm{n}=(n_{a}^{x})_{x\in V,\,a\in\{1,\ldots,N\}}$ .\\
-The dynamics consists in an exchange of particles (at Poissonian times) between connected vertices. Moreover, each vertex  exchanges particles with the external environement. The infinitesimal generator of the process reads
+We denote a particle configuration on the graph as $\bm{n}\in \Omega$, where $\bm{n}=(n_{a}^{x})_{x\in V,\,a\in\{1,\ldots,N\}}$.
+The infinitesimal generator of the process reads
 \begin{equation}\label{Generator}
     \mathcal{L}=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}+\sum_{x\in V}\Gamma_{x}\mathcal{L}_{x}
 \end{equation}
-where  $ \omega_{x,y}\geq 0$ are so-called conductances and $\Gamma_{x}\geq 0$ local inhomogeneities. The generator $\mathcal{L}_{x,y}$ is called the \textit{edge generator}, while $\mathcal{L}_{x}$ is called the \textit{site generator}. These linear operators act on functions $f:\Omega\to \mathbb{R}$ as follows
+where  $ \omega_{x,y}\geq 0$ are so-called conductances and $\Gamma_{x}\geq 0$ are the couplings to reservoirs. 
+The generator $\mathcal{L}_{x,y}$ is called the \textit{edge generator}, while $\mathcal{L}_{x}$ is called the \textit{site generator}. These linear operators act on functions $f:\Omega\to \mathbb{R}$ as follows
 \begin{equation}\label{edgeGenerator}
 \mathcal{L}_{x,y}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left[f(\bm{n}-\bm{\delta}^{x}_{a}+\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{y}-\bm{\delta}_{b}^{y})-f(\bm{n})\right]\co
 \end{equation}
@@ -251,45 +260,61 @@ where  $ \omega_{x,y}\geq 0$ are so-called conductances and $\Gamma_{x}\geq 0$ l
 where 
 \begin{equation}
 (\bm{\delta}_{a}^{x})^{y}_{b}=\begin{cases}
-1\qquad &\text{if}\quad y=x,\;b=a\\
+1\qquad &\text{if}\quad y=x,\;b=a\;,\\
 0\qquad &\text{otherwise}\dt
-\end{cases}\,.
+\end{cases}
 \end{equation}
-{\color{red} notation}
-This means that on the edge $(x,y)\in \mathcal{E}$  a particle of type $a$ at site $x$ is exchanged with a particle of type $b$ at site $y$ at rate $\omega_{x,y}n_{a}^{x}n_{b}^{y}$. Furthermore, on each site $x\in V$  a particle of type $b$ is replaced with a particle of type $a$ at rate $\Gamma_{x}\alpha_{a}^{x}n_{b}^{x}$. For the sake of notation we denote $|\alpha^{x}|=\sum_{a=1}^{N}\alpha_{a}^{x}$. 
-See Figure \ref{fig:1} and  Figure \ref{fig:2} for a visualisation of the dynamics. 
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.45]{BulkStirring.eps}
-    \caption{The edge dynamics. Maximal occupation is $\nu=6$. A particle of type $2$ is removed in $x$ and placed in $y$. A particle of type $3$ is removed in $y$ and placed in $x$. This transition occurs at rate $n_{2}^{x}n_{3}^{y}=2\cdot 3$.}
-    \label{fig:1}
-\end{figure}
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.4]{BoundaryStirring.eps}
-    \caption{The site dynamics. Here the maxiaml occupation is $\nu=6$. The reservoir, represented by a square "box" containing all types of particles, remove a type $2$ from site $x$ and replace it with a type $3$. This transition occurs at rate $\alpha_{3}^{x}n_{2}^{x}$.}
-    \label{fig:2}
-\end{figure}
-\subsection{Reversible measures}
-The process described by the generator \eqref{Generator} is reversible with respect to the homogeneus product measure \begin{equation}\label{reversibleMeasure}
-\mu_{rev}=\bigtimes_{x\in V}\mu_{rev}^{x}
-\end{equation}
-when for any $a\in\{1,\ldots,N\}$
+Thus the dynamics consists in an exchange of particles between connected vertices at Poissonian times. 
+This means that on the edge $(x,y)\in \mathcal{E}$  a particle of type $a$ at site $x$ is exchanged with a particle of type $b$ at site $y$ at rate $\omega_{x,y}n_{a}^{x}n_{b}^{y}$. 
+Moreover, each vertex  exchanges particles with the external environment (reservoirs). 
+Namely, on each site $x\in V$  a particle of type $b$ is replaced with a particle of type $a$ at rate $\Gamma_{x}\alpha_{a}^{x}n_{b}^{x}$. 
+%
+%For the sake of notation we denote $|\alpha^{x}|=\sum_{a=1}^{N}\alpha_{a}^{x}$. 
+%See Figure \ref{fig:1} and  Figure \ref{fig:2} for a visualisation of the dynamics. 
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[scale=0.45]{BulkStirring.eps}
+%    \caption{The edge dynamics. Maximal occupation is $\nu=6$. A particle of type $2$ is removed in $x$ and placed in $y$. A particle of type $3$ is removed in $y$ and placed in $x$. This transition occurs at rate $n_{2}^{x}n_{3}^{y}=2\cdot 3$.}
+%    \label{fig:1}
+%\end{figure}
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[scale=0.4]{BoundaryStirring.eps}
+%    \caption{The site dynamics. Here the maxiaml occupation is $\nu=6$. The reservoir, represented by a square "box" containing all types of particles, remove a type $2$ from site $x$ and replace it with a type $3$. This transition occurs at rate $\alpha_{3}^{x}n_{2}^{x}$.}
+%    \label{fig:2}
+%\end{figure}
+\subsection{Reversible measures (equilibrium)}
+For a particular choice of the reservoir parameters one has an $N$-parameter family of reversible measures. More precisely
+when the parameters are the same on each site, i.e.
 \begin{equation}\label{reversibilityCondition}
-\alpha_{a}^{x}=\alpha_{a}\qquad \forall x\in V\,.
+\alpha_{a}^{x}=\alpha_{a}\qquad \forall x\in V\,,
 \end{equation}
-This measure has marginals $\mu_{rev}^{x}$ given by 
+then the process described by the generator \eqref{Generator} is reversible with respect to the 
+homogeneous product measure 
 \begin{equation}
- \mu^{x}_{rev}\sim \text{Multinomial}\left(\twoj,\rho_{1},\ldots,\rho_{N}\right)\quad \text{where}\quad \rho_{a}=\frac{\alpha_{a}}{|\alpha|}\co
+\label{reversibleMeasure}
+\mu_{rev}=\bigotimes_{x\in V}\mu_{rev}^{x}
 \end{equation}
-namely
+with marginals $\mu_{rev}^{x}$ given by 
 \begin{equation}
-\mu_{rev}^{x}(n^{x})=\frac{\nu!}{\prod_{a=1}^{N}n_{a}^{x}!}\prod_{a=1}^{N}\rho_{a}^{n_{a}^{x}}
+ \mu^{x}_{rev}\sim \text{Multinomial}\left(\twoj,\rho_{1},\ldots,\rho_{N}\right)\,.
 \end{equation}
-where we denote $|\alpha|=\sum_{a=1}^{N}\alpha_{a}$. 
-This can be proved just by imposing the detailed balance conditions for the edge and for the site generators. If condition \eqref{reversibilityCondition} is not met, then reversibility is lost: each reservoir at site $x$ wants to fix its own density $\alpha^{x}=(\alpha_{1}^{x},\ldots,\alpha_{N}^{x})$ and currents will arise when at least two of them are different. 
+Here
+ $$
+\rho_{a}=\frac{\alpha_{a}}{|\alpha|}\co
+$$
+is the density of specie $a$ and we used the notation $|\alpha|=\sum_{a=1}^{N}\alpha_{a}$. Explicitly, 
+\begin{equation}
+\mu_{rev}^{x}(n^{x})=\frac{\nu!}{\prod_{a=1}^{N}n_{a}^{x}!}\prod_{a=1}^{N}\rho_{a}^{n_{a}^{x}}\,.
+\end{equation}
+This can be proved  by checking that detailed balance is satisfied. 
+If condition \eqref{reversibilityCondition} is not met, then reversibility is lost: each reservoir at site $x$ wants to fix its own set of densities $\rho^{x}=(\rho_{1}^{x},\ldots,\rho_{N}^{x})$ with
+ $$
+\rho_{a}^x=\frac{\alpha_{a}}{|\alpha^x|}
+$$
+and  $|\alpha^x|=\sum_{a=1}^{N}\alpha_{a}$. 
+Currents will arise when at least two reservoirs have different densities. 
 
-{\color{red}add/improve explanaition of entire subsection} {\color{blue}Is it not standard?}
 \subsection{The Lie algebraic description}
 
 
