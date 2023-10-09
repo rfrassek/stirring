@@ -1389,12 +1389,12 @@ where
         0\quad \text{otherwise}
     \end{cases}
 \end{equation}
-\textbf{Remark}: In case of $N=2$ we can introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. Moreover, we call $\ell_{1},\ldots,\ell_{q}$ the coordinates where particles of type $1$ are present. Thus, the coefficient of the above formula can be written as
+\textbf{Remark}: In case of $N=2$ we can introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. Moreover, we for each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. By varying $q$, we have a one-to-one mapping with $\bm{\tau}$. Thus, the coefficient of the above formula can be written as
 \begin{align}
 &\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},2}\right)\right]^{1-\delta_{\tau_{x},N}}\right)%=\lambda_{1}^{q}\prod_{x=1}^{L}\left(2+L-y_{x}-\sum_{j=x}^{L}\delta_{\tau_{j},1}\right)^{\delta_{\tau_{x},1}}
-=\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-\sum_{j=k+1}^{q}\delta_{\tau_{x_{j}},1}\right)}{(2+L-k)}
+=\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-\sum_{j=x_{k}+1}^{L}\delta_{\tau_{x_{j}},1}\right)}{(2+L-k)}\dt
 \end{align}
-Moreover, for each $q\in \{1,\ldots,L\}$ using the coordinates $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$, calling $\bm{\ell}=(\ell_{1},\ldots,\ell_{q})$ and, by varying $q$, we have a one-to-one mapping with $\bm{\tau}$. Therefore, we can write 
+Therefore, we can write 
 \begin{equation}
 	|\Psi^{''}\rangle=\sum_{q=0}^{L}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
 \end{equation}
@@ -1741,18 +1741,20 @@ Finally, considering all possible $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, 
 \begin{flushright}
     $\square$
 \end{flushright}
-\textbf{Remark}: In the case of $N=2$ we can argue similarly as we did in the Remark of Subsection \ref{subsectionSSHsec}. If we stop distinguishing types of non-empty particles we have that \eqref{ABS} reads
+\begin{comment}
+\textbf{Remark}: In the case of $N=2$ we can argue similarly as we did in the Remark of Subsection \ref{subsectionSSHsec}. If we stop distinguishing types of non-empty particles and by introducing $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x,1}}$ we have that \eqref{ABS} reads
 \begin{align}
-	\Psi^{'}(\bm{\tau})=&\sum_{q=0}^{L}(\alpha-\beta)^{q}\beta^{L-q}\frac{\Gamma(L+2-q)}{\Gamma(L+2)}\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}
-	\\&\prod_{k=1}^{q}\left(L+2-x_{k}-\sum_{i=k}^{L}c_{i}\right)\dt
+	\Psi^{'}(\bm{\tau})=&\sum_{q=0}^{|\bm{\tau}|}(\alpha-\beta)^{q}\beta^{L-q}\frac{\Gamma(L+2-q)}{\Gamma(L+2)}\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}
+	\\&\prod_{x=1}^{L}\left(L+2-x-\sum_{i=x}^{L}c_{i}\right)^{c_{x}}\dt
 \end{align}
-where $x_{k}$ denotes the position of the particle $k$ among $q$. For any fixed $q$ we must consider all possible values of $(c_{i})_{i\in\{1,\ldots,m\}}$ such that its sum is equal to $q$. For each of these $(c_{i})_{i\in\{1,\ldots,m\}}$ we add a term given by  
+ For any fixed $q$ we must consider all possible values of $(c_{i})_{i\in\{1,\ldots,m\}}$ such that its sum is equal to $q$. For each of these $(c_{i})_{i\in\{1,\ldots,m\}}$ we add a term given by  
 \begin{equation}
-	\prod_{k=1}^{L}\left(L+2-x_{k}-\sum_{i=k}^{L}c_{i}\right)^{c_{k}}\dt
+	\prod_{x=1}^{L}\left(L+2-x-\sum_{i=x}^{L}c_{i}\right)^{c_{x}}=\prod_{k=1}^{q}\left(L+2-x_{k}-\sum_{i=x_{k}}^{L}c_{i}\right)
 \end{equation}
-We can introduce $\ell_{1},\ldots,\ell_{q}\in\{1,\ldots,m\}$ such that $\ell_{1}<\ell_{2}<\cdots<\ell_{q}$ and write 
+where $x_{k}$ is the position of the $k$-th particle among $q$. 
+We introduce $\ell_{1},\ldots,\ell_{q}\in\{1,\ldots,L\}$ such that $\ell_{1}<\ell_{2}<\cdots<\ell_{q}$, thus we have that 
 \begin{equation}
-	\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}\prod_{k=1}^{L}\left(L+2-x_{k}-\sum_{i=k}^{L}c_{i}\right)^{c_{k}}=\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\prod_{k=1}^{q}\left(L+2-\ell_{k}-(q-k+1)\right)\dt
+	\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}\prod_{k=1}^{q}\left(L+2-x_{k}-\sum_{i=x_{k}}^{L}c_{i}\right)=\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-(q-k+1)\right)\dt
 \end{equation}
 Moreover, we observe that 
 \begin{equation}
@@ -1760,9 +1762,9 @@ Moreover, we observe that
 \end{equation}
 All in all we obtain 
 \begin{equation}\label{PsiI-N2}
-\Psi^{'}(\bm{\ell},q)=\sum_{q=0}^{L}(\alpha-\beta)^{q}\beta^{L-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\prod_{k=1}^{q}\frac{\left(L+1-\ell_{k}-q+k\right)}{(2+L-k)}\dt
+\Psi^{'}(\bm{\tau})=\sum_{q=0}^{|\bm{\tau}|}(\alpha-\beta)^{q}\beta^{L-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation}
-where $\bm{\ell}=(\ell_{1},\ldots,\ell_{q})$. 
+\end{comment}
 \subsection{Exact steady state correlations}\label{correlation-section}
 In this section we write a formula for the stationary steady state correlations between $m$- points of the chain, each of them occupied by a non empty species, i.e. a species with label from $1$ to $N-1$. This is motivated by interest of understanding how actual particles of the chain are correlated among each others and also because the holes depends on the occupation of all other species, as a consequence of the constraint $n_{N}^{x}=\nu-\sum_{b=1}^{N-1}n_{b}^{x}$ for arbitrary $x\in \{1,\ldots,L\}$. Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $\bm{y}=(y_{1},\ldots,y_{m})$, such that $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$. In each of these points there is a particle of species $s_{i}\in \{1,\ldots,N-1\}$. Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
 \begin{equation}\label{exactCorrelations}
@@ -1802,7 +1804,7 @@ Therefore, comparing this formula and \eqref{absProbabilitiesIntegrable}, we can
 where $\hat{\bm{\xi}}=\sum_{i=1}^{m}\delta_{s_{i}}^{y_{i}}$. 
 \\ \\
 \textbf{Remark}: In case of $N=2$ we stop distinguishing the types of (non-empty) particles and we retrieve the closed formula for correlations in the non-equilibrium steady state found in \cite{frassek2020eigenstates}. Indeed, by adapting \eqref{PsiI-N2} we obtain 
-\begin{comment} introducing $q=\sum_{j=1}^{m}c_{i}$ in the colour-blind situation \eqref{exactCorrelations} becomes
+ introducing $q=\sum_{j=1}^{m}c_{i}$ in the colour-blind situation \eqref{exactCorrelations} becomes
 \begin{align}
 	\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=&\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\frac{\Gamma(L+2-q)}{\Gamma(L+2)}\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{m}=q\}}
 	\\&\prod_{k=1}^{m}\left(L+2-y_{k}-\sum_{i=k}^{m}c_{i}\right)^{c_{k}}\dt
@@ -1819,7 +1821,7 @@ Moreover, we observe that
 \begin{equation}
 	\frac{\Gamma(L+2-q)}{\Gamma(2+L)}=\prod_{k=1}^{q}\frac{1}{(2+L-k)}\dt
 \end{equation}
-\end{comment}
+All in all we have that
 \begin{equation}
 \langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-y_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation}
