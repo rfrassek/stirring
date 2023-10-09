@@ -1391,12 +1391,12 @@ where
 \end{equation}
 \textbf{Remark}: In case of $N=2$ we can introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. Moreover, we call $\ell_{1},\ldots,\ell_{q}$ the coordinates where particles of type $1$ are present. Thus, the coefficient of the above formula can be written as
 \begin{align}
-&\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},1}\right)\right]^{1-\delta_{\tau_{x},N}}\right)%=\lambda_{1}^{q}\prod_{x=1}^{L}\left(2+L-y_{x}-\sum_{j=x}^{L}\delta_{\tau_{j},1}\right)^{\delta_{\tau_{x},1}}
+&\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},2}\right)\right]^{1-\delta_{\tau_{x},N}}\right)%=\lambda_{1}^{q}\prod_{x=1}^{L}\left(2+L-y_{x}-\sum_{j=x}^{L}\delta_{\tau_{j},1}\right)^{\delta_{\tau_{x},1}}
 =\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-\sum_{j=k+1}^{q}\delta_{\tau_{x_{j}},1}\right)}{(2+L-k)}
 \end{align}
-Moreover, for each $q\in \{1,\ldots,L\}$ we introduce the coordinates $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ and, by varying $q$, we have a one-to-one mapping with $\bm{\tau}$. Therefore, we can write 
+Moreover, for each $q\in \{1,\ldots,L\}$ using the coordinates $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$, calling $\bm{\ell}=(\ell_{1},\ldots,\ell_{q})$ and, by varying $q$, we have a one-to-one mapping with $\bm{\tau}$. Therefore, we can write 
 \begin{equation}
-	|\Psi^{''}\rangle=\sum_{q=0}^{L}\lambda_{1}^{k}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
+	|\Psi^{''}\rangle=\sum_{q=0}^{L}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
 \end{equation}
 %and the basis vector $|\bm{\tau}\rangle =\bigotimes_{x=1}^{L}|\tau_{x}\rangle$ with $\tau_{x}\in\{1,\ldots,N\}$ denotes the species that occupies the site $i\in \{1,\ldots,L\}$.
 \paragraph{Proof of formula \eqref{ResulsBasis}} 
@@ -1579,6 +1579,10 @@ where
 %		0\quad \text{if}\quad \tau_{y}=1
 %	\end{cases}\qquad \forall y\in \{1,\ldots,L\}
 %\end{equation}
+\textbf{Remark}: In case of $N=2$ we can argue as in the case of $|\Psi^{''}\rangle$ and we obtain 
+\begin{equation}
+	|\Psi^{'}\rangle= 
+\end{equation}
 \paragraph{Proof of formula \eqref{ABS-vect}} Using \eqref{S2-Inverse} we have $|\Psi^{'}\rangle=S_{2}^{-1}|\Psi^{''}\rangle$, thus we only need to show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Here it is more convenient to consider the matrix $\mathcal{S}_{2}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and then make explicitly the tensor product over the chain. Using the exponential series, the matrix $\mathcal{S}_{2}$ is given by 
 \begin{equation}
    \mathcal{S}_{2}^{-1}=\mathbbm{1}+\sum_{a=1}^{N-1}\beta_{a}e_{aN}\co
@@ -1732,7 +1736,7 @@ Therefore, we have that equation \eqref{ABS_intermediate} becomes
 %Because of the exponent $(1-\delta_{\tau_{x},1})$, the element $\Psi^{''}(\bm{\tau})$ has, up the term $\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{\tau_{x},1})}{\Gamma(L+2)}$, a contribution of a factor $\lambda_{\tau_{x}}\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{x},1})\right)$ if the site is non empty, and a contribution of a factor "$1$" if the site is empty, it is convenient to introduce the $c_{i}$ of defined in \eqref{CiEquation}. Then, equation  \eqref{ABS_intermediate} reads 
 \begin{equation}\label{elementsABS}
 	\begin{split}
-		\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{\Gamma(2+L-\sum_{x=1}^{L}c_{x})}{\Gamma(2+L)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\left(\beta_{\tau_{y}}\right)^{(1-c_{y})(1-\delta_{\tau_{y},N})}
+		\Psi^{'}(\bm{\tau})=&\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\mathbbm{1}_{\{c_{1}+\ldots+c_{L}>0\}}\frac{\Gamma(2+L-\sum_{x=1}^{L}c_{x})}{\Gamma(2+L)}\\&\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\left(\beta_{\tau_{y}}\right)^{(1-c_{y})(1-\delta_{\tau_{y},N})}
 	\end{split}
 \end{equation} 
 %Indeed, when $c_{i}=0$ this formula replaces the contribution in the square brackets with a $\beta_{\tau_{x}}$. 
