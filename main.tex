@@ -1570,7 +1570,7 @@ where
 %		0\quad \text{if}\quad \tau_{y}=1
 %	\end{cases}\qquad \forall y\in \{1,\ldots,L\}
 %\end{equation}
-\paragraph{Proof of formula \eqref{ABS-vect}} As a consequence of \eqref{S2-Inverse}, we only need to show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Here it is more convenient to consider the matrix $\mathcal{S}_{2}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and then make explicitly the tensor product over the chain. Using the exponential series, the matrix $\mathcal{S}_{2}$ is given by 
+\paragraph{Proof of formula \eqref{ABS-vect}} Using \eqref{S2-Inverse} we have $|\Psi^{'}\rangle=S_{2}^{-1}|\Psi^{''}\rangle$, thus we only need to show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Here it is more convenient to consider the matrix $\mathcal{S}_{2}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and then make explicitly the tensor product over the chain. Using the exponential series, the matrix $\mathcal{S}_{2}$ is given by 
 \begin{equation}
    \mathcal{S}_{2}^{-1}=\mathbbm{1}+\sum_{a=1}^{N-1}\beta_{a}e_{aN}\co
 \end{equation}
@@ -1837,7 +1837,7 @@ Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,x_{k},c_{k},\ldots,c_{m})$ an
 \end{comment}
 \subsubsection{Explicit examples of steady state correlations}
 We give some examples of correlations applying formula \eqref{exactCorrelations}.
-\paragraph{One point correlations}
+\paragraph{One-point correlations}
 The average with respect to the non equilibrium distribution of the occupation variable of the species $s_{1}\in \{1,\ldots,N-1\}$ at coordinate $y_{1}\in \{1,\ldots,L\}$ reads
 \begin{equation}
 	\langle n_{s_{1}}^{y_{1}}\rangle_{\text{stat}}=\sum_{c_{1}=0}^{1}f(L,c_{1})(\alpha_{s_{1}}-\beta_{s_{1}})^{c_{1}}\beta_{s_{1}}^{1-c_{1}}g_{s_{1}}(L,y_{1},c_{1})
@@ -1846,8 +1846,8 @@ Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain
 \begin{equation}\label{one-pts-corr}
 \langle n_{s_{1}}^{y_{1}}\rangle_{\text{stat}}=\frac{(L+1-y_{1})}{L+1}(\alpha_{s_{1}}-\beta_{s_{1}})+\beta_{s_{1}}
 \end{equation}
-\paragraph{Two points correlations}
-The two points correlations with respect to the non equilibrium distribution of the occupation variable of the species $s_{1},s_{2}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2}\in \{1,\ldots,L\}$ with $x_{1}< x_{2}$ reads 
+\paragraph{Two-point correlations}
+The two-point correlations with respect to the non equilibrium distribution of the occupation variable of the species $s_{1},s_{2}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2}\in \{1,\ldots,L\}$ with $x_{1}< x_{2}$ reads 
 \begin{equation}
 	\begin{split}
 	\langle n_{a_{1}}^{y_{1}}n_{a_{2}}^{y_{2}}\rangle_{\text{stat}}= \sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}f(L,c_{1},c_{2})\prod_{k=1}^{2}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(L,y_{k},c_{k},c_{2})
@@ -1866,7 +1866,7 @@ Therefore, we compute the second cumulant, i.e. the two-point connected correlat
 	\end{split}
 \end{equation}
 \paragraph{Three points correlations}
-The three points correlations with respect to the non equilibrium distribution of the occupation variable of the species $s_{1},s_{2},s_{3}\in \{1,\ldots,N-1\}$ at coordinates $y_{1},y_{2},y_{3}\in \{1,\ldots,L\}$ such that $y_{1}<y_{2}<y_{3}$
+The three-point correlations with respect to the non equilibrium distribution of the occupation variable of the species $s_{1},s_{2},s_{3}\in \{1,\ldots,N-1\}$ at coordinates $y_{1},y_{2},y_{3}\in \{1,\ldots,L\}$ such that $y_{1}<y_{2}<y_{3}$
 \begin{equation}
     \langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}n_{s_{3}}^{y_{3}}\rangle_{\text{stat}}=\sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}\sum_{c_{3}=0}^{1}f(L,c_{1},c_{2},c_{3})\prod_{k=1}^{2}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(L,y_{k},c_{k},\ldots,c_{3})
 \end{equation}
