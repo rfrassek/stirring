@@ -1389,12 +1389,12 @@ where
         0\quad \text{otherwise}
     \end{cases}
 \end{equation}
-\textbf{Remark}: In case of $N=2$ we can introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. Moreover, we for each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. By varying $q$, we have a one-to-one mapping with $\bm{\tau}$. Thus, the coefficient of the above formula can be written as
+\textbf{Remark}: In case of $N=2$ we introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. Moreover, we for each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. By varying $q$, we have a one-to-one mapping with $\bm{\tau}$. Thus, the coefficient of the above formula can be written as
 \begin{align}
 &\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},2}\right)\right]^{1-\delta_{\tau_{x},N}}\right)%=\lambda_{1}^{q}\prod_{x=1}^{L}\left(2+L-y_{x}-\sum_{j=x}^{L}\delta_{\tau_{j},1}\right)^{\delta_{\tau_{x},1}}
 =\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-\sum_{j=x_{k}+1}^{L}\delta_{\tau_{x_{j}},1}\right)}{(2+L-k)}\dt
 \end{align}
-Therefore, we can write 
+Therefore, we write 
 \begin{equation}
 	|\Psi^{''}\rangle=\sum_{q=0}^{L}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
 \end{equation}
@@ -1568,7 +1568,7 @@ By knowing the steady state  of the Hamiltonian $H^{''}$ we use \eqref{S2-Invers
 where  
 \begin{equation}\label{ABS}
 		\begin{split}
-			\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\tau_{x}}\left(2+L-x-\sum_{x=x}^{L}c_{j}\right)\right)^{c_{x}}\beta_{\tau_{y}}^{(1-c_{x})(1-\delta_{\tau_{x},N})}
+			\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\tau_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}\beta_{\tau_{x}}^{(1-c_{x})(1-\delta_{\tau_{x},N})}
 		\end{split}
 	\end{equation} 
 	%\com{Double check this. Sum looks strange}
@@ -1579,7 +1579,29 @@ where
 %		0\quad \text{if}\quad \tau_{y}=1
 %	\end{cases}\qquad \forall y\in \{1,\ldots,L\}
 %\end{equation}
-\textbf{Remark}: In equation \eqref{ABS} we observe that when $\tau_{x}=N$ we have just a contribution of a factor $1$ on the product over $x$. Indeed, the empty species does not produce changes in the correlations between the non-empty species. 
+\textbf{Remark}: In equation \eqref{ABS} we observe that when $\tau_{x}=N$ we have just a contribution of a factor $1$ on the product over $x$. Indeed, the empty species does not produce changes in the correlations between the non-empty species. \\ \\
+\textbf{Remark:} If we consider the case $N=2$ we have that, for an arbitrary configuration $\bm{\tau}$, we can identify $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x},1}$ occupied sites and the remaining $L-|\bm{\tau}|$ empty. We denote by $(x_{i})_{i\in\{1,\ldots,|\bm{\tau}|\}}$ the coordinates of the occupied sites. We introduce $q\in\{0,\ldots,|\bm{\tau}|\}$ and we rewrite \eqref{ABS} as
+\begin{align}
+	\Psi^{'}(\bm{\tau})=&\sum_{q=0}^{|\bm{\tau}|}(\alpha-\beta)^{q}\beta^{L-q}\frac{\Gamma(L+2-q)}{\Gamma(L+2)}\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}
+	\\&\prod_{x=1}^{L}\left(L+2-x-\sum_{i=x}^{L}c_{i}\right)^{c_{x}}\dt
+\end{align}
+For any fixed $q$ we must consider all possible values of $(c_{i})_{i\in\{1,\ldots,m\}}$ such that its sum is equal to $q$. For each of these $(c_{i})_{i\in\{1,\ldots,m\}}$ we add a term given by  
+\begin{equation}
+	\prod_{x=1}^{L}\left(L+2-x-\sum_{i=x}^{L}c_{i}\right)^{c_{x}}=\prod_{k=1}^{q}\left(L+2-x_{k}-\sum_{i=x_{k}}^{L}c_{i}\right)
+\end{equation}
+We introduce $\ell_{1},\ldots,\ell_{q}\in\{1,\ldots,L\}$ such that $\ell_{1}<\ell_{2}<\cdots<\ell_{q}$, and such that $\ell_{i}\in\{1,\ldots,|\bm{\tau}|\}$ for all $i\in\{1,\ldots,q\}$. Therefore, we can label each occupied coordinate by $x_{\ell_{i}}$. It follows that we have
+\begin{equation}
+	\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}\prod_{k=1}^{q}\left(L+2-x_{k}-\sum_{i=x_{k}}^{L}c_{i}\right)=\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq |\bm{\tau}|}\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-(q-k+1)\right)\dt
+\end{equation} 
+Observing that
+\begin{equation}
+	\frac{\Gamma(L+2-q)}{\Gamma(2+L)}=\prod_{k=1}^{q}\frac{1}{(2+L-k)}\co
+\end{equation}
+we finally obtain 
+\begin{equation}\label{PsiI-N2}
+	\Psi^{'}(\bm{\tau})=\sum_{q=0}^{|\bm{\tau}|}(\alpha-\beta)^{q}\beta^{L-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq |\bm{\tau}|}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
+\end{equation}
+
 \paragraph{Proof of formula \eqref{ABS-vect}} Using \eqref{S2-Inverse} we have $|\Psi^{'}\rangle=S_{2}^{-1}|\Psi^{''}\rangle$, thus we only need to show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Here it is more convenient to consider the matrix $\mathcal{S}_{2}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and then make explicitly the tensor product over the chain. Using the exponential series, the matrix $\mathcal{S}_{2}$ is given by 
 \begin{equation}
    \mathcal{S}_{2}^{-1}=\mathbbm{1}+\sum_{a=1}^{N-1}\beta_{a}e_{aN}\co
@@ -1804,6 +1826,7 @@ Therefore, comparing this formula and \eqref{absProbabilitiesIntegrable}, we can
 where $\hat{\bm{\xi}}=\sum_{i=1}^{m}\delta_{s_{i}}^{y_{i}}$. 
 \\ \\
 \textbf{Remark}: In case of $N=2$ we stop distinguishing the types of (non-empty) particles and we retrieve the closed formula for correlations in the non-equilibrium steady state found in \cite{frassek2020eigenstates}. Indeed, by adapting \eqref{PsiI-N2} we obtain 
+\begin{comment}
  introducing $q=\sum_{j=1}^{m}c_{i}$ in the colour-blind situation \eqref{exactCorrelations} becomes
 \begin{align}
 	\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=&\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\frac{\Gamma(L+2-q)}{\Gamma(L+2)}\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{m}=q\}}
@@ -1822,6 +1845,7 @@ Moreover, we observe that
 	\frac{\Gamma(L+2-q)}{\Gamma(2+L)}=\prod_{k=1}^{q}\frac{1}{(2+L-k)}\dt
 \end{equation}
 All in all we have that
+\end{comment}
 \begin{equation}
 \langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-y_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation}
