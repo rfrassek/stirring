@@ -310,9 +310,10 @@ is the density of specie $a$ and we used the notation $|\alpha|=\sum_{a=1}^{N}\a
 \end{equation}
 This can be proved  by checking that detailed balance is satisfied. 
 If condition \eqref{reversibilityCondition} is not met, then reversibility is lost: each reservoir at site $x$ wants to fix its own set of densities $\rho^{x}=(\rho_{1}^{x},\ldots,\rho_{N}^{x})$ with
- $$
+\begin{equation}
+\label{rhox}
 \rho_{a}^x=\frac{\alpha_{a}}{|\alpha^x|}
-$$
+\end{equation}
 and  $|\alpha^x|=\sum_{a=1}^{N}\alpha_{a}$. 
 Currents will arise when at least two reservoirs have different densities. 
 
@@ -579,7 +580,9 @@ This means that to each site $x\in V$ we associate an ``extra-site'' via a bijec
 \begin{equation}\label{dualStateSpace}
     \widetilde{\Omega}= \bigotimes_{x\in V} \widetilde{\Omega}_{x}\ = \bigotimes_{x\in V} (\Omega_{x}\times \mathbb{N}_{0}^{N})\dt
 \end{equation}
-Dual particle will accumulate in these extra-sites in the course of time. We write the configurations $\bm{\xi} \in \widetilde\Omega$  as
+Note that on the extra-site we allow an unbounded number of particles. Thus
+dual particle will accumulate in these extra-sites in the course of time. 
+We write the configurations $\bm{\xi} \in \widetilde\Omega$  as
 \begin{equation}
     \bm{\xi}=\left(\xi_{1}^{x},\ldots,\xi_{N}^{x},\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\right)_{x\in V}
 \end{equation}
@@ -587,13 +590,13 @@ where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles
 and the component $\xi_{a}^{u(x)}$  gives the number of dual particles of type $a\in \{1,\ldots,N\}$ at 
 the extra-site $u(x)$ connected to $x\in V$.
 
-The duality function is given by
+We define the duality function of the open multi-species stirring process as
 \begin{equation}\label{dualityElements}
 	D(\bm{n},\bm{\xi})=\prod_{x\in V}\left(\frac{(\nu -\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\,\right)
 \end{equation}
-where we denote the \textit{density} of the species $a\in \{1,\ldots,N-1\}$ imposed by the reservoir at site $x\in V$  by 
+where we recall the notation (see \eqref{rhox}) for the \textit{density} of the species $a\in \{1,\ldots,N-1\}$ imposed by the reservoir at site $x\in V$:
 \begin{equation}
-\rho_{a}^{x}:=\frac{\alpha_{a}^{x}}{|\alpha^{x}|}\dt
+\rho_{a}^{x}=\frac{\alpha_{a}^{x}}{|\alpha^{x}|}\dt
 \end{equation}
 The dual process is defined by its Markov generator, which reads
  \begin{equation}\label{DualGenerator}
@@ -608,13 +611,16 @@ $\mathcal{L}_{x,y}$ is defined in \eqref{edgeGenerator} and, for any function $f
 Therefore the dual dynamics is described as follows. On one hand, the edge part $\mathcal{L}_{x,y}$ of the dual Markov generator gives rise to  the multi-species stirring dynamics on the graph. On the other hand, the site
 part $\widetilde{\mathcal{L}}_{x}$ of the dual generator replaces a particle of any type $a\in\{1,\ldots,N-1\}$ at site $x$ with a particle of type $N$ and creates a particle of the same type $a$ at the extra-site $u(x)$. This last transition is performed with rate $|\alpha^{x}|\xi_{a}^{x}$. This means that eventually the dual process voids the graph, putting all the dual particles of species $\{1,\ldots,N-1\}$ in the extra-sites. In other words the extra-sites play the role of absorbing boundaries. 
 \newline \newline
-\textbf{Remark}: in the reversible situation, i.e. when $\forall x\in V$ we have $\rho_{a}^{x}=\rho_{a}$, the expectation  of the duality function  $D(\bm{n},\bm{\xi})$ with   $\bm{n}$ distributed as  $\mu_{rev} = \bigtimes_{x\in V}\text{Multinomial}\left(\twoj, \rho_{1},\ldots,\rho_{N}\right)$ is
+\textbf{Remark}: in the reversible situation, i.e. when $\forall x\in V$ we have $\rho_{a}^{x}=\rho_{a}$, the expectation  of the duality function  $D(\bm{n},\bm{\xi})$ with   $\bm{n}$ distributed as  $\mu_{rev} = \bigotimes_{x\in V}\text{Multinomial}\left(\twoj, \rho_{1},\ldots,\rho_{N}\right)$ is
 \begin{equation}
 \mathbb{E}_{\mu^{rev}}\left[D(\bm{n},\bm{\xi})\right]=\prod_{a=1}^{N-1}\left(\rho_{a}\right)^{\sum_{x\in V}\xi_{a}^{x}+\sum_{x\in V}\xi_{a}^{u(x)}}\qquad \forall \bm{n}\in \Omega,\quad\forall \bm{\xi}\in \widetilde{\Omega}\dt
 \end{equation}
 
 \subsection{Proof of duality}
-To prove duality between $(\bm{n}(t))_{t\geq 0}$ and $(\bm{\xi}(t))_{t\geq 0}$ we  show that \eqref{dualityIntertwines} is fulfilled.  To show this, we will use the Hamiltonians (linked with the Markov generators by \eqref{Hamiltonian-Generator}) and their Lie algebraic description. Indeed, in this formalism the proof reduces to finding symmetries and group like transformation of generators of the Lie algebra.\\
+To prove duality between $(\bm{n}(t))_{t\geq 0}$ and $(\bm{\xi}(t))_{t\geq 0}$ we  show that \eqref{DualityRelation} is fulfilled.  To show this, we will use the Hamiltonians and their Lie algebraic description. Indeed, in this formalism the proof 
+reduces to finding symmetries of the generator (for the bulk duality) and group like transformations (for the ``boundary duality'').
+
+
 To a configuration $\bm{\xi}$ of the configuration space  \eqref{dualStateSpace} of a dual process we associate the vector
 \begin{equation}
     |\bm{\xi}\rangle=\bigotimes_{x\in V}\left(|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\otimes |\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle\right)\dt
@@ -625,31 +631,32 @@ The Hamiltonian of the dual process reads
 \end{equation}
 where $\mathcal{H}_{x,y}$ is the one defined in \eqref{edgeHamiltonian}, while 
 \begin{equation}\label{siteDualHamiltonian}
-    \widetilde{H}_{x}=|\alpha^{x}|\sum_{a=1}^{N-1}\left((a^{\dagger})_{a}^{u(x)}\,E_{Na}^{x}-E_{aa}^{x}\right)\dt
+    \widetilde{H}_{x}=|\alpha^{x}|\sum_{a=1}^{N-1}\left((A^{\dagger})_{a}^{u(x)}\,E_{Na}^{x}-E_{aa}^{x}\right)\dt
 \end{equation}
-Here we introduced bosonic creation operator $a^{\dagger}$ acting on the left-hand-side as $\langle q|a^{\dagger}=\langle q+1|$ on a generic vector $\langle q|$ with $q\in \mathbb{N}_{0}$, so that in \eqref{siteDualHamiltonian} 
-$(a^{\dagger})_{a}^{u(x)}$ denotes a copy of $a^{\dagger}$ acting on the extra-site $u(x)$ and on the species $a\in\{1,\ldots,N-1\}$. \\
-We will show below that the Hamiltonians \eqref{OriginalHamiltonian} and \eqref{DualHamiltonian} are dual in the sense of \eqref{DualityRelation}. The duality matrix $D$ is described as 
+Here we introduced bosonic creation operator $A^{\dagger}$ acting on the left-hand-side as $\langle q|A^{\dagger}=\langle q+1|$ on a generic vector $\langle q|$ with $q\in \mathbb{N}_{0}$, so that in \eqref{siteDualHamiltonian} 
+$(A^{\dagger})_{a}^{u(x)}$ denotes a copy of $A^{\dagger}$ acting on the extra-site $u(x)$ and on the species $a\in\{1,\ldots,N-1\}$. \\
+We will show below that the Hamiltonians \eqref{OriginalHamiltonian} and \eqref{DualHamiltonian} are dual in the sense of \eqref{DualityRelation}. From an algebraic point of view, the duality matrix $D$ \eqref{dualityElements} is described as 
 \begin{equation}\label{dualityMatrix}
-    D=\prod_{x\in V}d_{x}\otimes \dd
+    D=\prod_{x\in V}d_{x}\otimes \dd \;.
 \end{equation}
-where
+Here
 \begin{equation}\label{bulkElementDualityMatrix}
 d_{x}=R_{x}\exp{(E^{x})}
 \end{equation}
 with 
-\begin{equation}\label{EquationEx}
-E^{x}=\sum_{a=1}^{N-1}E_{aN}^{x}
-\end{equation}
-and
 \begin{equation}\label{Revmatrix}
     R_{x}=\sum_{n^{x}\in\Omega_{x}}\frac{\prod_{a=1}^{N}n_{a}^{x}!}{\nu!}|n_{1}^{x},\ldots,n_{N}^{x}\rangle\langle n_{1}^{x},\ldots,n_{N}^{x}|
 \end{equation}
-and where 
+and
+\begin{equation}\label{EquationEx}
+E^{x}=\sum_{a=1}^{N-1}E_{aN}^{x}\,.
+\end{equation}
+Furthermore
 \begin{equation}\label{dualityMatrix2}
 \dd=\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\dt
 \end{equation}
-The matrix $R_{x}$ is diagonal. Its elements are related to the inverse of the weights of the reversible measure \eqref{reversibleMeasure}. In particular, to obtain these elements, we have considered the weights of \eqref{reversibleMeasure} when all the parameters $p_{i}=\frac{1}{N}$. Then, the constant $\left(\frac{1}{N}\right)^{\nu}$ has been neglected, since it does not change the duality relation. This $R_{x}$ is called the ``cheap'' duality matrix (see \cite{giardina2009duality}). \\
+We observe that the matrix $R_{x}$ is diagonal. Its elements are related to the inverse of the weights of the reversible measure \eqref{reversibleMeasure}. In particular, to obtain these elements, we have considered the weights of \eqref{reversibleMeasure} when all the parameters $\rho_{a}=\frac{1}{N}$. Then, the constant $\left(\frac{1}{N}\right)^{\nu}$ has been neglected, since it does not change the duality relation. This $R_{x}$ is called the ``cheap'' duality matrix and is associated to reversibility (see \cite{giardina2009duality}). \\
+
 Since \eqref{dualityMatrix} is product over sites, proving \eqref{DualityRelation} is equivalent to showing that 
 \begin{equation}\label{edgeDualRealtion}
     \mathcal{H}_{x,y}^{T}D=D\mathcal{H}_{x,y}\qquad \forall (x,y)\in \mathcal{E}
@@ -658,7 +665,7 @@ and
 \begin{equation}\label{siteDualRelation}
     H_{x}^{T}D=D\widetilde{H}_{x}\qquad \forall x\in V.
 \end{equation}
-We perform the proof of duality in three steps: first we will show that matrix \eqref{dualityMatrix} has elements \eqref{dualityElements}; second we will prove \eqref{edgeDualRealtion}; finally we will show \eqref{siteDualRelation}. 
+We perform the proof of duality in three steps: first we will show that matrix \eqref{dualityMatrix} has elements \eqref{dualityElements}; second we will prove the bulk duality \eqref{edgeDualRealtion}; finally we will show the boundary duality \eqref{siteDualRelation}. 
 As a preliminary result we note that 
 \begin{equation}\label{transpositionPropertyR}
 (E_{ba}^{x})^{T}=R_{x}E_{ab}^{x}R_{x}^{-1}\qquad \forall x\in V
@@ -679,11 +686,12 @@ R_{x}E_{ab}^{x}R_{x}^{-1}=&\sum_{r^{x}\in\Omega_{x}}\frac{\xi_{1}^{x}!\ldots r_{
 \end{align*}
 where in the up to last equation we used the orthogonality relation \eqref{ortho}. 
 \end{comment}
-\paragraph{Elements of the duality matrix.}We aim to show that 
+\paragraph{Elements of the duality matrix.}
+Consider the matrix $D$ defined in \eqref{dualityMatrix}.
+We aim to show that its matrix elements coincide with duality function \eqref{dualityElements}, i.e.
 \begin{equation}\label{proofDualityElements}
-\langle \bm{n}|D|\bm{\xi}\rangle=D(\bm{n},\bm{\xi})\qquad   \forall \bm{n}\in \Omega,\quad \bm{\xi}\in \widetilde{\Omega}
+\langle \bm{n}|D|\bm{\xi}\rangle=D(\bm{n},\bm{\xi})\qquad   \forall \bm{n}\in \Omega,\quad \bm{\xi}\in \widetilde{\Omega}\,.
 \end{equation}
-with $D(\bm{n},\bm{\xi})$ defined in \eqref{dualityElements}. 
 Fix an arbitrary site $x\in V$, then we have that 
 \begin{align*}
 	 &\langle n^{x}|d_{x}\otimes \dd|\xi^{x}\rangle\\=&\langle n_{1}^{x},\ldots,n_{N}^{x}| (\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x}}))^{T}R_{x}\otimes\sum_{q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|
@@ -694,7 +702,7 @@ On one hand, on the extra-site $u(x)$ we have
 \begin{align*}
 \sum_{q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle=\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}
 \end{align*}
-where we used the orthogonality relation \eqref{ortho}. 
+where {\color{red} we used the orthogonality relation \eqref{ortho}}. 
 On the other hand, on the site $x$, we have 
 \begin{align*}
 &\langle n_{1}^{x},\ldots,n_{N}^{x}|(\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x})})^{T}R_{x}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\\&= \langle  n_{1}^{x},\ldots,n_{N}^{x}|\left(\sum_{k_{1}=0}^{\infty}\frac{\left\{\left(E_{N1}^{x}\right)^{T}\right\}^{k_{1}}}{k_{1}!}\ldots\sum_{k_{N-1}=0}^{\infty}\frac{\left\{\left(E_{N\,N-1}^{x}\right)^{T}\right\}^{k_{N-1}}}{k_{N-1}!}\sum_{s\in\Omega_{x}}\frac{s_{1}^{x}!\ldots s_{N}^{x}!}{\nu!}|s_{1}^{x},\ldots,s_{N}^{x}\rangle\langle s_{1}^{x},\ldots,s_{N}^{x}|\right)
