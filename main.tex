@@ -1203,7 +1203,7 @@ Indeed, using \eqref{HadTransfBoundary}, \eqref{ratesConditions} and \eqref{tran
 \end{equation}
 Similarly, for the right boundary we have 
 \begin{equation}
-H_{right}^{'}=S_{L}H_{right}S_{L}^{-1}=
+H_{right}^{'}=S_{1}H_{right}S_{1}^{-1}=
 % \exp{\left(\sum_{c=1}^{N-1}e_{1N}^{L}\right)}\sum_{a,b=1}^{N}\alpha_{a}\left(e_{ab}^{L}-e_{bb}^{L}\right)\exp{\left(-\sum_{c=1}^{N-1}e_{Nc}^{L}\right)}=
 \sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}\right)\dt
 \end{equation}
@@ -1222,7 +1222,7 @@ We introduce
 that is composed by a copy of $\mathcal{S}_{2}$ (see \eqref{S2Gen}) acting at site $x$ and with identities acting at all other sites of the chain. 
 Therefore, by taking the product over the chain we obtain 
 \begin{equation}\label{S2-Whole}
-	S_{2}=\prod_{x=1}^{L}S_{2}^{x}\dt
+	S_{2}=\prod_{x=1}^{L}\mathcal{S}_{2}^{x}\dt
 \end{equation}
 We define 
 \begin{equation}\label{HSecond}
@@ -1257,20 +1257,21 @@ Indeed
 Therefore, using \eqref{HT-BA} we obtain for the left boundary 
 \begin{equation}
 	\begin{split}
-		H_{left}^{''}&=S_{2}H_{left}^{'}S_{2}^{-1}=\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{1}\right)}\sum_{a=1}^{N-1}\left(\alpha_{a}e_{aN}^{1}-e_{aa}^{1}\right)\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{1}\right)}
-		\\&=
+		H_{left}^{''}&=S_{2}H_{left}^{'}S_{2}^{-1}
+% 		=\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{1}\right)}\sum_{a=1}^{N-1}\left(\alpha_{a}e_{aN}^{1}-e_{aa}^{1}\right)\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{1}\right)}
+		=
 		\sum_{a=1}^{N-1}\left(\alpha_{a}e_{aN}^{1}-e_{aa}^{1}-\beta_{a}e_{aN}^{1}\right)
-		\\&=
+		=
 		e_{NN}^{1}-\mathbbm{1}+\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1}\dt
 	\end{split}
 \end{equation}
 Similarly, using again \eqref{HT-BA} we have for the right boundary 
 \begin{equation}
 	\begin{split}
-			H_{right}^{''}&=\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{L}\right)}\sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}\right)\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{L}\right)}
-			\\&=
+			H_{right}^{''}=S_{2}H_{right}^{'}S_{2}^{-1}
+% 			&=\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{L}\right)}\sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}\right)\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{L}\right)}
+			=
 			\sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}-\beta_{a}e_{aN}^{L}\right)=
-			\\&=
 			e_{NN}^{L}-\mathbbm{1}\dt
 	\end{split}
 \end{equation}
