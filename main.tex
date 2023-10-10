@@ -1265,7 +1265,7 @@ Therefore, using \eqref{HT-BA} we obtain for the left boundary
 Similarly, using again \eqref{HT-BA} we have for the right boundary 
 \begin{equation}
 	\begin{split}
-			H_{right}^{''}&=\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{L}\right)}\sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}\right)\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{L}\right)}
+			H_{right}^{''}&=S_{2}H_{right}^{'}S_{2}^{-1}=\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{L}\right)}\sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}\right)\exp{\left(-\sum_{c=1}^{N-1}\beta_{c}e_{cN}^{L}\right)}
 			\\&=
 			\sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}-\beta_{a}e_{aN}^{L}\right)=
 			\\&=
@@ -1292,19 +1292,7 @@ and, the relation between eigenvectors with vanishing eigenvalue is
 \begin{equation}
 	|\Psi\rangle=S^{-1}|\Psi^{''}\rangle\dt
 \end{equation}
-\textbf{Notation}: sometimes, in the following, we will denote differently the configuration of this hard-core chain. Each configuration can be written as
-\begin{equation}\label{Tau-Notation}
-	|\bm{\tau}\rangle=|\tau_{1},\ldots,\tau_{L}\rangle =\begin{pmatrix}
-		\tau_{1}\\
-		\vdots\\
-		\tau_{L}
-	\end{pmatrix}
-\end{equation}
-with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. This notation is equivalent to the one introduced in Subsection \ref{subsectionGeneratorStr}. Indeed, assume that at site $x$ we have a particle of type $a\in\{1,\ldots,N\} $, then $|n^{x}\rangle$ is composed by zeros but in the component $n_{a}^{x}$ where there is $1$. Therefore, we can uniquely associate  $\tau_{x}=a$ to this $|n^{x}\rangle$, denoting the presence of the species $a$ at site $x$. With this notation, we have that 
-\begin{equation}\label{notation}
-	|n^{x}\rangle =\tau_{x}\qquad \text{and}\qquad|\bm{n}\rangle=|\bm{\tau}\rangle
-\end{equation}
-with the meaning explained above. It will be useful to introduce also $\bm{\tau}=(\tau_{x})_{x\in \{1,\ldots,L\}}$. 
+
 \begin{comment}
 Using \eqref{transformationV} we introduce the \textit{similarity transformation} 
 \begin{equation}\label{similarity}
@@ -1378,6 +1366,19 @@ The steady states $|\Psi\rangle$, $|\widehat{\Psi}\rangle$ and $|\widetilde{\Psi
 In the following subsections we will first compute the steady state $|\widetilde{\Psi}\rangle$. Then, using the transformation $\mathcal{T}$ we will retrieve $|\widehat{\Psi}\rangle$. Finally, using the transformation $\mathcal{V}$ we will find $|\Psi\rangle$. 
 \end{comment}
 \subsubsection{Explicit formula for $|\Psi^{''}\rangle$}\label{subsectionSSHsec}
+\textbf{Notation}: sometimes, in the following, we will denote differently the configuration of this hard-core chain. Each configuration can be written as
+\begin{equation}\label{Tau-Notation}
+	|\bm{\tau}\rangle=|\tau_{1},\ldots,\tau_{L}\rangle =\begin{pmatrix}
+		\tau_{1}\\
+		\vdots\\
+		\tau_{L}
+	\end{pmatrix}
+\end{equation}
+with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. This notation is equivalent to the one introduced in Subsection \ref{subsectionGeneratorStr}. Indeed, assume that at site $x$ we have a particle of type $a\in\{1,\ldots,N\} $, then $|n^{x}\rangle$ is composed by zeros but in the component $n_{a}^{x}$ where there is $1$. Therefore, we can uniquely associate  $\tau_{x}=a$ to this $|n^{x}\rangle$, denoting the presence of the species $a$ at site $x$. With this notation, we have that 
+\begin{equation}\label{notation}
+	|n^{x}\rangle =\tau_{x}\qquad \text{and}\qquad|\bm{n}\rangle=|\bm{\tau}\rangle
+\end{equation}
+with the meaning explained above. It will be useful to introduce also $\bm{\tau}=(\tau_{x})_{x\in \{1,\ldots,L\}}$. \\
 We state the following result: the ground state of the Hamiltonian $H^{''}$ is given by 
 \begin{equation}\label{ResulsBasis}
 	|\Psi^{''} \rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}\right)|\mathbf{\bm{\tau}}\rangle
@@ -1788,7 +1789,7 @@ All in all we obtain
 \end{equation}
 \end{comment}
 \subsection{Exact steady state correlations}\label{correlation-section}
-In this section we write a formula for the stationary steady state correlations between $m$- points of the chain, each of them occupied by a non empty species, i.e. a species with label from $1$ to $N-1$. This is motivated by interest of understanding how actual particles of the chain are correlated among each others and also because the holes depends on the occupation of all other species, as a consequence of the constraint $n_{N}^{x}=\nu-\sum_{b=1}^{N-1}n_{b}^{x}$ for arbitrary $x\in \{1,\ldots,L\}$. Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $\bm{y}=(y_{1},\ldots,y_{m})$, such that $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$. In each of these points there is a particle of species $s_{i}\in \{1,\ldots,N-1\}$. Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
+In this section we write a formula for the stationary steady state correlations between $m$- points of the chain, each of them occupied by a non empty species, i.e. a species with label from $1$ to $N-1$. This is motivated by the interest of understanding how actual particles of the chain are correlated among each others and also because in the steady state the holes depends on the occupation of all other species, as a consequence of the constraint $n_{N}^{x}=1-\sum_{b=1}^{N-1}n_{b}^{x}$ for arbitrary $x\in \{1,\ldots,L\}$. Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $\bm{y}=(y_{1},\ldots,y_{m})$, such that $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$. In each of these points there is a particle of species $s_{i}\in \{1,\ldots,N-1\}$. Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
 \begin{equation}\label{exactCorrelations}
 		\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{c_{1},\ldots,c_{m}=0}^{1}
 			f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(L,y_{k},c_{k},\ldots,c_{m})
@@ -1801,7 +1802,7 @@ In this section we write a formula for the stationary steady state correlations 
 	\begin{equation}\label{powerCoeffNOspec}
 		f(L,c_{1},\ldots,c_{m})=\frac{\Gamma(L+2-\sum_{i=1}^{m}c_{i})}{\Gamma(L+2)}
 	\end{equation}
-\textbf{Remark}: using binomial theorem we rewrite the \eqref{exactCorrelations} as 
+\textbf{Remark}: using the binomial theorem we rewrite the \eqref{exactCorrelations} as 
 \begin{equation}
 \begin{split}
 \langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=&
@@ -1811,7 +1812,7 @@ f(L,c_{1},\ldots,c_{m})\prod_{q=1}^{m}\left(\sum_{t_{k}=0}^{c_{k}}(-1)^{c_{q}-t_
 f(L,c_{1},\ldots,c_{m})\sum_{t_{1}=0}^{c_{1}}\ldots\sum_{t_{m}=0}^{c_{m}}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}\alpha_{s_{q}}^{t_{q}}\beta_{s_{q}}^{1-t_{q}}g_{q}(L,y_{q},c_{q},\ldots,c_{m})
 \end{split}
 \end{equation}
-By exchanging the summations we rewrite it as 
+By exchanging the summations we rewrite as 
 \begin{equation}
 \begin{split}
 \langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=&\sum_{t_{1},\ldots,t_{m}=0}^{1}
