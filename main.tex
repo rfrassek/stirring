@@ -1154,7 +1154,7 @@ computation. The idea is summarized as follows. We define a sequence of similari
 \begin{equation}
 	H\;\xleftrightarrow{S_{1}}\;H^{'}\;\xleftrightarrow{S_{2}}\;H^{''}
 \end{equation} 
-where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Using these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} become simpler. As a consequence, the steady state $|\Psi^{''}\rangle$ of $H^{''}$ can be written explicitly. Finally, reversing the transformations we can retrieve $|\Psi\rangle$.
+where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Using these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} become simpler. As a consequence, the steady state $|\Psi^{''}\rangle$ of $H^{''}$ can be written explicitly. Finally, reversing the transformations we retrieve $|\Psi\rangle$.
 
 The first transformation $S_{1}$ is closely related to the duality matrix and we will see that $H^{'}$ is $\widetilde{H}^{T}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. The second transformation $S_{2}$ diagonalizes the right boundary. Finally, the composition  $S_{2} S_{1}$ allows to simplify the commutators of the MPA algebra. \\
 
@@ -1187,7 +1187,7 @@ S_{1}=\prod_{x=1}^{L}d_{x}^{T}
 \end{equation}
  The transformation $S_{1}$ is invertible. We introduce 
 \begin{equation}\label{hatHamiltonian}
-   H^{'}:=H^{'}_{left}+H_{bulk}+H^{'}_{right}
+   H^{'}=H^{'}_{left}+H_{bulk}+H^{'}_{right}
 \end{equation}
 that is related to $H$ by
 \begin{equation}\label{similarV}
@@ -1240,7 +1240,7 @@ that is related to $H'$ by
 \begin{equation}
 	H^{''}=S_{2}H^{'}S_{2}^{-1}\dt
 \end{equation}
-The boundary Hamiltonians of $H^{''}$ read
+The boundary Hamiltonians of $H^{''}$ reads
 \begin{align}\label{tri-diag-boundaryHamiltonians}
 	H_{left}^{''}=e_{NN}^{1}-\mathbbm{1}+\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1}\qquad H_{right}^{''}=e_{NN}^{L}-\mathbbm{1}\dt
 \end{align}
@@ -1389,12 +1389,12 @@ In the following subsections we will first compute the steady state $|\widetilde
 		\vdots\\
 		\tau_{L}
 	\end{pmatrix}
-\end{equation}
+\end{equation} 
 with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. This notation is equivalent to the one introduced in Subsection \ref{subsectionGeneratorStr}. Indeed, assume that at site $x$ we have a particle of type $a\in\{1,\ldots,N\} $, then $|n^{x}\rangle$ is composed by zeros but in the component $n_{a}^{x}$ where there is $1$. Therefore, we can uniquely associate  $\tau_{x}=a$ to this $|n^{x}\rangle$, denoting the presence of the species $a$ at site $x$. With this notation, we have that 
 \begin{equation}\label{notation}
-	|n^{x}\rangle =\tau_{x}\qquad \text{and}\qquad|\bm{n}\rangle=|\bm{\tau}\rangle
+	|n^{x}\rangle =|\tau_{x}\rangle \qquad \text{and}\qquad|\bm{n}\rangle=|\bm{\tau}\rangle
 \end{equation}
-with the meaning explained above. It will be useful to introduce also $\bm{\tau}=(\tau_{x})_{x\in \{1,\ldots,L\}}$. \\
+with the meaning explained above. It will be useful to introduce also $\bm{\tau}=(\tau_{x})_{x\in \{1,\ldots,L\}}$. \\ \\
 We state the following result: the ground state of the Hamiltonian $H^{''}$ is given by 
 \begin{equation}\label{ResulsBasis}
 	|\Psi^{''} \rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}\right)|\mathbf{\bm{\tau}}\rangle
@@ -1518,13 +1518,13 @@ Multiplying by the boundary vectors and by using \eqref{commRIGHT} we have
 %Using 
 \begin{align}
 	\langle V^{*}|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}
-	|V \rangle\nonumber&=\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{x}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}+\lambda_{a}\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|V\rangle\nonumber
+	|V \rangle\nonumber&=\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}+\lambda_{a}\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|V\rangle\nonumber
 	\\&=
 	\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|V\rangle\nonumber
 	\\&=
 	\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}|V\rangle
 \end{align}
-To determine the state we now need to compute $\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}|V\rangle$. Calling $\sum_{x=1}^{L}n_{N}^{x}=n_{N}$ and using \eqref{commLEFT} for $a\in \{1,\ldots,N-1\}$ we obtain 
+To determine the state we now need to compute $\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}|V\rangle$. Calling $\sum_{i=1}^{L}n_{N}^{i}=n_{N}$ and using \eqref{commLEFT} for $a\in \{1,\ldots,N-1\}$ we obtain 
 \begin{align*}
 	\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle&=\langle V^{*}|\widetilde{X}_{N}\widetilde{X}_{N}^{n_{N}-1}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle +\langle V^{*}|\frac{1}{\lambda_{a}}\widetilde{X}_{a}\widetilde{X}_{N}^{n_{N}-1}|V\rangle
 	\\&=
@@ -1551,7 +1551,7 @@ Therefore, we obtain
 By using this result we have 
 \begin{equation}
 	\langle V^{*}|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}
-	|V \rangle=\frac{\Gamma(2+n_{N})}{\Gamma(2)}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}
+	|V \rangle=\Gamma(2+n_{N})\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}
 \end{equation}
 The normalization constant is computed similarly as 
 \begin{align*}
@@ -1635,23 +1635,36 @@ By projecting over a vector $\langle \bm{\tau}|$ we have
 \begin{equation}\label{goodTP-S2}
   \langle \bm{\tau}|\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L} |\bm{\mu}\rangle=\prod_{i=1}^L\left[ \delta_{\tau_i,\mu_i}+\delta_{N,\mu_i}\beta_{\tau_i} (1-\delta_{\tau_i,N})\right]
 \end{equation} 
-For a fixed configuration $\bm{\mu}=(\mu_{1},\ldots,\mu_{L})$, using equation \eqref{ResulsBasis} and observing that 
+We introduce $\forall x\in\{1,\ldots,L\}$, for $i\in \{1,\ldots,L\}$ and $q_{1},\ldots,q_{i}\in\{1,\ldots,L\}$ the configuration 
 \begin{equation}
-	\left(1+\sum_{j=y}^{L}\delta_{\mu_{j},N}\right) =\left(2+L-y-\sum_{j=y}^{L}(1-\delta_{\mu_{y},N})\right)
+	\varphi_{x}^{i}(q_{1},\ldots,q_{i})=\begin{cases}
+		\tau_{x}\qquad &\text{if}\quad x\notin\{q_{1},\ldots,q_{i}\}\\
+		N\qquad &\text{if}\quad x\in\{q_{1},\ldots,q_{i}\}\\
+	\end{cases}\dt
 \end{equation}
-we obtain 
+This is a new configuration where the occupations $\tau_{q_{1}},\ldots,\tau_{q_{i}}$ at sites $q_{1},\ldots,q_{i}$ are replaced with $N$'s, while the occupations on the other sites are left untouched. The dependence of $\varphi_{x}^{i}(q_{1},\ldots,q_{i})$ with respect to $q_{1},\ldots,q_{i}$ is usually understood for the sake of notation. By considering a fixed $\langle\bm{\tau}|$, and by using \eqref{goodTP-S2} we obtain 
+\begin{equation}\label{ABS_intermediate}
+	\begin{split}
+		\Psi^{'}(\bm{\tau})&=\langle \bm{\tau}|(\mathcal{S}_{2}^{-1})^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\varphi_{1}^{1},\ldots,\varphi_{L}^{1})\beta_{q_{1}^{1}}\\&+
+		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\varphi_{1}^{2},\ldots,\varphi_{L}^{2})\beta_{a_{1}}\beta_{a_{2}}\\&+\ldots+\Psi^{''}(N,\ldots,N)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}\dt%^{1-\delta_{\tau_{x},N}}
+	\end{split}
+\end{equation}
+For a fixed configuration $\bm{\mu}=(\mu_{1},\ldots,\mu_{L})$, by using equation \eqref{ResulsBasis},we obtain 
 \begin{equation}
-	\Psi^{''}(\bm{\mu})=\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\mu_{x},N})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\mu_{x}}\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\mu_{j},N})\right)\right)^{1-\delta_{\mu_{x},N}}\dt
+	\Psi^{''}(\bm{\mu})=\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\mu_{x},N})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\mu_{x}}\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\mu_{j},N})\right)\right)^{1-\delta_{\mu_{x},N}}\co
+\end{equation} where we have used the fact that 
+\begin{equation}
+	\left(1+\sum_{j=x}^{L}\delta_{\mu_{j},N}\right) =\left(2+L-y-\sum_{j=x}^{L}(1-\delta_{\mu_{x},N})\right)\co
 \end{equation}
 Introducing $c_{x}$ defined as 
 \begin{equation}
-	c_{x}(\mu_{x})=(1-\delta_{\mu_{x},N}) \qquad \forall x\in \{1,\ldots L\}
+	c_{x}(\mu_{x})=(1-\delta_{\mu_{x},N}) \qquad \forall x\in \{1,\ldots L\}\co
 \end{equation}
 we obtain 
 \begin{equation}\label{coefficients-psiSec}
 	\Psi^{''}(\bm{\mu})=\frac{\Gamma(2+L-\sum_{x=1}^{L}c_{x})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\mu_{y}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}
 \end{equation}
-where, for the sake of notation we left understood the dependence on $\mu_{x}$ of $c_{x}$.
+where, for the sake of notation we left understood the dependence on $\mu_{x}$ of $c_{x}$.\\
 \begin{comment}
 We introduce the following notation
 \begin{equation}\label{notation1}
@@ -1674,14 +1687,6 @@ and
     	\end{split}
     \end{equation}
 \end{comment}
-We introduce $\forall x\in\{1,\ldots,L\}$, for $i\in \{1,\ldots,L\}$ and $q_{1},\ldots,q_{i}\in\{1,\ldots,L\}$ the configuration 
-\begin{equation}
-	\varphi_{x}^{i}(q_{1},\ldots,q_{i})=\begin{cases}
-		\tau_{x}\qquad &\text{if}\quad x\notin\{q_{1},\ldots,q_{i}\}\\
-		N\qquad &\text{otherwise}\\
-	\end{cases}\dt
-\end{equation}
- This is a new configuration where  $\tau_{q_{1}},\ldots,\tau_{q_{i}}$ with $N$ and leaves the others sites with the same occupation.  The dependence of $\varphi_{x}^{i}(q_{1},\ldots,q_{i})$ with respect to $q_{1},\ldots,q_{i}$ is usually understood for the sake of notation.
     \begin{comment}
     We prove it by induction. When $L=1$ it is true, indeed
     \begin{equation}
@@ -1758,18 +1763,10 @@ To find these quantities we need to fix the rows correspondent to $\bm{\tau}$ in
 	\end{split}
 \end{equation}
 \end{comment}
-By considering a fixed $\langle\bm{\tau}|$, by taking \begin{equation}|\Psi^{''}\rangle=\sum_{\mu_{1},\ldots,\mu_{L}=1}^{N}\Psi^{''}(\bm{\mu})|\bm{\mu}\rangle\end{equation} with the coefficients \eqref{coefficients-psiSec} and by using \eqref{goodTP-S2} we write 
-\begin{equation}\label{ABS_intermediate}
-	\begin{split}
-		\Psi^{'}(\bm{\tau})&=\langle \bm{\tau}|(\mathcal{S}_{2}^{-1})^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\varphi_{1}^{1},\ldots,\varphi_{L}^{1})\beta_{q_{1}^{1}}\\&+
-		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\varphi_{1}^{2},\ldots,\varphi_{L}^{2})\beta_{a_{1}}\beta_{a_{2}}\\&+\ldots+\Psi^{''}(N,\ldots,N)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}\dt%^{1-\delta_{\tau_{x},N}}
-	\end{split}
-\end{equation}
-
-Therefore, we have that equation \eqref{ABS_intermediate} becomes
-
-
+%Now we can write the ground state of $H^{''}$ as \begin{equation}|\Psi^{''}\rangle=\sum_{\mu_{1},\ldots,\mu_{L}=1}^{N}\Psi^{''}(\bm{\mu})|\bm{\mu}\rangle\end{equation} with the coefficients $\psi^{''}(\bm{\mu})$ are given in \eqref{coefficients-psiSec}.
+%Therefore, we have that equation \eqref{ABS_intermediate} becomes
 %Because of the exponent $(1-\delta_{\tau_{x},1})$, the element $\Psi^{''}(\bm{\tau})$ has, up the term $\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{\tau_{x},1})}{\Gamma(L+2)}$, a contribution of a factor $\lambda_{\tau_{x}}\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{x},1})\right)$ if the site is non empty, and a contribution of a factor "$1$" if the site is empty, it is convenient to introduce the $c_{i}$ of defined in \eqref{CiEquation}. Then, equation  \eqref{ABS_intermediate} reads 
+Therefore, using equation \eqref{ABS_intermediate}, we obtain 
 \begin{equation}\label{elementsABS}
 	\begin{split}
 		\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{\Gamma(2+L-\sum_{x=1}^{L}c_{x})}{\Gamma(2+L)}\prod_{x=1}^{L}\left(\lambda_{\tau_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}\left(\beta_{\tau_{x}}\right)^{(1-c_{x})(1-\delta_{\tau_{x},N})}
