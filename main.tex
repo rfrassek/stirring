@@ -1965,12 +1965,58 @@ Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain
 \end{align}
 Therefore, we compute the third cumulant, i.e. the three-point connected correlation as 
 \begin{align}
-	\langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}n_{s_{3}}^{y_{3}}\rangle_{stat}^{c}&=\mathbb{E}\left[n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}\right]-\mathbb{E}\left[n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}\right]\mathbb{E}\left[n_{s_{3}}^{y_{3}}\right]-\mathbb{E}\left[n_{s_{1}}^{y_{1}}n_{s_{3}}^{y_{3}}\right]\mathbb{E}\left[n_{s_{2}}^{y_{2}}\right]\\&-\mathbb{E}\left[n_{s_{3}}^{y_{3}}n_{s_{2}}^{y_{2}}\right]\mathbb{E}\left[n_{s_{1}}^{y_{1}}\right]+2\mathbb{E}\left[n_{s_{1}}^{y_{1}}\right]\mathbb{E}\left[n_{s_{2}}^{y_{2}}\right]\mathbb{E}\left[n_{s_{3}}^{y_{3}}\right]
+	\langle n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}n_{s_{3}}^{y_{3}}\rangle_{stat}^{c}&=\mathbb{E}\left[n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}\right]-\mathbb{E}\left[n_{s_{1}}^{y_{1}}n_{s_{2}}^{y_{2}}\right]\mathbb{E}\left[n_{s_{3}}^{y_{3}}\right]-\mathbb{E}\left[n_{s_{1}}^{y_{1}}n_{s_{3}}^{y_{3}}\right]\mathbb{E}\left[n_{s_{2}}^{y_{2}}\right]\nonumber\\&-\mathbb{E}\left[n_{s_{3}}^{y_{3}}n_{s_{2}}^{y_{2}}\right]\mathbb{E}\left[n_{s_{1}}^{y_{1}}\right]+2\mathbb{E}\left[n_{s_{1}}^{y_{1}}\right]\mathbb{E}\left[n_{s_{2}}^{y_{2}}\right]\mathbb{E}\left[n_{s_{3}}^{y_{3}}\right]\nonumber
 	\\&=
 	-\frac{2y_{1}(L+1-2y_{2})(L+1-y_{3})}{(L+1)^{3}(L-1)L}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})(\alpha_{s_{3}}-\beta_{s_{3}})\dt
 \end{align}
-\textbf{Remark}: the first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, match with the ones found in Subsection 4.3 of \cite{vanicat2017exact}. 
-
+\textbf{Remark}: the first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, match with the ones found in Subsection 4.3 of \cite{vanicat2017exact}. \\ \\
+{\color{blue}
+\textbf{How $|\Psi^{'}\rangle$ is related to steady state non-equilibrium correlations and to absorption probabilities?}\\
+We aim to compute correlations between non-empty species in the steady state. We know that for any chain length $L$ we have that the steady state $|\Psi\rangle$ is related to $|\Psi^{'}\rangle$ by
+\begin{equation*}
+	|\Psi\rangle=\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\Psi^{'}\rangle
+\end{equation*}
+We aim to compute the correlations between non-empty particles of an arbitrary configuration $\bm{\tau}$.
+This is equivalent to consider a shorter chain where only non-empty particles are left, while all the sites occupied by the empty $N$ are removed. 
+This chain has length $m=\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})$, where all these $m$ sites are occupied by particles of species for $1$ to $N-1$. To find the desired correlations we compute the steady state of this shorter chain. We denote its configuration chain by $\widehat{\bm{\tau}}$. This configuration is obtained from $\bm{\tau}$ by re-labelling properly the occupations from $1$ to $m$. Then, these $m$ point correlations can be computed by finding $\Psi(\widehat{\bm{\tau}})$.\\ \\ To clarify consider the example $N=3$ and $L=4$ where the empty is the species $3$. Take a configuration  
+\begin{align*}
+	\bm{\tau}=(\tau_{1}=2,\tau_{2}=3,\tau_{3}=1,\tau_{4}=3)
+\end{align*}
+What is the correlation between the occupied species? To compute this we can define the new chain of length $m=2$ with the configuration $\widehat{\bm{\tau}}=(\widehat{\tau}_{1}=2,\widehat{\tau}_{2}=1)$ and find the steady state $|\Psi\rangle$ of this shorter chain. \\ \\
+To compute the steady state of the shorter chain we can use the result that we have in the appendix A in equation \eqref{Tensor-S1}:
+\begin{equation*}
+		\langle \bm{\tau}|	\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\bm{\mu}\rangle=\prod_{x=1}^{L}\left(\delta_{\mu_{x},\tau_{x}}+(-1)\delta_{\tau_{x},N}\sum_{i_{x}=1}^{N-1}\delta_{\mu_{x},i_{x}}\right)
+\end{equation*}
+Thus, for the shorter chain we have that 
+\begin{equation*}
+	\langle \widehat{\bm{\tau}}|\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\bm{\mu}\rangle=\prod_{x=1}^{m}\left(\delta_{\mu_{x},\tau_{x}}\right)
+\end{equation*}
+this implies that 
+\begin{equation}
+	\Psi(\widehat{\bm{\tau}})=\Psi^{'}(\widehat{\bm{\tau}})
+\end{equation}
+where here both $|\Psi(\widehat{\bm{\tau}})\rangle$ and $|\Psi^{'}(\widehat{\bm{\tau}})\rangle$ are eigenvector with vanishing eigenvalue of chains of length $m$. 
+We have computed this $\Psi^{'}(\widehat{\bm{\tau}})$ in \eqref{exactCorrelations} as
+\begin{equation*}
+	\Psi^{'}(\widehat{\bm{\tau}})\sum_{c_{1},\ldots,c_{m}=0}^{1}
+	f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(L,y_{k},c_{k},\ldots,c_{m})
+\end{equation*}
+where 
+\begin{equation*}
+g_{k}(L,y_{k},c_{k},\ldots,c_{m})=\left(L+2-y_{k}-\sum_{i=k}^{m}c_{i}\right)^{c_{k}}
+\end{equation*}
+and 
+\begin{equation*}
+f(L,c_{1},\ldots,c_{m})=\frac{\Gamma(L+2-\sum_{i=1}^{m}c_{i})}{\Gamma(L+2)}
+\end{equation*}
+We also know from \eqref{CorrelationByABS-prob} that 
+\begin{equation*}
+	\Psi(\widehat{\bm{\tau}})= \sum_{c_{1}=0}^{1}\ldots \sum_{c_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{c_{k}}\beta_{a_{k}}^{1-c_{k}}\mathcal{P}(c_{1},\ldots,c_{m},\hat{\bm{\xi}})
+\end{equation*}
+therefore, we can read off the absorption probabilities. \\ \\
+This argument can be adapted for any $1\geq m\leq L$ to compute $m$-point correlations between non-empty species.\\ \\ 
+In general $|\Psi^{'}\rangle$ is the eigenvector with vanishing eigenvalue of $H^{'}$, but I believe it cannot be interpreted directly as a steady state, since $H^{'}$ is not a Markov matrix. However, it gives by the previous argument the exact correlations and as a consequence the absorption probabilities...
+}
 \section{Extensions for the non-integrable chain}
 In Sections \ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable using to integrability.  
 The aim of this section is studying some property of the process when integrability is lost. We fix $\nu\geq 1$ and, for the sake of simplicity, we keep the geometry of a chain. We provide the following extensions: 
@@ -2523,7 +2569,7 @@ By taking the tensor product over the chain we obtain
 	\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\bm{\mu}\rangle=\left(|\mu_{1}\rangle+(-1)\delta_{\mu_{1}<N}|N\rangle\right)\otimes \ldots \otimes \left(|\mu_{L}\rangle+(-1)\delta_{\mu_{L}<N}|N\rangle\right)
 \end{equation}
 therefore, projecting on $\langle \bm{\tau}|$ we have
-\begin{equation}
+\begin{equation}\label{Tensor-S1}
 	\langle \bm{\tau}|	\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\bm{\mu}\rangle=\prod_{x=1}^{L}\left(\delta_{\mu_{x},\tau_{x}}+(-1)\delta_{\tau_{x},N}\sum_{i_{x}=1}^{N-1}\delta_{\mu_{x},i_{x}}\right)
 \end{equation}
 \begin{comment}
