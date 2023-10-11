@@ -1406,12 +1406,12 @@ where
         0\quad \text{otherwise}
     \end{cases}
 \end{equation}
-\textbf{Remark}: In case of $N=2$ we introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. Moreover, for each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. By varying $q$, we have a one-to-one mapping with $\bm{\tau}$. Thus, the coefficient of the above formula can be written as
+\textbf{Remark}: In case of $N=2$ we introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. Moreover, for each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. Thus, the coefficient of the above formula can be written as
 \begin{align}
 &\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},2}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},2}\right)\right]^{1-\delta_{\tau_{x},2}}\right)%=\lambda_{1}^{q}\prod_{x=1}^{L}\left(2+L-y_{x}-\sum_{j=x}^{L}\delta_{\tau_{j},1}\right)^{\delta_{\tau_{x},1}}
 =\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-\sum_{j=x_{k}+1}^{L}\delta_{\tau_{x_{j}},1}\right)}{(2+L-k)}\dt
 \end{align}
-Therefore, we write 
+By varying $q$ and $\ell_{1},\ldots,\ell_{q}$, we have a one-to-one mapping with $\bm{\tau}$, therefore, we write 
 \begin{equation}
 	|\Psi^{''}\rangle=\sum_{q=0}^{L}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
 \end{equation}
@@ -1504,11 +1504,11 @@ Fix $ a\in \{1,\ldots,N-1\}$ and arbitrary $ \ell,n\in \mathbb{N}$. By applying 
 \end{align}
 therefore 
 \begin{align*}
-	\widetilde{X}_{1}^{n_{1}}\ldots\widetilde{X}_{N-1}^{n_{N-1}}\widetilde{X}_{N}^{n_{N}}=\widetilde{X}_{N}^{n_{N}}\prod_{a=1}^{N-1}\left(\widetilde{X}_{a}+n_{N}\lambda_{a}\right)^{n_{a}}
+	\widetilde{X}_{1}^{n_{1}}\ldots\widetilde{X}_{N-1}^{n_{N-1}}\widetilde{X}_{N}^{n_{N}}=\widetilde{X}_{N}^{n_{N}}\prod_{a=1}^{N-1}\left(\widetilde{X}_{a}+n_{N}\lambda_{a}\right)^{n_{a}}\dt
 \end{align*}
 By taking the product over the sites $x$ from $1$ to $L$ we obtain 
 \begin{equation}
-	\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}=\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\widetilde{X}_{a}+\lambda_{a}\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}
+	\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}=\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\widetilde{X}_{a}+\lambda_{a}\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}\dt
 \end{equation}
 Multiplying by the boundary vectors and by using \eqref{commRIGHT} we have 
 %\begin{equation}
@@ -1522,7 +1522,7 @@ Multiplying by the boundary vectors and by using \eqref{commRIGHT} we have
 	\\&=
 	\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|V\rangle\nonumber
 	\\&=
-	\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}|V\rangle
+	\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}|V\rangle \dt
 \end{align}
 To determine the state we now need to compute $\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}|V\rangle$. Calling $\sum_{i=1}^{L}n_{N}^{i}=n_{N}$ and using \eqref{commLEFT} for $a\in \{1,\ldots,N-1\}$ we obtain 
 \begin{align*}
@@ -1635,14 +1635,14 @@ By projecting over a vector $\langle \bm{\tau}|$ we have
 \begin{equation}\label{goodTP-S2}
   \langle \bm{\tau}|\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L} |\bm{\mu}\rangle=\prod_{i=1}^L\left[ \delta_{\tau_i,\mu_i}+\delta_{N,\mu_i}\beta_{\tau_i} (1-\delta_{\tau_i,N})\right]
 \end{equation} 
-We introduce $\forall x\in\{1,\ldots,L\}$, for $i\in \{1,\ldots,L\}$ and $q_{1},\ldots,q_{i}\in\{1,\ldots,L\}$ the configuration 
+We introduce $\forall x\in\{1,\ldots,L\}$, for $i\in \{1,\ldots,L\}$ and $q_{1},\ldots,q_{i}\in\{1,\ldots,L\}$ 
 \begin{equation}
 	\varphi_{x}^{i}(q_{1},\ldots,q_{i})=\begin{cases}
 		\tau_{x}\qquad &\text{if}\quad x\notin\{q_{1},\ldots,q_{i}\}\\
 		N\qquad &\text{if}\quad x\in\{q_{1},\ldots,q_{i}\}\\
 	\end{cases}\dt
 \end{equation}
-This is a new configuration where the occupations $\tau_{q_{1}},\ldots,\tau_{q_{i}}$ at sites $q_{1},\ldots,q_{i}$ are replaced with $N$'s, while the occupations on the other sites are left untouched. The dependence of $\varphi_{x}^{i}(q_{1},\ldots,q_{i})$ with respect to $q_{1},\ldots,q_{i}$ is usually understood for the sake of notation. By considering a fixed $\langle\bm{\tau}|$, and by using \eqref{goodTP-S2} we obtain 
+This is a new configuration at site $x$ where, if $x\in\{q_{1},\ldots,q_{i}\}$, the occupation $\tau_{x}$ is replaced by $N$, while it is left uncaged if $x\notin \{q_{1},\ldots,q_{i}\}$. The dependence of $\varphi_{x}^{i}(q_{1},\ldots,q_{i})$ with respect to $q_{1},\ldots,q_{i}$ is usually understood for the sake of notation. By considering a fixed $\langle\bm{\tau}|$, and by using \eqref{goodTP-S2} we obtain 
 \begin{equation}\label{ABS_intermediate}
 	\begin{split}
 		\Psi^{'}(\bm{\tau})&=\langle \bm{\tau}|(\mathcal{S}_{2}^{-1})^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\varphi_{1}^{1},\ldots,\varphi_{L}^{1})\beta_{q_{1}^{1}}\\&+
