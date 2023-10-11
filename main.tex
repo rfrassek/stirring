@@ -635,6 +635,7 @@ where $\mathcal{H}_{x,y}$ is the one defined in \eqref{edgeHamiltonian}, while
 \end{equation}
 Here we introduced bosonic creation operator $A^{\dagger}$ acting on the left-hand-side as $\langle q|A^{\dagger}=\langle q+1|$ on a generic vector $\langle q|$ with $q\in \mathbb{N}_{0}$, so that in \eqref{siteDualHamiltonian} 
 $(A^{\dagger})_{a}^{u(x)}$ denotes a copy of $A^{\dagger}$ acting on the extra-site $u(x)$ and on the species $a\in\{1,\ldots,N-1\}$. \\
+
 We will show below that the Hamiltonians \eqref{OriginalHamiltonian} and \eqref{DualHamiltonian} are dual in the sense of \eqref{DualityRelation}. From an algebraic point of view, the duality matrix $D$ \eqref{dualityElements} is described as 
 \begin{equation}\label{dualityMatrix}
     D=\prod_{x\in V}d_{x}\otimes \dd \;.
@@ -708,10 +709,10 @@ On the other hand, on the site $x$, we have
 &\langle n_{1}^{x},\ldots,n_{N}^{x}|(\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x})})^{T}R_{x}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\\&= \langle  n_{1}^{x},\ldots,n_{N}^{x}|\left(\sum_{k_{1}=0}^{\infty}\frac{\left\{\left(E_{N1}^{x}\right)^{T}\right\}^{k_{1}}}{k_{1}!}\ldots\sum_{k_{N-1}=0}^{\infty}\frac{\left\{\left(E_{N\,N-1}^{x}\right)^{T}\right\}^{k_{N-1}}}{k_{N-1}!}\sum_{s\in\Omega_{x}}\frac{s_{1}^{x}!\ldots s_{N}^{x}!}{\nu!}|s_{1}^{x},\ldots,s_{N}^{x}\rangle\langle s_{1}^{x},\ldots,s_{N}^{x}|\right)
 \\&
 \hspace{2.cm}\qquad|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle
-\\&=
-\sum_{k_{1}=0}^{n_{1}^{x}}\ldots\sum_{k_{N-1}=0}^{n_{N-1}^{x}}\langle n_{1}^{x}-k_{1},\ldots,n_{N-1}^{x}-k_{N-1},n_{N}^{x}+k_{1}+\ldots+k_{N-1}|
-\\&
-\hspace{2.cm}\prod_{a=1}^{N-1}\left((n_{a}^{x}(n_{a}^{x}-1)\ldots (n_{a}^{x}-k_{a}+1)\right)\frac{1}{k_{1}!,\ldots,k_{N-1}!}\frac{\xi_{1}^{x}!\ldots \xi_{N}^{x}!}{\nu!}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle
+%\\&=
+%\sum_{k_{1}=0}^{n_{1}^{x}}\ldots\sum_{k_{N-1}=0}^{n_{N-1}^{x}}\langle n_{1}^{x}-k_{1},\ldots,n_{N-1}^{x}-k_{N-1},n_{N}^{x}+k_{1}+\ldots+k_{N-1}|
+%\\&
+%\hspace{2.cm}\prod_{a=1}^{N-1}\left((n_{a}^{x}(n_{a}^{x}-1)\ldots (n_{a}^{x}-k_{a}+1)\right)\frac{1}{k_{1}!,\ldots,k_{N-1}!}\frac{\xi_{1}^{x}!\ldots \xi_{N}^{x}!}{\nu!}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle
 \\&=
 \sum_{k_{1}=0}^{n_{1}^{x}}\ldots\sum_{k_{N-1}=0}^{n_{N-1}^{x}}\langle n_{1}^{x}-k_{1},\ldots,n_{N-1}^{x}-k_{N-1},\ldots,n_{N}^{x}+k_{1}+\ldots+k_{N-1}|\frac{n_{1}^{x}!\ldots n_{N-1}^{x}!}{(n_{1}^{x}-k_{1})!\ldots(n_{N-1}^{x}-k_{N-1})!}
 \\& 
@@ -719,24 +720,29 @@ On the other hand, on the site $x$, we have
 \\&=
 \frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}
 \end{align*}
-where in the last equality we applied the orthogonality relations \eqref{ortho} and the fact that $\xi_{N}^{x}=\nu-\sum_{a=1}^{N-1}\xi_{a}^{x}$. Finally, by taking the product over $x\in V$ \eqref{proofDualityElements} is proved.
+where we used the definitions of the action of $E_{ab}$ {\color{red} and the orthogonality relations \eqref{ortho}}, together with the fact that $\xi_{N}^{x}=\nu-\sum_{a=1}^{N-1}\xi_{a}^{x}$. 
+Finally, by taking the product over $x\in V$ \eqref{proofDualityElements} is proved.
 \begin{flushright}
     $\square$
 \end{flushright}
-\paragraph{Proof of \eqref{edgeDualRealtion}.}To show this relation we need two 'ingredients'. First the existence of a similarity transformation between the Hamiltonian $\mathcal{H}_{x,y}$  and its transposed. As we will show, this similarity transformation is $R_{x}R_{y}$.  Second, the possibility of finding a symmetry for the edge Hamiltonian. Exploiting \eqref{hamiltonianCasimir}, we will search for a symmetry of the second Casimir $C_{2}$. As we will see, this symmetry is $\sum_{a=1}^{N-1}E_{aN}$ \\
-We first look for the similarity between $\mathcal{H}_{x,y}$ and its transposed. Using \eqref{transpositionPropertyR} we obtain 
- 
+
+
+\paragraph{Proof of bulk duality \eqref{edgeDualRealtion}.}To show this relation we need two 'ingredients'. First the existence of a similarity transformation between the Hamiltonian $\mathcal{H}_{x,y}$  and its transposed. As we will show, this similarity transformation is $R_{x}R_{y}$.  Second, the possibility of finding a symmetry for the edge Hamiltonian. Exploiting \eqref{hamiltonianCasimir}, we can take any symmetry of the Casimir and apply the co-product. As we will see, it will be convenient to choose $\sum_{a=1}^{N-1}E_{aN}$. 
+
+We first look for the similarity between $\mathcal{H}_{x,y}$ and its transposed. Using \eqref{transpositionPropertyR} we obtain  
 \begin{equation}\label{transpositionPropertyH}
     \mathcal{H}_{x,y}^{T}=\left(R_{x}R_{y}\right)\mathcal{H}_{x,y}\left(R_{x}R_{y}\right)^{-1}
 \end{equation}
 therefore we have found the similarity transformation between $\mathcal{H}_{x,y}$ and its transposed. \\
 We now look for a symmetry of $\mathcal{H}_{x,y}$, i.e. a matrix $S_{x,y}$ of the same dimension such that it satisfies 
 \begin{equation}
-	\mathcal{H}_{x,y}S_{x,y}=S_{x,y}\mathcal{H}_{x,y}\quad \Leftrightarrow \quad [\mathcal{H}_{x,y},S_{x,y}]=0\dt
+	\mathcal{H}_{x,y}S_{x,y}=S_{x,y}\mathcal{H}_{x,y}
+	%\quad \Leftrightarrow \quad [\mathcal{H}_{x,y},S_{x,y}]=0
+	\dt
 \end{equation}
-Using \eqref{hamiltonianCasimir}, we observe that $\mathcal{H}_{x,y}$ is proportional to the coproduct of the second Casimir, up to a diagonal term. Therefore, it is enough to look for a symmetry of $\Delta (C_{2})$. Using the bilinearity of the coproduct operator and the fact that $C_{2}$ belongs to the centre of the Lie algebra, it is easy to show that for any matrix $E\in gl(N)$ it holds
+Using \eqref{hamiltonianCasimir}, we observe that $\mathcal{H}_{x,y}$ is proportional to the coproduct of the second Casimir, up to a diagonal term. Therefore, it is enough to look for a symmetry of $\Delta (C)$. Using the bilinearity of the coproduct operator and the fact that $C$ belongs to the centre of the Lie algebra, it is easy to show that for any matrix $E\in gl(N)$ the following holds:
 \begin{equation}
-	[C_{2},E]=0\quad \Rightarrow\quad \left[\Delta (C_{2}),\Delta(E)) \right]=0\dt
+ \text{if } \quad	[C,E]=0\qquad  \text{ then }\qquad \left[\Delta (C),\Delta(E)) \right]=0\dt
 \end{equation}
 We chose 
 \begin{equation}
@@ -744,13 +750,13 @@ We chose
 \end{equation}
 and, for a fixed $(x,y)\in \mathcal{E}$, we define
 \begin{equation}
-	S_{x,y}=\exp{(\Delta^{x,y}(E))}=\exp{(E^{x})}\exp{(E^{y})}
+	S_{x,y}=\exp{(\Delta_{x,y}(E))}=\exp{(E^{x})}\exp{(E^{y})}
 \end{equation}
-where $\Delta^{x,y}(E)$ is a copy of the coproduct acting on sites $x$ and $y$. Therefore, this operator $S_{x,y}$ satisfies
+where $\Delta_{x,y}(E)$ is a copy of the coproduct acting on sites $x$ and $y$. As a consequence, this operator $S_{x,y}$ satisfies
 \begin{equation}\label{symmetryH}
 	\left[S_{x,y},\mathcal{H}_{x,y}\right]=0
 \end{equation}
-i.e. it is a symmetry of $\mathcal{H}_{x,y}$. \\ Exploiting these considerations we write
+i.e. it is a symmetry of $\mathcal{H}_{x,y}$. Exploiting these considerations we may write
 
 
 \begin{comment}
@@ -778,8 +784,8 @@ i.e. $S_{x,y}$ is a symmetry of $\mathcal{H}_{x,y}$. \\ Exploiting these conside
 \end{comment}
 \begin{equation}
     \begin{split}
-        \mathcal{H}_{x,y}^{T}D&=(R_{x}R_{y})\mathcal{H}_{x,y}(R_{x}R_{y})^{-1}\left(d_{x}\otimes\dd\right)\left(d_{y}\otimes\mathcal{D}_{\widehat{y}}\right)\prod_{z\in V\,:\, z\neq x,y}\left(d_{z}\otimes \mathcal{D}_{\widehat{z}}\right)
-        \\&=\left(R_{x}\exp{(E^{x})}\otimes \dd\right)\left(R_{y}\exp{(E^{y})}\otimes \mathcal{D}_{\widehat{y}}\right)\mathcal{H}_{x,y}\prod_{z\in V\,:\, z\neq x,y}\left(d_{z}\otimes \mathcal{D}_{\widehat{z}}\right)
+        \mathcal{H}_{x,y}^{T}D&=(R_{x}R_{y})\mathcal{H}_{x,y}(R_{x}R_{y})^{-1}\left(d_{x}\otimes\dd\right)\left(d_{y}\otimes\mathcal{D}_{u(y)}\right)\prod_{z\in V\,:\, z\neq x,y}\left(d_{z}\otimes \mathcal{D}_{u(z)}\right)
+        \\&=\left(R_{x}\exp{(E^{x})}\otimes \dd\right)\left(R_{y}\exp{(E^{y})}\otimes \mathcal{D}_{u(y)}\right)\mathcal{H}_{x,y}\prod_{z\in V\,:\, z\neq x,y}\left(d_{z}\otimes \mathcal{D}_{u(z)}\right)
         \\&=
         D\mathcal{H}_{x,y}
     \end{split}
@@ -793,12 +799,12 @@ i.e. $S_{x,y}$ is a symmetry of $\mathcal{H}_{x,y}$. \\ Exploiting these conside
  \begin{flushright}
      $\square$
  \end{flushright}
- \paragraph{Proof of \eqref{siteDualRelation}.} To prove \eqref{siteDualRelation} we need to transform via the Hadamard formula the transposed of the site Hamiltonian \eqref{siteDualHamiltonian} and then to  introduce properly a creation operator acting on an extra-site $u(x)$. % that we connect to every site $x\in V$ of the graph $G$. \\
+ \paragraph{Proof of boundary duality \eqref{siteDualRelation}.} To prove \eqref{siteDualRelation} we need to transform via the Hadamard formula the transposed of the site Hamiltonian \eqref{siteDualHamiltonian} and then to  introduce properly a creation operator acting on an extra-site $u(x)$. % that we connect to every site $x\in V$ of the graph $G$. \\
  Considering $A,B\in gl(N)$, the Hadamard formula reads 
  \begin{equation}\label{HadamardFormula}
      \exp{(-B)}A\exp{(B)}=A-\left[B,A\right]+\frac{1}{2!}\left[B,\left[B,A\right]\right]-\frac{1}{3!}\left[B,\left[B,\left[B,A\right]\right]\right]+\ldots
  \end{equation}
-In the following we need the application of the Hadamard formula with $B=\sum_{a=1}^{N-1}E_{aN}$ defined in \eqref{EquationEx} and with $A$ equal to some of the generator $E_{cd}$ of the Lie algebra with $c,d\in\{1,\ldots,N\}$. Therefore we compute 
+In the following we need the application of this with $B=\sum_{a=1}^{N-1}E_{aN}$ defined in \eqref{EquationEx} and with $A$ equal to some of the generator $E_{cd}$ of the Lie algebra $gl(N)$ with $c,d\in\{1,\ldots,N\}$. Therefore we compute 
 \begin{align}
 	\left[B,A\right]=\sum_{a=1}^{N-1}\left[E_{aN},E_{cd}\right]=\delta_{cN}\sum_{a=1}^{N-1}E_{ad}-\delta_{d<N}E_{cN}
 \end{align}
@@ -811,7 +817,7 @@ and
 	\\=&
 	-2\delta_{cN}\delta_{d<N}\sum_{b=1}^{N-1}E_{bN}
 \end{align}
-From the third commutator on we always obtain zero. All in all we have that 
+From the third commutator on we always obtain zero, i.e. $[B,[B,[B,A]]]=0$. All in all we have that 
  \begin{align}\label{HT-BA}
  	\exp{\left(-\sum_{a=1}^{N-1}E_{aN}\right)}E_{cd}\exp{\left(\sum_{a=1}^{N-1}E_{aN}\right)}=E_{cd}-\delta_{cN}\sum_{a=1}^{N-1}E_{ad}+\delta_{d<N}E_{cN}-\delta_{cN}\delta_{d<N}\sum_{b=1}^{N-1}E_{bN}\dt
  \end{align}
@@ -888,7 +894,9 @@ We multiply both sides by $R_{x}\exp{(E^{x})}$
     H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\sum_{a,b =1}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}\dt
 \end{equation}
 %By inserting the identity $I=\exp{(E^{x})}\exp{(-E^{x})}$ and 
-By using \eqref{HT-BA} and the fact that the first Casimir operator $C_{1}=\sum_{a,b=1}^{N}E_{ab}$ is central for the algebra we have 
+By using \eqref{HT-BA} and the fact that 
+%the first Casimir operator $C_{1}=
+$\sum_{a,b=1}^{N}E_{ab}$ is central for the algebra we have 
 \begin{comment}
 then, in the right hand side
 \begin{equation}\label{intermediateTransposeSite}
@@ -923,11 +931,11 @@ Thus, we rewrite \eqref{intermediateTransposeSite} as
 \begin{equation}\label{siteHadamardI}
 H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}|\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\dt
 \end{equation}
-Making the tensor product on both sides of \eqref{siteHadamardI} by 
+Taking the tensor product of both sides of \eqref{siteHadamardI} with 
 \begin{equation}
 \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|
 \end{equation}
-and we obtain 
+we obtain 
 \begin{equation}\label{siteHadamardII}
     \begin{split}
 &H_{x}^{T}d_{x}\otimes\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|
@@ -937,16 +945,16 @@ d_{x}\otimes \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}
 \end{equation}
 Recalling the action of the bosonic creation operator acting at site $u(x)$ and on the species $a\in \{1,\ldots,N-1\}$ we have that 
 \begin{equation}\label{bosonicKX}
-    \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|=  \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(a^{\dagger})^{u(x)}_{a}\dt
+    \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|=  \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})^{u(x)}_{a}\dt
 \end{equation}
 Using \eqref{bosonicKX} by a fixed $a\in \{1,\ldots,N-1\}$ we rewrite the term of \eqref{siteHadamardII} with Lie generator $E_{Na}^{x}$ on the right hand side of \eqref{siteHadamardII} as 
 \begin{equation}
     \begin{split}
 &\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|\rho_{a}^{x}E_{Na}^{x}
 \\=&
-\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}+1}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(a^{\dagger})_{a}^{u(x)}E_{Na}^{x}
+\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}+1}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}E_{Na}^{x}
 \\=&
-\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(a^{\dagger})_{a}^{u(x)}E_{Na}^{x}
+\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}E_{Na}^{x}
     \end{split}
 \end{equation}
 where, in the last equality, we performed a change of summation variable. Therefore, inserting this last equation in \eqref{siteHadamardII} we obtain 
@@ -955,7 +963,7 @@ where, in the last equality, we performed a change of summation variable. Theref
 H_{x}^{T}\left(d_{x}\otimes \dd\right)&=
      H_{x}^{T}d_{x}\otimes \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|
 \\&=
-d_{x}\otimes \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\,|\alpha^{x}|\sum_{a=1}^{N-1}\left((a^{\dagger})_{a}^{u(x)}E_{Na}^{x}-E_{aa}^{x}\right)   
+d_{x}\otimes \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\,|\alpha^{x}|\sum_{a=1}^{N-1}\left((A^{\dagger})_{a}^{u(x)}E_{Na}^{x}-E_{aa}^{x}\right)   
 \\&=
 d_{x}\otimes \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\widetilde{H}_{x}
 \\&=
