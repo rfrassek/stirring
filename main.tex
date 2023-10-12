@@ -342,13 +342,12 @@ A basis of the vector space $\mathbb{C}^{M_\twoj}$ are the column vectors denote
   |n\rangle=  |n_{1},\ldots,n_{N}\rangle,\quad \text{with}\quad n_{i}\in\mathbb{N}_{0}\quad \text{sucht that}\quad \sum_{i=1}^{N}n_{i}=\nu\,.
 \end{equation}
 %where $\sum_{a=1}^{N}n_{i}=\nu$. 
-{\color{red}
-The basis vectors satisfy the orthogonality relation with respect to the Euclidean scalar product 
+The basis vectors satisfy the orthogonality relation
 \begin{equation}\label{ortho}
-   \langle m|n \rangle =\langle m_{1},\ldots,m_{N}|n_{1},\ldots,n_{N}\rangle=\prod_{a=1}^{N}\delta_{\xi_{a},n_{a}}\co
+   \langle m|n \rangle =\langle m_{1},\ldots,m_{N}|n_{1},\ldots,n_{N}\rangle=\prod_{a=1}^{N}\delta_{m_{a},n_{a}}\co
 \end{equation}
-where  $ \langle m_{1},\ldots,m_{N}|$ is the row vectors obtained by transposing $|m_{1},\ldots,m_{N}\rangle$ and $\delta_{\xi_{a},n_{a}}$ is the Kronecker delta. 
-}
+where  $ \langle m_{1},\ldots,m_{N}|$ is the row vectors obtained by transposing $|m\rangle=|m_{1},\ldots,m_{N}\rangle$ and $\delta_{m_{a},n_{a}}$ is the Kronecker delta. 
+
 The explicit action of the algebra generators on the basis  vectors $|n\rangle$ is the following:
 \begin{equation}\label{actionE}
 	\begin{cases}
@@ -361,11 +360,11 @@ The matrices defined in this way satisfy the commutation relations \eqref{eq:com
 %\newline 
 %\textbf{Remark}: it is possible to define these matrices in terms of creation and annihilation operators: see Appendix \ref{appA}.
 \\ \\
-\textbf{Remark}: The symmetric representations $\lambda=(\twoj,0,\ldots,0)$ are dual to the representations $\lambda=(\twoj,\ldots,\twoj,0)$ that can be obtained via 
-\begin{equation}
-   \bar E_{ab}=\nu\delta_{ab}-E_{N-b+1,N-a+1}\dt
-\end{equation}
-{\color{red} This needs to be checked and give alternative form of Hamiltonian?}\\
+%\textbf{Remark}: The symmetric representations $\lambda=(\twoj,0,\ldots,0)$ are dual to the representations $\lambda=(\twoj,\ldots,\twoj,0)$ that can be obtained via 
+%\begin{equation}
+%   \bar E_{ab}=\nu\delta_{ab}-E_{N-b+1,N-a+1}\dt
+%\end{equation}
+%{\color{red} This needs to be checked and give alternative form of Hamiltonian?}\\
 The process with generator \eqref{Generator} can be described in terms of $gl(N)$ Lie algebra generators. The state space \eqref{stateSpace} is given by the $|V|$-fold tensor product of the vector space with basis elements $|n^x\rangle$ at a given site. Namely,
 a vector $|{\bf n}\rangle \in \Omega$ can be written as
 %We now define the equivalent of \eqref{stateSpace} in the vector notation
@@ -378,13 +377,10 @@ a vector $|{\bf n}\rangle \in \Omega$ can be written as
 \end{equation}
 %where we require that $n_{a}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have 
 with $\sum_{a=1}^{N}n_{a}^{x}=\nu$ for any $x\in V$. Sometimes it will bw convenient to write $|n^{x}\rangle$ to denote, for a fixed $x\in V$, the vector $|n_{1}^{x},\ldots,n_{N}^{x}\rangle$.
-{\color{red}
 The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
 \begin{equation}
     \langle {\bf n}|{\bf m}\rangle =\prod_{x\in V}\prod_{a=1}^N\delta_{n^x_a,m^{x}_a}\,.
 \end{equation}
-}
-
 We introduce the Hamiltonian operator
 \begin{equation}\label{OriginalHamiltonian}
 	\begin{split}
@@ -414,7 +410,7 @@ where
     \langle f|=\sum_{ {{\bf m}\in \Omega}}f( {\bf m})\langle  {\bf m}|
 \end{equation}
 
-We can write the edge Hamiltonian \eqref{edgeHamiltonian} as a function of the coproduct of the {\color{red} quadratic} Casimir of $gl(N)$
+We can write the edge Hamiltonian \eqref{edgeHamiltonian} as a function of the coproduct of the quadratic Casimir of $gl(N)$
 \begin{equation}\label{secondCasimir}
     C=\sum_{a,b=1}^{N}E_{ab}E_{ba}
 \end{equation}
@@ -423,7 +419,7 @@ More precisely,  considering the standard coproduct
 \begin{equation}
 \begin{split}
 \Delta:gl(N)&\to gl(N)\otimes gl(N)\\
-E_{ab}&\to E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
+E_{ab}&\mapsto E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
 \end{split}
 \end{equation}
 we have 
@@ -487,7 +483,7 @@ and the coupling to reservoirs are
 		0\quad \text{otherwise}
 	\end{cases}
 \end{equation}
-We further assume that the maximal occupancy in each site is $\nu=1$, i.e. that there is an \textit{hard-core interaction}.
+The case $\nu=1$, i.e. one particle at most for each site, is special. We will consider this extensively in Section \ref{sectionIntegrabiliy}.
 We will denote the element of the representation of the $gl(N)$  Lie algebra with $\nu=1$ by lowercase letters, i.e. $(e_{ab})_{a,b\in\{1,\ldots,N\}}$, to highlight that we are in the first fundamental representation of the algebra.
 The Hamiltonian now reads
 \begin{equation}\label{hamiltonian}
@@ -633,7 +629,7 @@ where $\mathcal{H}_{x,y}$ is the one defined in \eqref{edgeHamiltonian}, while
 \begin{equation}\label{siteDualHamiltonian}
     \widetilde{H}_{x}=|\alpha^{x}|\sum_{a=1}^{N-1}\left((A^{\dagger})_{a}^{u(x)}\,E_{Na}^{x}-E_{aa}^{x}\right)\dt
 \end{equation}
-Here we introduced bosonic creation operator $A^{\dagger}$ acting on the left-hand-side as $\langle q|A^{\dagger}=\langle q+1|$ on a generic vector $\langle q|$ with $q\in \mathbb{N}_{0}$, so that in \eqref{siteDualHamiltonian} 
+Here we introduced the operator $A$ acting on the left-hand-side as $\langle q+1|A^{\dagger}=\langle q|$ on a generic vector $\langle q|$ with $q\in \mathbb{N}_{0}$, so that in \eqref{siteDualHamiltonian} 
 $(A^{\dagger})_{a}^{u(x)}$ denotes a copy of $A^{\dagger}$ acting on the extra-site $u(x)$ and on the species $a\in\{1,\ldots,N-1\}$. \\
 
 We will show below that the Hamiltonians \eqref{OriginalHamiltonian} and \eqref{DualHamiltonian} are dual in the sense of \eqref{DualityRelation}. From an algebraic point of view, the duality matrix $D$ \eqref{dualityElements} is described as 
@@ -703,7 +699,7 @@ On one hand, on the extra-site $u(x)$ we have
 \begin{align*}
 \sum_{q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle=\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}
 \end{align*}
-where {\color{red} we used the orthogonality relation \eqref{ortho}}. 
+where  we used the orthogonality relation \eqref{ortho}. 
 On the other hand, on the site $x$, we have 
 \begin{align*}
 &\langle n_{1}^{x},\ldots,n_{N}^{x}|(\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x})})^{T}R_{x}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\\&= \langle  n_{1}^{x},\ldots,n_{N}^{x}|\left(\sum_{k_{1}=0}^{\infty}\frac{\left\{\left(E_{N1}^{x}\right)^{T}\right\}^{k_{1}}}{k_{1}!}\ldots\sum_{k_{N-1}=0}^{\infty}\frac{\left\{\left(E_{N\,N-1}^{x}\right)^{T}\right\}^{k_{N-1}}}{k_{N-1}!}\sum_{s\in\Omega_{x}}\frac{s_{1}^{x}!\ldots s_{N}^{x}!}{\nu!}|s_{1}^{x},\ldots,s_{N}^{x}\rangle\langle s_{1}^{x},\ldots,s_{N}^{x}|\right)
@@ -714,13 +710,13 @@ On the other hand, on the site $x$, we have
 %\\&
 %\hspace{2.cm}\prod_{a=1}^{N-1}\left((n_{a}^{x}(n_{a}^{x}-1)\ldots (n_{a}^{x}-k_{a}+1)\right)\frac{1}{k_{1}!,\ldots,k_{N-1}!}\frac{\xi_{1}^{x}!\ldots \xi_{N}^{x}!}{\nu!}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle
 \\&=
-\sum_{k_{1}=0}^{n_{1}^{x}}\ldots\sum_{k_{N-1}=0}^{n_{N-1}^{x}}\langle n_{1}^{x}-k_{1},\ldots,n_{N-1}^{x}-k_{N-1},\ldots,n_{N}^{x}+k_{1}+\ldots+k_{N-1}|\frac{n_{1}^{x}!\ldots n_{N-1}^{x}!}{(n_{1}^{x}-k_{1})!\ldots(n_{N-1}^{x}-k_{N-1})!}
+\sum_{k_{1}=0}^{n_{1}^{x}}\ldots\sum_{k_{N-1}=0}^{n_{N-1}^{x}}\langle n_{1}^{x}-k_{1},\ldots,n_{N-1}^{x}-k_{N-1},\ldots,n_{N}^{x}+k_{1}+\ldots+k_{N-1}|\frac{n_{1}^{x}!\cdots n_{N-1}^{x}!}{(n_{1}^{x}-k_{1})!\cdots(n_{N-1}^{x}-k_{N-1})!}
 \\& 
-\hspace{2.cm}\qquad\frac{1}{k_{1}!,\ldots,k_{N-1}!}\frac{\xi_{1}^{x}!\ldots \xi_{N}^{x}!}{\nu!}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle
+\hspace{2.cm}\qquad\frac{1}{k_{1}!\cdots k_{N-1}!}\frac{\xi_{1}^{x}!\ldots \xi_{N}^{x}!}{\nu!}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle
 \\&=
-\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}
+\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}
 \end{align*}
-where we used the definitions of the action of $E_{ab}$ {\color{red} and the orthogonality relations \eqref{ortho}}, together with the fact that $\xi_{N}^{x}=\nu-\sum_{a=1}^{N-1}\xi_{a}^{x}$. 
+where we used the definitions of the action of $E_{ab}$  and the orthogonality relations \eqref{ortho}, together with the fact that $\xi_{N}^{x}=\nu-\sum_{a=1}^{N-1}\xi_{a}^{x}$. 
 Finally, by taking the product over $x\in V$ \eqref{proofDualityElements} is proved.
 \begin{flushright}
     $\square$
@@ -806,7 +802,7 @@ i.e. $S_{x,y}$ is a symmetry of $\mathcal{H}_{x,y}$. \\ Exploiting these conside
  \end{equation}
 In the following we need the application of this with $B=\sum_{a=1}^{N-1}E_{aN}$ defined in \eqref{EquationEx} and with $A$ equal to some of the generator $E_{cd}$ of the Lie algebra $gl(N)$ with $c,d\in\{1,\ldots,N\}$. Therefore we compute 
 \begin{align}
-	\left[B,A\right]=\sum_{a=1}^{N-1}\left[E_{aN},E_{cd}\right]=\delta_{cN}\sum_{a=1}^{N-1}E_{ad}-\delta_{d<N}E_{cN}
+	\left[B,A\right]=\sum_{a=1}^{N-1}\left[E_{aN},E_{cd}\right]=\delta_{cN}\sum_{a=1}^{N-1}E_{ad}-(1-\delta_{dN})E_{cN}
 \end{align}
 and 
 \begin{align}
@@ -933,39 +929,50 @@ H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}|\alpha^{x}|\sum_{a=1}^{N-1}\left(
 \end{equation}
 Taking the tensor product of both sides of \eqref{siteHadamardI} with 
 \begin{equation}
-\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|
+\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|
 \end{equation}
 we obtain 
 \begin{equation}\label{siteHadamardII}
     \begin{split}
-&H_{x}^{T}d_{x}\otimes\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|
-\\=&
-d_{x}\otimes \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\,|\alpha^{x}|\sum_{a=1}^{N}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}\right)\dt
+&H_{x}^{T}d_{x}\otimes\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|
+\\=& d_{x}\,
+|\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\otimes \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\dt
     \end{split}
 \end{equation}
 Recalling the action of the bosonic creation operator acting at site $u(x)$ and on the species $a\in \{1,\ldots,N-1\}$ we have that 
 \begin{equation}\label{bosonicKX}
-    \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|=  \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})^{u(x)}_{a}\dt
+    \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})^{u(x)}_{a}=  \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|\dt
 \end{equation}
-Using \eqref{bosonicKX} by a fixed $a\in \{1,\ldots,N-1\}$ we rewrite the term of \eqref{siteHadamardII} with Lie generator $E_{Na}^{x}$ on the right hand side of \eqref{siteHadamardII} as 
+Using \eqref{bosonicKX} we rewrite the term of \eqref{siteHadamardII} with Lie generator $E_{Na}^{x}$ on the right hand side of \eqref{siteHadamardII} as 
 \begin{equation}
     \begin{split}
-&\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|\rho_{a}^{x}E_{Na}^{x}
+&\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{b=1}^{N-1}\left(\rho_{b}^{x}\right)^{\xi_{b}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|\rho_{a}^{x}
 \\=&
-\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}+1}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}E_{Na}^{x}
+\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{b=1\,:\,b\neq a}^{N-1}\left(\rho_{b}^{x}\right)^{\xi_{b}^{u(x)}}\right)\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}+1}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}
 \\=&
-\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}E_{Na}^{x}
+\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\sum_{\xi_{a}^{u(x)}=1}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}\\=&
+\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}
     \end{split}
 \end{equation}
-where, in the last equality, we performed a change of summation variable. Therefore, inserting this last equation in \eqref{siteHadamardII} we obtain 
+where, in the up to last equality, we performed a change of summation variable and where in the last equality we used the fact that  
+\begin{equation}
+	\begin{split}
+&\sum_{\xi_{a}^{u(x)}=0}^{\infty}\rho_{a}^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}\\=&\sum_{\xi_{a}^{u(x)}=1}^{\infty}\rho_{a}^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}+\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}\\=&\sum_{\xi_{a}^{u(x)}=1}^{\infty}\rho_{a}^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}
+\end{split}
+\end{equation}
+Indeed, as a consequence of \eqref{bosonicKX} we have 
+\begin{equation}
+\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}=0
+\end{equation}
+Therefore, inserting this last equation in \eqref{siteHadamardII} we obtain 
 \begin{equation}
     \begin{split}
-H_{x}^{T}\left(d_{x}\otimes \dd\right)&=
-     H_{x}^{T}d_{x}\otimes \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|
+H_{x}^{T}d_{x}\otimes \dd&=
+     H_{x}^{T}d_{x}\otimes \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|
 \\&=
-d_{x}\otimes \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\,|\alpha^{x}|\sum_{a=1}^{N-1}\left((A^{\dagger})_{a}^{u(x)}E_{Na}^{x}-E_{aa}^{x}\right)   
+\left\{d_{x}\otimes \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\right\}\,|\alpha^{x}|\sum_{a=1}^{N-1}\left((A^{\dagger})_{a}^{u(x)}E_{Na}^{x}-E_{aa}^{x}\right)   
 \\&=
-d_{x}\otimes \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\widetilde{H}_{x}
+\left\{d_{x}\otimes \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\right\}\widetilde{H}_{x}
 \\&=
 \left(d_{x}\otimes \dd\right)\widetilde{H}_{x}\dt
     \end{split}
