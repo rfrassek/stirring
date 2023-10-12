@@ -1654,9 +1654,25 @@ This is a new configuration at site $x$ where, if $x\in\{q_{1},\ldots,q_{i}\}$, 
 \begin{equation}\label{ABS_intermediate}
 	\begin{split}
 		\Psi^{'}(\bm{\tau})&=\langle \bm{\tau}|(\mathcal{S}_{2}^{-1})^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\varphi_{1}^{1},\ldots,\varphi_{L}^{1})\beta_{q_{1}^{1}}\\&+
-		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\varphi_{1}^{2},\ldots,\varphi_{L}^{2})\beta_{a_{1}}\beta_{a_{2}}\\&+\ldots+\Psi^{''}(N,\ldots,N)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}\dt%^{1-\delta_{\tau_{x},N}}
+		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\varphi_{1}^{2},\ldots,\varphi_{L}^{2})\beta_{q_{1}}\beta_{q_{2}}\\&+\ldots+\Psi^{''}(N,\ldots,N)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}\dt%^{1-\delta_{\tau_{x},N}}
 	\end{split}
 \end{equation}
+{\color{blue}
+	Proposal
+\begin{equation*}
+	\begin{split}
+		\Psi^{'}(\bm{\tau})&=\langle \bm{\tau}|(\mathcal{S}_{2}^{-1})^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\tau_{1},\ldots,\tau_{q_{1}}=N,\ldots,\tau_{L})\beta_{q_{1}^{1}}\\&+
+		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\tau_{1},\ldots,\tau_{q_{1}}=N,\ldots,\tau_{q_{2}}=N,\ldots,\tau_{L})\beta_{q_{1}}\beta_{q_{2}}\\&+\ldots+\Psi^{''}(N,\ldots,N)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}\dt%^{1-\delta_{\tau_{x},N}}
+	\end{split}
+\end{equation*}
+Other proposal
+\begin{equation*}
+	\begin{split}
+	\Psi^{'}(\bm{\tau})&=\langle \bm{\tau}|(\mathcal{S}_{2}^{-1})^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\tau_{L})\beta_{q_{1}^{1}}\\&+
+	\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\underbrace{N}_{q_{2}},\ldots,\tau_{L})\beta_{q_{1}}\beta_{q_{2}}\\&+\ldots+\Psi^{''}(N,\ldots,N)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}\dt%^{1-\delta_{\tau_{x},N}}
+\end{split}
+\end{equation*}
+}
 For a fixed configuration $\bm{\mu}=(\mu_{1},\ldots,\mu_{L})$, by using equation \eqref{ResulsBasis},we obtain 
 \begin{equation}
 	\Psi^{''}(\bm{\mu})=\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\mu_{x},N})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\mu_{x}}\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\mu_{j},N})\right)\right)^{1-\delta_{\mu_{x},N}}\co
@@ -2014,7 +2030,7 @@ We also know from \eqref{CorrelationByABS-prob} that
 	\Psi(\widehat{\bm{\tau}})= \sum_{c_{1}=0}^{1}\ldots \sum_{c_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{c_{k}}\beta_{a_{k}}^{1-c_{k}}\mathcal{P}(c_{1},\ldots,c_{m},\hat{\bm{\xi}})
 \end{equation*}
 therefore, we can read off the absorption probabilities. \\ \\
-This argument can be adapted for any $1\geq m\leq L$ to compute $m$-point correlations between non-empty species.\\ \\ 
+This argument can be adapted for any $1\leq m\leq L$ to compute $m$-point correlations between non-empty species.\\ \\ 
 In general $|\Psi^{'}\rangle$ is the eigenvector with vanishing eigenvalue of $H^{'}$, but I believe it cannot be interpreted directly as a steady state, since $H^{'}$ is not a Markov matrix. However, it gives by the previous argument the exact correlations and as a consequence the absorption probabilities...
 }
 \section{Extensions for the non-integrable chain}
