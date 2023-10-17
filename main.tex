@@ -1650,6 +1650,7 @@ By projecting over a vector $\langle \bm{\tau}|$ we have
 \begin{equation}\label{goodTP-S2}
   \langle \bm{\tau}|\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L} |\bm{\mu}\rangle=\prod_{i=1}^L\left[ \delta_{\tau_i,\mu_i}+\delta_{N,\mu_i}\beta_{\tau_i} (1-\delta_{\tau_i,N})\right]
 \end{equation} 
+{\color{blue}
 We introduce $\forall x\in\{1,\ldots,L\}$, for $i\in \{1,\ldots,L\}$ and $q_{1},\ldots,q_{i}\in\{1,\ldots,L\}$ 
 \begin{equation}
 	\varphi_{x}^{i}(q_{1},\ldots,q_{i})=\begin{cases}
@@ -1657,30 +1658,32 @@ We introduce $\forall x\in\{1,\ldots,L\}$, for $i\in \{1,\ldots,L\}$ and $q_{1},
 		N\qquad &\text{if}\quad x\in\{q_{1},\ldots,q_{i}\}\\
 	\end{cases}\dt
 \end{equation}
-This is a new configuration at site $x$ where, if $x\in\{q_{1},\ldots,q_{i}\}$, the occupation $\tau_{x}$ is replaced by $N$, while it is left uncaged if $x\notin \{q_{1},\ldots,q_{i}\}$. The dependence of $\varphi_{x}^{i}(q_{1},\ldots,q_{i})$ with respect to $q_{1},\ldots,q_{i}$ is usually understood for the sake of notation. By considering a fixed $\langle\bm{\tau}|$, and by using \eqref{goodTP-S2} we obtain 
+This is a new configuration at site $x$ where, if $x\in\{q_{1},\ldots,q_{i}\}$, the occupation $\tau_{x}$ is replaced by $N$, while it is left uncaged if $x\notin \{q_{1},\ldots,q_{i}\}$. The dependence of $\varphi_{x}^{i}(q_{1},\ldots,q_{i})$ with respect to $q_{1},\ldots,q_{i}$ is usually understood for the sake of notation. } \\ By considering a fixed $\langle\bm{\tau}|$, and by using \eqref{goodTP-S2} we obtain 
 \begin{equation}\label{ABS_intermediate}
+	\begin{split}
+		\Psi^{'}(\bm{\tau})&=\langle \bm{\tau}|(\mathcal{S}_{2}^{-1})^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\tau_{L})\beta_{q_{1}^{1}}\\&+
+		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\underbrace{N}_{q_{2}},\ldots,\tau_{L})\beta_{q_{1}}\beta_{q_{2}}\\&+\ldots+\Psi^{''}(N,\ldots,N)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}\dt%^{1-\delta_{\tau_{x},N}}
+	\end{split}
+\end{equation}
+where, for arbitrary $i\in\{1,\ldots,L\}$,  $\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\underbrace{N}_{q_{i}}\ldots,\tau_{L})$ means that the $\tau_{q_{1}},\ldots,\tau_{q_{i}}$ have been replaced by $N$. \\
+{\color{blue}
+	Old proposal
+\begin{equation*}
 	\begin{split}
 		\Psi^{'}(\bm{\tau})&=\langle \bm{\tau}|(\mathcal{S}_{2}^{-1})^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\varphi_{1}^{1},\ldots,\varphi_{L}^{1})\beta_{q_{1}^{1}}\\&+
 		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\varphi_{1}^{2},\ldots,\varphi_{L}^{2})\beta_{q_{1}}\beta_{q_{2}}\\&+\ldots+\Psi^{''}(N,\ldots,N)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}\dt%^{1-\delta_{\tau_{x},N}}
 	\end{split}
-\end{equation}
+\end{equation*}}
 {\color{blue}
-	Proposal
+	Other proposal
 \begin{equation*}
 	\begin{split}
 		\Psi^{'}(\bm{\tau})&=\langle \bm{\tau}|(\mathcal{S}_{2}^{-1})^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\tau_{1},\ldots,\tau_{q_{1}}=N,\ldots,\tau_{L})\beta_{q_{1}^{1}}\\&+
 		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\tau_{1},\ldots,\tau_{q_{1}}=N,\ldots,\tau_{q_{2}}=N,\ldots,\tau_{L})\beta_{q_{1}}\beta_{q_{2}}\\&+\ldots+\Psi^{''}(N,\ldots,N)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}\dt%^{1-\delta_{\tau_{x},N}}
 	\end{split}
 \end{equation*}
-Other proposal
-\begin{equation*}
-	\begin{split}
-	\Psi^{'}(\bm{\tau})&=\langle \bm{\tau}|(\mathcal{S}_{2}^{-1})^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\tau_{L})\beta_{q_{1}^{1}}\\&+
-	\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\underbrace{N}_{q_{2}},\ldots,\tau_{L})\beta_{q_{1}}\beta_{q_{2}}\\&+\ldots+\Psi^{''}(N,\ldots,N)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}\dt%^{1-\delta_{\tau_{x},N}}
-\end{split}
-\end{equation*}
 }
-For a fixed configuration $\bm{\mu}=(\mu_{1},\ldots,\mu_{L})$, by using equation \eqref{ResulsBasis},we obtain 
+For a fixed configuration $\bm{\mu}=(\mu_{1},\ldots,\mu_{L})$, by using equation \eqref{ResulsBasis}, we obtain 
 \begin{equation}
 	\Psi^{''}(\bm{\mu})=\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\mu_{x},N})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\mu_{x}}\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\mu_{j},N})\right)\right)^{1-\delta_{\mu_{x},N}}\co
 \end{equation} where we have used the fact that 
@@ -1693,7 +1696,7 @@ Introducing $c_{x}$ defined as
 \end{equation}
 we obtain 
 \begin{equation}\label{coefficients-psiSec}
-	\Psi^{''}(\bm{\mu})=\frac{\Gamma(2+L-\sum_{x=1}^{L}c_{x})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\mu_{y}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}
+	\Psi^{''}(\bm{\mu})=\frac{\Gamma(2+L-\sum_{x=1}^{L}c_{x})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\mu_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}
 \end{equation}
 where, for the sake of notation we left understood the dependence on $\mu_{x}$ of $c_{x}$.\\
 \begin{comment}
@@ -1820,7 +1823,8 @@ where for every $(\tau_{1},\ldots,\tau_{L})=\bm{\tau}$
 		\Psi(\bm{\tau})=&\Psi^{'}(\bm{\tau})\\+&\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
 	\end{split}
 \end{equation}
-To compute correlations it is enough the above expression, however using \eqref{ABS} it is possible to write $\Psi(\bm{\tau})$ explicitly, see Appendix \ref{appB}.\\
+To compute correlations it is enough the above expression. Using \eqref{ABS} it is possible to write $\Psi(\bm{\tau})$ explicitly. We report this explicit formula and the proof in Appendix \ref{appB}.\\
+The expression \eqref{SteadyState-coeff-implicit} has two contribution. First a term $\Psi^{'}(\bm{\tau})$ and second a where $b$ of the empty occupations of $\bm{\tau}$ have been replaced by all possible species from $1$ to $N-1$. If the configuration $\bm{\tau}$ has no empty species, this second term vanishes. The existence of the second term is motivated by the fact that, the empty occupation at each site $x$ depend on the other species via $1=\sum_{a=1}^{N}n_{a}^{x}$.\\  
 The state $|\Psi\rangle$ is normalized. To prove it we aim to show that 
 \begin{equation}
 	\sum_{\bm{\tau}\in\Omega}\langle \bm{\tau}|\Psi\rangle=\sum_{\bm{\tau}\in \Omega}\Psi(\bm{\tau})=1
@@ -1836,18 +1840,18 @@ We introduce an index $\ell\in \{0,\ldots,L\}$ that represents the number of emp
 Therefore, we can rewrite the normalization condition as 
 \begin{align}
 	&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})\nonumber
-	+\\&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\=&1
+	+\\&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\&=1
 \end{align}
 We first observe that, using \eqref{ABS}, we have that 
 \begin{equation}
 	\Psi^{'}(N,\ldots,N)=1\co
 \end{equation}
-thus we have that it is enough to prove that
+thus, it is enough to prove that
 \begin{align}
 	&\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})\nonumber
-	+\\&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\=&0
+	+\\&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\&=0
 \end{align}
-We now consider the second term of the above expression. For any fixed $\ell$ and for any fixed $\bm{\tau}\in \Omega_{\ell}$, $b$ empty occupations are replaced by all possible non-empty species. For a fixed $b$, if the configuration $\bm{\tau}\in \Omega_{\ell}$ with has $\ell<b$, then the this term do not produce any contribution. On the other hand, if $b\geq \ell$ we obtain from $\bm{\tau}$ all possible configuration in the space $ \Omega_{\ell-b}$. Each of such a configuration is counted $\binom{L-\ell+b}{b}$. By calling $r=\ell-b$ if $b\leq \ell$ we have that 
+We now consider the second term of the above expression. For any fixed $\ell$ and for any fixed $\bm{\tau}\in \Omega_{\ell}$, $b$ empty occupations are replaced by all possible non-empty species. For a fixed $b$, if the configuration $\bm{\tau}\in \Omega_{\ell}$ with has $\ell<b$, then the this term do not produce any contribution. On the other hand, if $b\geq \ell$ we obtain from $\bm{\tau}$ all possible configuration in the space $ \Omega_{\ell-b}$, where $b$ empties have been replaced by all  species from $1$ to $N-1$. Each of such a configuration is counted $\binom{L-\ell+b}{b}$. By calling $r=\ell-b$ if $b\leq \ell$ we have that 
 \begin{align}
 &\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\
 =&\sum_{b=1}^{L}(-1)^{b}\sum_{r=0}^{L-b}\binom{L-r}{b}\sum_{\bm{\tau}\in \Omega_{r}}\Psi^{'}(\bm{\tau})\mathbbm{1}_{\{b\leq L-r\}}\dt
@@ -1990,13 +1994,15 @@ Then we obtain that
 \end{align}
 The second term on the right hand side in the above equation replaces $b$ empty occupations with all possible non-empty species. If the configuration $\bm{\tau}\in\widehat{\Omega}_{\ell}^{m}$ has $\ell<b$ no contributions are seen. Otherwise, if $\ell\geq b$, $b$ empties are changed, obtaining configuration with $r=\ell-b$ voids occupations, with $r\in \{0,\ldots, L-m-b\}$. Each of such a configuration is counted $\binom{L-r-m}{b}$ times. Therefore, we obtain 
 \begin{align}
-	\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)=& \sum_{\ell=0}^{L-m-1}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\tau)+\Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)\\+&\sum_{b=1}^{L-m}(-1)^{b}\sum_{r=0}^{L-m-b}\binom{L-m-r}{b}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
+	\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)=& \sum_{\ell=0}^{L-m-1}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\tau)+\Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)\nonumber
+	\\+&\sum_{b=1}^{L-m}(-1)^{b}\sum_{r=0}^{L-m-b}\binom{L-m-r}{b}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
 \end{align}
 In the second term we exchange the summations obtaining 
-\begin{equation}
-\sum_{\ell=0}^{L-m-1}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\tau)+\sum_{\ell=1}^{L-m-1}\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-m-\ell}{b}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
-\end{equation}
-Using the Binomial theorem, for every $\ell\in \{0,\ldots, L-m-b\}$, we have that
+\begin{align}
+\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)=&\sum_{\ell=0}^{L-m-1}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\tau)+\Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)\nonumber
+\\+&\sum_{\ell=1}^{L-m-1}\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-m-\ell}{b}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
+\end{align}
+Using the Binomial theorem, for every $\ell\in \{0,\ldots, L-m-1\}$, we have that
 \begin{equation}
 	1+\sum_{b=1}^{L-m-\ell}(-1)^{b}\binom{L-m-\ell}{b}=0
 \end{equation}
@@ -2015,7 +2021,7 @@ that implies
 %where $\langle\hat{\bm{\xi}}\rangle_{stat,dual}$ we have denoted the stationary state of the dual process starting from the configuration $\hat{\bm{\xi}}$. 
 Using formula \eqref{ABS} we obtain 
 \begin{equation}
- \Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)=\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{\tau_{k}}^{c_{k}}\beta_{\tau_{k}}^{1-c_{k}}\left(2+L-y_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}\dt
+ \Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)=\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{\tau_{k}}^{c_{k}}\beta_{\tau_{k}}^{1-c_{k}}\left(2+L-y_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}\dt
 \end{equation}
 Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,y_{k},c_{k},\ldots,c_{m})$ we have \eqref{exactCorrelations}.
 \begin{flushright}
@@ -2638,12 +2644,11 @@ where we have introduced, $\forall x\in \{1,\ldots,L\}$
 		\end{equation}
 	}
 \end{comment}
-\newline \newline
-	\textbf{Remark}: we observe that if no holes are present, i.e. if $\tau_{x}\neq N$ $\forall x\in \{1,\ldots,L\}$, then the second addend vanishes and
-	\begin{equation}\label{LinkABS-corr}
-		\Psi(\bm{\tau})=\Psi^{'}(\bm{\tau})
-	\end{equation}
-	When the configuration has holes, the presence of the second addend is motivated by the dependence of the "empty" in a fixed site from all others types in the same site.
+%	\textbf{Remark}: we observe that if no holes are present, i.e. if $\tau_{x}\neq N$ $\forall x\in \{1,\ldots,L\}$, then the second addend vanishes and
+%	\begin{equation}\label{LinkABS-corr}
+%		\Psi(\bm{\tau})=\Psi^{'}(\bm{\tau})
+%	\end{equation}
+%	When the configuration has holes, the presence of the second addend is motivated by the dependence of the "empty" in a fixed site from all others types in the same site.
 	
 	\paragraph{Proof of formula \eqref{steadyStateH}} As a consequence of \eqref{S1-Inverse}, we only need to show how the transformation $S_{1}^{-1}$ acts on the vector $|\Psi^{'}\rangle$. Here is more convenient to consider the matrix $\mathcal{S}_{1}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and make explicitly the tensor product over the chain. This matrix $\mathcal{S}_{1}$ is given by
 	\begin{equation}\label{S1-L1}
