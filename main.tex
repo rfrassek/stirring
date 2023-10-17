@@ -1808,6 +1808,70 @@ Finally, considering all possible $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, 
 \begin{flushright}
     $\square$
 \end{flushright}
+
+\subsection{Explicit formula for the steady state $|\Psi\rangle$}
+The steady state $|\Psi\rangle$ of the Hamiltonian $H$ is given by 
+\begin{equation}\label{steadyStateH}
+	|\Psi\rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\Psi(\bm{\tau})|\bm{\tau}\rangle
+\end{equation}
+where for every $(\tau_{1},\ldots,\tau_{L})=\bm{\tau}$
+\begin{equation}\label{SteadyState-coeff-implicit}
+	\begin{split}
+		\Psi(\bm{\tau})=&\Psi^{'}(\bm{\tau})\\+&\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
+	\end{split}
+\end{equation}
+To compute correlations it is enough the above expression, however using \eqref{ABS} it is possible to write $\Psi(\bm{\tau})$ explicitly, see Appendix \ref{appB}.\\
+The state $|\Psi\rangle$ is normalized. To prove it we aim to show that 
+\begin{equation}
+	\sum_{\bm{\tau}\in\Omega}\langle \bm{\tau}|\Psi\rangle=\sum_{\bm{\tau}\in \Omega}\Psi(\bm{\tau})=1
+\end{equation}
+\textbf{Proof of the normalization}: we aim to show that 
+\begin{align}
+		\sum_{\bm{\tau}\in \Omega}\Psi(\bm{\tau})=&\sum_{\bm{\tau}\in \Omega}\Psi^{'}(\bm{\tau})\nonumber\\+&\sum_{\bm{\tau}\in \Omega}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\=&1
+\end{align}
+We introduce an index $\ell\in \{0,\ldots,L\}$ that represents the number of empty occupations for an arbitrary $\bm{\tau}$, i.e. $\ell=\sum_{x=1}^{L}\delta_{\tau_{x},N}$. Moreover, we introduce the space 
+\begin{equation}
+	\Omega_{\ell}=\left\{\bm{\tau}\in \Omega\;:\;\sum_{x=1}^{L}\delta_{\tau_{x},N}=\ell\right\}
+\end{equation}
+Therefore, we can rewrite the normalization condition as 
+\begin{align}
+	&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})\nonumber
+	+\\&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\=&1
+\end{align}
+We first observe that, using \eqref{ABS}, we have that 
+\begin{equation}
+	\Psi^{'}(N,\ldots,N)=1\co
+\end{equation}
+thus we have that it is enough to prove that
+\begin{align}
+	&\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})\nonumber
+	+\\&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\=&0
+\end{align}
+We now consider the second term of the above expression. For any fixed $\ell$ and for any fixed $\bm{\tau}\in \Omega_{\ell}$, $b$ empty occupations are replaced by all possible non-empty species. For a fixed $b$, if the configuration $\bm{\tau}\in \Omega_{\ell}$ with has $\ell<b$, then the this term do not produce any contribution. On the other hand, if $b\geq \ell$ we obtain from $\bm{\tau}$ all possible configuration in the space $ \Omega_{\ell-b}$. Each of such a configuration is counted $\binom{L-\ell+b}{b}$. By calling $r=\ell-b$ if $b\leq \ell$ we have that 
+\begin{align}
+&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\
+=&\sum_{b=1}^{L}(-1)^{b}\sum_{r=0}^{L-b}\binom{L-r}{b}\sum_{\bm{\tau}\in \Omega_{r}}\Psi^{'}(\bm{\tau})\mathbbm{1}_{\{b\leq L-r\}}\dt
+\end{align} 
+As a consequence, we have that the normalization condition reads
+\begin{align}
+\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})+\sum_{b=1}^{L}(-1)^{b}\sum_{\ell=0}^{L-b}\binom{L-\ell}{b}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})\mathbbm{1}_{\{b\leq L-\ell\}}=0\dt
+\end{align}
+By exchanging the summations we have 
+\begin{equation}
+\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})+\sum_{\ell=0}^{L-1}\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-\ell}{b}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})\mathbbm{1}_{\{b\leq L-\ell\}}=0\dt
+\end{equation}
+It is enough to prove that, for any fixed $\ell\in\{0,\ldots, L-1\}$ we have that 
+\begin{align}
+	1+\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-\ell}{b}=0
+\end{align}
+This is true because of the Binomial theorem, indeed 
+\begin{equation}
+1+\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-\ell}{b}=\sum_{b=0}^{L-\ell}(-1)^{b}\binom{L-\ell}{b}=(1-1)^{L-\ell}=0
+\end{equation}
+that implies the normalization of the state $|\Psi\rangle$. 
+\begin{flushright}
+	$\square$
+\end{flushright}
 \begin{comment}
 \textbf{Remark}: In the case of $N=2$ we can argue similarly as we did in the Remark of Subsection \ref{subsectionSSHsec}. If we stop distinguishing types of non-empty particles and by introducing $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x,1}}$ we have that \eqref{ABS} reads
 \begin{align}
@@ -1895,14 +1959,63 @@ All in all we have that
 \langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-y_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation} 
 
-\paragraph{Proof of formula \eqref{exactCorrelations}} Consider $m$ particles of non-empty types $s_{i}\in\{1,\ldots,N-1\}$ in positions $y_{i}\in\{1,\ldots,L\}$ such that $y_{i}<y_{i+1}$ for all $i=1,\ldots,m$. We aim to compute the non-equilibrium stationary state correlation $\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}} \rangle_{stat}$. By using duality, we showed in \eqref{CorrelationByABS-prob} that
- \begin{equation}
- 	\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}} \rangle_{stat}=\langle\hat{\bm{\xi}}\rangle_{stat,dual}
- \end{equation} 
-where $\langle\hat{\bm{\xi}}\rangle_{stat,dual}$ we have denoted the stationary state of the dual process starting from the configuration $\hat{\bm{\xi}}$. 
-Using formula \eqref{ABS} for a configuration where all $\tau_{y_{i}}=s_{i}$  for $i=1,\ldots,m$ and $\tau_{j}=N$ for $j\in\{1,\ldots,L\}\setminus \{y_{1},\ldots,y_{m}\}$, we obtain 
+\paragraph{Proof of formula \eqref{exactCorrelations}}
+We aim to compute
 \begin{equation}
- \langle\hat{\bm{\xi}}\rangle_{stat,dual}=\Psi^{'}(\tau_{1},\ldots,\tau_{L})=\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{\tau_{k}}^{c_{k}}\beta_{\tau_{k}}^{1-c_{k}}\left(2+L-y_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}\dt
+\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\mathbb{E}_{stat}\left[\prod_{i=1}^{m}\mathbbm{1}_{\{\tau_{y_{i}}=s_{i}\}}\right]=\sum_{\bm{\tau}\in \Omega}\left(\prod_{i=1}^{m}\mathbbm{1}_{\{\tau_{y_{i}}=s_{i}\}}\right)\langle\bm{\tau}|\Psi\rangle=\sum_{\bm{\tau}\in \Omega}\left(\prod_{i=1}^{m}\mathbbm{1}_{\{\tau_{y_{i}}=s_{i}\}}\right)\Psi(\bm{\tau})
+\end{equation}
+We introduce the space 
+\begin{equation}
+	\widehat{\Omega}^{m}=\left\{\bm{\tau}\in \Omega\;:\; \tau_{y_{1}}=s_{1},\ldots,\tau_{y_{m}}=s_{m}\right\}
+\end{equation}
+where $m$ occupations are fixed and the other $L-m$ can vary in all possible ways. Therefore, we need to compute 
+\begin{equation}
+\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)
+\end{equation}
+Using \eqref{SteadyState-coeff-implicit}, we have that 
+\begin{align}
+&\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)= \sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi^{'}(\tau)\nonumber
+\\+&
+\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
+\end{align}
+We introduce an index $\ell\in \{0,\ldots, L-m\}$ that denotes the number of empty occupations in an arbitrary configuration $\bm{\tau}\in \widehat{\Omega}^{m}$, i.e. $\ell=\sum_{x=1}^{L}\delta_{\tau_{x},N}$. We also introduce the space 
+\begin{equation}
+\widehat{\Omega}^{m}_{\ell}=\left\{\bm{\tau}\in \widehat{\Omega}^{m}\;:\;\sum_{x=1}^{L}\delta_{\tau_{x},N}=\ell\right\}
+\end{equation}
+Then we obtain that 
+\begin{align}
+&\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)= \sum_{\ell=0}^{L-m}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\tau)\nonumber
+\\+&
+\sum_{\ell=0}^{L-m}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
+\end{align}
+The second term on the right hand side in the above equation replaces $b$ empty occupations with all possible non-empty species. If the configuration $\bm{\tau}\in\widehat{\Omega}_{\ell}^{m}$ has $\ell<b$ no contributions are seen. Otherwise, if $\ell\geq b$, $b$ empties are changed, obtaining configuration with $r=\ell-b$ voids occupations, with $r\in \{0,\ldots, L-m-b\}$. Each of such a configuration is counted $\binom{L-r-m}{b}$ times. Therefore, we obtain 
+\begin{align}
+	\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)=& \sum_{\ell=0}^{L-m-1}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\tau)+\Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)\\+&\sum_{b=1}^{L-m}(-1)^{b}\sum_{r=0}^{L-m-b}\binom{L-m-r}{b}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
+\end{align}
+In the second term we exchange the summations obtaining 
+\begin{equation}
+\sum_{\ell=0}^{L-m-1}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\tau)+\sum_{\ell=1}^{L-m-1}\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-m-\ell}{b}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
+\end{equation}
+Using the Binomial theorem, for every $\ell\in \{0,\ldots, L-m-b\}$, we have that
+\begin{equation}
+	1+\sum_{b=1}^{L-m-\ell}(-1)^{b}\binom{L-m-\ell}{b}=0
+\end{equation}
+thus, we obtain 
+\begin{equation}
+\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)=\Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)
+\end{equation}
+that implies 
+\begin{equation}
+\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)
+\end{equation}
+% Consider $m$ particles of non-empty types $s_{i}\in\{1,\ldots,N-1\}$ in positions $y_{i}\in\{1,\ldots,L\}$ such that $y_{i}<y_{i+1}$ for all $i=1,\ldots,m$. We aim to compute the non-equilibrium stationary state correlation $\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}} \rangle_{stat}$. By using duality, we showed in \eqref{CorrelationByABS-prob} that
+% \begin{equation}
+ %	\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}} \rangle_{stat}=\langle\hat{\bm{\xi}}\rangle_{stat,dual}
+% \end{equation} 
+%where $\langle\hat{\bm{\xi}}\rangle_{stat,dual}$ we have denoted the stationary state of the dual process starting from the configuration $\hat{\bm{\xi}}$. 
+Using formula \eqref{ABS} we obtain 
+\begin{equation}
+ \Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)=\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{\tau_{k}}^{c_{k}}\beta_{\tau_{k}}^{1-c_{k}}\left(2+L-y_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}\dt
 \end{equation}
 Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,y_{k},c_{k},\ldots,c_{m})$ we have \eqref{exactCorrelations}.
 \begin{flushright}
@@ -1992,54 +2105,7 @@ Therefore, we compute the third cumulant, i.e. the three-point connected correla
 	\\&=
 	-\frac{2y_{1}(L+1-2y_{2})(L+1-y_{3})}{(L+1)^{3}(L-1)L}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{2}}-\beta_{s_{2}})(\alpha_{s_{3}}-\beta_{s_{3}})\dt
 \end{align}
-\textbf{Remark}: the first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, match with the ones found in Subsection 4.3 of \cite{vanicat2017exact}. \\ \\
-{\color{blue}
-\textbf{How $|\Psi^{'}\rangle$ is related to steady state non-equilibrium correlations and to absorption probabilities?}\\
-We aim to compute correlations between non-empty species in the steady state. We know that for any chain length $L$ we have that the steady state $|\Psi\rangle$ is related to $|\Psi^{'}\rangle$ by
-\begin{equation*}
-	|\Psi\rangle=\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\Psi^{'}\rangle
-\end{equation*}
-We aim to compute the correlations between non-empty particles of an arbitrary configuration $\bm{\tau}$.
-This is equivalent to consider a shorter chain where only non-empty particles are left, while all the sites occupied by the empty $N$ are removed. 
-This chain has length $m=\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})$, where all these $m$ sites are occupied by particles of species for $1$ to $N-1$. To find the desired correlations we compute the steady state of this shorter chain. We denote its configuration chain by $\widehat{\bm{\tau}}$. This configuration is obtained from $\bm{\tau}$ by re-labelling properly the occupations from $1$ to $m$. Then, these $m$ point correlations can be computed by finding $\Psi(\widehat{\bm{\tau}})$.\\ \\ To clarify consider the example $N=3$ and $L=4$ where the empty is the species $3$. Take a configuration  
-\begin{align*}
-	\bm{\tau}=(\tau_{1}=2,\tau_{2}=3,\tau_{3}=1,\tau_{4}=3)
-\end{align*}
-What is the correlation between the occupied species? To compute this we can define the new chain of length $m=2$ with the configuration $\widehat{\bm{\tau}}=(\widehat{\tau}_{1}=2,\widehat{\tau}_{2}=1)$ and find the steady state $|\Psi\rangle$ of this shorter chain. \\ \\
-To compute the steady state of the shorter chain we can use the result that we have in the appendix A in equation \eqref{Tensor-S1}:
-\begin{equation*}
-		\langle \bm{\tau}|	\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\bm{\mu}\rangle=\prod_{x=1}^{L}\left(\delta_{\mu_{x},\tau_{x}}+(-1)\delta_{\tau_{x},N}\sum_{i_{x}=1}^{N-1}\delta_{\mu_{x},i_{x}}\right)
-\end{equation*}
-Thus, for the shorter chain we have that 
-\begin{equation*}
-	\langle \widehat{\bm{\tau}}|\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\bm{\mu}\rangle=\prod_{x=1}^{m}\left(\delta_{\mu_{x},\tau_{x}}\right)
-\end{equation*}
-this implies that 
-\begin{equation}
-	\Psi(\widehat{\bm{\tau}})=\Psi^{'}(\widehat{\bm{\tau}})
-\end{equation}
-where here both $|\Psi(\widehat{\bm{\tau}})\rangle$ and $|\Psi^{'}(\widehat{\bm{\tau}})\rangle$ are eigenvector with vanishing eigenvalue of chains of length $m$. 
-We have computed this $\Psi^{'}(\widehat{\bm{\tau}})$ in \eqref{exactCorrelations} as
-\begin{equation*}
-	\Psi^{'}(\widehat{\bm{\tau}})\sum_{c_{1},\ldots,c_{m}=0}^{1}
-	f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(L,y_{k},c_{k},\ldots,c_{m})
-\end{equation*}
-where 
-\begin{equation*}
-g_{k}(L,y_{k},c_{k},\ldots,c_{m})=\left(L+2-y_{k}-\sum_{i=k}^{m}c_{i}\right)^{c_{k}}
-\end{equation*}
-and 
-\begin{equation*}
-f(L,c_{1},\ldots,c_{m})=\frac{\Gamma(L+2-\sum_{i=1}^{m}c_{i})}{\Gamma(L+2)}
-\end{equation*}
-We also know from \eqref{CorrelationByABS-prob} that 
-\begin{equation*}
-	\Psi(\widehat{\bm{\tau}})= \sum_{c_{1}=0}^{1}\ldots \sum_{c_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{c_{k}}\beta_{a_{k}}^{1-c_{k}}\mathcal{P}(c_{1},\ldots,c_{m},\hat{\bm{\xi}})
-\end{equation*}
-therefore, we can read off the absorption probabilities. \\ \\
-This argument can be adapted for any $1\leq m\leq L$ to compute $m$-point correlations between non-empty species.\\ \\ 
-In general $|\Psi^{'}\rangle$ is the eigenvector with vanishing eigenvalue of $H^{'}$, but I believe it cannot be interpreted directly as a steady state, since $H^{'}$ is not a Markov matrix. However, it gives by the previous argument the exact correlations and as a consequence the absorption probabilities...
-}
+\textbf{Remark}: the first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, match with the ones found in Subsection 4.3 of \cite{vanicat2017exact}.
 \section{Extensions for the non-integrable chain}
 In Sections \ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable using to integrability.  
 The aim of this section is studying some property of the process when integrability is lost. We fix $\nu\geq 1$ and, for the sake of simplicity, we keep the geometry of a chain. We provide the following extensions: 
@@ -2529,7 +2595,7 @@ fulfil the action on the basis vector \eqref{actionE} and the commutation relati
 \section{Exact steady state of $H$}\label{appB}
 
 The steady state $|\Psi\rangle$ of the Hamiltonian $H$ is given by 
-\begin{equation}\label{steadyStateH}
+\begin{equation}
 	|\Psi\rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\Psi(\bm{\tau})|\bm{\tau}\rangle
 \end{equation}
 where for every $(\tau_{1},\ldots,\tau_{L})=\bm{\tau}$
