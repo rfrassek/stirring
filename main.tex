@@ -702,7 +702,7 @@ On one hand, on the extra-site $u(x)$ we have
 where  we used the orthogonality relation \eqref{ortho}. 
 On the other hand, on the site $x$, we have 
 \begin{align*}
-&\langle n_{1}^{x},\ldots,n_{N}^{x}|(\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x})})^{T}R_{x}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\\&= \langle  n_{1}^{x},\ldots,n_{N}^{x}|\left(\sum_{k_{1}=0}^{\infty}\frac{\left\{\left(E_{N1}^{x}\right)^{T}\right\}^{k_{1}}}{k_{1}!}\ldots\sum_{k_{N-1}=0}^{\infty}\frac{\left\{\left(E_{N\,N-1}^{x}\right)^{T}\right\}^{k_{N-1}}}{k_{N-1}!}\sum_{s\in\Omega_{x}}\frac{s_{1}^{x}!\ldots s_{N}^{x}!}{\nu!}|s_{1}^{x},\ldots,s_{N}^{x}\rangle\langle s_{1}^{x},\ldots,s_{N}^{x}|\right)
+&\langle n_{1}^{x},\ldots,n_{N}^{x}|(\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x})})^{T}R_{x}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\\&= \langle  n_{1}^{x},\ldots,n_{N}^{x}|\left(\sum_{k_{1}=0}^{\infty}\frac{\left\{\left(E_{N1}^{x}\right)^{T}\right\}^{k_{1}}}{k_{1}!}\ldots\sum_{k_{N-1}=0}^{\infty}\frac{\left\{\left(E_{N\,N-1}^{x}\right)^{T}\right\}^{k_{N-1}}}{k_{N-1}!}\sum_{s\in\Omega_{x}}\frac{s_{1}^{x}!\cdots s_{N}^{x}!}{\nu!}|s_{1}^{x},\ldots,s_{N}^{x}\rangle\langle s_{1}^{x},\ldots,s_{N}^{x}|\right)
 \\&
 \hspace{2.cm}\qquad|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle
 %\\&=
@@ -712,7 +712,7 @@ On the other hand, on the site $x$, we have
 \\&=
 \sum_{k_{1}=0}^{n_{1}^{x}}\ldots\sum_{k_{N-1}=0}^{n_{N-1}^{x}}\langle n_{1}^{x}-k_{1},\ldots,n_{N-1}^{x}-k_{N-1},\ldots,n_{N}^{x}+k_{1}+\ldots+k_{N-1}|\frac{n_{1}^{x}!\cdots n_{N-1}^{x}!}{(n_{1}^{x}-k_{1})!\cdots(n_{N-1}^{x}-k_{N-1})!}
 \\& 
-\hspace{2.cm}\qquad\frac{1}{k_{1}!\cdots k_{N-1}!}\frac{\xi_{1}^{x}!\ldots \xi_{N}^{x}!}{\nu!}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle
+\hspace{2.cm}\qquad\frac{1}{k_{1}!\cdots k_{N-1}!}\frac{\xi_{1}^{x}!\cdots \xi_{N}^{x}!}{\nu!}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle
 \\&=
 \frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}
 \end{align*}
@@ -806,16 +806,16 @@ In the following we need the application of this with $B=\sum_{a=1}^{N-1}E_{aN}$
 \end{align}
 and 
 \begin{align}
-	\left[B\left[B,A\right]\right]=&\left[\sum_{a=1}^{N-1}E_{aN},\delta_{cN}\sum_{b=1}^{N-1}E_{bd}-\delta_{d<N}E_{cN}\right]\nonumber\\=&
-	\sum_{a=1}^{N-1}\left(\delta_{cN}\sum_{b=1}^{N-1}\left[E_{aN},E_{bd}\right]-\delta_{d<N}\left[E_{aN},E_{cN}\right]\right)\nonumber\\=&
-	\sum_{a=1}^{N-1}\left(-\delta_{cN}\delta_{ad}\sum_{b=1}^{N-1}E_{bN}-\delta_{d<N}\delta_{cN}E_{aN}\right)\nonumber\\=&
-	-\left(\delta_{cN}\delta_{d<N}+\delta_{d<N}\delta_{cN}\right)\sum_{b=1}^{N-1}E_{bN}\nonumber
+	\left[B\left[B,A\right]\right]=&\left[\sum_{a=1}^{N-1}E_{aN},\delta_{cN}\sum_{b=1}^{N-1}E_{bd}-(1-\delta_{dN})E_{cN}\right]\nonumber\\=&
+	\sum_{a=1}^{N-1}\left(\delta_{cN}\sum_{b=1}^{N-1}\left[E_{aN},E_{bd}\right]-(1-\delta_{dN})\left[E_{aN},E_{cN}\right]\right)\nonumber\\=&
+	\sum_{a=1}^{N-1}\left(-\delta_{cN}\delta_{ad}\sum_{b=1}^{N-1}E_{bN}-(1-\delta_{dN})\delta_{cN}E_{aN}\right)\nonumber\\=&
+	-\left(\delta_{cN}(1-\delta_{dN})+(1-\delta_{dN})\delta_{cN}\right)\sum_{b=1}^{N-1}E_{bN}\nonumber
 	\\=&
-	-2\delta_{cN}\delta_{d<N}\sum_{b=1}^{N-1}E_{bN}
+	-2\delta_{cN}(1-\delta_{dN})\sum_{b=1}^{N-1}E_{bN}
 \end{align}
 From the third commutator on we always obtain zero, i.e. $[B,[B,[B,A]]]=0$. All in all we have that 
  \begin{align}\label{HT-BA}
- 	\exp{\left(-\sum_{a=1}^{N-1}E_{aN}\right)}E_{cd}\exp{\left(\sum_{a=1}^{N-1}E_{aN}\right)}=E_{cd}-\delta_{cN}\sum_{a=1}^{N-1}E_{ad}+\delta_{d<N}E_{cN}-\delta_{cN}\delta_{d<N}\sum_{b=1}^{N-1}E_{bN}\dt
+ 	\exp{\left(-\sum_{a=1}^{N-1}E_{aN}\right)}E_{cd}\exp{\left(\sum_{a=1}^{N-1}E_{aN}\right)}=E_{cd}-\delta_{cN}\sum_{a=1}^{N-1}E_{ad}+(1-\delta_{dN})E_{cN}-\delta_{cN}(1-\delta_{dN})\sum_{b=1}^{N-1}E_{bN}\dt
  \end{align}
 \begin{comment}
 \begin{enumerate}
@@ -944,7 +944,7 @@ Recalling the action of the bosonic creation operator acting at site $u(x)$ and 
     \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})^{u(x)}_{a}=  \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|\dt
 \end{equation}
 Using \eqref{bosonicKX} we rewrite the term of \eqref{siteHadamardII} with Lie generator $E_{Na}^{x}$ on the right hand side of \eqref{siteHadamardII} as 
-\begin{equation}
+\begin{equation}\label{extra-site-trick}
     \begin{split}
 &\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{b=1}^{N-1}\left(\rho_{b}^{x}\right)^{\xi_{b}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|\rho_{a}^{x}
 \\=&
@@ -954,17 +954,17 @@ Using \eqref{bosonicKX} we rewrite the term of \eqref{siteHadamardII} with Lie g
 \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}
     \end{split}
 \end{equation}
-where, in the up to last equality, we performed a change of summation variable and where in the last equality we used the fact that  
+where, in the up to last equality, we performed a change of summation variable and we used the fact that  
 \begin{equation}
 	\begin{split}
-&\sum_{\xi_{a}^{u(x)}=0}^{\infty}\rho_{a}^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}\\=&\sum_{\xi_{a}^{u(x)}=1}^{\infty}\rho_{a}^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}+\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}\\=&\sum_{\xi_{a}^{u(x)}=1}^{\infty}\rho_{a}^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}
+&\sum_{\xi_{a}^{u(x)}=0}^{\infty}\rho_{a}^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}\\=&\sum_{\xi_{a}^{u(x)}=1}^{\infty}\rho_{a}^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}+\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}\\=&\sum_{\xi_{a}^{u(x)}=1}^{\infty}\rho_{a}^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}\dt
 \end{split}
 \end{equation}
-Indeed, as a consequence of \eqref{bosonicKX} we have 
+This is a consequence of 
 \begin{equation}
 \langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}=0
 \end{equation}
-Therefore, inserting this last equation in \eqref{siteHadamardII} we obtain 
+that follows from \eqref{bosonicKX}. Therefore, inserting \eqref{extra-site-trick} in \eqref{siteHadamardII} we obtain 
 \begin{equation}
     \begin{split}
 H_{x}^{T}d_{x}\otimes \dd&=
@@ -981,90 +981,7 @@ Since the duality matrix \eqref{dualityMatrix} is product over sites, the above 
 \begin{flushright}
 $\square$
 \end{flushright}
-\subsection{Duality for a boundary driven chain}\label{Subsection-ss-nonI}
-In this subsection we specialize the results of Subsection \ref{statementDualitySubsection} to a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can still host $\nu\geq 1$ particles, chosen among the $N$ types. Now the dual graph is still a chain, but where two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$) are present. As already pointed out the dual process eventually voids the graph by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites ($0$ and $L+1$) and replacing them by types $N$. This property allows to characterize the steady state non-equilibrium distribution (assuming that it is unique) by the probability that dual particles are absorbed in the extra-sites, then called \textit{absorption probabilities}. \\The process $\left(\bm{n}(t)\right)_{t\geq0}$ is defined on the space
- \begin{equation}\label{stateSpace-Chain}
- 	\Omega=\bigtimes_{x=1}^{L} \Omega_{x}
- \end{equation} and its generator reads
-\begin{equation}
-	\mathcal{L}=\mathcal{L}_{left}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\mathcal{L}_{right}\dt
-\end{equation} 
-The bulk is 
-\begin{equation}
-	\mathcal{L}_{x,x+1}f(\bm{n})=\sum_{a,b=0}^{N}n_{a}^{x}n_{b}^{x+1}\left(f(\bm{n}-\bm{\delta}_{a}^{x}+\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x+1}-\bm{\delta}_{b}^{x+1})-f(\bm{n})\right)
-\end{equation}
-while at the boundaries 
-\begin{equation}
-	\mathcal{L}_{left}f(\bm{n})=\sum_{a,b=0}^{N}\alpha_{a}n_{b}^{1}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-f(\bm{n})\right)\qquad \mathcal{L}_{right}f(\bm{n})=\sum_{a,b=0}^{N}\beta_{a}n_{b}^{L}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-f(\bm{n})\right)\dt
-\end{equation}
- The process is dual with respect to $(\bm{\xi}(t))_{t\geq0} $ defined on the enlarged configuration space
-\begin{equation}\label{stateSpaceDUAL-Chain}	
-	\widetilde{\Omega}=N_{0}^{N}\times\bigtimes_{x=1}^{L} \Omega_{x}\times N_{0}^{N}
-\end{equation}
-whit dual generator
-\begin{equation}
-	\widetilde{\mathcal{L}}=\widetilde{\mathcal{L}}_{left}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\widetilde{\mathcal{L}}_{right}
-\end{equation} 
-where $\mathcal{L}_{x,x+1}$ is given by \eqref{Generator} and where the boundaries are absorbing, i.e. 
-\begin{equation}\label{abs-dual-boundary-chain}
-	\begin{split}
-		\widetilde{\mathcal{L}}_{left}f(\bm{\xi})&=|\alpha|\sum_{a=1}^{N-1}\xi_{a}^{1}\left(f(\bm{\xi}-\bm{\delta}_{a}^{1}+\bm{\delta}_{N}^{1}+\bm{\delta}_{a}^{0})f(\bm{\xi})\right)\\\widetilde{\mathcal{L}}_{right}f(\bm{\xi})&=|\beta|\sum_{a=1}^{N-1}\xi_{a}^{L}\left(f(\bm{\xi}-\bm{\delta}_{a}^{L}+\bm{\delta}_{N}^{L}+\bm{\delta}_{a}^{L+1})-f(\bm{\xi})\right)
-	\end{split}
-\end{equation}
-where $0$ and $L+1$ are the extra-sites. The duality function reads
-\begin{equation}\label{dualityFunctionChain}
-	D(\bm{n},\bm{\xi})=\prod_{a=1}^{N-1}\left(\rho_{a}^{L}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{\eta_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=1}^{N-1}\left(\rho_{a}^{R}\right)^{\xi_{a}^{L+1}}
-\end{equation}
-where $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{|\alpha|}$ and where $\rho_{\alpha}^{R}=\frac{\beta_{a}}{|\beta|}$.\\
-The dual process has absorbing boundaries, i.e. all dual particles are eventually absorbed at $0$ or at $L+1$ with a certain probability. This implies that the chain is eventually voided and the steady state correlations of the original process can be written via the absorption probabilities of the dual process as explained in the following. 
-We call $\mu_{stat}$ the stationary measure of the the process $(\bm{n}(t))_{t\geq 0}$. Consider an arbitrary initial configuration of $(\bm{n}(t))_{t\geq 0}$ denoted by $\bm{n}$. For every $m\in\{1,\ldots,L\}$ we consider the dual configuration  $\bm{\widehat{\xi}}=\sum_{k=1}\delta_{s_{k}}^{y_{k}}$ with $y_{k}\in\{1,\ldots,L\}$ and $s_{k}\in \{1,\ldots,N-1\}$ for every $k\in \{1,\ldots,m\}$. The following  equalities holds thanks to the duality relation \eqref{duality-expectation}:
-\begin{equation}\label{ExptationSS}
-	\begin{split}
-		\mathbb{E}_{\mu^{stat}}\left[D(\bm{n}(t),\hat{\bm{\xi}})\right]&=\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\hat{\bm{\xi}})\right]=\lim_{t\to\infty}\mathbb{E}_{\hat{\bm{\xi}}}\left[D(\bm{n},\bm{\xi}(t))\right]
-		\\&=
-		\sum_{i_{1}=0}^{|\hat{\xi}_{1}|}\ldots\sum_{i_{N}=0}^{|\hat{\xi}_{N}|}\prod_{a=1}^{N-1}\left(\rho_{a}^{L}\right)^{i_{a}}\left(\rho_{a}^{R}\right)^{|\hat{\xi}_{a}|-i_{a}}\mathcal{P}(i_{1},\ldots,i_{N},\hat{\bm{\xi}})
-	\end{split}
-\end{equation}
-where 
-\begin{equation}\label{Pass}
-	\mathcal{P}(i_{1},\ldots,i_{N},\hat{\bm{\xi}})	=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{a=1}^{N-1}\left(i_{a}\delta_{0}+(|\hat{\xi}_{a}|-i_{a})\delta_{L+1}\right)| \bm{\xi}(0)=\hat{\bm{\xi}}\right)
-\end{equation}
-are called the \textit{absorption probabilities}, i.e. the probabilities that $i_{a}$ particles of species $a$ are absorbed at $0$ and $|\xi_{a}|-i_{a}$ are absorbed at $L+1$ when time goes to infinity and starting from a configuration $\hat{\bm{\xi}}$. Here we denoted $|\hat{\xi}_{a}|=\sum_{x=1}^{L}\hat{\xi}_{a}^{x}$.
-The duality function \eqref{dualityFunctionChain} computed in the dual configurations $\bm{\hat{\xi}}$ is given by 
-\begin{equation}
-	D(\bm{n},\bm{\hat{\xi}})= \frac{\prod_{k=1}^{m}n_{s_{k}}^{y_{k}}}{(\nu-m+1)}\dt
-\end{equation}
-Therefore, up to a constant, $\mathbb{E}_{\mu^{\text{stat}}}\left[D(\bm{n},\bm{\hat{\xi}})\right]$ gives the non-equilibrium stationary state $m-$points correlations among non-empty species of types $s_{k}\in\{1,\ldots,N-1\}$ situated at sites $y_{k}\in\{1,\ldots,L\}$ with $k\in \{1,\ldots,m\}$. Using \eqref{ExptationSS}, this expectation can be computed by \eqref{ExptationSS} once the absorption probabilities are known. However, these absorption probabilities fulfil some difference equations that are not easy to solve. For example, we report here the solution for the simplest case of one point correlations that is exactly solvable, since the single dual particle behaves as an independent random walker. 
-\paragraph{One point correlations for the $\nu\geq 1$ case}
-We consider $\widehat{\bm{\xi}}=\delta_{s}^{y}$, then 
-\begin{equation}
-	\nu D(\eta,\delta_{s}^{y})=n_{s}^{y}\dt
-\end{equation}
-The average occupation reads
-\begin{equation}\label{OnePtsCORR}
-	\begin{split}
-		\langle n_{s}^{x}\rangle_{\text{stat}}&=\frac{1}{\nu}\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\delta_{s}^{y})\right]\\&=\frac{1}{\nu}\sum_{i_{s}=0}^{1}\left(\rho_{s}^{L}\right)^{i_{s}}\left(\rho_{s}^{R}\right)^{1-i_{s}}\mathbb{P}_{\delta_{s}^{y}}\left(\xi_{\infty}=i_{s}\delta_{0}+(1-i_{s})\delta_{L+1}\right)\dt
-	\end{split}
-\end{equation}
-To explicitly find the result, we aim to determine $\mathcal{P}(1,\delta_{s}^{y})=\mathbb{P}_{\delta_{s}^{y}}\left(\xi_{\infty}=i_{s}\delta_{0}+(1-i_{s})\delta_{L+1}\right)$. This is the probability of a random walker on the chain $\{1,\ldots,L\}$ with absorbing boundaries, therefore, it fulfils the following equations discrete Laplace equation
-\begin{equation}\label{gamblers-ruin}
-	\begin{cases}
-		\Delta_{y}^{L}\mathcal{P}(1,\delta_{s}^{y})=0\\
-		\mathcal{P}(1,\delta_{s}^{1})=\frac{|\alpha|}{1+|\alpha|}+\mathcal{P}(1,\delta_{s}^{2})\frac{1}{1+|\alpha|}\\
-		\mathcal{P}(1,\delta_{s}^{L})=\mathcal{P}(1,\delta_{s}^{L-1})\frac{1}{1+|\beta|}
-	\end{cases}
-\end{equation}
-where $\Delta_{y}^{L}$ is the discrete Laplace operator on the chain of length $L$. The equations \eqref{gamblers-ruin} can be solved and using $\mathcal{P}(1,\delta_{s}^{y})=1-\mathcal{P}(0,\delta_{s}^{y})$ we obtain 
-\begin{equation}
-	\langle n_{s}^{x}\rangle_{\text{stat}}=\frac{1}{\nu}\frac{\alpha_{s}(L|\beta|-|\beta|x+1)+\beta_{s}(|\alpha|x+1-|\alpha|)}{|\alpha||\beta|L-|\alpha||\beta|+|\alpha|+|\beta|}\dt
-\end{equation}
-\textbf{Remark}: In case $|\alpha|=|\beta|=\nu=1$ (when the chain is integrable) we have 
-\begin{equation}
-	\langle n_{s}^{x}\rangle_{\text{stat}}=\frac{\alpha_{s}(L-x+1)+\beta_{s}x}{L+1}
-\end{equation}
-that is the same result obtained in \cite{vanicat2017exact}. 
-\\
-\\ Already for two-point correlations the computations become more involving and hard to solve. In the following we specialize the chain to the integrable case $\nu=1$. As it will be shown, in such a situation the non-equilibrium steady state correlations can be computed with different techniques exploiting the integrability of the process (matrix product ansatz and quantum inverse scattering method) combined with duality and, as a by-product, all absorption probabilities can be explicitly found. 
+
 \subsection{Duality for the integrable process on a line segment}\label{integrableChain-duality}
 Here we consider the chain defined in Subsection \ref{subsection-description-process-LINE}. We recall that the geometry is a one dimensional chain with sites $\{1,\ldots,L\}$ where reservoirs are attached to $1$ and $L$. Now we assume the hard-core exclusion rule, i.e. $\nu=1$. The dynamics is described by an Hamiltonian that is written in terms of the first fundamental representation of $gl(N)$. Duality result stated in Subsection \ref{statementDualitySubsection} can be adapted. The extra-sites are denoted by $0$ and $L+1$, and they are connected with sites $1$ and $L$ of the chain respectively. The matrix $R_{x}$ defined in \eqref{Revmatrix} 
 reduces to the identity, therefore the relation between the generators of the algebra and its transposed reduces to
@@ -1086,15 +1003,15 @@ The dual Hamiltonian is
 \end{equation}
 where $\mathcal{H}$ is defined in \eqref{H-corsivo} and 
 \begin{equation}\label{boundary-H-dual-chain}
-	\widetilde{H}_{left}=\sum_{a=1}^{N-1}\left((a^{\dagger})_{a}^{0}\,E_{Na}^{1}-E_{aa}^{1}\right)\qquad 	\widetilde{H}_{right}=\sum_{a=1}^{N-1}\left((a^{\dagger})_{a}^{L+1}\,E_{Na}^{L}-E_{aa}^{L}\right)\dt
+	\widetilde{H}_{left}=\sum_{a=1}^{N-1}\left((a^{\dagger})_{a}^{0}\,e_{Na}^{1}-e_{aa}^{1}\right)\qquad 	\widetilde{H}_{right}=\sum_{a=1}^{N-1}\left((a^{\dagger})_{a}^{L+1}\,e_{Na}^{L}-e_{aa}^{L}\right)\dt
 \end{equation}
-In the long-time limit the dual process voids the chain, i.e. all particles of types $\{1,\ldots,N-1\}$ are eventually absorbed at the extra-sites $0$ and $L+1$ and replaced by types $N$. We also notice that, up the the bosonic creation operators $(a^{\dagger})_{a}$, the dual boundary Hamiltonians \eqref{boundary-H-dual-chain} are triangular. This simplification will be crucial in Sections \ref{sectionIntegrabiliy} and \ref{Section-Mapping}.\\
+In the long-time limit the dual process voids the chain, i.e. all particles of types $\{1,\ldots,N-1\}$ are eventually absorbed at the extra-sites $0$ and $L+1$ and replaced by types $N$. We also notice that, up the the bosonic creation operators $(a^{\dagger})_{a}$, the dual boundary Hamiltonians \eqref{boundary-H-dual-chain} are triangular. This simplification will be crucial in Sections \ref{sectionIntegrabiliy}.\\
 
 Using the above duality elements, we can compute the  $m$-point correlations between non-empty particles using the absorption probabilities. Consider a dual configuration $\bm{\hat{\xi}}:=\sum_{k=1}^{m}\delta_{s_{k}}^{y_{k}}$ where $s_{k}\in\{1,\ldots,N-1\}$ and $y_{k}\in\{1,\ldots,L\}$ such that $y_{k}<y_{k+1}$ for every $k\in\{1,\ldots,m\}$. Fix an arbitrary initial configuration $\bm{n}$, the elements \eqref{ElementsDualityMatrixChain} of the duality matrix computed in the dual configuration $\bm{\hat{\xi}}$ read
 \begin{equation}
 	D(\bm{n},\bm{\hat{\xi}})=\prod_{k=1}^{m}\mathbbm{1}_{\{n_{s_{k}}^{s_{k}}=1\}}\dt
 \end{equation}
-Repeating the argument of Subsection \ref{Subsection-ss-nonI} and denoting the $m$-point correlations by $\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}}\rangle_{stat}$ we have 
+Denoting the $m$-point correlations by $\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}}\rangle_{stat}$ we have 
 %To compute the steady state $m$-point correlations of the process $\bm{n}(t)$ we recall that the dual process eventually voids the chain (by putting all particles in the extra-sites $0$ and $L$). Therefore, we have the following equalities
 \begin{equation}\label{CorrelationByABS-prob}
 	\begin{split}
@@ -2116,11 +2033,95 @@ Therefore, we compute the third cumulant, i.e. the three-point connected correla
 In Sections \ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable using to integrability.  
 The aim of this section is studying some property of the process when integrability is lost. We fix $\nu\geq 1$ and, for the sake of simplicity, we keep the geometry of a chain. We provide the following extensions: 
 \begin{enumerate}
-	%\item \textit{Arbitrary correlations}: exploiting duality, the steady state correlations can be expressed in terms of absorption probabilities of the dual particles. These probability are hard to find in this partial exclusion situation, however correlation can be formally written. Subsection \ref{Subsection-ss-nonI}.
+	\item \textit{Arbitrary correlations}: exploiting duality, the steady state correlations can be expressed in terms of absorption probabilities of the dual particles. These probability are hard to find in this partial exclusion situation, however correlation can be formally written. Subsection \ref{Subsection-ss-nonI}.
 	\item \textit{Instantaneous thermalization}: starting from the multi-species stirring dynamics, we define the thermalized process, where particle are redistribute in each bond with a measure that is the reversible one conditioned to the conservation of the number of particles on this bond. Also for this thermalized process we prove duality. Subsection \ref{Subsection-Thermalized}.
 	\item \textit{Reaction-diffusion process}: a further dynamics is added. Particle can now change type. The model is carefully constructed with the goal of having the average densities evolving as a system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is also proved. Subsection \ref{Subsection-RD}
 \end{enumerate}
-
+\subsection{Duality for a boundary driven chain}\label{Subsection-ss-nonI}
+In this subsection we specialize the results of Subsection \ref{statementDualitySubsection} to a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can still host $\nu\geq 1$ particles, chosen among the $N$ types. Now the dual graph is still a chain, but where two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$) are present. As already pointed out the dual process eventually voids the graph by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites ($0$ and $L+1$) and replacing them by types $N$. This property allows to characterize the steady state non-equilibrium distribution (assuming that it is unique) by the probability that dual particles are absorbed in the extra-sites, then called \textit{absorption probabilities}. \\The process $\left(\bm{n}(t)\right)_{t\geq0}$ is defined on the space
+\begin{equation}\label{stateSpace-Chain}
+	\Omega=\bigtimes_{x=1}^{L} \Omega_{x}
+\end{equation} and its generator reads
+\begin{equation}
+	\mathcal{L}=\mathcal{L}_{left}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\mathcal{L}_{right}\dt
+\end{equation} 
+The bulk is 
+\begin{equation}
+	\mathcal{L}_{x,x+1}f(\bm{n})=\sum_{a,b=0}^{N}n_{a}^{x}n_{b}^{x+1}\left(f(\bm{n}-\bm{\delta}_{a}^{x}+\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x+1}-\bm{\delta}_{b}^{x+1})-f(\bm{n})\right)
+\end{equation}
+while at the boundaries 
+\begin{equation}
+	\mathcal{L}_{left}f(\bm{n})=\sum_{a,b=0}^{N}\alpha_{a}n_{b}^{1}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-f(\bm{n})\right)\qquad \mathcal{L}_{right}f(\bm{n})=\sum_{a,b=0}^{N}\beta_{a}n_{b}^{L}\left(f(\bm{n}-\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x})-f(\bm{n})\right)\dt
+\end{equation}
+The process is dual with respect to $(\bm{\xi}(t))_{t\geq0} $ defined on the enlarged configuration space
+\begin{equation}\label{stateSpaceDUAL-Chain}	
+	\widetilde{\Omega}=N_{0}^{N}\times\bigtimes_{x=1}^{L} \Omega_{x}\times N_{0}^{N}
+\end{equation}
+whit dual generator
+\begin{equation}
+	\widetilde{\mathcal{L}}=\widetilde{\mathcal{L}}_{left}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\widetilde{\mathcal{L}}_{right}
+\end{equation} 
+where $\mathcal{L}_{x,x+1}$ is given by \eqref{Generator} and where the boundaries are absorbing, i.e. 
+\begin{equation}\label{abs-dual-boundary-chain}
+	\begin{split}
+		\widetilde{\mathcal{L}}_{left}f(\bm{\xi})&=|\alpha|\sum_{a=1}^{N-1}\xi_{a}^{1}\left(f(\bm{\xi}-\bm{\delta}_{a}^{1}+\bm{\delta}_{N}^{1}+\bm{\delta}_{a}^{0})f(\bm{\xi})\right)\\\widetilde{\mathcal{L}}_{right}f(\bm{\xi})&=|\beta|\sum_{a=1}^{N-1}\xi_{a}^{L}\left(f(\bm{\xi}-\bm{\delta}_{a}^{L}+\bm{\delta}_{N}^{L}+\bm{\delta}_{a}^{L+1})-f(\bm{\xi})\right)
+	\end{split}
+\end{equation}
+where $0$ and $L+1$ are the extra-sites. The duality function reads
+\begin{equation}\label{dualityFunctionChain}
+	D(\bm{n},\bm{\xi})=\prod_{a=1}^{N-1}\left(\rho_{a}^{L}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{\eta_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=1}^{N-1}\left(\rho_{a}^{R}\right)^{\xi_{a}^{L+1}}
+\end{equation}
+where $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{|\alpha|}$ and where $\rho_{\alpha}^{R}=\frac{\beta_{a}}{|\beta|}$.\\
+The dual process has absorbing boundaries, i.e. all dual particles are eventually absorbed at $0$ or at $L+1$ with a certain probability. This implies that the chain is eventually voided and the steady state correlations of the original process can be written via the absorption probabilities of the dual process as explained in the following. 
+We call $\mu_{stat}$ the stationary measure of the the process $(\bm{n}(t))_{t\geq 0}$. Consider an arbitrary initial configuration of $(\bm{n}(t))_{t\geq 0}$ denoted by $\bm{n}$. For every $m\in\{1,\ldots,L\}$ we consider the dual configuration  $\bm{\widehat{\xi}}=\sum_{k=1}\delta_{s_{k}}^{y_{k}}$ with $y_{k}\in\{1,\ldots,L\}$ and $s_{k}\in \{1,\ldots,N-1\}$ for every $k\in \{1,\ldots,m\}$. The following  equalities holds using duality relation \eqref{duality-expectation}:
+\begin{equation}\label{ExptationSS}
+	\begin{split}
+		\mathbb{E}_{\mu^{stat}}\left[D(\bm{n}(t),\hat{\bm{\xi}})\right]&=\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\hat{\bm{\xi}})\right]=\lim_{t\to\infty}\mathbb{E}_{\hat{\bm{\xi}}}\left[D(\bm{n},\bm{\xi}(t))\right]
+		\\&=
+		\sum_{i_{1}=0}^{|\hat{\xi}_{1}|}\ldots\sum_{i_{N}=0}^{|\hat{\xi}_{N}|}\prod_{a=1}^{N-1}\left(\rho_{a}^{L}\right)^{i_{a}}\left(\rho_{a}^{R}\right)^{|\hat{\xi}_{a}|-i_{a}}\mathcal{P}(i_{1},\ldots,i_{N},\hat{\bm{\xi}})
+	\end{split}
+\end{equation}
+where 
+\begin{equation}\label{Pass}
+	\mathcal{P}(i_{1},\ldots,i_{N},\hat{\bm{\xi}})	=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{a=1}^{N-1}\left(i_{a}\delta_{0}+(|\hat{\xi}_{a}|-i_{a})\delta_{L+1}\right)| \bm{\xi}(0)=\hat{\bm{\xi}}\right)
+\end{equation}
+are called the \textit{absorption probabilities}, i.e. the probabilities that $i_{a}$ particles of species $a$ are absorbed at $0$ and $|\xi_{a}|-i_{a}$ are absorbed at $L+1$ when time goes to infinity and starting from a configuration $\hat{\bm{\xi}}$. Here we denoted $|\hat{\xi}_{a}|=\sum_{x=1}^{L}\hat{\xi}_{a}^{x}$.
+The duality function \eqref{dualityFunctionChain} computed in the dual configurations $\bm{\hat{\xi}}$ is given by 
+\begin{equation}
+	D(\bm{n},\bm{\hat{\xi}})= \frac{\prod_{k=1}^{m}n_{s_{k}}^{y_{k}}}{(\nu-m+1)}\dt
+\end{equation}
+Therefore, up to a constant, $\mathbb{E}_{\mu^{\text{stat}}}\left[D(\bm{n},\bm{\hat{\xi}})\right]$ gives the non-equilibrium stationary state $m-$points correlations among non-empty species of types $s_{k}\in\{1,\ldots,N-1\}$ situated at sites $y_{k}\in\{1,\ldots,L\}$ with $k\in \{1,\ldots,m\}$. Using \eqref{ExptationSS}, this expectation can be computed by \eqref{ExptationSS} once the absorption probabilities are known. However, these absorption probabilities fulfil some difference equations that are not easy to solve. For example, we report here the solution for the simplest case of one point correlations that is exactly solvable, since the single dual particle behaves as an independent random walker. 
+\paragraph{One point correlations for the $\nu\geq 1$ case}
+We consider $\widehat{\bm{\xi}}=\delta_{s}^{y}$, then 
+\begin{equation}
+	\nu D(\eta,\delta_{s}^{y})=n_{s}^{y}\dt
+\end{equation}
+The average occupation reads
+\begin{equation}\label{OnePtsCORR}
+	\begin{split}
+		\langle n_{s}^{x}\rangle_{\text{stat}}&=\frac{1}{\nu}\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\delta_{s}^{y})\right]\\&=\frac{1}{\nu}\sum_{i_{s}=0}^{1}\left(\rho_{s}^{L}\right)^{i_{s}}\left(\rho_{s}^{R}\right)^{1-i_{s}}\mathbb{P}_{\delta_{s}^{y}}\left(\xi_{\infty}=i_{s}\delta_{0}+(1-i_{s})\delta_{L+1}\right)\dt
+	\end{split}
+\end{equation}
+To explicitly find the result, we aim to determine $\mathcal{P}(1,\delta_{s}^{y})=\mathbb{P}_{\delta_{s}^{y}}\left(\xi_{\infty}=i_{s}\delta_{0}+(1-i_{s})\delta_{L+1}\right)$. This is the probability of a random walker on the chain $\{1,\ldots,L\}$ with absorbing boundaries, therefore, it fulfils the following equations discrete Laplace equation
+\begin{equation}\label{gamblers-ruin}
+	\begin{cases}
+		\Delta_{y}^{L}\mathcal{P}(1,\delta_{s}^{y})=0\\
+		\mathcal{P}(1,\delta_{s}^{1})=\frac{|\alpha|}{1+|\alpha|}+\mathcal{P}(1,\delta_{s}^{2})\frac{1}{1+|\alpha|}\\
+		\mathcal{P}(1,\delta_{s}^{L})=\mathcal{P}(1,\delta_{s}^{L-1})\frac{1}{1+|\beta|}
+	\end{cases}
+\end{equation}
+where $\Delta_{y}^{L}$ is the discrete Laplace operator on the chain of length $L$. The equations \eqref{gamblers-ruin} can be solved and using $\mathcal{P}(1,\delta_{s}^{y})=1-\mathcal{P}(0,\delta_{s}^{y})$ we obtain 
+\begin{equation}
+	\langle n_{s}^{x}\rangle_{\text{stat}}=\frac{1}{\nu}\frac{\alpha_{s}(L|\beta|-|\beta|x+1)+\beta_{s}(|\alpha|x+1-|\alpha|)}{|\alpha||\beta|L-|\alpha||\beta|+|\alpha|+|\beta|}\dt
+\end{equation}
+\textbf{Remark}: In case $|\alpha|=|\beta|=\nu=1$ (when the chain is integrable) we have 
+\begin{equation}
+	\langle n_{s}^{x}\rangle_{\text{stat}}=\frac{\alpha_{s}(L-x+1)+\beta_{s}x}{L+1}
+\end{equation}
+that is the same result obtained in \cite{vanicat2017exact}. 
+\\
+\\ Already for two-point correlations the computations become more involving and hard to solve.
+% In the following we specialize the chain to the integrable case $\nu=1$. As it will be shown, in such a situation the non-equilibrium steady state correlations can be computed with different techniques exploiting the integrability of the process (matrix product ansatz and quantum inverse scattering method) combined with duality and, as a by-product, all absorption probabilities can be explicitly found. 
 
 \subsection{Instantaneous thermalization}\label{Subsection-Thermalized}
 In this subsection we aim to extend to the multi-species stirring process the concept of \textit{thermalization limit} (see \cite{carinci2013duality}). The thermalized process gives rise, for any pair nearest neighbour sites of the chain, to a redistribution of the total number of particles. The thermalized model that we present in this paper is obtained from the boundary driven model with generator \eqref{Generator} performing an \textit{instantaneous thermalization limit}: for each bond $(x,x+1)$ the total number of particles $\bm{\epsilon}=n^{x}+n^{x+1}$ is redistributed according to the reversible measure, conditioned on the conservation of $\bm{\epsilon}$. 
