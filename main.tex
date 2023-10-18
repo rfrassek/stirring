@@ -1740,8 +1740,8 @@ where for every $(\tau_{1},\ldots,\tau_{L})=\bm{\tau}$
 		\Psi(\bm{\tau})=&\Psi^{'}(\bm{\tau})\\+&\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
 	\end{split}
 \end{equation}
-To compute correlations it is enough the above expression. Using \eqref{ABS} it is possible to write $\Psi(\bm{\tau})$ explicitly. We report this explicit formula and the proof in Appendix \ref{appB}.\\
-The expression \eqref{SteadyState-coeff-implicit} has two contribution. First a term $\Psi^{'}(\bm{\tau})$ and second a where $b$ of the empty occupations of $\bm{\tau}$ have been replaced by all possible species from $1$ to $N-1$. If the configuration $\bm{\tau}$ has no empty species, this second term vanishes. The existence of the second term is motivated by the fact that, the empty occupation at each site $x$ depend on the other species via $1=\sum_{a=1}^{N}n_{a}^{x}$.\\  
+ Using \eqref{ABS} it is possible to write $\Psi(\bm{\tau})$ explicitly, however to compute correlations it is enough the above expression. We report the explicit formula and the proof in Appendix \ref{appB}.\\
+In \eqref{SteadyState-coeff-implicit} there are two terms. For every configuration $\bm{\tau}$ the first term just gives $\Psi^{'}(\bm{\tau})$ from formula \eqref{ABS}. The second term acts as follows: for every $b\in\{1,\ldots,L\}$, if $\bm{\tau}$ has more then $b$ empty occupations, it changes $b$ of these empty occupations in all possible species from $1$ to $N-1$ and gives contributions $\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})$ computed in these new configurations with proper coefficients. If $\bm{\tau}$ has less than $b$ empty occupation we do not see any contribution from this second term.\\
 The state $|\Psi\rangle$ is normalized. To prove it we aim to show that 
 \begin{equation}
 	\sum_{\bm{\tau}\in\Omega}\langle \bm{\tau}|\Psi\rangle=\sum_{\bm{\tau}\in \Omega}\Psi(\bm{\tau})=1
@@ -1768,18 +1768,18 @@ thus, it is enough to prove that
 	&\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})\nonumber
 	+\\&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\&=0
 \end{align}
-We now consider the second term of the above expression. For any fixed $\ell$ and for any fixed $\bm{\tau}\in \Omega_{\ell}$, $b$ empty occupations are replaced by all possible non-empty species. For a fixed $b$, if the configuration $\bm{\tau}\in \Omega_{\ell}$ with has $\ell<b$, then the this term do not produce any contribution. On the other hand, if $b\geq \ell$ we obtain from $\bm{\tau}$ all possible configuration in the space $ \Omega_{\ell-b}$, where $b$ empties have been replaced by all  species from $1$ to $N-1$. Each of such a configuration is counted $\binom{L-\ell+b}{b}$, since we have added $b$ non-empty occupations to the configuration $\bm{\tau}$ in all possible ways. By calling $r=\ell-b$ if $b\leq \ell$ we have that 
+We now consider the second term of the above expression. For a fixed $b$, $\ell$ and $\bm{\tau}$, if the configuration $\bm{\tau}\in \Omega_{\ell}$ has $\ell<b$, then this term do not produce any contribution. On the other hand, if $b\geq \ell$ we obtain all possible configuration in the space $ \Omega_{\ell-b}$, where $b$ of the $\ell$ empties have been replaced by all  species from $1$ to $N-1$. Each of such a configuration is counted $\binom{L-\ell+b}{b}$, since we have added,  in all possible ways, $b$ non-empty occupations to the configuration $\bm{\tau}$ that had originally $L-\ell$ sites occupied with non-empty species. By calling $r=\ell-b$ if $b\leq \ell$ we have that 
 \begin{align}
 &\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\
-=&\sum_{b=1}^{L}(-1)^{b}\sum_{r=0}^{L-b}\binom{L-r}{b}\sum_{\bm{\tau}\in \Omega_{r}}\Psi^{'}(\bm{\tau})\mathbbm{1}_{\{b\leq L-r\}}\dt
+=&\sum_{b=1}^{L}(-1)^{b}\sum_{r=0}^{L-b}\binom{L-r}{b}\mathbbm{1}_{\{b\leq L-r\}}\sum_{\bm{\tau}\in \Omega_{r}}\Psi^{'}(\bm{\tau})\dt
 \end{align} 
-As a consequence, we have that the normalization condition reads
+As a consequence, by using again the index $\ell$ in the second term, we have that the normalization condition reads
 \begin{align}
-\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})+\sum_{b=1}^{L}(-1)^{b}\sum_{\ell=0}^{L-b}\binom{L-\ell}{b}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})\mathbbm{1}_{\{b\leq L-\ell\}}=0\dt
+\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})+\sum_{b=1}^{L}(-1)^{b}\sum_{\ell=0}^{L-b}\binom{L-\ell}{b}\mathbbm{1}_{\{b\leq L-\ell\}}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})=0\dt
 \end{align}
 By exchanging the summations we have 
 \begin{equation}
-\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})+\sum_{\ell=0}^{L-1}\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-\ell}{b}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})\mathbbm{1}_{\{b\leq L-\ell\}}=0\dt
+\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})+\sum_{\ell=0}^{L-1}\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-\ell}{b}\mathbbm{1}_{\{b\leq L-\ell\}}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})=0\dt
 \end{equation}
 It is enough to prove that, for any fixed $\ell\in\{0,\ldots, L-1\}$ we have that 
 \begin{align}
@@ -1909,12 +1909,12 @@ Then we obtain that
 \\+&
 \sum_{\ell=0}^{L-m}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
 \end{align}
-The second term on the right hand side in the above equation replaces $b$ empty occupations with all possible non-empty species. If the configuration $\bm{\tau}\in\widehat{\Omega}_{\ell}^{m}$ has $\ell<b$ no contributions are seen. Otherwise, if $\ell\geq b$, $b$ empties are changed, obtaining configuration with $r=\ell-b$ voids occupations, with $r\in \{0,\ldots, L-m-b\}$. Each of such a configuration is counted $\binom{L-r-m}{b}$ times. Therefore, we obtain 
+In the first summation on the right-hand-side, there is only one term that has all sites empty but the one in position $y_{1},\ldots,y_{m}$ that are occupied by $s_{1},\ldots,s_{m}$. This is reached when $\ell=L-m$ and we denote it by $\Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)$. The second term on the right-hand-side in the above equation replaces $b$ empty occupations with all possible non-empty species. If the configuration $\bm{\tau}\in\widehat{\Omega}_{\ell}^{m}$ has $\ell<b$ no contributions are seen. Otherwise, if $\ell\geq b$, $b$ empties are changed, obtaining configuration with $r=\ell-b$ voids occupations, with $r\in \{0,\ldots, L-m-b\}$. Each of such a configuration is counted $\binom{L-r-m}{b}$ times. Therefore, we obtain 
 \begin{align}
 	\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)=& \sum_{\ell=0}^{L-m-1}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\tau)+\Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)\nonumber
 	\\+&\sum_{b=1}^{L-m}(-1)^{b}\sum_{r=0}^{L-m-b}\binom{L-m-r}{b}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
 \end{align}
-In the second term we exchange the summations obtaining 
+In the second term of the above equation we exchange the summations obtaining 
 \begin{align}
 \sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)=&\sum_{\ell=0}^{L-m-1}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\tau)+\Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)\nonumber
 \\+&\sum_{\ell=1}^{L-m-1}\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-m-\ell}{b}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
@@ -1936,11 +1936,11 @@ that implies
  %	\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}} \rangle_{stat}=\langle\hat{\bm{\xi}}\rangle_{stat,dual}
 % \end{equation} 
 %where $\langle\hat{\bm{\xi}}\rangle_{stat,dual}$ we have denoted the stationary state of the dual process starting from the configuration $\hat{\bm{\xi}}$. 
-Using formula \eqref{ABS} we obtain 
+Using formula \eqref{ABS} we have that 
 \begin{equation}
  \Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)=\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{\tau_{k}}^{c_{k}}\beta_{\tau_{k}}^{1-c_{k}}\left(2+L-y_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}\dt
 \end{equation}
-Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,y_{k},c_{k},\ldots,c_{m})$ we have \eqref{exactCorrelations}.
+Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,y_{k},c_{k},\ldots,c_{m})$ we prove \eqref{exactCorrelations}.
 \begin{flushright}
 	$\square$
 \end{flushright}
