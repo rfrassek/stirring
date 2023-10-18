@@ -950,7 +950,7 @@ Using \eqref{bosonicKX} we rewrite the term of \eqref{siteHadamardII} with Lie g
 \\=&
 \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{b=1\,:\,b\neq a}^{N-1}\left(\rho_{b}^{x}\right)^{\xi_{b}^{u(x)}}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}+1}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}
 \\=&
-\sum_{\xi_{1}^{u(x)},\ldots,\xi_{a-1},\xi_{a},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\sum_{\xi_{a}^{u(x)}=1}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}\\=&
+\sum_{\xi_{1}^{u(x)},\ldots,\xi_{a-1},\xi_{a+1},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\sum_{\xi_{a}^{u(x)}=1}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}\\=&
 \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}
     \end{split}
 \end{equation}
@@ -1785,7 +1785,7 @@ It is enough to prove that, for any fixed $\ell\in\{0,\ldots, L-1\}$ we have tha
 \begin{align}
 	1+\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-\ell}{b}=0
 \end{align}
-This is true because of the Binomial theorem, indeed 
+This is true because of the binomial theorem, indeed 
 \begin{equation}
 1+\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-\ell}{b}=\sum_{b=0}^{L-\ell}(-1)^{b}\binom{L-\ell}{b}=(1-1)^{L-\ell}=0
 \end{equation}
@@ -1912,14 +1912,14 @@ Then we obtain that
 In the first summation on the right-hand-side, there is only one term that has all sites empty but the one in position $y_{1},\ldots,y_{m}$ that are occupied by $s_{1},\ldots,s_{m}$. This is reached when $\ell=L-m$ and we denote it by $\Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)$. The second term on the right-hand-side in the above equation replaces $b$ empty occupations with all possible non-empty species. If the configuration $\bm{\tau}\in\widehat{\Omega}_{\ell}^{m}$ has $\ell<b$ no contributions are seen. Otherwise, if $\ell\geq b$, $b$ empties are changed, obtaining configuration with $r=\ell-b$ voids occupations, with $r\in \{0,\ldots, L-m-b\}$. Each of such a configuration is counted $\binom{L-r-m}{b}$ times. Therefore, we obtain 
 \begin{align}
 	\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)=& \sum_{\ell=0}^{L-m-1}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\tau)+\Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)\nonumber
-	\\+&\sum_{b=1}^{L-m}(-1)^{b}\sum_{r=0}^{L-m-b}\binom{L-m-r}{b}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
+	\\+&\sum_{b=1}^{L-m}(-1)^{b}\sum_{r=0}^{L-m-b}\binom{L-m-r}{b}\mathbbm{1}_{\{b\leq L-m-r\}}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
 \end{align}
 In the second term of the above equation we exchange the summations obtaining 
 \begin{align}
 \sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)=&\sum_{\ell=0}^{L-m-1}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\tau)+\Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)\nonumber
-\\+&\sum_{\ell=1}^{L-m-1}\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-m-\ell}{b}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
+\\+&\sum_{\ell=1}^{L-m-1}\sum_{b=1}^{L-m-\ell}(-1)^{b}\binom{L-m-\ell}{b}\mathbbm{1}_{\{b\leq L-m-\ell\}}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
 \end{align}
-Using the Binomial theorem, for every $\ell\in \{0,\ldots, L-m-1\}$, we have that
+Using the binomial theorem, for every $\ell\in \{0,\ldots, L-m-1\}$, we have that
 \begin{equation}
 	1+\sum_{b=1}^{L-m-\ell}(-1)^{b}\binom{L-m-\ell}{b}=0
 \end{equation}
@@ -2657,11 +2657,11 @@ where we have introduced, $\forall x\in \{1,\ldots,L\}$
 	\end{equation}
 thus
 \begin{equation}
-\mathcal{S}_{1}^{-1}|\mu\rangle=|\mu\rangle+(-1)\delta_{\mu<N}|N\rangle
+\mathcal{S}_{1}^{-1}|\mu\rangle=|\mu\rangle+(-1)(1-\delta_{\mu,N})|N\rangle
 \end{equation}
 By taking the tensor product over the chain we obtain 
 \begin{equation}
-	\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\bm{\mu}\rangle=\left(|\mu_{1}\rangle+(-1)\delta_{\mu_{1}<N}|N\rangle\right)\otimes \ldots \otimes \left(|\mu_{L}\rangle+(-1)\delta_{\mu_{L}<N}|N\rangle\right)
+	\left(\mathcal{S}_{1}^{-1}\right)^{\otimes L}|\bm{\mu}\rangle=\left(|\mu_{1}\rangle+(-1)(1-\delta_{\mu_{1},N})|N\rangle\right)\otimes \ldots \otimes \left(|\mu_{L}\rangle+(-1)(1-\delta_{\mu_{L},N})|N\rangle\right)
 \end{equation}
 therefore, projecting on $\langle \bm{\tau}|$ we have
 \begin{equation}\label{Tensor-S1}
