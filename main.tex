@@ -375,6 +375,10 @@ a vector $|{\bf n}\rangle \in \Omega$ can be written as
 \begin{equation}
 |{\bf n}\rangle=\left(\,\bigotimes_{x\in V}	|n_{1}^{x},\ldots,n_{N}^{x}\rangle\right)
 \end{equation}
+%{\color{blue}
+%	\begin{equation*}
+%		|{\bf n}\rangle=\left(\,\bigotimes_{x\in V}	|n_{1},\ldots,n_{N}\rangle_{x}\right)
+%	\end{equation*}}
 %where we require that $n_{a}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have 
 with $\sum_{a=1}^{N}n_{a}^{x}=\nu$ for any $x\in V$. Sometimes it will bw convenient to write $|n^{x}\rangle$ to denote, for a fixed $x\in V$, the vector $|n_{1}^{x},\ldots,n_{N}^{x}\rangle$.
 The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
@@ -627,10 +631,17 @@ The Hamiltonian of the dual process reads
 \end{equation}
 where $\mathcal{H}_{x,y}$ is the one defined in \eqref{edgeHamiltonian}, while 
 \begin{equation}\label{siteDualHamiltonian}
-    \widetilde{H}_{x}=|\alpha^{x}|\sum_{a=1}^{N-1}\left((A^{\dagger})_{a}^{u(x)}\,E_{Na}^{x}-E_{aa}^{x}\right)\dt
+    \widetilde{H}_{x}=|\alpha^{x}|\sum_{a=1}^{N-1}\left((\mathbf{a}^{+})_{a}^{u(x)}\,E_{Na}^{x}-E_{aa}^{x}\right)\dt
 \end{equation}
-Here we introduced the operator $A$ acting on the left-hand-side as $\langle q+1|A^{\dagger}=\langle q|$ on a generic vector $\langle q|$ with $q\in \mathbb{N}_{0}$, so that in \eqref{siteDualHamiltonian} 
-$(A^{\dagger})_{a}^{u(x)}$ denotes a copy of $A^{\dagger}$ acting on the extra-site $u(x)$ and on the species $a\in\{1,\ldots,N-1\}$. \\
+Here we introduced the pair of bosonic operators $\mathbf{a},\,\mathbf{a}^{+}$ satisfying $[\mathbf{a},\mathbf{a}^{+}]=1$ and acting as
+\begin{equation}
+	\mathbf{a}^{+}|q\rangle=|q+1\rangle\qquad \mathbf{a}|q\rangle=q|q-1\rangle
+\end{equation}
+\begin{equation}
+	\langle q|\mathbf{a}^{+}=\langle q-1|\qquad \langle q|\mathbf{a}=(q+1) \langle q+1|
+\end{equation}
+on a generic vector $\langle q|$ with $q\in \mathbb{N}_{0}$, so that in \eqref{siteDualHamiltonian} 
+$(\mathbf{a}^{+})_{a}^{u(x)}$ denotes a copy of $\mathbf{a}^{+}$ acting on the extra-site $u(x)$ and on the species $a\in\{1,\ldots,N-1\}$. \\
 
 We will show below that the Hamiltonians \eqref{OriginalHamiltonian} and \eqref{DualHamiltonian} are dual in the sense of \eqref{DualityRelation}. From an algebraic point of view, the duality matrix $D$ \eqref{dualityElements} is described as 
 \begin{equation}\label{dualityMatrix}
@@ -929,42 +940,44 @@ H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}|\alpha^{x}|\sum_{a=1}^{N-1}\left(
 \end{equation}
 Taking the tensor product of both sides of \eqref{siteHadamardI} with 
 \begin{equation}
-\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|
+\langle \rho|_{u(x)}=\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|_{u(x)}
 \end{equation}
+{\color{blue}Think about replacing $\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|$ with $\langle \xi_{1},\ldots,\xi_{N}|_{u(x)}$}\\
 we obtain 
 \begin{equation}\label{siteHadamardII}
     \begin{split}
-&H_{x}^{T}d_{x}\otimes\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|
-\\=& d_{x}\,
-|\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\otimes \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\dt
+    	H_{x}^{T}d_{x}\otimes\langle\rho|_{u(x)}=
+ d_{x}\,
+|\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\otimes \langle\rho|_{u(x)}\dt
     \end{split}
 \end{equation}
 Recalling the action of the bosonic creation operator acting at site $u(x)$ and on the species $a\in \{1,\ldots,N-1\}$ we have that 
 \begin{equation}\label{bosonicKX}
-    \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})^{u(x)}_{a}=  \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|\dt
+    \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})^{u(x)}_{a}=  \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|\dt
 \end{equation}
 Using \eqref{bosonicKX} we rewrite the term of \eqref{siteHadamardII} with Lie generator $E_{Na}^{x}$ on the right hand side of \eqref{siteHadamardII} as 
 \begin{equation}\label{extra-site-trick}
     \begin{split}
 &\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{b=1}^{N-1}\left(\rho_{b}^{x}\right)^{\xi_{b}^{u(x)}}\right)\rho_{a}^{x}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|
 \\=&
-\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{b=1\,:\,b\neq a}^{N-1}\left(\rho_{b}^{x}\right)^{\xi_{b}^{u(x)}}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}+1}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}
+\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{b=1\,:\,b\neq a}^{N-1}\left(\rho_{b}^{x}\right)^{\xi_{b}^{u(x)}}\right)\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}+1}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}
 \\=&
-\sum_{\xi_{1}^{u(x)},\ldots,\xi_{a-1},\xi_{a+1},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\sum_{\xi_{a}^{u(x)}=1}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}\\=&
-\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}
+\sum_{\xi_{1}^{u(x)},\ldots,\xi_{a-1},\xi_{a+1},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\sum_{\xi_{a}^{u(x)}=1}^{\infty}\left(\prod_{b=1}^{N-1}\left(\rho_{b}^{x}\right)^{\xi_{b}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}\\=&
+\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{b=1}^{N-1}\left(\rho_{b}^{x}\right)^{\xi_{b}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}
     \end{split}
 \end{equation}
 where, in the up to last equality, we performed a change of summation variable and we used the fact that  
 \begin{equation}
 	\begin{split}
-&\sum_{\xi_{a}^{u(x)}=0}^{\infty}\rho_{a}^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}\\=&\sum_{\xi_{a}^{u(x)}=1}^{\infty}\rho_{a}^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}+\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}\\=&\sum_{\xi_{a}^{u(x)}=1}^{\infty}\rho_{a}^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}\dt
+&\sum_{\xi_{a}^{u(x)}=0}^{\infty}(\rho_{a}^{x})^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}\\=&\sum_{\xi_{a}^{u(x)}=1}^{\infty}(\rho_{a}^{x})^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}+\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}\\=&\sum_{\xi_{a}^{u(x)}=1}^{\infty}(\rho_{a}^{x})^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}\dt
 \end{split}
 \end{equation}
-This is a consequence of 
-\begin{equation}
-\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}=0
-\end{equation}
-that follows from \eqref{bosonicKX}. Therefore, inserting \eqref{extra-site-trick} in \eqref{siteHadamardII} we obtain 
+%This is a consequence of 
+%\begin{equation}
+%\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(A^{\dagger})_{a}^{u(x)}=0
+%\end{equation}
+%that follows from \eqref{bosonicKX}.
+Therefore, inserting \eqref{extra-site-trick} in \eqref{siteHadamardII} we obtain 
 \begin{equation}
     \begin{split}
 H_{x}^{T}d_{x}\otimes \dd&=
