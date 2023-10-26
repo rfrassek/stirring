@@ -1538,6 +1538,7 @@ $\square$
 The last factor only depends on the positions of particles $N$. The $\lambda$-factor depends only on the number of particles of types $1,\ldots,N-1$.
 
 
+
 Looks like there is a mistake somewhere...
 }
 \subsubsection{Explicit formula for $|\Psi^{'}\rangle$}\label{subsectionSSdual}
@@ -1554,6 +1555,9 @@ where
 {\color{blue}
 	\begin{equation}
 		\Psi^{'}(\bm{\tau})=\frac{1}{(1+L)!}\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\prod_{x=1}^{L}\lambda_{\tau_{x}}^{c_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\beta_{\tau_{x}}^{(1-c_{x})(1-\delta_{\tau_{x},N})}
+	\end{equation}
+	\begin{equation}
+		\Psi^{'}(\bm{\tau})=\frac{1}{(1+L)!}\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\prod_{x=1}^{L}\left(\frac{\lambda_{\tau_{x}}}{\beta_{\tau_x}}\right)^{c_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\beta_{\tau_{x}}^{1-\delta_{\tau_{x},N} }
 	\end{equation}
 }
 	%\com{Double check this. Sum looks strange}
