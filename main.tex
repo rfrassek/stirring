@@ -1551,6 +1551,11 @@ where
 			\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\tau_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}\beta_{\tau_{x}}^{(1-c_{x})(1-\delta_{\tau_{x},N})}\dt
 		\end{split}
 	\end{equation} 
+{\color{blue}
+	\begin{equation}
+		\Psi^{'}(\bm{\tau})=\frac{1}{(1+L)!}\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\prod_{x=1}^{L}\lambda_{\tau_{x}}^{c_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\beta_{\tau_{x}}^{(1-c_{x})(1-\delta_{\tau_{x},N})}
+	\end{equation}
+}
 	%\com{Double check this. Sum looks strange}
 %and where
 % \begin{equation}\label{CiEquation}
@@ -1862,6 +1867,11 @@ In this section we write a formula for the stationary steady state correlations 
 	\begin{equation}\label{powerCoeffNOspec}
 		f(L,c_{1},\ldots,c_{m})=\frac{\Gamma(L+2-\sum_{i=1}^{m}c_{i})}{\Gamma(L+2)}
 	\end{equation}
+{\color{blue}
+\begin{equation}
+	\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\frac{1}{(1+L)!}\sum_{c_{1},\ldots,c_{m}=0}^{1}\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}\left(2+L-y_{k}-\sum_{j=k}^{m}c_{j}\right)
+\end{equation}
+}
 \textbf{Remark}: using the binomial theorem we rewrite the \eqref{exactCorrelations} as 
 \begin{equation}
 \begin{split}
