@@ -1019,16 +1019,32 @@ where $\mathcal{H}$ is defined in \eqref{H-corsivo} and
 	\widetilde{H}_{left}=\sum_{a=1}^{N-1}\left((a^{\dagger})_{a}^{0}\,e_{Na}^{1}-e_{aa}^{1}\right)\qquad 	\widetilde{H}_{right}=\sum_{a=1}^{N-1}\left((a^{\dagger})_{a}^{L+1}\,e_{Na}^{L}-e_{aa}^{L}\right)\dt
 \end{equation}
 In the long-time limit the dual process voids the chain, i.e. all particles of types $\{1,\ldots,N-1\}$ are eventually absorbed at the extra-sites $0$ and $L+1$ and replaced by types $N$. We also notice that, up the the bosonic creation operators $(a^{\dagger})_{a}$, the dual boundary Hamiltonians \eqref{boundary-H-dual-chain} are triangular. This simplification will be crucial in Sections \ref{sectionIntegrabiliy}.\\
-
+\textbf{Notation}: sometimes, in the following, we will denote differently the configuration of this hard-core chain. Each configuration can be written as
+\begin{equation}\label{Tau-Notation}
+	|\bm{\tau}\rangle=|\tau_{1},\ldots,\tau_{L}\rangle =\begin{pmatrix}
+		\tau_{1}\\
+		\vdots\\
+		\tau_{L}
+	\end{pmatrix}
+\end{equation} 
+with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. The notation with $\bm{n}$, introduced in Subsection \ref{subsectionGeneratorStr} and the one with $\bm{\tau}$ are related by 
+\begin{equation}\label{notation-change-relation}
+	n_{a}^{x}=\delta_{\tau_{x},a}
+\end{equation}
+In this notation, the elements of the duality matrix reads
+\begin{equation}\label{ElementsDualityMatrixChain_1}
+	D(\bm{n},\bm{\xi})=\prod_{a=1}^{N-1}\alpha_{a}^{\xi_{a}^{0}}\left(\prod_{x=1}^{L}\prod_{a=1}^{N-1}\mathbbm{1}_{\{\delta_{\tau_{x},a}\geq \xi_{a}^{x}\}}\right)\prod_{a=1}^{N-1}\beta_{a}^{\xi_{a}^{L+1}}\dt
+\end{equation}
+\\
 Using the above duality elements, we can compute the  $m$-point correlations between non-empty particles using the absorption probabilities. Consider a dual configuration $\bm{\hat{\xi}}:=\sum_{k=1}^{m}\delta_{s_{k}}^{y_{k}}$ where $s_{k}\in\{1,\ldots,N-1\}$ and $y_{k}\in\{1,\ldots,L\}$ such that $y_{k}<y_{k+1}$ for every $k\in\{1,\ldots,m\}$. Fix an arbitrary initial configuration $\bm{n}$, the elements \eqref{ElementsDualityMatrixChain} of the duality matrix computed in the dual configuration $\bm{\hat{\xi}}$ read
 \begin{equation}
-	D(\bm{n},\bm{\hat{\xi}})=\prod_{k=1}^{m}\mathbbm{1}_{\{n_{s_{k}}^{s_{k}}=1\}}\dt
+	D(\bm{n},\bm{\hat{\xi}})=\prod_{k=1}^{m}\mathbbm{1}_{\{\delta_{\tau_{y_{k}},s_{k}}=1\}}=\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\dt
 \end{equation}
-Denoting the $m$-point correlations by $\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}}\rangle_{stat}$ we have 
+Denoting the $m$-point correlations by $\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]$ we have 
 %To compute the steady state $m$-point correlations of the process $\bm{n}(t)$ we recall that the dual process eventually voids the chain (by putting all particles in the extra-sites $0$ and $L$). Therefore, we have the following equalities
 \begin{equation}\label{CorrelationByABS-prob}
 	\begin{split}
-	\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}}\rangle_{stat}&=\lim_{t\to \infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\bm{\hat{\xi}})\right]=\lim_{t\to \infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{n},\bm{\hat{\xi}}(t))\right]
+\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]&=\lim_{t\to \infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\bm{\hat{\xi}})\right]=\lim_{t\to \infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{n},\bm{\hat{\xi}}(t))\right]
 	\\&=\sum_{c_{1}=0}^{1}\ldots \sum_{c_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{c_{k}}\beta_{a_{k}}^{1-c_{k}}\mathcal{P}(c_{1},\ldots,c_{m},\hat{\bm{\xi}})
 \end{split}
 \end{equation}
@@ -1327,6 +1343,7 @@ The steady states $|\Psi\rangle$, $|\widehat{\Psi}\rangle$ and $|\widetilde{\Psi
 In the following subsections we will first compute the steady state $|\widetilde{\Psi}\rangle$. Then, using the transformation $\mathcal{T}$ we will retrieve $|\widehat{\Psi}\rangle$. Finally, using the transformation $\mathcal{V}$ we will find $|\Psi\rangle$. 
 \end{comment}
 \subsubsection{Explicit formula for $|\Psi^{''}\rangle$}\label{subsectionSSHsec}
+\begin{comment}
 \textbf{Notation}: sometimes, in the following, we will denote differently the configuration of this hard-core chain. Each configuration can be written as
 \begin{equation}\label{Tau-Notation}
 	|\bm{\tau}\rangle=|\tau_{1},\ldots,\tau_{L}\rangle =\begin{pmatrix}
@@ -1335,15 +1352,26 @@ In the following subsections we will first compute the steady state $|\widetilde
 		\tau_{L}
 	\end{pmatrix}
 \end{equation} 
-with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. This notation is equivalent to the one introduced in Subsection \ref{subsectionGeneratorStr}. Indeed, assume that at site $x$ we have a particle of type $a\in\{1,\ldots,N\} $, then $|n^{x}\rangle$ is composed by zeros but in the component $n_{a}^{x}$ where there is $1$. Therefore, we can uniquely associate  $\tau_{x}=a$ to this $|n^{x}\rangle$, denoting the presence of the species $a$ at site $x$. With this notation, we have that 
+with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. The notation with $\bm{n}$, introduced in Subsection \ref{subsectionGeneratorStr} and the one with $\bm{\tau}$ are related by 
+\begin{equation}
+	n_{a}^{x}=\delta_{\tau_{x},a}
+\end{equation}
+\end{comment}
+\begin{comment}
+
+This notation is equivalent to the one introduced. Indeed, assume that at site $x$ we have a particle of type $a\in\{1,\ldots,N\} $, then $|n^{x}\rangle$ is composed by zeros but in the component $n_{a}^{x}$ where there is $1$. Therefore, we can uniquely associate  $\tau_{x}=a$ to this $|n^{x}\rangle$, denoting the presence of the species $a$ at site $x$. With this notation, we have that 
 \begin{equation}\label{notation}
 	|n^{x}\rangle =|\tau_{x}\rangle \qquad \text{and}\qquad|\bm{n}\rangle=|\bm{\tau}\rangle
 \end{equation}
-with the meaning explained above. It will be useful to introduce also $\bm{\tau}=(\tau_{x})_{x\in \{1,\ldots,L\}}$. \\ \\
+with the meaning explained above. It will be useful to introduce also $\bm{\tau}=(\tau_{x})_{x\in \{1,\ldots,L\}}$.
+\end{comment} 
 We state the following result: the ground state of the Hamiltonian $H^{''}$ is given by 
 \begin{equation}\label{ResulsBasis}
-	|\Psi^{''} \rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}\right)|\mathbf{\bm{\tau}}\rangle
+	|\Psi^{''} \rangle=\frac{1}{\left(1+L\right)!}\prod_{x=1}^{L} \lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)
 \end{equation}
+%\begin{equation}\label{ResulsBasis}
+%	|\Psi^{''} \rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}\right)|\mathbf{\bm{\tau}}\rangle
+%\end{equation}
 where 
 \begin{equation}
     \delta_{\tau_{x},N}:=\begin{cases}
@@ -1362,7 +1390,7 @@ By varying $q$ and $\ell_{1},\ldots,\ell_{q}$, we have a one-to-one mapping with
 \end{equation}
 %and the basis vector $|\bm{\tau}\rangle =\bigotimes_{x=1}^{L}|\tau_{x}\rangle$ with $\tau_{x}\in\{1,\ldots,N\}$ denotes the species that occupies the site $i\in \{1,\ldots,L\}$.
 \paragraph{Proof of formula \eqref{ResulsBasis}} 
-We consider the vector with elements given by the operators of the MPA $(X_{1},\ldots,X_{N})$ and we act on it with the similarity transformation $S=S_{2}S_{1}$ obtaining new operators $(\Xt_{1},\ldots,\Xt_{N})$ that will satisfy simpler commutation relations. 
+In the first part of the proof we will use the notation with $\bm{n}$, then we will change to the notation with $\bm{\tau}$ at the end of the proof. We recall that these two notations are related by \eqref{notation-change-relation}.  We consider the vector with elements given by the operators of the MPA $(X_{1},\ldots,X_{N})$ and we act on it with the similarity transformation $S=S_{2}S_{1}$ obtaining new operators $(\Xt_{1},\ldots,\Xt_{N})$ that will satisfy simpler commutation relations. 
 For the sake of notation 
 \begin{equation}
     \begin{pmatrix}
@@ -1507,7 +1535,7 @@ Therefore, we write the coefficients of the linear combination \eqref{toDetermin
 \begin{equation}\label{resulEsteady}
 	|\Psi^{''}\rangle= \sum_{\bm{n}\in \Omega}\frac{\Gamma(2+\sum_{i=1}^{L}n_{N}^{i})}{\Gamma(2+L)}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|\bm{n}\rangle\dt
 \end{equation}
-Using the notation $\tau_{x}$, $|\bm{\tau}\rangle $ introduced in \eqref{notation} we have 
+Using the notation $\tau_{x}$, $|\bm{\tau}\rangle $ with $\bm{\tau}$, related to the one with $\bm{n}$ by \eqref{notation-change-relation}, we have 
 \begin{equation}
 	\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}=\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}
 \end{equation}
@@ -1519,28 +1547,20 @@ Therefore we obtain
 \begin{equation}
 |\Psi^{''}\rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}|\mathbf{\bm{\tau}}\rangle\dt
 \end{equation}
-\begin{flushright}
-$\square$
-\end{flushright}
-
-
-{\color{blue}
 
 \begin{equation}
 \begin{split}
-\Psi^{''}(\tau_1,\ldots,\tau_L)&=\left[\prod_{x=1}^{L}\lambda_{\tau_{x}}^{\delta_{\tau_x<N}}\right] \frac{\Gamma\left(2+L-\sum_{x=1}^{L}\delta_{\tau_{x}<N}\right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L} \frac{\Gamma\left(2+L-x-\sum_{j=x+1}^{L}\delta_{\tau_{j}<N}\right)}{\Gamma\left(2+L-x-\sum_{j=x}^{L}\delta_{\tau_{j}<N}\right)}\\
-&=\left[\prod_{x=1}^{L}\lambda_{\tau_{x}}^{\delta_{\tau_x<N}}\right] \frac{\Gamma\left(2 \right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L} \frac{\Gamma\left(3+L-x-\sum_{j=x}^{L}\delta_{\tau_{j}<N}\right)}{\Gamma\left(2+L-x-\sum_{j=x}^{L}\delta_{\tau_{j}<N}\right)}\\
-&=\left[\prod_{x=1}^{L}\lambda_{\tau_{x}}^{\delta_{\tau_x<N}}\right] \frac{\Gamma\left(2 \right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L} \frac{\Gamma\left(2+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)}{\Gamma\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)}\\
-&=  \frac{1}{\left(1+L\right)!}\prod_{x=1}^{L} \lambda_{\tau_{x}}^{\delta_{\tau_x<N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\\
-% &=\left[\prod_{x=1}^{L}\lambda_{\tau_{x}}^{\delta_{\tau_x<N}}\right] \frac{\Gamma\left(2 \right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L}\frac{1}{\Gamma(-1)} B(3+L-x-\sum_{j=x}^{L}\delta_{\tau_{x}<N},-1)\\
+\Psi^{''}(\tau_1,\ldots,\tau_L)&=\left[\prod_{x=1}^{L}\lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\right] \frac{\Gamma\left(2+L-\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L} \frac{\Gamma\left(2+L-x-\sum_{j=x+1}^{L}(1-\delta_{\tau_{j},N})\right)}{\Gamma\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{j},N})\right)}\\
+&=\left[\prod_{x=1}^{L}\lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\right] \frac{\Gamma\left(2 \right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L} \frac{\Gamma\left(3+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{j},N})\right)}{\Gamma\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{j},N})\right)}\\
+&=\left[\prod_{x=1}^{L}\lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\right] \frac{\Gamma\left(2 \right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L} \frac{\Gamma\left(2+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)}{\Gamma\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)}\\
+&=  \frac{1}{\left(1+L\right)!}\prod_{x=1}^{L} \lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)
+% &=\left[\prod_{x=1}^{L}\lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\right] \frac{\Gamma\left(2 \right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L}\frac{1}{\Gamma(-1)} B(3+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{x},N}),-1)\\
 \end{split}
 \end{equation}
 The last factor only depends on the positions of particles $N$. The $\lambda$-factor depends only on the number of particles of types $1,\ldots,N-1$.
-
-
-
-Looks like there is a mistake somewhere...
-}
+\begin{flushright}
+	$\square$
+\end{flushright}
 \subsubsection{Explicit formula for $|\Psi^{'}\rangle$}\label{subsectionSSdual}
 By knowing the steady state  of the Hamiltonian $H^{''}$ we use \eqref{S2-Inverse} to retrieve the steady state of the Hamiltonian $H^{'}$. The result is the following 
 \begin{equation}\label{ABS-vect}
@@ -1549,20 +1569,27 @@ By knowing the steady state  of the Hamiltonian $H^{''}$ we use \eqref{S2-Invers
 where  
 \begin{equation}\label{ABS}
 		\begin{split}
-			\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\tau_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}\beta_{\tau_{x}}^{(1-c_{x})(1-\delta_{\tau_{x},N})}\dt
+			\Psi^{'}(\bm{\tau})=\frac{1}{(1+L)!}\sum_{c_{1}=\delta_{\tau_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\tau_{L},N}}^{1}\prod_{x=1}^{L}\left(1+\sum_{j=x}^{L}c_{j}\right)\lambda_{\tau_{x}}^{1-c_{x}}\beta_{\tau_{x}}^{c_{x}-\delta_{\tau_{x},N}}
 		\end{split}
 	\end{equation} 
+%\begin{equation}\label{ABS}
+%	\begin{split}
+%		\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\tau_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}\beta_{\tau_{x}}^{(1-c_{x})(1-\delta_{\tau_{x},N})}\dt
+%	\end{split}
+%\end{equation} 
+\begin{comment}
 {\color{blue}
 	\begin{equation}
-		\Psi^{'}(\bm{\tau})=\frac{1}{(1+L)!}\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\prod_{x=1}^{L}\lambda_{\tau_{x}}^{c_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\beta_{\tau_{x}}^{(1-c_{x})(1-\delta_{\tau_{x},N})}
+		\Psi^{'}(\bm{\tau})=\frac{1}{(1+L)!}\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\prod_{x=1}^{L}\lambda_{\tau_{x}}^{c_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\beta_{\tau_{x}}^{(1-c_{x}-\delta_{\tau_{x},N})}
 	\end{equation}
 \begin{equation}
-	\Psi^{'}(\bm{\tau})=\frac{1}{(1+L)!}\sum_{c_{1}=\delta_{\tau_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\tau_{L},N}}^{1}\prod_{x=1}^{L}\lambda_{\tau_{x}}^{1-c_{x}}\left(1+\sum_{j=x}^{L}c_{j}\right)\beta_{\tau_{x}}^{c_{x}-\delta_{\tau_{x},N}}
+	\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\tau_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}\beta_{\tau_{x}}^{(1-c_{x})(1-\delta_{\tau_{x},N})}\dt
 \end{equation}
 	\begin{equation}
 		\Psi^{'}(\bm{\tau})=\frac{1}{(1+L)!}\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\prod_{x=1}^{L}\left(\frac{\lambda_{\tau_{x}}}{\beta_{\tau_x}}\right)^{c_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\beta_{\tau_{x}}^{1-\delta_{\tau_{x},N} }
 	\end{equation}
 }
+\end{comment}
 	%\com{Double check this. Sum looks strange}
 %and where
 % \begin{equation}\label{CiEquation}
@@ -1571,8 +1598,16 @@ where
 %		0\quad \text{if}\quad \tau_{y}=1
 %	\end{cases}\qquad \forall y\in \{1,\ldots,L\}
 %\end{equation}
-\textbf{Remark}: In equation \eqref{ABS} we observe that when $\tau_{x}=N$ we have just a contribution of a factor $1$ on the product over $x$. Indeed, the empty species does not produce changes in the correlations between the non-empty species. \\ \\
-\textbf{Remark:} If we consider the case $N=2$ we have that, for an arbitrary configuration $\bm{\tau}$, we can identify $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x},1}$ occupied sites and the remaining $L-|\bm{\tau}|$ empty. We denote by $(x_{i})_{i\in\{1,\ldots,|\bm{\tau}|\}}$ the coordinates of the occupied sites. We introduce $q\in\{0,\ldots,|\bm{\tau}|\}$ and we rewrite \eqref{ABS} as
+\textbf{Remark}: By change the summation indices form $c\in \{\delta_{\tau_{x},N},1\}$ to $c_{x}\in \{0,1-\delta_{\tau_{x},N}\}$ and by the by the fact that occupation of each site is bounded by $1$ we rewrite \eqref{ABS} as 
+\begin{equation}\label{ABS_1}
+	\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\tau_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}\beta_{\tau_{x}}^{(1-c_{x}-\delta_{\tau_{x},N})}\dt
+\end{equation}
+ where we used the fact that, for any $\bm{\tau}$ we have 
+\begin{equation}
+	\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right) =\left(2+L-y-\sum_{j=x}^{L}(1-\delta_{\tau_{x},N})\right)
+\end{equation}
+This equation for $\Psi^{'}(\bm{\tau})$ will be useful in the computation of non-equilibrium steady state correlations and in the following Remark, where we specialize it to the case $N=2$ of SSEP. \\ \\
+\textbf{Remark:} If we consider the case $N=2$ we have that, for an arbitrary configuration $\bm{\tau}$, we can identify $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x},1}$ occupied sites and the remaining $L-|\bm{\tau}|$ empty. We denote by $(x_{i})_{i\in\{1,\ldots,|\bm{\tau}|\}}$ the coordinates of the occupied sites. We introduce $q\in\{0,\ldots,|\bm{\tau}|\}$ and we rewrite \eqref{ABS_1} as
 \begin{align}
 	\Psi^{'}(\bm{\tau})=&\sum_{q=0}^{|\bm{\tau}|}(\alpha-\beta)^{q}\beta^{L-q}\frac{\Gamma(L+2-q)}{\Gamma(L+2)}\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}
 	\\&\prod_{x=1}^{L}\left(L+2-x-\sum_{i=x}^{L}c_{i}\right)^{c_{x}}\dt
@@ -1594,7 +1629,7 @@ we finally obtain
 	\Psi^{'}(\bm{\tau})=\sum_{q=0}^{|\bm{\tau}|}(\alpha-\beta)^{q}\beta^{L-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq |\bm{\tau}|}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation}
 
-\paragraph{Proof of formula \eqref{ABS-vect}} Using \eqref{S2-Inverse} we have $|\Psi^{'}\rangle=S_{2}^{-1}|\Psi^{''}\rangle$, thus we only need to show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Here it is more convenient to consider the matrix $\mathcal{S}_{2}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and then make explicitly the tensor product over the chain. Using the exponential series, the matrix $\mathcal{S}_{2}$ is given by 
+\paragraph{Proof of formula \eqref{ABS-vect}} We have that $|\Psi^{'}\rangle=S_{2}^{-1}|\Psi^{''}\rangle$ (see \eqref{S2-Inverse}), thus we only need to show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Here it is more convenient to consider the matrix $\mathcal{S}_{2}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and then make explicitly the tensor product over the chain. Using the exponential series, the matrix $\mathcal{S}_{2}$ is given by 
 \begin{equation}
    \mathcal{S}_{2}^{-1}=\mathbbm{1}+\sum_{a=1}^{N-1}\beta_{a}e_{aN}\co
 \end{equation}
@@ -1610,6 +1645,7 @@ By projecting over a vector $\langle \bm{\tau}|$ we have
 \begin{equation}\label{goodTP-S2}
   \langle \bm{\tau}|\left(\mathcal{S}_{2}^{-1}\right)^{\otimes L} |\bm{\mu}\rangle=\prod_{i=1}^L\left[ \delta_{\tau_i,\mu_i}+\delta_{N,\mu_i}\beta_{\tau_i} (1-\delta_{\tau_i,N})\right]
 \end{equation} 
+\begin{comment}
 {\color{blue}
 We introduce $\forall x\in\{1,\ldots,L\}$, for $i\in \{1,\ldots,L\}$ and $q_{1},\ldots,q_{i}\in\{1,\ldots,L\}$ 
 \begin{equation}
@@ -1618,7 +1654,9 @@ We introduce $\forall x\in\{1,\ldots,L\}$, for $i\in \{1,\ldots,L\}$ and $q_{1},
 		N\qquad &\text{if}\quad x\in\{q_{1},\ldots,q_{i}\}\\
 	\end{cases}\dt
 \end{equation}
-This is a new configuration at site $x$ where, if $x\in\{q_{1},\ldots,q_{i}\}$, the occupation $\tau_{x}$ is replaced by $N$, while it is left uncaged if $x\notin \{q_{1},\ldots,q_{i}\}$. The dependence of $\varphi_{x}^{i}(q_{1},\ldots,q_{i})$ with respect to $q_{1},\ldots,q_{i}$ is usually understood for the sake of notation. } \\ By considering a fixed $\langle\bm{\tau}|$, and by using \eqref{goodTP-S2} we obtain 
+This is a new configuration at site $x$ where, if $x\in\{q_{1},\ldots,q_{i}\}$, the occupation $\tau_{x}$ is replaced by $N$, while it is left uncaged if $x\notin \{q_{1},\ldots,q_{i}\}$. The dependence of $\varphi_{x}^{i}(q_{1},\ldots,q_{i})$ with respect to $q_{1},\ldots,q_{i}$ is usually understood for the sake of notation. } 
+\end{comment}
+ By considering a fixed $\langle\bm{\tau}|$, and by using \eqref{goodTP-S2} we obtain 
 \begin{equation}\label{ABS_intermediate}
 	\begin{split}
 		\Psi^{'}(\bm{\tau})&=\langle \bm{\tau}|(\mathcal{S}_{2}^{-1})^{\otimes L}|\Psi^{''}\rangle\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\tau_{L})\beta_{q_{1}^{1}}\\&+
@@ -1626,6 +1664,7 @@ This is a new configuration at site $x$ where, if $x\in\{q_{1},\ldots,q_{i}\}$, 
 	\end{split}
 \end{equation}
 where, for arbitrary $i\in\{1,\ldots,L\}$,  $\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\underbrace{N}_{q_{i}}\ldots,\tau_{L})$ means that the $\tau_{q_{1}},\ldots,\tau_{q_{i}}$ have been replaced by $N$. \\
+\begin{comment}
 {\color{blue}
 	Old proposal
 \begin{equation*}
@@ -1643,10 +1682,19 @@ where, for arbitrary $i\in\{1,\ldots,L\}$,  $\Psi^{''}(\tau_{1},\ldots,\underbra
 	\end{split}
 \end{equation*}
 }
-For a fixed configuration $\bm{\mu}=(\mu_{1},\ldots,\mu_{L})$, by using equation \eqref{ResulsBasis}, we obtain 
+\end{comment}
+For a fixed configuration $\bm{\mu}=(\mu_{1},\ldots,\mu_{L})$, by using equation \eqref{ResulsBasis} we have
+\begin{equation}
+	\Psi^{''}(\bm{\mu})=\frac{1}{\left(1+L\right)!}\prod_{x=1}^{L} \lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)
+\end{equation}
+\begin{comment}
 \begin{equation}
 	\Psi^{''}(\bm{\mu})=\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\mu_{x},N})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\mu_{x}}\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\mu_{j},N})\right)\right)^{1-\delta_{\mu_{x},N}}\co
-\end{equation} where we have used the fact that 
+\end{equation}
+\end{comment}
+ \begin{comment}
+ 
+ where we have used the fact that 
 \begin{equation}
 	\left(1+\sum_{j=x}^{L}\delta_{\mu_{j},N}\right) =\left(2+L-y-\sum_{j=x}^{L}(1-\delta_{\mu_{x},N})\right)\co
 \end{equation}
@@ -1659,6 +1707,7 @@ we obtain
 	\Psi^{''}(\bm{\mu})=\frac{\Gamma(2+L-\sum_{x=1}^{L}c_{x})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\lambda_{\mu_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}
 \end{equation}
 where, for the sake of notation we left understood the dependence on $\mu_{x}$ of $c_{x}$.\\
+\end{comment}
 \begin{comment}
 We introduce the following notation
 \begin{equation}\label{notation1}
@@ -1760,10 +1809,14 @@ To find these quantities we need to fix the rows correspondent to $\bm{\tau}$ in
 %Now we can write the ground state of $H^{''}$ as \begin{equation}|\Psi^{''}\rangle=\sum_{\mu_{1},\ldots,\mu_{L}=1}^{N}\Psi^{''}(\bm{\mu})|\bm{\mu}\rangle\end{equation} with the coefficients $\psi^{''}(\bm{\mu})$ are given in \eqref{coefficients-psiSec}.
 %Therefore, we have that equation \eqref{ABS_intermediate} becomes
 %Because of the exponent $(1-\delta_{\tau_{x},1})$, the element $\Psi^{''}(\bm{\tau})$ has, up the term $\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{\tau_{x},1})}{\Gamma(L+2)}$, a contribution of a factor $\lambda_{\tau_{x}}\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{x},1})\right)$ if the site is non empty, and a contribution of a factor "$1$" if the site is empty, it is convenient to introduce the $c_{i}$ of defined in \eqref{CiEquation}. Then, equation  \eqref{ABS_intermediate} reads 
-Therefore, using equation \eqref{ABS_intermediate}, we obtain 
+We introduce 
+\begin{equation}
+	c_{x}=\delta_{\mu_{x},N}
+\end{equation}
+Therefore, using equation \eqref{ABS_intermediate} and observing that $c_{x}\delta_{\tau_{x},N} =\delta_{\tau_{x},N}$, we obtain 
 \begin{equation}\label{elementsABS}
 	\begin{split}
-		\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{\Gamma(2+L-\sum_{x=1}^{L}c_{x})}{\Gamma(2+L)}\prod_{x=1}^{L}\left(\lambda_{\tau_{x}}\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}\left(\beta_{\tau_{x}}\right)^{(1-c_{x})(1-\delta_{\tau_{x},N})}\dt
+		\Psi^{'}(\bm{\tau})=\frac{1}{(1+L)!}\sum_{c_{1}=\delta_{\tau_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\tau_{L},N}}^{1}\prod_{x=1}^{L}\left(1+\sum_{j=x}^{L}c_{j}\right)\lambda_{\tau_{x}}^{1-c_{x}}\beta_{\tau_{x}}^{c_{x}-\delta_{\tau_{x},N}}\dt
 	\end{split}
 \end{equation} 
 %Indeed, when $c_{i}=0$ this formula replaces the contribution in the square brackets with a $\beta_{\tau_{x}}$. 
@@ -1863,7 +1916,7 @@ All in all we obtain
 \subsection{Exact steady state correlations}\label{correlation-section}
 In this section we write a formula for the stationary steady state correlations between $m$- points of the chain, each of them occupied by a non empty species, i.e. a species with label from $1$ to $N-1$. This is motivated by the interest of understanding how actual particles of the chain are correlated among each others and also because in the steady state the holes depends on the occupation of all other species, as a consequence of the constraint $n_{N}^{x}=1-\sum_{b=1}^{N-1}n_{b}^{x}$ for arbitrary $x\in \{1,\ldots,L\}$. Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $\bm{y}=(y_{1},\ldots,y_{m})$, such that $y_{i}<y_{i+1}$ $\forall i\in \{1,\ldots,m-1\}$. In each of these points there is a particle of species $s_{i}\in \{1,\ldots,N-1\}$. Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
 \begin{equation}\label{exactCorrelations}
-		\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{c_{1},\ldots,c_{m}=0}^{1}
+		\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=\sum_{c_{1},\ldots,c_{m}=0}^{1}
 			f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}g_{k}(L,y_{k},c_{k},\ldots,c_{m})
 	\end{equation}
 	where 
@@ -1876,17 +1929,16 @@ In this section we write a formula for the stationary steady state correlations 
 	\end{equation}
 {\color{blue}
 \begin{equation}
-	\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\frac{1}{(1+L)!}\sum_{c_{1},\ldots,c_{m}=0}^{1}\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{k}}\beta_{s_{k}}^{1-c_{k}}\left(2+L-y_{k}-\sum_{j=k}^{m}c_{j}\right)
+	\begin{split}
+\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=&\frac{1}{(1+L)!}\sum_{c_{y_{1}},\ldots,c_{y_{m}}=0}^{1}\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{y_{k}}}\beta_{s_{k}}^{1-c_{y_{k}}}\left(2+L-y_{k}-\sum_{j=k}^{m}c_{y_{j}}\right)\\&\prod_{x=1\,:\,x\notin \{y_{1},\ldots,y_{m}\}}^{L}\left(2+L-x-\sum_{k=1}^{m}\mathbbm{1}_{\{x<y_{k}\}}c_{y_{k}}\right)
+\end{split}
 \end{equation}
-\begin{equation}
-\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\frac{1}{(1+L)!}\sum_{c_{1},\ldots,c_{m}=0}^{1}\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{1-c_{k}}\beta_{s_{k}}^{c_{k}}\left(1+\sum_{j=k}^{m}c_{j}\right)
-\end{equation}
-To check!
+It seems to me that it is more complicated than \eqref{exactCorrelations}...
 }\\
 \textbf{Remark}: using the binomial theorem we rewrite the \eqref{exactCorrelations} as 
 \begin{equation}
 \begin{split}
-\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=&
+\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=&
 \sum_{c_{1},\ldots,c_{m}=0}^{1}
 f(L,c_{1},\ldots,c_{m})\prod_{q=1}^{m}\left(\sum_{t_{k}=0}^{c_{k}}(-1)^{c_{q}-t_{q}}\alpha_{s_{q}}^{t_{q}}\beta_{s_{q}}^{1-t_{q}}g_{q}(L,y_{q},c_{q},\ldots,c_{m})\right)\\
 =&\sum_{c_{1},\ldots,c_{m}=0}^{1}
@@ -1896,12 +1948,17 @@ f(L,c_{1},\ldots,c_{m})\sum_{t_{1}=0}^{c_{1}}\ldots\sum_{t_{m}=0}^{c_{m}}\prod_{
 By exchanging the summations we rewrite as 
 \begin{equation}
 \begin{split}
-\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=&\sum_{t_{1},\ldots,t_{m}=0}^{1}
+\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=&\sum_{t_{1},\ldots,t_{m}=0}^{1}
 \sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,y_{q},c_{q},\ldots,c_{m})\alpha_{s_{q}}^{t_{q}}\beta_{s_{q}}^{1-t_{q}}\\
 =&\sum_{t_{1},\ldots,t_{m}=0}^{1}\prod_{q=1}^{m}\alpha_{s_{q}}^{t_{q}}\beta_{s_{q}}^{1-t_{q}}\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,y_{q},c_{q},\ldots,c_{m})\dt
 \end{split}
 \end{equation}
-Therefore, comparing this formula and \eqref{absProbabilitiesIntegrable}, we can determine the absorption probabilities 
+The elements of the duality matrix in this integrable case are given in equation \eqref{ElementsDualityMatrixChain_1}. Thus we have that 
+\begin{align}
+	\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=\sum_{\bm{\tau}\in \Omega}D(\tau,\hat{\bm{\xi}})\langle\tau|\Psi\rangle
+\end{align}
+where the dual configuration is $\hat{\bm{\xi}}=\sum_{k=1}^{m}\delta^{y_{k}}_{s_{k}}$. 
+Therefore, comparing this formula and \eqref{absProbabilitiesIntegrable}, we can read off the absorption probabilities 
 \begin{equation}
 	\mathcal{P}(t_{1},\ldots,t_{m},\hat{\bm{\xi}})=\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,x_{q},c_{q},\ldots,c_{m})
 \end{equation}
@@ -1929,13 +1986,13 @@ Moreover, we observe that
 All in all we have that
 \end{comment}
 \begin{equation}
-\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-y_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
+\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-y_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation} 
 
 \paragraph{Proof of formula \eqref{exactCorrelations}}
 We aim to compute
 \begin{equation}
-\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\mathbb{E}_{stat}\left[\prod_{i=1}^{m}\mathbbm{1}_{\{\tau_{y_{i}}=s_{i}\}}\right]=\sum_{\bm{\tau}\in \Omega}\left(\prod_{i=1}^{m}\mathbbm{1}_{\{\tau_{y_{i}}=s_{i}\}}\right)\langle\bm{\tau}|\Psi\rangle=\sum_{\bm{\tau}\in \Omega}\left(\prod_{i=1}^{m}\mathbbm{1}_{\{\tau_{y_{i}}=s_{i}\}}\right)\Psi(\bm{\tau})
+\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=\sum_{\bm{\tau}\in \Omega}\left(\prod_{i=1}^{m}\mathbbm{1}_{\{\tau_{y_{i}}=s_{i}\}}\right)\langle\bm{\tau}|\Psi\rangle=\sum_{\bm{\tau}\in \Omega}\left(\prod_{i=1}^{m}\mathbbm{1}_{\{\tau_{y_{i}}=s_{i}\}}\right)\Psi(\bm{\tau})
 \end{equation}
 We introduce the space 
 \begin{equation}
@@ -1988,9 +2045,9 @@ that implies
  %	\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}} \rangle_{stat}=\langle\hat{\bm{\xi}}\rangle_{stat,dual}
 % \end{equation} 
 %where $\langle\hat{\bm{\xi}}\rangle_{stat,dual}$ we have denoted the stationary state of the dual process starting from the configuration $\hat{\bm{\xi}}$. 
-Using formula \eqref{ABS} we have that 
+Using formula \eqref{ABS_1} we have that 
 \begin{equation}
- \Psi^{'}(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)=\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{\tau_{k}}^{c_{k}}\beta_{\tau_{k}}^{1-c_{k}}\left(2+L-y_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}\dt
+ \Psi^{'}(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)=\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{a})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{\tau_{k}}^{c_{k}}\beta_{\tau_{k}}^{1-c_{k}}\left(2+L-y_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}\dt
 \end{equation}
 Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,y_{k},c_{k},\ldots,c_{m})$ we prove \eqref{exactCorrelations}.
 \begin{flushright}
@@ -2066,7 +2123,7 @@ Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain
         \\&+\nonumber
         \frac{(L+1-y_{2})}{(L+1)}(\alpha_{s_{2}}-\beta_{s_{2}})\beta_{s_{1}}\beta_{s_{3}}+\frac{(L+1-y_{3})}{(L+1)}(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{1}}\beta_{s_{2}}
         \\&+\nonumber
-        \frac{(L-x_{2})(L-y_{3}+1)}{L(L+1)}(\alpha_{s_{2}}-\beta_{s_{2}})(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{1}}
+        \frac{(L-y_{2})(L-y_{3}+1)}{L(L+1)}(\alpha_{s_{2}}-\beta_{s_{2}})(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{1}}
         \\&+\nonumber
         \frac{(L-y_{1})(L-y_{3}+1)}{L(L+1)}(\alpha_{s_{1}}-\beta_{s_{1}})(\alpha_{s_{3}}-\beta_{s_{3}})\beta_{s_{2}}
         \\&+\nonumber
@@ -2660,6 +2717,17 @@ The steady state $|\Psi\rangle$ of the Hamiltonian $H$ is given by
 where for every $(\tau_{1},\ldots,\tau_{L})=\bm{\tau}$
 \begin{equation}
 	\begin{split}
+		\Psi(\bm{\tau})&=\frac{1}{(1+L)!}\sum_{c_{1}=\delta_{\tau_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\tau_{L},N}}^{1}\prod_{x=1}^{L}\left(1+\sum_{j=x}^{L}c_{j}\right)\lambda_{\tau_{x}}^{1-c_{x}}\beta_{\tau_{x}}^{c_{x}-\delta_{\tau_{x},N}}
+		\\&+
+		\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{\tau_{q_{r}},N}\right) 
+		\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}
+		\\&
+	\frac{1}{(1+L)!}\sum_{c_{1}=\delta_{\eta_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\eta_{L},N}}^{1}\prod_{x=1}^{L}\left(1+\sum_{j=x}^{L}c_{j}\right)\lambda_{\eta_{x}}^{1-c_{x}}\beta_{\eta_{x}}^{c_{x}-\delta_{\eta_{x},N}}
+	\end{split}
+\end{equation}
+\begin{comment}
+\begin{equation}
+	\begin{split}
 		\Psi(\bm{\tau})&=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\tau_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\tau_{y}}^{(1-c_{y})(1-\delta_{\tau_{y},N})}
 		\\&+
 		\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{\tau_{q_{r}},N}\right) 
@@ -2668,6 +2736,7 @@ where for every $(\tau_{1},\ldots,\tau_{L})=\bm{\tau}$
 		\sum_{c_{1}=0}^{1-\delta_{\eta_{1}^{b},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\eta_{L}^{b},N}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}\prod_{y=1}^{L}\left(\lambda_{\eta_{y}^{b}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\eta_{y}^{b}}^{(1-c_{y})(1-\delta_{\eta_{y},N})}
 	\end{split}
 \end{equation}
+\end{comment}
 where we have introduced, $\forall x\in \{1,\ldots,L\}$
 \begin{equation}\label{eta-notation}
 	\eta_{x}^{b}(q_{1},\ldots,q_{b})=\begin{cases}
@@ -2811,9 +2880,7 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 		Using \eqref{elementsABS} we have 
 		\begin{equation}
 			\begin{split}
-				\Psi{'}(\eta_{1},\ldots,\eta_{L})=&\sum_{c_{1}=0}^{1-\delta_{\eta_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\eta_{L},N}}\frac{\Gamma(2+L-\sum_{z=1}^{L}c_{z})}{\Gamma(L+2)}
-				\\&
-				\prod_{y=1}^{L}\left(\lambda_{\eta_{y}}\left(2+L-y-\sum_{j=y}^{L}c_{j}\right)\right)^{c_{y}}\beta_{\eta_{y}}^{(1-c_{y})(1-\delta_{\eta_{y},N})}
+				\Psi{'}(\eta_{1},\ldots,\eta_{L})=&\frac{1}{(1+L)!}\sum_{c_{1}=\delta_{\eta_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\eta_{L},N}}^{1}\prod_{x=1}^{L}\left(1+\sum_{j=x}^{L}c_{j}\right)\lambda_{\eta_{x}}^{1-c_{x}}\beta_{\eta_{x}}^{c_{x}-\delta_{\eta_{x},N}}
 			\end{split}
 		\end{equation}
 	\begin{comment}
