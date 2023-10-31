@@ -2037,8 +2037,8 @@ thus, we obtain
 \sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)=\Psi^{'}(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)
 \end{equation}
 that implies 
-\begin{equation}
-\langle n^{y_{1}}_{s_{1}}\cdots n^{y_{m}}_{s_{m}}\rangle_{\text{stat}}=\Psi^{'}(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)
+\begin{equation}\label{shorter-chain}
+\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=\Psi^{'}(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)
 \end{equation}
 % Consider $m$ particles of non-empty types $s_{i}\in\{1,\ldots,N-1\}$ in positions $y_{i}\in\{1,\ldots,L\}$ such that $y_{i}<y_{i+1}$ for all $i=1,\ldots,m$. We aim to compute the non-equilibrium stationary state correlation $\langle n_{s_{1}}^{y_{1}}\cdots n_{s_{m}}^{y_{m}} \rangle_{stat}$. By using duality, we showed in \eqref{CorrelationByABS-prob} that
 % \begin{equation}
@@ -2053,6 +2053,17 @@ Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,y_{k},c_{k},\ldots,c_{m})$ we
 \begin{flushright}
 	$\square$
 \end{flushright}
+{\color{blue}
+\textbf{Remark}: Consider equation \eqref{shorter-chain} and the fact that, from equation \eqref{SteadyState-coeff-implicit} we have  
+\begin{equation}
+\Psi^{'}(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)=\Psi_{m}^{'}\left(s_{1},\ldots,s_{m}\right)=\Psi_{m}\left(s_{1},\ldots,s_{m}\right)
+\end{equation}
+where $|\Psi_{m}^{'}\rangle$ and $|\Psi_{m}\rangle$ are the eigenvector with vanishing eigenvalues of a chain with length $m$. Therefore, we have that 
+\begin{equation}
+\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=\Psi_{m}\left(s_{1},\ldots,s_{m}\right)
+\end{equation}
+i.e., computing the $m$-point correlations is equivalent to computing the steady state of a chain of length $m$ where the occupations are $s_{1},\ldots,s_{m}$ and the coordinates of the sites are $y_{1},\ldots,y_{m}$. I still do not have an interpretation to this...
+}
 \begin{comment}
 {\color{blue}
  \paragraph{Proof of formula \eqref{exactCorrelations}}
