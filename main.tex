@@ -1928,21 +1928,16 @@ In this section we write a formula for the stationary steady state correlations 
 		f(L,c_{1},\ldots,c_{m})=\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{a})}{\Gamma(2+L)}
 	\end{equation}
 {\color{blue}
-\begin{equation}
+	Equation \eqref{exactCorrelations} is obtained from \eqref{ABS_1}.\\
+	Deriving correlations from \eqref{ABS}
+\begin{equation}\label{exactCorrelation_1}
 	\begin{split}
-\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=&\frac{1}{(1+L)!}\sum_{c_{y_{1}},\ldots,c_{y_{m}}=0}^{1}\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{c_{y_{k}}}\beta_{s_{k}}^{1-c_{y_{k}}}\left(2+L-y_{k}-\sum_{j=k}^{m}c_{y_{j}}\right)\\&\prod_{x=1\,:\,x\notin \{y_{1},\ldots,y_{m}\}}^{L}\left(2+L-x-\sum_{k=1}^{m}\mathbbm{1}_{\{x<y_{k}\}}c_{y_{k}}\right)
+\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=&\frac{1}{(1+L)!}\sum_{c_{y_{1}},\ldots,c_{y_{m}}=0}^{1}\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{1-c_{y_{k}}}\beta_{s_{k}}^{c_{y_{k}}}\left(2+L-y_{k}-\sum_{j=k}^{m}(1-c_{y_{j}})\right)\\&\prod_{x=1\,:\,x\notin \{y_{1},\ldots,y_{m}\}}^{L}\left(2+L-x-\sum_{k=1}^{m}\mathbbm{1}_{\{x<y_{k}\}}(1-c_{y_{k}})\right)
 \end{split}
 \end{equation}
-EQUATION TO CHECK...It seems to me that it is more complicated than \eqref{exactCorrelations}...\\
-\underline{Explanation of the notation issue}:  Assume that we aim to find the 1-point correlation for $s$ at site $y$. If we compute it starting from \eqref{ABS_1} we have that all the $c_{x}$ with $x\neq y$ just disappear and we obtain 
-\begin{equation}
-	\mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{y}=s\}}\right]=\sum_{c_{y}=0}^{1}\frac{\Gamma(2+L-c_{y})}{\Gamma(2+L)}\lambda_{s}^{c_{y}}\beta_{s}^{c_{y}}\left(2+L-y-c_{y}\right)^{c_{y}}
-\end{equation}
-We do not have to keep the product over all $x$ and only the "correlated coordinate" $y$ does appear. On the other hand, if we compute 1-point correlation for $s$ at site $y$ using \eqref{ABS} we obtain 
-\begin{equation}
-\mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{y}=s\}}\right]=\frac{1}{(1+L)!} \sum_{c_{y}=0}^{1}\lambda_{s}^{1-c_{y}}\beta^{c_{y}}
-\end{equation}
-Here we have to keep the product over all $x$ and the "correlated coordinate" hidden in the product $y$.
+In \eqref{exactCorrelations} we have the $c_{y_{k}}$ at the exponent but we remove the product over $x$.
+ In \eqref{exactCorrelation_1} we have to keep the product over all $x$ and the "correlated coordinate" but we do not have the $c_{y}$ at the exponent. Which is better?
+\\
 }\\
 \textbf{Remark}: using the binomial theorem we rewrite the \eqref{exactCorrelations} as 
 \begin{equation}
