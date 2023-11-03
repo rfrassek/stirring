@@ -1045,12 +1045,12 @@ Denoting the $m$-point correlations by $\mathbb{E}_{\mu^{\text{NESS}}}\left[\pro
 \begin{equation}\label{CorrelationByABS-prob}
 	\begin{split}
 \mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]&=\lim_{t\to \infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\bm{\hat{\xi}})\right]=\lim_{t\to \infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{n},\bm{\hat{\xi}}(t))\right]
-	\\&=\sum_{c_{1}=0}^{1}\ldots \sum_{c_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{c_{k}}\beta_{a_{k}}^{1-c_{k}}\mathcal{P}(c_{1},\ldots,c_{m},\hat{\bm{\xi}})
+	\\&=\sum_{c_{1}=0}^{1}\ldots \sum_{c_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{s_{k}}^{c_{k}}\beta_{s_{k}}^{1-c_{k}}\mathcal{P}(c_{1},\ldots,c_{m},\hat{\bm{\xi}})
 \end{split}
 \end{equation}
 where
 \begin{equation}\label{absProbabilitiesIntegrable}
-	\mathcal{P}(c_{1},\ldots,c_{m},\hat{\bm{\xi}}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(c_{k}\delta_{0}+(1-c_{k})\delta_{L+1}\right)\lvert \bm{\xi}(0)=\hat{\bm{\xi}}\right)
+	\mathcal{P}(c_{1},\ldots,c_{m},\hat{\bm{\xi}}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(c_{k}\delta_{0}^{s_k}+(1-c_{k})\delta_{L+1}^{s_k}\right)\lvert \bm{\xi}(0)=\hat{\bm{\xi}}\right)
 \end{equation}
  namely the joint probability of having, for all $k=1,\ldots,m$, $c_{k}$ particles of species $s_{k}$ at site $y_{k}$ are absorbed at left and $1-c_{k}$ of the same particles absorbed at right. Therefore, by computing these absorption probabilities we determine the arbitrary non-equilibrium steady state correlations of the integrable multi-species stirring process. 
 
@@ -1367,7 +1367,7 @@ with the meaning explained above. It will be useful to introduce also $\bm{\tau}
 \end{comment} 
 We state the following result: the ground state of the Hamiltonian $H^{''}$ is given by 
 \begin{equation}\label{ResulsBasis}
-	|\Psi^{''} \rangle=\frac{1}{\left(1+L\right)!}\prod_{x=1}^{L} \lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)
+	|\Psi^{''} \rangle= \sum_{\tau}\frac{1}{\left(1+L\right)!}\prod_{x=1}^{L} \lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right) |\tau\rangle
 \end{equation}
 %\begin{equation}\label{ResulsBasis}
 %	|\Psi^{''} \rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}\right)|\mathbf{\bm{\tau}}\rangle
