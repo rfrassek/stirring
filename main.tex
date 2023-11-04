@@ -1016,7 +1016,7 @@ The dual Hamiltonian is
 \end{equation}
 where $\mathcal{H}$ is defined in \eqref{H-corsivo} and 
 \begin{equation}\label{boundary-H-dual-chain}
-	\widetilde{H}_{left}=\sum_{a=1}^{N-1}\left((a^{\dagger})_{a}^{0}\,e_{Na}^{1}-e_{aa}^{1}\right)\qquad 	\widetilde{H}_{right}=\sum_{a=1}^{N-1}\left((a^{\dagger})_{a}^{L+1}\,e_{Na}^{L}-e_{aa}^{L}\right)\dt
+	\widetilde{H}_{left}=\sum_{a=1}^{N-1}\left((\mathbf{a}{\dagger})_{a}^{0}\,e_{Na}^{1}-e_{aa}^{1}\right)\qquad 	\widetilde{H}_{right}=\sum_{a=1}^{N-1}\left((\mathbf{a}^{\dagger})_{a}^{L+1}\,e_{Na}^{L}-e_{aa}^{L}\right)\dt
 \end{equation}
 In the long-time limit the dual process voids the chain, i.e. all particles of types $\{1,\ldots,N-1\}$ are eventually absorbed at the extra-sites $0$ and $L+1$ and replaced by types $N$. We also notice that, up the the bosonic creation operators $(a^{\dagger})_{a}$, the dual boundary Hamiltonians \eqref{boundary-H-dual-chain} are triangular. This simplification will be crucial in Sections \ref{sectionIntegrabiliy}.\\
 \textbf{Notation}: sometimes, in the following, we will denote differently the configuration of this hard-core chain. Each configuration can be written as
@@ -1033,26 +1033,33 @@ with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. The notation w
 \end{equation}
 In this notation, the elements of the duality matrix reads
 \begin{equation}\label{ElementsDualityMatrixChain_1}
-	D(\bm{n},\bm{\xi})=\prod_{a=1}^{N-1}\alpha_{a}^{\xi_{a}^{0}}\left(\prod_{x=1}^{L}\prod_{a=1}^{N-1}\mathbbm{1}_{\{\delta_{\tau_{x},a}\geq \xi_{a}^{x}\}}\right)\prod_{a=1}^{N-1}\beta_{a}^{\xi_{a}^{L+1}}\dt
+	D(\bm{\tau},\bm{\xi})=\prod_{a=1}^{N-1}\alpha_{a}^{\xi_{a}^{0}}\left(\prod_{x=1}^{L}\prod_{a=1}^{N-1}\mathbbm{1}_{\{\delta_{\tau_{x},a}\geq \xi_{a}^{x}\}}\right)\prod_{a=1}^{N-1}\beta_{a}^{\xi_{a}^{L+1}}\dt
 \end{equation}
 \\
-Using the above duality elements, we can compute the  $m$-point correlations between non-empty particles using the absorption probabilities. Consider a dual configuration $\bm{\hat{\xi}}:=\sum_{k=1}^{m}\delta_{s_{k}}^{y_{k}}$ where $s_{k}\in\{1,\ldots,N-1\}$ and $y_{k}\in\{1,\ldots,L\}$ such that $y_{k}<y_{k+1}$ for every $k\in\{1,\ldots,m\}$. Fix an arbitrary initial configuration $\bm{n}$, the elements \eqref{ElementsDualityMatrixChain} of the duality matrix computed in the dual configuration $\bm{\hat{\xi}}$ read
+Using the above duality elements, we can compute the  $m$-point correlations between non-empty particles using the absorption probabilities. For arbitrary $m\in \mathbb{N}$ such that $m<L$, we fix $a_{k}\in\{1,\ldots,N-1\}$ and $x_{k}\in\{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for every $k\in\{1,\ldots,m\}$. We pick the dual configuration $\xi=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, meaning that 
 \begin{equation}
-	D(\bm{n},\bm{\hat{\xi}})=\prod_{k=1}^{m}\mathbbm{1}_{\{\delta_{\tau_{y_{k}},s_{k}}=1\}}=\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\dt
+	\bm{\xi}=\begin{cases}
+		\xi_{a}^{x}=1\qquad \text{if}\;x=x_{k}\;\text{and}\; a=a_{k}\\
+		\xi_{a}^{x}=0\qquad \text{otherwise}
+	\end{cases}
 \end{equation}
-Denoting the $m$-point correlations by $\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]$ we have 
+For any $\bm{\tau}\in \Omega$ the elements of the duality matrix defined in \eqref{ElementsDualityMatrixChain} read
+\begin{equation}
+	D(\bm{\tau},\bm{\hat{\xi}})=\prod_{k=1}^{m}\mathbbm{1}_{\{\delta_{\tau_{y_{k}},s_{k}}=1\}}=\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\dt
+\end{equation}
+Denoting the $m$-point correlations in the non-equilibrium steady state (NESS) by $\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]$ we have 
 %To compute the steady state $m$-point correlations of the process $\bm{n}(t)$ we recall that the dual process eventually voids the chain (by putting all particles in the extra-sites $0$ and $L$). Therefore, we have the following equalities
 \begin{equation}\label{CorrelationByABS-prob}
 	\begin{split}
-\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]&=\lim_{t\to \infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\bm{\hat{\xi}})\right]=\lim_{t\to \infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{n},\bm{\hat{\xi}}(t))\right]
-	\\&=\sum_{c_{1}=0}^{1}\ldots \sum_{c_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{s_{k}}^{c_{k}}\beta_{s_{k}}^{1-c_{k}}\mathcal{P}(c_{1},\ldots,c_{m},\hat{\bm{\xi}})
+\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]&=\lim_{t\to \infty}\mathbb{E}_{\bm{\tau}}\left[D(\bm{\tau}(t),\bm{\hat{\xi}})\right]=\lim_{t\to \infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{\tau},\bm{\hat{\xi}}(t))\right]
+	\\&=\sum_{c_{1}=0}^{1}\ldots \sum_{c_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{c_{k}}\beta_{a_{k}}^{1-c_{k}}\mathcal{P}(c_{1},\ldots,c_{m},\hat{\bm{\xi}})
 \end{split}
 \end{equation}
 where
 \begin{equation}\label{absProbabilitiesIntegrable}
-	\mathcal{P}(c_{1},\ldots,c_{m},\hat{\bm{\xi}}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(c_{k}\delta_{0}^{s_k}+(1-c_{k})\delta_{L+1}^{s_k}\right)\lvert \bm{\xi}(0)=\hat{\bm{\xi}}\right)
+	\mathcal{P}(c_{1},\ldots,c_{m},\hat{\bm{\xi}}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(c_{k}\delta^{0}_{a_k}+(1-c_{k})\delta^{L+1}_{a_k}\right)\lvert \bm{\xi}(0)=\hat{\bm{\xi}}\right)
 \end{equation}
- namely the joint probability of having, for all $k=1,\ldots,m$, $c_{k}$ particles of species $s_{k}$ at site $y_{k}$ are absorbed at left and $1-c_{k}$ of the same particles absorbed at right. Therefore, by computing these absorption probabilities we determine the arbitrary non-equilibrium steady state correlations of the integrable multi-species stirring process. 
+ namely the joint probability of having, for all $k=1,\ldots,m$, $c_{k}$ particles of species $a_{k}$ initially positioned at site $x_{k}$ are absorbed at left and $1-c_{k}$ of the same particles absorbed at right. Therefore, by computing these absorption probabilities we determine the arbitrary non-equilibrium steady state correlations of the integrable multi-species stirring process. 
 
 
 
