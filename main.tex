@@ -1555,6 +1555,8 @@ Therefore we obtain
 |\Psi^{''}\rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}|\mathbf{\bm{\tau}}\rangle\dt
 \end{equation}
 
+
+{\color{blue}
 \begin{equation}
 \begin{split}
 \Psi^{''}(\tau_1,\ldots,\tau_L)&=\left[\prod_{x=1}^{L}\lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\right] \frac{\Gamma\left(2+L-\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L} \frac{\Gamma\left(2+L-x-\sum_{j=x+1}^{L}(1-\delta_{\tau_{j},N})\right)}{\Gamma\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{j},N})\right)}\\
@@ -1564,12 +1566,13 @@ Therefore we obtain
 % &=\left[\prod_{x=1}^{L}\lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\right] \frac{\Gamma\left(2 \right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L}\frac{1}{\Gamma(-1)} B(3+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{x},N}),-1)\\
 \end{split}
 \end{equation}
+}
 The last factor only depends on the positions of particles $N$. The $\lambda$-factor depends only on the number of particles of types $1,\ldots,N-1$.
 \begin{flushright}
 	$\square$
 \end{flushright}
 \subsubsection{Explicit formula for $|\Psi^{'}\rangle$}\label{subsectionSSdual}
-By knowing the steady state  of the Hamiltonian $H^{''}$ we use \eqref{S2-Inverse} to retrieve the steady state of the Hamiltonian $H^{'}$. The result is the following 
+By knowing the ground state  of the Hamiltonian $H^{''}$ we use \eqref{S2-Inverse} to retrieve the ground state of the Hamiltonian $H^{'}$. The result is the following 
 \begin{equation}\label{ABS-vect}
     |\Psi^{'}\rangle =\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\Psi^{'}(\bm{\tau})|\bm{\tau}\rangle 
 \end{equation}
@@ -1615,10 +1618,12 @@ where
 \end{equation}
 This equation for $\Psi^{'}(\bm{\tau})$ will be useful in the computation of non-equilibrium steady state correlations and in the following Remark, where we specialize it to the case $N=2$ of SSEP. \\ \\
 \textbf{Remark:} If we consider the case $N=2$ we have that, for an arbitrary configuration $\bm{\tau}$, we can identify $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x},1}$ occupied sites and the remaining $L-|\bm{\tau}|$ empty. We denote by $(x_{i})_{i\in\{1,\ldots,|\bm{\tau}|\}}$ the coordinates of the occupied sites. We introduce $q\in\{0,\ldots,|\bm{\tau}|\}$ and we rewrite \eqref{ABS_1} as
+{\color{red}
 \begin{align}
 	\Psi^{'}(\bm{\tau})=&\sum_{q=0}^{|\bm{\tau}|}(\alpha-\beta)^{q}\beta^{L-q}\frac{\Gamma(L+2-q)}{\Gamma(L+2)}\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}
 	\\&\prod_{x=1}^{L}\left(L+2-x-\sum_{i=x}^{L}c_{i}\right)^{c_{x}}\dt
 \end{align}
+}
 For any fixed $q$ we must consider all possible values of $(c_{i})_{i\in\{1,\ldots,m\}}$ such that its sum is equal to $q$. For each of these $(c_{i})_{i\in\{1,\ldots,m\}}$ we add a term given by  
 \begin{equation}
 	\prod_{x=1}^{L}\left(L+2-x-\sum_{i=x}^{L}c_{i}\right)^{c_{x}}=\prod_{k=1}^{q}\left(L+2-x_{k}-\sum_{i=x_{k}}^{L}c_{i}\right)\dt
@@ -1690,6 +1695,9 @@ where, for arbitrary $i\in\{1,\ldots,L\}$,  $\Psi^{''}(\tau_{1},\ldots,\underbra
 \end{equation*}
 }
 \end{comment}
+
+{\color{blue}$\mu$ or $\tau$ here?}
+
 For a fixed configuration $\bm{\mu}=(\mu_{1},\ldots,\mu_{L})$, by using equation \eqref{ResulsBasis} we have
 \begin{equation}
 	\Psi^{''}(\bm{\mu})=\frac{1}{\left(1+L\right)!}\prod_{x=1}^{L} \lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)
@@ -1833,6 +1841,8 @@ Finally, considering all possible $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, 
 \end{flushright}
 
 \subsection{Explicit formula for the steady state $|\Psi\rangle$}
+{\color{blue}can we proceed as above? using sth similar to \eqref{goodTP-S2}}
+
 The steady state $|\Psi\rangle$ of the Hamiltonian $H$ is given by 
 \begin{equation}\label{steadyStateH}
 	|\Psi\rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\Psi(\bm{\tau})|\bm{\tau}\rangle
