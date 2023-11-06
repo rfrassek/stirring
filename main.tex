@@ -1374,7 +1374,7 @@ with the meaning explained above. It will be useful to introduce also $\bm{\tau}
 \end{comment} 
 We state the following result: the ground state of the Hamiltonian $H^{''}$ is given by 
 \begin{equation}\label{ResulsBasis}
-	|\Psi^{''} \rangle= \sum_{\tau}\frac{1}{\left(1+L\right)!}\prod_{x=1}^{L} \lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right) |\tau\rangle
+	|\Psi^{''} \rangle= \sum_{\bm{\tau}\in \Omega}\frac{1}{\left(1+L\right)!}\prod_{x=1}^{L} \lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right) |\bm{\tau}\rangle
 \end{equation}
 %\begin{equation}\label{ResulsBasis}
 %	|\Psi^{''} \rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}\right)|\mathbf{\bm{\tau}}\rangle
@@ -1386,18 +1386,11 @@ where
         0\quad \text{otherwise}
     \end{cases}
 \end{equation}
-\textbf{Remark}: In case of $N=2$ we introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. Moreover, for each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. Thus, the coefficient of the above formula can be written as
-\begin{align}
-&\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},2}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},2}\right)\right]^{1-\delta_{\tau_{x},2}}\right)%=\lambda_{1}^{q}\prod_{x=1}^{L}\left(2+L-y_{x}-\sum_{j=x}^{L}\delta_{\tau_{j},1}\right)^{\delta_{\tau_{x},1}}
-=\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-\sum_{j=x_{k}+1}^{L}\delta_{\tau_{x_{j}},1}\right)}{(2+L-k)}\dt
-\end{align}
-By varying $q$ and $\ell_{1},\ldots,\ell_{q}$, we have a one-to-one mapping with $\bm{\tau}$, therefore, we write 
-\begin{equation}
-	|\Psi^{''}\rangle=\sum_{q=0}^{L}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
-\end{equation}
+
 %and the basis vector $|\bm{\tau}\rangle =\bigotimes_{x=1}^{L}|\tau_{x}\rangle$ with $\tau_{x}\in\{1,\ldots,N\}$ denotes the species that occupies the site $i\in \{1,\ldots,L\}$.
 \paragraph{Proof of formula \eqref{ResulsBasis}} 
-In the first part of the proof we will use the notation with $\bm{n}$, then we will change to the notation with $\bm{\tau}$ at the end of the proof. We recall that these two notations are related by \eqref{notation-change-relation}.  We consider the vector with elements given by the operators of the MPA $(X_{1},\ldots,X_{N})$ and we act on it with the similarity transformation $S=S_{2}S_{1}$ obtaining new operators $(\Xt_{1},\ldots,\Xt_{N})$ that will satisfy simpler commutation relations. 
+%In the first part of the proof we will use the notation with $\bm{n}$, then we will change to the notation with $\bm{\tau}$ at the end of the proof. We recall that these two notations are related by \eqref{notation-change-relation}.  
+We consider the vector with elements given by the operators of the MPA $(X_{1},\ldots,X_{N})$ and we act on it with the similarity transformation $S=S_{2}S_{1}$ obtaining new operators $(\Xt_{1},\ldots,\Xt_{N})$ that will satisfy simpler commutation relations. 
 For the sake of notation 
 \begin{equation}
     \begin{pmatrix}
@@ -1442,7 +1435,7 @@ Summing over $b\in \{1,\ldots,N\}$ in commutation relations \eqref{bulk} we have
 \begin{equation} 
 	\left[X_{a},\Xt_{N}\right]=\lambda_{a}\Xt_{N}\qquad\forall a=1,\ldots,N\co
 \end{equation}
-with $\widetilde{X}_{N}=\widetilde{X}_{1}+\ldots+\widetilde{X}_{1}$, see \eqref{Xtildes2b}. 
+with $\widetilde{X}_{N}=\widetilde{X}_{1}+\ldots+\widetilde{X}_{N}$, see \eqref{Xtildes2b}. 
 Therefore, we obtain the commutation relations for $\Xt_{a}$ 
 \begin{equation}\label{commutationsBula}
 	\left[\Xt_{a},\Xt_{N}\right]=\lambda_{a}\Xt_{N}\qquad \forall a\in \{1,\ldots,N-1\}\dt
@@ -1456,19 +1449,21 @@ Moreover using \eqref{Xtildes2b} and \eqref{Xes}, the action of $\Xt_{a}$ on the
 \end{equation} 
 Using the transformed operators $(\widetilde{X}_{a})_{a\in\{1,\ldots,N\}}$, the vector $|\Psi^{''}\rangle$ of the matrix product ansatz is written as
 \begin{equation}\label{toDetermineTilde}
-	|\Psi^{''}\rangle = \frac{1}{Z_{L}}\sum_{\bm{n}\in \Omega}\langle V^{*}|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}
-	|V \rangle \,|\bm{n}\rangle
+	|\Psi^{''}\rangle = \frac{1}{Z_{L}}\sum_{\bm{\tau}\in \Omega}\langle V^{*}|\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
+	|V \rangle \,|\bm{\tau}\rangle
 \end{equation}
 where the normalization is given by 
 \begin{align}
 		Z_{L}&=\langle V^{*}|(X_{1}+\ldots+X_{N})^{L}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{L}|V\rangle\dt
 \end{align}
+\begin{comment}
 The basis is 
 $$
 |\bm{n}\rangle =|n_{1}^{1},\ldots,n_{N}^{1}\rangle \otimes \ldots\otimes |n_{1}^{L},\ldots,n_{N}^{L}\rangle
 $$
 such that, for each site $x\in \{1,\ldots,L\}$, $|n^{x}\rangle=|n_{1}^{x},\ldots,n_{N}^{x}\rangle\in \Omega_{x}$. \\
-To determine the steady state \eqref{toDetermineTilde}, we need to compute the coefficient $\langle V^{*}|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{\xi_{a}^{x}}
+\end{comment}
+To determine the eigenvector \eqref{toDetermineTilde}, we need to compute the coefficient $\langle V^{*}|\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
 |V \rangle$ and the normalization $Z_{L}$. Using \eqref{commutationsBula} we have
 \begin{equation}\label{UsefulRelation}
 	\widetilde{X}_{a}\widetilde{X}_{N}=\widetilde{X}_{N}\left(\lambda_{a}+\widetilde{X}_{a}\right)
@@ -1480,15 +1475,17 @@ Fix $ a\in \{1,\ldots,N-1\}$ and arbitrary $ \ell,n\in \mathbb{N}$. By applying 
 %	\\&=
 %	\lambda_{a}\widetilde{X}_{a}^{n-2}\left(\lambda_{a}\widetilde{X}_{N}+\widetilde{X}_{N}\widetilde{X}_{a}\right)\widetilde{X}_{N}^{\ell-1}+\widetilde{X}_{a}^{n-2}\left(\lambda_{a}\widetilde{X}_{N}+\widetilde{X}_{N}\widetilde{X}_{a}\right)\left(\lambda_{a}\widetilde{X}_{N}+\widetilde{X}_{N}\widetilde{X}_{a}\right)\widetilde{X}_{N}^{\ell -1}
 %	\\&=\ldots\\&=
-	\widetilde{X}_{1}^{\ell}\left(\widetilde{X}_{a}+\ell\lambda_{a}\right)^{n}
+	\widetilde{X}_{N}^{\ell}\left(\widetilde{X}_{a}+\ell\lambda_{a}\right)^{n}
 \end{align}
+\begin{comment}
 therefore 
 \begin{align*}
 	\widetilde{X}_{1}^{n_{1}}\ldots\widetilde{X}_{N-1}^{n_{N-1}}\widetilde{X}_{N}^{n_{N}}=\widetilde{X}_{N}^{n_{N}}\prod_{a=1}^{N-1}\left(\widetilde{X}_{a}+n_{N}\lambda_{a}\right)^{n_{a}}\dt
 \end{align*}
+\end{comment}
 By taking the product over the sites $x$ from $1$ to $L$ we obtain 
 \begin{equation}
-	\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}=\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\widetilde{X}_{a}+\lambda_{a}\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}\dt
+	\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}=\widetilde{X}_{N}^{\sum_{x=1}^{L}\delta_{\tau_{x},N}}\prod_{x=1}^{L}\left(\widetilde{X}_{\tau_{x}}+\lambda_{\tau_{x}}\sum_{j=x}^{L}\delta_{\tau_{x},N}\right)^{n_{a}^{x}}\dt
 \end{equation}
 Multiplying by the boundary vectors and by using \eqref{commRIGHT} we have 
 %\begin{equation}
@@ -1497,51 +1494,53 @@ Multiplying by the boundary vectors and by using \eqref{commRIGHT} we have
 %\end{equation}
 %Using 
 \begin{align}
-	\langle V^{*}|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}
-	|V \rangle\nonumber&=\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}+\lambda_{a}\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|V\rangle\nonumber
-	\\&=
-	\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|V\rangle\nonumber
-	\\&=
-	\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}|V\rangle \dt
+	\langle V^{*}|\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
+	|V \rangle\nonumber&=
+	\prod_{x=1}^{L}\left(\lambda_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}\langle V^{*}|\widetilde{X}_{N}^{\sum_{x=1}^{L}\delta_{\tau_{x},N}}|V\rangle \dt
 \end{align}
-To determine the state we now need to compute $\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}n_{N}^{i}}|V\rangle$. Calling $\sum_{i=1}^{L}n_{N}^{i}=n_{N}$ and using \eqref{commLEFT} for $a\in \{1,\ldots,N-1\}$ we obtain 
+We now need to compute $\langle V^{*}|\widetilde{X}_{N}^{\sum_{i=1}^{L}\delta_{\tau_{x},N}}|V\rangle$. For all $n\in \mathbb{N}$ we have that  
 \begin{align*}
-	\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle&=\langle V^{*}|\widetilde{X}_{N}\widetilde{X}_{N}^{n_{N}-1}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle +\langle V^{*}|\frac{1}{\lambda_{a}}\widetilde{X}_{a}\widetilde{X}_{N}^{n_{N}-1}|V\rangle
+	\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle&=\langle V^{*}|\widetilde{X}_{N}\widetilde{X}_{N}^{n-1}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{n-1}|V\rangle +\langle V^{*}|\frac{1}{\lambda_{a}}\widetilde{X}_{a}\widetilde{X}_{N}^{n-1}|V\rangle
 	\\&=
-	\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle+\frac{1}{\lambda_{a}}\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}\left(\widetilde{X}_{a}+\lambda_{a}(n_{N}-1)\right)|V\rangle
+	\langle V^{*}|\widetilde{X}_{N}^{n-1}|V\rangle+\frac{1}{\lambda_{a}}\langle V^{*}|\widetilde{X}_{N}^{n-1}\left(\widetilde{X}_{a}+\lambda_{a}(n-1)\right)|V\rangle
 	\\&=
-	\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle+\left(n_{N}+1-1\right)\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle
+	\langle V^{*}|\widetilde{X}_{N}^{n-1}|V\rangle+\left(n+1-1\right)\langle V^{*}|\widetilde{X}_{N}^{n-1}|V\rangle
 	\\&=
-	\left(2+n_{N}-1\right)\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle
+	\left(2+n-1\right)\langle V^{*}|\widetilde{X}_{N}^{n-1}|V\rangle
 	\\&=
-	\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\langle V^{*}|\widetilde{X}_{N}^{n_{1}-1}|V\rangle
+	\frac{\Gamma(2+n)}{\Gamma(2+n-1)}\langle V^{*}|\widetilde{X}_{N}^{n-1}|V\rangle
 \end{align*}
 where in the second equality we used \eqref{usefulRelaton-many}. 
 This leads to the recursion relation
 \begin{align}
-		\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle=\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle
+		\langle V^{*}|\widetilde{X}_{N}^{n}|V\rangle=\frac{\Gamma(2+n)}{\Gamma(2+n-1)}\langle V^{*}|\widetilde{X}_{N}^{n-1}|V\rangle
 \end{align}
 with $	\langle V^{*}|\widetilde{X}_{N}^{0}|V\rangle=1$. 
 Therefore, we obtain 
 \begin{align*}
-	\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle&=%\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle=\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\frac{\Gamma(2+n_{N}-1)}{\Gamma(2+n_{N}-2)}\langle V^{*}|\widetilde{X}_{N}^{n_{N}-2}|V\rangle\\&=
-	\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\frac{\Gamma(2+n_{N}-1)}{\Gamma(2+n_{N}-2)}\ldots \frac{\Gamma(2-1)}{\Gamma(2)}\langle V^{*}|\widetilde{X}_{N}^{0}|V\rangle=
-	\Gamma(2+n_{N})
+	\langle V^{*}|\widetilde{X}_{N}^{n}|V\rangle&=%\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\langle V^{*}|\widetilde{X}_{N}^{n_{N}-1}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{n_{N}}|V\rangle=\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\frac{\Gamma(2+n_{N}-1)}{\Gamma(2+n_{N}-2)}\langle V^{*}|\widetilde{X}_{N}^{n_{N}-2}|V\rangle\\&=
+	\frac{\Gamma(2+n)}{\Gamma(2+n-1)}\frac{\Gamma(2+n-1)}{\Gamma(2+n-2)}\ldots \frac{\Gamma(2-1)}{\Gamma(2)}\langle V^{*}|\widetilde{X}_{N}^{0}|V\rangle=
+	\Gamma(2+n)
 \end{align*}
-By using this result we have 
+By using this result we have that
 \begin{equation}
-	\langle V^{*}|\prod_{x=1}^{L}\prod_{a=1}^{N}\widetilde{X}_{a}^{n_{a}^{x}}
-	|V \rangle=\Gamma(2+n_{N})\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}
+	\langle V^{*}|\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
+	|V \rangle=\Gamma(2+\sum_{x=1}^{N}\delta_{\tau_{x},N})\prod_{x=1}^{L}\left(\lambda_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}
 \end{equation}
-The normalization constant is computed similarly as 
+The normalization constant is then given by
 \begin{align*}
-	Z_{L}&=\langle V^{*}|(X_{1}+\ldots+X_{N})^{L}|V\rangle=\langle V^{*}\widetilde{X}_{N}^{L}|V|\rangle=
+	Z_{L}&=\langle V^{*}|(X_{1}+\ldots+X_{N})^{L}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{L}|V|\rangle=
 	\Gamma(2+L)\dt
 \end{align*}
 Therefore, we write the coefficients of the linear combination \eqref{toDetermineTilde} as 
 \begin{equation}\label{resulEsteady}
-	|\Psi^{''}\rangle= \sum_{\bm{n}\in \Omega}\frac{\Gamma(2+\sum_{i=1}^{L}n_{N}^{i})}{\Gamma(2+L)}\prod_{x=1}^{L}\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}|\bm{n}\rangle\dt
+	|\Psi^{''}\rangle= \sum_{\bm{\tau}\in \Omega}\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\tau_{x},N})}{\Gamma(2+L)}\prod_{x=1}^{L}\left(\lambda_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}|\bm{\tau}\rangle\dt
 \end{equation}
+We observe that, for all $x$, we have
+\begin{equation}
+	\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}=\frac{\Gamma(2+\sum_{j=x+1}^{L}\delta_{\tau_{j},N})}{\Gamma(1+\sum_{j=x}\delta_{\tau_{j},N})}
+\end{equation}
+\begin{comment}
 Using the notation $\tau_{x}$, $|\bm{\tau}\rangle $ with $\bm{\tau}$, related to the one with $\bm{n}$ by \eqref{notation-change-relation}, we have 
 \begin{equation}
 	\prod_{a=1}^{N-1}\left(\lambda_{a}\right)^{n_{a}^{x}}\left(1+\sum_{j=x}^{L}n_{N}^{j}\right)^{n_{a}^{x}}=\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}
@@ -1555,7 +1554,8 @@ Therefore we obtain
 |\Psi^{''}\rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}|\mathbf{\bm{\tau}}\rangle\dt
 \end{equation}
 
-
+\end{comment}
+\begin{comment}
 {\color{blue}
 \begin{equation}
 \begin{split}
@@ -1565,16 +1565,33 @@ Therefore we obtain
 &=  \frac{1}{\left(1+L\right)!}\prod_{x=1}^{L} \lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)
 % &=\left[\prod_{x=1}^{L}\lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\right] \frac{\Gamma\left(2 \right)}{\Gamma\left(2+L\right)}\prod_{x=1}^{L}\frac{1}{\Gamma(-1)} B(3+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{x},N}),-1)\\
 \end{split}
-\end{equation}
-}
-The last factor only depends on the positions of particles $N$. The $\lambda$-factor depends only on the number of particles of types $1,\ldots,N-1$.
+\end{equation}}
+\end{comment}
+It follows that 
+\begin{align}\label{remove-exponent}
+&\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\tau_{x},N})}{\Gamma(2+L)}\prod_{x=1}^{L}\left(\lambda_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}\nonumber\\
+=&\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\tau_{x},N})}{\Gamma(2+L)}\prod_{x=1}^{L}\frac{\Gamma(2+\sum_{j=x+1}^{L}\delta_{\tau_{j},N})}{\Gamma(1+\sum_{j=x}\delta_{\tau_{j},N})}\nonumber\\
+=&\frac{\Gamma(2)}{\Gamma(2+L)}\prod_{x=1}^{L}\frac{\Gamma(2+\sum_{j=x}^{L}\delta_{\tau_{j},x})}{\Gamma(1+\sum_{j=x}^{L}\delta_{\tau_{j},x})}\nonumber\\
+=&\frac{1}{(1+L)!}\prod_{x=1}^{L}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)
+\end{align}
+Therefore, we obtain \eqref{ResulsBasis}.
+%The last factor only depends on the positions of particles $N$. The $\lambda$-factor depends only on the number of particles of types $1,\ldots,N-1$.
 \begin{flushright}
 	$\square$
 \end{flushright}
+\textbf{Remark}: In case of $N=2$ we introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. Moreover, for each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. Thus, arguing as in \eqref{remove-exponent}, the coefficient \eqref{ResulsBasis} when $N=2$ are written as
+\begin{align}
+	&\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},2}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},2}\right)\right]^{1-\delta_{\tau_{x},2}}\right)%=\lambda_{1}^{q}\prod_{x=1}^{L}\left(2+L-y_{x}-\sum_{j=x}^{L}\delta_{\tau_{j},1}\right)^{\delta_{\tau_{x},1}}
+	=\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-\sum_{j=x_{k}+1}^{L}\delta_{\tau_{x_{j}},1}\right)}{(2+L-k)}\dt
+\end{align}
+By varying $q$ and $\ell_{1},\ldots,\ell_{q}$, we have a one-to-one mapping with $\bm{\tau}$, therefore, we write 
+\begin{equation}
+	|\Psi^{''}\rangle=\sum_{q=0}^{L}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
+\end{equation}
 \subsubsection{Explicit formula for $|\Psi^{'}\rangle$}\label{subsectionSSdual}
 By knowing the ground state  of the Hamiltonian $H^{''}$ we use \eqref{S2-Inverse} to retrieve the ground state of the Hamiltonian $H^{'}$. The result is the following 
 \begin{equation}\label{ABS-vect}
-    |\Psi^{'}\rangle =\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\Psi^{'}(\bm{\tau})|\bm{\tau}\rangle 
+    |\Psi^{'}\rangle =\sum_{\bm{\tau}\in \Omega}\Psi^{'}(\bm{\tau})|\bm{\tau}\rangle 
 \end{equation}
 where  
 \begin{equation}\label{ABS}
