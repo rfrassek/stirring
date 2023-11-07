@@ -1074,9 +1074,9 @@ where
 
 
 \section{Exact steady state and correlations for the integrable chain}\label{sectionIntegrabiliy}
-In this section we aim to use duality and the matrix product ansatz (MPA) to determine the moments and correlations of the non-equilibrium steady state for the integrable version of the multi-species stirring process, defined in Subsection \ref{integrableChain-duality}. As it will turn out, the commutation relations of the matrix product ansatz allowing to determine a closed formula for all correlations. As a by-product, absorption probabilities can be explicitly found.%, giving a further probabilistic interpretation for the non-equilibrium steady state. 
+In this section we aim to use duality and the matrix product ansatz (MPA) to determine the moments and correlations of the non-equilibrium steady state for the integrable version of the multi-species stirring process, defined in Subsection \ref{integrableChain-duality}. As it will turn out, the commutation relations of the matrix product ansatz allows to determine a closed formula for all correlations. As a by-product, absorption probabilities can be explicitly found.%, giving a further probabilistic interpretation for the non-equilibrium steady state. 
 \subsection{Matrix product ansatz for the non-equilibrium steady state}
-The matrix product ansatz has been formulated in \cite{vanicat2017exact}, here we briefly recall it.
+The matrix product ansatz for the multi-species stirring process has been formulated in \cite{vanicat2017exact}, here we briefly recall the main steps.
  Denoting by $|\Psi(t)\rangle$ the column vector that encodes the probability distribution of the chain with Hamiltonian \eqref{hamiltonian} at time $t\geq 0$, its evolution equation is given by 
  the master equation
 \begin{equation}
@@ -1127,12 +1127,12 @@ The MPA gives an abstract form of the non-equilibrium steady state in terms of a
  \begin{equation}
  	H\;\xleftrightarrow{S_{1}}\;H^{'}\;\xleftrightarrow{S_{2}}\;H^{''}
  \end{equation} 
- where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Using these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} become simpler. As a consequence, the steady state $|\Psi^{''}\rangle$ of $H^{''}$ can be written explicitly. Finally, reversing the transformations we retrieve $|\Psi\rangle$.
+ where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Using these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} become simpler. As a consequence, the ground state $|\Psi^{''}\rangle$ of $H^{''}$ can be written explicitly. Finally, reversing the transformations we retrieve $|\Psi\rangle$.
  
- The first transformation $S_{1}$ is closely related to the duality matrix and we will see that $H^{'}$ is $\widetilde{H}^{T}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. The second transformation $S_{2}$ diagonalizes the right boundary. Finally, the composition  $S_{2} S_{1}$ allows to simplify the commutators of the MPA algebra. \\
+ The first transformation $S_{1}$ is closely related to the duality matrix and we will see that $H^{'}$ is $\widetilde{H}^{T}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. The second transformation $S_{2}$ diagonalizes the right boundary. Finally, the composition  $S_{2} S_{1}$ allows to simplify the commutators of the MPA algebra. 
 \subsection{Exact correlations in the non-equilibrium steady state}\label{subsection-exact}
 In this section we write a formula for the stationary non-equilibrium steady state correlations between $m$- points of the chain, each of them occupied by a non-empty species, i.e. a species with label from $1$ to $N-1$. %This is motivated by the interest of understanding how actual particles of the chain are correlated among each others and also because in the steady state the holes depends on the occupation of all other species, as a consequence of the constraint $n_{N}^{x}=1-\sum_{b=1}^{N-1}n_{b}^{x}$ for arbitrary $x\in \{1,\ldots,L\}$.
- Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $(x_{1},\ldots,x_{m})$, such that $x_{k}<x_{k+1}$ $\forall k\in \{1,\ldots,m-1\}$. In each of these points there is a particle of species $a_{k}\in \{1,\ldots,N-1\}$. Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
+ Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $(x_{1},\ldots,x_{m})$, such that $x_{k}<x_{k+1}$ $\forall k\in \{1,\ldots,m-1\}$. In each of these points we assume that there is a particle of species $a_{k}\in \{1,\ldots,N-1\}$. Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
 \begin{equation}\label{exactCorrelations}
 	\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=\sum_{c_{1},\ldots,c_{m}=0}^{1}
 	f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}(\alpha_{a_{k}}-\beta_{a_{k}})^{c_{k}}\beta_{a_{k}}^{1-c_{k}}g_{k}(L,y_{k},c_{k},\ldots,c_{m})
@@ -1157,7 +1157,7 @@ and
 	In \eqref{exactCorrelation_1} we have to keep the product over all $x$ and the "correlated coordinate" but we do not have the $c_{y}$ at the exponent. Which is better?
 }
 \paragraph{Absorption probabilities}
-The absorption probabilities are given by  
+Knowing the non-equilibrium steady state correlations, we can read-off the absorption probabilities defined in \eqref{absProbabilitiesIntegrable}. They are given by
 \begin{equation}\label{abs-probabilities}
 	\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi})=\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(L,c_{1},\ldots,c_{m})\prod_{j=1}^{m}(-1)^{c_{j}-t_{j}}g_{j}(L,x_{j},c_{j},\ldots,c_{m})
 \end{equation}
@@ -1244,10 +1244,10 @@ Therefore, we compute the third cumulant, i.e. the three-point connected correla
 \subsection{Proof of the exact correlations in the non-equilibrium steady state}
 The proof of formula \eqref{exactCorrelations} is made in some steps:
 \begin{itemize}
-	\item In Subsection \ref{subsectionSTransf}, we introduce two similarity transformation that bring the original Hamiltonian $H$ to $H^{'}$ and $H^{''}$, with triangular and triangular diagonal boundaries respectively. Associated to $H^{'}$ and $H^{''}$ there are two ground states denoted by $|\Psi^{'}\rangle$ and $|\Psi^{''}\rangle$ respectively. 
+	\item In Subsection \ref{subsectionSTransf}, we introduce two similarity transformation that bring the original Hamiltonian $H$ to $H^{'}$ and $H^{''}$, with triangular and triangular-diagonal boundaries respectively. Associated to $H^{'}$ and $H^{''}$ there are two ground states denoted by $|\Psi^{'}\rangle$ and $|\Psi^{''}\rangle$ respectively. 
 	\item In Subsection \ref{subsectionSSHsec} we apply the MPA to $H^{''}$. Here the commutation relations defining the matrix algebra are simpler. The explicit expression for $|\Psi^{''}\rangle$ is determined (see \eqref{ResulsBasis}).
 	\item In subsection \ref{subsectionSSdual}, we invert one of the similarity transformation recovering the ground state $|\Psi^{'}\rangle$ from the explicit expression of $|\Psi^{''}\rangle$ computed in the previous step (see \eqref{ABS}).
-	\item In Subsection \ref{subsection-exact} we compute the non-equilibrium steady state using $|\Psi^{'}\rangle$ of the previous step. Exploiting duality to compute these correlation, we do not need the explicit expression of the steady state $|\Psi\rangle$. However, for the sake of completeness we report it Appendix \ref{appB}. 
+	\item In Subsection \ref{subsection-exact} we compute the non-equilibrium steady state correlations using $|\Psi^{'}\rangle$ of the previous step. Exploiting duality to compute these correlation, we do not need the explicit expression of the steady state $|\Psi\rangle$. However, for the sake of completeness we report $|\Psi\rangle$ in Appendix \ref{appB}. 
 \end{itemize}
 \subsubsection{The similarity transformations}\label{subsectionSTransf}
 Consider the matrices
@@ -1328,7 +1328,7 @@ The boundary Hamiltonians of $H^{''}$ reads
 \begin{align}\label{tri-diag-boundaryHamiltonians}
 	H_{left}^{''}=e_{NN}^{1}-\mathbbm{1}+\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1}\qquad H_{right}^{''}=e_{NN}^{L}-\mathbbm{1}\dt
 \end{align}
-The left one is lower triangular and depends on the differences between the boundary parameters, while the right one is diagonal. Equations \eqref{tri-diag-boundaryHamiltonians} are proved using the Hadamard formula \eqref{HadamardFormula} with $B=\sum_{c=1}^{N-1}\beta_{c}e_{cN}$ and $A_{N}=e_{aN},$ and $A_{a}=e_{aa}$.
+The left one is lower triangular and depends on the differences between the boundary parameters, while the right one is diagonal. Equations \eqref{tri-diag-boundaryHamiltonians} are proved using the Hadamard formula \eqref{HadamardFormula} with $B=\sum_{c=1}^{N-1}\beta_{c}e_{cN}$, $A_{N}=e_{aN},$ and $A_{a}=e_{aa}$.
 \begin{comment}
  We compute
 \begin{enumerate}
@@ -1488,7 +1488,7 @@ This notation is equivalent to the one introduced. Indeed, assume that at site $
 \end{equation}
 with the meaning explained above. It will be useful to introduce also $\bm{\tau}=(\tau_{x})_{x\in \{1,\ldots,L\}}$.
 \end{comment} 
-We state the following result: the ground state of the Hamiltonian $H^{''}$ is given by 
+The ground state of the Hamiltonian $H^{''}$ is given by 
 \begin{equation}\label{ResulsBasis}
 	|\Psi^{''} \rangle= \sum_{\bm{\tau}\in \Omega}\frac{1}{\left(1+L\right)!}\prod_{x=1}^{L} \lambda_{\tau_{x}}^{(1-\delta_{\tau_{x},N})}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right) |\bm{\tau}\rangle
 \end{equation}
@@ -1507,7 +1507,7 @@ where
 \paragraph{Proof of formula \eqref{ResulsBasis}} 
 %In the first part of the proof we will use the notation with $\bm{n}$, then we will change to the notation with $\bm{\tau}$ at the end of the proof. We recall that these two notations are related by \eqref{notation-change-relation}.  
 We consider the vector with elements given by the operators of the MPA $(X_{1},\ldots,X_{N})$ and we act on it with the similarity transformation $S=S_{2}S_{1}$ obtaining new operators $(\Xt_{1},\ldots,\Xt_{N})$ that will satisfy simpler commutation relations. 
-For the sake of notation 
+For the sake of notation we denote by
 \begin{equation}
     \begin{pmatrix}
 		X_{a}\\ 
@@ -1534,7 +1534,7 @@ We define the transformed matrix product operators
 	%\end{pmatrix}
 	\qquad \forall a=1,\ldots N-1
 \end{equation}
-and, we can also reverse the transformation by $S^{-1}$ and get back: 
+We can also reverse the transformation by $S^{-1}$ and get back: 
 \begin{equation}\label{Xes}
 	\begin{pmatrix}
 		X_{a}\\
@@ -1551,7 +1551,7 @@ Summing over $b\in \{1,\ldots,N\}$ in commutation relations \eqref{bulk} we have
 \begin{equation} 
 	\left[X_{a},\Xt_{N}\right]=\lambda_{a}\Xt_{N}\qquad\forall a=1,\ldots,N\co
 \end{equation}
-with $\widetilde{X}_{N}=\widetilde{X}_{1}+\ldots+\widetilde{X}_{N}$, see \eqref{Xtildes2b}. 
+with $\widetilde{X}_{N}=\widetilde{X}_{1}+\ldots+\widetilde{X}_{N}$. 
 Therefore, we obtain the commutation relations for $\Xt_{a}$ 
 \begin{equation}\label{commutationsBula}
 	\left[\Xt_{a},\Xt_{N}\right]=\lambda_{a}\Xt_{N}\qquad \forall a\in \{1,\ldots,N-1\}\dt
@@ -1601,7 +1601,7 @@ therefore
 \end{comment}
 By taking the product over the sites $x$ from $1$ to $L$ we obtain 
 \begin{equation}
-	\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}=\widetilde{X}_{N}^{\sum_{x=1}^{L}\delta_{\tau_{x},N}}\prod_{x=1}^{L}\left(\widetilde{X}_{\tau_{x}}+\lambda_{\tau_{x}}\sum_{j=x}^{L}\delta_{\tau_{x},N}\right)^{n_{a}^{x}}\dt
+	\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}=\widetilde{X}_{N}^{\sum_{x=1}^{L}\delta_{\tau_{x},N}}\prod_{x=1}^{L}\left(\widetilde{X}_{\tau_{x}}+\lambda_{\tau_{x}}\sum_{j=x}^{L}\delta_{\tau_{x},N}\right)^{1-\delta_{\tau_{x},N}}\dt
 \end{equation}
 Multiplying by the boundary vectors and by using \eqref{commRIGHT} we have 
 %\begin{equation}
@@ -1648,7 +1648,7 @@ The normalization constant is then given by
 	Z_{L}&=\langle V^{*}|(X_{1}+\ldots+X_{N})^{L}|V\rangle=\langle V^{*}|\widetilde{X}_{N}^{L}|V|\rangle=
 	\Gamma(2+L)\dt
 \end{align*}
-Therefore, we write the coefficients of the linear combination \eqref{toDetermineTilde} as 
+Therefore, we write
 \begin{equation}\label{resulEsteady}
 	|\Psi^{''}\rangle= \sum_{\bm{\tau}\in \Omega}\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\tau_{x},N})}{\Gamma(2+L)}\prod_{x=1}^{L}\left(\lambda_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}|\bm{\tau}\rangle\dt
 \end{equation}
@@ -1732,7 +1732,7 @@ where
 %		0\quad \text{if}\quad \tau_{y}=1
 %	\end{cases}\qquad \forall y\in \{1,\ldots,L\}
 %\end{equation}
-\paragraph{Proof of formula \eqref{ABS-vect}} We have that $|\Psi^{'}\rangle=S_{2}^{-1}|\Psi^{''}\rangle$ (see \eqref{S2-Inverse}), thus we only need to show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Here it is more convenient to consider the matrix $\mathcal{S}_{2}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and then make explicitly the tensor product over the chain. Using the exponential series, the matrix $\mathcal{S}_{2}$ is given by 
+\paragraph{Proof of formula \eqref{ABS-vect}} We have that $|\Psi^{'}\rangle=S_{2}^{-1}|\Psi^{''}\rangle$ (see \eqref{S2-Inverse}), thus we only need to show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Here it is more convenient to consider the matrix $\mathcal{S}_{2}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and then make explicitly the tensor product over the chain. Using the exponential series we have that  
 \begin{equation}
    \mathcal{S}_{2}^{-1}=\mathbbm{1}+\sum_{a=1}^{N-1}\beta_{a}e_{aN}\co
 \end{equation}
@@ -1920,7 +1920,6 @@ To find these quantities we need to fix the rows correspondent to $\bm{\tau}$ in
 %Now we can write the ground state of $H^{''}$ as \begin{equation}|\Psi^{''}\rangle=\sum_{\mu_{1},\ldots,\mu_{L}=1}^{N}\Psi^{''}(\bm{\mu})|\bm{\mu}\rangle\end{equation} with the coefficients $\psi^{''}(\bm{\mu})$ are given in \eqref{coefficients-psiSec}.
 %Therefore, we have that equation \eqref{ABS_intermediate} becomes
 %Because of the exponent $(1-\delta_{\tau_{x},1})$, the element $\Psi^{''}(\bm{\tau})$ has, up the term $\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{\tau_{x},1})}{\Gamma(L+2)}$, a contribution of a factor $\lambda_{\tau_{x}}\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{x},1})\right)$ if the site is non empty, and a contribution of a factor "$1$" if the site is empty, it is convenient to introduce the $c_{i}$ of defined in \eqref{CiEquation}. Then, equation  \eqref{ABS_intermediate} reads 
-
 Therefore, using equation \eqref{ABS_intermediate} and observing that $c_{x}\delta_{\tau_{x},N} =\delta_{\tau_{x},N}$, we obtain 
 \begin{equation}\label{elementsABS}
 	\begin{split}
@@ -1943,7 +1942,7 @@ where we used the fact that, for any $\bm{\tau}$ we have
 Equation \eqref{ABS_1} will be useful in the following. 
 \end{remark}
 \subsubsection{Formula for exact correlations}\label{correlation-section}
-We aim to compute
+We consider $m\in \{1,\ldots,L\}$ sites with coordinates $x_{1},\ldots,x_{m}\in \{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for all $k\in \{1,\ldots,m-1\}$. Each of these sites is occupied by $a_{k}\in\{1,\ldots,N-1\}$, we aim to compute
 \begin{equation}
 	\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=\sum_{\bm{\tau}\in \Omega}\left(\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right)\langle\bm{\tau}|\Psi\rangle%=\sum_{\bm{\tau}\in \Omega}\left(\prod_{i=1}^{m}\mathbbm{1}_{\{\tau_{y_{i}}=s_{i}\}}\right)\Psi(\bm{\tau})
 \end{equation}
@@ -1964,7 +1963,7 @@ we have
 \begin{equation}
 	\langle \bm{\tau}|S_{1}^{T}|\hat{\bm{\xi}}\rangle=\langle \bm{\tau}|D|\bm{\xi}\rangle \dt
 \end{equation}
-Therefore, we have that 
+Therefore, it follows that 
 \begin{align}
 	\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=& \sum_{\bm{\tau}\in \Omega}\langle \bm{\tau}|D|\bm{\xi}\rangle\langle\bm{\tau}|\Psi\rangle
 	=\sum_{\bm{\tau}\in \Omega}\langle \bm{\tau}|S_{1}^{T}|\hat{\bm{\xi}}\rangle\langle\bm{\tau}|\Psi\rangle\nonumber\\
@@ -1978,7 +1977,7 @@ where in the second line we have used the resolution of the identity and in the 
 	$\square$
 \end{flushright}
 \subsection{The colour-blind case}
-The computations made for the multi-species stirring process can be specialized for the colour-blind case $N=2$, i.e. when only one type of non-empty particle is considered. In this situation we retrieve the SSEP, already solved with the quantum inverse scattering method in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations. 
+The computations made for the multi-species stirring process can be specialized for the colour-blind case $N=2$, i.e. when only one type of non-empty particle is considered. In this situation we retrieve the SSEP, that was already solved with the quantum inverse scattering method in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations of SEEP: 
 \begin{equation}
 	H=H_{left}+\sum_{x=1}^{L-1}H_{x,x+1}+H_{right}
 \end{equation}
@@ -2028,11 +2027,11 @@ and $H^{''}$ has the following boundaries
 \end{equation}
  We only report the main results, since the computations are just a specific case of the ones done in this section for the multi-species stirring process. 
 \paragraph{Correlations of SSEP}
- In case of $N=2$ we stop distinguishing the types of (non-empty) particles and we retrieve the closed formula for correlations in the non-equilibrium steady state found in \cite[(4.26)]{frassek2020eigenstates}:  
+We retrieve the closed formula for correlations in the non-equilibrium steady state found in \cite[(4.26)]{frassek2020eigenstates}:  
 \begin{equation}\label{correlations-SSEP}
 	\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=1\}}\right]=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation} 
-\textbf{Proof:} Starting from \eqref{exactCorrelations} we exploit indistinguishability of particles and we introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define $q$ labels for the $c$'s equal to $1$ denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ and such that  $\ell_{1}<\ell_{2}<\ldots<\ell_{q}$, i.e. $c_{x_{\ell_{i}}}=1$ for $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$. Therefore, we have 
+\textbf{Proof:} Starting from \eqref{exactCorrelations} we exploit indistinguishability of particles and we introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define $q$ labels denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  $\ell_{1}<\ell_{2}<\ldots<\ell_{q}$. These labels are defined in order to $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$ are such that $c_{x{\ell_{k}}}=1$ for all $k\in \{1,\ldots,q\}$ and $c_{x}=0$ for $x\notin \{x_{\ell_{1}},\ldots,x_{\ell_{q}}\}$. Therefore, we have 
 	\begin{equation}
 		\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}=\prod_{k=1}^{q}\left(1+L-x_{\ell_{k}}-q+k\right)
 	\end{equation}
@@ -2040,7 +2039,7 @@ Moreover, we observe that for fixed $q$ we have
 \begin{equation}\label{Gamma-product}
 	\frac{\Gamma(2+L-\sum_{k=1}^{m}c_{k})}{\Gamma(2+L)}=\prod_{k=1}^{q}\frac{1}{(2+L-k)}
 \end{equation}
-Varying all possible $c$'s in \eqref{exactCorrelations} is equivalent of varying all possible $q$ and all possible $\ell_{1},\ldots,\ell_{q}$, therefore we obtain that 
+Varying all possible $c$'s in \eqref{exactCorrelations} is equivalent of varying all possible $q$ and all possible $\ell_{1},\ldots,\ell_{q}$, therefore we obtain 
 \begin{equation}
 	\sum_{c_{1}\ldots,c_{m}=0}^{m}\frac{\Gamma(2+L-\sum_{k=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}\right)=\sum_{q=0}^{m}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\prod_{k=1}^{q}\frac{(1+L-x_{\ell_{k}}-q+k)}{(2+L-k)}
 \end{equation}
@@ -2053,7 +2052,7 @@ thus, \eqref{correlations-SSEP} follows.
 	|\Psi^{''}\rangle=\sum_{q=0}^{L}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
 \end{equation}
 \textbf{Proof:} 
-We introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. Moreover, for each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. Thus, arguing as in \eqref{remove-exponent} and using \eqref{Gamma-product} we have that 
+We introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. Moreover, for each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. Thus, arguing as before and using \eqref{Gamma-product} we have that 
 \begin{align}
 	&\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},2}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},2}\right)\right]^{1-\delta_{\tau_{x},2}}\right)%=\lambda_{1}^{q}\prod_{x=1}^{L}\left(2+L-y_{x}-\sum_{j=x}^{L}\delta_{\tau_{j},1}\right)^{\delta_{\tau_{x},1}}
 	=\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-\sum_{j=x_{k}+1}^{L}\delta_{\tau_{x_{j}},1}\right)}{(2+L-k)}\dt
@@ -2080,11 +2079,11 @@ where
 	%}
 %For any fixed $q$ we must consider all possible values of $(c_{i})_{i\in\{1,\ldots,L\}}$ such that its sum is equal to $q$. For any fixed $L$ values of $(c_{i})_{i\in\{1,\ldots,L\}}$ we have   
 \begin{equation}
-	\prod_{x=1}^{L}\left(L+2-x-\sum_{j=x}^{L}c_{j}\right)^{c_{x}}=\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-\sum_{j=x_{\ell_{k}}}^{L}c_{j}\right)\dt
+	\prod_{x=1}^{L}\left(L+2-x-\sum_{j=x}^{L}c_{j}\right)^{c_{x}}=\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-\sum_{j=x_{\ell_{k}}}^{L}c_{j}\right)=\prod_{k=1}^{q}\left(1+L-x_{\ell_{k}}-q+k\right)\dt
 \end{equation}
 Thus, it follows that
 \begin{equation}
-	\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-\sum_{i=x_{\ell_{k}}}^{L}c_{i}\right)=\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq |\bm{\tau}|}\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-(q-k+1)\right)\dt
+	\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}	\prod_{x=1}^{L}\left(L+2-x-\sum_{j=x}^{L}c_{j}\right)^{c_{x}}=\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq |\bm{\tau}|}\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-(q-k+1)\right)\dt
 \end{equation} 
 Therefore, using \eqref{Gamma-product} and by considering all possible $\bm{\tau}$ one finds $|\Psi^{'}\rangle$ for the SSEP.
 \begin{flushright}
