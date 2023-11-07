@@ -1059,12 +1059,12 @@ Denoting the $m$-point correlations in the non-equilibrium steady state (NESS) b
 \begin{equation}\label{CorrelationByABS-prob}
 	\begin{split}
 \mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]&=\lim_{t\to \infty}\mathbb{E}_{\bm{\tau}}\left[D(\bm{\tau}(t),\bm{{\xi}})\right]=\lim_{t\to \infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{\tau},\bm{{\xi}}(t))\right]
-	\\&=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\mathcal{P}(t_{1},\ldots,t_{m},\hat{\bm{\xi}})
+	\\&=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi})
 \end{split}
 \end{equation}
 where
 \begin{equation}\label{absProbabilitiesIntegrable}
-	\mathcal{P}(t_{1},\ldots,t_{m},\hat{\bm{\xi}}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(t_{k}\delta^{0}_{a_k}+(1-t_{k})\delta^{L+1}_{a_k}\right)\lvert \bm{\xi}(0)=\hat{\bm{\xi}}\right)
+	\mathcal{P}(t_{1},\ldots,t_{m},\hat{\bm{\xi}}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(t_{k}\delta^{0}_{a_k}+(1-t_{k})\delta^{L+1}_{a_k}\right)\lvert \bm{\xi}(0)=\bm{\xi}\right)
 \end{equation}
  namely the joint probability of having, for all $k=1,\ldots,m$, $t_{k}$ particles of species $a_{k}$ initially positioned at site $x_{k}$ are absorbed at left and $1-t_{k}$ of the same particles absorbed at right. Therefore, by computing these absorption probabilities we determine the arbitrary non-equilibrium steady state correlations of the integrable multi-species stirring process. 
 
@@ -1159,7 +1159,7 @@ and
 \paragraph{Absorption probabilities}
 The absorption probabilities are given by  
 \begin{equation}\label{abs-probabilities}
-	\mathcal{P}(t_{1},\ldots,t_{m},\hat{\bm{\xi}})=\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,x_{q},c_{q},\ldots,c_{m})
+	\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi})=\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}(-1)^{c_{k}-t_{k}}g_{k}(L,x_{k},c_{k},\ldots,c_{m})
 \end{equation}
 where $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$. \\ \\
 \textbf{Proof of \eqref{abs-probabilities}}: 
@@ -1168,17 +1168,17 @@ where $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$. \\ \\
 	\begin{split}
 		\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=&
 		\sum_{c_{1},\ldots,c_{m}=0}^{1}
-		f(L,c_{1},\ldots,c_{m})\prod_{q=1}^{m}\left(\sum_{t_{k}=0}^{c_{k}}(-1)^{c_{q}-t_{q}}\alpha_{s_{q}}^{t_{q}}\beta_{s_{q}}^{1-t_{q}}g_{q}(L,y_{q},c_{q},\ldots,c_{m})\right)\\
+		f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}\left(\sum_{t_{k}=0}^{c_{k}}(-1)^{c_{k}-t_{k}}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}g_{k}(L,x_{k},c_{k},\ldots,c_{m})\right)\\
 		=&\sum_{c_{1},\ldots,c_{m}=0}^{1}
-		f(L,c_{1},\ldots,c_{m})\sum_{t_{1}=0}^{c_{1}}\ldots\sum_{t_{m}=0}^{c_{m}}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}\alpha_{s_{q}}^{t_{q}}\beta_{s_{q}}^{1-t_{q}}g_{q}(L,y_{q},c_{q},\ldots,c_{m})\dt
+		f(L,c_{1},\ldots,c_{m})\sum_{t_{1}=0}^{c_{1}}\ldots\sum_{t_{m}=0}^{c_{m}}\prod_{k=1}^{m}(-1)^{c_{k}-t_{k}}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}g_{q}(L,a_{k},c_{k},\ldots,c_{m})\dt
 	\end{split}
 \end{equation}
 By exchanging the summations we rewrite as 
 \begin{equation}
 	\begin{split}
-		\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=&\sum_{t_{1},\ldots,t_{m}=0}^{1}
-		\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}\prod_{q=1}^{m}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,y_{q},c_{q},\ldots,c_{m})\alpha_{s_{q}}^{t_{q}}\beta_{s_{q}}^{1-t_{q}}\\
-		=&\sum_{t_{1},\ldots,t_{m}=0}^{1}\prod_{q=1}^{m}\alpha_{s_{q}}^{t_{q}}\beta_{s_{q}}^{1-t_{q}}\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}(-1)^{c_{q}-t_{q}}f(L,c_{1},\ldots,c_{m})g_{q}(L,y_{q},c_{q},\ldots,c_{m})\dt
+		\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=&\sum_{t_{1},\ldots,t_{m}=0}^{1}
+		\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}(-1)^{c_{k}-t_{k}}g_{k}(L,x_{k},c_{k},\ldots,c_{m})\alpha_{s_{k}}^{t_{k}}\beta_{s_{k}}^{1-t_{k}}\\
+		=&\sum_{t_{1},\ldots,t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(L,c_{1},\ldots,c_{m})\left(\prod_{k=1}^{m}(-1)^{c_{k}-t_{k}}g_{k}(L,y_{k},c_{k},\ldots,c_{m})\right)\dt
 	\end{split}
 \end{equation}
 %The elements of the duality matrix in this integrable case are given in equation \eqref{ElementsDualityMatrixChain_1}. Thus we have that 
@@ -2044,7 +2044,7 @@ and $H^{''}$ has the following boundaries
 \end{equation} 
 \textbf{Proof:} Starting from \eqref{exactCorrelations} we exploit indistinguishability of particles and we introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define $q$ labels for the $c$'s equal to $1$ denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ and such that  $\ell_{1}<\ell_{2}<\ldots<\ell_{q}$, i.e. $c_{x_{\ell_{i}}}=1$ for $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$. Therefore, we have 
 	\begin{equation}
-		\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}\right)=\prod_{k=1}^{q}\left(1+L-x_{\ell_{k}}-q+k\right)
+		\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}=\prod_{k=1}^{q}\left(1+L-x_{\ell_{k}}-q+k\right)
 	\end{equation}
 Moreover, we observe that for fixed $q$ we have
 \begin{equation}\label{Gamma-product}
@@ -2090,7 +2090,7 @@ where
 	%}
 %For any fixed $q$ we must consider all possible values of $(c_{i})_{i\in\{1,\ldots,L\}}$ such that its sum is equal to $q$. For any fixed $L$ values of $(c_{i})_{i\in\{1,\ldots,L\}}$ we have   
 \begin{equation}
-	\prod_{x=1}^{L}\left(L+2-x-\sum_{i=x}^{L}c_{i}\right)^{c_{x}}=\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-\sum_{j=x_{\ell_{k}}}^{L}c_{j}\right)\dt
+	\prod_{x=1}^{L}\left(L+2-x-\sum_{j=x}^{L}c_{j}\right)^{c_{x}}=\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-\sum_{j=x_{\ell_{k}}}^{L}c_{j}\right)\dt
 \end{equation}
 Thus, it follows that
 \begin{equation}
