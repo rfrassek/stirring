@@ -1159,34 +1159,22 @@ and
 \paragraph{Absorption probabilities}
 The absorption probabilities are given by  
 \begin{equation}\label{abs-probabilities}
-	\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi})=\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}(-1)^{c_{k}-t_{k}}g_{k}(L,x_{k},c_{k},\ldots,c_{m})
+	\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi})=\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(L,c_{1},\ldots,c_{m})\prod_{j=1}^{m}(-1)^{c_{j}-t_{j}}g_{j}(L,x_{j},c_{j},\ldots,c_{m})
 \end{equation}
 where $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$. \\ \\
 \textbf{Proof of \eqref{abs-probabilities}}: 
- using the binomial theorem we rewrite the \eqref{exactCorrelations} as 
-\begin{equation}
-	\begin{split}
-		\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=&
+From \eqref{exactCorrelations} we have 
+\begin{align}
+		&\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]\\=&
 		\sum_{c_{1},\ldots,c_{m}=0}^{1}
-		f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}\left(\sum_{t_{k}=0}^{c_{k}}(-1)^{c_{k}-t_{k}}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}g_{k}(L,x_{k},c_{k},\ldots,c_{m})\right)\\
+		f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}\left(\sum_{t_{k}=0}^{c_{k}}(-1)^{c_{k}-t_{k}}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}g_{k}(L,x_{k},c_{k},\ldots,c_{m})\right)\nonumber\\
 		=&\sum_{c_{1},\ldots,c_{m}=0}^{1}
-		f(L,c_{1},\ldots,c_{m})\sum_{t_{1}=0}^{c_{1}}\ldots\sum_{t_{m}=0}^{c_{m}}\prod_{k=1}^{m}(-1)^{c_{k}-t_{k}}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}g_{q}(L,a_{k},c_{k},\ldots,c_{m})\dt
-	\end{split}
-\end{equation}
-By exchanging the summations we rewrite as 
-\begin{equation}
-	\begin{split}
-		\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=&\sum_{t_{1},\ldots,t_{m}=0}^{1}
-		\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}(-1)^{c_{k}-t_{k}}g_{k}(L,x_{k},c_{k},\ldots,c_{m})\alpha_{s_{k}}^{t_{k}}\beta_{s_{k}}^{1-t_{k}}\\
-		=&\sum_{t_{1},\ldots,t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(L,c_{1},\ldots,c_{m})\left(\prod_{k=1}^{m}(-1)^{c_{k}-t_{k}}g_{k}(L,y_{k},c_{k},\ldots,c_{m})\right)\dt
-	\end{split}
-\end{equation}
-%The elements of the duality matrix in this integrable case are given in equation \eqref{ElementsDualityMatrixChain_1}. Thus we have that 
-%\begin{align}
-%	\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=\sum_{\bm{\tau}\in \Omega}D(\tau,\hat{\bm{\xi}})\langle\tau|\Psi\rangle
-%\end{align}
-%where the dual configuration is $\hat{\bm{\xi}}=\sum_{k=1}^{m}\delta^{y_{k}}_{s_{k}}$. 
-Therefore, comparing the above formula and \eqref{absProbabilitiesIntegrable}, we can read off the absorption probabilities. 
+		f(L,c_{1},\ldots,c_{m})\sum_{t_{1}=0}^{c_{1}}\ldots\sum_{t_{m}=0}^{c_{m}}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\left(\prod_{j=1}^{m}(-1)^{c_{j}-t_{j}}g_{j}(L,x_{j},c_{j},\ldots,c_{m})\right)\nonumber\\
+	=&\sum_{t_{1},\ldots,t_{m}=0}^{1}
+		\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(L,c_{1},\ldots,c_{m})\left(\prod_{k=1}^{m}\alpha_{s_{k}}^{t_{k}}\beta_{s_{k}}^{1-t_{k}}\right)\left(\prod_{j=1}^{m}(-1)^{c_{j}-t_{j}}g_{j}(L,x_{j},c_{j},\ldots,c_{m})\right)\nonumber\\
+		=&\sum_{t_{1},\ldots,t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(L,c_{1},\ldots,c_{m})\left(\prod_{k=1}^{m}(-1)^{c_{k}-t_{k}}g_{k}(L,x_{k},c_{k},\ldots,c_{m})\right)\dt
+	\end{align}
+From first to second line we have used the binomial theorem and from third to fourth line we have changed the summation order. Therefore, comparing the above formula and \eqref{absProbabilitiesIntegrable}, we can read off the absorption probabilities given in \eqref{abs-probabilities}. 
 \begin{flushright}
 	$\square$
 \end{flushright}
@@ -1257,7 +1245,7 @@ The proof of formula \eqref{exactCorrelations} is made in some steps:
 	\item In Subsection \ref{subsectionSTransf}, we introduce two similarity transformation that bring the original Hamiltonian $H$ to $H^{'}$ and $H^{''}$, with triangular and triangular diagonal boundaries respectively. Associated to $H^{'}$ and $H^{''}$ there are two ground states denoted by $|\Psi^{'}\rangle$ and $|\Psi^{''}\rangle$ respectively. 
 	\item In Subsection \ref{subsectionSSHsec} we apply the MPA to $H^{''}$. Here the commutation relations defining the matrix algebra are simpler. The explicit expression for $|\Psi^{''}\rangle$ is determined (see \eqref{ResulsBasis}).
 	\item In subsection \ref{subsectionSSdual}, we invert one of the similarity transformation recovering the ground state $|\Psi^{'}\rangle$ from the explicit expression of $|\Psi^{''}\rangle$ computed in the previous step (see \eqref{ABS}).
-	\item In Subsection \ref{subsection-exact} we compute the non-equilibrium steady state using $|\Psi^{'}\rangle$ of the previous step. Using duality to compute these correlation, we do not need the explicit expression of the steady state $|\Psi\rangle$. However, for the sake of completeness we report it Appendix \ref{appB}. 
+	\item In Subsection \ref{subsection-exact} we compute the non-equilibrium steady state using $|\Psi^{'}\rangle$ of the previous step. Exploiting duality to compute these correlation, we do not need the explicit expression of the steady state $|\Psi\rangle$. However, for the sake of completeness we report it Appendix \ref{appB}. 
 \end{itemize}
 \subsubsection{The similarity transformations}\label{subsectionSTransf}
 Consider the matrices
