@@ -1698,16 +1698,7 @@ Therefore, we obtain \eqref{ResulsBasis}.
 %The last factor only depends on the positions of particles $N$. The $\lambda$-factor depends only on the number of particles of types $1,\ldots,N-1$.
 \begin{flushright}
 	$\square$
-\end{flushright}
-\textbf{Remark}: In case of $N=2$ we introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. Moreover, for each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. Thus, arguing as in \eqref{remove-exponent}, the coefficient \eqref{ResulsBasis} when $N=2$ are written as
-\begin{align}
-	&\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},2}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},2}\right)\right]^{1-\delta_{\tau_{x},2}}\right)%=\lambda_{1}^{q}\prod_{x=1}^{L}\left(2+L-y_{x}-\sum_{j=x}^{L}\delta_{\tau_{j},1}\right)^{\delta_{\tau_{x},1}}
-	=\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-\sum_{j=x_{k}+1}^{L}\delta_{\tau_{x_{j}},1}\right)}{(2+L-k)}\dt
-\end{align}
-By varying $q$ and $\ell_{1},\ldots,\ell_{q}$, we have a one-to-one mapping with $\bm{\tau}$, therefore, we write 
-\begin{equation}
-	|\Psi^{''}\rangle=\sum_{q=0}^{L}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
-\end{equation}
+\end{flushright} 
 \subsubsection{Explicit formula for $|\Psi^{'}\rangle$}\label{subsectionSSdual}
 By knowing the ground state  of the Hamiltonian $H^{''}$ we use \eqref{S2-Inverse} to retrieve the ground state of the Hamiltonian $H^{'}$. The result is the following 
 \begin{equation}\label{ABS-vect}
@@ -1954,31 +1945,7 @@ where we used the fact that, for any $\bm{\tau}$ we have
 	\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right) =\left(2+L-y-\sum_{j=x}^{L}(1-\delta_{\tau_{x},N})\right)
 \end{equation}
 This equation for $\Psi^{'}(\bm{\tau})$ will be useful in the computation of non-equilibrium steady state correlations and in the following Remark, where we specialize it to the case $N=2$ of SSEP. \\ \\
-\textbf{Remark:}  We aim to find equation \eqref{ABS_1} in the case $N=2$. For an arbitrary configuration $\bm{\tau}$, we have $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x},1}$ occupied sites (by indistinguishable particles) and the remaining $L-|\bm{\tau}|$ empty. We select $q\in\{0,\ldots,|\bm{\tau}|\}$ particles among the occupied ones. We call $\ell_{1},\ldots\ell_{q}\in \{1,\ldots,|\tau|\}$ such that $\ell_{1}<\ell_{2}<\ldots<\ell_{q}$. These $(\ell_{i})_{i\in {1,\ldots,q}}$ are labels for the $q$ particles previously selected. For each $\ell_{i}$ we introduce $x_{\ell_{i}}$, i.e. the coordinate where the particle with label $\ell_{i}$ is placed. We this notation we have that 
-%and we rewrite \eqref{ABS_1} as
-%{\color{red}
-	%\begin{align}
-	%	\Psi^{'}(\bm{\tau})=&\sum_{q=0}^{|\bm{\tau}|}(\alpha-\beta)^{q}\beta^{L-q}\frac{\Gamma(L+2-q)}{\Gamma(L+2)}\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}
-	%	\\&\prod_{x=1}^{L}\left(L+2-x-\sum_{i=x}^{L}c_{i}\right)^{c_{x}}\dt
-	%\end{align}
-	%}
-%For any fixed $q$ we must consider all possible values of $(c_{i})_{i\in\{1,\ldots,L\}}$ such that its sum is equal to $q$. For any fixed $L$ values of $(c_{i})_{i\in\{1,\ldots,L\}}$ we have   
-\begin{equation}
-	\prod_{x=1}^{L}\left(L+2-x-\sum_{i=x}^{L}c_{i}\right)^{c_{x}}=\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-\sum_{i=x_{\ell_{k}}}^{L}c_{i}\right)\dt
-\end{equation}
-Thus, it follows that
-\begin{equation}
-	\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-\sum_{i=x_{\ell_{k}}}^{L}c_{i}\right)=\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq |\bm{\tau}|}\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-(q-k+1)\right)\dt
-\end{equation} 
-Observing that
-\begin{equation}
-	\frac{\Gamma(L+2-q)}{\Gamma(2+L)}=\prod_{k=1}^{q}\frac{1}{(2+L-k)}\co
-\end{equation}
-we finally obtain 
-\begin{equation}\label{PsiI-N2}
-	\Psi^{'}(\bm{\tau})=\sum_{q=0}^{|\bm{\tau}|}(\alpha-\beta)^{q}\beta^{L-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq |\bm{\tau}|}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
-\end{equation}
-Therefore, considering all possible $\bm{\tau}$ one finds $|\Psi^{'}\rangle$ for the SSEP. 
+\textbf{Remark:}  
 \begin{flushright}
 	$\square$
 \end{flushright}
@@ -2018,26 +1985,118 @@ where in the second line we have used the resolution of the identity and in the 
 	$\square$
 \end{flushright}
 \subsection{The colour-blind case}
-In this subsection we show that, if we stop distinguishing particles, we retrieve the non-equilibrium steady state correlations found in \cite{frassek2020eigenstates}. Moreover, for the sake of completeness, we also report the eigenvectors $|\Psi^{''}\rangle$ and $|\Psi^{'}\rangle$ when particles are indistinguishable.
+The computations made for the multi-species stirring process can be specialized for the colour-blind case, i.e. the situation in which only one type of non-empty particle is considered. In this situation we retrieve the SSEP, already solved with the quantum inverse scattering method in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations. 
+\begin{equation}
+	H=H_{left}+\sum_{x=1}^{L-1}H_{x,x+1}+H_{right}
+\end{equation}
+where 
+\begin{equation}
+	H_{x,x+1}=\sum_{a,b=1}^{2}\left(e_{ab}\otimes e_{ba}-e_{bb}\otimes e_{aa}\right)
+\end{equation}
+and 
+\begin{equation}
+	H_{left}=\begin{pmatrix}
+		1-\alpha_{1}&\alpha_{1}\\
+		\alpha_{2}&1-\alpha_{2}
+	\end{pmatrix},\qquad H_{right}=\begin{pmatrix}
+	1-\beta_{1}&\beta_{1}\\
+	\beta_{2}&1-\beta_{2}
+\end{pmatrix}
+\end{equation}
+In this case, the similarity transformations read
+\begin{equation}
+	\mathcal{S}_{1}=\begin{pmatrix}
+		1&0\\
+		1&1
+	\end{pmatrix},\qquad \mathcal{S}_{2}=\begin{pmatrix}
+	1&-\beta_{1}\\
+	0&1
+\end{pmatrix}
+\end{equation}
+Therefore, we have that $H^{'}$ has the following boundaries
+\begin{equation}
+	H^{'}_{left}=\begin{pmatrix}
+		-1&\alpha_{1}\\
+		0&0
+	\end{pmatrix},\qquad H^{'}_{right}=\begin{pmatrix}
+	-1&\beta_{1}\\
+	0&0
+\end{pmatrix}
+\end{equation}
+and $H^{''}$ has the following boundaries 
+\begin{equation}
+	H^{''}_{left}=\begin{pmatrix}
+		-1&(\alpha_{1}-\beta_{1})\\
+		0&0
+	\end{pmatrix},\qquad H^{''}_{right}=\begin{pmatrix}
+	-1&0\\
+	0&0
+\end{pmatrix}
+\end{equation}
+ We only report the main results, since the computations are just a specific case of the ones done in this section for the multi-species stirring process. 
 \paragraph{Correlations of SSEP}
  In case of $N=2$ we stop distinguishing the types of (non-empty) particles and we retrieve the closed formula for correlations in the non-equilibrium steady state found in \cite[(4.26)]{frassek2020eigenstates}:  
-\begin{equation}
+\begin{equation}\label{correlations-SSEP}
 	\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=1\}}\right]=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation} 
-\textbf{Proof:} Starting from \eqref{exactCorrelations_1} we exploit indistinguishability of particles and we introduce $q=\sum_{k=1}^{m}c_{x_{k}}$, such that $q\in\{0,\ldots,m\}$. There are many values of $c$'s that give the same $q$, therefore we define $q$ labels for the selected particles $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  $\ell_{1}<\ell_{2}<\ldots<\ell_{q}$. For any $q$, we identify $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$ coordinates where the $c_{x_{\ell_{i}}}=1$, then we have that 
+\textbf{Proof:} Starting from \eqref{exactCorrelations} we exploit indistinguishability of particles and we introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define $q$ labels for the $c$'s equal to $1$ denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ and such that  $\ell_{1}<\ell_{2}<\ldots<\ell_{q}$, i.e. $c_{x_{\ell_{i}}}=1$ for $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$. Therefore, we have 
 	\begin{equation}
 		\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}\right)=\prod_{k=1}^{q}\left(1+L-x_{\ell_{k}}-q+k\right)
 	\end{equation}
 Moreover, we observe that for fixed $q$ we have
-\begin{equation}
+\begin{equation}\label{Gamma-product}
 	\frac{\Gamma(2+L-\sum_{k=1}^{m}c_{k})}{\Gamma(2+L)}=\prod_{k=1}^{q}\frac{1}{(2+L-k)}
 \end{equation}
-Varying all possible $c$'s in \eqref{exactCorrelation_1} is equivalent of varying all possible $q$ and all possible $\ell_{1},\ldots,\ell_{q}$, therefore we obtain that 
+Varying all possible $c$'s in \eqref{exactCorrelations} is equivalent of varying all possible $q$ and all possible $\ell_{1},\ldots,\ell_{q}$, therefore we obtain that 
 \begin{equation}
 	\sum_{c_{1}\ldots,c_{m}=0}^{m}\frac{\Gamma(2+L-\sum_{k=1}^{m}c_{k})}{\Gamma(2+L)}\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}\right)=\sum_{q=0}^{m}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\prod_{k=1}^{q}\frac{(1+L-x_{\ell_{k}}-q+k)}{(2+L-k)}
 \end{equation}
-\paragraph{$|\Psi^{''}\rangle$ for SSEP}
-\paragraph{$|\Psi^{'}\rangle$ for SSEP}
+thus, \eqref{correlations-SSEP} follows. 
+\begin{flushright}
+	$\square$
+\end{flushright}
+\paragraph{$|\Psi^{''}\rangle$ for SSEP} When we stop distinguishing colours we have that 
+\begin{equation}\label{psiII-SSEP}
+	|\Psi^{''}\rangle=\sum_{q=0}^{L}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
+\end{equation}
+\textbf{Proof:} 
+We introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. Moreover, for each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. Thus, arguing as in \eqref{remove-exponent} and using \eqref{Gamma-product} we have that 
+\begin{align}
+	&\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},2}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[\lambda_{\tau_{x}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},2}\right)\right]^{1-\delta_{\tau_{x},2}}\right)%=\lambda_{1}^{q}\prod_{x=1}^{L}\left(2+L-y_{x}-\sum_{j=x}^{L}\delta_{\tau_{j},1}\right)^{\delta_{\tau_{x},1}}
+	=\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-\sum_{j=x_{k}+1}^{L}\delta_{\tau_{x_{j}},1}\right)}{(2+L-k)}\dt
+\end{align}
+By varying $q$ and $\ell_{1},\ldots,\ell_{q}$, we have a one-to-one mapping with $\bm{\tau}$, therefore we obtain \eqref{psiII-SSEP}.
+\begin{flushright}
+	$\square$
+\end{flushright}
+\paragraph{$|\Psi^{'}\rangle$ for SSEP} In the colour-blind case, the ground state of $H^{'}$ reads
+\begin{equation}
+	|\Psi^{'}\rangle=\sum_{\bm{\tau}\in\Omega}\Psi^{'}(\bm{\tau})|\bm{\tau}\rangle
+\end{equation}
+where 
+\begin{equation}\label{PsiI-N2}
+	\Psi^{'}(\bm{\tau})=\sum_{q=0}^{|\bm{\tau}|}(\alpha-\beta)^{q}\beta^{L-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq |\bm{\tau}|}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
+\end{equation}
+ \textbf{Proof:} For an arbitrary configuration $\bm{\tau}$, we have $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x},1}$ occupied sites (by indistinguishable particles) and the remaining $L-|\bm{\tau}|$ empty. We select $q\in\{0,\ldots,|\bm{\tau}|\}$ particles among the occupied ones. We call $\ell_{1},\ldots\ell_{q}\in \{1,\ldots,|\tau|\}$ such that $\ell_{1}<\ell_{2}<\ldots<\ell_{q}$. These $(\ell_{i})_{i\in {1,\ldots,q}}$ are labels for the $q$ particles previously selected. For each $\ell_{i}$ we introduce $x_{\ell_{i}}$, i.e. the coordinate where the particle with label $\ell_{i}$ is placed. We this notation we have that 
+%and we rewrite \eqref{ABS_1} as
+%{\color{red}
+	%\begin{align}
+	%	\Psi^{'}(\bm{\tau})=&\sum_{q=0}^{|\bm{\tau}|}(\alpha-\beta)^{q}\beta^{L-q}\frac{\Gamma(L+2-q)}{\Gamma(L+2)}\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}
+	%	\\&\prod_{x=1}^{L}\left(L+2-x-\sum_{i=x}^{L}c_{i}\right)^{c_{x}}\dt
+	%\end{align}
+	%}
+%For any fixed $q$ we must consider all possible values of $(c_{i})_{i\in\{1,\ldots,L\}}$ such that its sum is equal to $q$. For any fixed $L$ values of $(c_{i})_{i\in\{1,\ldots,L\}}$ we have   
+\begin{equation}
+	\prod_{x=1}^{L}\left(L+2-x-\sum_{i=x}^{L}c_{i}\right)^{c_{x}}=\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-\sum_{j=x_{\ell_{k}}}^{L}c_{j}\right)\dt
+\end{equation}
+Thus, it follows that
+\begin{equation}
+	\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-\sum_{i=x_{\ell_{k}}}^{L}c_{i}\right)=\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq |\bm{\tau}|}\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-(q-k+1)\right)\dt
+\end{equation} 
+Therefore, using \eqref{Gamma-product} and by considering all possible $\bm{\tau}$ one finds $|\Psi^{'}\rangle$ for the SSEP.
+\begin{flushright}
+	$\square$
+\end{flushright}
 \subsection{Explicit formula for the steady state $|\Psi\rangle$}
 {\color{blue}can we proceed as above? using sth similar to \eqref{goodTP-S2}}
 
