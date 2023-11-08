@@ -1237,6 +1237,7 @@ Therefore, we compute the third cumulant, i.e. the three-point connected correla
 \end{align}
 \begin{remark} the first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, match with the ones found in Subsection 4.3 of \cite{vanicat2017exact}.
 	\end{remark}
+[ADD ALSO ABSORPTION PROBABILITIES FOR THE ABOVE CASES???]
 %The computation are organized as follows: we first define the similarity transformations $S_{1},S_{2}$ and the Hamiltonians $H^{'},H^{''}$. Second, we compute right eigenvector with vanishing eigenvalue of $H^{''}$ exploiting the simpler commutators. Finally, we invert the similarities and retrieve the right eigenvector of $H^{'}$ with vanishing eigenvalue and  the arbitrary correlations in the non-equilibrium steady state. The explicit expression of the steady state $|\Psi\rangle$ of $H$ is reported in Appendix \ref{appB}. 
 \begin{comment}
 {\color{blue}We aim to find an explicit for for the steady state $|\Psi\rangle$. The MPA gives the steady state in terms of an abstract algebra of operators. If an explicit representation of $(X_{a})_{a=1,\ldots,N}$ was available, it would be possible to compute explicitly all the correlations and currents of particles for the Hamiltonian \eqref{hamiltonian}. Another way of computing this steady state, without passing through a representation, is using the commutators \eqref{bula} and the actions \eqref{leftBoundary} and \eqref{rightBoundary}. For the one and two point correlation and for the currents this has been done in \cite{vanicat2017exact}. Inspired by this last reference, in this subsection, we aim to find exact formulas for the steady state  $|\Psi\rangle$ using only the \eqref{bula}, \eqref{leftBoundary} and \eqref{rightBoundary}. In subsection \ref{correlation-section}, this result will leads to exact correlation for arbitrary number of particles of type $\{2,\ldots,N\}$. This aim will be achieved by the help of a similarity transformation $\mathcal{S}$ that makes commutation relations simpler, and allows to find the steady state $|\widetilde\Psi\rangle$ of a transformed Hamiltonian, denoted  $\mathbb{H}$, with lower-triangular left boundary and diagonal right boundary. Therefore, inverting this similarity, one can retrieve the steady state of \eqref{hamiltonian}. A fundamental 'ingredient' of these computation is duality, that has been proved in section~\ref{sectionDuality}. Indeed, the similarity transformation $\mathcal{S}$ relies on an "intermediate transformation" $V$ (see \eqref{transformationV}) that is, up to the diagonal operator $R$, the duality matrix.} \com{clarify}
@@ -2018,7 +2019,7 @@ Therefore, we have that $H^{'}$ has the following boundaries
 and $H^{''}$ has the following boundaries 
 \begin{equation}
 	H^{''}_{left}=\begin{pmatrix}
-		-1&(\alpha_{1}-\beta_{1})\\
+		-1&\alpha_{1}-\beta_{1}\\
 		0&0
 	\end{pmatrix},\qquad H^{''}_{right}=\begin{pmatrix}
 	-1&0\\
@@ -2083,7 +2084,7 @@ where
 \end{equation}
 Thus, it follows that
 \begin{equation}
-	\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}	\prod_{x=1}^{L}\left(L+2-x-\sum_{j=x}^{L}c_{j}\right)^{c_{x}}=\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq |\bm{\tau}|}\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-(q-k+1)\right)\dt
+	\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}	\prod_{x=1}^{L}\left(L+2-x-\sum_{j=x}^{L}c_{j}\right)^{c_{x}}=\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq |\bm{\tau}|}\prod_{k=1}^{q}\left(1+L-x_{\ell_{k}}-q+k\right)\dt
 \end{equation} 
 Therefore, using \eqref{Gamma-product} and by considering all possible $\bm{\tau}$ one finds $|\Psi^{'}\rangle$ for the SSEP.
 \begin{flushright}
