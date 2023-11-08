@@ -514,24 +514,23 @@ with
 		\tau_{L}
 	\end{pmatrix}
 \end{equation} 
-with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. The configuration $\bm{n}$, introduced in Subsection \ref{subsectionGeneratorStr} and $\bm{\tau}$ are related by 
+with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. Since the maximal occupancy at each site is $\nu=1$,  the configuration $\bm{n}$ introduced in Subsection \ref{subsectionGeneratorStr} and $\bm{\tau}$ are related by 
 \begin{equation}\label{notation-change-relation}
 	n_{a}^{x}=\delta_{\tau_{x},a}
 \end{equation}
-The state space of the process is now given in terms of $\bm{\tau}$ by
+The state space of the process is now 
 \begin{equation}
-	\Omega=\bigtimes_{x=1}^{L}\Omega_{x}\qquad \Omega_{x}=\left\{|\tau_{x}\rangle\;:\; \tau_{x}\in\{1,\ldots,N\}\right\}
+	\Omega=\bigotimes_{x=1}^{L}\Omega_{x}\qquad \Omega_{x}=\left\{|\tau_{x}\rangle\;:\; \tau_{x}\in\{1,\ldots,N\}\right\}
 \end{equation}
-In all situations where we consider the integrable chain, we will use this notation for the configuration variable.\\ 
 The action of $\mathcal{H}$ amounts to the permutation of the occupations of the two sites, i.e.
 \begin{equation}
 	\begin{split}
-		\mathcal{H}|n\rangle\otimes   |m\rangle&=|m\rangle \otimes |n\rangle-|n\rangle \otimes|m\rangle\dt
+		\mathcal{H}| \tau\rangle\otimes   |\tau'\rangle&=|\tau'\rangle \otimes |\tau\rangle-|\tau\rangle \otimes|\tau'\rangle\dt
 	\end{split}
 \end{equation}
 The boundary terms are given by 
 \begin{equation}
-	H_{left}=\begin{pmatrix}
+	H_{\text{left}}=\begin{pmatrix}
 		\alpha_{1}-1&\alpha_{1}&\alpha_{1}&\ldots&\ldots&\alpha_{1}\\
 		\alpha_{2}&\alpha_{2}-1&\alpha_{2}&\ldots&\ldots&\alpha_{2}\\
 		\vdots&\vdots& &\ddots& &\vdots\\
@@ -1045,16 +1044,17 @@ In the long-time limit the dual process voids the chain, i.e. all particles of t
 %\\
 Using the above duality elements, we can compute the  $m$-point correlations between non-empty particles using the absorption probabilities. For arbitrary $m\in \mathbb{N}$ such that $m<L$, we fix $a_{k}\in\{1,\ldots,N-1\}$ and $x_{k}\in\{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for every $k\in\{1,\ldots,m\}$. We pick the dual configuration $\xi=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, meaning that 
 \begin{equation}
-	\bm{\xi}=\begin{cases}
+	\begin{cases}
 		\xi_{a}^{x}=1\qquad \text{if}\;x=x_{k}\;\text{and}\; a=a_{k}\\
 		\xi_{a}^{x}=0\qquad \text{otherwise}
 	\end{cases}
 \end{equation}
 For any $\bm{\tau}\in \Omega$ the elements of the duality matrix defined in \eqref{ElementsDualityMatrixChain_1} read
 \begin{equation}
-	D(\bm{\tau},\bm{\xi})=\prod_{k=1}^{m}\mathbbm{1}_{\{\delta_{\tau_{x_{k}},a_{k}}=1\}}=\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\dt
+	D(\bm{\tau},\bm{\xi})%=\prod_{k=1}^{m}\mathbbm{1}_{\{\delta_{\tau_{x_{k}},a_{k}}=1\}}
+	=\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\dt
 \end{equation}
-Denoting the $m$-point correlations in the non-equilibrium steady state (NESS) by $\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]$ we have 
+For the $m$-point correlations in the non-equilibrium steady state (NESS) we have, by duality,
 %To compute the steady state $m$-point correlations of the process $\bm{n}(t)$ we recall that the dual process eventually voids the chain (by putting all particles in the extra-sites $0$ and $L$). Therefore, we have the following equalities
 \begin{equation}\label{CorrelationByABS-prob}
 	\begin{split}
@@ -1066,7 +1066,7 @@ where
 \begin{equation}\label{absProbabilitiesIntegrable}
 	\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(t_{k}\delta^{0}_{a_k}+(1-t_{k})\delta^{L+1}_{a_k}\right)\lvert \bm{\xi}(0)=\bm{\xi}\right)
 \end{equation}
- namely the joint probability of having, for all $k=1,\ldots,m$, $t_{k}$ particles of species $a_{k}$ initially positioned at site $x_{k}$ are absorbed at left and $1-t_{k}$ of the same particles absorbed at right. Therefore, by computing these absorption probabilities we determine the arbitrary non-equilibrium steady state correlations of the integrable multi-species stirring process. 
+ is the  probability that  $t_{k}$ particles of species $a_{k}$ (initially positioned at site $x_{k}$) are absorbed at the extra site $\{0\}$. Therefore, by computing these absorption probabilities we determine the non-equilibrium steady state correlations of the integrable multi-species stirring process. 
 
 
 
@@ -1130,7 +1130,7 @@ The MPA gives an abstract form of the non-equilibrium steady state in terms of a
  where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Using these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} become simpler. As a consequence, the ground state $|\Psi^{''}\rangle$ of $H^{''}$ can be written explicitly. Finally, reversing the transformations we retrieve $|\Psi\rangle$.
  
  The first transformation $S_{1}$ is closely related to the duality matrix and we will see that $H^{'}$ is $\widetilde{H}^{T}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. The second transformation $S_{2}$ diagonalizes the right boundary. Finally, the composition  $S_{2} S_{1}$ allows to simplify the commutators of the MPA algebra. 
-\subsection{Exact correlations in the non-equilibrium steady state}\label{subsection-exact}
+\subsection{Explicit correlations in the non-equilibrium steady state}\label{subsection-exact}
 In this section we write a formula for the stationary non-equilibrium steady state correlations between $m$- points of the chain, each of them occupied by a non-empty species, i.e. a species with label from $1$ to $N-1$. %This is motivated by the interest of understanding how actual particles of the chain are correlated among each others and also because in the steady state the holes depends on the occupation of all other species, as a consequence of the constraint $n_{N}^{x}=1-\sum_{b=1}^{N-1}n_{b}^{x}$ for arbitrary $x\in \{1,\ldots,L\}$.
  Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $(x_{1},\ldots,x_{m})$, such that $x_{k}<x_{k+1}$ $\forall k\in \{1,\ldots,m-1\}$. In each of these points we assume that there is a particle of species $a_{k}\in \{1,\ldots,N-1\}$. Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
 \begin{equation}\label{exactCorrelations}
@@ -1187,7 +1187,7 @@ The average with respect to the non equilibrium distribution of the occupation v
 \end{equation}
 Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain 
 \begin{equation}\label{one-pts-corr}
-	\langle \mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\right]=\frac{(L+1-y_{1})}{L+1}(\alpha_{a_{1}}-\beta_{a_{1}})+\beta_{a_{1}}\dt
+	 \mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\right]=\frac{(L+1-y_{1})}{L+1}(\alpha_{a_{1}}-\beta_{a_{1}})+\beta_{a_{1}}\dt
 \end{equation}
 \paragraph{Two-point correlations}
 The two-point correlations with respect to the non equilibrium distribution of the occupation variable of the species $a_{1},a_{2}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2}\in \{1,\ldots,L\}$ with $x_{1}< x_{2}$ reads 
