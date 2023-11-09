@@ -998,15 +998,21 @@ Using the above equation we rewrite the right hand side term of \eqref{siteHadam
 \\=&
 \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{b=1\,:\,b\neq a}^{N-1}\left(\rho_{b}^{x}\right)^{\xi_{b}^{u(x)}}\right)\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}+1}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}
 \\=&
-\sum_{\xi_{1}^{u(x)},\ldots,\xi_{a-1},\xi_{a+1},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\sum_{\xi_{a}^{u(x)}=1}^{\infty}\left(\prod_{b=1}^{N-1}\left(\rho_{b}^{x}\right)^{\xi_{b}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}\\=&
+%\sum_{\xi_{1}^{u(x)},\ldots,\xi_{a-1},\xi_{a+1},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\sum_{\xi_{a}^{u(x)}=1}^{\infty}\left(\prod_{b=1}^{N-1}\left(\rho_{b}^{x}\right)^{\xi_{b}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}\\=&
 \sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{b=1}^{N-1}\left(\rho_{b}^{x}\right)^{\xi_{b}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}
     \end{split}
 \end{equation}
 where, in the up to last equality, we performed a change of summation variable and we used the fact that  
 \begin{equation}
 	\begin{split}
-&\sum_{\xi_{a}^{u(x)}=0}^{\infty}(\rho_{a}^{x})^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}\\=&\sum_{\xi_{a}^{u(x)}=1}^{\infty}(\rho_{a}^{x})^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}+\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}\\=&\sum_{\xi_{a}^{u(x)}=1}^{\infty}(\rho_{a}^{x})^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}\dt
+&\sum_{\xi_{a}^{u(x)}=0}^{\infty}(\rho_{a}^{x})^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}
+%=&\sum_{\xi_{a}^{u(x)}=1}^{\infty}(\rho_{a}^{x})^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}+\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}\\
+=\sum_{\xi_{a}^{u(x)}=1}^{\infty}(\rho_{a}^{x})^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}\dt
 \end{split}
+\end{equation}
+since
+\begin{equation}
+\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}=0\dt
 \end{equation}
 %This is a consequence of 
 %\begin{equation}
