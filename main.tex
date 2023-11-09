@@ -608,7 +608,7 @@ We write the configurations $\bm{\xi} \in \widetilde\Omega$  as
 where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles of type $a\in \{1,\ldots,N\}$ at site $x$, 
 and the component $\xi_{a}^{u(x)}$  gives the number of dual particles of type $a\in \{1,\ldots,N\}$ at 
 the extra-site $u(x)$ connected to $x\in V$. We state the following duality result.
-\begin{theorem}[Absorbing duality]
+\begin{theorem}[Absorbing duality]\label{thm-duality}
 	The multi-species stirring process $(\bm{n}(t))_{t\geq 0}$ defined on the state space $\Omega$ with generator $\mathcal{L}$ defined in \eqref{Generator} is dual to a process $(\bm{\xi}(t))_{t\geq 0}$ defined on the enlarged state space $\widetilde{\Omega}$ with generator
 	 \begin{equation}\label{DualGenerator}
 		\widetilde{\mathcal{L}}=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}+\sum_{x\in V}\Gamma_{x}\widetilde{\mathcal{L}}_{x}
@@ -654,7 +654,7 @@ part $\widetilde{\mathcal{L}}_{x}$ of the dual generator replaces a particle of 
 \mathbb{E}_{\mu^{rev}}\left[D(\bm{n},\bm{\xi})\right]=\prod_{a=1}^{N-1}\left(\rho_{a}\right)^{\sum_{x\in V}\xi_{a}^{x}+\sum_{x\in V}\xi_{a}^{u(x)}}\qquad \forall \bm{n}\in \Omega,\quad\forall \bm{\xi}\in \widetilde{\Omega}\dt
 \end{equation}
 \end{remark}
-\subsection{Proof of duality}
+\subsection{Proof of Theorem \ref{thm-duality}}
 To prove duality between $(\bm{n}(t))_{t\geq 0}$ and $(\bm{\xi}(t))_{t\geq 0}$ we  show that \eqref{DualityRelation} is fulfilled.  To show this, we will use the Hamiltonians and their Lie algebraic description. Indeed, in this formalism the proof 
 reduces to finding symmetries of the generator (for the bulk duality) and group like transformations (for the ``boundary duality'').
 To a configuration $\bm{\xi}$ of the configuration space  \eqref{dualStateSpace} of a dual process we associate the vector
@@ -1064,31 +1064,41 @@ In the long-time limit the dual process voids the chain, i.e. all particles of t
 %	D(\bm{\tau},\bm{\xi})=\prod_{a=1}^{N-1}\alpha_{a}^{\xi_{a}^{0}}\left(\prod_{x=1}^{L}\prod_{a=1}^{N-1}\mathbbm{1}_{\{\delta_{\tau_{x},a}\geq \xi_{a}^{x}\}}\right)\prod_{a=1}^{N-1}\beta_{a}^{\xi_{a}^{L+1}}\dt
 %\end{equation}
 %\\
-Using the above duality elements, we can compute the  $m$-point correlations between non-empty particles using the absorption probabilities. For arbitrary $m\in \mathbb{N}$ such that $m<L$, we fix $a_{k}\in\{1,\ldots,N-1\}$ and $x_{k}\in\{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for every $k\in\{1,\ldots,m\}$. We pick the dual configuration $\xi=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, meaning that 
+Using the above duality elements, we can compute the  $m$-point correlations between non-empty particles using the absorption probabilities. Therefore, to determine the non-equilibrium steady state correlations of the integrable multi-species stirring process, it is enough to compute these absorption probabilities.  %For arbitrary $m\in \mathbb{N}$ such that $m<L$, we fix $a_{k}\in\{1,\ldots,N-1\}$ and $x_{k}\in\{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for every $k\in\{1,\ldots,m\}$. 
+\begin{proposition}[Correlations via duality]
+Consider $m\in \{1,\ldots,L\}$ and let $a_{k}\in\{1,\ldots,N-1\}$ species positioned at sites $x_{k}\in\{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$. Then, the $m$-point correlations in the non-equilibrium steady state (NESS) read
+\begin{equation}
+\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi})
+\end{equation}
+where
+\begin{equation}\label{absProbabilitiesIntegrable}
+	\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(t_{k}\delta^{0}_{a_k}+(1-t_{k})\delta^{L+1}_{a_k}\right)\lvert \bm{\xi}(0)=\bm{\xi}\right)
+\end{equation}
+is the  probability that  $t_{k}$ particles of species $a_{k}$ (initially positioned at site $x_{k}$) are absorbed at the extra site $\{0\}$. The dual configuration is $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, meaning that 
 \begin{equation}
 	\begin{cases}
 		\xi_{a}^{x}=1\qquad \text{if}\;x=x_{k}\;\text{and}\; a=a_{k}\\
 		\xi_{a}^{x}=0\qquad \text{otherwise}
 	\end{cases}
 \end{equation}
+\end{proposition}
+\textbf{Proof}:
 For any $\bm{\tau}\in \Omega$ the elements of the duality matrix defined in \eqref{ElementsDualityMatrixChain_1} read
 \begin{equation}
 	D(\bm{\tau},\bm{\xi})%=\prod_{k=1}^{m}\mathbbm{1}_{\{\delta_{\tau_{x_{k}},a_{k}}=1\}}
 	=\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\dt
 \end{equation}
-For the $m$-point correlations in the non-equilibrium steady state (NESS) we have, by duality,
-%To compute the steady state $m$-point correlations of the process $\bm{n}(t)$ we recall that the dual process eventually voids the chain (by putting all particles in the extra-sites $0$ and $L$). Therefore, we have the following equalities
+Therefore, by duality we have 
 \begin{equation}\label{CorrelationByABS-prob}
 	\begin{split}
 \mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]&=\lim_{t\to \infty}\mathbb{E}_{\bm{\tau}}\left[D(\bm{\tau}(t),\bm{{\xi}})\right]=\lim_{t\to \infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{\tau},\bm{{\xi}}(t))\right]
 	\\&=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi})
 \end{split}
 \end{equation}
-where
-\begin{equation}\label{absProbabilitiesIntegrable}
-	\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(t_{k}\delta^{0}_{a_k}+(1-t_{k})\delta^{L+1}_{a_k}\right)\lvert \bm{\xi}(0)=\bm{\xi}\right)
-\end{equation}
- is the  probability that  $t_{k}$ particles of species $a_{k}$ (initially positioned at site $x_{k}$) are absorbed at the extra site $\{0\}$. Therefore, by computing these absorption probabilities we determine the non-equilibrium steady state correlations of the integrable multi-species stirring process. 
+\begin{flushright}
+	$\square$
+\end{flushright} 
+
 
 
 
@@ -1154,7 +1164,7 @@ The MPA gives an abstract form of the non-equilibrium steady state in terms of a
  The first transformation $S_{1}$ is closely related to the duality matrix and we will see that $H^{'}$ is $\widetilde{H}^{T}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. The second transformation $S_{2}$ diagonalizes the right boundary. Finally, the composition  $S_{2} S_{1}$ allows to simplify the commutators of the MPA algebra. 
 \subsection{Explicit correlations in the non-equilibrium steady state}\label{subsection-exact}
 In this section we write a formula for the stationary non-equilibrium steady state correlations between $m$- points of the chain, each of them occupied by a non-empty species, i.e. a species with label from $1$ to $N-1$.
-\begin{theorem}\label{thm-correlations}[Explicit non-equilibrium steady state correlations]
+\begin{theorem}[Explicit non-equilibrium steady state correlations]\label{thm-correlations}
 Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $(x_{1},\ldots,x_{m})$, such that $x_{k}<x_{k+1}$ $\forall k\in \{1,\ldots,m-1\}$. We assume that in each of these points there is a particle of species $a_{k}\in \{1,\ldots,N-1\}$. Then the $m$-point correlations with respect to the non-equilibrium steady state measure $\mu^{NESS}$ are given by 
 \begin{equation}\label{exactCorrelations}
 	\begin{split}
@@ -1197,7 +1207,7 @@ and
 		The non-equilibrium steady state correlations can also be written as 
 			\begin{equation}\label{exactCorrelation_1}
 			\begin{split}
-				\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=&\frac{1}{(1+L)!}\sum_{c_{y_{1}},\ldots,c_{y_{m}}=0}^{1}\prod_{k=1}^{m}(\alpha_{s_{k}}-\beta_{s_{k}})^{1-c_{y_{k}}}\beta_{s_{k}}^{c_{y_{k}}}\left(2+L-y_{k}-\sum_{j=k}^{m}(1-c_{y_{j}})\right)\\&\prod_{x=1\,:\,x\notin \{y_{1},\ldots,y_{m}\}}^{L}\left(2+L-x-\sum_{k=1}^{m}\mathbbm{1}_{\{x<y_{k}\}}(1-c_{y_{k}})\right)
+				\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=&\frac{1}{(1+L)!}\sum_{c_{x_{1}},\ldots,c_{x_{m}}=0}^{1}\prod_{k=1}^{m}(\alpha_{a_{k}}-\beta_{a_{k}})^{1-c_{x_{k}}}\beta_{a_{k}}^{c_{x_{k}}}\left(2+L-x_{k}-\sum_{j=k}^{m}(1-c_{x_{j}})\right)\\&\prod_{x=1\,:\,x\notin \{x_{1},\ldots,x_{m}\}}^{L}\left(2+L-x-\sum_{k=1}^{m}\mathbbm{1}_{\{x<y_{k}\}}(1-c_{x_{k}})\right)
 			\end{split}
 		\end{equation}
 \end{remark}
@@ -1218,22 +1228,37 @@ From \eqref{exactCorrelations} we have
 \subsubsection{Explicit examples of non-equilibrium steady state correlations}
 We give examples  of correlations for up to three points applying formula \eqref{exactCorrelations}.
 \paragraph{One-point correlations}
-The average with respect to the non equilibrium distribution of the occupation variable of the species $a_{1}\in \{1,\ldots,N-1\}$ at coordinate $x_{1}\in \{1,\ldots,L\}$ reads
+We consider the average with respect to $\mu^{NESS}$ of the occupation variable of the species $a_{1}\in \{1,\ldots,N-1\}$ at coordinate $x_{1}\in \{1,\ldots,L\}$. %This reads
+%\begin{equation}
+%\mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\right]=\sum_{t_{1}=0}^{1}\alpha_{a_{1}}^{t_{1}}\beta_{a_{1}}^{1-t_{1}}\sum_{c_{1}=t_{1}}^{1}f(L,c_{1})g_{a_{1}}(L,x_{1},c_{1})\dt
+%\end{equation}
+Using \eqref{abs-probabilities} we obtain the absorption probabilities 
 \begin{equation}
-\mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\right]=\sum_{c_{1}=0}^{1}f(L,c_{1})(\alpha_{a_{1}}-\beta_{a_{1}})^{c_{1}}\beta_{a_{1}}^{1-c_{1}}g_{a_{1}}(L,x_{1},c_{1})\dt
-\end{equation}
-Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain 
+	\mathcal{P}(0,\bm{\xi})=1-\frac{(L+1-x_{1})}{(1+L)}\qquad \mathcal{P}(1,\bm{\xi})=\frac{(L+1-x_{1})}{(1+L)}
+\end{equation} 
+where $\bm{\xi}=\delta_{a_{1}}^{x_{1}}$. Then, using \eqref{exactCorrelations}, we have
 \begin{equation}\label{one-pts-corr}
-	 \mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\right]=\frac{(L+1-y_{1})}{L+1}(\alpha_{a_{1}}-\beta_{a_{1}})+\beta_{a_{1}}\dt
+	 \mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\right]=\frac{(L+1-x_{1})}{L+1}(\alpha_{a_{1}}-\beta_{a_{1}})+\beta_{a_{1}}\dt
 \end{equation}
 \paragraph{Two-point correlations}
-The two-point correlations with respect to the non equilibrium distribution of the occupation variable of the species $a_{1},a_{2}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2}\in \{1,\ldots,L\}$ with $x_{1}< x_{2}$ reads 
+We consider the average with respect to $\mu^{NESS}$ of the occupation variable of the species  $a_{1},a_{2}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2}\in \{1,\ldots,L\}$ such that $x_{1}< x_{2}$. 
+%\begin{equation}
+%	\begin{split}
+%		 \mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}\right]= \sum_{t_{1}=0}^{1}\sum_{t_{2}=0}^{1}\left(\prod_{k=1}^{2}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\sum_{c_{1}=t_{1}}^{1}\sum_{c_{2}=t_{2}}^{1}f(L,c_{1},c_{2})\prod_{j=1}^{2}g_{k}(L,x_{j},c_{j},c_{2})\dt
+%	\end{split}
+%\end{equation}
+Using \eqref{abs-probabilities} we obtain the absorption probabilities
 \begin{equation}
 	\begin{split}
-		 \mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}\right]= \sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}f(L,c_{1},c_{2})\prod_{k=1}^{2}(\alpha_{a_{k}}-\beta_{a_{k}})^{c_{k}}\beta_{a_{k}}^{1-c_{k}}g_{k}(L,x_{k},c_{k},c_{2})\dt
+	&\mathcal{P}(0,0,\bm{\xi})=\frac{x_{1}(x_{2}-1)}{L(L+1)}\\
+	&\mathcal{P}(0,1,\bm{\xi})=\frac{x_{1}(L+1-x_{2})}{L(L+1)}
+\end{split}\quad \begin{split}
+	&\mathcal{P}(1,0,\bm{\xi})=\frac{x_{2}(L+1-x_{1})}{L(L+1)}\\
+	&\mathcal{P}(1,1,\bm{\xi})=\frac{(L-x_{1})(L+1-x_{2})}{L(L+1)}
 	\end{split}
 \end{equation}
-Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain 
+where $\bm{\xi}=\delta_{a_{1}}^{x_{1}}+\delta_{a_{2}}^{x_{2}}$. 
+Then, by using \eqref{exactCorrelations} we have 
 \begin{equation}
 	\begin{split}
 	 \mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}\right]&=\beta_{a_{1}}\beta_{a_{2}}+\frac{(L+1-y_{1})}{L+1}(\alpha_{a_{1}}-\beta_{a_{1}})\beta_{a_{2}}+\frac{(L+1-x_{2})}{L+1}(\alpha_{a_{2}}-\beta_{a_{2}})\beta_{a_{1}}\\&+\frac{(L-x_{1})(L+1-x_{2})}{L(L+1)}(\alpha_{a_{1}}-\beta_{a_{1}})(\alpha_{a_{2}}-\beta_{a_{2}})\dt
@@ -1246,11 +1271,24 @@ Therefore, we compute the second cumulant, i.e. the two-point connected correlat
 	\end{split}
 \end{equation}
 \paragraph{Three-point correlations}
-The three-point correlations with respect to the non equilibrium distribution of the occupation variable of the species $a_{1},a_{2},a_{3}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2},x_{3}\in \{1,\ldots,L\}$ such that $x_{1}<x_{2}<x_{3}$
+We consider the average with respect to $\mu^{NESS}$ of the occupation variable of the species  $a_{1},a_{2},a_{3}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2},x_{3}\in \{1,\ldots,L\}$ such that $x_{1}<x_{2}<x_{3}$. Using \eqref{abs-probabilities} we compute the absorption probabilities 
 \begin{equation}
- \mathbb{E}_{\mu^{NESS}}\left[\prod_{k=1}^{3}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=\sum_{c_{1}=0}^{1}\sum_{c_{2}=0}^{1}\sum_{c_{3}=0}^{1}f(L,c_{1},c_{2},c_{3})\prod_{k=1}^{3}(\alpha_{a_{k}}-\beta_{a_{k}})^{c_{k}}\beta_{a_{k}}^{1-c_{k}}g_{k}(L,x_{k},c_{k},\ldots,c_{3})\dt
+	\begin{split}
+	&\mathcal{P}(0,0,0,\bm{\xi})=\frac{x_{1}(x_{2}-1)(x_{3}-2)}{L(L^{2}-1)}\\
+	&\mathcal{P}(1,0,0,\bm{\xi})=\frac{ x_{2} (x_3-1)(L-1)-x_1 (x_2-1)
+		(x_3-2)}{L \left(L^2-1\right)}\\
+	&\mathcal{P}(0,1,0,\bm{\xi})=\frac{x_1 (L (-x_3)+L+x_2 (x_3-2)+1)}{L(L^2-1)}\\
+	&\mathcal{P}(0,0,1,\bm{\xi})=\frac{x_1 (x_2-1) (L-x_3+1)}{L \left(L^2-1\right)}
+	\end{split}\quad \begin{split}
+	&\mathcal{P}(1,1,0,\bm{\xi})=\frac{(L-1) x_2 (x_3-1)-x_1 (x_2-1)
+		(x_3-2)}{L \left(L^2-1\right)}\\
+	&\mathcal{P}(1,0,1,\bm{\xi})=\frac{(L-x_3+1) (x_2 (L-x_1-1)+x_1)}{L
+		\left(L^2-1\right)}\\
+	&\mathcal{P}(0,1,1,\bm{\xi})=\frac{x_1 (L-x_2) (L-x_3+1)}{L \left(L^2-1\right)}\\
+	&\mathcal{P}(1,1,1,\bm{\xi})=\frac{(L-x_{1}-1)(L-x_{2})(L-x_{3}+1)}{L(L-1)(L+1)}
+\end{split}
 \end{equation}
-Using \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec} we obtain 
+where $\bm{\xi}=\delta_{a_{1}}^{x_{1}}+\delta_{a_{2}}^{x_{2}}+\delta_{a_{3}}^{x_{3}}$ Then, by using \eqref{exactCorrelations} we obtain 
 \begin{align}\label{three-pts-corr}
  \mathbb{E}_{\mu^{NESS}}\left[\prod_{k=1}^{3}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]&=\beta_{a_{1}}\beta_{a_{2}}\beta_{a_{3}}+\frac{(L+1-x_{1})}{(L+1)}(\alpha_{a_{1}}-\beta_{a_{1}})\beta_{a_{2}}\beta_{a_{3}}
 	\\&+\nonumber
