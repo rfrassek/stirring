@@ -2435,16 +2435,16 @@ where
 \begin{equation}
 	\epsilon_{N}=2\nu-\sum_{a=1}^{N-1}\epsilon_{a}\qquad r_{N}=\nu-\sum_{a=1}^{N-1}r_{a}
 \end{equation}
- Using the conditional probability and the fact that the reversible measure \eqref{reversibleMeasure} is product over the sites of the chain of multinomial distributions we have
+ Using the conditional probability and the fact that the reversible measure \eqref{reversibleMeasure} is the product over the sites of multinomial distributions we have
 \begin{equation}
 	\begin{split}
 \nu_{TH}(\bm{r}|\bm{\epsilon})&=\frac{\mathbb{P}\left(\left\{n^{x}=\bm{r}\right\}\,\cap\,\left\{n^{x}+n^{x+1}=\bm{\epsilon}\right\}\right)}{\mathbb{P}\left(n^{x}+n^{x+1}=\bm{\epsilon}\right)}=\frac{\mathbb{P}\left(n^{x}=\bm{r}\right)\,\mathbb{P}\left(n^{x+1}=\bm{\epsilon}-\bm{r}\right)}{\mathbb{P}\left(n^{x}+n^{x+1}=\bm{\epsilon}\right)}
 	\end{split}
 \end{equation}
-Moreover, it holds that 
-\begin{equation}
-\text{Multinomial}(\nu,\rho_{1},\ldots,\rho_{N})+\text{Multinomial}(\nu,\rho_{1},\ldots,\rho_{N})=\text{Multinomial}(2\nu,\rho_{1},\ldots,\rho_{N})
-\end{equation}
+%Moreover, it holds that 
+%\begin{equation}
+%\text{Multinomial}(\nu,\rho_{1},\ldots,\rho_{N})+\text{Multinomial}(\nu,\rho_{1},\ldots,\rho_{N})=\text{Multinomial}(2\nu,\rho_{1},\ldots,\rho_{N})
+%\end{equation}
 Therefore 
 \begin{equation}
 	\begin{split}
@@ -2487,60 +2487,18 @@ In the thermalized bulk generator particles on a bond $x$ and $x+1$ are redistri
 \subsubsection{The dual thermalized process}
 The thermalized dual process $(\bm{\xi}(t))_{t\geq 0}$ is defined on the enlarged configuration space $\widetilde{\Omega}$ introduced in \eqref{stateSpaceDUAL-Chain}. Its generator reads
 \begin{equation}
-		\widetilde{\mathcal{L}}^{TH}=\widetilde{\mathcal{L}}_{\text{left}}^{TH}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{TH}+\widetilde{\mathcal{L}}_{\text{right}}^{TH}
+	\widetilde{\mathcal{L}}^{TH}=\widetilde{\mathcal{L}}_{\text{left}}^{TH}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{TH}+\widetilde{\mathcal{L}}_{\text{right}}^{TH}
 \end{equation}
 where $\mathcal{L}^{TH}_{x,x+1}$ is again \eqref{bulkThermalized} and $\widetilde{\mathcal{L}}_{\text{left}}^{TH}$ and $\widetilde{\mathcal{L}}_{\text{right}}^{TH}$ are absorbing with rate $1$
 \begin{align}
-		\widetilde{\mathcal{L}}_{\text{left}}^{TH}f(\bm{\xi})&=\left\{f(\xi^{0}+\xi^{1},0,\xi^{2},\ldots,\xi^{L})-f(\bm{\xi})\right\}\nonumber\\ \widetilde{\mathcal{L}}_{\text{right}}^{TH}f(\bm{\xi})&=\left\{f(\xi^{0},\ldots,\xi^{L-1},0,\xi^{L}+\xi^{L+1})-f(\bm{\xi})\right\}
-	\end{align}
+	\widetilde{\mathcal{L}}_{\text{left}}^{TH}f(\bm{\xi})&=\left\{f(\xi^{0}+\xi^{1},0,\xi^{2},\ldots,\xi^{L})-f(\bm{\xi})\right\}\nonumber\\ \widetilde{\mathcal{L}}_{\text{right}}^{TH}f(\bm{\xi})&=\left\{f(\xi^{0},\ldots,\xi^{L-1},0,\xi^{L}+\xi^{L+1})-f(\bm{\xi})\right\}
+\end{align}
 i.e. they remove all dual particles at site $1$ (and $L$) and put these particles in the extra-site $0$ (and $L+1$) with rate 1. 
 The duality function is the same as the original process, i.e.
 \begin{equation}
 	D(\bm{n},\bm{\xi})=\prod_{a=1}^{N-1}\left(\rho_{a}^{L}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{\eta_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=1}^{N-1}\left(\rho_{a}^{R}\right)^{\xi_{a}^{L+1}}
 \end{equation}
-\paragraph{Proof of thermalized duality}
-The proof of the duality consists in showing
-\begin{align}
-	\left(\mathcal{L}_{x,x+1}^{TH}D(\cdot,\bm{n})\right)(\bm{n})&=\left(\widetilde{\mathcal{L}}_{x,x+1}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\qquad x\in \{1,\ldots,L-1\}\label{bulkDualityTH}\\
-	\left(\mathcal{L}_{y}^{TH}D(\cdot,\bm{n})\right)(\bm{n})&=\left(\widetilde{\mathcal{L}}_{y}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\qquad y\in\{1,L\}\label{boundaryDualityTH}
-\end{align}
-Equation \eqref{bulkDualityTH} follows from the proof of the edge duality for the multi-species stirring process. To prove \eqref{boundaryDualityTH} we directly apply the generators on the duality function. For the sake of notation, we introduce 
-\begin{equation}
-	d(n^{x},\xi^{x}):=\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}
-\end{equation}
-First, we act with $\mathcal{L}_{\text{left}}^{TH}$ on $D(\bm{n},\bm{\xi})$. This action gives
-\begin{align}\label{ProvaBordoTH}
-	\left(\mathcal{L}_{\text{left}}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})=\nonumber&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{\prod_{a=1}^{N-1}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{k}^{0}}\frac{\left(\nu-\sum_{c=1}^{N-1}\xi_{c}^{1}\right)!}{\nu!}\right.
-	\\&\nonumber
-	\left.\prod_{b=1}^{N-1}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\prod_{x=2}^{L}d(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
-	\\&
-	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{\nu}
-\end{align}
-We consider the first addend in the curly bracket of the previous equation. We add and remove $\xi_{k}^{1}$ at the exponent of $\left(\frac{\alpha_{k}}{|\alpha|}\right)$ and then we multiplying everything by $\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-r_{\ell}+r_{\ell}-\xi_{\ell}^{1}+\xi_{\ell}^{1}}$; we have
-\begin{align}\label{pezzo1}
-	&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{|\alpha|}\right)^{\xi_{a}^{0}+\xi_{k}^{1}-\xi_{k}^{1}}\frac{\left(\nu-\sum_{c=1}^{N-1}\xi_{c}^{1}\right)!}{\nu!}\prod_{b=1}^{N-1}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\prod_{x=2}^{L}d(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}\right\}\nonumber\\&	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{N}}\right)^{r_{k}}\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-\xi_{\ell}^{1}+\xi_{\ell}^{1}-r_{\ell}+r_{\ell}}\nonumber\\=&
-	\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{k}^{0}+\xi_{k}^{1}}\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}	\frac{\left(\nu-\xi_{1}^{1}-\ldots-\xi_{N-1}^{1}\right)!}{(r_{1}-\xi_{1}^{1})!\cdots(r_{N-1}-\xi_{N-1}^{1})!(\nu-r_{1}-\ldots-r_{N-1})!}\nonumber\\&
-	\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{\ell}}{|\alpha|}\right)^{r_{\ell}-\xi_{\ell}^{1}}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-r_{1}-\ldots-r_{N-1}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}\nonumber
-	\\=&
-	\prod_{k=1}^{N-1}\left(\rho_{k}^{L}\right)^{\xi_{k}^{0}+\xi_{k}^{1}}\prod_{x=2}^{L}d(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}
-\end{align}
-where in the last equality we used the multinomial theorem. \\ We now consider the second addend in the curly brackets.
-We multiplying it by $\prod_{a=1}^{N-1}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{r_{a}-r_{a}}$ 
-\begin{equation}\label{pezzo2}
-	\begin{split}
-	&D(\bm{n},\bm{\xi})\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{\nu}\prod_{a=1}^{N-1}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{r_{a}-r_{a}}\\=&D(\bm{n},\bm{\xi})
-	\end{split}
-\end{equation}
-where we used again the multinomial theorem. Therefore, replacing \eqref{pezzo1} and \eqref{pezzo2} in \eqref{ProvaBordoTH} we obtain 
-\begin{align}
-	\left(\mathcal{L}_{\text{left}}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left\{\prod_{a=1}^{N-1}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
-	\\&=
-	\left(\widetilde{\mathcal{L}}_{y}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})
-\end{align}
-The proof is similar for $\widetilde{\mathcal{L}}_{y}^{TH}$. 
-\begin{flushright}
-	$\square$
-\end{flushright}
+The proof duality result for the thermalized multi-species stirring process is standard. For the sake of completeness we report it in Appendix \ref{appendix-dualityThermalized}.
 \subsection{Multi-species stirring process with reaction} \label{Subsection-RD}
 In \cite{casini2022uphill} it has been defined a process whose evolution equation for the average occupation $\rho_{a}(x,t)$ of species $a\in \{1,2\}$ is given by a difference-differential equation with two discrete Laplacians (one for each species, multiplied for a proper diffusivity constant) and a linear reaction term (mutation), i.e.
 \begin{equation}\label{2SpeciesRD}
@@ -2612,26 +2570,26 @@ The boundary generator $\mathcal{L}_{\text{right}}^{rd}$ is defined analogously,
 \begin{remark}: observe that, up to a specific choice of the $\alpha$'s, the left boundary generator $\mathcal{L}_{\text{left}}^{rd}$ has the form of the one of the multi-species stirring process \eqref{siteGenerator}. 
 \end{remark}
 \paragraph{Action on the occupation variable}
-We only report the final result. The details are written in Appendix \ref{appendix-RD}. For arbitrary site $x\in \{2,\ldots,L-1\}$, the action on the occupation variable $f(\bm{n})=n_{d}^{x}$ of particle of type $d\in \{1,\ldots,N-1\}$ reads
+We only report the final result. The details are written in Appendix \ref{appendix-RD}. For arbitrary site $x\in \{2,\ldots,L-1\}$, the action on the occupation variable $f(\bm{n})=n_{d}^{x}$ of particle of type $a\in \{1,\ldots,N-1\}$ reads
 \begin{equation}\label{DifferenceEquation}
-	\mathcal{L}^{rd}n_{d}^{x}=\nu\sigma_{11}\Delta_{L}n_{d}^{x}+\nu\sigma_{12}\sum_{b=1\,:\,b\neq d}^{N-1}\Delta_{L}n_{c}^{x}+\Upsilon\sum_{b=1}^{N-1}(n_{b}^{x}-n_{d}^{x})\co
+	\mathcal{L}^{rd}n_{a}^{x}=\nu\sigma_{11}\Delta_{L}n_{a}^{x}+\nu\sigma_{12}\sum_{b=1\,:\,b\neq a}^{N-1}\Delta_{L}n_{b}^{x}+\Upsilon\sum_{b=1}^{N-1}(n_{b}^{x}-n_{a}^{x})\co
 \end{equation}
-where $\Delta_{L}n_{x}^{d}= n_{x+1}^{d}+n_{x-1}^{d}-2n_{x}^{d}$. \\For $x=1$ and for all $d\in \{1,\ldots,N-1\}$ we have 
+where $\Delta_{L}n_{a}^{x}= n_{a}^{x+1}+n_{x}^{x-1}-2n_{a}^{x}$. \\For $x=1$ and for all $a\in \{1,\ldots,N-1\}$ we have 
 \begin{equation}\label{actionBDLine}
-	\mathcal{L}^{rd}n_{d}^{1}=\sigma_{11}\nu \left(\rho_{d}^{0}-2n_{d}^{1}+n_{d}^{2}\right)+\sigma_{12}\nu\sum_{b=1\,:\,b\neq d}^{N-1}\left(\rho_{b}^{0}-2n_{b}^{1}+n_{b}^{2}\right)+\Upsilon\sum_{b=1\,:\,b\neq d}^{N-1}\left(n_{b}^{1}-n_{d}^{1}\right)
+	\mathcal{L}^{rd}n_{a}^{1}=\sigma_{11}\nu \left(\rho_{a}^{0}-2n_{a}^{1}+n_{a}^{2}\right)+\sigma_{12}\nu\sum_{b=1\,:\,b\neq a}^{N-1}\left(\rho_{b}^{0}-2n_{b}^{1}+n_{b}^{2}\right)+\Upsilon\sum_{b=1\,:\,b\neq d}^{N-1}\left(n_{b}^{1}-n_{a}^{1}\right)
 \end{equation}
-On the occupation variable $n_{d}^{L}$ the action is similar, but with the upper case $1$ replaced by $L$.\\ In the spirit of \cite{casini2022uphill} we can define the average density occupation of species $d$ at site $x$ as
+On the occupation variable $n_{a}^{L}$ the action is similar, but with the upper case $1$ replaced by $L$.\\ In the spirit of \cite{casini2022uphill} we can define the average density occupation of species $d$ at site $x$ as
 \begin{equation}
-	\rho_{d}(x,t)=\mathbb{E}_{\mu}\left[n_{d}^{x}(t)\right]
+	\rho_{a}(x,t)=\mathbb{E}_{\mu}\left[n_{a}^{x}(t)\right]
 \end{equation}
 where $\mathbb{E}_{\mu}$ denotes the expectation with respect to the law of the Markov process $(\bm{n}(t))_{t\geq 0}$ initialized with arbitrary initial measure $\mu$. These average occupations evolve according to the master equation
 \begin{equation}
-	\frac{d \rho_{d}(x,t)}{dt}=\mathbb{E}_{\mu}\left[\mathcal{L}^{rd}n_{d}^{x}(t)\right]
+	\frac{d \rho_{a}(x,t)}{dt}=\mathbb{E}_{\mu}\left[\mathcal{L}^{rd}n_{a}^{x}(t)\right]
 \end{equation} 
 Therefore, using the action of $\mathcal{L}^{rd}$ expressed by \eqref{DifferenceEquation} and \eqref{actionBDLine} we obtain a system of $N-1$ difference-differential equation\eqref{NSpeciesRD} where the discrete Laplacians of all species are coupled and linear reaction terms are present that we aimed for. For these reasons, this model is a generalization to $N$ species and to maximal occupation $\nu$ of the one studied in \cite{casini2022uphill}. This answers the first question we addressed to in the beginning of this subsection. 
 
 
-\subsubsection{Reversible measure for the reaction-diffusion process} 
+\subsubsection{Reversible measure for the reaction-diffusion process (equilibrium)} 
 The process described by the generator \eqref{RDGenerator} is reversible with respect to the homogeneus product measure \begin{equation}\label{reversibleMeasureRD}
 	\Lambda_{rev}=\bigtimes_{x=1}^{L}\Lambda_{rev}^{x}
 \end{equation}
@@ -3135,8 +3093,51 @@ where $\Delta_{y}^{L}$ is the discrete Laplace operator on the chain of length $
 that is the same result obtained in \cite{vanicat2017exact}. 
 \end{remark}
 Already for two-point correlations the computations become more involving and hard to solve.
+\section{Proof of duality of thermalized multi-species stirring}\label{appendix-dualityThermalized}
+The proof of the duality consists in showing
+\begin{align}
+	\left(\mathcal{L}_{x,x+1}^{TH}D(\cdot,\bm{n})\right)(\bm{n})&=\left(\widetilde{\mathcal{L}}_{x,x+1}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\qquad x\in \{1,\ldots,L-1\}\label{bulkDualityTH}\\
+	\left(\mathcal{L}_{y}^{TH}D(\cdot,\bm{n})\right)(\bm{n})&=\left(\widetilde{\mathcal{L}}_{y}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\qquad y\in\{1,L\}\label{boundaryDualityTH}
+\end{align}
+Equation \eqref{bulkDualityTH} follows from the proof of the edge duality for the multi-species stirring process. To prove \eqref{boundaryDualityTH} we directly apply the generators on the duality function. For the sake of notation, we introduce 
+\begin{equation}
+	d(n^{x},\xi^{x}):=\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}
+\end{equation}
+First, we act with $\mathcal{L}_{\text{left}}^{TH}$ on $D(\bm{n},\bm{\xi})$. This action gives
+\begin{align}\label{ProvaBordoTH}
+	\left(\mathcal{L}_{\text{left}}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})=\nonumber&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{\prod_{a=1}^{N-1}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{k}^{0}}\frac{\left(\nu-\sum_{c=1}^{N-1}\xi_{c}^{1}\right)!}{\nu!}\right.
+	\\&\nonumber
+	\left.\prod_{b=1}^{N-1}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\prod_{x=2}^{L}d(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
+	\\&
+	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{\nu}
+\end{align}
+We consider the first addend in the curly bracket of the previous equation. We add and remove $\xi_{k}^{1}$ at the exponent of $\left(\frac{\alpha_{k}}{|\alpha|}\right)$ and then we multiplying everything by $\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-r_{\ell}+r_{\ell}-\xi_{\ell}^{1}+\xi_{\ell}^{1}}$; we have
+\begin{align}\label{pezzo1}
+	&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{|\alpha|}\right)^{\xi_{a}^{0}+\xi_{k}^{1}-\xi_{k}^{1}}\frac{\left(\nu-\sum_{c=1}^{N-1}\xi_{c}^{1}\right)!}{\nu!}\prod_{b=1}^{N-1}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\prod_{x=2}^{L}d(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}\right\}\nonumber\\&	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{N}}\right)^{r_{k}}\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-\xi_{\ell}^{1}+\xi_{\ell}^{1}-r_{\ell}+r_{\ell}}\nonumber\\=&
+	\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{k}^{0}+\xi_{k}^{1}}\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}	\frac{\left(\nu-\xi_{1}^{1}-\ldots-\xi_{N-1}^{1}\right)!}{(r_{1}-\xi_{1}^{1})!\cdots(r_{N-1}-\xi_{N-1}^{1})!(\nu-r_{1}-\ldots-r_{N-1})!}\nonumber\\&
+	\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{\ell}}{|\alpha|}\right)^{r_{\ell}-\xi_{\ell}^{1}}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-r_{1}-\ldots-r_{N-1}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}\nonumber
+	\\=&
+	\prod_{k=1}^{N-1}\left(\rho_{k}^{L}\right)^{\xi_{k}^{0}+\xi_{k}^{1}}\prod_{x=2}^{L}d(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}
+\end{align}
+where in the last equality we used the multinomial theorem. \\ We now consider the second addend in the curly brackets.
+We multiplying it by $\prod_{a=1}^{N-1}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{r_{a}-r_{a}}$ 
+\begin{equation}\label{pezzo2}
+	\begin{split}
+		&D(\bm{n},\bm{\xi})\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{\nu}\prod_{a=1}^{N-1}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{r_{a}-r_{a}}\\=&D(\bm{n},\bm{\xi})
+	\end{split}
+\end{equation}
+where we used again the multinomial theorem. Therefore, replacing \eqref{pezzo1} and \eqref{pezzo2} in \eqref{ProvaBordoTH} we obtain 
+\begin{align}
+	\left(\mathcal{L}_{\text{left}}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left\{\prod_{a=1}^{N-1}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
+	\\&=
+	\left(\widetilde{\mathcal{L}}_{y}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})
+\end{align}
+The proof is similar for $\widetilde{\mathcal{L}}_{y}^{TH}$. 
+\begin{flushright}
+	$\square$
+\end{flushright}
 \section{Action on the occupation variable of $\mathcal{L}^{rd}$}\label{appendix-RD}
-\paragraph{Action of $\mathcal{L}_{x,+1}^{rd}$ on the occupation variable}
+\paragraph{Action of $\mathcal{L}_{x,x+1}^{rd}$ on the occupation variable}
 For all $x\in \{1,\ldots,L-1\}$ and for all $d\in \{1,\ldots,N-1\}$ we have
 \begin{equation}\label{actionGraphRD}
 	\begin{split}
