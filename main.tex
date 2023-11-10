@@ -219,9 +219,9 @@ In the long-time limit, a so-called non-equilibrium
 steady state sets in.
 
 
-\vspace{.5cm}
 \noindent
 \begin{remark}
+\label{hole}
 In the following we will often consider type $N$ as a distinguished type
 (called `holes'), whose number at each site is fixed by the numbers of particles 
 of the remaining $N-1$ types. It is interesting to observe that, in case we stop distinguishing the types of the ``true'' particles of types 
@@ -288,7 +288,7 @@ Namely, on each site $x\in V$  a particle of type $b$ is replaced with a particl
 %    \caption{The site dynamics. Here the maxiaml occupation is $\nu=6$. The reservoir, represented by a square "box" containing all types of particles, remove a type $2$ from site $x$ and replace it with a type $3$. This transition occurs at rate $\alpha_{3}^{x}n_{2}^{x}$.}
 %    \label{fig:2}
 %\end{figure}
-\subsection{Reversible measures (equilibrium)}
+\subsection{Reversible measures in the equilibrium set-up}
 For a particular choice of the reservoir parameters one has an $N$-parameter family of reversible measures. More precisely
 when the parameters are the same on each site, i.e.
 \begin{equation}\label{reversibilityCondition}
@@ -300,7 +300,7 @@ homogeneous product measure
 \label{reversibleMeasure}
 \mu_{rev}=\bigotimes_{x\in V}\mu_{rev}^{x}
 \end{equation}
-with marginals $\mu_{rev}^{x}$ given by 
+with marginals $\mu_{\text{rev}}^{x}$ given by 
 \begin{equation}
  \mu^{x}_{rev}\sim \text{Multinomial}\left(\twoj,\rho_{1},\ldots,\rho_{N}\right)\,.
 \end{equation}
@@ -321,7 +321,7 @@ If condition \eqref{reversibilityCondition} is not met, then reversibility is lo
 and  $|\alpha^x|=\sum_{a=1}^{N}\alpha_{a}$. 
 Currents will arise when at least two reservoirs have different densities. 
 
-\subsection{Lie algebraic description}
+\subsection{Lie algebraic description of the process}
 
 In this paper we will often use the fact that the Markov generator of the multispecies stirring process can be described in terms a Lie algebra of rank $N$.
 In this section we provide details about this.
@@ -564,7 +564,16 @@ Under these assumption the Hamiltonian \ref{hamiltonian} is integrable (see \cit
 
 
 \section{Duality}\label{sectionDuality}
+In this section we prove the first main result of this paper. We show that the multispecies stirring process with open boundary
+can be studied by means of a dual process. After recalling the definition of duality between two
+Markov processes in Section \ref{def-duality}, we formulate duality  in Theorem \ref{thm-duality}. A proof of the theorem is given in Section \ref{proof-th-duality}.
+The duality result is important since it brings in several simplifications, the main one being that the
+dual process has absorbing sites. Therefore, as shown in Proposition \ref{prop-absorbing}, the study of the non-equilibrium steady state for  the multispecies stirring process with open boundary
+is reduced to the study of the absorption probabilities of dual particles.
+
+
 \subsection{Definition}
+\label{def-duality}
 Consider two Markov processes, $(\eta_{t})_{t\geq 0}$ defined on a state space $\Omega$ and $(\xi_{t})_{t\geq 0}$ defined on a state space $\widetilde{\Omega}$. We say that they are dual, with respect to a duality function $D:\Omega\times \widetilde{\Omega}\to \mathbb{R}$, if $\forall \eta\in\Omega$, $\forall \xi\in\widetilde{\Omega}$ and $\forall t> 0$ we have 
 \begin{equation}\label{duality-expectation}
     \mathbb{E}_{\eta}\left[D(\eta_{t},\xi)\right]=\mathbb{E}_{\xi}\left[D(\eta,\xi_{t})\right]
@@ -654,7 +663,10 @@ part $\widetilde{\mathcal{L}}_{x}$ of the dual generator replaces a particle of 
 \mathbb{E}_{\mu^{rev}}\left[D(\bm{n},\bm{\xi})\right]=\prod_{a=1}^{N-1}\left(\rho_{a}\right)^{\sum_{x\in V}\xi_{a}^{x}+\sum_{x\in V}\xi_{a}^{u(x)}}\qquad \forall \bm{n}\in \Omega,\quad\forall \bm{\xi}\in \widetilde{\Omega}\dt
 \end{equation}
 \end{remark}
+%
+%
 \subsection{Proof of Theorem \ref{thm-duality}}
+\label{proof-th-duality}
 To prove duality between $(\bm{n}(t))_{t\geq 0}$ and $(\bm{\xi}(t))_{t\geq 0}$ we  show that \eqref{DualityRelation} is fulfilled.  To show this, we will use the Hamiltonians and their Lie algebraic description. Indeed, in this formalism the proof 
 reduces to finding symmetries of the generator (for the bulk duality) and group like transformations (for the ``boundary duality'').
 To a configuration $\bm{\xi}$ of the configuration space  \eqref{dualStateSpace} of a dual process we associate the vector
@@ -978,7 +990,7 @@ Taking the tensor product of both sides of \eqref{siteHadamardI} with
 \begin{equation}
 \langle \rho|_{u(x)}=\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|_{u(x)}
 \end{equation}
-{\color{blue}Think about replacing $\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|$ with $\langle \xi_{1},\ldots,\xi_{N}|_{u(x)}$}\\
+%{\color{blue}Think about replacing $\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|$ with $\langle \xi_{1},\ldots,\xi_{N}|_{u(x)}$}\\
 we obtain 
 \begin{equation}\label{siteHadamardII}
     \begin{split}
@@ -1010,10 +1022,10 @@ where, in the up to last equality, we performed a change of summation variable a
 =\sum_{\xi_{a}^{u(x)}=1}^{\infty}(\rho_{a}^{x})^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}\dt
 \end{split}
 \end{equation}
-since
-\begin{equation}
-\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}=0\dt
-\end{equation}
+%since
+%\begin{equation}
+%\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})_{a}^{u(x)}=0\dt
+%\end{equation}
 %This is a consequence of 
 %\begin{equation}
 %\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(A^{+})_{a}^{u(x)}=0
@@ -1038,7 +1050,10 @@ $\square$
 \end{flushright}
 
 \subsection{Duality for the integrable process on a line segment}\label{integrableChain-duality}
-Here we consider the chain defined in Subsection \ref{subsection-description-process-LINE}. We recall that the geometry is a one dimensional chain with sites $\{1,\ldots,L\}$ where reservoirs are attached to $1$ and $L$. Now we assume the hard-core exclusion rule, i.e. $\nu=1$. The dynamics is described by an Hamiltonian that is written in terms of the first fundamental representation of $gl(N)$. Duality result stated in Subsection \ref{statementDualitySubsection} can be adapted. The extra-sites are denoted by $0$ and $L+1$, and they are connected with sites $1$ and $L$ of the chain respectively. The matrix $R_{x}$ defined in \eqref{Revmatrix} 
+Here we consider the chain defined in Subsection \ref{subsection-description-process-LINE} with the hard-core constrain, i.e. $\nu=1$. 
+We recall that the geometry is a one dimensional chain with sites $\{1,\ldots,L\}$ where reservoirs are attached to $1$ and $L$. 
+We also recall the notation for the occupation variable which is called $\bm{\tau}=(\tau_1,\ldots,\tau_L)$ with $\tau_x\in\{1,\ldots,N\}$.
+The dynamics is described by an Hamiltonian that is written in terms of the first fundamental representation of $gl(N)$. The duality result stated in Subsection \ref{statementDualitySubsection} can be adapted. The extra-sites are denoted by $0$ and $L+1$, and they are connected with sites $1$ and $L$ of the chain respectively. The matrix $R_{x}$ defined in \eqref{Revmatrix} 
 reduces to the identity, therefore the relation between the generators of the algebra and its transposed reduces to
 \begin{equation}\label{transpostionPropertyFund}
 	e_{ab}^T= e_{ba}\dt
@@ -1063,25 +1078,27 @@ where $\mathcal{H}$ is defined in \eqref{H-corsivo} and
 \begin{equation}\label{boundary-H-dual-chain}
 	\widetilde{H}_{\text{left}}=\sum_{a=1}^{N-1}\left((\mathbf{a}^{+})_{a}^{0}\,e_{Na}^{1}-e_{aa}^{1}\right)\qquad 	\widetilde{H}_{\text{right}}=\sum_{a=1}^{N-1}\left((\mathbf{a}^{+})_{a}^{L+1}\,e_{Na}^{L}-e_{aa}^{L}\right)\dt
 \end{equation}
-In the long-time limit the dual process voids the chain, i.e. all particles of types $\{1,\ldots,N-1\}$ are eventually absorbed at the extra-sites $0$ and $L+1$ and replaced by types $N$. We also notice that, up the the bosonic creation operators $(\mathbf{a}^{+})_{a}$, the dual boundary Hamiltonians \eqref{boundary-H-dual-chain} are triangular. This simplification will be crucial in Sections \ref{sectionIntegrabiliy}.\\
+In the long-time limit the dual process voids the chain, i.e. all particles of types $\{1,\ldots,N-1\}$ are eventually absorbed at the extra-sites $0$ and $L+1$ and replaced by types $N$. We also notice that, up the the bosonic creation operators $(\mathbf{a}^{+})_{a}$, the dual boundary Hamiltonians \eqref{boundary-H-dual-chain} are triangular. This simplification will be crucial in Section \ref{sectionIntegrabiliy}.\\
 
 %In this notation, the elements of the duality matrix reads
 %\begin{equation}\label{ElementsDualityMatrixChain_1}
 %	D(\bm{\tau},\bm{\xi})=\prod_{a=1}^{N-1}\alpha_{a}^{\xi_{a}^{0}}\left(\prod_{x=1}^{L}\prod_{a=1}^{N-1}\mathbbm{1}_{\{\delta_{\tau_{x},a}\geq \xi_{a}^{x}\}}\right)\prod_{a=1}^{N-1}\beta_{a}^{\xi_{a}^{L+1}}\dt
 %\end{equation}
 %\\
-Using the above duality elements, we can compute the  $m$-point correlations between non-empty particles using the absorption probabilities. Therefore, to determine the non-equilibrium steady state correlations of the integrable multi-species stirring process, it is enough to compute these absorption probabilities.  %For arbitrary $m\in \mathbb{N}$ such that $m<L$, we fix $a_{k}\in\{1,\ldots,N-1\}$ and $x_{k}\in\{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for every $k\in\{1,\ldots,m\}$. 
+Using duality, one can compute the  $m$-point correlations between non-empty particles in terms of the absorption probabilities of $m$ dual particles. Therefore, to determine the non-equilibrium steady state correlations of the integrable multi-species stirring process, it is enough to compute these absorption probabilities.  %For arbitrary $m\in \mathbb{N}$ such that $m<L$, we fix $a_{k}\in\{1,\ldots,N-1\}$ and $x_{k}\in\{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for every $k\in\{1,\ldots,m\}$. 
 \begin{proposition}[Correlations via duality]
+\label{prop-absorbing}
 Consider $m\in \{1,\ldots,L\}$ and let $a_{k}\in\{1,\ldots,N-1\}$ species positioned at sites $x_{k}\in\{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$. Then, the $m$-point correlations in the non-equilibrium steady state (NESS) read
 \begin{equation}
-\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi})
+\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\mathcal{P}_{x_1,\ldots,x_m}(t_{1},\ldots,t_{m})
 \end{equation}
 where
 \begin{equation}\label{absProbabilitiesIntegrable}
-	\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(t_{k}\delta^{0}_{a_k}+(1-t_{k})\delta^{L+1}_{a_k}\right)\lvert \bm{\xi}(0)=\bm{\xi}\right)
+	\mathcal{P}_{x_1,\ldots,x_m}(t_{1},\ldots,t_{m}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(t_{k}\delta^{0}_{a_k}+(1-t_{k})\delta^{L+1}_{a_k}\right)\lvert \bm{\xi}(0)=\bm{\xi}\right)
 \end{equation}
-is the  probability that  $t_{k}$ particles of species $a_{k}$ (initially positioned at site $x_{k}$) are absorbed at the extra site $\{0\}$. The dual configuration is $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, meaning that 
+is the  probability that  $t_{k}$ dual particles of species $a_{k}$ (initially positioned at site $x_{k}$) are absorbed at the extra site $\{0\}$. The dual initial configuration is $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, meaning that 
 \begin{equation}
+\label{xsi-init}
 	\begin{cases}
 		\xi_{a}^{x}=1\qquad \text{if}\;x=x_{k}\;\text{and}\; a=a_{k}\\
 		\xi_{a}^{x}=0\qquad \text{otherwise}
@@ -1089,16 +1106,16 @@ is the  probability that  $t_{k}$ particles of species $a_{k}$ (initially positi
 \end{equation}
 \end{proposition}
 \textbf{Proof}:
-For any $\bm{\tau}\in \Omega$ the elements of the duality matrix defined in \eqref{ElementsDualityMatrixChain_1} read
+For any $\bm{\tau}\in \Omega$ the duality matrix defined in \eqref{ElementsDualityMatrixChain_1} evaluated on the dual configuration $\bm{\xi}\in\widetilde{\Omega}$ given in \eqref{xsi-init} read
 \begin{equation}
 	D(\bm{\tau},\bm{\xi})%=\prod_{k=1}^{m}\mathbbm{1}_{\{\delta_{\tau_{x_{k}},a_{k}}=1\}}
 	=\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\dt
 \end{equation}
-Therefore, by duality we have 
+Therefore, by duality and ergodicity we have 
 \begin{equation}\label{CorrelationByABS-prob}
 	\begin{split}
 \mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]&=\lim_{t\to \infty}\mathbb{E}_{\bm{\tau}}\left[D(\bm{\tau}(t),\bm{{\xi}})\right]=\lim_{t\to \infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{\tau},\bm{{\xi}}(t))\right]
-	\\&=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi})
+	\\&=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi})\dt
 \end{split}
 \end{equation}
 \begin{flushright}
@@ -1112,7 +1129,7 @@ Therefore, by duality we have
 
 
 \section{Exact steady state and correlations for the integrable chain}\label{sectionIntegrabiliy}
-In this section we aim to use duality and the matrix product ansatz (MPA) to determine the moments and correlations of the non-equilibrium steady state for the integrable version of the multi-species stirring process, defined in Subsection \ref{integrableChain-duality}. As it will turn out, the commutation relations of the matrix product ansatz allows to determine a closed formula for all correlations. As a by-product, absorption probabilities can be explicitly found.%, giving a further probabilistic interpretation for the non-equilibrium steady state. 
+In this section we combine duality and the matrix product ansatz (MPA) to determine the correlations of the non-equilibrium steady state for the integrable version of the multi-species stirring process, defined in Subsection \ref{integrableChain-duality}. As it will turn out, such combination of duality and MPA allows to determine a closed formula for the absorption correlations and thus (using Proposition \ref{prop-absorbing}) for the correlations.
 \subsection{Matrix product ansatz for the non-equilibrium steady state}
 The matrix product ansatz for the multi-species stirring process has been formulated in \cite{vanicat2017exact}, here we briefly recall the main steps.
  Denoting by $|\Psi(t)\rangle$ the column vector that encodes the probability distribution of the chain with Hamiltonian \eqref{hamiltonian} at time $t\geq 0$, its evolution equation is given by 
@@ -1121,7 +1138,7 @@ The matrix product ansatz for the multi-species stirring process has been formul
     \frac{d|{\Psi}(t)\rangle}{dt}=H|{\Psi}(t)\rangle\dt
 \end{equation}
 This Markov chain is irreducible and positive recurrent, therefore there exists a unique stationary measure, that will be reached when time goes to infinity, regardless of the initial configuration. 
-We denote by $|\Psi\rangle$ the column vector that gives the stationary distribution. This vector is the right eigenvector with vanishing eigenvalue of $H$, i.e. it solves 
+We denote by $|\Psi\rangle$ the column vector that gives the stationary distribution (non-equilibrium steady state). This vector is the right eigenvector with vanishing eigenvalue of $H$, i.e. it solves 
 \begin{equation}\label{definition-SteadyStateH}
 	H|\Psi\rangle =0\dt
 \end{equation}
@@ -1143,7 +1160,7 @@ with the normalization
 \end{equation}
 Here the operators $(X_{a})_{a\in \{1,\ldots,N\}}$ fulfil the commutators
 \begin{equation}\label{bulk}
-	\left[X_{a},X_{b}\right]=(\alpha_{a}-\beta_{a})X_{b}-\lambda_{b}X_{a}\qquad\forall a,b=1,\ldots,N
+	\left[X_{a},X_{b}\right]=(\alpha_{a}-\beta_{a})X_{b}-(\alpha_{b}-\beta_{b})X_{a}\qquad\forall a,b=1,\ldots,N
 \end{equation}
 and their action on the boundary vectors are
 \begin{equation}\label{leftBoundary}
@@ -1159,37 +1176,35 @@ Without loss of generality, we further assume that $\langle V^{*}|V\rangle=1$.
 	\end{equation}
 	and using  \eqref{ratesConditions}.
  Similarly for the right boundary  \eqref{rightBoundary} there are only  $N-1$ independent equations. \end{remark} 
-The MPA gives an abstract form of the non-equilibrium steady state in terms of an algebra of operators. However, the computation of exact correlations are in general involving. 
- We will show that the existence of absorbing dual process established in Section \ref{sectionDuality} simplifies substantially the use of commutators in the
- computation. The idea is summarized as follows. We define a sequence of similarity transformation such that 
+The MPA gives an abstract form of the non-equilibrium steady state in terms of an algebra of operators. However, the computation of  correlations are in general involved. 
+
+ In the next Section \ref{subsection-exact} we will show that the existence of absorbing dual process established in Section \ref{sectionDuality} simplifies substantially the algebra of operators. The idea is summarized in the following scheme. 
+ We define a sequence of similarity transformation such that 
  \begin{equation}
  	H\;\xleftrightarrow{S_{1}}\;H^{'}\;\xleftrightarrow{S_{2}}\;H^{''}
  \end{equation} 
  where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Using these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} become simpler. As a consequence, the ground state $|\Psi^{''}\rangle$ of $H^{''}$ can be written explicitly. Finally, reversing the transformations we retrieve $|\Psi\rangle$.
- 
  The first transformation $S_{1}$ is closely related to the duality matrix and we will see that $H^{'}$ is $\widetilde{H}^{T}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. The second transformation $S_{2}$ diagonalizes the right boundary. Finally, the composition  $S_{2} S_{1}$ allows to simplify the commutators of the MPA algebra. 
 \subsection{Explicit correlations in the non-equilibrium steady state}\label{subsection-exact}
-In this section we write a formula for the stationary non-equilibrium steady state correlations between $m$- points of the chain, each of them occupied by a non-empty species, i.e. a species with label from $1$ to $N-1$.
+In this section we write a formula for the stationary non-equilibrium steady state correlations between $m$- points of the chain.
 \begin{theorem}[Explicit non-equilibrium steady state correlations]\label{thm-correlations}
-Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $(x_{1},\ldots,x_{m})$, such that $x_{k}<x_{k+1}$ $\forall k\in \{1,\ldots,m-1\}$. We assume that in each of these points there is a particle of species $a_{k}\in \{1,\ldots,N-1\}$. Then the $m$-point correlations with respect to the non-equilibrium steady state measure $\mu^{\text{NESS}}$ are given by 
+Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $(x_{1},\ldots,x_{m})$, such that $x_{k}<x_{k+1}$ $\forall k\in \{1,\ldots,m-1\}$
+and consider $m$ species $a_{k}\in \{1,\ldots,N-1\}$. Then the $m$-point correlations with respect to the non-equilibrium steady state measure $\mu^{\text{NESS}}$ are given by 
 \begin{equation}\label{exactCorrelations}
-	\begin{split}
-		&\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]\\=&\sum_{t_{1},\ldots,t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(L,c_{1},\ldots,c_{m})\left(\prod_{k=1}^{m}(-1)^{c_{k}-t_{k}}g_{k}(L,x_{k},c_{k},\ldots,c_{m})\right)
-		\end{split}
+\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]\\=\sum_{t_{1},\ldots,t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi})
 \end{equation}
 where
-\begin{equation}\label{powerCoeffSpecies}
-	g_{k}(L,x_{k},c_{k},\ldots,c_{m})=\left(L+2-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}
-\end{equation}
-and 
-\begin{equation}\label{powerCoeffNOspec}
-	f(L,c_{1},\ldots,c_{m})=\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{a})}{\Gamma(2+L)}
-\end{equation}
-Moreover, the absorption probabilities defined in \eqref{absProbabilitiesIntegrable} are
 \begin{equation}\label{abs-probabilities}
-	\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi})=\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(L,c_{1},\ldots,c_{m})\prod_{j=1}^{m}(-1)^{c_{j}-t_{j}}g_{j}(L,x_{j},c_{j},\ldots,c_{m})
+	\mathcal{P}(t_{1},\ldots,t_{m},\bm{\xi})=\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(c_{1},\ldots,c_{m})\prod_{j=1}^{m}(-1)^{c_{j}-t_{j}}g_{j}(x_{j},c_{j},\ldots,c_{m})
 \end{equation}
-where $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$.
+with
+\begin{equation}\label{powerCoeffNOspec}
+	f(c_{1},\ldots,c_{m})=\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{a})}{\Gamma(2+L)}
+\end{equation}
+and
+\begin{equation}\label{powerCoeffSpecies}
+	g_{j}(x_{j},c_{j},\ldots,c_{m})=\left(L+2-x_{j}-\sum_{k=j}^{m}c_{k}\right)^{c_{j}}
+\end{equation}
 \end{theorem}
 \begin{comment}
  Consider . . Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
@@ -1208,7 +1223,7 @@ and
 	f(L,c_{1},\ldots,c_{m})=\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{a})}{\Gamma(2+L)}
 \end{equation}
 \end{comment}
-
+{\color{blue}
 	\begin{remark}
 		The non-equilibrium steady state correlations can also be written as 
 			\begin{equation}\label{exactCorrelation_1}
@@ -1217,6 +1232,7 @@ and
 			\end{split}
 		\end{equation}
 \end{remark}
+}
 \begin{comment}
 \paragraph{Absorption probabilities}
 Knowing the non-equilibrium steady state correlations, we can read-off the absorption probabilities defined in \eqref{absProbabilitiesIntegrable}. They are given by
@@ -1231,8 +1247,8 @@ From \eqref{exactCorrelations} we have
 	$\square$
 \end{flushright}
 \end{comment}
-\subsubsection{Explicit examples of non-equilibrium steady state correlations}
-We give examples  of correlations for up to three points applying formula \eqref{exactCorrelations}.
+\subsubsection{Examples of non-equilibrium steady state correlations}
+We give examples  of correlations for $m=1,2,3$ applying formula \eqref{exactCorrelations}.
 \paragraph{One-point correlations}
 We consider the average with respect to $\mu^{\text{NESS}}$ of the occupation variable of the species $a_{1}\in \{1,\ldots,N-1\}$ at coordinate $x_{1}\in \{1,\ldots,L\}$. %This reads
 %\begin{equation}
@@ -1240,7 +1256,7 @@ We consider the average with respect to $\mu^{\text{NESS}}$ of the occupation va
 %\end{equation}
 Using \eqref{abs-probabilities} we obtain the absorption probabilities 
 \begin{equation}
-	\mathcal{P}(0,\bm{\xi})=1-\frac{(L+1-x_{1})}{(1+L)}\qquad \mathcal{P}(1,\bm{\xi})=\frac{(L+1-x_{1})}{(1+L)}
+	\mathcal{P}(0)=1-\frac{(L+1-x_{1})}{(1+L)}\qquad \mathcal{P}(1)=\frac{(L+1-x_{1})}{(1+L)}
 \end{equation} 
 where $\bm{\xi}=\delta_{a_{1}}^{x_{1}}$. Then, using \eqref{exactCorrelations}, we have
 \begin{equation}\label{one-pts-corr}
