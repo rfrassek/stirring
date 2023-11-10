@@ -1862,7 +1862,7 @@ This is a new configuration at site $x$ where, if $x\in\{q_{1},\ldots,q_{i}\}$, 
  By considering a fixed $\langle\bm{\tau}|$, and by using \eqref{goodTP-S2} we obtain 
 \begin{equation}\label{ABS_intermediate}
 	\begin{split}
-		\Psi^{'}(\bm{\tau})&=\langle \bm{\tau}|(\mathcal{S}_{2}^{-1})^{\otimes L}|\Psi^{''}\rangle=\sum_{\sigma\in \Omega}\Psi^{''}(\bm{\sigma})\prod_{x=1}^L\left[ \delta_{\tau_x,\mu_x}+\delta_{N,\mu_x}\beta_{\tau_x} (1-\delta_{\tau_x,N})\right]\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\tau_{L})\beta_{\tau_{q_{1}}}\\&+
+		\Psi^{'}(\bm{\tau})&=\langle\bm{\tau},\Psi^{'}\rangle=\langle \bm{\tau}|(\mathcal{S}_{2}^{-1})^{\otimes L}|\Psi^{''}\rangle=\sum_{\sigma\in \Omega}\Psi^{''}(\bm{\sigma})\prod_{x=1}^L\left[ \delta_{\tau_x,\sigma_x}+\delta_{N,\sigma_x}\beta_{\tau_x} (1-\delta_{\tau_x,N})\right]\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\tau_{L})\beta_{\tau_{q_{1}}}\\&+
 		\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\underbrace{N}_{q_{2}},\ldots,\tau_{L})\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}\\&+\ldots+\Psi^{''}(N,\ldots,N)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}\dt%^{1-\delta_{\tau_{x},N}}
 	\end{split}
 \end{equation}
@@ -1893,7 +1893,7 @@ We introduce
 \end{equation}
 thus, by using equation \eqref{ResulsBasis}, we have
 \begin{equation}
-	\Psi^{''}(\bm{\mu})=\frac{1}{\left(1+L\right)!}\prod_{x=1}^{L} \lambda_{\mu_{x}}^{(1-c_{x})}\left(1+\sum_{j=x}^{L}c_{j}\right)
+	\Psi^{''}(\bm{\sigma})=\frac{1}{\left(1+L\right)!}\prod_{x=1}^{L} \lambda_{\sigma_{x}}^{(1-c_{x})}\left(1+\sum_{j=x}^{L}c_{j}\right)
 \end{equation}
 \begin{comment}
 	\begin{equation}
