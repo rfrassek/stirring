@@ -1171,7 +1171,7 @@ The MPA gives an abstract form of the non-equilibrium steady state in terms of a
 \subsection{Explicit correlations in the non-equilibrium steady state}\label{subsection-exact}
 In this section we write a formula for the stationary non-equilibrium steady state correlations between $m$- points of the chain, each of them occupied by a non-empty species, i.e. a species with label from $1$ to $N-1$.
 \begin{theorem}[Explicit non-equilibrium steady state correlations]\label{thm-correlations}
-Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $(x_{1},\ldots,x_{m})$, such that $x_{k}<x_{k+1}$ $\forall k\in \{1,\ldots,m-1\}$. We assume that in each of these points there is a particle of species $a_{k}\in \{1,\ldots,N-1\}$. Then the $m$-point correlations with respect to the non-equilibrium steady state measure $\mu^{NESS}$ are given by 
+Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $(x_{1},\ldots,x_{m})$, such that $x_{k}<x_{k+1}$ $\forall k\in \{1,\ldots,m-1\}$. We assume that in each of these points there is a particle of species $a_{k}\in \{1,\ldots,N-1\}$. Then the $m$-point correlations with respect to the non-equilibrium steady state measure $\mu^{\text{NESS}}$ are given by 
 \begin{equation}\label{exactCorrelations}
 	\begin{split}
 		&\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]\\=&\sum_{t_{1},\ldots,t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(L,c_{1},\ldots,c_{m})\left(\prod_{k=1}^{m}(-1)^{c_{k}-t_{k}}g_{k}(L,x_{k},c_{k},\ldots,c_{m})\right)
@@ -1234,9 +1234,9 @@ From \eqref{exactCorrelations} we have
 \subsubsection{Explicit examples of non-equilibrium steady state correlations}
 We give examples  of correlations for up to three points applying formula \eqref{exactCorrelations}.
 \paragraph{One-point correlations}
-We consider the average with respect to $\mu^{NESS}$ of the occupation variable of the species $a_{1}\in \{1,\ldots,N-1\}$ at coordinate $x_{1}\in \{1,\ldots,L\}$. %This reads
+We consider the average with respect to $\mu^{\text{NESS}}$ of the occupation variable of the species $a_{1}\in \{1,\ldots,N-1\}$ at coordinate $x_{1}\in \{1,\ldots,L\}$. %This reads
 %\begin{equation}
-%\mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\right]=\sum_{t_{1}=0}^{1}\alpha_{a_{1}}^{t_{1}}\beta_{a_{1}}^{1-t_{1}}\sum_{c_{1}=t_{1}}^{1}f(L,c_{1})g_{a_{1}}(L,x_{1},c_{1})\dt
+%\mathbb{E}_{\mu^{\text{NESS}}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\right]=\sum_{t_{1}=0}^{1}\alpha_{a_{1}}^{t_{1}}\beta_{a_{1}}^{1-t_{1}}\sum_{c_{1}=t_{1}}^{1}f(L,c_{1})g_{a_{1}}(L,x_{1},c_{1})\dt
 %\end{equation}
 Using \eqref{abs-probabilities} we obtain the absorption probabilities 
 \begin{equation}
@@ -1244,13 +1244,13 @@ Using \eqref{abs-probabilities} we obtain the absorption probabilities
 \end{equation} 
 where $\bm{\xi}=\delta_{a_{1}}^{x_{1}}$. Then, using \eqref{exactCorrelations}, we have
 \begin{equation}\label{one-pts-corr}
-	 \mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\right]=\frac{(L+1-x_{1})}{L+1}(\alpha_{a_{1}}-\beta_{a_{1}})+\beta_{a_{1}}\dt
+	 \mathbb{E}_{\mu^{\text{NESS}}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\right]=\frac{(L+1-x_{1})}{L+1}(\alpha_{a_{1}}-\beta_{a_{1}})+\beta_{a_{1}}\dt
 \end{equation}
 \paragraph{Two-point correlations}
-We consider the average with respect to $\mu^{NESS}$ of the occupation variable of the species  $a_{1},a_{2}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2}\in \{1,\ldots,L\}$ such that $x_{1}< x_{2}$. 
+We consider the average with respect to $\mu^{\text{NESS}}$ of the occupation variable of the species  $a_{1},a_{2}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2}\in \{1,\ldots,L\}$ such that $x_{1}< x_{2}$. 
 %\begin{equation}
 %	\begin{split}
-%		 \mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}\right]= \sum_{t_{1}=0}^{1}\sum_{t_{2}=0}^{1}\left(\prod_{k=1}^{2}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\sum_{c_{1}=t_{1}}^{1}\sum_{c_{2}=t_{2}}^{1}f(L,c_{1},c_{2})\prod_{j=1}^{2}g_{k}(L,x_{j},c_{j},c_{2})\dt
+%		 \mathbb{E}_{\mu^{\text{NESS}}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}\right]= \sum_{t_{1}=0}^{1}\sum_{t_{2}=0}^{1}\left(\prod_{k=1}^{2}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\sum_{c_{1}=t_{1}}^{1}\sum_{c_{2}=t_{2}}^{1}f(L,c_{1},c_{2})\prod_{j=1}^{2}g_{k}(L,x_{j},c_{j},c_{2})\dt
 %	\end{split}
 %\end{equation}
 Using \eqref{abs-probabilities} we obtain the absorption probabilities
@@ -1267,17 +1267,17 @@ where $\bm{\xi}=\delta_{a_{1}}^{x_{1}}+\delta_{a_{2}}^{x_{2}}$.
 Then, by using \eqref{exactCorrelations} we have 
 \begin{equation}
 	\begin{split}
-	 \mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}\right]&=\beta_{a_{1}}\beta_{a_{2}}+\frac{(L+1-y_{1})}{L+1}(\alpha_{a_{1}}-\beta_{a_{1}})\beta_{a_{2}}+\frac{(L+1-x_{2})}{L+1}(\alpha_{a_{2}}-\beta_{a_{2}})\beta_{a_{1}}\\&+\frac{(L-x_{1})(L+1-x_{2})}{L(L+1)}(\alpha_{a_{1}}-\beta_{a_{1}})(\alpha_{a_{2}}-\beta_{a_{2}})\dt
+	 \mathbb{E}_{\mu^{\text{NESS}}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}\right]&=\beta_{a_{1}}\beta_{a_{2}}+\frac{(L+1-y_{1})}{L+1}(\alpha_{a_{1}}-\beta_{a_{1}})\beta_{a_{2}}+\frac{(L+1-x_{2})}{L+1}(\alpha_{a_{2}}-\beta_{a_{2}})\beta_{a_{1}}\\&+\frac{(L-x_{1})(L+1-x_{2})}{L(L+1)}(\alpha_{a_{1}}-\beta_{a_{1}})(\alpha_{a_{2}}-\beta_{a_{2}})\dt
 	\end{split}
 \end{equation}
 Therefore, we compute the second cumulant, i.e. the two-point connected correlation
 \begin{equation}\label{two-pts-corr}
 	\begin{split}
-		 \mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}\right]-\prod_{k=1}^{2}\mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=-\frac{x_{1}(L-x_{2}+1)}{L(L+1)^{2}}\left(\alpha_{a_{1}}-\beta_{a_{1}}\right)\left(\alpha_{a_{2}}-\beta_{a_{2}}\right)\dt
+		 \mathbb{E}_{\mu^{\text{NESS}}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}\right]-\prod_{k=1}^{2}\mathbb{E}_{\mu^{\text{NESS}}}\left[\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=-\frac{x_{1}(L-x_{2}+1)}{L(L+1)^{2}}\left(\alpha_{a_{1}}-\beta_{a_{1}}\right)\left(\alpha_{a_{2}}-\beta_{a_{2}}\right)\dt
 	\end{split}
 \end{equation}
 \paragraph{Three-point correlations}
-We consider the average with respect to $\mu^{NESS}$ of the occupation variable of the species  $a_{1},a_{2},a_{3}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2},x_{3}\in \{1,\ldots,L\}$ such that $x_{1}<x_{2}<x_{3}$. Using \eqref{abs-probabilities} we compute the absorption probabilities 
+We consider the average with respect to $\mu^{\text{NESS}}$ of the occupation variable of the species  $a_{1},a_{2},a_{3}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2},x_{3}\in \{1,\ldots,L\}$ such that $x_{1}<x_{2}<x_{3}$. Using \eqref{abs-probabilities} we compute the absorption probabilities 
 \begin{equation}
 	\begin{split}
 	&\mathcal{P}(0,0,0,\bm{\xi})=\frac{x_{1}(x_{2}-1)(x_{3}-2)}{L(L^{2}-1)}\\
@@ -1296,7 +1296,7 @@ We consider the average with respect to $\mu^{NESS}$ of the occupation variable 
 \end{equation}
 where $\bm{\xi}=\delta_{a_{1}}^{x_{1}}+\delta_{a_{2}}^{x_{2}}+\delta_{a_{3}}^{x_{3}}$ Then, by using \eqref{exactCorrelations} we obtain 
 \begin{align}\label{three-pts-corr}
- \mathbb{E}_{\mu^{NESS}}\left[\prod_{k=1}^{3}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]&=\beta_{a_{1}}\beta_{a_{2}}\beta_{a_{3}}+\frac{(L+1-x_{1})}{(L+1)}(\alpha_{a_{1}}-\beta_{a_{1}})\beta_{a_{2}}\beta_{a_{3}}
+ \mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{3}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]&=\beta_{a_{1}}\beta_{a_{2}}\beta_{a_{3}}+\frac{(L+1-x_{1})}{(L+1)}(\alpha_{a_{1}}-\beta_{a_{1}})\beta_{a_{2}}\beta_{a_{3}}
 	\\&+\nonumber
 	\frac{(L+1-x_{2})}{(L+1)}(\alpha_{a_{2}}-\beta_{a_{2}})\beta_{a_{1}}\beta_{a_{3}}+\frac{(L+1-x_{3})}{(L+1)}(\alpha_{a_{3}}-\beta_{a_{3}})\beta_{a_{1}}\beta_{a_{2}}
 	\\&+\nonumber
@@ -1310,9 +1310,9 @@ where $\bm{\xi}=\delta_{a_{1}}^{x_{1}}+\delta_{a_{2}}^{x_{2}}+\delta_{a_{3}}^{x_
 \end{align}
 Therefore, we compute the third cumulant, i.e. the three-point connected correlation as 
 \begin{align}
-	&\mathbb{E}_{\mu^{NESS}}\left[\prod_{k=1}^{3}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]+2\prod_{k=1}^{3}\mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]\nonumber\\-&\mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}\right]\mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{3}}=a_{3}\}}\right]\nonumber\\
-	-&\mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\mathbbm{1}_{\{\tau_{x_{3}}=a_{3}\}}\right]\mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}\right]\nonumber\\
-	-&\mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}\mathbbm{1}_{\{\tau_{x_{3}}=a_{3}\}}\right]\mathbb{E}_{\mu^{NESS}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\right]\nonumber
+	&\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{3}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]+2\prod_{k=1}^{3}\mathbb{E}_{\mu^{\text{NESS}}}\left[\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]\nonumber\\-&\mathbb{E}_{\mu^{\text{NESS}}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}\right]\mathbb{E}_{\mu^{\text{NESS}}}\left[\mathbbm{1}_{\{\tau_{x_{3}}=a_{3}\}}\right]\nonumber\\
+	-&\mathbb{E}_{\mu^{\text{NESS}}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\mathbbm{1}_{\{\tau_{x_{3}}=a_{3}\}}\right]\mathbb{E}_{\mu^{\text{NESS}}}\left[\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}\right]\nonumber\\
+	-&\mathbb{E}_{\mu^{\text{NESS}}}\left[\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}\mathbbm{1}_{\{\tau_{x_{3}}=a_{3}\}}\right]\mathbb{E}_{\mu^{\text{NESS}}}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\right]\nonumber
 	\\
 	=&-\frac{2x_{1}(L+1-2x_{2})(L+1-x_{3})}{(L+1)^{3}(L-1)L}(\alpha_{a_{1}}-\beta_{a_{1}})(\alpha_{a_{2}}-\beta_{a_{2}})(\alpha_{a_{3}}-\beta_{a_{3}})\dt
 \end{align}
@@ -2360,7 +2360,7 @@ The aim of this section is studying some property of the process when integrabil
 	\item \textit{Reaction-diffusion process}: a further dynamics is added. Particle can now change type. The model is carefully constructed with the goal of having the average densities evolving as a system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is also proved. Subsection \ref{Subsection-RD}
 \end{enumerate}
 \subsection{Duality for a boundary driven chain}\label{Subsection-ss-nonI}
-In this subsection we specialize the results of Subsection \ref{statementDualitySubsection} to a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can still host $\nu\geq 1$ particles, chosen among the $N$ types. Now the dual graph is still a chain, but where two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$) are present. As already pointed out the dual process eventually voids the chain by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites ($0$ and $L+1$) and replacing them by types $N$. This property allows to characterize the steady state non-equilibrium distribution (assuming that it is unique) by the probability that dual particles are absorbed in the extra-sites, then called \textit{absorption probabilities}. \\The process $\left(\bm{n}(t)\right)_{t\geq0}$ is defined on the space
+In this subsection we specialize the results of Subsection \ref{statementDualitySubsection} to a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can host $\nu\geq 1$ particles, chosen among the $N$ types. Now the dual graph is still a chain, but with two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$). As already pointed out the dual process eventually voids the chain by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites ($0$ and $L+1$) and replacing them by types $N$. This property allows to characterize the steady state non-equilibrium distribution (that it is unique) by the probability that dual particles are absorbed in the extra-sites, called \textit{absorption probabilities}. The process $\left(\bm{n}(t)\right)_{t\geq0}$ is defined on the space
 \begin{equation}\label{stateSpace-Chain}
 	\Omega=\bigotimes_{x=1}^{L} \Omega_{x}
 \end{equation} and its generator reads
@@ -2394,8 +2394,6 @@ where $\mathcal{L}_{x,x+1}$ is given by \eqref{Generator} and where the boundary
 \end{equation}
 where $0$ and $L+1$ are the extra-sites.
 \end{comment} 
-
-
 \begin{comment}
 , i.e.
 \begin{equation}\label{dualityFunctionChain}
@@ -2404,24 +2402,32 @@ where $0$ and $L+1$ are the extra-sites.
 where $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{|\alpha|}$ and where $\rho_{\alpha}^{R}=\frac{\beta_{a}}{|\beta|}$.\\
 \end{comment}
 The dual process has absorbing boundaries, i.e. all dual particles are eventually absorbed at $0$ or at $L+1$ with a certain probability. This implies that the chain is eventually voided and the steady state correlations of the original process can be written via the absorption probabilities of the dual process as explained in the following. 
-We call $\mu^{NESS}$ the stationary measure of the the process $(\bm{n}(t))_{t\geq 0}$. For every $m\in\{1,\ldots,L\}$ we consider the dual configuration  $\bm{\xi}=\sum_{k=1}\delta_{a_{k}}^{x_{k}}$ with $x_{k}\in\{1,\ldots,L\}$ and $a_{k}\in \{1,\ldots,N-1\}$ for every $k\in \{1,\ldots,m\}$. The following  equalities holds using duality relation \eqref{duality-expectation}:
+We call $\mu^{\text{NESS}}$ the non-equilibrium stationary state measure of the the process $(\bm{n}(t))_{t\geq 0}$. For every $m\in\{1,\ldots,L\}$ we consider  $x_{k}\in\{1,\ldots,L\}$ and $a_{k}\in \{1,\ldots,N-1\}$ for every $k\in \{1,\ldots,m\}$ and we introduce the dual configuration  $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$ meaning that 
+\begin{equation}
+	\begin{cases}
+		\xi_{a}^{x}=\sum_{y=1}^{L}\sum_{b=1}^{N-1}\mathbbm{1}_{\{y=x_{k}\}}\mathbbm{1}_{\{b=b_{k}\}}\qquad &\text{if}\quad x=x_{k}\;\text{and} \; a=a_{k}\\
+		\xi_{a}^{x}=0\qquad &\text{otherwise}
+	\end{cases}\dt
+\end{equation}
+The duality function \eqref{dualityElements} computed in this dual configurations is 
+\begin{equation}
+	D(\bm{n},\bm{\xi})= \frac{\prod_{k=1}^{m}n_{a_{k}}^{x_{k}}}{C(\nu,m)}\dt
+\end{equation}
+where $C(\nu,m)$ is a constant that depends on the number of correlated particles $m$ and on the maximal occupancy $\nu$. 
+Therefore, up to this constant, $\mathbb{E}_{\mu^{\text{NESS}}}\left[D(\bm{n},\bm{\xi})\right]$ gives the non-equilibrium steady state $m-$points correlations. The following equalities hold using duality relation \eqref{duality-expectation}:
 \begin{equation}\label{ExptationSS}
 	\begin{split}
-		\mathbb{E}_{\mu^{NESS}}\left[D(\bm{n}(t),\bm{\xi})\right]&=\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\bm{\xi})\right]=\lim_{t\to\infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{n},\bm{\xi}(t))\right]
+		\frac{\mathbb{E}_{\mu^{\text{NESS}}}\left[\prod_{k=1}^{m}n_{a_{k}}^{x_{k}}\right]}{C(\nu,m)}&=\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\bm{\xi})\right]=\lim_{t\to\infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{n},\bm{\xi}(t))\right]
 		\\&=
 		\sum_{t_{1}=0}^{|\xi_{1}|}\ldots\sum_{t_{N}=0}^{|\xi_{N}|}\prod_{a=1}^{N-1}\left(\rho_{a}^{L}\right)^{t_{a}}\left(\rho_{a}^{R}\right)^{|\xi_{a}|-t_{a}}\mathcal{P}(t_{1},\ldots,t_{N},\bm{\xi})
 	\end{split}
 \end{equation}
-where  $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{|\alpha|}$, $\rho_{\alpha}^{R}=\frac{\beta_{a}}{|\beta|}$ and where 
+where  $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{|\alpha|}$, $\rho_{\alpha}^{R}=\frac{\beta_{a}}{|\beta|}$ are the boundary densities and 
 \begin{equation}\label{Pass} 
-	\mathcal{P}(i_{1},\ldots,i_{N},\bm{\xi})	=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{a=1}^{N-1}\left(t_{a}\delta_{0}+(|\xi_{a}|-t_{a})\delta_{L+1}\right)| \bm{\xi}(0)=\bm{\xi}\right)
+	\mathcal{P}(t_{1},\ldots,t_{N},\bm{\xi})	=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{a=1}^{N-1}\left(t_{a}\delta_{a}^{0}+(|\xi_{a}|-t_{a})\delta_{a}^{L+1}\right)| \bm{\xi}(0)=\bm{\xi}\right)
 \end{equation}
-are the absorption probabilities for the non-integrable chain, i.e. the probabilities that $t_{a}$ particles of species $a$ are absorbed at $\{0\}$. Here we denoted $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x_{k}}$.
-The duality function \eqref{dualityElements} computed in the dual configurations $\bm{\xi}$ is given by 
-\begin{equation}
-	D(\bm{n},\bm{\xi})= \frac{\prod_{k=1}^{m}n_{a_{k}}^{x_{k}}}{(\nu-m+1)}\dt
-\end{equation}
-Therefore, up to a constant, $\mathbb{E}_{\mu^{\text{stat}}}\left[D(\bm{n},\bm{\xi})\right]$ gives the non-equilibrium steady state $m-$points correlations. This expectation can be computed by \eqref{ExptationSS} once the absorption probabilities are known. However, these absorption probabilities fulfil some difference equations that are not easy to solve. For example, we report in Appendix \ref{appendix-1pts-general} the solution for the simplest case of one point correlations that is exactly solvable, since the single dual particle behaves as an independent random walker. 
+are the absorption probabilities for the non-integrable chain, i.e. the probabilities that $t_{a}$ particles of species $a$ are absorbed at $\{0\}$. Here we denoted $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x}$.
+ This expectation can be computed by \eqref{ExptationSS} once the absorption probabilities are known.  For example, we report in Appendix \ref{appendix-1pts-general} the solution for the simplest case of one point correlations that is exactly solvable, since the single dual particle behaves as an independent random walker. However, these absorption probabilities for higher point correlations fulfil some difference equations that are not easy to solve.
 
 % In the following we specialize the chain to the integrable case $\nu=1$. As it will be shown, in such a situation the non-equilibrium steady state correlations can be computed with different techniques exploiting the integrability of the process (matrix product ansatz and quantum inverse scattering method) combined with duality and, as a by-product, all absorption probabilities can be explicitly found. 
 
@@ -3069,34 +3075,34 @@ indeed, in each coordinate $q_{r}$ with $r=1,\ldots b$ the species $N$ is replac
 	\begin{flushright}
 		$\square$
 	\end{flushright}
-\section{One point correlations for the $\nu\geq 1$ case}\label{appendix-1pts-general}
-We consider $\widehat{\bm{\xi}}=\delta_{s}^{y}$, then 
+\section{One point correlations for $\nu\geq 1$}\label{appendix-1pts-general}
+We take $m=1$ and we fix a site $x\in\{1,\ldots,L\}$ and a species $a\in \{1,\ldots,N-1\}$. We consider the dual configuration $\bm{\xi}=\delta_{a}^{x}$, then 
 \begin{equation}
-	\nu D(\eta,\delta_{s}^{y})=n_{s}^{y}\dt
+	\nu D(\eta,\delta_{a}^{x})=n_{a}^{x}\dt
 \end{equation}
 The average occupation reads
 \begin{equation}\label{OnePtsCORR}
 	\begin{split}
-		\langle n_{s}^{x}\rangle_{\text{stat}}&=\frac{1}{\nu}\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\delta_{s}^{y})\right]\\&=\frac{1}{\nu}\sum_{i_{s}=0}^{1}\left(\rho_{s}^{L}\right)^{i_{s}}\left(\rho_{s}^{R}\right)^{1-i_{s}}\mathbb{P}_{\delta_{s}^{y}}\left(\xi_{\infty}=i_{s}\delta_{0}+(1-i_{s})\delta_{L+1}\right)\dt
+			\mathbb{E}_{\mu^{\text{NESS}}}\left[n_{a}^{x}\right]&=\nu\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\delta_{a}^{x})\right]\\&=\nu\sum_{t_{a}=0}^{1}\left(\rho_{a}^{L}\right)^{t_{s}}\left(\rho_{s}^{R}\right)^{1-t_{s}}\mathbb{P}_{\delta_{a}^{x}}\left(\xi_{\infty}=t_{a}\delta_{0}+(1-t_{a})\delta_{L+1}\right)\dt
 	\end{split}
 \end{equation}
-To explicitly find the result, we aim to determine $\mathcal{P}(1,\delta_{s}^{y})=\mathbb{P}_{\delta_{s}^{y}}\left(\xi_{\infty}=i_{s}\delta_{0}+(1-i_{s})\delta_{L+1}\right)$. This is the probability of a random walker on the chain $\{1,\ldots,L\}$ with absorbing boundaries, therefore, it fulfils the following equations discrete Laplace equation
+To explicitly find the result, we aim to determine $\mathcal{P}(1,\delta_{a}^{x})=\mathbb{P}_{\delta_{a}^{x}}\left(\xi_{\infty}=t_{a}\delta_{a}^{0}+(1-t_{a})\delta_{a}^{L+1}\right)$. This is the probability of a random walker on the chain $\{1,\ldots,L\}$ with absorbing boundaries, therefore, it fulfils the following equations discrete Laplace equation
 \begin{equation}\label{gamblers-ruin}
 	\begin{cases}
-		\Delta_{y}^{L}\mathcal{P}(1,\delta_{s}^{y})=0\\
-		\mathcal{P}(1,\delta_{s}^{1})=\frac{|\alpha|}{1+|\alpha|}+\mathcal{P}(1,\delta_{s}^{2})\frac{1}{1+|\alpha|}\\
-		\mathcal{P}(1,\delta_{s}^{L})=\mathcal{P}(1,\delta_{s}^{L-1})\frac{1}{1+|\beta|}
+		\Delta^{L}\mathcal{P}(1,\delta_{a}^{x})=0\\
+		\mathcal{P}(1,\delta_{a}^{1})=\frac{|\alpha|}{1+|\alpha|}+\mathcal{P}(1,\delta_{a}^{2})\frac{1}{1+|\alpha|}\\
+		\mathcal{P}(1,\delta_{a}^{L})=\mathcal{P}(1,\delta_{a}^{L-1})\frac{1}{1+|\beta|}
 	\end{cases}
 \end{equation}
-where $\Delta_{y}^{L}$ is the discrete Laplace operator on the chain of length $L$. The equations \eqref{gamblers-ruin} can be solved and using $\mathcal{P}(1,\delta_{s}^{y})=1-\mathcal{P}(0,\delta_{s}^{y})$ we obtain 
+where $\Delta^{L}$ is the discrete Laplace operator on the chain of length $L$. The equations \eqref{gamblers-ruin} can be solved and using $\mathcal{P}(1,\delta_{a}^{x})=1-\mathcal{P}(0,\delta_{a}^{x})$ we obtain 
 \begin{equation}
-	\langle n_{s}^{x}\rangle_{\text{stat}}=\frac{1}{\nu}\frac{\alpha_{s}(L|\beta|-|\beta|x+1)+\beta_{s}(|\alpha|x+1-|\alpha|)}{|\alpha||\beta|L-|\alpha||\beta|+|\alpha|+|\beta|}\dt
+	\mathbb{E}_{\mu^{\text{NESS}}}\left[n_{a}^{x}\right]=\nu\frac{\alpha_{a}(L|\beta|-|\beta|x+1)+\beta_{a}(|\alpha|x+1-|\alpha|)}{|\alpha||\beta|L-|\alpha||\beta|+|\alpha|+|\beta|}\dt
 \end{equation}
 \begin{remark}: In case $|\alpha|=|\beta|=\nu=1$ (when the chain is integrable) we have 
 \begin{equation}
-	\langle n_{s}^{x}\rangle_{\text{stat}}=\frac{\alpha_{s}(L-x+1)+\beta_{s}x}{L+1}
+		\mathbb{E}_{\mu^{\text{NESS}}}\left[n_{a}^{x}\right]=\frac{\alpha_{a}(L-x+1)+\beta_{a}x}{L+1}
 \end{equation}
-that is the same result obtained in \cite{vanicat2017exact}. 
+that is the same result obtained in \eqref{one-pts-corr}.  
 \end{remark}
 Already for two-point correlations the computations become more involving and hard to solve.
 \section{Proof of duality of thermalized multi-species stirring}\label{appendix-dualityThermalized}
