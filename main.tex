@@ -2100,7 +2100,7 @@ Therefore, it follows that
 	=&\sum_{\bm{\tau}\in \Omega}\langle \hat{\bm{\xi}}|S_{1}|\bm{\tau}\rangle\langle\bm{\tau}|\Psi\rangle
 	=\langle \hat{\bm{\xi}}|S_{1}|\Psi\rangle
 	=\langle \hat{\bm{\xi}}|\Psi^{'}\rangle\nonumber\\
-	=&\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{a})}{\Gamma(2+L)}\prod_{k=1}^{m}\lambda_{a_{k}}^{c_{k}}\beta_{a_{k}}^{1-c_{k}}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}\nonumber\\
+	=&\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\frac{\Gamma(2+L-\sum_{a=1}^{m}c_{a})}{\Gamma(2+L)}\prod_{k=1}^{m}(\alpha_{a_{k}}-\beta_{a_{k}})^{c_{k}}\beta_{a_{k}}^{1-c_{k}}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}\nonumber\\
 	=&\sum_{c_{1},\ldots,c_{m}=0}^{1}
 	f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}(\alpha_{a_{k}}-\beta_{a_{k}})^{c_{k}}\beta_{a_{k}}^{1-c_{k}}g_{k}(L,y_{k},c_{k},\ldots,c_{m})\co
 \end{align}
@@ -2193,13 +2193,13 @@ thus, \eqref{correlations-SSEP} follows.
 \end{flushright}
 \paragraph{$|\Psi^{''}\rangle$ for SSEP} When we stop distinguishing colours we have that 
 \begin{equation}\label{psiII-SSEP}
-	|\Psi^{''}\rangle=\sum_{q=0}^{L}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
+	|\Psi^{''}\rangle=\sum_{q=0}^{L}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}(\alpha_{1}-\beta_{1})^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
 \end{equation}
 \textbf{Proof:} 
 We introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. Moreover, for each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. Thus, arguing as before and using \eqref{Gamma-product} we have that 
 \begin{align}
 	&\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},2}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[(\alpha_{\tau_{x}}-\beta_{\tau_{x}})\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},2}\right)\right]^{1-\delta_{\tau_{x},2}}\right)%=\lambda_{1}^{q}\prod_{x=1}^{L}\left(2+L-y_{x}-\sum_{j=x}^{L}\delta_{\tau_{j},1}\right)^{\delta_{\tau_{x},1}}
-	=\lambda_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-\sum_{j=x_{k}+1}^{L}\delta_{\tau_{x_{j}},1}\right)}{(2+L-k)}\dt
+	=(\alpha_{1}-\beta_{1})_{1}^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-\sum_{j=x_{k}+1}^{L}\delta_{\tau_{x_{j}},1}\right)}{(2+L-k)}\dt
 \end{align}
 By varying $q$ and $\ell_{1},\ldots,\ell_{q}$, we have a one-to-one mapping with $\bm{\tau}$, therefore we obtain \eqref{psiII-SSEP}.
 \begin{flushright}
@@ -2900,7 +2900,7 @@ The coefficients $\Psi(\bm{\tau})$ can also be written explicitly by replacing $
 		\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{r=1}^{b}\delta_{\tau_{q_{r}},N}\right) 
 		\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}
 		\\&
-	\frac{1}{(1+L)!}\sum_{c_{1}=\delta_{\eta_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\eta_{L},N}}^{1}\prod_{x=1}^{L}\left(1+\sum_{j=x}^{L}c_{j}\right)\lambda_{\eta_{x}}^{1-c_{x}}\beta_{\eta_{x}}^{c_{x}-\delta_{\eta_{x},N}}
+	\frac{1}{(1+L)!}\sum_{c_{1}=\delta_{\eta_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\eta_{L},N}}^{1}\prod_{x=1}^{L}\left(1+\sum_{j=x}^{L}c_{j}\right)(\alpha_{\eta_{x}}-\beta_{\eta_{x}})^{1-c_{x}}\beta_{\eta_{x}}^{c_{x}-\delta_{\eta_{x},N}}
 	\end{split}
 \end{equation}
 where we have introduced, $\forall x\in \{1,\ldots,L\}$
