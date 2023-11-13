@@ -2896,11 +2896,23 @@ The steady state $|\Psi\rangle$ of the Hamiltonian $H$ is given by
 	|\Psi\rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\Psi(\bm{\tau})|\bm{\tau}\rangle
 \end{equation}
 where for every $(\tau_{1},\ldots,\tau_{L})=\bm{\tau}$
+\begin{equation}
+	\begin{split}
+		\Psi(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots i_{q_{b}}=1}^{N-1}\mathbb{E}_{\mu_{\text{NESS}}}\left[\prod_{k=1}^{b}\mathbbm{1}_{\{\sigma_{x_{q_{k}}}=i_{q_{k}}\}}\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\left(\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right)\right]
+	\end{split}
+\end{equation}
+[STILL TO DOUBLE CHECK AND TO WRITE BETTER...]
+where the last expectation is taken with respect to the $\mu^{\text{NESS}}$ of the process $\bm{\sigma}$. Therefore, 
+\begin{equation}
+\mathbb{E}_{\mu_{\text{NESS}}}\left[\prod_{k=1}^{b}\mathbbm{1}_{\{\sigma_{x_{q_{k}}}=i_{q_{k}}\}}\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right]
+\end{equation} are computed using \eqref{exactCorrelations}. \\ \\
+\begin{comment}
 \begin{equation}\label{SteadyState-coeff-implicit}
 	\begin{split}
 		\Psi(\bm{\tau})=&\Psi^{'}(\bm{\tau})\\+&\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
 	\end{split}
 \end{equation}
+\end{comment}
 In \eqref{SteadyState-coeff-implicit} there are two terms. For every configuration $\bm{\tau}$ the first term just gives $\Psi^{'}(\bm{\tau})$ from formula \eqref{ABS}. The second term acts as follows: for every $b\in\{1,\ldots,L\}$, if $\bm{\tau}$ has more then $b$ empty occupations, it changes $b$ of these empty occupations in all possible species from $1$ to $N-1$ and gives contributions $\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})$. If $\bm{\tau}$ has less than $b$ empty occupation we do not see any contribution from this second term.
 \begin{remark}
 	We observe that if $\bm{\tau}$ has only non-empty occupations, i.e. $\tau_{x}\in \{1,\ldots,N-1\}$ for all $x\in \{1,\ldots,L\}$, then 
