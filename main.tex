@@ -2187,7 +2187,7 @@ and $f(c_{1},\ldots,c_{L})$ and $g_{x}(x,c_{x},\ldots,c_{L})$ defined in \eqref{
 	\begin{equation}
 		\Psi(\bm{\tau})=\prod_{a=1}^{N}\beta_{a}^{\sum_{x=1}^{L}\delta_{\tau_{x},a}}
 	\end{equation}
-i.e. the product over sites of multinomial distribution with parameters $\nu=1$ and $p_{a}=\beta_{a}$. This is a direct consequence of the fact that $\beta_{N}=1-(\beta_{1}+\ldots+\beta_{N-1})$. 
+i.e. the product over sites of multinomial distribution with parameters $\nu=1$ and $\beta_{a}$. This is a direct consequence of the fact that $\beta_{N}=1-(\beta_{1}+\ldots+\beta_{N-1})$. 
 \end{remark}
 \begin{remark}[Implicit form of $\Psi(\bm{\tau})$]
 	The elements of the the vector $|\Psi\rangle$ can also be written as a linear combination of elements $\Psi^{'}(\bm{\tau})$ as 
@@ -2224,7 +2224,7 @@ i.e. the product over sites of multinomial distribution with parameters $\nu=1$ 
 	\begin{equation}
 		\Psi(\bm{\tau})=\Psi^{'}(\bm{\tau})=\mathbb{E}_{\mu_{\text{NESS}}}\left[\prod_{x=1}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right]\dt
 	\end{equation}
-where the expectation is take with respect to the $\mu_{\text{NESS}}$ of the process $\bm{\sigma}=(\sigma_{1},\ldots,\sigma_{L})$. 
+where the expectation is taken with respect to the $\mu_{\text{NESS}}$ of the process $\bm{\sigma}=(\sigma_{1},\ldots,\sigma_{L})$. 
 	%As a consequence, one can interpret the $m$-point correlations computed in \eqref{exactCorrelations} as the steady state of a chain of length $m$ where the sites have coordinates $x_{1},\ldots,x_{m}$ and they are occupied by $a_{1},\ldots,a_{m}$. 
 \end{remark}
 \begin{comment}
@@ -2283,7 +2283,7 @@ where the expectation is take with respect to the $\mu_{\text{NESS}}$ of the pro
 	\end{equation}
 	thus
 	\begin{equation}
-		\mathcal{S}_{1}^{-1}|\mu\rangle=|\mu\rangle+(-1)(1-\delta_{\mu,N})|N\rangle
+		\mathcal{S}_{1}^{-1}|\sigma\rangle=|\sigma\rangle+(-1)(1-\delta_{\sigma,N})|N\rangle
 	\end{equation}
 	By taking the tensor product over the chain we obtain 
 	\begin{equation}
@@ -2379,7 +2379,7 @@ where the expectation is take with respect to the $\mu_{\text{NESS}}$ of the pro
 				=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\sum_{\bm{\sigma}\in \Omega}\Psi^{'}(\bm{\sigma})\left(\prod_{x=1\,:\,x\notin\{q_{1},\ldots,q_{b}\}}^{L}\delta_{\tau_{x},\sigma_{x}}\right)\left(\prod_{x\in \{q_{1},\ldots,q_{b}\}}\delta_{\tau_{x},N}\sum_{i_{x}=1}^{N-1}\delta_{\sigma_{x},i_{x}}\right)\nonumber\\
 				=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\mathfrak{M}(\bm{\tau},q_{1},\ldots,q_{b},i_{q_{1}},\ldots,i_{q_{b}})
 			\end{align}
-		In the last equality we have used equation \eqref{ABS_1}. 
+		In the second equality we have rewritten the product by introducing the summation over $b$ and introducing the coordinates $q_{1},\ldots,q_{b}$ and the occupations variables $i_{q_{1}},\ldots,i_{q_{k}}$. In the last equality we have used equation \eqref{ABS_1}. 
 			%	\begin{equation}
 				%		\begin{split}
 					%			\Psi(\bm{\tau}) &=\langle\bm{\tau}|S_{1}^{-1}|\Psi{'}\rangle=\Psi{'}(\tau_{1},\ldots,\tau_{L})+ 
@@ -2416,7 +2416,7 @@ where the expectation is take with respect to the $\mu_{\text{NESS}}$ of the pro
 			A formula for $|\Psi\rangle$ can be also obtain using the conservation of probability in the non-equilibrium steady state. Consider a generic $\bm{\tau}\in \Omega$, then we have 
 				\begin{align}
 					\Psi(\bm{\tau})=&\langle\bm{\tau}|\Psi\rangle=\sum_{\bm{\sigma}\in \Omega}\prod_{x=1}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\langle \bm{\sigma}|\Psi\rangle\nonumber\\
-					=&\sum_{\bm{\sigma}\in \Omega}\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\prod_{x=1\,:\,\tau_{x}=N}^{L}\mathbbm{1}_{\{\sigma_{x}=N\}}\bm{\sigma}|\Psi\rangle\nonumber\\
+					=&\sum_{\bm{\sigma}\in \Omega}\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right)\left(\prod_{x=1\,:\,\tau_{x}=N}^{L}\mathbbm{1}_{\{\sigma_{x}=N\}}\right)\langle\bm{\sigma}|\Psi\rangle\nonumber\\
 					=&\sum_{\bm{\sigma}\in \Omega}\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right)\prod_{x=1\,:\,\tau_{x}=N}^{L}\left(1-\sum_{i_{x}=1}^{N-1}\mathbbm{1}_{\{\sigma_{x}=i_{x}\}}\right)\langle\bm{\sigma}|\Psi\rangle
 					%=&\sum_{\bm{\sigma}\in \Omega}\langle \bm{\sigma}|D|\bm{\xi}\rangle\langle \bm{\sigma}|\Psi\rangle
 				\end{align}
@@ -2476,7 +2476,7 @@ where the expectation is take with respect to the $\mu_{\text{NESS}}$ of the pro
 				&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<i_{q_{b}\leq L}=1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\
 				=&\sum_{b=1}^{L}(-1)^{b}\sum_{r=0}^{L-b}\binom{L-r}{b}\mathbbm{1}_{\{b\leq L-r\}}\sum_{\bm{\tau}\in \Omega_{r}}\Psi^{'}(\bm{\tau})\dt
 			\end{align} 
-			As a consequence, by using again the index $\ell$ in the second term, we have that the normalization condition reads
+			As a consequence we have that the normalization condition reads
 			\begin{align}
 				\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})+\sum_{b=1}^{L}(-1)^{b}\sum_{\ell=0}^{L-b}\binom{L-\ell}{b}\mathbbm{1}_{\{b\leq L-\ell\}}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})=0\dt
 			\end{align}
@@ -2589,6 +2589,7 @@ where
 \begin{equation}\label{PsiI-N2}
 	\Psi^{'}(\bm{\tau})=\sum_{q=0}^{|\bm{\tau}|}(\alpha-\beta)^{q}\beta^{L-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq |\bm{\tau}|}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation}
+and where $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x},1}$ . \\ \\
  \textbf{Proof:} For an arbitrary configuration $\bm{\tau}$, we have $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x},1}$ occupied sites (by indistinguishable particles) and the remaining $L-|\bm{\tau}|$ empty. We select $q\in\{0,\ldots,|\bm{\tau}|\}$ particles among the occupied ones. We call $\ell_{1},\ldots\ell_{q}\in \{1,\ldots,|\tau|\}$ such that $\ell_{1}<\ell_{2}<\ldots<\ell_{q}$. These $(\ell_{i})_{i\in {1,\ldots,q}}$ are labels for the $q$ particles previously selected. For each $\ell_{i}$ we introduce $x_{\ell_{i}}$, i.e. the coordinate where the particle with label $\ell_{i}$ is placed. Thus, we have that 
 %and we rewrite \eqref{ABS_1} as
 %{\color{red}
