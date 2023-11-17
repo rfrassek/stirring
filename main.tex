@@ -525,7 +525,7 @@ with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. Since the maxi
 \end{equation}
 The state space of the process is now 
 \begin{equation}
-	\Omega=\bigotimes_{x=1}^{L}\Omega_{x}\qquad \Omega_{x}=\left\{|\tau_{x}\rangle\;:\; \tau_{x}\in\{1,\ldots,N\}\right\}
+	\Omega^{'}=\bigotimes_{x=1}^{L}\Omega_{x}^{'}\qquad \Omega_{x}^{'}=\left\{|\tau_{x}\rangle\;:\; \tau_{x}\in\{1,\ldots,N\}\right\}
 \end{equation}
 The action of $\mathcal{H}$ amounts to the permutation of the occupations of the two sites, i.e.
 \begin{equation}
@@ -1608,7 +1608,7 @@ with the meaning explained above. It will be useful to introduce also $\bm{\tau}
 \end{comment} 
 The ground state of the Hamiltonian $H^{''}$ is given by 
 \begin{equation}\label{ResulsBasis}
-	|\Psi^{''} \rangle= \sum_{\bm{\tau}\in \Omega}\frac{1}{\left(1+L\right)!}\prod_{x=1}^{L} (\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{(1-\delta_{\tau_{x},N})}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right) |\bm{\tau}\rangle
+	|\Psi^{''} \rangle= \sum_{\bm{\tau}\in \Omega^{'}}\frac{1}{\left(1+L\right)!}\prod_{x=1}^{L} (\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{(1-\delta_{\tau_{x},N})}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right) |\bm{\tau}\rangle
 \end{equation}
 %\begin{equation}\label{ResulsBasis}
 %	|\Psi^{''} \rangle=\sum_{\tau_{1},\ldots,\tau_{L}=1}^{N}\frac{\Gamma\left(2+\sum_{x=1}^{L}\delta_{\tau_{x},N}\right)}{\Gamma\left(2+L\right)}\left(\prod_{x=1}^{L}\left[(\alpha_{\tau_{x}}-\beta_{\tau_{x}})\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\right]^{1-\delta_{\tau_{x},N}}\right)|\mathbf{\bm{\tau}}\rangle
@@ -1683,7 +1683,7 @@ Moreover using \eqref{Xtildes2b} and \eqref{Xes}, the action of $\Xt_{a}$ on the
 \end{equation} 
 Using the transformed operators $(\widetilde{X}_{a})_{a\in\{1,\ldots,N\}}$, the vector $|\Psi^{''}\rangle$ of the matrix product ansatz is written as
 \begin{equation}\label{toDetermineTilde}
-	|\Psi^{''}\rangle = \frac{1}{Z_{L}}\sum_{\bm{\tau}\in \Omega}\langle W|\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
+	|\Psi^{''}\rangle = \frac{1}{Z_{L}}\sum_{\bm{\tau}\in \Omega^{'}}\langle W|\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
 	|V \rangle \,|\bm{\tau}\rangle
 \end{equation}
 where the normalization is given by 
@@ -1695,7 +1695,7 @@ The basis is
 $$
 |\bm{n}\rangle =|n_{1}^{1},\ldots,n_{N}^{1}\rangle \otimes \ldots\otimes |n_{1}^{L},\ldots,n_{N}^{L}\rangle
 $$
-such that, for each site $x\in \{1,\ldots,L\}$, $|n^{x}\rangle=|n_{1}^{x},\ldots,n_{N}^{x}\rangle\in \Omega_{x}$. \\
+such that, for each site $x\in \{1,\ldots,L\}$, $|n^{x}\rangle=|n_{1}^{x},\ldots,n_{N}^{x}\rangle\in \Omega_{x}^{'}$. \\
 \end{comment}
 To determine the eigenvector \eqref{toDetermineTilde}, we need to compute the coefficient $\langle W|\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
 |V \rangle$ and the normalization $Z_{L}$. Using \eqref{commutationsBula} we have
@@ -1768,7 +1768,7 @@ The normalization constant is then given by
 \end{align*}
 Therefore, we write
 \begin{equation}\label{resulEsteady}
-	|\Psi^{''}\rangle= \sum_{\bm{\tau}\in \Omega}\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\tau_{x},N})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}|\bm{\tau}\rangle\dt
+	|\Psi^{''}\rangle= \sum_{\bm{\tau}\in \Omega^{'}}\frac{\Gamma(2+\sum_{x=1}^{L}\delta_{\tau_{x},N})}{\Gamma(L+2)}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}|\bm{\tau}\rangle\dt
 \end{equation}
 We observe that, for all $x$, we have
 \begin{equation}
@@ -1816,7 +1816,7 @@ Therefore, we obtain \eqref{ResulsBasis}.
 \subsubsection{Explicit formula for $|\Psi^{'}\rangle$}\label{subsectionSSdual}
 By knowing the ground state  of the Hamiltonian $H^{''}$ we use \eqref{S2-Inverse} to retrieve the ground state of the Hamiltonian $H^{'}$. The result is the following 
 \begin{equation}\label{ABS-vect}
-    |\Psi^{'}\rangle =\sum_{\bm{\tau}\in \Omega}\Psi^{'}(\bm{\tau})|\bm{\tau}\rangle 
+    |\Psi^{'}\rangle =\sum_{\bm{\tau}\in \Omega^{'}}\Psi^{'}(\bm{\tau})|\bm{\tau}\rangle 
 \end{equation}
 where  
 \begin{equation}\label{ABS}
@@ -1877,10 +1877,10 @@ We introduce $\forall x\in\{1,\ldots,L\}$, for $i\in \{1,\ldots,L\}$ and $q_{1},
 \end{equation}
 This is a new configuration at site $x$ where, if $x\in\{q_{1},\ldots,q_{i}\}$, the occupation $\tau_{x}$ is replaced by $N$, while it is left uncaged if $x\notin \{q_{1},\ldots,q_{i}\}$. The dependence of $\varphi_{x}^{i}(q_{1},\ldots,q_{i})$ with respect to $q_{1},\ldots,q_{i}$ is usually understood for the sake of notation. } 
 \end{comment}
- By considering a fixed $\bm{\tau}\in \Omega$, and by using \eqref{goodTP-S2} by using the explici formula for $|\Psi^{''}\rangle$ we obtain 
+ By considering a fixed $\bm{\tau}\in \Omega^{'}$, and by using \eqref{goodTP-S2} by using the explici formula for $|\Psi^{''}\rangle$ we obtain 
 \begin{equation}\label{ABS_intermediate}
 	\begin{split}
-		\Psi^{'}(\bm{\tau})=&\langle\bm{\tau},\Psi^{'}\rangle=\langle \bm{\tau}|S_{2}^{-1}|\Psi^{''}\rangle\nonumber\\=&\sum_{\bm{\sigma}\in \Omega}\frac{1}{(L+1)!}\prod_{x=1}^L\left((\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}(1-\delta_{\sigma_{j},N})\right)\right)\left[ \delta_{\tau_x,\sigma_x}+\beta_{\tau_x} \delta_{N,\sigma_x} (1-\delta_{\tau_x,N})\right]%\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\tau_{L})\beta_{\tau_{q_{1}}}\\&+
+		\Psi^{'}(\bm{\tau})=&\langle\bm{\tau},\Psi^{'}\rangle=\langle \bm{\tau}|S_{2}^{-1}|\Psi^{''}\rangle\nonumber\\=&\sum_{\bm{\sigma}\in \Omega^{'}}\frac{1}{(L+1)!}\prod_{x=1}^L\left((\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}(1-\delta_{\sigma_{j},N})\right)\right)\left[ \delta_{\tau_x,\sigma_x}+\beta_{\tau_x} \delta_{N,\sigma_x} (1-\delta_{\tau_x,N})\right]%\\&= \Psi^{''}(\bm{\tau})+\sum_{q_{1}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\tau_{L})\beta_{\tau_{q_{1}}}\\&+
 	%	\sum_{q_{1},q_{2}= 1}^{L}(1-\delta_{\tau_{q_{1}},N})(1-\delta_{\tau_{q_{2}},N})\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\underbrace{N}_{q_{2}},\ldots,\tau_{L})\beta_{\tau_{q_{1}}}\beta_{\tau_{q_{2}}}\\&+\ldots+\Psi^{''}(N,\ldots,N)\left(\prod_{x=1}^{L}(1-\delta_{\tau_{x},N})\right)\prod_{x=1}^{L}\beta_{\tau_{x}}\dt%^{1-\delta_{\tau_{x},N}}
 	\end{split}
 \end{equation}
@@ -2092,7 +2092,7 @@ Equation \eqref{ABS_1} will be useful in the following.
 \subsubsection{Formula for exact correlations}\label{correlation-section}
 We consider $m\in \{1,\ldots,L\}$ sites with coordinates $x_{1},\ldots,x_{m}\in \{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for all $k\in \{1,\ldots,m-1\}$. Each of these sites is occupied by $a_{k}\in\{1,\ldots,N-1\}$, we aim to compute
 \begin{equation}
-	\mathbb{E}_{\mu_{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=\sum_{\bm{\tau}\in \Omega}\left(\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right)\langle\bm{\tau}|\Psi\rangle%=\sum_{\bm{\tau}\in \Omega}\left(\prod_{i=1}^{m}\mathbbm{1}_{\{\tau_{y_{i}}=s_{i}\}}\right)\Psi(\bm{\tau})
+	\mathbb{E}_{\mu_{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=\sum_{\bm{\tau}\in \Omega^{'}}\left(\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right)\langle\bm{\tau}|\Psi\rangle%=\sum_{\bm{\tau}\in \Omega^{'}}\left(\prod_{i=1}^{m}\mathbbm{1}_{\{\tau_{y_{i}}=s_{i}\}}\right)\Psi(\bm{\tau})
 \end{equation}
 We observe that 
 \begin{equation}
@@ -2100,8 +2100,8 @@ We observe that
 \end{equation}
 with $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, corresponding to a vector $|\bm{\xi}\rangle$. Thus we have
 \begin{align}
-	\mathbb{E}_{\mu_{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=&\sum_{\bm{\tau}\in \Omega}D(\bm{\tau},\bm{\xi})\langle\bm{\tau}|\Psi\rangle
-	=\sum_{\bm{\tau}\in \Omega}\langle \bm{\tau}|D|\bm{\xi}\rangle\langle\bm{\tau}|\Psi\rangle
+	\mathbb{E}_{\mu_{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=&\sum_{\bm{\tau}\in \Omega^{'}}D(\bm{\tau},\bm{\xi})\langle\bm{\tau}|\Psi\rangle
+	=\sum_{\bm{\tau}\in \Omega^{'}}\langle \bm{\tau}|D|\bm{\xi}\rangle\langle\bm{\tau}|\Psi\rangle
 \end{align}
 Denoting by $|\hat{\bm{\xi}}\rangle=|\xi^{1},\ldots,\xi^{L}\rangle$, i.e. the vector constructed from $|\bm{\xi}\rangle$ by removing the components at sites $0$ and $L+1$ and recalling that  
 \begin{equation}
@@ -2113,9 +2113,9 @@ we have
 \end{equation}
 Therefore, it follows that 
 \begin{align}
-	\mathbb{E}_{\mu_{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=& \sum_{\bm{\tau}\in \Omega}\langle \bm{\tau}|D|\bm{\xi}\rangle\langle\bm{\tau}|\Psi\rangle
-	=\sum_{\bm{\tau}\in \Omega}\langle \bm{\tau}|S_{1}^{T}|\hat{\bm{\xi}}\rangle\langle\bm{\tau}|\Psi\rangle\nonumber\\
-	=&\sum_{\bm{\tau}\in \Omega}\langle \hat{\bm{\xi}}|S_{1}|\bm{\tau}\rangle\langle\bm{\tau}|\Psi\rangle
+	\mathbb{E}_{\mu_{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=& \sum_{\bm{\tau}\in \Omega^{'}}\langle \bm{\tau}|D|\bm{\xi}\rangle\langle\bm{\tau}|\Psi\rangle
+	=\sum_{\bm{\tau}\in \Omega^{'}}\langle \bm{\tau}|S_{1}^{T}|\hat{\bm{\xi}}\rangle\langle\bm{\tau}|\Psi\rangle\nonumber\\
+	=&\sum_{\bm{\tau}\in \Omega^{'}}\langle \hat{\bm{\xi}}|S_{1}|\bm{\tau}\rangle\langle\bm{\tau}|\Psi\rangle
 	=\langle \hat{\bm{\xi}}|S_{1}|\Psi\rangle
 	=\langle \hat{\bm{\xi}}|\Psi^{'}\rangle\nonumber\\
 	=&\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\frac{\Gamma(L+2-\sum_{a=1}^{m}c_{a})}{\Gamma(L+2)}\prod_{k=1}^{m}(\alpha_{a_{k}}-\beta_{a_{k}})^{c_{k}}\beta_{a_{k}}^{1-c_{k}}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}\nonumber\\
@@ -2143,9 +2143,9 @@ In this section we write an explicit formula for the non-equilibrium steady stat
 \begin{proposition}[Non-equilibrium steady state]
 	The non-equilibrium steady state $|\Psi\rangle$ of the Hamiltonian $H$ is given by 
 	\begin{equation}
-		|\Psi\rangle=\sum_{\bm{\tau}\in \Omega}^{N}\Psi(\bm{\tau})|\bm{\tau}\rangle
+		|\Psi\rangle=\sum_{\bm{\tau}\in \Omega^{'}}^{N}\Psi(\bm{\tau})|\bm{\tau}\rangle
 	\end{equation}
-	where, for every $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})\in \Omega$,
+	where, for every $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})\in \Omega^{'}$,
 	\begin{equation}\label{SteadyState-coeff-implicit}
 		\begin{split}
 			\Psi(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots i_{q_{b}}=1}^{N-1}\mathfrak{M}(\bm{\tau},q_{1},\dots,q_{b},i_{q_{1}},\ldots,i_{q_{b}})%\mathbb{E}_{\mu_{\text{NESS}}}\left[\prod_{k=1}^{b}\mathbbm{1}_{\{\sigma_{q_{k}}=i_{q_{k}}\}}\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right]
@@ -2372,11 +2372,11 @@ where the expectation is taken with respect to the $\mu_{\text{NESS}}$ of the pr
 			\end{comment}
 			Considering 
 			\begin{equation}
-				|\Psi^{'}\rangle=\sum_{\bm{\sigma}\in \Omega}\Psi^{'}(\bm{\sigma})|\bm{\sigma}\rangle
+				|\Psi^{'}\rangle=\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})|\bm{\sigma}\rangle
 			\end{equation} we obtain  
 			\begin{align}
-				\langle \bm{\tau}|S_{1}^{-1}|\Psi^{'}\rangle=&\sum_{\bm{\sigma}\in \Omega}\Psi^{'}(\bm{\sigma})\prod_{x=1}^{L}\left(\delta_{\tau_{x},\sigma_{x}}+(-1)\delta_{\tau_{x},N}\sum_{i_{x}=1}^{N-1}\delta_{\sigma_x,i_{x}}\right)\nonumber\\
-				=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\sum_{\bm{\sigma}\in \Omega}\Psi^{'}(\bm{\sigma})\left(\prod_{x=1\,:\,x\notin\{q_{1},\ldots,q_{b}\}}^{L}\delta_{\tau_{x},\sigma_{x}}\right)\left(\prod_{x\in \{q_{1},\ldots,q_{b}\}}\delta_{\tau_{x},N}\sum_{i_{x}=1}^{N-1}\delta_{\sigma_{x},i_{x}}\right)\nonumber\\
+				\langle \bm{\tau}|S_{1}^{-1}|\Psi^{'}\rangle=&\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\prod_{x=1}^{L}\left(\delta_{\tau_{x},\sigma_{x}}+(-1)\delta_{\tau_{x},N}\sum_{i_{x}=1}^{N-1}\delta_{\sigma_x,i_{x}}\right)\nonumber\\
+				=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\left(\prod_{x=1\,:\,x\notin\{q_{1},\ldots,q_{b}\}}^{L}\delta_{\tau_{x},\sigma_{x}}\right)\left(\prod_{x\in \{q_{1},\ldots,q_{b}\}}\delta_{\tau_{x},N}\sum_{i_{x}=1}^{N-1}\delta_{\sigma_{x},i_{x}}\right)\nonumber\\
 				=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\mathfrak{M}(\bm{\tau},q_{1},\ldots,q_{b},i_{q_{1}},\ldots,i_{q_{b}})
 			\end{align}
 		In the second equality we have rewritten the product by introducing the summation over $b$ and introducing the coordinates $q_{1},\ldots,q_{b}$ and the occupations variables $i_{q_{1}},\ldots,i_{q_{k}}$. In the last equality we have used equation \eqref{ABS_1}. 
@@ -2413,12 +2413,12 @@ where the expectation is taken with respect to the $\mu_{\text{NESS}}$ of the pr
 				$\square$
 			\end{flushright}
 			\begin{remark}[Non-equilibrium steady state using exact correlations]
-			A formula for $|\Psi\rangle$ can be also obtain using the conservation of probability in the non-equilibrium steady state. Consider a generic $\bm{\tau}\in \Omega$, then we have 
+			A formula for $|\Psi\rangle$ can be also obtain using the conservation of probability in the non-equilibrium steady state. Consider a generic $\bm{\tau}\in \Omega^{'}$, then we have 
 				\begin{align}
-					\Psi(\bm{\tau})=&\langle\bm{\tau}|\Psi\rangle=\sum_{\bm{\sigma}\in \Omega}\prod_{x=1}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\langle \bm{\sigma}|\Psi\rangle\nonumber\\
-					=&\sum_{\bm{\sigma}\in \Omega}\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right)\left(\prod_{x=1\,:\,\tau_{x}=N}^{L}\mathbbm{1}_{\{\sigma_{x}=N\}}\right)\langle\bm{\sigma}|\Psi\rangle\nonumber\\
-					=&\sum_{\bm{\sigma}\in \Omega}\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right)\prod_{x=1\,:\,\tau_{x}=N}^{L}\left(1-\sum_{i_{x}=1}^{N-1}\mathbbm{1}_{\{\sigma_{x}=i_{x}\}}\right)\langle\bm{\sigma}|\Psi\rangle
-					%=&\sum_{\bm{\sigma}\in \Omega}\langle \bm{\sigma}|D|\bm{\xi}\rangle\langle \bm{\sigma}|\Psi\rangle
+					\Psi(\bm{\tau})=&\langle\bm{\tau}|\Psi\rangle=\sum_{\bm{\sigma}\in \Omega^{'}}\prod_{x=1}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\langle \bm{\sigma}|\Psi\rangle\nonumber\\
+					=&\sum_{\bm{\sigma}\in \Omega^{'}}\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right)\left(\prod_{x=1\,:\,\tau_{x}=N}^{L}\mathbbm{1}_{\{\sigma_{x}=N\}}\right)\langle\bm{\sigma}|\Psi\rangle\nonumber\\
+					=&\sum_{\bm{\sigma}\in \Omega^{'}}\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right)\prod_{x=1\,:\,\tau_{x}=N}^{L}\left(1-\sum_{i_{x}=1}^{N-1}\mathbbm{1}_{\{\sigma_{x}=i_{x}\}}\right)\langle\bm{\sigma}|\Psi\rangle
+					%=&\sum_{\bm{\sigma}\in \Omega^{'}}\langle \bm{\sigma}|D|\bm{\xi}\rangle\langle \bm{\sigma}|\Psi\rangle
 				\end{align}
 				Introducing the summation over $b$, the coordinates $(q_{k})_{k\in {1,\ldots,b}}$ and the indices $i_{q_{k}}$ as in the previous proof and arguing as in Section \ref{correlation-section}, we have that 
 				\begin{equation}
@@ -2446,21 +2446,21 @@ where the expectation is taken with respect to the $\mu_{\text{NESS}}$ of the pr
 			\begin{proposition}[Normalization]
 				The steady state $|\Psi\rangle$ is normalized, i.e.
 				\begin{equation}
-					\sum_{\bm{\tau}\in\Omega}\langle \bm{\tau}|\Psi\rangle=1
+					\sum_{\bm{\tau}\in\Omega^{'}}\langle \bm{\tau}|\Psi\rangle=1
 				\end{equation}
 			\end{proposition}
 			\textbf{Proof}: Considering \eqref{notation-PSI}, we aim to show that 
 			\begin{align}
-				\sum_{\bm{\tau}\in \Omega}\Psi(\bm{\tau})=&\sum_{\bm{\tau}\in \Omega}\Psi^{'}(\bm{\tau})\nonumber\\+&\sum_{\bm{\tau}\in \Omega}\sum_{b=1}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\=&1
+				\sum_{\bm{\tau}\in \Omega^{'}}\Psi(\bm{\tau})=&\sum_{\bm{\tau}\in \Omega^{'}}\Psi^{'}(\bm{\tau})\nonumber\\+&\sum_{\bm{\tau}\in \Omega^{'}}\sum_{b=1}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\=&1
 			\end{align}
 			We introduce an index $\ell\in \{0,\ldots,L\}$ that represents the number of empty occupations for an arbitrary $\bm{\tau}$, i.e. $\ell=\sum_{x=1}^{L}\delta_{\tau_{x},N}$. Moreover, we introduce the space 
 			\begin{equation}
-				\Omega_{\ell}=\left\{\bm{\tau}\in \Omega\;:\;\sum_{x=1}^{L}\delta_{\tau_{x},N}=\ell\right\}
+				\Omega_{\ell}^{'}=\left\{\bm{\tau}\in \Omega^{'}\;:\;\sum_{x=1}^{L}\delta_{\tau_{x},N}=\ell\right\}
 			\end{equation}
 			Therefore, we can rewrite the normalization condition as 
 			\begin{align}
-				&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})\nonumber
-				+\\&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\&=1
+				&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\Psi^{'}(\bm{\tau})\nonumber
+				+\\&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\sum_{b=1}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\&=1
 			\end{align}
 			We first observe that, using \eqref{ABS}, we have that 
 			\begin{equation}
@@ -2468,21 +2468,21 @@ where the expectation is taken with respect to the $\mu_{\text{NESS}}$ of the pr
 			\end{equation}
 			thus, it is enough to prove that
 			\begin{align}
-				&\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})\nonumber
-				+\\&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\&=0
+				&\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\Psi^{'}(\bm{\tau})\nonumber
+				+\\&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\sum_{b=1}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\&=0
 			\end{align}
-			We now consider the second term of the above expression. For a fixed $b$, $\ell$ and $\bm{\tau}$, if the configuration $\bm{\tau}\in \Omega_{\ell}$ has $\ell<b$, then this term do not produce any contribution. On the other hand, if $b\geq \ell$ we obtain all possible configuration in the space $ \Omega_{\ell-b}$, where $b$ of the $\ell$ empties have been replaced by all  species from $1$ to $N-1$. Each of such a configuration is counted $\binom{L-\ell+b}{b}$, since we have added,  in all possible ways, $b$ non-empty occupations to the configuration $\bm{\tau}$ that had originally $L-\ell$ sites occupied with non-empty species. By calling $r=\ell-b$ if $b\leq \ell$ we have that 
+			We now consider the second term of the above expression. For a fixed $b$, $\ell$ and $\bm{\tau}$, if the configuration $\bm{\tau}\in \Omega_{\ell}^{'}$ has $\ell<b$, then this term do not produce any contribution. On the other hand, if $b\geq \ell$ we obtain all possible configuration in the space $ \Omega_{\ell-b}^{'}$, where $b$ of the $\ell$ empties have been replaced by all  species from $1$ to $N-1$. Each of such a configuration is counted $\binom{L-\ell+b}{b}$, since we have added,  in all possible ways, $b$ non-empty occupations to the configuration $\bm{\tau}$ that had originally $L-\ell$ sites occupied with non-empty species. By calling $r=\ell-b$ if $b\leq \ell$ we have that 
 			\begin{align}
-				&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<i_{q_{b}\leq L}=1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\
-				=&\sum_{b=1}^{L}(-1)^{b}\sum_{r=0}^{L-b}\binom{L-r}{b}\mathbbm{1}_{\{b\leq L-r\}}\sum_{\bm{\tau}\in \Omega_{r}}\Psi^{'}(\bm{\tau})\dt
+				&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\sum_{b=1}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<i_{q_{b}\leq L}=1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\
+				=&\sum_{b=1}^{L}(-1)^{b}\sum_{r=0}^{L-b}\binom{L-r}{b}\mathbbm{1}_{\{b\leq L-r\}}\sum_{\bm{\tau}\in \Omega_{r}^{'}}\Psi^{'}(\bm{\tau})\dt
 			\end{align} 
 			As a consequence we have that the normalization condition reads
 			\begin{align}
-				\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})+\sum_{b=1}^{L}(-1)^{b}\sum_{\ell=0}^{L-b}\binom{L-\ell}{b}\mathbbm{1}_{\{b\leq L-\ell\}}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})=0\dt
+				\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\Psi^{'}(\bm{\tau})+\sum_{b=1}^{L}(-1)^{b}\sum_{\ell=0}^{L-b}\binom{L-\ell}{b}\mathbbm{1}_{\{b\leq L-\ell\}}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\Psi^{'}(\bm{\tau})=0\dt
 			\end{align}
 			By exchanging the summations we have 
 			\begin{equation}
-				\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})+\sum_{\ell=0}^{L-1}\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-\ell}{b}\mathbbm{1}_{\{b\leq L-\ell\}}\sum_{\bm{\tau}\in \Omega_{\ell}}\Psi^{'}(\bm{\tau})=0\dt
+				\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\Psi^{'}(\bm{\tau})+\sum_{\ell=0}^{L-1}\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-\ell}{b}\mathbbm{1}_{\{b\leq L-\ell\}}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\Psi^{'}(\bm{\tau})=0\dt
 			\end{equation}
 			It is enough to prove that, for any fixed $\ell\in\{0,\ldots, L-1\}$ we have that 
 			\begin{align}
@@ -2583,7 +2583,7 @@ By varying $q$ and $\ell_{1},\ldots,\ell_{q}$, we have a one-to-one mapping with
 \end{flushright}
 \paragraph{$|\Psi^{'}\rangle$ for SSEP} In the colour-blind case, the ground state of $H^{'}$ reads
 \begin{equation}
-	|\Psi^{'}\rangle=\sum_{\bm{\tau}\in\Omega}\Psi^{'}(\bm{\tau})|\bm{\tau}\rangle
+	|\Psi^{'}\rangle=\sum_{\bm{\tau}\in\Omega^{'}}\Psi^{'}(\bm{\tau})|\bm{\tau}\rangle
 \end{equation}
 where 
 \begin{equation}\label{PsiI-N2}
@@ -2613,7 +2613,7 @@ Therefore, using \eqref{Gamma-product} and by considering all possible $\bm{\tau
 \paragraph{$|\Psi\rangle$ for SSEP}
 In the colour-blind case we have that 
 \begin{equation}
-	|\Psi\rangle=\sum_{\bm{\tau}\in \Omega}\Psi(\bm{\tau})|\bm{\tau}\rangle
+	|\Psi\rangle=\sum_{\bm{\tau}\in \Omega^{'}}\Psi(\bm{\tau})|\bm{\tau}\rangle
 \end{equation}
 where
 \begin{equation}
@@ -2694,37 +2694,37 @@ All in all we have that
 {\color{blue}
 We introduce the space 
 \begin{equation}
-	\widehat{\Omega}^{m}=\left\{\bm{\tau}\in \Omega\;:\; \tau_{y_{1}}=s_{1},\ldots,\tau_{y_{m}}=s_{m}\right\}
+	\widehat{\Omega^{'}}^{m}=\left\{\bm{\tau}\in \Omeg^{'}a\;:\; \tau_{y_{1}}=s_{1},\ldots,\tau_{y_{m}}=s_{m}\right\}
 \end{equation}
 where $m$ occupations are fixed and the other $L-m$ can vary in all possible ways. Therefore, we need to compute 
 \begin{equation}
-\mathbb{E}_{\mu_{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)
+\mathbb{E}_{\mu_{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{y_{k}}=s_{k}\}}\right]=\sum_{\bm{\tau}\in \widehat{\Omega^{'}}^{m}}\Psi(\tau)
 \end{equation}
 Using \eqref{SteadyState-coeff-implicit}, we have that 
 \begin{align}
-&\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)= \sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi^{'}(\tau)\nonumber
+&\sum_{\bm{\tau}\in \widehat{\Omega^{'}}^{m}}\Psi(\tau)= \sum_{\bm{\tau}\in \widehat{\Omega^{'}}^{m}}\Psi^{'}(\tau)\nonumber
 \\+&
-\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
+\sum_{\bm{\tau}\in \widehat{\Omega^{'}}^{m}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
 \end{align}
-We introduce an index $\ell\in \{0,\ldots, L-m\}$ that denotes the number of empty occupations in an arbitrary configuration $\bm{\tau}\in \widehat{\Omega}^{m}$, i.e. $\ell=\sum_{x=1}^{L}\delta_{\tau_{x},N}$. We also introduce the space 
+We introduce an index $\ell\in \{0,\ldots, L-m\}$ that denotes the number of empty occupations in an arbitrary configuration $\bm{\tau}\in \widehat{\Omega^{'}}^{m}$, i.e. $\ell=\sum_{x=1}^{L}\delta_{\tau_{x},N}$. We also introduce the space 
 \begin{equation}
-\widehat{\Omega}^{m}_{\ell}=\left\{\bm{\tau}\in \widehat{\Omega}^{m}\;:\;\sum_{x=1}^{L}\delta_{\tau_{x},N}=\ell\right\}
+\widehat{\Omega^{'}}^{m}_{\ell}=\left\{\bm{\tau}\in \widehat{\Omega^{'}}^{m}\;:\;\sum_{x=1}^{L}\delta_{\tau_{x},N}=\ell\right\}
 \end{equation}
 Then we obtain that 
 \begin{align}
-&\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)= \sum_{\ell=0}^{L-m}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\tau)\nonumber
+&\sum_{\bm{\tau}\in \widehat{\Omega^{'}}^{m}}\Psi(\tau)= \sum_{\ell=0}^{L-m}\sum_{\bm{\tau}\in \widehat{\Omega^{'}}^{m}_{\ell}}\Psi^{'}(\tau)\nonumber
 \\+&
-\sum_{\ell=0}^{L-m}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
+\sum_{\ell=0}^{L-m}\sum_{\bm{\tau}\in \widehat{\Omega^{'}}^{m}_{\ell}}\sum_{b=1}^{L}(-1)^{b}\sum_{q_{1}=1}^{L}\sum_{q_{2}=q_{1}+1}^{L}\ldots\sum_{q_{b}=q_{b-1}+1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}}=1}^{N-1}\ldots\sum_{i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
 \end{align}
-In the first summation on the right-hand-side, there is only one term that has all sites empty but the one in position $y_{1},\ldots,y_{m}$ that are occupied by $s_{1},\ldots,s_{m}$. This is reached when $\ell=L-m$ and we denote it by $\Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)$. The second term on the right-hand-side in the above equation replaces $b$ empty occupations with all possible non-empty species. If the configuration $\bm{\tau}\in\widehat{\Omega}_{\ell}^{m}$ has $\ell<b$ no contributions are seen. Otherwise, if $\ell\geq b$, $b$ empties are changed, obtaining configuration with $r=\ell-b$ voids occupations, with $r\in \{0,\ldots, L-m-b\}$. Each of such a configuration is counted $\binom{L-r-m}{b}$ times. Therefore, we obtain 
+In the first summation on the right-hand-side, there is only one term that has all sites empty but the one in position $y_{1},\ldots,y_{m}$ that are occupied by $s_{1},\ldots,s_{m}$. This is reached when $\ell=L-m$ and we denote it by $\Psi(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)$. The second term on the right-hand-side in the above equation replaces $b$ empty occupations with all possible non-empty species. If the configuration $\bm{\tau}\in\widehat{\Omega^{'}}_{\ell}^{m}$ has $\ell<b$ no contributions are seen. Otherwise, if $\ell\geq b$, $b$ empties are changed, obtaining configuration with $r=\ell-b$ voids occupations, with $r\in \{0,\ldots, L-m-b\}$. Each of such a configuration is counted $\binom{L-r-m}{b}$ times. Therefore, we obtain 
 \begin{align}
-	\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)=& \sum_{\ell=0}^{L-m-1}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\tau)+\Psi^{'}(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)\nonumber
-	\\+&\sum_{b=1}^{L-m}(-1)^{b}\sum_{r=0}^{L-m-b}\binom{L-m-r}{b}\mathbbm{1}_{\{b\leq L-m-r\}}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
+	\sum_{\bm{\tau}\in \widehat{\Omega^{'}}^{m}}\Psi(\tau)=& \sum_{\ell=0}^{L-m-1}\sum_{\bm{\tau}\in \widehat{\Omega^{'}}^{m}_{\ell}}\Psi^{'}(\tau)+\Psi^{'}(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)\nonumber
+	\\+&\sum_{b=1}^{L-m}(-1)^{b}\sum_{r=0}^{L-m-b}\binom{L-m-r}{b}\mathbbm{1}_{\{b\leq L-m-r\}}\sum_{\bm{\tau}\in \widehat{\Omega^{'}}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
 \end{align}
 In the second term of the above equation we exchange the summations obtaining 
 \begin{align}
-\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)=&\sum_{\ell=0}^{L-m-1}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\tau)+\Psi^{'}(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)\nonumber
-\\+&\sum_{\ell=1}^{L-m-1}\sum_{b=1}^{L-m-\ell}(-1)^{b}\binom{L-m-\ell}{b}\mathbbm{1}_{\{b\leq L-m-\ell\}}\sum_{\bm{\tau}\in \widehat{\Omega}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
+\sum_{\bm{\tau}\in \widehat{\Omega^{'}}^{m}}\Psi(\tau)=&\sum_{\ell=0}^{L-m-1}\sum_{\bm{\tau}\in \widehat{\Omega^{'}}^{m}_{\ell}}\Psi^{'}(\tau)+\Psi^{'}(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)\nonumber
+\\+&\sum_{\ell=1}^{L-m-1}\sum_{b=1}^{L-m-\ell}(-1)^{b}\binom{L-m-\ell}{b}\mathbbm{1}_{\{b\leq L-m-\ell\}}\sum_{\bm{\tau}\in \widehat{\Omega^{'}}^{m}_{\ell}}\Psi^{'}(\bm{\tau})
 \end{align}
 Using the binomial theorem, for every $\ell\in \{0,\ldots, L-m-1\}$, we have that
 \begin{equation}
@@ -2732,7 +2732,7 @@ Using the binomial theorem, for every $\ell\in \{0,\ldots, L-m-1\}$, we have tha
 \end{equation}
 thus, we obtain 
 \begin{equation}
-\sum_{\bm{\tau}\in \widehat{\Omega}^{m}}\Psi(\tau)=\Psi^{'}(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)
+\sum_{\bm{\tau}\in \widehat{\Omega^{'}}^{m}}\Psi(\tau)=\Psi^{'}(N,\ldots,\underbrace{s_{1}}_{y_{1}},\ldots,\underbrace{s_{m}}_{y_{m}},\ldots,N)
 \end{equation}
 that implies 
 \begin{equation}\label{shorter-chain}
