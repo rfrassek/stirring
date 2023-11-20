@@ -1188,8 +1188,8 @@ The MPA gives an abstract form of the non-equilibrium steady state in terms of a
  \begin{equation}
  	H\;\xleftrightarrow{S_{1}}\;H^{'}\;\xleftrightarrow{S_{2}}\;H^{''}
  \end{equation} 
- where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Using these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} become simpler. As a consequence, the ground state $|\Psi^{''}\rangle$ of $H^{''}$ can be written explicitly. Finally, reversing the transformations we retrieve $|\Psi\rangle$.
- The first transformation $S_{1}$ is closely related to the duality matrix and we will see that $H^{'}$ is $\widetilde{H}^{T}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic. The second transformation $S_{2}$ diagonalizes the right boundary. Finally, the composition  $S_{2} S_{1}$ allows to simplify the commutators of the MPA algebra. 
+ where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Using these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} become simpler. As a consequence, the ground state $|\Psi^{''}\rangle$ of $H^{''}$ can be written explicitly. Finally, reversing the transformations we retrieve $|\Psi\rangle$, i.e. the vector whose components are the probabilities of a certain configuration of the process in the non-equilibrium steady state.
+ The first transformation $S_{1}$ is closely related to the duality matrix and we will see that $H^{'}$ is $\widetilde{H}^{T}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic, however it turns out that the components of its eigenvector with zero eigenvalue $|\Psi^{'}\rangle$ are the correlation in the non-equilibrium steady state. The second transformation $S_{2}$ diagonalizes the right boundary. Finally, the composition  $S_{2} S_{1}$ allows to simplify the commutators of the MPA algebra. 
 \subsection{Explicit correlations in the non-equilibrium steady state}\label{subsection-exact}
 In this section we write a formula for the stationary non-equilibrium steady state correlations between $m$- points of the chain.
 \begin{theorem}[Correlations in the non-equilibrium steady state]\label{thm-correlations}
@@ -2106,11 +2106,11 @@ We consider $m\in \{1,\ldots,L\}$ sites with coordinates $x_{1},\ldots,x_{m}\in 
 \begin{equation}
 	\mathbb{E}_{\mu}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=\sum_{\bm{\tau}\in \Omega^{'}}\left(\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right)\langle\bm{\tau}|\Psi\rangle%=\sum_{\bm{\tau}\in \Omega^{'}}\left(\prod_{i=1}^{m}\mathbbm{1}_{\{\tau_{y_{i}}=s_{i}\}}\right)\Psi(\bm{\tau})
 \end{equation}
-We observe that 
+We fix $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, corresponding to a vector $|\bm{\xi}\rangle$ and we have 
 \begin{equation}
 	\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}=D(\bm{\tau},\bm{\xi})
 \end{equation}
-with $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, corresponding to a vector $|\bm{\xi}\rangle$. Thus we have
+Thus it follows that 
 \begin{align}
 	\mathbb{E}_{\mu}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=&\sum_{\bm{\tau}\in \Omega^{'}}D(\bm{\tau},\bm{\xi})\langle\bm{\tau}|\Psi\rangle
 	=\sum_{\bm{\tau}\in \Omega^{'}}\langle \bm{\tau}|D|\bm{\xi}\rangle\langle\bm{\tau}|\Psi\rangle
@@ -2123,19 +2123,22 @@ we have
 \begin{equation}
 	\langle \bm{\tau}|S_{1}^{T}|\hat{\bm{\xi}}\rangle=\langle \bm{\tau}|D|\bm{\xi}\rangle \dt
 \end{equation}
-Therefore, it follows that 
+Therefore, it follows that, using the resolution of the identity
 \begin{align}
 	\mathbb{E}_{\mu}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=& \sum_{\bm{\tau}\in \Omega^{'}}\langle \bm{\tau}|D|\bm{\xi}\rangle\langle\bm{\tau}|\Psi\rangle
 	=\sum_{\bm{\tau}\in \Omega^{'}}\langle \bm{\tau}|S_{1}^{T}|\hat{\bm{\xi}}\rangle\langle\bm{\tau}|\Psi\rangle\nonumber\\
 	=&\sum_{\bm{\tau}\in \Omega^{'}}\langle \hat{\bm{\xi}}|S_{1}|\bm{\tau}\rangle\langle\bm{\tau}|\Psi\rangle
 	=\langle \hat{\bm{\xi}}|S_{1}|\Psi\rangle
-	=\langle \hat{\bm{\xi}}|\Psi^{'}\rangle\nonumber\\
-	=&\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\frac{\Gamma(L+2-\sum_{a=1}^{m}c_{a})}{\Gamma(L+2)}\prod_{k=1}^{m}(\alpha_{a_{k}}-\beta_{a_{k}})^{c_{k}}\beta_{a_{k}}^{1-c_{k}}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}\nonumber\\
-	=&\sum_{c_{1},\ldots,c_{m}=0}^{1}
-	f(c_{1},\ldots,c_{m})\prod_{k=1}^{m}(\alpha_{a_{k}}-\beta_{a_{k}})^{c_{k}}\beta_{a_{k}}^{1-c_{k}}g_{k}(y_{k},c_{k},\ldots,c_{m})\co
+	=\langle \hat{\bm{\xi}}|\Psi^{'}\rangle
 \end{align}
-where in the second line we have used the resolution of the identity, in the last line we have used \eqref{ABS_1} and in the last equality we have used the definition of \eqref{powerCoeffSpecies} and \eqref{powerCoeffNOspec}.  
-Using the binomial theorem we have that 
+Using $\Psi^{'}(\bm{\tau})$ in \eqref{ABS_1} we have 
+\begin{align}
+	\mathbb{E}_{\mu}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=&\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\frac{\Gamma(L+2-\sum_{a=1}^{m}c_{a})}{\Gamma(L+2)}\prod_{k=1}^{m}(\alpha_{a_{k}}-\beta_{a_{k}})^{c_{k}}\beta_{a_{k}}^{1-c_{k}}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}\nonumber\\
+	=&\sum_{c_{1},\ldots,c_{m}=0}^{1}
+	f(c_{1},\ldots,c_{m})\prod_{k=1}^{m}(\alpha_{a_{k}}-\beta_{a_{k}})^{c_{k}}\beta_{a_{k}}^{1-c_{k}}g_{k}(x_{k},c_{k},\ldots,c_{m})\co
+\end{align}
+where in the last equality we have used the definition of \eqref{powerCoeffNOspec} and \eqref{powerCoeffSpecies}.
+As a last step, using the binomial theorem, we rewrite the previous expression as a polynomial in the boundary densities: 
 \begin{align}
 	&\mathbb{E}_{\mu}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]\\=&
 	\sum_{c_{1},\ldots,c_{m}=0}^{1}
@@ -2150,26 +2153,25 @@ From third to fourth line we have changed the summation order. Therefore, compar
 \begin{flushright}
 	$\square$
 \end{flushright}
-\subsection{Explicit steady state of $H$}\label{appB}
+\subsection{Steady state}\label{appB}
 In this section we write an explicit formula for the non-equilibrium steady state of $H$ defined in \eqref{definition-SteadyStateH}. This formula follows from the ground state $|\Psi^{'}\rangle$ found in \eqref{ABS_1}.
-\begin{proposition}[Non-equilibrium steady state]
+\begin{corollary}[Non-equilibrium steady state]
 	The non-equilibrium steady state $|\Psi\rangle$ of the Hamiltonian $H$ is given by 
 	\begin{equation}
 		|\Psi\rangle=\sum_{\bm{\tau}\in \Omega^{'}}^{N}\Psi(\bm{\tau})|\bm{\tau}\rangle
 	\end{equation}
 	where, for every $\bm{\tau}=(\tau_{1},\ldots,\tau_{L})\in \Omega^{'}$,
-	\begin{equation}\label{SteadyState-coeff-implicit}
-		\begin{split}
-			\Psi(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots i_{q_{b}}=1}^{N-1}\mathfrak{M}(\bm{\tau},q_{1},\dots,q_{b},i_{q_{1}},\ldots,i_{q_{b}})%\mathbb{E}_{\mu}\left[\prod_{k=1}^{b}\mathbbm{1}_{\{\sigma_{q_{k}}=i_{q_{k}}\}}\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right]
-		\end{split}
-	\end{equation}
-	and where 
-		\begin{equation}
-		\begin{split}
-			\mathfrak{M}(\bm{\tau},q_{1},\ldots,q_{b},i_{q_{1}},\ldots,i_{q_{b}})=&\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}+Q(1)}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}+Q(L)}f(c_{1},\ldots,c_{L})\prod_{x=1}^{L}g_{x}(x,c_{x},\ldots,c_{L})\\&
-			\;\;\;\;\;\;\left(\prod_{k=1}^{b}\left(\alpha_{i_{q_{k}}}-\beta_{i_{q_{k}}}\right)^{c_{q_{k}}}\beta_{i_{q_{k}}}^{1-c_{q_{k}}}\right)\left(\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{c_{x}}\beta_{\tau_{x}}^{(1-c_{x}-\delta_{\tau_{x},N})}\right)
-		\end{split}
-	\end{equation}
+\begin{equation}\label{SteadyState-coeff-implicit}
+	\Psi(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\mathbb{E}_{\mu}\left[\prod_{k=1}^{b}\mathbbm{1}_{\{\sigma_{q_{k}}=i_{q_{k}}\}}\prod_{x=1\,:\,x\notin \{q_{1},\ldots,q_{b}\}}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right]
+\end{equation}
+where the expectation is taken with respect to the non-equilibrium steady state distribution of the variables $\bm{\sigma}$ and can be computed using \eqref{exactCorrelations}. 
+%	and where 
+%		\begin{equation}
+%		\begin{split}
+	%		\mathfrak{M}(\bm{\tau},q_{1},\ldots,q_{b},i_{q_{1}},\ldots,i_{q_{b}})=&\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}+Q(1)}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}+Q(L)}f(c_{1},\ldots,c_{L})\prod_{x=1}^{L}g_{x}(x,c_{x},\ldots,c_{L})\\&
+%			\;\;\;\;\;\;\left(\prod_{k=1}^{b}\left(\alpha_{i_{q_{k}}}-\beta_{i_{q_{k}}}\right)^{c_{q_{k}}}\beta_{i_{q_{k}}}^{1-c_{q_{k}}}\right)\left(\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{c_{x}}\beta_{\tau_{x}}^{(1-c_{x}-\delta_{\tau_{x},N})}\right)
+%		\end{split}
+%	\end{equation}
 %	\begin{equation}
 	%	\begin{split}
 	%		\mathfrak{M}(\bm{\tau},q_{1},\ldots,q_{b},i_{q_{1}},\ldots,i_{q_{b}})=&\sum_{t_{1}=0}^{1-\delta_{\tau_{1},N}+Q(1)}\ldots\sum_{t_{L}=0}^{1-\delta_{\tau_{L},N}+Q(L)}\left(\prod_{k=1}^{b}\alpha_{i_{q_{k}}}^{t_{q_{k}}}\beta_{i_{q_{k}}}^{1-t_{q_{k}}}\right)\left(\prod_{x=1}^{L}\alpha_{\tau_{x}}^{t_{x}}\beta_{\tau_{x}}^{(1-t_{x}-\delta_{\tau_{x},N})}\right)\\&
@@ -2182,35 +2184,36 @@ In this section we write an explicit formula for the non-equilibrium steady stat
 	%	&\left(\prod_{k=1}^{b}\left(\alpha_{i_{q_{k}}}-\beta_{i_{q_{k}}}\right)^{1-c_{q_{k}}}\beta_{i_{q_{k}}}^{c_{q_{k}}}\right)\left(\prod_{x=1\,:\,x\notin\{q_{1},\ldots,q_{b}\}}^{L}(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-c_{x}}\beta_{\tau_{x}}^{c_{x}-\delta_{\tau_{x},N}}\right)
 %	\end{split}
 %	\end{equation}
-	with
-	\begin{equation}
-		Q(x)=\sum_{k=1}^{b}\delta_{x,q_{k}}
-	\end{equation}
-and $f(c_{1},\ldots,c_{L})$ and $g_{x}(x,c_{x},\ldots,c_{L})$ defined in \eqref{powerCoeffNOspec} and \eqref{powerCoeffSpecies} respectively. 
+%	with
+%	\begin{equation}
+%		Q(x)=\sum_{k=1}^{b}\delta_{x,q_{k}}
+%	\end{equation}
+%and $f(c_{1},\ldots,c_{L})$ and $g_{x}(x,c_{x},\ldots,c_{L})$ defined in \eqref{powerCoeffNOspec} and \eqref{powerCoeffSpecies} respectively. 
 %	\begin{equation}
 %	Q(x)=1-\sum_{k=1}^{b}\delta_{x,q_{k}}
 %\end{equation}
 %	Moreover, $\Psi(\bm{\tau})$ are interpreted as the probabilities in the steady state of having a configuration $\bm{\tau}$, i.e.
 %	\begin{equation}
 %%	\end{equation}
-\end{proposition} 
+\end{corollary} 
 \begin{remark}[Equilibrium case]
-	In the equilibrium case, when  $\alpha_{a}=\beta_{a}$ for all $a\in\{1,\ldots,N\}$ only the terms with $c_{x}=0$ do survive in \eqref{SteadyState-coeff-implicit}. Therefore we obtain 
+	In the equilibrium case, when  $\alpha_{a}=\beta_{a}$ for all $a\in\{1,\ldots,N\}$ we obtain 
 	\begin{equation}
 		\Psi(\bm{\tau})=\prod_{a=1}^{N}\beta_{a}^{\sum_{x=1}^{L}\delta_{\tau_{x},a}}
 	\end{equation}
 i.e. the product over sites of multinomial distribution with parameters $\nu=1$ and $\beta_{a}$. This is a direct consequence of the fact that $\beta_{N}=1-(\beta_{1}+\ldots+\beta_{N-1})$. 
 \end{remark}
+\begin{comment}
 \begin{remark}[Implicit form of $\Psi(\bm{\tau})$]
 	The elements of the the vector $|\Psi\rangle$ can also be written as a linear combination of elements $\Psi^{'}(\bm{\tau})$ as 
 	\begin{equation}\label{implicit-steadyState}
 		\Psi(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
 	\end{equation}
-	where
-	\begin{equation}\label{notation-PSI}
+	where the notation
+	\begin{equation}%\label{notation-PSI}
 		\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
 	\end{equation}
-	meaning that, for all $b\in \{0,\ldots,L\}$ and for all $1\leq q_{1}<\ldots<q_{b}\leq L$,
+	means that, for all $b\in \{0,\ldots,L\}$ and for all $1\leq q_{1}<\ldots<q_{b}\leq L$,
 	\begin{equation}
 		\begin{cases}
 			\tau_{x}=i_{x}\qquad &\text{if}\quad x\in\{q_{1},\ldots,q_{b}\}\\
@@ -2218,7 +2221,7 @@ i.e. the product over sites of multinomial distribution with parameters $\nu=1$ 
 		\end{cases}
 	\end{equation}	
 \end{remark}
-
+\end{comment}
 %Therefore, 
 %\begin{equation}
 %\mathbb{E}_{\mu}\left[\prod_{k=1}^{b}\mathbbm{1}_{\{\sigma_{x_{q_{k}}}=i_{q_{k}}\}}\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right]
@@ -2389,9 +2392,23 @@ where the expectation is taken with respect to the $\mu$ of the process $\bm{\si
 			\begin{align}
 				\langle \bm{\tau}|S_{1}^{-1}|\Psi^{'}\rangle=&\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\prod_{x=1}^{L}\left(\delta_{\tau_{x},\sigma_{x}}+(-1)\delta_{\tau_{x},N}\sum_{i_{x}=1}^{N-1}\delta_{\sigma_x,i_{x}}\right)\nonumber\\
 				=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\left(\prod_{x=1\,:\,x\notin\{q_{1},\ldots,q_{b}\}}^{L}\delta_{\tau_{x},\sigma_{x}}\right)\left(\prod_{x\in \{q_{1},\ldots,q_{b}\}}\delta_{\tau_{x},N}\sum_{i_{x}=1}^{N-1}\delta_{\sigma_{x},i_{x}}\right)\nonumber\\
-				=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\mathfrak{M}(\bm{\tau},q_{1},\ldots,q_{b},i_{q_{1}},\ldots,i_{q_{b}})
+				=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
 			\end{align}
-		In the second equality we have rewritten the product by introducing the summation over $b$ and introducing the coordinates $q_{1},\ldots,q_{b}$ and the occupations variables $i_{q_{1}},\ldots,i_{q_{k}}$. In the last equality we have used equation \eqref{ABS_1}. 
+where the notation
+		\begin{equation}\label{notation-PSI}
+			\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
+		\end{equation}
+		means that, for all $b\in \{0,\ldots,L\}$ and for all $1\leq q_{1}<\ldots<q_{b}\leq L$,
+		\begin{equation}
+			\begin{cases}
+				\tau_{x}=i_{x}\qquad &\text{if}\quad x\in\{q_{1},\ldots,q_{b}\}\\
+				\tau_{x}=\tau_{x}\qquad &\text{if}\quad \text{otherwise}
+			\end{cases}
+		\end{equation}
+		In the second equality we have rewritten the product by introducing the summation over $b$, the coordinates $q_{1},\ldots,q_{b}$ and the occupations variables $i_{q_{1}},\ldots,i_{q_{k}}$. In the last equality we have summed over all possible $\sigma\in \Omega^{'}$. From Section \ref{correlation-section} we recall that the components of $|\Psi^{'}\rangle$ are the correlation in the non-equilibrium steady state. Thus, we have that  
+			\begin{equation}
+			\Psi(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\mathbb{E}_{\mu}\left[\prod_{k=1}^{b}\mathbbm{1}_{\{\sigma_{q_{k}}=i_{q_{k}}\}}\prod_{x=1\,:\,x\notin \{q_{1},\ldots,q_{b}\}}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right]
+		\end{equation}
 			%	\begin{equation}
 				%		\begin{split}
 					%			\Psi(\bm{\tau}) &=\langle\bm{\tau}|S_{1}^{-1}|\Psi{'}\rangle=\Psi{'}(\tau_{1},\ldots,\tau_{L})+ 
@@ -2424,6 +2441,7 @@ where the expectation is taken with respect to the $\mu$ of the process $\bm{\si
 			\begin{flushright}
 				$\square$
 			\end{flushright}
+		\begin{comment}
 			\begin{remark}[Non-equilibrium steady state using exact correlations]
 			A formula for $|\Psi\rangle$ can be also obtain using the conservation of probability in the non-equilibrium steady state. Consider a generic $\bm{\tau}\in \Omega^{'}$, then we have 
 				\begin{align}
@@ -2437,6 +2455,8 @@ where the expectation is taken with respect to the $\mu$ of the process $\bm{\si
 				\Psi(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\mathbb{E}_{\mu}\left[\prod_{k=1}^{b}\mathbbm{1}_{\{\sigma_{q_{k}}=i_{q_{k}}\}}\prod_{x=1\,:\,x\notin \{q_{1},\ldots,q_{k}\}}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right]
 				\end{equation}
 			where the expectation is taken with respect to the non-equilibrium steady state distribution of the variables $\bm{\sigma}$ and can be computed using \eqref{exactCorrelations}. 
+				\end{remark}
+		\end{comment}
 				\begin{comment}
 					where $\bm{\xi}=(\xi^{0},\xi^{1},\ldots,\xi^{L},\xi^{L+1})$ is a dual configuration given by 
 					\begin{equation}
@@ -2454,60 +2474,8 @@ where the expectation is taken with respect to the $\mu$ of the process $\bm{\si
 						\Psi(\bm{\tau})=\langle \hat{\bm{\xi}}|\Psi^{'}\rangle=\mathbb{E}_{\mu}\left[\prod_{k=1}^{b}\mathbbm{1}_{\{\sigma_{q_{k}}=i_{q_{k}}\}}\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right]
 					\end{equation}
 				\end{comment}
-			\end{remark}
-			\begin{proposition}[Normalization]
-				The steady state $|\Psi\rangle$ is normalized, i.e.
-				\begin{equation}
-					\sum_{\bm{\tau}\in\Omega^{'}}\langle \bm{\tau}|\Psi\rangle=1
-				\end{equation}
-			\end{proposition}
-			\textbf{Proof}: Considering \eqref{notation-PSI}, we aim to show that 
-			\begin{align}
-				\sum_{\bm{\tau}\in \Omega^{'}}\Psi(\bm{\tau})=&\sum_{\bm{\tau}\in \Omega^{'}}\Psi^{'}(\bm{\tau})\nonumber\\+&\sum_{\bm{\tau}\in \Omega^{'}}\sum_{b=1}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\=&1
-			\end{align}
-			We introduce an index $\ell\in \{0,\ldots,L\}$ that represents the number of empty occupations for an arbitrary $\bm{\tau}$, i.e. $\ell=\sum_{x=1}^{L}\delta_{\tau_{x},N}$. Moreover, we introduce the space 
-			\begin{equation}
-				\Omega_{\ell}^{'}=\left\{\bm{\tau}\in \Omega^{'}\;:\;\sum_{x=1}^{L}\delta_{\tau_{x},N}=\ell\right\}
-			\end{equation}
-			Therefore, we can rewrite the normalization condition as 
-			\begin{align}
-				&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\Psi^{'}(\bm{\tau})\nonumber
-				+\\&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\sum_{b=1}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\&=1
-			\end{align}
-			We first observe that, using \eqref{ABS}, we have that 
-			\begin{equation}
-				\Psi^{'}(N,\ldots,N)=1\co
-			\end{equation}
-			thus, it is enough to prove that
-			\begin{align}
-				&\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\Psi^{'}(\bm{\tau})\nonumber
-				+\\&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\sum_{b=1}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\&=0
-			\end{align}
-			We now consider the second term of the above expression. For a fixed $b$, $\ell$ and $\bm{\tau}$, if the configuration $\bm{\tau}\in \Omega_{\ell}^{'}$ has $\ell<b$, then this term do not produce any contribution. On the other hand, if $b\geq \ell$ we obtain all possible configuration in the space $ \Omega_{\ell-b}^{'}$, where $b$ of the $\ell$ empties have been replaced by all  species from $1$ to $N-1$. Each of such a configuration is counted $\binom{L-\ell+b}{b}$, since we have added,  in all possible ways, $b$ non-empty occupations to the configuration $\bm{\tau}$ that had originally $L-\ell$ sites occupied with non-empty species. By calling $r=\ell-b$ if $b\leq \ell$ we have that 
-			\begin{align}
-				&\sum_{\ell=0}^{L}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\sum_{b=1}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<i_{q_{b}\leq L}=1}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})\nonumber\\
-				=&\sum_{b=1}^{L}(-1)^{b}\sum_{r=0}^{L-b}\binom{L-r}{b}\mathbbm{1}_{\{b\leq L-r\}}\sum_{\bm{\tau}\in \Omega_{r}^{'}}\Psi^{'}(\bm{\tau})\dt
-			\end{align} 
-			As a consequence we have that the normalization condition reads
-			\begin{align}
-				\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\Psi^{'}(\bm{\tau})+\sum_{b=1}^{L}(-1)^{b}\sum_{\ell=0}^{L-b}\binom{L-\ell}{b}\mathbbm{1}_{\{b\leq L-\ell\}}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\Psi^{'}(\bm{\tau})=0\dt
-			\end{align}
-			By exchanging the summations we have 
-			\begin{equation}
-				\sum_{\ell=0}^{L-1}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\Psi^{'}(\bm{\tau})+\sum_{\ell=0}^{L-1}\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-\ell}{b}\mathbbm{1}_{\{b\leq L-\ell\}}\sum_{\bm{\tau}\in \Omega_{\ell}^{'}}\Psi^{'}(\bm{\tau})=0\dt
-			\end{equation}
-			It is enough to prove that, for any fixed $\ell\in\{0,\ldots, L-1\}$ we have that 
-			\begin{align}
-				1+\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-\ell}{b}=0
-			\end{align}
-			This is true because of the binomial theorem, indeed 
-			\begin{equation}
-				1+\sum_{b=1}^{L-\ell}(-1)^{b}\binom{L-\ell}{b}=\sum_{b=0}^{L-\ell}(-1)^{b}\binom{L-\ell}{b}=(1-1)^{L-\ell}=0
-			\end{equation}
-			that implies the normalization of the state $|\Psi\rangle$. 
-			\begin{flushright}
-				$\square$
-			\end{flushright}
+		
+		
 \subsection{The colour-blind case}
 The computations made for the multi-species stirring process can be specialized for the colour-blind case $N=2$, i.e. when only one type of non-empty particle is considered. In this situation we retrieve the SSEP, that was already solved with the quantum inverse scattering method in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations of SEEP: 
 \begin{equation}
