@@ -1882,7 +1882,7 @@ where
 %		0\quad \text{if}\quad \tau_{y}=1
 %	\end{cases}\qquad \forall y\in \{1,\ldots,L\}
 %\end{equation}
-\paragraph{Proof of formula \eqref{ABS-vect}} We have that $|\Psi^{'}\rangle=S_{2}^{-1}|\Psi^{''}\rangle$ (see \eqref{S2-Inverse}), thus we only show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Here it is more convenient to consider the matrix $\mathcal{S}_{2}^{-1}$ defined in \eqref{S2Gen}, acting on a single site, and then make explicitly the tensor product over the chain. Using the exponential series we have that  
+\paragraph{Proof of formula \eqref{ABS-vect}} We have that $|\Psi^{'}\rangle=S_{2}^{-1}|\Psi^{''}\rangle$ (see \eqref{S2-Inverse}), thus we only show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Using the exponential series we have that  
 \begin{equation}
    \mathcal{S}_{2}^{-1}=\mathbbm{1}+\sum_{a=1}^{N-1}\beta_{a}e_{aN}\co
 \end{equation}
@@ -1911,7 +1911,7 @@ This is a new configuration at site $x$ where, if $x\in\{q_{1},\ldots,q_{i}\}$, 
 \end{comment}
  By considering a fixed $\bm{\tau}\in \Omega^{'}$, and by using \eqref{goodTP-S2} the formula for $|\Psi^{''}\rangle$ we obtain 
 \begin{align}\label{ABS_intermediate}
-		\Psi^{'}(\bm{\tau})=&\langle\bm{\tau}|\Psi^{'}\rangle=\langle \bm{\tau}|S_{2}^{-1}|\Psi^{''}\rangle\nonumber\\=&\sum_{\bm{\sigma}\in \Omega^{'}}\frac{1}{(L+1)!}\prod_{x=1}^L\left((\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\sigma_{j},N}\right)\right)\left[ \delta_{\tau_x,\sigma_x}+\beta_{\tau_x} \delta_{N,\sigma_x} (1-\delta_{\tau_x,N})\right]
+		\Psi^{'}(\bm{\tau})=&\langle\bm{\tau}|\Psi^{'}\rangle=\langle \bm{\tau}|S_{2}^{-1}|\Psi^{''}\rangle\nonumber\\=&\sum_{\bm{\sigma}\in \Omega^{'}}\frac{1}{(L+1)!}\prod_{x=1}^L(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\sigma_{j},N}\right)\left[ \delta_{\tau_x,\sigma_x}+\beta_{\tau_x} \delta_{N,\sigma_x} (1-\delta_{\tau_x,N})\right]
 	\end{align}
 %where, for arbitrary $i\in\{1,\ldots,L\}$,  $\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\underbrace{N}_{q_{i}}\ldots,\tau_{L})$ means that the $\tau_{q_{1}},\ldots,\tau_{q_{i}}$ have been replaced by $N$. 
 \begin{comment}
@@ -1934,50 +1934,59 @@ This is a new configuration at site $x$ where, if $x\in\{q_{1},\ldots,q_{i}\}$, 
 }
 \end{comment}
 %For a fixed configuration $\bm{\sigma}=(\sigma_{1},\ldots,\sigma_{L})$, \\ \\ 
-We rewrite the above equation as
+We observe that, for any fixed $x\in \{1,\ldots,L\}$ and for any fixed $\tau_{x},\sigma_{x}\in \{1,\ldots,N\}$, we have 
+\begin{align}
+	\delta_{\tau_{x},\sigma_{x}}+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})=&\delta_{\tau_{x},\sigma_{x}}(\delta_{\sigma_{x},N}+1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\nonumber\\
+	=&\delta_{\tau_{x},\sigma_{x}}\delta_{\sigma_{x},N}+\delta_{\tau_{x},\sigma_{x}}(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\nonumber\\
+	=&\delta_{\tau_{x},N}\delta_{\sigma_{x},N}+(1-\delta_{\tau_{x},N})(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})
+\end{align}
 %\begin{equation}
 %	c_{x}(\sigma_{x})=\delta_{\sigma_{x},N}
 %\end{equation}
 %To simplify notation we will assume that the dependence on $\sigma_{x}$ is understood. Using these $c_{x}$ we obtain
-\begin{align}
-	\Psi^{'}(\bm{\tau})%=&\frac{1}{(L+1)!}\sum_{\sigma_{1}=1}^{N}\ldots\sum_{\sigma_{L}=1}^{N}\prod_{x=1}^{L}(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}(1-\delta_{\sigma_{j},N})\right)\left[ \delta_{\tau_x,\sigma_x}+\beta_{\tau_x} (1-\delta_{\tau_x,N})\delta_{N,\sigma_x}\right]\nonumber\\
-	=&\frac{1}{(L+1)!}\sum_{\sigma_{1}=1}^{N}\ldots\sum_{\sigma_{L}=1}^{L}\prod_{x=1}^{L}\left(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}}\right)^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\sigma_{x},N}\right)\nonumber\\
-	&\left[\delta_{\tau_{x},\sigma_{x}}\delta_{\sigma_{x},N}+\delta_{\tau_{x},\sigma_{x}}(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]\nonumber\\
-	=&\frac{1}{(L+1)!}\sum_{\sigma_{1}=1}^{N}\ldots\sum_{\sigma_{L}=1}^{L}\prod_{x=1}^{L}\left(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}}\right)^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\sigma_{x},N}\right)\nonumber\\
-	&\left[\delta_{\tau_{x},N}\delta_{\sigma_{x},N}+(1-\delta_{\tau_{x},N})(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]
-\end{align}
+%\begin{align}
+%	\Psi^{'}(\bm{\tau})%=&\frac{1}{(L+1)!}\sum_{\sigma_{1}=1}^{N}\ldots\sum_{\sigma_{L}=1}^{N}\prod_{x=1}^{L}(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}(1-\delta_{\sigma_{j},N})\right)\left[ \delta_{\tau_x,\sigma_x}+\beta_{\tau_x} (1-\delta_{\tau_x,N})\delta_{N,\sigma_x}\right]\nonumber\\
+%	=&\frac{1}{(L+1)!}\sum_{\sigma_{1}=1}^{N}\ldots\sum_{\sigma_{L}=1}^{L}\prod_{x=1}^{L}\left(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}}\right)^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\sigma_{j},N}\right)\nonumber\\
+%	&\left[\delta_{\tau_{x},\sigma_{x}}\delta_{\sigma_{x},N}+\delta_{\tau_{x},\sigma_{x}}(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]\nonumber\\
+%	=&\frac{1}{(L+1)!}\sum_{\sigma_{1}=1}^{N}\ldots\sum_{\sigma_{L}=1}^{L}\prod_{x=1}^{L}\left(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}}\right)^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\sigma_{j},N}\right)\nonumber\\
+%	&\left[\delta_{\tau_{x},N}\delta_{\sigma_{x},N}+(1-\delta_{\tau_{x},N})(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]
+%\end{align}
 %Consider the factor $(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-c_{x}}$ in the above equation. When $\sigma_{x}\neq N$ (then $c_{x}=0$) and $\tau_{x}\neq N$, it becomes $(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})$. On the other hand, when $\sigma_{x}=N$ (then $c_{x}=1$)  and $\tau_{x}\neq N$, then it becomes $1$. Finally, if $\sigma_{x}=N$ and $\tau_{x}=N$ it becomes $0$. Therefore, we can replace it by $(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-c_{x}}$. It follows that 
-We observe that, for all $x\in \{1,\ldots,L\}$,
+It follows that 
 \begin{equation}
 	\begin{split}
-	&\sum_{\sigma_{x}=1}^{N}(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}\left[\delta_{\tau_{x},\sigma_{x}}\delta_{\sigma_{x},N}+\delta_{\tau_{x},\sigma_{x}}(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]\\
+	&\sum_{\sigma_{x}=1}^{N}(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}\left[\delta_{\tau_{x},N}\delta_{\sigma_{x},N}+(1-\delta_{\tau_{x},N})(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]\\
 	=&\begin{cases}
 		(\alpha_{\tau_{x}}-\beta_{\tau_{x}})+\beta_{\tau_{x}}\qquad &\text{if}\quad \tau_{x}\neq N\\
 		1\qquad &\text{if}\quad \tau_{x}= N
 	\end{cases}
 \end{split}
 \end{equation}
-Thus, it follows that 
-\begin{equation}
-	\begin{split}
-	&\sum_{\sigma_{x}=1}^{N}(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}\left[\delta_{\tau_{x},\sigma_{x}}\delta_{\sigma_{x},N}+\delta_{\tau_{x},\sigma_{x}}(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]
-	\\=&\sum_{\sigma_{x}=1}^{N}(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-\delta_{\sigma_{x},N}}\left[\delta_{\tau_{x},\sigma_{x}}\delta_{\sigma_{x},N}+\delta_{\tau_{x},\sigma_{x}}(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]
-	\end{split}
-\end{equation}
-Therefore we have that
+Therefore we can replace $(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})$ with $(\alpha_{\tau_{x}}-\beta_{\tau_{x}})$ in \eqref{ABS_intermediate}. 
+%\begin{equation}
+%	\begin{split}
+%	&\sum_{\sigma_{x}=1}^{N}(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}\left[\delta_{\tau_{x},\sigma_{x}}\delta_{\sigma_{x},N}+\delta_{\tau_{x},\sigma_{x}}(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]
+%	\\=&\sum_{\sigma_{x}=1}^{N}(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-\delta_{\sigma_{x},N}}\left[\delta_{\tau_{x},\sigma_{x}}\delta_{\sigma_{x},N}+\delta_{\tau_{x},\sigma_{x}}(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]
+%	\end{split}
+%\end{equation}
+As a consequence we rewrite \eqref{ABS_intermediate} as 
 \begin{align}
 \Psi^{'}(\bm{\tau})%=&\frac{1}{(L+1)!}\sum_{\sigma_{1}=1}^{N}\ldots\sum_{\sigma_{L}=1}^{N}\prod_{x=1}^{L}\left(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}}\right)^{1-c_{x}}\left(1+\sum_{j=x}^{L}c_{x}\right)\left[\delta_{\tau_{x},\sigma_{x}}c_{x}+\delta_{\tau_{x},\sigma_{x}}(1-c_{x})+\beta_{\tau_{x}}c_{x}(1-\delta_{\tau_{x},N})\right]\nonumber\\
 =&\frac{1}{(L+1)!}\sum_{\sigma_{1}=1}^{N}\ldots\sum_{\sigma_{L}=1}^{N}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\sigma_{j},N}\right)\\&\left[\delta_{\tau_{x},N}\delta_{\sigma_{x},N}+(1-\delta_{\tau_{x},N})(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]\nonumber\\
 %=&\frac{1}{(L+1)!} \sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-c_{x}}\left(1+\sum_{j=x}^{L}c_{x}\right)\left[\delta_{\tau_{x},N}c_{x}+(1-\delta_{\tau_{x},N})(1-c_{x})+\beta_{\tau_{x}}c_{x}(1-\delta_{\tau_{x},N})\right]\nonumber\\
 %=&\frac{1}{(L+1)!}\sum_{c_{1}=\delta_{\tau_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\tau_{L},N}}^{1}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-c_{x}}\left(1+\sum_{j=x}^{L}c_{x}\right)\beta_{\tau_{x}}^{c_{x}(1-\delta_{\tau_{x},N})}
 \end{align}
-We introduce the summation indices $c_{x}\in \{\delta_{\tau_{x},N},1\}$ for all $x\in \{1,\ldots,L\}$.
-and we observe that 
+For all $x\in \{1,\ldots,L\}$ we introduce the summation index $c_{x}\in \{\delta_{\tau_{x},N},1\}$ and we have that 
 \begin{align}
-	&\sum_{\sigma_{x}=1}^{N}\left[\delta_{\tau_{x},N}\delta_{\sigma_{x},N}+(1-\delta_{\tau_{x},N})(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]
-	=
-	\sum_{c_{x}=\delta_{\tau_{x},N}}^{1}\beta_{\tau_{x}}^{c_{x}(1-\delta_{\tau_{x},N})}
-\end{align} Then, we replace the summations over $\sigma_{1},\ldots,\sigma_{L}$ by the summations over $c_{1},\ldots,c_{L}$ as 
+	&\sum_{\sigma_{x}=1}^{N}(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-\delta_{\sigma_{x},N}}\left[\delta_{\tau_{x},N}\delta_{\sigma_{x},N}+(1-\delta_{\tau_{x},N})(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]\nonumber\\
+	=&
+	\sum_{c_{x}=\delta_{\tau_{x},N}}^{1}(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-c_{x}}\beta_{\tau_{x}}^{c_{x}(1-\delta_{\tau_{x},N})}
+\end{align} 
+and
+\begin{align}
+	\sum_{\sigma_{1}=1}^{N}\ldots\sum_{\sigma_{L}=1}^{N}\prod_{x=1}^{L}\left(1+\sum_{j=x}^{L}\delta_{\sigma_{j},N}\right)=\sum_{c_{1}=\delta_{\tau_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\tau_{L},N}}^{1}\prod_{x=1}^{L}\left(1+\sum_{j=x}^{L}c_{j}\right)
+\end{align}
+Then, by replacing the summations over $\sigma_{1},\ldots,\sigma_{L}$ by the summations over $c_{1},\ldots,c_{L}$, we obtain  
 \begin{equation}
 	\Psi^{'}(\bm{\tau})=\frac{1}{(L+1)!}\sum_{c_{1}=\delta_{\tau_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\tau_{L},N}}^{1}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-c_{x}}\left(1+\sum_{j=x}^{L}c_{j}\right)\beta_{\tau_{x}}^{c_{x}(1-\delta_{\tau_{x},N})}
 \end{equation}
@@ -2117,17 +2126,17 @@ Observing that $c_{x}(1-\delta_{\tau_{x},N}) =c_{x}-\delta_{\tau_{x},N}$, we fin
 	\end{split}
 \end{equation} 
 %Indeed, when $c_{i}=0$ this formula replaces the contribution in the square brackets with a $\beta_{\tau_{x}}$. 
-Considering all possible $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, we obtain \eqref{ABS-vect}.
+Considering all possible $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, \eqref{ABS-vect} follows.
 \begin{flushright}
     $\square$
 \end{flushright}
-\begin{remark} By changeing the summation indices from $c_x\in \{\delta_{\tau_{x},N},1\}$ to $c_{x}^{'}\in \{0,1-\delta_{\tau_{x},N}\}$ and by  the fact that occupation of each site is bounded by $1$ we rewrite \eqref{ABS} as 
+\begin{remark} By changing the summation indices from $c_x\in \{\delta_{\tau_{x},N},1\}$ to $c_{x}^{'}\in \{0,1-\delta_{\tau_{x},N}\}$ and by  the fact that occupation of each site is bounded by $1$ we rewrite \eqref{ABS} as 
 \begin{equation}\label{ABS_1}
-	\Psi^{'}(\bm{\tau})=\sum_{c_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{\Gamma(L+2-\sum_{x=1}^{L}c_{x})}{\Gamma(L+2)}\prod_{x=1}^{L}\left((\alpha_{\tau_{x}}-\beta_{\tau_{x}})\left(2+L-x-\sum_{j=x}^{L}c_{j}\right)\right)^{c_{x}}\beta_{\tau_{x}}^{(1-c_{x}-\delta_{\tau_{x},N})}\dt
+	\Psi^{'}(\bm{\tau})=\sum_{c^{'}_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c^{'}_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{\Gamma(L+2-\sum_{x=1}^{L}c^{'}_{x})}{\Gamma(L+2)}\prod_{x=1}^{L}\left((\alpha_{\tau_{x}}-\beta_{\tau_{x}})\left(2+L-x-\sum_{j=x}^{L}c^{'}_{j}\right)\right)^{c^{'}_{x}}\beta_{\tau_{x}}^{(1-c^{'}_{x}-\delta_{\tau_{x},N})}\dt
 \end{equation}
 where we used the fact that 
 \begin{equation}
-	\left(1+\sum_{j=x}^{L}c_{j}\right) =\left(2+L-x-\sum_{j=x}^{L}(1-c_{j})\right)
+	\left(1+\sum_{j=x}^{L}c_{j}\right) =\left(2+L-x-\sum_{j=x}^{L}c^{'}_{j}\right)
 \end{equation}
 Equation \eqref{ABS_1} will be useful in the following. 
 \end{remark}
@@ -2188,7 +2197,7 @@ We argue as in the previous proof. For any $\bm{\tau}\in \Omega^{'}$ we have tha
 \begin{align}
 	\Psi^{'}(\bm{\tau})=&\langle\bm{\tau}|\Psi^{'}\rangle=\sum_{\bm{\sigma}\in \Omega}\langle \bm{\tau}|S_{1}|\bm{\sigma}\rangle\langle \bm{\sigma}|\Psi\rangle=\sum_{\sigma\in \Omega}\langle \bm{\sigma}|S_{1}^{T}|\bm{\tau}\rangle\langle \bm{\sigma}|\Psi\rangle
 \end{align}
-We introduce the dual configuration $\bm{\xi}(\bm{\tau})=(N,\tau_{1},\ldots,\tau_{L},N)$ where two extra-sites occupied by the species $N$ have been attached to the vector $\bm{\tau}$, transforming it in a vector of dimension $L$ to one of dimension $L+2$. More explicitly, this dual configuration is given by
+We introduce the dual configuration $\bm{\xi}(\bm{\tau})=(N,\tau_{1},\ldots,\tau_{L},N)$ where two extra-sites occupied by the species $N$ have been attached to the vector $\bm{\tau}$, transforming it from a vector of dimension $L$ to one of dimension $L+2$. More explicitly, this dual configuration is given by
 \begin{equation}
 	\begin{cases}
 	\xi_{a}^{x}(\bm{\tau})= \delta_{\tau_{x},a}\qquad \forall a\in \{1,\ldots N\}\quad \forall x\in \{1,\ldots,L\}\\
@@ -2209,7 +2218,7 @@ We observe that for any $x\in \{1,\ldots,L\}$ the duality function \eqref{Elemen
  	\begin{equation}\label{interpretation-PsiP}
  	\Psi^{'}(\bm{\tau})=\mathbb{E}_{\mu}\left[\prod_{x=1}^{L}\left(\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}} \right)^{(1-\delta_{\tau_{x},N})}\right]
  \end{equation} 
- where the above average is taken with respect to the non-equilibrium steady state of the process $\bm{\sigma}$. Equation \eqref{interpretation-PsiP} will be useful in the exact formula for the steady state. Given $\bm{\tau}$ as before, we can introduce $\ell=\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})$ the number of occupied sites. Then we denote by $x_{1},\ldots,x_{\ell}$, such that $x_{k}<x_{k+1}$ for all $k\in \{1,\ldots,\ell-1\}$, the coordinates where a particle is present. Finally, we call 
+ where the above average is taken with respect to the non-equilibrium steady state of the process $\bm{\sigma}$. Equation \eqref{interpretation-PsiP} will be useful in Remark \ref{remark-NESS-invertingS1}. Given $\bm{\tau}$ as before, we can introduce the number of occupied sites $\ell=\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})$. We denote by $x_{1},\ldots,x_{\ell}$, such that $x_{k}<x_{k+1}$ for all $k\in \{1,\ldots,\ell-1\}$, the coordinates where a particle of any (non-empty) type is present. Finally, we call 
  \begin{equation}
  	\Omega_{\ell}^{'}(\bm{\tau}):=\left\{\bm{\sigma}\in \Omega^{'}\;:\; \sigma_{x_{1}}=\tau_{x_{1}},\ldots,\sigma_{x_{\ell}}=\tau_{x_{\ell}}\right\}
  \end{equation} 
@@ -2224,7 +2233,7 @@ we have that
 It follows that $\Psi^{'}(\bm{\tau})$ is the marginal on $\ell$ sites $x_{1},\ldots,x_{\ell}$ of the non-equilibrium steady state distribution, in the sense described above. In particular, when the configuration $\bm{\tau}$ has at $\ell$ particles, $\Psi^{'}(\bm{\tau})$ does coincide with the $\ell$-point correlation function. As a consequence, all the marginals of $\mu$ can be found using the absorption probabilities by equation \eqref{exactCorrelations}. 
 \end{remark}
 \subsection{Steady state}\label{appB}
-In this section we write an explicit formula for the non-equilibrium steady state of $H$ defined in \eqref{definition-SteadyStateH}. This formula follows from the ground state $|\Psi^{'}\rangle$ found in \eqref{ABS_1}.
+In this section we write an explicit formula for the non-equilibrium steady state of $H$ defined in \eqref{definition-SteadyStateH}. This formula follows from Corollary \ref{Corollary-NESS-ABS}.
 \begin{corollary}[Non-equilibrium steady state]
 	The non-equilibrium steady state $|\Psi\rangle$ of the Hamiltonian $H$ is given by 
 	\begin{equation}
@@ -2378,7 +2387,7 @@ This means that we can define a mapping between the $m$-point correlation of cha
 	\begin{flushright}
 		$\square$
 	\end{flushright}
-\begin{remark}[Obtaining the steady state from the similarity $S_{1}$]
+\begin{remark}[Obtaining the steady state from the similarity $S_{1}$]\label{remark-NESS-invertingS1}
 	 As a consequence of \eqref{S1-Inverse}, the non-equilibrium steady state $|\Psi\rangle$ can also be obtained by inverting the similarity transformation $S_{1}$. On a single site we have that 
 	\begin{equation}\label{S1-L1}
 		\mathcal{S}_{1}^{-1}=\mathbbm{1}+(-1)\sum_{a=1}^{N-1}e_{Na}
@@ -2476,7 +2485,7 @@ This means that we can define a mapping between the $m$-point correlation of cha
 			\begin{equation}
 				|\Psi^{'}\rangle=\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})|\bm{\sigma}\rangle
 			\end{equation} we obtain  
-			\begin{align}
+			\begin{align}\label{implicit-PSI-PSIp}
 				\langle \bm{\tau}|S_{1}^{-1}|\Psi^{'}\rangle=&\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\prod_{x=1}^{L}\left(\delta_{\tau_{x},\sigma_{x}}+(-1)\delta_{\tau_{x},N}\sum_{a_{x}=1}^{N-1}\delta_{\sigma_x,a_{x}}\right)\nonumber\\
 				=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\left(\prod_{x=1\,:\,x\notin\{q_{1},\ldots,q_{b}\}}^{L}\delta_{\tau_{x},\sigma_{x}}\right)\left(\prod_{x\in \{q_{1},\ldots,q_{b}\}}\delta_{\tau_{x},N}\sum_{a_{x}=1}^{N-1}\delta_{\sigma_{x},a_{x}}\right)\nonumber\\
 				=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{q_{1}},\ldots a_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{a_{q_{1}}}_{q_{1}},\ldots,\underbrace{a_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
@@ -2488,11 +2497,11 @@ where the notation
 		means that, for all $b\in \{0,\ldots,L\}$ and for all $1\leq q_{1}<\ldots<q_{b}\leq L$,
 		\begin{equation}
 			\begin{cases}
-				\tau_{x}=i_{x}\qquad &\text{if}\quad x\in\{q_{1},\ldots,q_{b}\}\\
+				\tau_{x}=a_{x}\qquad &\text{if}\quad x\in\{q_{1},\ldots,q_{b}\}\\
 				\tau_{x}=\tau_{x}\qquad &\text{if}\quad \text{otherwise}
 			\end{cases}
 		\end{equation}
-		In the second equality we have rewritten the product by introducing the summation over $b$, the coordinates $q_{1},\ldots,q_{b}$ and the occupations variables $i_{q_{1}},\ldots,i_{q_{k}}$. In the last equality we have summed over all possible $\sigma\in \Omega^{'}$. Finally, using equation \eqref{interpretation-PsiP}, the result follows. 
+		In the second equality we have rewritten the product by introducing the summation over $b$, the coordinates $q_{1},\ldots,q_{b}$ and the occupations variables $a_{q_{1}},\ldots,a_{q_{k}}$. In the last equality we have summed over all possible $\sigma\in \Omega^{'}$. Finally, using equation \eqref{interpretation-PsiP}, the result follows. 
 	\end{remark}
 		\begin{comment}
 		
@@ -2657,7 +2666,7 @@ thus, \eqref{correlations-SSEP} follows.
 \begin{flushright}
 	$\square$
 \end{flushright}
-\paragraph{$|\Psi^{''}\rangle$ for SSEP} When we stop distinguishing colours we have that 
+\paragraph{$|\Psi^{''}\rangle$ for SSEP} The ground state of $H^{''}$ is 
 \begin{equation}\label{psiII-SSEP}
 	|\Psi^{''}\rangle=\sum_{q=0}^{L}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}(\alpha_{1}-\beta_{1})^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
 \end{equation}
@@ -2671,7 +2680,7 @@ By varying $q$ and $\ell_{1},\ldots,\ell_{q}$, we have a one-to-one mapping with
 \begin{flushright}
 	$\square$
 \end{flushright}
-\paragraph{$|\Psi^{'}\rangle$ for SSEP} In the colour-blind case, the ground state of $H^{'}$ reads
+\paragraph{$|\Psi^{'}\rangle$ for SSEP} The ground state of $H^{'}$ reads
 \begin{equation}
 	|\Psi^{'}\rangle=\sum_{\bm{\tau}\in\Omega^{'}}\Psi^{'}(\bm{\tau})|\bm{\tau}\rangle
 \end{equation}
@@ -2713,7 +2722,7 @@ with
 \begin{equation}
 	|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x},1} \dt
 \end{equation}
-\textbf{Proof}: the proof follows from \eqref{implicit-steadyState} and \eqref{PsiI-N2}. 
+\textbf{Proof}: the proof follows from \eqref{implicit-PSI-PSIp} and \eqref{PsiI-N2}. 
 \begin{flushright}
 	$\square$
 \end{flushright}
