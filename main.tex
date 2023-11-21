@@ -303,18 +303,6 @@ when the parameters are the same on each site, i.e.
 \begin{equation}\label{reversibilityCondition}
 \alpha_{a}^{x}=\alpha_{a}\qquad \forall x\in V\,,
 \end{equation}
-{\color{blue}
-In the most general case we have reversibility if 
-\begin{equation*}
-	\alpha_{k}^{x}\left(|\alpha^{y}|-\alpha_{k}^{y}\right)=\alpha_{k}^{y}\left(|\alpha^{x}|-\alpha_{k}^{x}\right)\qquad \forall x,y\in V,\quad \forall k\in \{1,\ldots,N\}
-\end{equation*}
-where
-\begin{equation*}
-	|\alpha^{x}|=\sum_{a=1}^{N}\alpha_{a}^{x}
-\end{equation*}
-this is the multi-species counterpart of $\alpha\delta=\beta\gamma$ of the SEP case (see Section 3.2 of \cite{carinci2013duality}) \\
-Should we say that or can we restrict to the case where $\alpha_{a}^{x}=\alpha_{a}$... Maybe we put a remark.\\
-}
 then the process described by the generator \eqref{Generator} is reversible with respect to the 
 homogeneous product measure 
 \begin{equation}
@@ -341,7 +329,21 @@ If condition \eqref{reversibilityCondition} is not met, then reversibility is lo
 \end{equation}
 and  $|\alpha^x|=\sum_{a=1}^{N}\alpha_{a}$. 
 Currents will arise when at least two reservoirs have different densities. 
-
+	{\color{blue}
+\begin{remark}[Should we add this?]
+		In the most general case we have reversibility if 
+		\begin{equation*}
+			\alpha_{k}^{x}\left(|\alpha^{y}|-\alpha_{k}^{y}\right)=\alpha_{k}^{y}\left(|\alpha^{x}|-\alpha_{k}^{x}\right)\qquad \forall x,y\in V,\quad \forall k\in \{1,\ldots,N\}
+		\end{equation*}
+		where
+		\begin{equation*}
+			|\alpha^{x}|=\sum_{a=1}^{N}\alpha_{a}^{x}
+		\end{equation*}
+		this is the multi-species counterpart of $\alpha\delta=\beta\gamma$ of the SEP case (see Section 3.2 of \cite{carinci2013duality}) \\
+		Should we say that or can we restrict to the case where $\alpha_{a}^{x}=\alpha_{a}$?
+		 Maybe we put a remark. It does not affect duality, since the matrix $R$ that we define in Section \ref{sectionDuality} does not depend on the density of the multinomials.
+		\end{remark}
+	}
 \subsection{Lie algebraic description of the process}
 
 In this paper we will often use the fact that the Markov generator of the multispecies stirring process can be described in terms a Lie algebra of rank $N$.
