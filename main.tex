@@ -303,6 +303,18 @@ when the parameters are the same on each site, i.e.
 \begin{equation}\label{reversibilityCondition}
 \alpha_{a}^{x}=\alpha_{a}\qquad \forall x\in V\,,
 \end{equation}
+{\color{blue}
+In the most general case we have reversibility if 
+\begin{equation*}
+	\alpha_{k}^{x}\left(|\alpha^{y}|-\alpha_{k}^{y}\right)=\alpha_{k}^{y}\left(|\alpha^{x}|-\alpha_{k}^{x}\right)\qquad \forall x,y\in V,\quad \forall k\in \{1,\ldots,N\}
+\end{equation*}
+where
+\begin{equation*}
+	|\alpha^{x}|=\sum_{a=1}^{N}\alpha_{a}^{x}
+\end{equation*}
+this is the multi-species counterpart of $\alpha\delta=\beta\gamma$ of the SEP case (see Section 3.2 of \cite{carinci2013duality}) \\
+Should we say that or can we restrict to the case where $\alpha_{a}^{x}=\alpha_{a}$... Maybe we put a remark.\\
+}
 then the process described by the generator \eqref{Generator} is reversible with respect to the 
 homogeneous product measure 
 \begin{equation}
@@ -2151,7 +2163,7 @@ where we used the fact that
 Equation \eqref{ABS_1} will be useful in the following. 
 \end{remark}
 \subsubsection{Formula for correlations}\label{correlation-section}
-We consider $m\in \{1,\ldots,L\}$ sites with coordinates $x_{1},\ldots,x_{m}\in \{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for all $k\in \{1,\ldots,m-1\}$.We fix $a_{k}\in\{1,\ldots,N-1\}$ and we would like to compute
+We consider $m\in \{1,\ldots,L\}$ sites with coordinates $x_{1},\ldots,x_{m}\in \{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for all $k\in \{1,\ldots,m-1\}$. We fix $a_{k}\in\{1,\ldots,N-1\}$ and we would like to compute
 \begin{equation}
 	\mathbb{E}_{\mu}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=\sum_{\bm{\tau}\in \Omega^{'}}\left(\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right)\langle\bm{\tau}|\Psi\rangle\dt%=\sum_{\bm{\tau}\in \Omega^{'}}\left(\prod_{i=1}^{m}\mathbbm{1}_{\{\tau_{y_{i}}=s_{i}\}}\right)\Psi(\bm{\tau})
 \end{equation}
