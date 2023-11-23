@@ -591,7 +591,7 @@ In this section we prove the first main result of this paper. We show that the m
 can be studied by means of a dual process. After recalling the definition of duality between two
 Markov processes in Section \ref{def-duality}, we formulate our duality result  in Theorem \ref{thm-duality}. A proof of the theorem is given in Section \ref{proof-th-duality}.
 The duality result is important since it yields several simplifications, the main one being that the
-dual process has absorbing sites. Therefore, as shown in Corollary \ref{prop-absorbing}, the study of correlations in the non-equilibrium steady state of the multispecies stirring process with open boundary
+dual process has absorbing sites. Therefore, as shown in Corollary \ref{Corolollary-ABS_Corr-abstract}, the study of correlations in the non-equilibrium steady state of the multispecies stirring process with open boundary
 is reduced to the study of the absorption probabilities of dual particles.
 
 
@@ -1052,7 +1052,7 @@ where, in the up to last equality, we performed a change of summation variable a
 %\end{equation}
 %This is a consequence of 
 %\begin{equation}
-%\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|(A^{+})_{a}^{u(x)}=0
+%\langle \xi_{1}^{u(x)},\ldots,0,\ldots,\xi_{N}^{u(x)}|($\mathbf{a}$^{+})_{a}^{u(x)}=0
 %\end{equation}
 %that follows from \eqref{bosonicKX}.
 Therefore, inserting \eqref{extra-site-trick} in \eqref{siteHadamardII} we obtain 
@@ -1113,7 +1113,6 @@ In the long-time limit the dual process voids the chain, i.e. all particles of t
 Using duality, one can compute the  $m$-point correlations between non-empty particles in terms of the absorption probabilities of $m$ dual particles. Therefore, to determine the non-equilibrium steady state correlations of the integrable multi-species stirring process, it is enough to compute these absorption probabilities. In the following we denote by $\mu$ the non-equilibrium steady state distribution and we call $\bm{Y} = (Y_1,\ldots,Y_L)$ the random vector with law $\mu$. 
 Furthermore we write $\mathbb{E}[\cdot]$ for the expectation with respect to $\mu$.%For arbitrary $m\in \mathbb{N}$ such that $m<L$, we fix $a_{k}\in\{1,\ldots,N-1\}$ and $x_{k}\in\{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for every $k\in\{1,\ldots,m\}$. 
 \begin{corollary}[Correlations via duality]\label{Corolollary-ABS_Corr-abstract}
-\label{prop-absorbing}
 Let $m\in \{1,\ldots,L\}$ and consider $m$ sites $1 \le x_{1} < x_2 < \ldots < x_m \le L $ and
 $m$ species $a_{k}\in\{1,\ldots,N-1\}$  with $k=1,2,\ldots, m$. Then, the $m$-point correlations in the non-equilibrium steady state read
 \begin{equation}\label{NESS-expectation-ABS}
@@ -1175,7 +1174,7 @@ Therefore, we may write
 \begin{align}
 &\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)\left(\prod_{x=1\,:\,\tau_{x}=N}^{L}\left(1-\sum_{a_{x}=1}^{N-1}\mathbbm{1}_{\{Y_x=a_{x}\}}\right)\right)\nonumber\\
 =&
-\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}+\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)(-1)\left\{\sum_{q_{1}=1}^{L}\delta_{\tau_{q_{1}},N}\sum_{a_{q_{1}}=1}^{N-1}\mathbbm{1}_{\{\sigma_{q_{1}}=a_{q_{1}}\}}\right\}+\nonumber\\
+\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}+\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)(-1)\left\{\sum_{q_{1}=1}^{L}\delta_{\tau_{q_{1}},N}\sum_{a_{q_{1}}=1}^{N-1}\mathbbm{1}_{\{Y_{q_{1}}=a_{q_{1}}\}}\right\}+\nonumber\\
 +&\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)(-1)^{2}\left\{\sum_{1\leq q_{1}<q_{2}\leq L}\delta_{\tau_{q_{1}},N}\delta_{\tau_{q_{2}},N}\sum_{a_{q_{1}},a_{q_{2}}=1}^{N-1}\mathbbm{1}_{\{Y_{q_{1}}=a_{q_{1}}\}}\mathbbm{1}_{\{Y_{q_{2}}=a_{q_{2}}\}}\right\}+\ldots+\nonumber\\
 +&\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)(-1)^{L-\ell}\sum_{1\leq q_{1}<\ldots<q_{L-\ell}\leq L}\left(\prod_{k=1}^{L-\ell}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{q_{1}},\ldots,a_{q_{L-\ell}}=1}^{N-1}\prod_{k=1}^{L-\ell}\mathbbm{1}_{\{Y_{q_{k}}=a_{q_{k}}\}}\dt
 \end{align} 
@@ -1418,7 +1417,7 @@ We consider the average with respect to $\mu$ of the occupation variable of the 
 \end{comment}
 Therefore, we compute the third cumulant, i.e. the three-point connected correlation as 
 \begin{align}
-	&\mathbb{E}_{\mu}\left[\left(\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}-\langle\rho_{a_{1}}^{x_{1}}\rangle \right)\left(\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}-\langle\rho_{a_{2}}^{x_{2}}\rangle \right)\left(\mathbbm{1}_{\{\tau_{x_{3}}=a_{3}\}}-\langle\rho_{a_{3}}^{x_{3}}\rangle \right)\right]\nonumber\\
+	&\mathbb{E}\left[\left(\mathbbm{1}_{\{Y_{x_{1}}=a_{1}\}}-\langle\rho_{a_{1}}^{x_{1}}\rangle \right)\left(\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}-\langle\rho_{a_{2}}^{x_{2}}\rangle \right)\left(\mathbbm{1}_{\{\tau_{x_{3}}=a_{3}\}}-\langle\rho_{a_{3}}^{x_{3}}\rangle \right)\right]\nonumber\\
 	=&-\frac{2x_{1}(L+1-2x_{2})(L+1-x_{3})}{(L+1)^{3}(L-1)L}(\alpha_{a_{1}}-\beta_{a_{1}})(\alpha_{a_{2}}-\beta_{a_{2}})(\alpha_{a_{3}}-\beta_{a_{3}})\dt
 \end{align}
 \begin{remark} The first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, match with those found in Section 4.3 of \cite{vanicat2017exact}.
@@ -2660,7 +2659,7 @@ while the boundary Hamiltonians of $H^{''}$ are
 \paragraph{Correlations of SSEP}
 We retrieve the closed formula for correlations in the non-equilibrium steady state found in \cite[(4.26)]{frassek2020eigenstates}:  
 \begin{equation}\label{correlations-SSEP}
-	\mathbb{E}_{\mu}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=1\}}\right]=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
+	\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=1\}}\right]=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation} 
 \textbf{Proof of \eqref{correlations-SSEP}:} Starting from \eqref{exactCorrelations} we exploit indistinguishability of particles and we introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define $q$ %labels denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  
 $1\leq \ell_{1}<\ell_{2}<\ldots<\ell_{q}\leq m$. To each of these label we associate the coordinates $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$ that are such $c_{x_{\ell_{k}}}=1$ for all $k\in \{1,\ldots,q\}$ and $c_{x}=0$ for $x\notin \{x_{\ell_{1}},\ldots,x_{\ell_{q}}\}$. Therefore, for any fixed $c_{x_{1}},\ldots,c_{x_{m}}$, we find $q$ and $\ell_{1},\ldots,\ell_{q}$ from which we fix $x_{\ell_{1}},\ldots,x_{\ell_{q}}$. Then, we obtain  
@@ -2963,10 +2962,10 @@ The duality function \eqref{dualityElements} computed in this dual configuration
 	D(\bm{n},\bm{\xi})= \frac{\prod_{k=1}^{m}n_{a_{k}}^{x_{k}}}{C(\nu,m)}\dt
 \end{equation}
 where $C(\nu,m)$ is a constant that depends on the number of correlated particles $m$ and on the maximal occupancy $\nu$. 
-Therefore, up to this constant, $\mathbb{E}_{\mu}\left[D(\bm{n},\bm{\xi})\right]$ gives the non-equilibrium steady state $m-$points correlations. The following equalities hold using duality relation \eqref{duality-expectation}:
+Therefore, up to this constant, $\mathbb{E}\left[D(\bm{n},\bm{\xi})\right]$ gives the non-equilibrium steady state $m-$points correlations. The following equalities hold using duality relation \eqref{duality-expectation}:
 \begin{equation}\label{ExptationSS}
 	\begin{split}
-		\frac{\mathbb{E}_{\mu}\left[\prod_{k=1}^{m}n_{a_{k}}^{x_{k}}\right]}{C(\nu,m)}&=\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\bm{\xi})\right]=\lim_{t\to\infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{n},\bm{\xi}(t))\right]
+		\frac{\mathbb{E}\left[\prod_{k=1}^{m}n_{a_{k}}^{x_{k}}\right]}{C(\nu,m)}&=\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\bm{\xi})\right]=\lim_{t\to\infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{n},\bm{\xi}(t))\right]
 		\\&=
 		\sum_{t_{1}=0}^{|\xi_{1}|}\ldots\sum_{t_{N}=0}^{|\xi_{N}|}\prod_{a=1}^{N-1}\left(\rho_{a}^{L}\right)^{t_{a}}\left(\rho_{a}^{R}\right)^{|\xi_{a}|-t_{a}}\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{N})
 	\end{split}
@@ -3380,7 +3379,7 @@ We take $m=1$ and we fix a site $x\in\{1,\ldots,L\}$ and a species $a\in \{1,\ld
 The average occupation reads
 \begin{equation}\label{OnePtsCORR}
 	\begin{split}
-			\mathbb{E}_{\mu}\left[n_{a}^{x}\right]&=\nu\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\delta_{a}^{x})\right]\\&=\nu\sum_{t_{a}=0}^{1}\left(\rho_{a}^{L}\right)^{t_{s}}\left(\rho_{s}^{R}\right)^{1-t_{s}}\mathbb{P}_{\delta_{a}^{x}}\left(\xi_{\infty}=t_{a}\delta_{0}+(1-t_{a})\delta_{L+1}\right)\dt
+			\mathbb{E}\left[n_{a}^{x}\right]&=\nu\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\delta_{a}^{x})\right]\\&=\nu\sum_{t_{a}=0}^{1}\left(\rho_{a}^{L}\right)^{t_{s}}\left(\rho_{s}^{R}\right)^{1-t_{s}}\mathbb{P}_{\delta_{a}^{x}}\left(\xi_{\infty}=t_{a}\delta_{0}+(1-t_{a})\delta_{L+1}\right)\dt
 	\end{split}
 \end{equation}
 To explicitly find the result, we aim to determine $\mathcal{P}(1,\delta_{a}^{x})=\mathbb{P}_{\delta_{a}^{x}}\left(\xi_{\infty}=t_{a}\delta_{a}^{0}+(1-t_{a})\delta_{a}^{L+1}\right)$. This is the probability of a random walker on the chain $\{1,\ldots,L\}$ with absorbing boundaries, therefore, it fulfils the following equations discrete Laplace equation
@@ -3393,11 +3392,11 @@ To explicitly find the result, we aim to determine $\mathcal{P}(1,\delta_{a}^{x}
 \end{equation}
 where $\Delta_{L}$ is the discrete Laplace operator on the chain of length $L$. The equations \eqref{gamblers-ruin} can be solved and using $\mathcal{P}(1,\delta_{a}^{x})=1-\mathcal{P}(0,\delta_{a}^{x})$ we obtain 
 \begin{equation}
-	\mathbb{E}_{\mu}\left[n_{a}^{x}\right]=\nu\frac{\alpha_{a}(L|\beta|-|\beta|x+1)+\beta_{a}(|\alpha|x+1-|\alpha|)}{|\alpha||\beta|L-|\alpha||\beta|+|\alpha|+|\beta|}\dt
+	\mathbb{E}\left[n_{a}^{x}\right]=\nu\frac{\alpha_{a}(L|\beta|-|\beta|x+1)+\beta_{a}(|\alpha|x+1-|\alpha|)}{|\alpha||\beta|L-|\alpha||\beta|+|\alpha|+|\beta|}\dt
 \end{equation}
 \begin{remark}: In case $|\alpha|=|\beta|=\nu=1$ (when the chain is integrable) we have 
 \begin{equation}
-		\mathbb{E}_{\mu}\left[n_{a}^{x}\right]=\frac{\alpha_{a}(L-x+1)+\beta_{a}x}{L+1}
+		\mathbb{E}\left[n_{a}^{x}\right]=\frac{\alpha_{a}(L-x+1)+\beta_{a}x}{L+1}
 \end{equation}
 that is the same result obtained in \eqref{one-pts-corr}.  
 \end{remark}
