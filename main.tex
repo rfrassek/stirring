@@ -1974,12 +1974,18 @@ This is a new configuration at site $x$ where, if $x\in\{q_{1},\ldots,q_{i}\}$, 
 }
 \end{comment}
 %For a fixed configuration $\bm{\sigma}=(\sigma_{1},\ldots,\sigma_{L})$, \\ \\ 
-We observe that, for any fixed $x\in \{1,\ldots,L\}$ and for any fixed $\tau_{x},\sigma_{x}\in \{1,\ldots,N\}$, we have 
+We observe that, for any fixed $x\in \{1,\ldots,L\}$ and for any fixed $\bm{\tau},\bm{\sigma}\in\Omega^{'}$, we have 
 \begin{align}
-	\delta_{\tau_{x},\sigma_{x}}+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})=&\delta_{\tau_{x},\sigma_{x}}(\delta_{\sigma_{x},N}+1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\nonumber\\
-	=&\delta_{\tau_{x},\sigma_{x}}\delta_{\sigma_{x},N}+\delta_{\tau_{x},\sigma_{x}}(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\nonumber\\
-	=&\delta_{\tau_{x},N}\delta_{\sigma_{x},N}+(1-\delta_{\tau_{x},N})(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\dt
+	\left[\delta_{\tau_{x},\sigma_{x}}+\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\beta_{\tau_{x}}\right]\left(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}}\right)^{1-\delta_{\sigma_{x},N}}=	\left[\delta_{\tau_{x},\sigma_{x}}+\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\beta_{\tau_{x}}\right]\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\sigma_{x},N}}\dt
 \end{align}
+Indeed, on one hand if $\sigma_{x}\neq N$ only the term $\delta_{\tau_{x},\sigma_{x}}$ does survive in the square bracket, that is non-vanishing only if $\sigma_{x}=\tau_{x}$. On the other hand, if $\sigma_{x}=N$ the quantity $(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}=1=(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-\delta_{\sigma_{x},N}}$. \\
+Moreover, we have that 
+\begin{align}
+	\delta_{\sigma_{x},\tau_{x}}+\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\beta_{\tau_{x}}=&\beta_{\tau_{x}}^{\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})}\left(\delta_{\tau_{x},\sigma_{x}}+\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right)\nonumber\\
+	=&\beta_{\tau_{x}}^{\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})}\left(\delta_{\tau_{x},N}\delta_{\sigma_{x},N}+(1-\delta_{\tau_{x},N})(1-\delta_{\sigma_{x},N})+(1-\delta_{\tau_{x},N})\delta_{\sigma_{x},N}\right)\nonumber\\
+	=&\beta_{\tau_{x}}^{\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})}\left(\delta_{\sigma_{x},N}+(1-\delta_{\sigma_{x},N})(1-\delta_{\tau_{x},N})\right)
+\end{align}
+Indeed: if $\tau_{x}=\sigma_{x}N$, both sides are $1$; if $\tau_{x}\neq N$ and $\sigma_{x}=N$ both sides are $\beta_{\tau_{x}}$; while, in all other cases, both sides are $0$. 
 %\begin{equation}
 %	c_{x}(\sigma_{x})=\delta_{\sigma_{x},N}
 %\end{equation}
@@ -1992,41 +1998,24 @@ We observe that, for any fixed $x\in \{1,\ldots,L\}$ and for any fixed $\tau_{x}
 %	&\left[\delta_{\tau_{x},N}\delta_{\sigma_{x},N}+(1-\delta_{\tau_{x},N})(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]
 %\end{align}
 %Consider the factor $(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-c_{x}}$ in the above equation. When $\sigma_{x}\neq N$ (then $c_{x}=0$) and $\tau_{x}\neq N$, it becomes $(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})$. On the other hand, when $\sigma_{x}=N$ (then $c_{x}=1$)  and $\tau_{x}\neq N$, then it becomes $1$. Finally, if $\sigma_{x}=N$ and $\tau_{x}=N$ it becomes $0$. Therefore, we can replace it by $(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-c_{x}}$. It follows that 
-It follows that 
-\begin{equation}
-	\begin{split}
-	&\sum_{\sigma_{x}=1}^{N}(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}\left[\delta_{\tau_{x},N}\delta_{\sigma_{x},N}+(1-\delta_{\tau_{x},N})(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]\\
-	=&\begin{cases}
-		(\alpha_{\tau_{x}}-\beta_{\tau_{x}})+\beta_{\tau_{x}}\qquad &\text{if}\quad \tau_{x}\neq N\\
-		1\qquad &\text{if}\quad \tau_{x}= N\dt
-	\end{cases}
-\end{split}
-\end{equation}
-Therefore we can replace $(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})$ with $(\alpha_{\tau_{x}}-\beta_{\tau_{x}})$ in \eqref{ABS_intermediate}. 
 %\begin{equation}
 %	\begin{split}
 %	&\sum_{\sigma_{x}=1}^{N}(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}\left[\delta_{\tau_{x},\sigma_{x}}\delta_{\sigma_{x},N}+\delta_{\tau_{x},\sigma_{x}}(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]
 %	\\=&\sum_{\sigma_{x}=1}^{N}(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-\delta_{\sigma_{x},N}}\left[\delta_{\tau_{x},\sigma_{x}}\delta_{\sigma_{x},N}+\delta_{\tau_{x},\sigma_{x}}(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]
 %	\end{split}
 %\end{equation}
-As a consequence we rewrite \eqref{ABS_intermediate} as 
+As a consequence we can write \eqref{ABS_intermediate} as 
 \begin{align}
 \Psi^{'}(\bm{\tau})%=&\frac{1}{(L+1)!}\sum_{\sigma_{1}=1}^{N}\ldots\sum_{\sigma_{L}=1}^{N}\prod_{x=1}^{L}\left(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}}\right)^{1-c_{x}}\left(1+\sum_{j=x}^{L}c_{x}\right)\left[\delta_{\tau_{x},\sigma_{x}}c_{x}+\delta_{\tau_{x},\sigma_{x}}(1-c_{x})+\beta_{\tau_{x}}c_{x}(1-\delta_{\tau_{x},N})\right]\nonumber\\
-=&\frac{1}{(L+1)!}\sum_{\sigma_{1}=1}^{N}\ldots\sum_{\sigma_{L}=1}^{N}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\sigma_{j},N}\right)\\&\left[\delta_{\tau_{x},N}\delta_{\sigma_{x},N}+(1-\delta_{\tau_{x},N})(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]\dt
+=&\frac{1}{(L+1)!}\sum_{\bm{\sigma}\in \Omega^{'}}^{N}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\sigma_{j},N}\right)\nonumber\\&\left[\beta_{\tau_{x}}^{\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})}\left(\delta_{\sigma_{x},N}+(1-\delta_{\sigma_{x},N})(1-\delta_{\tau_{x},N})\right)\right]\dt
 %=&\frac{1}{(L+1)!} \sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-c_{x}}\left(1+\sum_{j=x}^{L}c_{x}\right)\left[\delta_{\tau_{x},N}c_{x}+(1-\delta_{\tau_{x},N})(1-c_{x})+\beta_{\tau_{x}}c_{x}(1-\delta_{\tau_{x},N})\right]\nonumber\\
 %=&\frac{1}{(L+1)!}\sum_{c_{1}=\delta_{\tau_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\tau_{L},N}}^{1}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-c_{x}}\left(1+\sum_{j=x}^{L}c_{x}\right)\beta_{\tau_{x}}^{c_{x}(1-\delta_{\tau_{x},N})}
 \end{align}
-For all $x\in \{1,\ldots,L\}$ we introduce the summation index $c_{x}\in \{\delta_{\tau_{x},N},1\}$ and we have that 
+We observe that the argument of the summation above does not distinguish the colours of the $\sigma$'s but only whether $\sigma_{x}$ is occupied or empty. Therefore, we can replace the summation over $\sigma_{1},\ldots,\sigma_{L}$ with a summation over the indices  $c_{1},\ldots,c_{L}\in \{0,1\}$. Thus, we obtain 
 \begin{align}
-	&\sum_{\sigma_{x}=1}^{N}(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-\delta_{\sigma_{x},N}}\left[\delta_{\tau_{x},N}\delta_{\sigma_{x},N}+(1-\delta_{\tau_{x},N})(1-\delta_{\sigma_{x},N})+\beta_{\tau_{x}}\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right]\nonumber\\
-	=&
-	\sum_{c_{x}=\delta_{\tau_{x},N}}^{1}(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-c_{x}}\beta_{\tau_{x}}^{c_{x}(1-\delta_{\tau_{x},N})}
-\end{align} 
-and
-\begin{align}
-	\sum_{\sigma_{1}=1}^{N}\ldots\sum_{\sigma_{L}=1}^{N}\prod_{x=1}^{L}\left(1+\sum_{j=x}^{L}\delta_{\sigma_{j},N}\right)=\sum_{c_{1}=\delta_{\tau_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\tau_{L},N}}^{1}\prod_{x=1}^{L}\left(1+\sum_{j=x}^{L}c_{j}\right)\dt
+\Psi^{'}(\bm{\tau})	=&\frac{1}{(L+1)!}\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-c_{x}}\left(1+\sum_{j=x}^{L}c_{j}\right)\left[\beta_{\tau_{x}}^{c_{x}}\left(c_{x}+(1-c_{x})(1-\delta_{\tau_{x},N})\right)\right]\dt
 \end{align}
-Then, by replacing the summations over $\sigma_{1},\ldots,\sigma_{L}$ by the summations over $c_{1},\ldots,c_{L}$, we obtain  
+Moreover, because of the term $\delta_{\tau_{x},N}(1-c_{x})$, we can make vary the indices $c_{x}$ in the set $\{\delta_{\tau_{x},N},1\}$. Indeed, when $c_{x}=0$, the addend of the summation is non-vanishing only if $\tau_{x}=N$. Therefore, we obtain 
 \begin{equation}
 	\Psi^{'}(\bm{\tau})=\frac{1}{(L+1)!}\sum_{c_{1}=\delta_{\tau_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\tau_{L},N}}^{1}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-c_{x}}\left(1+\sum_{j=x}^{L}c_{j}\right)\beta_{\tau_{x}}^{c_{x}(1-\delta_{\tau_{x},N})}\dt
 \end{equation}
@@ -2159,10 +2148,10 @@ To find these quantities we fix the rows correspondent to $\bm{\tau}$ in the mat
 %Now we can write the ground state of $H^{''}$ as \begin{equation}|\Psi^{''}\rangle=\sum_{\mu_{1},\ldots,\mu_{L}=1}^{N}\Psi^{''}(\bm{\mu})|\bm{\mu}\rangle\end{equation} with the coefficients $\psi^{''}(\bm{\mu})$ are given in \eqref{coefficients-psiSec}.
 %Therefore, we have that equation \eqref{ABS_intermediate} becomes
 %Because of the exponent $(1-\delta_{\tau_{x},1})$, the element $\Psi^{''}(\bm{\tau})$ has, up the term $\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{\tau_{x},1})}{\Gamma(L+2)}$, a contribution of a factor $(\alpha_{\tau_{x}}-\beta_{\tau_{x}})\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{x},1})\right)$ if the site is non empty, and a contribution of a factor "$1$" if the site is empty, it is convenient to introduce the $c_{i}$ of defined in \eqref{CiEquation}. Then, equation  \eqref{ABS_intermediate} reads 
-Observing that $c_{x}(1-\delta_{\tau_{x},N}) =c_{x}-\delta_{\tau_{x},N}$, we finally obtain
+Observing that $c_{x}(1-\delta_{\tau_{x},N}) =c_{x}-\delta_{\tau_{x},N}$, we finally have
 \begin{equation}\label{elementsABS}
 	\begin{split}
-		\Psi^{'}(\bm{\tau})=\frac{1}{(L+1)!}\sum_{c_{1}=\delta_{\tau_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\tau_{L},N}}^{1}\prod_{x=1}^{L}\left(1+\sum_{j=x}^{L}c_{j}\right)(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-c_{x}}\beta_{\tau_{x}}^{c_{x}-\delta_{\tau_{x},N}}\dt
+		\Psi^{'}(\bm{\tau})=\frac{1}{(L+1)!}\sum_{c_{1}=\delta_{\tau_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\tau_{L},N}}^{1}\prod_{x=1}^{L}(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-c_{x}}\left(1+\sum_{j=x}^{L}c_{j}\right)\beta_{\tau_{x}}^{c_{x}-\delta_{\tau_{x},N}}\dt
 	\end{split}
 \end{equation} 
 %Indeed, when $c_{i}=0$ this formula replaces the contribution in the square brackets with a $\beta_{\tau_{x}}$. 
