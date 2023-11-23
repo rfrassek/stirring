@@ -2910,7 +2910,7 @@ The aim is studying some property of the process when integrability is lost. We 
 \subsection{Duality for a boundary driven chain}\label{Subsection-ss-nonI}
 In this subsection we specialize the results of Section \ref{statementDualitySubsection} to a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can host $\nu\geq 1$ particles, chosen among the $N$ types. Now the dual graph is still a chain, but with two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$). As already pointed out the dual process eventually voids the chain by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites ($0$ and $L+1$) and replacing them by types $N$. This property allows to characterize the steady state non-equilibrium distribution (that is unique) by the probability that dual particles are absorbed in the extra-sites, called \textit{absorption probabilities}. The process $\left(\bm{n}(t)\right)_{t\geq0}$ is defined on the space
 \begin{equation}\label{stateSpace-Chain}
-	\Omega=\bigotimes_{x=1}^{L} \Omega_{x}
+	\Omega_{L}=\bigotimes_{x=1}^{L} \Omega_{x}
 \end{equation} and its generator reads
 \begin{equation}
 	\mathcal{L}=\mathcal{L}_{\text{left}}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\mathcal{L}_{\text{right}}\dt
@@ -2989,7 +2989,7 @@ We introduce the reversible measure \eqref{reversibleMeasure} conditioned on the
 	=\mathbb{P}\left((n_{1}^{x},\ldots,n_{N}^{x})=
 	(r_{1},\ldots,r_{N})\;|\;(n_{1}^{x}+n_{1}^{x+1},\ldots,n_{N}^{x}+n_{N}^{x+1})=(\epsilon_{1},\ldots,\epsilon_{N})\right)\dt
 \end{align}
-Here $r=(r_{1},\ldots,r_{N})$ and  $\epsilon=(\epsilon_{1},\ldots,\epsilon_{N})$ such that $\forall a\in\{1,\ldots,N\}$  $r_{a}\in \{1,\ldots,\nu\}$ and $\epsilon_{a}\in \{0,\ldots,2\nu\}$, under the constraints 
+Here $r=(r_{1},\ldots,r_{N})$ and  $\epsilon=(\epsilon_{1},\ldots,\epsilon_{N})$ such that $\forall a\in\{1,\ldots,N\}$  $r_{a}\in \{0,\ldots,\nu\}$ and $\epsilon_{a}\in \{0,\ldots,2\nu\}$, under the constraints 
 \begin{equation}
 	\epsilon_{N}=2\nu-\sum_{a=1}^{N-1}\epsilon_{a},\qquad r_{N}=\nu-\sum_{a=1}^{N-1}r_{a}\dt
 \end{equation}
@@ -3003,7 +3003,7 @@ Here $r=(r_{1},\ldots,r_{N})$ and  $\epsilon=(\epsilon_{1},\ldots,\epsilon_{N})$
 %\begin{equation}
 %\text{Multinomial}(\nu,\rho_{1},\ldots,\rho_{N})+\text{Multinomial}(\nu,\rho_{1},\ldots,\rho_{N})=\text{Multinomial}(2\nu,\rho_{1},\ldots,\rho_{N})
 %\end{equation}
-Therefore 
+Therefore the thermalization measure reads
 \begin{equation}
 	\begin{split}
 	\nu_{TH}(r|\epsilon)=\frac{\binom{\nu}{r_{1},\ldots,r_{N}}\binom{\nu}{(\epsilon_{1}-r_{1}),\ldots,(\epsilon_{N}-r_{N})}}{\binom{2\nu}{\epsilon_{1}\ldots,\epsilon_{N}}}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}
@@ -3041,22 +3041,35 @@ and $\mathcal{L}_{\text{right}}^{TH}$ acting similarly on the site $L$ and with 
 %		\binom{\nu}{r_{1},\ldots, r_{N}}\prod_{a=1}^{N-1}\left(\frac{\beta_{k}}{\beta_{N}}\right)^{r_{k}}\left(\frac{\beta_{N}}{|\beta|}\right)^{\nu}
 %	\end{split}
 %\end{equation}
-In the thermalized bulk generator particles on a bond $x$ and $x+1$ are redistribute according to the measure $\nu_{TH}(r|\epsilon)$, while in the thermalized boundary generators the configuration at site $1$ (and $L$) is replaced by $r$, according to a rate depending on $r$ itself and on the reservoirs parameters. 
-\subsubsection{The dual thermalized process}
-The thermalized dual process $(\bm{\xi}(t))_{t\geq 0}$ is defined on the enlarged configuration space $\widetilde{\Omega}$ introduced in \eqref{dualStateSpace}. Its generator reads
+In the thermalized bulk generator particles on a bond $x$ and $x+1$ are redistribute according to the measure $\nu_{TH}(r|\epsilon)$, while in the thermalized boundary generators the configuration at site $1$ ($L$) is replaced by $r$, according to a rate depending on $r$ itself and on the reservoirs parameters. 
+\subsubsection{The dual thermalized process}\label{subsection-dualTHM}
+Here we state the duality result for the thermalized multi-species stirring process with boundary driving. In the following, the dual configuration space is the one defined in \eqref{dualStateSpace} and adapted to the chain of size $L$ and with two extra-site $\{0,L+1\}$ attached to $\{1,L\}$ respectively. To recall it we denote this dual space by $\widetilde{\Omega}_{L}$.
+\begin{proposition}[Duality for the thermalized multi-species stirring process]\label{proposition-dualityTHM}
+The thermalized multi-species stirring process $(\bm{n}(t))_{t\geq 0}$ on the state space $\Omega_{L}$, with generator $\mathcal{L}^{TH}$ defined in \eqref{thermalizedGenerator} is dual to the process $(\bm{\xi}(t))_{t\geq 0}$ on the enlarged configuration space $\widetilde{\Omega}_{L}$, with dual generator
 \begin{equation}
 	\widetilde{\mathcal{L}}^{TH}=\widetilde{\mathcal{L}}_{\text{left}}^{TH}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{TH}+\widetilde{\mathcal{L}}_{\text{right}}^{TH}
 \end{equation}
-where $\mathcal{L}^{TH}_{x,x+1}$ is again \eqref{bulkThermalized} and $\widetilde{\mathcal{L}}_{\text{left}}^{TH}$ and $\widetilde{\mathcal{L}}_{\text{right}}^{TH}$ are absorbing with rate $1$:
+where $\mathcal{L}^{TH}_{x,x+1}$ is \eqref{bulkThermalized} and $\widetilde{\mathcal{L}}_{\text{left}}^{TH}$ and $\widetilde{\mathcal{L}}_{\text{right}}^{TH}$ are absorbing with rate $1$:
 \begin{align}
 	\widetilde{\mathcal{L}}_{\text{left}}^{TH}f(\bm{\xi})&=\left\{f(\xi^{0}+\xi^{1},0,\xi^{2},\ldots,\xi^{L})-f(\bm{\xi})\right\}\nonumber\\ \widetilde{\mathcal{L}}_{\text{right}}^{TH}f(\bm{\xi})&=\left\{f(\xi^{0},\ldots,\xi^{L-1},0,\xi^{L}+\xi^{L+1})-f(\bm{\xi})\right\}\dt
 \end{align}
-This means that they remove all dual particles at site $1$ (and $L$) and put these particles in the extra-site $0$ (and $L+1$) with rate 1. The duality function is the same as the original process, i.e.
+The duality function is the same of the multi-species stirring process, i.e. 
 \begin{equation}
 	D(\bm{n},\bm{\xi})=\prod_{a=1}^{N-1}\left(\rho_{a}^{L}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{\eta_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=1}^{N-1}\left(\rho_{a}^{R}\right)^{\xi_{a}^{L+1}}\dt
 \end{equation}
-The proof duality result for the thermalized multi-species stirring process is standard. For the sake of completeness we report it in Appendix \ref{appendix-dualityThermalized}.
+(cf. \eqref{dualityElements}).
+\end{proposition}
+This dual process is absorbing since the dual boundary generator $\mathcal{L}_{\text{left}}^{TH}$ ($\mathcal{L}_{\text{left}}^{TH}$) remove all dual particles at site $1$ ($L$) and put these particles in the extra-site $0$ ($L+1$) with rate 1.
+The proof of proposition \ref{proposition-dualityTHM} is standard. For the sake of completeness we report it in Appendix \ref{appendix-dualityThermalized}.
 \subsection{Multi-species stirring process with reaction} \label{Subsection-RD}
+We define the average density occupation of species $a$ at site $x$ as
+\begin{equation}
+	\rho_{a}(x,t)=\mathbb{E}_{\mu_{0}}\left[n_{a}^{x}(t)\right]
+\end{equation}
+where $\mathbb{E}_{\mu_{0}}$ denotes the expectation with respect to the law of the Markov process $(\bm{n}(t))_{t\geq 0}$ initialized with arbitrary initial measure $\mu_{0}$. These average occupations evolve according to the evolution equation
+\begin{equation}\label{EE-density}
+	\frac{d \rho_{a}(x,t)}{dt}=\mathbb{E}_{\mu_{0}}\left[\mathcal{L}^{rd}n_{a}^{x}(t)\right]\dt
+\end{equation} 
 In \cite{casini2022uphill} it has been defined a process whose evolution equation for the average occupation $\rho_{a}(x,t)$ of species $a\in \{1,2\}$ is given by a difference-differential equation with two discrete Laplacians (one for each species, multiplied for a proper diffusivity constant) and a linear reaction term (mutation), i.e.
 \begin{equation}\label{2SpeciesRD}
 	\frac{d}{dt} \rho_{a}(x,t)=\sigma_{11}\Delta_{L}\rho_{a}(x,t)+\sigma_{12}\Delta_{L}\rho_{\overline{a}}(x,t)+\Upsilon\left(\rho_{\overline{a}}(x,t)-\rho_{a}(x,t)\right)
@@ -3122,7 +3135,7 @@ As a consequence, from the above conditions we can define the boundary values in
 \end{equation}
 for every $a\in\{1,\ldots,N\}$. Moreover, with this choice we have that $\sum_{a=1}^{N}\alpha_{a}=\nu(\sigma_{11}+(N-1)\sigma_{12})$ and $\sum_{a=1}^{N}\rho_{a}^{0}=\nu$. \\
 The boundary generator $\mathcal{L}_{\text{right}}^{rd}$ is defined analogously, but the $\alpha$'s are replaced by $\beta$'s and the boundary values are considered at site $L+1$.
-\begin{remark}: observe that, up to a specific choice of the $\alpha$'s, the left boundary generator $\mathcal{L}_{\text{left}}^{rd}$ has the form of the one of the multi-species stirring process \eqref{siteGenerator}. 
+\begin{remark}: observe that, up to a specific choice of the $\alpha$'s ($\beta$'s), the left (right) boundary generator $\mathcal{L}_{\text{left}}^{rd}$ ($\mathcal{L}_{\text{right}}^{rd}$) has the form of the one of the multi-species stirring process \eqref{siteGenerator}. 
 \end{remark}
 \paragraph{Action on the occupation variable}
 We only report the final result. The details are written in Appendix \ref{appendix-RD}. For arbitrary site $x\in \{2,\ldots,L-1\}$, the action on the occupation variable $f(\bm{n})=n_{a}^{x}$ of particle of type $a\in \{1,\ldots,N-1\}$ reads
@@ -3133,15 +3146,7 @@ where $\Delta_{L}n_{a}^{x}= n_{a}^{x+1}+n_{a}^{x-1}-2n_{a}^{x}$. \\For $x=1$ and
 \begin{equation}\label{actionBDLine}
 	\mathcal{L}^{rd}n_{a}^{1}=\sigma_{11}\nu \left(\rho_{a}^{0}-2n_{a}^{1}+n_{a}^{2}\right)+\sigma_{12}\nu\sum_{b=1\,:\,b\neq a}^{N-1}\left(\rho_{b}^{0}-2n_{b}^{1}+n_{b}^{2}\right)+\Upsilon\sum_{b=1\,:\,b\neq d}^{N-1}\left(n_{b}^{1}-n_{a}^{1}\right)\dt
 \end{equation}
-On the occupation variable $n_{a}^{L}$ the action is similar. \\ In the spirit of \cite{casini2022uphill} we define the average density occupation of species $a$ at site $x$ as
-\begin{equation}
-	\rho_{a}(x,t)=\mathbb{E}_{\mu_{0}}\left[n_{a}^{x}(t)\right]
-\end{equation}
-where $\mathbb{E}_{\mu_{0}}$ denotes the expectation with respect to the law of the Markov process $(\bm{n}(t))_{t\geq 0}$ initialized with arbitrary initial measure $\mu_{0}$. These average occupations evolve according to the master equation
-\begin{equation}
-	\frac{d \rho_{a}(x,t)}{dt}=\mathbb{E}_{\mu_{0}}\left[\mathcal{L}^{rd}n_{a}^{x}(t)\right]\dt
-\end{equation} 
-Therefore, using the action of $\mathcal{L}^{rd}$ expressed by \eqref{DifferenceEquation} and \eqref{actionBDLine} we obtain the desired system of $N-1$ difference-differential equations \eqref{NSpeciesRD}. For these reasons, this model is a generalization to $N$ species and to maximal occupation $\nu$ of the one studied in \cite{casini2022uphill}. This answers the first question we addressed to at the beginning of this subsection. 
+On the occupation variable $n_{a}^{L}$ the action is similar. Therefore, using the evolution equation \eqref{EE-density} for the average densities and  the action of $\mathcal{L}^{rd}$ expressed by \eqref{DifferenceEquation} and \eqref{actionBDLine} we obtain the desired system of $N-1$ difference-differential equations \eqref{NSpeciesRD}. For these reasons, this model is a generalization to $N$ species and to maximal occupation $\nu$ of the one studied in \cite{casini2022uphill}. This answers the first question we addressed to at the beginning of this section. 
 \subsubsection{Reversible measure for the reaction-diffusion process (equilibrium)} 
 The process described by the generator \eqref{RDGenerator} is reversible with respect to the homogeneous product measure \begin{equation}\label{reversibleMeasureRD}
 	\Lambda_{\text{rev}}=\bigotimes_{x=1}^{L}\Lambda_{\text{rev}}^{x}
@@ -3190,8 +3195,20 @@ while $p_{N}=1-\sum_{a=1}^{N-1}p_{a}$\\
 For the boundary generators $\mathcal{L}_{\text{left}}^{rd}$ and $\mathcal{L}_{\text{right}}^{rd}$ we have that, analogously to what happens for the multispecies stirring process, the reservoirs parameters must be such that $\beta_{a}=\alpha_{a}$ and, due to \eqref{p-equal}, we also need $\alpha_{a}=\alpha$ for all $a\in\{1,\ldots,N-1\}$. 
 \end{comment}
 \subsubsection{Duality for the reaction-diffusion process}
-In this subsection we formulate duality for the multi-species stirring process $(\bm{n}(t))_{t\geq 0}$, defined by the generator \eqref{RDGenerator}.
-The dual  process $(\bm{\xi}(t))_{t\geq 0}$ takes values in the enlarged state space $\widetilde{\Omega}$ defined in \eqref{dualStateSpace}
+In this subsection we formulate duality for the multi-species reaction diffusion stirring process. This answer to the second question addressed at the beginning of this Section.  The dual process is defined on the enlarged state space $\widetilde{\Omega}_{L}$, introduced in Section \ref{subsection-dualTHM}.  
+\begin{proposition}[Duality for the reaction-diffusion process]\label{propositin-duality-RD}
+The reaction-diffusion multi-species stirring process $(\bm{n}(t))_{t\geq 0}$, on the state space $\Omega_{L}$, with generator $\mathcal{L}^{rd}$ defined in \eqref{RDGenerator} is dual to the process $(\bm{\xi}(t))_{t\geq 0}$ on the state space $\widetilde{\Omega}_{L}$ with dual generator
+\begin{equation}\label{DualGeneratorRD}
+	\widetilde{\mathcal{L}}_{\text{left}}^{rd}=\widetilde{\mathcal{L}}^{rd}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{rd}+\widetilde{\mathcal{L}}_{\text{right}}^{rd}
+\end{equation}
+where 
+$\mathcal{L}_{x,x+1}^{rd}$ is defined in \eqref{edgeGeneratorRD} and, $\widetilde{\mathcal{L}}_{\text{left}}^{rd}$ and $\widetilde{\mathcal{L}}_{\text{right}}^{rd}$ are the absorbing dual generators $\widetilde{\mathcal{L}}_{x}$ defined in \eqref{siteDualGenerator} and acting at sites $1$ and $L$, with the specific choice of the reservoirs parameters \eqref{boundaryParamRD}. The duality function
+is the same of the stirring process, i.e.
+\begin{equation}
+	D(\bm{n},\bm{\xi})=\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{|\alpha|}\right)^{\xi_{a}^{0}}\left(\prod_{x=1}^{L}\frac{(\nu -\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\right)\prod_{a=1}^{N-1}\left(\frac{\beta_{a}}{|\beta|}\right)^{\xi_{a}^{L+1}}
+\end{equation}
+(cf. \eqref{dualityElements}).
+\end{proposition} 
 %\begin{equation}
 %	\widetilde{\Omega}=\mathbb{N}_{0}^{N}\times  \bigtimes_{x\in V} \Omega_{x}\times \mathbb{N}_{0}^{N}
 %\end{equation}
@@ -3203,27 +3220,17 @@ The dual  process $(\bm{\xi}(t))_{t\geq 0}$ takes values in the enlarged state s
 %\end{equation}
 %where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles of type $a\in \{1,\ldots,N\}$ at site $x$, 
 %and the component $\xi_{a}^{0},\xi_{a}^{L+1}$  give the number at the extra sites. \\
-The duality function is given by
-\begin{equation}
-	D(\bm{n},\bm{\xi})=\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{|\alpha|}\right)^{\xi_{a}^{0}}\left(\prod_{x=1}^{L}\frac{(\nu -\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\right)\prod_{a=1}^{N-1}\left(\frac{\beta_{a}}{|\beta|}\right)^{\xi_{a}^{L+1}}\dt
-\end{equation}
 %where we denote the \textit{density} of the species $a\in \{2,\ldots,N\}$ imposed by the reservoir at site $x\in V$  by 
 %\begin{equation}
 %	\rho_{a}^{x}:=\frac{\alpha_{a}^{x}}{|\alpha^{x}|}
 %\end{equation}
-The dual generator now reads
-\begin{equation}\label{DualGeneratorRD}
-	\widetilde{\mathcal{L}}_{\text{left}}^{rd}=\widetilde{\mathcal{L}}^{rd}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{rd}+\widetilde{\mathcal{L}}_{\text{right}}^{rd}
-\end{equation}
-where 
-$\mathcal{L}_{x,x+1}^{rd}$ is defined in \eqref{edgeGeneratorRD} and, $\widetilde{\mathcal{L}}_{\text{left}}^{rd}$ and $\widetilde{\mathcal{L}}_{\text{right}}^{rd}$ are again the absorbing dual generators $\widetilde{\mathcal{L}}_{x}$ defined in \eqref{siteDualGenerator}, with the specific choice of the reservoirs parameters \eqref{boundaryParamRD}. This answer to the second question addressed at the beginning of this Section. 
-\paragraph{Proof of duality:}
-we only prove duality for the bulk generator, since the boundary generators are the same as in Section \ref{Subsection-ss-nonI}. 
-In the spirit of Section \ref{sectionDuality}, it is convenient to write the Hamiltonian of the process, that is defined through the basis elements \eqref{actionE} of the $gl(N)$ Lie algebra as 
+
+\paragraph{Proof of Proposition \ref{propositin-duality-RD}:}
+we only prove duality for the bulk generator, since the boundary generators are the same of the multi-species stirring process. In the spirit of Section \ref{sectionDuality}, it is convenient to write the Hamiltonian of the process, that is defined through the basis elements \eqref{actionE} of the $gl(N)$ Lie algebra as 
 \begin{equation}
 	H^{rd}=H_{\text{left}}+\sum_{x=1}^{L-1}\left(\sigma_{11}\mathcal{H}_{x,x+1}+\sigma_{12}\sum_{c=1}^{N-2}\mathcal{H}_{x,x+1}^{c}+(\Upsilon-2\sigma_{12})\mathcal{H}_{x,x+1}^{m}\right)+H_{\text{right}}\dt
 \end{equation}
-Here, $\mathcal{H}_{x,x+1}$ and $H_{\text{left}},H_{\text{right}}$ are \eqref{edgeHamiltonian}  and \eqref{siteHamiltonian} (with the choice of the boundary parameters done in \eqref{boundaryParamRD}) respectively, while
+Here, $\mathcal{H}_{x,x+1}$ is  \eqref{edgeHamiltonian}  and $H_{\text{left}},H_{\text{right}}$ is \eqref{siteHamiltonian} (with the choice of the boundary parameters done in \eqref{boundaryParamRD}). We, then have that 
 \begin{equation}
 	\mathcal{H}_{x,x+1}^{c}=\sum_{a,b=0}^{N}\left(E_{h_{c}(a)b}\otimes E_{h_{c}(b)a}-E_{aa}\otimes E_{bb}\right)
 \end{equation}
@@ -3232,10 +3239,6 @@ and
 	\mathcal{H}_{x,x+1}^{m}=\sum_{a,b=1}^{N}\left(E_{ba}\otimes \mathbbm{1}-E_{aa}\otimes \mathbbm{1}\right)\dt
 \end{equation}
 We prove that, for arbitrary $x\in\{1,\ldots,L\}$,
-%\begin{align}
-%	(\mathcal{H}_{x,x+1}^{rd})^{T}D&=D\mathcal{H}_{x,x+1}^{rd}\label{edgeDualityRelationRD}
-%\end{align}
-%but it is enough of showing 
 \begin{align}
 	&(\mathcal{H}_{x,x+1}^{c})^{T}D=D\mathcal{H}_{x,x+1}^{c}\qquad \forall c\in \{1,\ldots,N-2\}\label{cDualityRelation}\\
 	&(\mathcal{H}_{x,x+1}^{m})^{T}D=D\mathcal{H}_{x,x+1}^{m}\label{mDualityRelation}\dt
