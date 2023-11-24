@@ -1219,7 +1219,7 @@ Therefore, using the linearity of the expectation and introducing the index $b\i
 \begin{remark}\label{Remark-extension-graph-nu}
 	The results in Corollary \ref{Corolollary-ABS_Corr-abstract} and in Corollary \ref{Corollary-NESS-ABS}  can be generalized to arbitrary graphs $G=(V,\mathcal{E})$ and for higher maximal occupancies $\nu >1$.
 	However the computation of absorption probabilities of the dual process is possible only in the set-up of the integrable chain with $\nu =1$ and two reservoirs at the boundaries.
-	Thus we chose to present them in such a context.
+	Thus we chose to present them in such a context. For the chain with higher maximal occupancies $\nu >1$ see Section \ref{Subsection-ss-nonI}.
 \end{remark}
 
 
@@ -2183,14 +2183,14 @@ To find these quantities we fix the rows correspondent to $\bm{\tau}$ in the mat
 %Now we can write the ground state of $H^{''}$ as \begin{equation}|\Psi^{''}\rangle=\sum_{\mu_{1},\ldots,\mu_{L}=1}^{N}\Psi^{''}(\bm{\mu})|\bm{\mu}\rangle\end{equation} with the coefficients $\psi^{''}(\bm{\mu})$ are given in \eqref{coefficients-psiSec}.
 %Therefore, we have that equation \eqref{ABS_intermediate} becomes
 %Because of the exponent $(1-\delta_{\tau_{x},1})$, the element $\Psi^{''}(\bm{\tau})$ has, up the term $\frac{\Gamma(2+\sum_{i=1}^{L}\delta_{\tau_{x},1})}{\Gamma(L+2)}$, a contribution of a factor $(\alpha_{\tau_{x}}-\beta_{\tau_{x}})\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{x},1})\right)$ if the site is non empty, and a contribution of a factor "$1$" if the site is empty, it is convenient to introduce the $c_{i}$ of defined in \eqref{CiEquation}. Then, equation  \eqref{ABS_intermediate} reads 
-Observing that $c_{x}(1-\delta_{\tau_{x},N}) =c_{x}-\delta_{\tau_{x},N}$, we finally have
+Observing now that $c_{x}(1-\delta_{\tau_{x},N})$ can be replaced by  $c_{x}-\delta_{\tau_{x},N}$, we finally have
 \begin{equation}\label{elementsABS}
 	\begin{split}
 		\Psi^{'}(\bm{\tau})=\frac{1}{(L+1)!}\sum_{c_{1}=\delta_{\tau_{1},N}}^{1}\ldots\sum_{c_{L}=\delta_{\tau_{L},N}}^{1}\prod_{x=1}^{L}(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-c_{x}}\left(1+\sum_{j=x}^{L}c_{j}\right)\beta_{\tau_{x}}^{c_{x}-\delta_{\tau_{x},N}}\dt
 	\end{split}
 \end{equation} 
 %Indeed, when $c_{i}=0$ this formula replaces the contribution in the square brackets with a $\beta_{\tau_{x}}$. 
-Considering all possible $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, \eqref{ABS-vect} follows.
+%Considering all possible $\tau_{1},\ldots,\tau_{L}\in \{1,\ldots,N\}$, \eqref{ABS-vect} follows.
 \begin{flushright}
     $\square$
 \end{flushright}
@@ -2228,6 +2228,7 @@ we have
 \end{equation}
 Therefore, it follows that, using the resolution of the identity
 \begin{align}
+\label{corr-psi1}
 	\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=& \sum_{\bm{\tau}\in \Omega^{'}}\langle \bm{\tau}|D|\bm{\xi}\rangle\langle\bm{\tau}|\Psi\rangle
 	=\sum_{\bm{\tau}\in \Omega^{'}}\langle \bm{\tau}|S_{1}^{T}|\hat{\bm{\xi}}\rangle\langle\bm{\tau}|\Psi\rangle\nonumber\\
 	=&\sum_{\bm{\tau}\in \Omega^{'}}\langle \hat{\bm{\xi}}|S_{1}|\bm{\tau}\rangle\langle\bm{\tau}|\Psi\rangle
@@ -2248,8 +2249,8 @@ As a last step, using the binomial theorem, we rewrite the previous expression a
 	f(c_{1},\ldots,c_{m})\prod_{k=1}^{m}\left(\sum_{t_{k}=0}^{c_{k}}(-1)^{c_{k}-t_{k}}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}g_{k}(x_{k},c_{k},\ldots,c_{m})\right)\nonumber\\
 	=&\sum_{c_{1},\ldots,c_{m}=0}^{1}
 	f(c_{1},\ldots,c_{m})\sum_{t_{1}=0}^{c_{1}}\ldots\sum_{t_{m}=0}^{c_{m}}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\left(\prod_{j=1}^{m}(-1)^{c_{j}-t_{j}}g_{j}(x_{j},c_{j},\ldots,c_{m})\right)\nonumber\\
-	=&\sum_{t_{1},\ldots,t_{m}=0}^{1}
-	\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(c_{1},\ldots,c_{m})\left(\prod_{k=1}^{m}\alpha_{s_{k}}^{t_{k}}\beta_{s_{k}}^{1-t_{k}}\right)\left(\prod_{j=1}^{m}(-1)^{c_{j}-t_{j}}g_{j}(x_{j},c_{j},\ldots,c_{m})\right)\nonumber\\
+%	=&\sum_{t_{1},\ldots,t_{m}=0}^{1}
+%	\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(c_{1},\ldots,c_{m})\left(\prod_{k=1}^{m}\alpha_{s_{k}}^{t_{k}}\beta_{s_{k}}^{1-t_{k}}\right)\left(\prod_{j=1}^{m}(-1)^{c_{j}-t_{j}}g_{j}(x_{j},c_{j},\ldots,c_{m})\right)\nonumber\\
 	=&\sum_{t_{1},\ldots,t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(c_{1},\ldots,c_{m})\left(\prod_{k=1}^{m}(-1)^{c_{k}-t_{k}}g_{k}(x_{k},c_{k},\ldots,c_{m})\right)\dt
 \end{align}
 From third to fourth line we have changed the summation order. Therefore, comparing the above formula and \eqref{absProbabilitiesIntegrable}, we can read off the absorption probabilities given in \eqref{abs-probabilities}.
@@ -2257,7 +2258,9 @@ From third to fourth line we have changed the summation order. Therefore, compar
 	$\square$
 \end{flushright}
 \subsubsection{Interpretation of $\Psi^{'}(\bm{\tau})$ as marginals of the steady state distribution}\label{subsection-interpretationPSIp}
-We argue similarly as in the Section \ref{correlation-section}. For any $\bm{\tau}\in \Omega^{'}$ we have that 
+%We argue similarly as in the Section \ref{correlation-section}. 
+We still miss the interpretation of $\Psi^{'}(\bm{\tau})$ when  $\bm{\tau})= (N,\ldots,N)$. We show here that for this particular configuration
+$\Psi^{'}(N,\ldots,N) =1$. Indeed, for any $\bm{\tau}\in \Omega^{'}$ we have that 
 \begin{align}
 	\Psi^{'}(\bm{\tau})=&\langle\bm{\tau}|\Psi^{'}\rangle=\sum_{\bm{\sigma}\in \Omega}\langle \bm{\tau}|S_{1}|\bm{\sigma}\rangle\langle \bm{\sigma}|\Psi\rangle=\sum_{\sigma\in \Omega}\langle \bm{\sigma}|S_{1}^{T}|\bm{\tau}\rangle\langle \bm{\sigma}|\Psi\rangle\dt
 \end{align}
@@ -2289,7 +2292,10 @@ Indeed, we have that
  	\begin{equation}\label{interpretation-PsiP}
  	\Psi^{'}(\bm{\tau})=\mathbb{E}\left[\prod_{x=1}^{L}\left(\mathbbm{1}_{\{Y_{x}=\tau_{x}\}} \right)^{(1-\delta_{\tau_{x},N})}\right]\dt
  \end{equation} 
- This last equation will be used in Section \ref{appB}. {\color{blue}Given $\bm{\tau}$ as before, we can introduce the number of occupied sites $\ell=\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})$. We denote by $x_{1},\ldots,x_{\ell}$, such that $x_{k}<x_{k+1}$ for all $k\in \{1,\ldots,\ell-1\}$, the coordinates where a particle of any (non-empty) type is present. Finally, we call 
+ This last equation completes and generalizes \eqref{corr-psi1} by showing that $\Psi^{'}(N,\ldots,N) =1$.
+ 
+ Equivalently, we can interpret the components of $\Psi'(\bm{\tau})$ as follows.
+ Let $\ell$ be the number of occupied sites in the configuration $\bm{\tau}$, i.e.  $\ell=\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})$. We denote by $x_{1},\ldots,x_{\ell}$, such that $x_{k}<x_{k+1}$ for all $k\in \{1,\ldots,\ell-1\}$, the coordinates where a particle of any (non-empty) type is present. Finally, we call 
  \begin{equation}
  	\Omega_{\ell}^{'}(\bm{\tau}):=\left\{\bm{\sigma}\in \Omega^{'}\;:\; \sigma_{x_{1}}=\tau_{x_{1}},\ldots,\sigma_{x_{\ell}}=\tau_{x_{\ell}}\right\}\dt
  \end{equation} 
@@ -2301,9 +2307,12 @@ we have that
 \begin{align}
 	\Psi^{'}(\bm{\tau})=&\mathbb{E}\left[\prod_{x=1}^{L}\left(\mathbbm{1}_{\{Y_{x}=\tau_{x}\}} \right)^{(1-\delta_{\tau_{x},N})}\right]=\mathbb{E}\left[\prod_{k=1}^{\ell}\mathbbm{1}_{\{Y_{x_{k}}=\tau_{x_{k}}\}}\right]=\sum_{\bm{\sigma}\in \Omega_{\ell}^{'}(\bm{\tau})}\mu(\bm{\sigma})=\mu_{x_{1},\ldots,x_{\ell}}(\bm{\tau})\dt
 \end{align} 
-It follows that $\Psi^{'}(\bm{\tau})$ is the marginal on $\ell$ sites $x_{1},\ldots,x_{\ell}$ of the non-equilibrium steady state distribution, in the sense described above. In particular, when the configuration $\bm{\tau}$ has at $\ell$ particles, $\Psi^{'}(\bm{\tau})$ does coincide with the $\ell$-point correlation function. As a consequence, all the marginals of $\mu$ can be found using the absorption probabilities by equation \eqref{exactCorrelations}. }
+It follows that $\Psi^{'}(\bm{\tau})$ is the marginal on $\ell$ sites $x_{1},\ldots,x_{\ell}$ of the non-equilibrium steady state distribution. In particular, when the configuration $\bm{\tau}$ has $\ell$ particles, $\Psi^{'}(\bm{\tau})$ does coincide with the $\ell$-point correlation function. 
+%As a consequence, all the marginals of $\mu$ can be found using the absorption probabilities by equation \eqref{exactCorrelations}. 
+
 \subsubsection{Steady state}\label{appB}
-By the knowledge of the closed formula for correlations \eqref{exactCorrelations}, we find the probability mass-function in the non-equilibrium steady state by using Corollary \ref{Corollary-NESS-ABS}. Therefore, the vector $|\Psi\rangle$ is also determined. For the sake of completeness we show here that $|\Psi\rangle$ can be equivalently determined by inverting the similarity transformation $S_{1}$, using $|\Psi\rangle=S_{1}^{-1}|\Psi^{'}\rangle$ (cf. \eqref{S1-Inverse}). 
+By the knowledge of the closed formula for correlations \eqref{exactCorrelations}, we find the probability mass-function in the non-equilibrium steady state by using Corollary \ref{Corollary-NESS-ABS}. Indeed we show here that 
+$|\Psi\rangle=S_{1}^{-1}|\Psi^{'}\rangle$ is nothing but Corollary \ref{Corollary-NESS-ABS}.
 On a single site we have that 
 \begin{equation}\label{S1-L1}
 	\mathcal{S}_{1}^{-1}=\mathbbm{1}+(-1)\sum_{a=1}^{N-1}e_{Na}
@@ -2403,7 +2412,7 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 		\end{equation} we obtain  
 		\begin{align}\label{implicit-PSI-PSIp}
 			\langle \bm{\tau}|S_{1}^{-1}|\Psi^{'}\rangle=&\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\prod_{x=1}^{L}\left(\delta_{\tau_{x},\sigma_{x}}+(-1)\delta_{\tau_{x},N}\sum_{a_{x}=1}^{N-1}\delta_{\sigma_x,a_{x}}\right)\nonumber\\
-			=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\left(\prod_{x=1\,:\,x\notin\{q_{1},\ldots,q_{b}\}}^{L}\delta_{\tau_{x},Y_x}\right)\left(\prod_{x\in \{q_{1},\ldots,q_{b}\}}\delta_{\tau_{x},N}\sum_{a_{x}=1}^{N-1}\delta_{\sigma_{x},a_{x}}\right)\nonumber\\
+			=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\left(\prod_{x=1\,:\,x\notin\{q_{1},\ldots,q_{b}\}}^{L}\delta_{\tau_{x},\sigma_x}\right)\left(\prod_{x\in \{q_{1},\ldots,q_{b}\}}\delta_{\tau_{x},N}\sum_{a_{x}=1}^{N-1}\delta_{\sigma_{x},a_{x}}\right)\nonumber\\
 			=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{q_{1}},\ldots a_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{a_{q_{1}}}_{q_{1}},\ldots,\underbrace{a_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
 		\end{align}
 		where the notation
@@ -2444,8 +2453,7 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 %	\end{equation}
 %and $f(c_{1},\ldots,c_{L})$ and $g_{x}(x,c_{x},\ldots,c_{L})$ defined in \eqref{powerCoeffNOspec} and \eqref{powerCoeffSpecies} respectively. 
 %	\begin{equation}
-%	Q(x)=1-\sum_{k=1}^{b}\delta_{x,q_{k}}
-%\end{equation}
+ %\end{equation}
 %	Moreover, $\Psi(\bm{\tau})$ are interpreted as the probabilities in the steady state of having a configuration $\bm{\tau}$, i.e.
 %	\begin{equation}
 %%	\end{equation\end{corollary} 
@@ -2454,7 +2462,7 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 	\begin{equation}
 		\Psi(\bm{\tau})=\prod_{a=1}^{N}\alpha_{a}^{\sum_{x=1}^{L}\delta_{\tau_{x},a}}
 	\end{equation}
-As it has to, this is the probability of the configuration $\bm{\tau}$ under the reversible measure \eqref{reversibleMeasure}, with site marginals distributed as $\text{Multinomial}(1,\alpha_{1},\ldots,\alpha_{N})$. 
+As it has to be, this is the probability of the configuration $\bm{\tau}$ under the reversible measure \eqref{reversibleMeasure}, with site marginals distributed as $\text{Multinomial }(1,\alpha_{1},\ldots,\alpha_{N})$. 
 \end{remark}
 \begin{comment}
 \begin{remark}[Implicit form of $\Psi(\bm{\tau})$]
@@ -2487,20 +2495,20 @@ As it has to, this is the probability of the configuration $\bm{\tau}$ under the
 	\end{equation}
 \end{comment}
 %In \eqref{SteadyState-coeff-implicit} there are two terms. For every configuration $\bm{\tau}$ the first term just gives $\Psi^{'}(\bm{\tau})$ from formula \eqref{ABS}. The second term acts as follows: for every $b\in\{1,\ldots,L\}$, if $\bm{\tau}$ has more then $b$ empty occupations, it changes $b$ of these empty occupations in all possible species from $1$ to $N-1$ and gives contributions $\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})$. If $\bm{\tau}$ has less than $b$ empty occupation we do not see any contribution from this second term.
-\begin{remark}%[Correlation as the steady state of a $m$-chain ]
-	We observe that, as a consequence of Section \ref{subsection-interpretationPSIp}, if $\bm{\tau}$ has only non-empty occupations, i.e. $\tau_{x}\in \{1,\ldots,N-1\}$ for all $x\in \{1,\ldots,L\}$, then 
-	\begin{equation}
-		\Psi(\bm{\tau})=\Psi^{'}(\bm{\tau})=\mathbb{E}\left[\prod_{x=1}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right]
-	\end{equation}
-\begin{comment}
- As a consequence, we can give a different interpretation to correlation computed in \eqref{exactCorrelations}. Consider the sites $(x_{k})_{k\in \{1,\ldots,m\}}$ and fix $(a_{k})_{k\in \{1,\ldots,m\}}$ introduced in Theorem \ref{thm-correlations}. We define a chain of length $m$ where the sites have coordinates $x_{1},\ldots,x_{m}$. We denote by $|\Psi_{m}\rangle$ the non-equilibrium steady state of this $m$-chain. Then, we have that the correlations computed in \eqref{exactCorrelations} can be written as
-\begin{equation}
-	\mathbb{E}_{\mu}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=\Psi_{m}(a_{1},\ldots,a_{m})
-\end{equation}
-This means that we can define a mapping between the $m$-point correlation of chain of length $L$ and the non-equilibrium steady state of a chain of length $m$. This mapping, 
-\end{comment}
-	%As a consequence, one can interpret the $m$-point correlations computed in \eqref{exactCorrelations} as the steady state of a chain of length $m$ where the sites have coordinates $x_{1},\ldots,x_{m}$ and they are occupied by $a_{1},\ldots,a_{m}$. 
-\end{remark}
+%\begin{remark}%[Correlation as the steady state of a $m$-chain ]
+%	We observe that, as a consequence of Section \ref{subsection-interpretationPSIp}, if $\bm{\tau}$ has only non-empty occupations, i.e. $\tau_{x}\in \{1,\ldots,N-1\}$ for all $x\in \{1,\ldots,L\}$, then 
+%	\begin{equation}
+%		\Psi(\bm{\tau})=\Psi^{'}(\bm{\tau})=\mathbb{E}\left[\prod_{x=1}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right]
+%	\end{equation}
+%\begin{comment}
+% As a consequence, we can give a different interpretation to correlation computed in \eqref{exactCorrelations}. Consider the sites $(x_{k})_{k\in \{1,\ldots,m\}}$ and fix $(a_{k})_{k\in \{1,\ldots,m\}}$ introduced in Theorem \ref{thm-correlations}. We define a chain of length $m$ where the sites have coordinates $x_{1},\ldots,x_{m}$. We denote by $|\Psi_{m}\rangle$ the non-equilibrium steady state of this $m$-chain. Then, we have that the correlations computed in \eqref{exactCorrelations} can be written as
+%\begin{equation}
+%	\mathbb{E}_{\mu}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=\Psi_{m}(a_{1},\ldots,a_{m})
+%\end{equation}
+%This means that we can define a mapping between the $m$-point correlation of chain of length $L$ and the non-equilibrium steady state of a chain of length $m$. This mapping, 
+%\end{comment}
+%	%As a consequence, one can interpret the $m$-point correlations computed in \eqref{exactCorrelations} as the steady state of a chain of length $m$ where the sites have coordinates $x_{1},\ldots,x_{m}$ and they are occupied by $a_{1},\ldots,a_{m}$. 
+%\end{remark}
 \begin{comment}
 	\begin{remark}
 		The coefficients $\Psi(\bm{\tau})$ can also be written explicitly by replacing $\Psi^{'}(\bm{\tau})$ with formula \eqref{ABS}. They read 
@@ -2642,8 +2650,8 @@ Formula \eqref{SteadyState-coeff-implicit} can be also obtained without invertin
 				\end{comment}
 		
 		
-\subsection{The colour-blind case}
-The computations made for the multi-species stirring process can be specialized for the colour-blind case $N=2$, i.e. when only one type of non-empty particle is considered. In this situation we retrieve the SSEP, that was already solved with the quantum inverse scattering method in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations of SEEP: 
+\subsection{The single-species case (SSEP)}
+The computations made for the multi-species stirring process can be specialized to the single-species case $N=2$. In this situation we retrieve the SSEP, that was already solved with the quantum inverse scattering method in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations of SEEP: 
 \begin{equation}
 	H=H_{\text{left}}+\sum_{x=1}^{L-1}H_{x,x+1}+H_{\text{right}}
 \end{equation}
@@ -2692,18 +2700,18 @@ while the boundary Hamiltonians of $H^{''}$ are
 \end{pmatrix}\dt
 \end{equation}
  We only report the main results, since the computations are just a specific case of the ones done for the multi-species stirring process. 
-\paragraph{Correlations of SSEP}
+\paragraph{Correlations of SSEP.}
 We retrieve the closed formula for correlations in the non-equilibrium steady state found in \cite[(4.26)]{frassek2020eigenstates}:  
 \begin{equation}\label{correlations-SSEP}
 	\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=1\}}\right]=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation} 
-\textbf{Proof of \eqref{correlations-SSEP}:} Starting from \eqref{exactCorrelations} we exploit indistinguishability of particles and we introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define $q$ %labels denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  
+\textbf{Proof of formula \eqref{correlations-SSEP}:} Starting from \eqref{exactCorrelations} we exploit indistinguishability of particles and we introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define $q$ %labels denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  
 $1\leq \ell_{1}<\ell_{2}<\ldots<\ell_{q}\leq m$. To each of these label we associate the coordinates $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$ that are such $c_{x_{\ell_{k}}}=1$ for all $k\in \{1,\ldots,q\}$ and $c_{x}=0$ for $x\notin \{x_{\ell_{1}},\ldots,x_{\ell_{q}}\}$. Therefore, for any fixed $c_{x_{1}},\ldots,c_{x_{m}}$, we find $q$ and $\ell_{1},\ldots,\ell_{q}$ from which we fix $x_{\ell_{1}},\ldots,x_{\ell_{q}}$. Then, we obtain  
 	\begin{equation}
 		\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}=\prod_{k=1}^{q}\left(1+L-x_{\ell_{k}}-q+k\right)\dt
 	\end{equation}
 Indeed, in the product on the left hand side only $q$ terms at coordinates $x_{\ell_{1}},\ldots x_{\ell_{q}}$ do survive. Moreover, any fixed $x_{\ell_{k}}$ has $q-k$ occupied sites at its right.
-Furthermore, sing the properties of the factorials, we have that 
+Furthermore, using the properties of the factorials, we have that 
 \begin{equation}\label{Gamma-product}
 	\frac{(L+1-\sum_{k=1}^{m}c_{k})!}{(L+2)!}=\prod_{k=1}^{q}\frac{1}{(2+L-k)}\dt
 \end{equation}
@@ -2715,12 +2723,12 @@ and \eqref{correlations-SSEP} follows.
 \begin{flushright}
 	$\square$
 \end{flushright}
-\paragraph{$|\Psi^{''}\rangle$ for SSEP} The ground state of $H^{''}$ is 
+\paragraph{The vector $|\Psi^{''}\rangle$ for SSEP.} The ground state of $H^{''}$ is 
 \begin{equation}\label{psiII-SSEP}
 	|\Psi^{''}\rangle=\sum_{q=0}^{L}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}(\alpha_{1}-\beta_{1})^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
 \end{equation}
 where $\bm{\ell}=(\ell_{1},\ldots,\ell_{q})$. \\ \\
-\textbf{Proof of \eqref{psiII-SSEP}:} We specialize equation \eqref{resulEsteady} to the colour-blind case. We introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. For each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. Thus, arguing as in the proof of \eqref{correlations-SSEP} and using \eqref{Gamma-product} we have that 
+\textbf{Proof of formula \eqref{psiII-SSEP}:} We specialize equation \eqref{resulEsteady} to the colour-blind case. We introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. For each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. Thus, arguing as in the proof of \eqref{correlations-SSEP} and using \eqref{Gamma-product} we have that 
 \begin{align}
 	&\frac{\left(1+\sum_{x=1}^{L}\delta_{\tau_{x},2}\right)!}{\left(1+L\right)!}\prod_{x=1}^{L}\left[(\alpha_{\tau_{x}}-\beta_{\tau_{x}})\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},2}\right)\right]^{1-\delta_{\tau_{x},2}}\nonumber\\%=\lambda_{1}^{q}\prod_{x=1}^{L}\left(2+L-y_{x}-\sum_{j=x}^{L}\delta_{\tau_{j},1}\right)^{\delta_{\tau_{x},1}}
 	=&\frac{\left(1+L-\sum_{x=1}^{L}(1-\delta_{\tau_{x},2})\right)!}{\left(1+L\right)!}\prod_{x=1}^{L}\left[(\alpha_{\tau_{x}}-\beta_{\tau_{x}})\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{j},2})\right)\right]^{1-\delta_{\tau_{x},2}}\nonumber\\
@@ -2730,7 +2738,7 @@ By varying $q$ and $\ell_{1},\ldots,\ell_{q}$, we have a one-to-one mapping with
 \begin{flushright}
 	$\square$
 \end{flushright}
-\paragraph{$|\Psi^{'}\rangle$ for SSEP} The ground state of $H^{'}$ reads
+\paragraph{The vector $|\Psi^{'}\rangle$ for SSEP.} The ground state of $H^{'}$ reads
 \begin{equation}
 	|\Psi^{'}\rangle=\sum_{\bm{\tau}\in\Omega^{'}}\Psi^{'}(\bm{\tau})|\bm{\tau}\rangle
 \end{equation}
@@ -2739,7 +2747,7 @@ where
 	\Psi^{'}(\bm{\tau})=\sum_{q=0}^{|\bm{\tau}|}(\alpha-\beta)^{q}\beta^{L-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq |\bm{\tau}|}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation}
 and where $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x},1}$ . \\ \\
- \textbf{Proof of \eqref{PsiI-N2}:}  For any configuration $\bm{\tau}\in \Omega$ we denote by  $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x},2}$ the number of occupied sites. Then, considering equation \eqref{ABS_1} we have the result by adapting the proof of \eqref{correlations-SSEP} in the following way. We select $q\in\{0,\ldots,|\bm{\tau}|\}$ particles among the occupied ones. We call $\ell_{1},\ldots\ell_{q}\in \{1,\ldots,|\tau|\}$ such that $\ell_{1}<\ell_{2}<\ldots<\ell_{q}$. These $(\ell_{k})_{k\in {1,\ldots,q}}$ are labels for the $q$ particles previously selected. For each $\ell_{k}$ we introduce $x_{\ell_{k}}$, i.e. the coordinate where the particle with label $\ell_{k}$ is placed. Thus, we have that  
+ \textbf{Proof of formula \eqref{PsiI-N2}:}  For any configuration $\bm{\tau}\in \Omega$ we denote by  $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x},2}$ the number of occupied sites. Then, considering equation \eqref{ABS_1} we have the result by adapting the proof of \eqref{correlations-SSEP} in the following way. We select $q\in\{0,\ldots,|\bm{\tau}|\}$ particles among the occupied ones. We call $\ell_{1},\ldots\ell_{q}\in \{1,\ldots,|\tau|\}$ such that $\ell_{1}<\ell_{2}<\ldots<\ell_{q}$. These $(\ell_{k})_{k\in {1,\ldots,q}}$ are labels for the $q$ particles previously selected. For each $\ell_{k}$ we introduce $x_{\ell_{k}}$, i.e. the coordinate where the particle with label $\ell_{k}$ is placed. Thus, we have that  
 \begin{equation}
 	\prod_{x=1}^{L}\left(L+2-x-\sum_{j=x}^{L}c_{j}\right)^{c_{x}}=\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-\sum_{j=x_{\ell_{k}}}^{L}c_{j}\right)=\prod_{k=1}^{q}\left(1+L-x_{\ell_{k}}-q+k\right)\dt
 \end{equation}
@@ -2747,11 +2755,11 @@ It follows that
 \begin{equation}
 	\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}	\prod_{x=1}^{L}\left(L+2-x-\sum_{j=x}^{L}c_{j}\right)^{c_{x}}=\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq |\bm{\tau}|}\prod_{k=1}^{q}\left(1+L-x_{\ell_{k}}-q+k\right)\dt
 \end{equation} 
-Therefore, using \eqref{Gamma-product} and by considering all possible $\bm{\tau}$ one finds $|\Psi^{'}\rangle$ for the SSEP.
+Therefore, using \eqref{Gamma-product}  one finds $|\Psi^{'}\rangle$ for the SSEP.
 \begin{flushright}
 	$\square$
 \end{flushright}
-\paragraph{$|\Psi\rangle$ for SSEP}
+\paragraph{The vector $|\Psi\rangle$ for SSEP.}
 In the colour-blind case we have that 
 \begin{equation}\label{NESS-SSEP}
 	|\Psi\rangle=\sum_{\bm{\tau}\in \Omega^{'}}\Psi(\bm{\tau})|\bm{\tau}\rangle
@@ -2935,14 +2943,14 @@ Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,x_{k},c_{k},\ldots,c_{m})$ an
 \end{flushright}}
 \end{comment}
 
-\section{Extensions for the non-integrable chain}
+\section{Extensions beyond the integrable chain}
 \label{sec5}
-In Sections \ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable using to integrability.  
-The aim is studying some property of the process when integrability is lost. We fix $\nu\geq 1$ and, for the sake of simplicity, we keep the geometry of a chain. We provide the following extensions: 
+In Sections \ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable using integrability.  
+The aim of this section is to study the process when integrability is lost. We fix $\nu\geq 1$ and, for the sake of simplicity, we keep the geometry of a chain. We provide the following extensions: 
 \begin{enumerate}
-	\item \textit{Arbitrary correlations}: exploiting duality, the steady state correlations can be expressed in terms of absorption probabilities of the dual particles. These probability are hard to find in this partial exclusion situation, however correlation can be formally written. Section \ref{Subsection-ss-nonI}. \textbf{[Do we need this or it is enough Remark \ref{Remark-extension-graph-nu}?]}
-	\item \textit{Instantaneous thermalization}: starting from the multi-species stirring dynamics, we define the thermalized process, where particle are redistribute in each bond with a measure that is the reversible one conditioned to the conservation of the number of particles on this bond. Also for this thermalized process we prove duality. Section \ref{Subsection-Thermalized}.
-	\item \textit{Reaction-diffusion process}: a further dynamics is added. Particle can now change type. The model is carefully constructed with the goal of having the average densities evolving as a system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is also proved. Section \ref{Subsection-RD}
+	\item \textit{Correlations} (Section \ref{Subsection-ss-nonI}): exploiting duality, the steady state correlations can be expressed in terms of absorption probabilities of the dual particles. These probability are hard to find when $\nu>1$, however correlation can be formally written. 	
+	\item \textit{Instantaneous thermalization} (Section \ref{Subsection-Thermalized}): starting from the multi-species stirring dynamics, we define the thermalized process, where particle are redistribute in each bond with a measure that is the reversible one conditioned to the conservation of the number of particles on this bond. Also for this thermalized process we prove duality. 	
+	\item \textit{Reaction-diffusion process}(Section \ref{Subsection-RD}): a further dynamics is added. Particle can now change type. The model is carefully constructed with the goal of having the average densities evolving as a system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is also proved.
 \end{enumerate}
 In the rest of this section we consider a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can host $\nu\geq 1$ particles, chosen among the $N$ types. Now the dual graph is still a chain, but with two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$). All the processes considered, denoted by $\left(\bm{n}(t)\right)_{t\geq0}$ with the generator specified in each subsection, will be defined on the space
 \begin{equation}\label{stateSpace-Chain}
