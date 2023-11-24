@@ -2013,7 +2013,7 @@ We observe that, for any fixed $x\in \{1,\ldots,L\}$ and for any fixed $\bm{\tau
 \begin{align}
 	\left[\delta_{\tau_{x},\sigma_{x}}+\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\beta_{\tau_{x}}\right]\left(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}}\right)^{1-\delta_{\sigma_{x},N}}=	\left[\delta_{\tau_{x},\sigma_{x}}+\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\beta_{\tau_{x}}\right]\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\sigma_{x},N}}\dt
 \end{align}
-Indeed, on one hand if $\sigma_{x}\neq N$ only the term $\delta_{\tau_{x},\sigma_{x}}$ does survive in the square bracket, that is non-vanishing only if $\sigma_{x}=\tau_{x}$. On the other hand, if $\sigma_{x}=N$ we have $(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}=(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-\delta_{\sigma_{x},N}}=1$. \\
+Indeed, on one hand if $\sigma_{x}\neq N$ only the term $\delta_{\tau_{x},\sigma_{x}}$ does survive in the square brackets of the above equation, that is non-vanishing only if $\sigma_{x}=\tau_{x}$. This implies that both the left-hand-side and the right-hand-side are either $(\alpha_{\tau_{x}}-\beta_{\tau_{x}})$ ro $0$. On the other hand, if $\sigma_{x}=N$ we have $(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}=(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-\delta_{\sigma_{x},N}}=1$, thus both sides of the equality are either $\beta_{\tau_{x}}$ or $0$.  \\
 Moreover, we have that 
 \begin{align}
 	\delta_{\sigma_{x},\tau_{x}}+\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\beta_{\tau_{x}}=&\beta_{\tau_{x}}^{\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})}\left(\delta_{\tau_{x},\sigma_{x}}+\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right)\nonumber\\
@@ -3460,17 +3460,17 @@ First, we act with $\mathcal{L}_{\text{left}}^{TH}$ on $D(\bm{n},\bm{\xi})$. By 
 	\\&
 	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{\nu}
 \end{align}
-We consider the first addend in the curly bracket of the previous equation. We add and remove $|\xi^{1}|-\xi_{N}^{1}=\xi_{1}^{1}+\ldots+\xi_{N-1}^{1}$ at the exponent of $\left(\frac{\alpha_{a}}{|\alpha|}\right)$ and then we multiplying by $\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-r_{\ell}+r_{\ell}-\xi_{\ell}^{1}+\xi_{\ell}^{1}}$. Thus, we have
+We consider the first addend in the curly bracket of the \eqref{ProvaBordoTH}. We add and remove $\xi_{a}^{1}$ at the exponent of $\left(\frac{\alpha_{a}}{|\alpha|}\right)$ and then we multiplying by $\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-r_{\ell}+r_{\ell}-\xi_{\ell}^{1}+\xi_{\ell}^{1}}$. Thus, we have
 \begin{align}\label{pezzo1}
 	&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\nonumber\\
-	&\left\{\left(\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{|\alpha|}\right)^{\xi_{a}^{0}+|\xi^{1}|-\xi_{N}^{1}-|\xi^{1}|+\xi_{N}^{1}}\right)\frac{\left(\nu-\sum_{c=1}^{N-1}\xi_{c}^{1}\right)!}{\nu!}\left(\prod_{b=1}^{N-1}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\right)\left(\prod_{x=2}^{L}d(n^{x},\xi^{x})\right)\left(\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}\right)\right\}\nonumber\\
+	&\left\{\left(\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{|\alpha|}\right)^{\xi_{a}^{0}-\xi_{a}^{1}+\xi_{a}^{1}}\right)\frac{\left(\nu-\sum_{c=1}^{N-1}\xi_{c}^{1}\right)!}{\nu!}\left(\prod_{b=1}^{N-1}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\right)\left(\prod_{x=2}^{L}d(n^{x},\xi^{x})\right)\left(\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}\right)\right\}\nonumber\\
 	&	\frac{\nu!}{r_{1}!\cdots r_{N}!}\left(\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{N}}\right)^{r_{k}}\right)\left(\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-\xi_{\ell}^{1}+\xi_{\ell}^{1}-r_{\ell}+r_{\ell}}\right)\nonumber\\=&
 	\left(\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{k}^{0}+\xi_{k}^{1}}\right)\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}	\frac{\left(\nu-\xi_{1}^{1}-\ldots-\xi_{N-1}^{1}\right)!}{(r_{1}-\xi_{1}^{1})!\cdots(r_{N-1}-\xi_{N-1}^{1})!(\nu-r_{1}-\ldots-r_{N-1})!}\nonumber\\&
 	\left(\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{\ell}}{|\alpha|}\right)^{r_{\ell}-\xi_{\ell}^{1}}\right)\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-r_{1}-\ldots-r_{N-1}}\left(\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\right)\left(\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}\right)\nonumber
 	\\=&
 	\left(\prod_{k=1}^{N-1}\left(\rho_{k}^{L}\right)^{\xi_{k}^{0}+\xi_{k}^{1}}\right)\left(\prod_{x=2}^{L}d(n^{x},\xi^{x})\right)\left(\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}\right)
 \end{align}
-where in the last equality we used the multinomial theorem. \\ We now consider the second addend in the curly brackets\textbf{FINISH TO CHECK}.
+where in the last equality we used the multinomial theorem. \\ We now consider the second addend in the curly brackets of \eqref{ProvaBordoTH}.
 We multiplying it by $\prod_{a=1}^{N-1}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{r_{a}-r_{a}}$ and we obtain
 \begin{equation}\label{pezzo2}
 	\begin{split}
