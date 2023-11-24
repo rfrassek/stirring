@@ -149,7 +149,7 @@
 \begin{center}
  \begingroup\LARGE
 %\bf Multispecies stirring process: duality and exact solution
-\bf Multispecies stirring process \\
+\bf Exact solution of the multispecies stirring process \\
  with open boundaries
 \par\endgroup
  \vspace{3.5em}
@@ -182,64 +182,67 @@
 
 \tableofcontents
 
-% \newpage
+ \newpage
 
 \section{Introduction} 
-Boundary-driven particle systems are paradigmatic models for non-equilibrium statistical mechanics. In a boundary-driven system, the model is put in contact with reservoirs at its "boundaries" imposing different particle densities, and a current is generated through the system. In the long time limit, a non-equilibrium steady state sets in, with a stationary value of the current. The aim of this paper is to study the mathematical aspects of the stationary measure of boundary-driven {\em multispecies} particle systems \cite[....].
+Boundary-driven particle systems are paradigmatic models for non-equilibrium statistical mechanics. In a boundary-driven system, the model is put in contact with reservoirs at its ``boundaries'' imposing different particle densities, and a current is generated through the system. In the long time limit, a non-equilibrium steady state sets in, with a stationary value of the current. The aim of this paper is to study the mathematical aspects of the stationary measure of boundary-driven {\em multispecies} particle systems \cite{schutz2017kardar, vanicat2017exact, crampe2016integrable, finn2018matrix, floreani2022switching, casini2022uphill, casini2023density, redig2022ergodic, redig2023equilibrium, chatterjee2023multi, zhou2021orthogonal, franceschini2022orthogonal}.
 
-For the single species case, the exclusion process with open boundaries has been of crucial importance in our understanding of the structural properties of non-equilibrium state states, such as long-range correlations and non-local density large deviation functions. The results available for the exclusion process are rooted in the algebraic properties of the corresponding integrable quantum spin chain, i.e. the XXX Heisenberg Hamiltonian with $\mathfrak{su}(2)$ spins of value 1/2.
-In this paper, we investigate the multispecies analog of the exclusion process in the boundary-driven context, i.e. the stirring process with open boundaries. The bulk part of the model with $N$ species is associated with the integrable Hamiltonian having  $\mathfrak{gl}(N)$ symmetry.
+For the single species case, the exclusion process with open boundaries \cite{derrida1993exact} has been of crucial importance in our understanding of the structural properties of non-equilibrium state states, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviation \cite{mallick2022exact,bodineau2005current}. The results available for the exclusion process are rooted in the algebraic properties of the corresponding integrable quantum spin chain, i.e. the XXX Heisenberg Hamiltonian with $\mathfrak{su}(2)$ spins of value 1/2.
+In this paper, we investigate the multi-species analog of the exclusion process in the boundary-driven context, i.e. the {\em  multi-species stirring process with open boundaries}. The bulk part of the model with $N$ species is associated with the integrable higher-rank
+Heisenberg XXX Hamiltonian having  $\mathfrak{gl}(N)$ symmetry.
 
-Our strategy to solve for the non-equilibrium steady state is of a probabilistic nature and relies on the use of duality. This approach, starting from the pioneering approach of [Presutti] and [Spohn] has been substantially developed in recent years to study stochastic processes in the boundary-driven set-up. The boundary-driven process is mapped to
-a dual process with absorbing extra sites and the problem of describing the stationary state
+Our strategy to solve for the non-equilibrium steady state is of a probabilistic nature and relies on the use of {\em duality} \cite{schutzSandow}. This approach, starting from the pioneering work of Kipnis, Marchiorio and Presutti \cite{KMP}, 
+has been substantially developed in recent years to study stochastic processes in the boundary-driven set-up \cite{giardina2009duality,carinci2013duality,frassek2020duality,carinci2023open}. 
+The boundary-driven process is mapped to a dual process with absorbing extra sites and the problem of describing the stationary state of the original system
 is reduced to the problem of computing the absorption probabilities of the dual particles. 
 In general, this is a difficult task. However, there are cases in which these absorption
 probabilities can be computed thanks to the integrability property of the system.
-For a recent example see [Frassek,Giardinà].
+For recent examples in the framework of single-species systems, see \cite{frassek2020eigenstates, frassek2022exact, frassek2020non, floreani2023non}.
+Here we generalize the duality approach to the set-up of multi-species particle systems.
 
-The remainder of this paper is organized as follows. In Section \ref{} we define the open multispecies stirring
-process and provide its Lie algebraic description. In Section \ref{} we prove duality (Theorem \ref{}) 
+The remainder of this paper is organized as follows. In Section \ref{sec1} we define the open multispecies stirring
+process and provide its Lie algebraic description. In Section \ref{sectionDuality} we prove duality (Theorem \ref{thm-duality}) 
 and we show that, even in the presence of multispecies, the problem of characterizing the non-equilibrium 
 steady state can be reduced to the computation of the absorption probabilities. Duality is proved when the 
-system has a general spatial structure described by a graph. In Section \ref{} we obtain a closed formula 
-for the stationary correlations (Theorem \ref{}) for the case of a one-dimensional chain with at most one 
-particle per site, which is driven to steady-state by two reservoirs acting at the left and right boundaries. 
-Here the computation of the absorption probabilities relies on the previously formulated Matrix Product Ansatz,
-which is in fact also simplified by the use of duality. Finally in Section \ref{} we discuss a few extensions 
-and generalizations of the model, including instantaneous thermalization limits, ......
+system has a general spatial structure described by a general graph. In Section \ref{sectionIntegrabiliy} we then obtain a closed formula 
+for the stationary correlations (Theorem \ref{thm-correlations}) for the case of a one-dimensional chain with at most one 
+particle per site, which is driven out-of-equilbrium by two reservoirs acting at the left and right boundaries. 
+Here the computation of the absorption probabilities relies on the previously formulated Matrix Product Ansatz \cite{vanicat2017exact},
+which is in fact also simplified by the use of duality. Finally in Section \ref{sec5} we discuss a few extensions 
+and generalizations of the model, including instantaneous thermalization limits and reaction-diffusions.
+
 In closing this introduction we mention that we are currently working on the boundary-driven multispecies 
 model with non-compact Lie-algebras, both integrable and non-integrable, which will be presented in a 
 future paper. 
 
 
-Acknowledgments: GNFM, PRIN, FAR UNIMORE,...
+{\bf Acknowledgments.} We acknowledge support from Istituto Nazionale di Alta Matematica (GNFM), Prin-project {\color{blue} xxxx}, FAR-project {\color{blue} xxxx} UniMoRe.
 
-
-{\color{blue}
-In the past years duality has been developed to study stochastic processes, especially in the boundary driven case, i.e. when the system is put in contact with boundaries that generate a non-equilibrium current. The literature is huge. We can address , for instance, to \cite{giardina2009duality,carinci2013duality,frassek2020duality}. One application of duality is the attempt to characterize the non equilibrium steady state of boundary driven process via the so called absorption probabilities. Indeed, there are many cases where the dual process has absorbing boundaries. This means that the the chain is eventually empty in the long time scale. Moreover, there are cases in which the steady state of a stochastic process can be computed explicitly, thanks to the integrability property of the system (quantum inverse scattering method, matrix product ansatz). In this direction, some examples can be found in \cite{derrida1993exact,frassek2019non,frassek2020eigenstates}. In the past, the focus has been on processes where one can distinguish, in each site of a certain graph, a (or many) particles or an empty state. However, this particles are indistinguishable, in the sense that you can pile up in a site just one type of particles. Some natural questions arise: what happens if we imagine to assign different colours to the particles? Is the duality property still holding? How far can we push our analysis for the characterization of the non equilibrium steady state?\\
-The way one can define a multi-type (or multi-species) interacting particle system is not unique. In the literature there are many. Two of them are the following. On one hand, the \textit{multi-layer models}, in which the process is constructed on a many layer graph where each graph correspond to a type and perform a kind of dynamic (independent jump, exclusion/inclusion walkers) and the layers communicate each other with some "switching probabilities". The state space of the Markov process is the Cartesian product of the state spaces of each layer, i.e. of the two species. For example see \cite{floreani2022switching,redig2022ergodic,redig2023equilibrium}. On the other hand, the \textit{single layer models}. Here, there is just one layer, where particles of each type can pile up, in a way that the exclusion dynamic concerns many species together. In other words, now the species can interact "directly", not just by switching layer. Here the state space contains all the species and it is not product anymore. Some examples of such a dynamic can be found in \cite{casini2022uphill,vanicat2017exact,zhou2021orthogonal,casini2023density}. \\
-In this work we concentrate our effort in this last "single layer" case with a repulsive process, i.e. a dynamic in which a maximum amount of particles can be present in each site at each time. We will call this amount, the "maximal occupancy" and it will indicated with $\twoj$ where $\twoj\in\mathbb{N}$. Particle of any species can exchange their position in the graph, under this exclusion constraint. The system will be put out of equilibrium and some absorbing duality result are investigated. Moreover, we will use this duality, to study the out of equilibrium steady state. In particular, in case of $\twoj=1$ we retrieve the model studied in \cite{vanicat2017exact}. 
-{\color{red}
-The case of $\twoj=1$ distinguishes itself from other values of $\twoj$ as in this case the model can be mapped to an integrable higher rank $gl(N)$ Heisenberg XXX spin chain with open (non-diagonal) boundaries. Furthermore the matrix product ansatz \cite{derrida1993exact}  is applicable, see \cite{Crampe:2014aoa,vanicat2017exact}.
-}
-We will exploit the duality and the underlying symmetries of the model, to write explicitly all the correlations of this \textit{hard-core exclusion} case. The main tool that we will use is the Lie algebraic description of the process, that allows to find the duality as a proper symmetry of the generator. \\
- For a complete review of the quantum inverse scattering method see \cite{Sklyanin:1988yz} and \cite{faddeev1996algebraic}. For application of the QISM to interacting particle systems we refer to \cite{frassek2020eigenstates,frassek2019non,frassek2022exact,vanicat2017exact}. \\
- A new technique to compute absorption probabilities has been proposed in \cite{floreani2023non}.
- \\
- \\
- \textbf{Some interesting references and extensions?}:
- Multi-species version of non-compact chains. Extension of \cite{frassek2022exact},\cite{frassek2022integrable},\cite{frassek2020non},\cite{frassek2021duality}. \\
- Use exact solution to compute large deviation rate function extending to the multi-species case results proved in \cite{derrida1998exact}, \cite{mallick2022exact}. \\
- Extend the result to a-symmetric situation. See \cite{belitsky2018self}, \cite{belitsky2015quantum}, \cite{crampe2016integrable}, \cite{finn2018matrix}. \\
- Extend the QISM technique to models which include reaction trying to apply the method exposed in \cite{de2021yang} for stirring process with a proper reaction term. Extend the duality to stirring models with different mechanism of transition \cite{chatterjee2023multi}. 
-}
- 
-\paragraph{Organization of the paper}
+%
+%{\color{blue}
+%In the past years duality has been developed to study stochastic processes, especially in the boundary driven case, i.e. when the system is put in contact with boundaries that generate a non-equilibrium current. The literature is huge. We can address , for instance, to \cite{giardina2009duality,carinci2013duality,frassek2020duality}. One application of duality is the attempt to characterize the non equilibrium steady state of boundary driven process via the so called absorption probabilities. Indeed, there are many cases where the dual process has absorbing boundaries. This means that the the chain is eventually empty in the long time scale. Moreover, there are cases in which the steady state of a stochastic process can be computed explicitly, thanks to the integrability property of the system (quantum inverse scattering method, matrix product ansatz). In this direction, some examples can be found in \cite{derrida1993exact,frassek2019non,frassek2020eigenstates}. In the past, the focus has been on processes where one can distinguish, in each site of a certain graph, a (or many) particles or an empty state. However, this particles are indistinguishable, in the sense that you can pile up in a site just one type of particles. Some natural questions arise: what happens if we imagine to assign different colours to the particles? Is the duality property still holding? How far can we push our analysis for the characterization of the non equilibrium steady state?\\
+%The way one can define a multi-type (or multi-species) interacting particle system is not unique. In the literature there are many. Two of them are the following. On one hand, the \textit{multi-layer models}, in which the process is constructed on a many layer graph where each graph correspond to a type and perform a kind of dynamic (independent jump, exclusion/inclusion walkers) and the layers communicate each other with some "switching probabilities". The state space of the Markov process is the Cartesian product of the state spaces of each layer, i.e. of the two species. For example see \cite{floreani2022switching,redig2022ergodic,redig2023equilibrium}. On the other hand, the \textit{single layer models}. Here, there is just one layer, where particles of each type can pile up, in a way that the exclusion dynamic concerns many species together. In other words, now the species can interact "directly", not just by switching layer. Here the state space contains all the species and it is not product anymore. Some examples of such a dynamic can be found in \cite{casini2022uphill,vanicat2017exact,zhou2021orthogonal,casini2023density}. \\
+%In this work we concentrate our effort in this last "single layer" case with a repulsive process, i.e. a dynamic in which a maximum amount of particles can be present in each site at each time. We will call this amount, the "maximal occupancy" and it will indicated with $\twoj$ where $\twoj\in\mathbb{N}$. Particle of any species can exchange their position in the graph, under this exclusion constraint. The system will be put out of equilibrium and some absorbing duality result are investigated. Moreover, we will use this duality, to study the out of equilibrium steady state. In particular, in case of $\twoj=1$ we retrieve the model studied in \cite{vanicat2017exact}. 
+%{\color{red}
+%The case of $\twoj=1$ distinguishes itself from other values of $\twoj$ as in this case the model can be mapped to an integrable higher rank $gl(N)$ Heisenberg XXX spin chain with open (non-diagonal) boundaries. Furthermore the matrix product ansatz \cite{derrida1993exact}  is applicable, see \cite{Crampe:2014aoa,vanicat2017exact}.
+%}
+%We will exploit the duality and the underlying symmetries of the model, to write explicitly all the correlations of this \textit{hard-core exclusion} case. The main tool that we will use is the Lie algebraic description of the process, that allows to find the duality as a proper symmetry of the generator. \\
+% For a complete review of the quantum inverse scattering method see \cite{Sklyanin:1988yz} and \cite{faddeev1996algebraic}. For application of the QISM to interacting particle systems we refer to \cite{frassek2020eigenstates,frassek2019non,frassek2022exact,vanicat2017exact}. \\
+% A new technique to compute absorption probabilities has been proposed in \cite{floreani2023non}.
+% \\
+% \\
+% \textbf{Some interesting references and extensions?}:
+% Multi-species version of non-compact chains. Extension of \cite{frassek2022exact},\cite{frassek2022integrable},\cite{frassek2020non},\cite{frassek2021duality}. \\
+% Use exact solution to compute large deviation rate function extending to the multi-species case results proved in \cite{derrida1998exact}, \cite{mallick2022exact}. \\
+% Extend the result to a-symmetric situation. See \cite{belitsky2018self}, \cite{belitsky2015quantum}, \cite{crampe2016integrable}, \cite{finn2018matrix}. \\
+% Extend the QISM technique to models which include reaction trying to apply the method exposed in \cite{de2021yang} for stirring process with a proper reaction term. Extend the duality to stirring models with different mechanism of transition \cite{chatterjee2023multi}. 
+%}
 %
 %
 %
 %
 \section{The stirring process with open boundaries}
+\label{sec1}
 \subsection{Informal description of the process}
 The process studied in this paper is the {\em multi-species stirring process}
 with open boundaries. 
@@ -1952,7 +1955,7 @@ where
 %		0\quad \text{if}\quad \tau_{y}=1
 %	\end{cases}\qquad \forall y\in \{1,\ldots,L\}
 %\end{equation}
-\paragraph{Proof of formula \eqref{ABS-vect}} We have that $|\Psi^{'}\rangle=S_{2}^{-1}|\Psi^{''}\rangle$ (see \eqref{S2-Inverse}), thus we only show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Using the exponential series we have that  
+\paragraph{Proof of formula \eqref{ABS-vect}} We have that $|\Psi^{'}\rangle=S_{2}^{-1}|\Psi^{''}\rangle$, thus we  show how the transformation $S_{2}^{-1}$ acts on the vector $|\Psi^{''}\rangle$. Using the exponential series we have that  
 \begin{equation}
    \mathcal{S}_{2}^{-1}=\mathbbm{1}+\sum_{a=1}^{N-1}\beta_{a}e_{aN}\co
 \end{equation}
@@ -1979,10 +1982,12 @@ We introduce $\forall x\in\{1,\ldots,L\}$, for $i\in \{1,\ldots,L\}$ and $q_{1},
 \end{equation}
 This is a new configuration at site $x$ where, if $x\in\{q_{1},\ldots,q_{i}\}$, the occupation $\tau_{x}$ is replaced by $N$, while it is left uncaged if $x\notin \{q_{1},\ldots,q_{i}\}$. The dependence of $\varphi_{x}^{i}(q_{1},\ldots,q_{i})$ with respect to $q_{1},\ldots,q_{i}$ is usually understood for the sake of notation. } 
 \end{comment}
- By considering a fixed $\bm{\tau}\in \Omega^{'}$, and by using \eqref{goodTP-S2} the formula for $|\Psi^{''}\rangle$ we obtain 
+% By considering a fixed $\bm{\tau}\in \Omega^{'}$, and by using \eqref{goodTP-S2} the formula for $|\Psi^{''}\rangle$ we obtain 
+From this it follows that
 \begin{align}\label{ABS_intermediate}
-		\Psi^{'}(\bm{\tau})=&\langle\bm{\tau}|\Psi^{'}\rangle=\langle \bm{\tau}|S_{2}^{-1}|\Psi^{''}\rangle\nonumber\\=&\sum_{\bm{\sigma}\in \Omega^{'}}\frac{1}{(L+1)!}\prod_{x=1}^L(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\sigma_{j},N}\right)\left[ \delta_{\tau_x,\sigma_x}+\beta_{\tau_x} \delta_{N,\sigma_x} (1-\delta_{\tau_x,N})\right]\dt
+		\Psi^{'}(\bm{\tau})=&\langle\bm{\tau}|\Psi^{'}\rangle=\langle \bm{\tau}|S_{2}^{-1}|\Psi^{''}\rangle = \sum_{\bm{\sigma}\in \Omega'}  \langle \bm{\tau}|S_{2}^{-1} |\bm{\sigma}\rangle\langle\bm{\sigma}|\Psi^{''}\rangle \nonumber\\=&\sum_{\bm{\sigma}\in \Omega^{'}}\frac{1}{(L+1)!}\prod_{x=1}^L(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\sigma_{j},N}\right)\left[ \delta_{\tau_x,\sigma_x}+\beta_{\tau_x} \delta_{N,\sigma_x} (1-\delta_{\tau_x,N})\right]\dt
 	\end{align}
+	where we used the expression \eqref{ResulsBasis} for $\Psi^{''}(\bm{\sigma})$.
 %where, for arbitrary $i\in\{1,\ldots,L\}$,  $\Psi^{''}(\tau_{1},\ldots,\underbrace{N}_{q_{1}},\ldots,\underbrace{N}_{q_{i}}\ldots,\tau_{L})$ means that the $\tau_{q_{1}},\ldots,\tau_{q_{i}}$ have been replaced by $N$. 
 \begin{comment}
 {\color{blue}
@@ -2931,6 +2936,7 @@ Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,x_{k},c_{k},\ldots,c_{m})$ an
 \end{comment}
 
 \section{Extensions for the non-integrable chain}
+\label{sec5}
 In Sections \ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable using to integrability.  
 The aim is studying some property of the process when integrability is lost. We fix $\nu\geq 1$ and, for the sake of simplicity, we keep the geometry of a chain. We provide the following extensions: 
 \begin{enumerate}
