@@ -3077,7 +3077,7 @@ while
 \begin{equation}\label{boundaryThermalized}
 	\begin{split}
 		\mathcal{L}_{\text{left}}^{TH}f(\bm{n})=&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{f(r,n^{2},\ldots,n^{L})-f(\bm{n})\right\}\\&
-		\binom{\nu}{r_{1},\ldots, r_{N}}\prod_{a=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{N}}\right)^{r_{k}}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu}
+		\binom{\nu}{r_{1},\ldots, r_{N}}\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{\alpha_{N}}\right)^{r_{a}}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu}
 		\end{split}
 	\end{equation}
 and $\mathcal{L}_{\text{right}}^{TH}$ acting similarly on the site $L$ and with parameters $\beta$'s. 
@@ -3101,7 +3101,7 @@ where $\mathcal{L}^{TH}_{x,x+1}$ is \eqref{bulkThermalized} and $\widetilde{\mat
 \end{align}
 The duality function is the same of the multi-species stirring process, i.e. 
 \begin{equation}
-	D(\bm{n},\bm{\xi})=\prod_{a=1}^{N-1}\left(\rho_{a}^{L}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{\eta_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=1}^{N-1}\left(\rho_{a}^{R}\right)^{\xi_{a}^{L+1}}\dt
+	D(\bm{n},\bm{\xi})=\prod_{a=1}^{N-1}\left(\rho_{a}^{L}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=1}^{N-1}\left(\rho_{a}^{R}\right)^{\xi_{a}^{L+1}}\dt
 \end{equation}
 (cf. \eqref{dualityElements}).
 \end{proposition}
@@ -3453,8 +3453,8 @@ Already for two-point correlations the computations become more involving and ha
 \section{Proof of duality of thermalized multi-species stirring}\label{appendix-dualityThermalized}
 The proof of the duality consists in showing
 \begin{align}
-	\left(\mathcal{L}_{x,x+1}^{TH}D(\cdot,\bm{n})\right)(\bm{n})&=\left(\widetilde{\mathcal{L}}_{x,x+1}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\qquad x\in \{1,\ldots,L-1\}\label{bulkDualityTH}\\
-	\left(\mathcal{L}_{y}^{TH}D(\cdot,\bm{n})\right)(\bm{n})&=\left(\widetilde{\mathcal{L}}_{y}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\qquad y\in\{1,L\}\label{boundaryDualityTH}
+	\left(\mathcal{L}_{x,x+1}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left(\widetilde{\mathcal{L}}_{x,x+1}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\qquad x\in \{1,\ldots,L-1\}\label{bulkDualityTH}\\
+	\left(\mathcal{L}_{y}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left(\widetilde{\mathcal{L}}_{y}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\qquad y\in\{1,L\}\label{boundaryDualityTH}
 \end{align}
 Equation \eqref{bulkDualityTH} follows from the proof of the edge duality for the multi-species stirring process. To prove \eqref{boundaryDualityTH} we directly apply the generators on the duality function. For the sake of notation, we introduce 
 \begin{equation}
@@ -3466,7 +3466,7 @@ First, we act with $\mathcal{L}_{\text{left}}^{TH}$ on $D(\bm{n},\bm{\xi})$. By 
 	\\&\nonumber
 	\left.\left(\prod_{b=1}^{N-1}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\right)\left(\prod_{x=2}^{L}d(n^{x},\xi^{x})\right)\left(\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}\right)-D(\bm{n},\bm{\xi})\right\}
 	\\&
-	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{\nu}
+	\frac{\nu!}{r_{1}!\cdots r_{N}!}\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{N}}\right)^{r_{k}}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu}
 \end{align}
 We consider the first addend in the curly bracket of the \eqref{ProvaBordoTH}. We add and remove $\xi_{a}^{1}$ at the exponent of $\left(\frac{\alpha_{a}}{|\alpha|}\right)$ and then we multiplying by $\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-r_{\ell}+r_{\ell}-\xi_{\ell}^{1}+\xi_{\ell}^{1}}$. Thus, we have
 \begin{align}\label{pezzo1}
@@ -3482,7 +3482,7 @@ where in the last equality we used the multinomial theorem. \\ We now consider t
 We multiplying it by $\prod_{a=1}^{N-1}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{r_{a}-r_{a}}$ and we obtain
 \begin{equation}\label{pezzo2}
 	\begin{split}
-		&D(\bm{n},\bm{\xi})\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\frac{\nu!}{r_{1}!\cdots r_{N}!}\left(\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\right)\left(\frac{\alpha_{1}}{|\alpha|}\right)^{\nu}\left(\prod_{a=1}^{N-1}\left(\frac{\alpha_{1}}{|\alpha|}\right)^{r_{a}-r_{a}}\right)\\=&D(\bm{n},\bm{\xi})
+		&D(\bm{n},\bm{\xi})\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\frac{\nu!}{r_{1}!\cdots r_{N}!}\left(\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{1}}\right)^{r_{k}}\right)\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu}\left(\prod_{a=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{r_{a}-r_{a}}\right)\\=&D(\bm{n},\bm{\xi})
 	\end{split}
 \end{equation}
 where we used again the multinomial theorem. Therefore, replacing \eqref{pezzo1} and \eqref{pezzo2} in \eqref{ProvaBordoTH} we have that
