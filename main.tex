@@ -148,22 +148,27 @@
 % \centering
 \begin{center}
  \begingroup\LARGE
-%\bf Multispecies stirring process: duality and exact solution
-\bf Exact solution of the multispecies stirring process \\
+\bf Exact solution of the multi-species stirring process \\
  with open boundaries
 \par\endgroup
  \vspace{3.5em}
  \begingroup\large \bf
-% {Rouven Frassek}
+ {Francesco Casini$^{(a,b)}$, Rouven Frassek$^{(b)}$, Cristian Giardin\`a$^{(b)}$}
  \par\endgroup
 \vspace{2em}
 
 \begingroup\sffamily 
-%  
-% Università degli Studi di Modena e Reggio Emilia
-%University of Modena and Reggio Emilia, 
-%\\Department of Physics, Informatics and Mathematics,\\
-%Via G. Campi 213/b, 41125 Modena, Italy\\ 
+  
+ %Università degli Studi di Modena e Reggio Emilia
+(a) University of Parma, \\
+Department of ....,\\
+Via ...., .... Parma, Italy\\ 
+ 
+ \vspace{.5cm}
+ 
+(b) University of Modena and Reggio Emilia, \\
+Department of Physics, Informatics and Mathematics,\\
+Via G. Campi 213/b, 41125 Modena, Italy\\ 
 \par\endgroup
 \vspace{2em}
 
@@ -180,6 +185,7 @@
 
 %\vfill 
 
+\newpage
 \tableofcontents
 
  \newpage
@@ -2948,21 +2954,25 @@ Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,x_{k},c_{k},\ldots,c_{m})$ an
 In Sections \ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable using integrability.  
 The aim of this section is to study the process when integrability is lost. We fix $\nu\geq 1$ and, for the sake of simplicity, we keep the geometry of a chain. We provide the following extensions: 
 \begin{enumerate}
-	\item \textit{Correlations} (Section \ref{Subsection-ss-nonI}): exploiting duality, the steady state correlations can be expressed in terms of absorption probabilities of the dual particles. These probability are hard to find when $\nu>1$, however correlation can be formally written. 	
-	\item \textit{Instantaneous thermalization} (Section \ref{Subsection-Thermalized}): starting from the multi-species stirring dynamics, we define the thermalized process, where particle are redistribute in each bond with a measure that is the reversible one conditioned to the conservation of the number of particles on this bond. Also for this thermalized process we prove duality. 	
-	\item \textit{Reaction-diffusion process} (Section \ref{Subsection-RD}): a further dynamics is added. Particle can now change type. The model is carefully constructed with the goal of having the average densities evolving as a system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is also proved.
+	\item \textit{Correlations} (Section \ref{Subsection-ss-nonI}): exploiting duality, the steady state correlations can be expressed in terms of absorption probabilities of the dual particles. These probability are hard to find when $\nu>1$. We give 
+	in Appendix \ref{appendix-1pts-general} the expression for the one-point correlation.
+	\item \textit{Instantaneous thermalization} (Section \ref{Subsection-Thermalized}): starting from the multi-species stirring dynamics, we define the thermalized process, where particle are redistributed on each bond with a measure that is the reversible one conditioned to the conservation of the number of particles on this bond. Also for this thermalized process we prove duality. 	
+	\item \textit{Reaction-diffusion process} (Section \ref{Subsection-RD}): a further dynamics is added. Particle can now change type. The model is carefully constructed with the goal of having the average densities evolving as a closed system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is also proved.
 \end{enumerate}
-In the rest of this section we consider a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can host $\nu\geq 1$ particles, chosen among the $N$ types. Now the dual graph is still a chain, but with two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$). All the processes considered, denoted by $\left(\bm{n}(t)\right)_{t\geq0}$ with the generator specified in each subsection, will be defined on the space
+In the rest of this section we consider a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can host $\nu\geq 1$ particles, whose type is chosen among the $N$ available ones. The graph of the dual process is still a chain, but with two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$). The processes considered in this section will be denoted with same name $\left(\bm{n}(t)\right)_{t\geq0}$, their generator will be specified in each subsection. 
+We use the notation of Section \ref{sectionDuality} specialized to the one dimensional chain with $\nu >1$.
+E.g. the state space is denoted by 
 \begin{equation}\label{stateSpace-Chain}
-	\Omega_{L}=\bigotimes_{x=1}^{L} \Omega_{x}
+	\Omega_{L}=\bigotimes_{x=1}^{L} \Omega_{x}\,.
 \end{equation}
- The dual process will always be denoted by $(\bm{\xi}(t))_{t\geq 0}$ with the generator specified case by case. The dual configuration space is the one defined in \eqref{dualStateSpace} and adapted to the chain of size $L$ and with two extra-site $\{0,L+1\}$ attached to $\{1,L\}$ respectively. To recall it we denote this dual space by $\widetilde{\Omega}_{L}$, i.e.
+ The dual process will always be denoted by $(\bm{\xi}(t))_{t\geq 0}$ with the generator specified case by case. The dual configuration space is the one defined in \eqref{dualStateSpace} and adapted to the chain of size $L$ and with two extra-site $\{0,L+1\}$ attached to $\{1,L\}$ respectively. 
+ We denote the space of the dual process by $\widetilde{\Omega}_{L}$, i.e.
 \begin{equation}\label{dualSpace-chain}
 	\widetilde{\Omega_{L}}=\mathbb{N}_{0}^{N}\otimes \Omega_{L}\otimes \mathbb{N}_{0}^{N}\dt
 \end{equation}
 In the following of this section we will denote by 
 \begin{equation}
-	\rho_{a}^{\text{left}}=\frac{\alpha_{a}}{|\alpha|},\qquad \qquad \rho_{a}^{\text{right}}=\frac{\alpha_{a}}{|\alpha|}
+	\rho_{a}^{\text{left}}=\frac{\alpha_{a}}{|\alpha|},\qquad \qquad \rho_{a}^{\text{right}}=\frac{\beta_{a}}{|\beta|}\,.
 \end{equation}
 \subsection{Duality for a boundary driven chain}\label{Subsection-ss-nonI}
  As already pointed out the dual process eventually voids the chain by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites $0$ and $L+1$ and replacing them by types $N$ (the empty). This property allows to characterize the steady state non-equilibrium distribution (that is unique) by the probability that dual particles are absorbed in the extra-sites, called \textit{absorption probabilities}. This is a generalization for the non-integrable chain of the Corollary \ref{Corolollary-ABS_Corr-abstract}. The process $\left(\bm{n}(t)\right)_{t\geq0}$ has generator
@@ -2983,7 +2993,7 @@ The process is dual to $(\bm{\xi}(t))_{t\geq0}$, defined on the dual state space
 \begin{equation}
 	\widetilde{\mathcal{L}}=\widetilde{\mathcal{L}}_{\text{left}}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\widetilde{\mathcal{L}}_{\text{right}}
 \end{equation} 
-where $\mathcal{L}_{x,x+1}$ is given by \eqref{Generator} and where the boundary generators $\widetilde{\mathcal{L}}_{\text{left}}$ and $\widetilde{\mathcal{L}}_{\text{right}}$ are given from \eqref{siteDualGenerator} absorbing particles from sites $\{1\}$ and $\{L\}$ and putting them at extra-sites $\{0\}$ and $\{L+1\}$ respectively. The duality function reads is \eqref{dualityElements} specified on the chain. 
+where $\mathcal{L}_{x,x+1}$ is given by \eqref{Generator} and where the boundary generators $\widetilde{\mathcal{L}}_{\text{left}}$ and $\widetilde{\mathcal{L}}_{\text{right}}$ are given in \eqref{siteDualGenerator}: they absorb particles from sites $\{1\}$ and $\{L\}$ and put them at extra-sites $\{0\}$ and $\{L+1\}$ respectively. The duality function reads is \eqref{dualityElements} specified on the chain. 
 \begin{comment}
 \begin{equation}\label{abs-dual-boundary-chain}
 	\begin{split}
@@ -2999,7 +3009,8 @@ where $0$ and $L+1$ are the extra-sites.
 \end{equation}
 where $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{|\alpha|}$ and where $\rho_{\alpha}^{R}=\frac{\beta_{a}}{|\beta|}$.\\
 \end{comment}
-The dual process has absorbing boundaries. This implies that the chain is eventually voided and the steady state correlations of the original process can be written via the absorption probabilities of the dual process.\\
+
+%The dual process has absorbing boundaries. This implies that the chain is eventually voided and the steady state correlations of the original process can be written via the absorption probabilities of the dual process.\\
 We call $\mu_{\text{NESS}}$ the non-equilibrium stationary steady state of the the process $(\bm{n}(t))_{t\geq 0}$, we denote by $\mathbb{E}_{\mu_{\text{NESS}}}[\cdot]$ the expectation with respect to this measure and and we call $\bm{\mathcal{Y}} = (\mathcal{Y}^{1},\ldots,\mathcal{Y}^{L})$ the random vector with law $\mu_{\text{NESS}}$. For every $m\in\{1,\ldots,L\}$ we consider  $x_{1},\ldots,x_{m}\in\{1,\ldots,L\}$ and $a_{1},\ldots,a_{m}\in \{1,\ldots,N-1\}$. We introduce the dual configuration  $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, meaning that 
 \begin{equation}
 	\begin{cases}
@@ -3025,12 +3036,12 @@ here we recall that, generalizing Corollary \ref{Corolollary-ABS_Corr-abstract},
 	\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{N})	=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{a=1}^{N-1}\left(t_{a}\delta_{a}^{0}+(|\xi_{a}|-t_{a})\delta_{a}^{L+1}\right)| \bm{\xi}(0)=\bm{\xi}\right)
 \end{equation}
 are the absorption probabilities for the non-integrable chain, i.e. the probabilities that $t_{a}$ particles of species $a$ are absorbed at $\{0\}$. Here we have denoted $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x}$.
- These correlations can be computed once the absorption probabilities are known. For example, we report in Appendix \ref{appendix-1pts-general} the solution for the simplest case of one point correlations that is exactly solvable, since the single dual particle behaves as an independent random walker. However, these absorption probabilities for higher point correlations fulfil some difference equations that are not easy to solve.
+ These correlations can be computed once the absorption probabilities are known. For example, we report in Appendix \ref{appendix-1pts-general} the solution for the simplest case of one point correlations that is exactly solvable, since the single dual particle behaves as an independent random walker. The absorption probabilities for higher point correlations fulfill  difference equations.
 
 % In the following we specialize the chain to the integrable case $\nu=1$. As it will be shown, in such a situation the non-equilibrium steady state correlations can be computed with different techniques exploiting the integrability of the process (matrix product ansatz and quantum inverse scattering method) combined with duality and, as a by-product, all absorption probabilities can be explicitly found. 
 
 \subsection{Instantaneous thermalization}\label{Subsection-Thermalized}
-In this subsection we aim to extend to the multi-species stirring process the concept of \textit{thermalization limit} (see \cite{carinci2013duality,KMP}). The thermalized process gives rise, for any pair nearest neighbour sites of the chain, to a redistribution of the total number of particles. The thermalized model that we present in this paper is obtained from the boundary driven model with generator \eqref{Generator} performing an \textit{instantaneous thermalization limit}: for each bond $(x,x+1)$ the total number of particles $\epsilon=n^{x}+n^{x+1}$ is redistributed according to the reversible measure, conditioned on the conservation of $\epsilon$. 
+In this subsection we aim to extend to the multi-species stirring process the concept of \textit{instantaneous thermalization limit} (see \cite{carinci2013duality,KMP}). The thermalized process gives rise, for any pair nearest neighbour sites of the chain, to a redistribution of the total number of particles. The thermalized model that we present in this paper is obtained from the boundary driven model with generator \eqref{Generator} as follows: for each bond $(x,x+1)$ the total number of particles $\epsilon=n^{x}+n^{x+1}$ is redistributed according to the reversible measure, conditioned on the conservation of $\epsilon$. 
 \subsubsection{The thermalization measure}
 We introduce the reversible measure \eqref{reversibleMeasure} conditioned on the conservation of the particles on that bond
 \begin{align}
@@ -3039,7 +3050,7 @@ We introduce the reversible measure \eqref{reversibleMeasure} conditioned on the
 	=\mathbb{P}\left((n_{1}^{x},\ldots,n_{N}^{x})=
 	(r_{1},\ldots,r_{N})\;|\;(n_{1}^{x}+n_{1}^{x+1},\ldots,n_{N}^{x}+n_{N}^{x+1})=(\epsilon_{1},\ldots,\epsilon_{N})\right)\dt
 \end{align}
-Here $r=(r_{1},\ldots,r_{N})$ and  $\epsilon=(\epsilon_{1},\ldots,\epsilon_{N})$ such that $\forall a\in\{1,\ldots,N\}$  $r_{a}\in \{0,\ldots,\nu\}$ and $\epsilon_{a}\in \{0,\ldots,2\nu\}$, under the constraints 
+Here $r=(r_{1},\ldots,r_{N})$ and  $\epsilon=(\epsilon_{1},\ldots,\epsilon_{N})$ are such that $\forall a\in\{1,\ldots,N\}$ we have $r_{a}\in \{0,\ldots,\nu\}$ and $\epsilon_{a}\in \{0,\ldots,2\nu\}$, under the constraints 
 \begin{equation}
 	\epsilon_{N}=2\nu-\sum_{a=1}^{N-1}\epsilon_{a},\qquad r_{N}=\nu-\sum_{a=1}^{N-1}r_{a}\dt
 \end{equation}
@@ -3110,13 +3121,14 @@ The duality function is the same of the multi-species stirring process, i.e.
 (cf. \eqref{dualityElements}).
 \end{proposition}
 This dual process is absorbing since the dual boundary generator $\mathcal{L}_{\text{left}}^{TH}$ ($\mathcal{L}_{\text{left}}^{TH}$) remove all dual particles at site $1$ ($L$) and put these particles in the extra-site $0$ ($L+1$) with rate 1.
-The proof of proposition \ref{proposition-dualityTHM} is standard. For the sake of completeness we report it in Appendix \ref{appendix-dualityThermalized}.
+The proof of Proposition \ref{proposition-dualityTHM} is standard. For the sake of completeness we report it in Appendix \ref{appendix-dualityThermalized}.
 \subsection{Multi-species stirring process with reaction} \label{Subsection-RD}
 We define the average density occupation of species $a$ at site $x$ as
 \begin{equation}
 	\rho_{a}(x,t)=\mathbb{E}_{\mu_{0}}\left[n_{a}^{x}(t)\right]
 \end{equation}
-where $\mathbb{E}_{\mu_{0}}$ denotes the expectation with respect to the law of the Markov process $(\bm{n}(t))_{t\geq 0}$ initialized with arbitrary initial measure $\mu_{0}$. These average occupations evolves according to the evolution equation
+where $\mathbb{E}_{\mu_{0}}$ denotes the expectation with respect to the law of the Markov process $(\bm{n}(t))_{t\geq 0}$ initialized with arbitrary initial measure $\mu_{0}$. Calling
+$\mathcal{L}^{rd}$ the generator of the process, these average occupations evolves according to the evolution equation
 \begin{equation}\label{EE-density}
 	\frac{d \rho_{a}(x,t)}{dt}=\mathbb{E}_{\mu_{0}}\left[\mathcal{L}^{rd}n_{a}^{x}(t)\right]\dt
 \end{equation} 
@@ -3125,7 +3137,8 @@ In \cite{casini2022uphill} it has been defined a process whose evolution equatio
 	\frac{d}{dt} \rho_{a}(x,t)=\sigma_{11}\Delta_{L}\rho_{a}(x,t)+\sigma_{12}\Delta_{L}\rho_{\overline{a}}(x,t)+\Upsilon\left(\rho_{\overline{a}}(x,t)-\rho_{a}(x,t)\right)
 \end{equation} 
 for $ x\in\{1,\ldots,L\}\quad a\in\{1,2\}$  and where $\overline{a}=1$ if $a=2$ and $\overline{a}=1$ if $a=2$. Here $\Delta_{L}\rho(x,t)=\rho_{a}(x+1,t)+\rho_{a}(x-1,t)-2\rho_{a}(x,t)$.
-This equation is endowed with boundary conditions $\rho_{a}^{\text{left}},\rho_{\overline{a}}^{\text{left}}$ on the left and $\rho_{a}^{\text{right}},\rho_{\overline{a}}^{\text{right}}$ \\The generator of this model consists in a sum of three Markov generators: a stirring, a stirring-mutation and a pure mutation one (see section 4 of \cite{casini2022uphill}). For the lattice $\mathbb{Z}$, self-duality has been showed and the duality function is exactly \eqref{elementsABS} in case of hard-core exclusion (see section 5 of \cite{casini2022uphill}). In view of what have been proved in the previous sections of this work, some questions arise naturally:
+This equation is endowed with boundary conditions $\rho_{a}^{\text{left}},\rho_{\overline{a}}^{\text{left}}$ on the left and $\rho_{a}^{\text{right}},\rho_{\overline{a}}^{\text{right}}$ on the right. 
+The generator of this model consists in a sum of three Markov generators: a stirring, a stirring-mutation and a pure mutation one (see section 4 of \cite{casini2022uphill}). For the lattice $\mathbb{Z}$, self-duality has been showed and the duality function is exactly \eqref{elementsABS} in case of hard-core exclusion (see section 5 of \cite{casini2022uphill}). In view of what have been proved in the previous sections of this work, some questions arise naturally:
 \begin{enumerate}
 		\item Is it possible to extend the results of \cite{casini2022uphill} to a case with arbitrary number of species $N\in \mathbb{N}$ and arbitrary maximal site occupation $\nu\in \mathbb{N}$?
 			\item Is it possible to extend the duality result to the boundary-driven case in order to have an absorbing dual process, using the same $gl(N)$ Lie-algebraic structure?
@@ -3134,9 +3147,9 @@ Therefore, we aim to find a process whose average occupations $\rho_{a}(x,t)$ fo
 \begin{equation}\label{NSpeciesRD}
 	\frac{d}{dt} \rho_{a}(x,t)=\nu\sigma_{11}\Delta_{L}\rho_{a}(x,t)+\nu\sigma_{12}\sum_{b=1,b\neq a}^{N-1}\Delta_{L}\rho_{b}(x,t)+\Upsilon\sum_{b=1,b\neq a}^{N-1}\left(\rho_{b}(x,t)-\rho_{a}(x,t)\right)\dt
 \end{equation} 
- We assume that the boundary conditions of the above difference differential system are given and denoted by $\rho_{a}^{0}$ and $\rho_{a}^{L+1}$ for all $a\in\{1,\ldots,N-1\}$ at left and right respectively, further assuming that $\sum_{a=1}^{N}\rho_{a}^{0}=\nu$.
+ We assume that the boundary conditions of the above difference differential system are given and denoted by $\rho_{a}^{\text{left}}$ and $\rho_{a}^{\text{right}}$ for all $a\in\{1,\ldots,N-1\}$ at left and right respectively, further assuming that $\sum_{a=1}^{N}\rho_{a}^{\text{left}}=\sum_{a=1}^{N}\rho_{a}^{\text{right}}=\nu$.
  We construct the process on a chain in order to obtain \eqref{NSpeciesRD} for the evolution of the average occupation variable of type $a$. Once we have found such a process, we construct the Lie algebraic description and we use it to prove absorbing duality.
-\subsubsection{The process on a chain}
+\subsubsection{The reaction-diffusion process on a chain}
 We consider the geometry of a chain of length $L$, where we assume that a reservoir with parameters $(\alpha_{a})_{a\in\{1,\ldots,N\}}$ is attached at site $1$ and a reservoir with parameters $(\beta_{a})_{a\in\{1,\ldots,N\}}$ is attached at site $L$. The state space is $\Omega$ given in \eqref{stateSpace-Chain} and the generator reads
 \begin{equation}\label{RDGenerator}
 	\mathcal{L}^{rd}=\mathcal{L}_{\text{right}}^{rd}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{rd}+\mathcal{L}_{\text{right}}^{rd}
@@ -3145,7 +3158,7 @@ where
 \begin{equation}\label{edgeGeneratorRD}
 	\mathcal{L}_{x,x+1}^{rd}=\nu \sigma_{11}\mathcal{L}_{x,x+1}+\nu \sigma_{12}\sum_{c=1}^{N-2}\mathcal{L}_{x,x+1}^{c}+(\Upsilon-2\nu\sigma_{12})\mathcal{L}_{x,x+1}^{m}
 \end{equation}
-with $\mathcal{L}_{x,x+1}$ is the edge \eqref{edgeGenerator} of the multi-species stirring process and, for any function $f:\Omega\to \mathbb{R}$ and for any $c\in \{1,\ldots,N-2\}$ we introduce the \textit{stirring-mutation} generator
+where $\mathcal{L}_{x,x+1}$ is the edge-generator \eqref{edgeGenerator} of the multi-species stirring process and, for any function $f:\Omega\to \mathbb{R}$ and for any $c\in \{1,\ldots,N-2\}$ we introduce the \textit{stirring-mutation} generator
 \begin{equation}
 	\mathcal{L}_{x,x+1}^{c}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{x+1}\left(f(\bm{n}-\bm{\delta}_{a}^{x}+\bm{\delta}_{h_{c}(b)}^{x}+\bm{\delta}_{h_{c}(a)}^{x+1}-\bm{\delta}_{b}^{x+1})-f(\bm{n})\right)
 \end{equation}
@@ -3164,7 +3177,8 @@ defined as
 		N\quad &\text{if}\quad k=N
 	\end{cases}\dt
 \end{equation}
-Observe that $h_{c}(\cdot)$ is surjective and injective, and thus invertible. \\
+Observe that $h_{c}(\cdot)$ is surjective and injective, and thus invertible. 
+
 Moreover, we define the \textit{pure-mutation} generator
 \begin{equation}
 	\mathcal{L}_{x,x+1}^{m}f(\bm{n})=\sum_{a,b=1}^{N-1}n_{a}^{x}\left(f(\bm{n}-\bm{\delta}_{a}^{x}+\bm{\delta}_{b}^{x})-f(\bm{n})\right)\dt
@@ -3183,20 +3197,21 @@ As a consequence, from the above conditions we can define the boundary values in
 \begin{equation}
 	\rho_{a}^{\text{left}}=\frac{\alpha_{a}\sigma_{11}-\sigma_{12}\sum_{b=1\,:\,b\neq a}^{N-1}\alpha_{b}}{(\sigma_{11}-(N-2)\sigma_{12})(\sigma_{11}+(N-2)\sigma_{12})}\qquad \rho_{N}^{\text{left}}=\frac{\alpha_{N}}{(\sigma_{11}+(N-2)\sigma_{12})}
 \end{equation}
-for every $a\in\{1,\ldots,N\}$. Moreover, with this choice we have that $\sum_{a=1}^{N}\alpha_{a}=\nu(\sigma_{11}+(N-1)\sigma_{12})$ and $\sum_{a=1}^{N}\rho_{a}^{\text{left}}=\nu$. \\
+for every $a\in\{1,\ldots,N\}$. Moreover, with this choice we have that $\sum_{a=1}^{N}\alpha_{a}=\nu(\sigma_{11}+(N-1)\sigma_{12})$ and $\sum_{a=1}^{N}\rho_{a}^{\text{left}}=\nu$. 
 The boundary generator $\mathcal{L}_{\text{right}}^{rd}$ is defined analogously, but the $\alpha$'s are replaced by $\beta$'s and the boundary values $\rho_{a}^{\text{right}}$.
-\begin{remark}: we stress that, up to a specific choice of the $\alpha$'s ($\beta$'s), the left (right) boundary generator $\mathcal{L}_{\text{left}}^{rd}$ ($\mathcal{L}_{\text{right}}^{rd}$) has the form of the one of the multi-species stirring process \eqref{siteGenerator}. 
-\end{remark}
+%\begin{remark}: we stress that, up to a specific choice of the $\alpha$'s ($\beta$'s), the left (right) boundary generator $\mathcal{L}_{\text{left}}^{rd}$ ($\mathcal{L}_{\text{right}}^{rd}$) has the form of the one of the multi-species stirring process \eqref{siteGenerator}. 
+%\end{remark}
 \paragraph{Action on the occupation variable}
 We only report the final result. The details are written in Appendix \ref{appendix-RD}. For arbitrary site $x\in \{2,\ldots,L-1\}$, the action on the occupation variable $f(\bm{n})=n_{a}^{x}$ of particle of type $a\in \{1,\ldots,N-1\}$ at site $x$ reads
 \begin{equation}\label{DifferenceEquation}
 	\mathcal{L}^{rd}n_{a}^{x}=\nu\sigma_{11}\Delta_{L}n_{a}^{x}+\nu\sigma_{12}\sum_{b=1\,:\,b\neq a}^{N-1}\Delta_{L}n_{b}^{x}+\Upsilon\sum_{b=1\,:\,b\neq a}^{N-1}(n_{b}^{x}-n_{a}^{x})
 \end{equation}
-where $\Delta_{L}n_{a}^{x}= n_{a}^{x+1}+n_{a}^{x-1}-2n_{a}^{x}$. \\For $x=1$ and for all $a\in \{1,\ldots,N-1\}$ we have 
+where $\Delta_{L}n_{a}^{x}= n_{a}^{x+1}+n_{a}^{x-1}-2n_{a}^{x}$. For $x=1$ and for all $a\in \{1,\ldots,N-1\}$ we have 
 \begin{equation}\label{actionBDLine}
 	\mathcal{L}^{rd}n_{a}^{1}=\sigma_{11}\nu \left(\rho_{a}^{\text{left}}-2n_{a}^{1}+n_{a}^{2}\right)+\sigma_{12}\nu\sum_{b=1\,:\,b\neq a}^{N-1}\left(\rho_{b}^{\text{left}}-2n_{b}^{1}+n_{b}^{2}\right)+\Upsilon\sum_{b=1\,:\,b\neq a}^{N-1}\left(n_{b}^{1}-n_{a}^{1}\right)\dt
 \end{equation}
-On the occupation variable $n_{a}^{L}$ the action is similar. Therefore, using the evolution equation \eqref{EE-density} for the average densities and  the action of $\mathcal{L}^{rd}$ expressed by \eqref{DifferenceEquation} and \eqref{actionBDLine} we obtain the desired system of $N-1$ difference-differential equations \eqref{NSpeciesRD}. For these reasons, this model is a generalization to $N$ species and to maximal occupation $\nu$ of the one studied in \cite{casini2022uphill}. This answers the first question we addressed to at the beginning of this section. 
+On the occupation variable $n_{a}^{L}$ the action is similar. Therefore, using the evolution equation \eqref{EE-density} for the average densities and  the action of $\mathcal{L}^{rd}$ expressed by \eqref{DifferenceEquation} and \eqref{actionBDLine} we obtain the desired system of $N-1$ difference-differential equations \eqref{NSpeciesRD}. For these reasons, this model is a generalization to $N$ species and to maximal occupation $\nu$ of the one studied in \cite{casini2022uphill}. 
+%This answers the first question we addressed to at the beginning of this section. 
 \subsubsection{Reversible measure for the reaction-diffusion process (equilibrium)} 
 The process described by the generator \eqref{RDGenerator} is reversible with respect to the homogeneous product measure \begin{equation}\label{reversibleMeasureRD}
 	\Lambda_{\text{rev}}=\bigotimes_{x=1}^{L}\Lambda_{\text{rev}}^{x}
@@ -3218,16 +3233,16 @@ Namely,
 	\Lambda_{\text{rev}}^{x}(n^{x})=\frac{\nu!}{\prod_{a=1}^{N}n_{a}^{x}!}p^{\sum_{a=1}^{N-1}n_{a}^{x}}p^{n_{N}^{x}}
 \end{equation}
 This can be proved by imposing the detailed balance conditions for the bond $(x,x+1)$ and for the boundaries $\{1,L\}$.\\
-{\color{blue} 
-	Indeed, we impose the detailed balance for the stirring-mutation generator $\mathcal{L}_{x,x+1}^{c}$, for arbitrary $c\in \{1,\ldots,N-2\}$. Consider the transition 
-				\begin{equation*}
-			\bm{n} \to\bm{n}-\delta_{a}^{x}+\delta_{h_{c}(b)}^{x}+\delta_{h_{c(a)}}^{x+1}-\delta_{b}^{x+1}
-			\end{equation*} 
-		we obtain that 
-		\begin{equation*}
-			p_{a}p_{b}=p_{h_{c}(a)}p_{h_{c}(b)}
-		\end{equation*}
-		that is verified if $p_{a}=p_{b}$ for all $a,b\in \{1,\ldots,N-1\}$. A similar argument for the generator $\mathcal{L}^{m}$ gives the same conditions for the $p$'s. Considering the boundary generators, one obtain the result.}
+%{\color{blue} 
+%	Indeed, we impose the detailed balance for the stirring-mutation generator $\mathcal{L}_{x,x+1}^{c}$, for arbitrary $c\in \{1,\ldots,N-2\}$. Consider the transition 
+%				\begin{equation*}
+%			\bm{n} \to\bm{n}-\delta_{a}^{x}+\delta_{h_{c}(b)}^{x}+\delta_{h_{c(a)}}^{x+1}-\delta_{b}^{x+1}
+%			\end{equation*} 
+%		we obtain that 
+%		\begin{equation*}
+%			p_{a}p_{b}=p_{h_{c}(a)}p_{h_{c}(b)}
+%		\end{equation*}
+%		that is verified if $p_{a}=p_{b}$ for all $a,b\in \{1,\ldots,N-1\}$. A similar argument for the generator $\mathcal{L}^{m}$ gives the same conditions for the $p$'s. Considering the boundary generators, one obtain the result.}
 % Arguing as in Remark \ref{rem-rev}, conditions \eqref{cond-gen} become here
 %\begin{equation}
 %	\alpha((N-2)\beta+\beta_{N})=\beta((N-2)\alpha+\alpha_{N})
@@ -3312,10 +3327,9 @@ Since the matrix $R_{x}$ is the same as in Section \ref{sectionDuality}, we shal
 %	\\=&
 %	\sum_{d,k=1}^{N-1}\sum_{a,b=1}^{N}\left\{\left(E_{da}^{x}-E_{h_{c}(b)N}^{x}-E_{da}^{x}+E_{aN}^{x}\right)\otimes\left(E_{kb}^{x+1}-E_{h_{c}(a)N}^{x+1}-E_{kb}^{x+1}+E_{bN}^{x+1}\right)\right\}
 %	\\=&
-	\sum_{a,b=1}^{N-1}\sum_{d,\ell=1}^{N}\left\{\left(E_{dN}^{x}-E_{h_{c}(\ell)N}^{x}\right)\otimes \left(E_{dN}^{x+1}-E_{h_{c}(\ell)N}^{x+1}\right)\right\}
-	\\=&0\dt
+	\sum_{a,b=1}^{N-1}\sum_{d,\ell=1}^{N}\left\{\left(E_{dN}^{x}-E_{h_{c}(\ell)N}^{x}\right)\otimes \left(E_{dN}^{x+1}-E_{h_{c}(\ell)N}^{x+1}\right)\right\}=0\dt
 \end{align*}
-In the last equality we used the fact that map $h_{c}(\cdot)$ is surjective. \\
+In the last equality we used the fact that map $h_{c}(\cdot)$ is surjective. 
 %\paragraph{Duality for $H_{x,x+1}^{m}$} 
 Concerning the commutator between $\mathcal{H}_{x,x+1}^{m}$ the proof is similar and gives
 \begin{equation}
@@ -3464,7 +3478,7 @@ where $\Delta_{L}$ is the discrete Laplace operator on the chain of length $L$. 
 \end{equation}
 that is the same result obtained in \eqref{one-pts-corr}.  
 \end{remark}
-Already for two-point correlations the computations become more involving and hard to solve.
+%Already for two-point correlations the computations become more involving and hard to solve.
 \section{Proof of duality of thermalized multi-species stirring}\label{appendix-dualityThermalized}
 The proof of the duality consists in showing
 \begin{align}
@@ -3494,7 +3508,7 @@ We consider the first addend in the curly bracket of the \eqref{ProvaBordoTH}. W
 	\\=&
 	\left(\prod_{k=1}^{N-1}\left(\rho_{k}^{\text{left}}\right)^{\xi_{k}^{0}+\xi_{k}^{1}}\right)\left(\prod_{x=2}^{L}d(n^{x},\xi^{x})\right)\left(\prod_{d=1}^{N-1}(\rho_{d}^{\text{right}})^{\xi_{d}^{L+1}}\right)
 \end{align}
-Where we used {\color{blue}
+Where we used 
 \begin{equation*}
 \frac{\left(\nu-\sum_{c=1}^{N-1}\xi_{c}^{1}\right)!}{\nu!}\left(\prod_{b=1}^{N-1}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\right)\frac{\nu!}{r_{1}!\cdots r_{N}!}=\frac{\left(\nu-\xi_{1}^{1}-\ldots-\xi_{N-1}^{1}\right)!}{(r_{1}-\xi_{1}^{1})!\cdots(r_{N-1}-\xi_{N-1}^{1})!(\nu-r_{1}-\ldots-r_{N-1})!}
 \end{equation*}
@@ -3502,7 +3516,7 @@ and
 \begin{align*}
 &\left(\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{|\alpha|}\right)^{\xi_{a}^{0}-\xi_{a}^{1}+\xi_{a}^{1}}\right)\left(\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{N}}\right)^{r_{k}}\right)\left(\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-r_{\ell}+r_{\ell}}\right)\\=&	\left(\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{k}^{0}+\xi_{k}^{1}}\right)\left(\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{\ell}}{|\alpha|}\right)^{r_{\ell}-\xi_{\ell}^{1}}\right)\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-r_{1}-\ldots-r_{N-1}}
 \end{align*}
-and }the multinomial theorem in the last equality. \\ We now consider the second addend in the curly brackets of \eqref{ProvaBordoTH}.
+and the multinomial theorem in the last equality. \\ We now consider the second addend in the curly brackets of \eqref{ProvaBordoTH}.
 We multiplying it by $\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-(r_{1}+\ldots+r_{N-1})+(r_{1}+\ldots+r_{N-1})}$ and we obtain
 \begin{equation}\label{pezzo2}
 	\begin{split}
