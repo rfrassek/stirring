@@ -1435,18 +1435,18 @@ We consider the average with respect to $\mu$ of the occupation variable of the 
 \begin{equation}
 	\begin{split}
 	&\mathcal{P}_{x_{1},x_{2},x_{3}}(0,0,0)=\frac{x_{1}(x_{2}-1)(x_{3}-2)}{L(L^{2}-1)}\\
-	&\mathcal{P}_{x_{1},x_{2},x_{3}}(1,0,0)=\frac{ x_{2} (x_3-1)(L-1)-x_1 (x_2-1)
-		(x_3-2)}{L \left(L^2-1\right)}\\
-	&\mathcal{P}_{x_{1},x_{2},x_{3}}(0,1,0)=\frac{x_1 (L (-x_3)+L+x_2 (x_3-2)+1)}{L(L^2-1)}\\
+ &\mathcal{P}_{x_{1},x_{2},x_{3}}(0,1,1)=\frac{x_1 (L-x_2) (L-x_3+1)}{L \left(L^2-1\right)}\\
+	&\mathcal{P}_{x_{1},x_{2},x_{3}}(0,1,0)=\frac{x_1 (L(1-x_3)+x_2 (x_3-2)+1)}{L(L^2-1)}\\
 	&\mathcal{P}_{x_{1},x_{2},x_{3}}(0,0,1)=\frac{x_1 (x_2-1) (L-x_3+1)}{L \left(L^2-1\right)}
 	\end{split}\quad \begin{split}
 	&\mathcal{P}_{x_{1},x_{2},x_{3}}(1,1,0)=\frac{(L-1) x_2 (x_3-1)-x_1 (x_2-1)
 		(x_3-2)}{L \left(L^2-1\right)}\\
 	&\mathcal{P}_{x_{1},x_{2},x_{3}}(1,0,1)=\frac{(L-x_3+1) (x_2 (L-x_1-1)+x_1)}{L
 		\left(L^2-1\right)}\\
-	&\mathcal{P}_{x_{1},x_{2},x_{3}}(0,1,1)=\frac{x_1 (L-x_2) (L-x_3+1)}{L \left(L^2-1\right)}\\
+	&\mathcal{P}_{x_{1},x_{2},x_{3}}(1,0,0)=\frac{ x_{2} (x_3-1)(L-1)-x_1 (x_2-1)
+	(x_3-2)}{L \left(L^2-1\right)}\\
 	&\mathcal{P}_{x_{1},x_{2},x_{3}}(1,1,1)=\frac{(L-x_{1}-1)(L-x_{2})(L-x_{3}+1)}{L(L^{2}-1)}
-\end{split}\dt
+\end{split}
 \end{equation}
 %where $\bm{\xi}=\delta_{a_{1}}^{x_{1}}+\delta_{a_{2}}^{x_{2}}+\delta_{a_{3}}^{x_{3}}$ 
 %Then, by using \eqref{exactCorrelations} we obtain 
@@ -3536,7 +3536,7 @@ and
 &\left(\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{|\alpha|}\right)^{\xi_{a}^{0}-\xi_{a}^{1}+\xi_{a}^{1}}\right)\left(\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{N}}\right)^{r_{k}}\right)\left(\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-r_{\ell}+r_{\ell}}\right)\\=&	\left(\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{k}^{0}+\xi_{k}^{1}}\right)\left(\prod_{\ell=1}^{N-1}\left(\frac{\alpha_{\ell}}{|\alpha|}\right)^{r_{\ell}-\xi_{\ell}^{1}}\right)\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-r_{1}-\ldots-r_{N-1}}
 \end{align*}
 and the multinomial theorem in the last equality. \\ We now consider the second addend in the curly brackets of \eqref{ProvaBordoTH}.
-We multiplying it by $\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-(r_{1}+\ldots+r_{N-1})+(r_{1}+\ldots+r_{N-1})}$ and we obtain
+We multiplying it by $\prod_{k=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-r_{k}+r_{k}}$ and we obtain
 \begin{equation}\label{pezzo2}
 	\begin{split}
 		&D(\bm{n},\bm{\xi})\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\frac{\nu!}{r_{1}!\cdots r_{N}!}\left(\prod_{k=1}^{N-1}\left(\frac{\alpha_{k}}{\alpha_{N}}\right)^{r_{k}}\right)\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-(r_{1}+\ldots+r_{N-1})+(r_{1}+\ldots+r_{N-1})}\\=&D(\bm{n},\bm{\xi})
