@@ -146,27 +146,29 @@
 % \centering
 \begin{center}
  \begingroup\LARGE
-\bf Exact solution of the multi-species stirring process \\
+% \bf Exact solution of the multispecies stirring process \\
+%  with open boundaries
+ 
+\bf Duality for the multispecies stirring process 
  with open boundaries
 \par\endgroup
  \vspace{3.5em}
  \begingroup\large \bf
- {Francesco Casini$^{(a,b)}$, Rouven Frassek$^{(b)}$, Cristian Giardin\`a$^{(b)}$}
+ {Francesco Casini$^{(a,b)}$, Rouven Frassek$^{(a)}$, Cristian Giardin\`a$^{(a)}$}
  \par\endgroup
 \vspace{2em}
 
 \begingroup\sffamily 
   
  %Università degli Studi di Modena e Reggio Emilia
-(a) University of Parma, \\
-Department of Mathematica, Physics, Computer Science,\\
-Parco Area delle Scienze, 7/A, 43124 Parma, Italy\\
- 
- \vspace{.5cm}
- 
-(b) University of Modena and Reggio Emilia, \\
+$(a)$ University of Modena and Reggio Emilia, \\
 Department of Physics, Computer Science and Mathematics,\\
 Via G. Campi 213/b, 41125 Modena, Italy\\ 
+ \vspace{.5cm}
+$(b)$ University of Parma, \\
+Department of Mathematical, Physical and and Computer Sciences\\
+Parco Area delle Scienze, 7/A, 43124 Parma, Italy\\
+ %
 \par\endgroup
 \vspace{2em}
 
@@ -180,7 +182,7 @@ Via G. Campi 213/b, 41125 Modena, Italy\\
 \noindent
 We study the boundary-driven version of the stirring process with $N-1$ species
 on a generic graph $G=(V,\mathcal{E})$ with reservoirs. 
-The multi-species stirring process generalizes the symmetric exclusion process, 
+The multispecies stirring process generalizes the symmetric exclusion process, 
 which is recovered in the case $N=2$.
 We prove the existence of a dual process defined on
 an extended graph $\widetilde{G}=(\widetilde{V},\widetilde{\mathcal{E})}$ which 
@@ -208,10 +210,10 @@ are also discussed.
  \newpage
 
 \section{Introduction} 
-Boundary-driven particle systems are paradigmatic models for non-equilibrium statistical mechanics. In a boundary-driven system, the model is put in contact with reservoirs at its ``boundaries'' imposing different particle densities, and a current is generated through the system. In the long time limit, a non-equilibrium steady state sets in, with a stationary value of the current. The aim of this paper is to study the mathematical aspects of the stationary measure of boundary-driven {\em multi-species} particle systems \cite{schutz2017kardar, vanicat2017exact, crampe2016integrable, finn2018matrix, floreani2022switching, casini2022uphill, casini2023density, redig2022ergodic, redig2023equilibrium, chatterjee2023multi, zhou2021orthogonal, franceschini2022orthogonal}.
+Boundary-driven particle systems are paradigmatic models for non-equilibrium statistical mechanics. In a boundary-driven system, the model is put in contact with reservoirs at its ``boundaries'' imposing different particle densities, and a current is generated through the system. In the long time limit, a non-equilibrium steady state sets in, with a stationary value of the current. The aim of this paper is to study the mathematical aspects of the stationary measure of boundary-driven {\em multispecies} particle systems \cite{schutz2017kardar, vanicat2017exact, crampe2016integrable, finn2018matrix, floreani2022switching, casini2022uphill, casini2023density, redig2022ergodic, redig2023equilibrium, chatterjee2023multi, zhou2021orthogonal, franceschini2022orthogonal}.
 
 For the single species case, the exclusion process with open boundaries \cite{derrida1993exact} has been of crucial importance in our understanding of the structural properties of non-equilibrium state states, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviation \cite{mallick2022exact,bodineau2005current}. The results available for the exclusion process are rooted in the algebraic properties of the corresponding integrable quantum spin chain, i.e. the XXX Heisenberg Hamiltonian with $\mathfrak{su}(2)$ spins of value 1/2.
-In this paper, we investigate the multi-species analog of the exclusion process in the boundary-driven context, i.e. the {\em  multi-species stirring process with open boundaries}. The bulk part of the model with $N$ species is associated with the integrable higher-rank
+In this paper, we investigate the multispecies analog of the exclusion process in the boundary-driven context, i.e. the {\em  multispecies stirring process with open boundaries}. The bulk part of the model with $N$ species is associated with the integrable higher-rank
 Heisenberg XXX Hamiltonian having  $\mathfrak{gl}(N)$ symmetry.
 
 Our strategy to solve for the non-equilibrium steady state is of a probabilistic nature and relies on the use of {\em duality} \cite{schutzSandow}. This approach, starting from the pioneering work of Kipnis, Marchiorio and Presutti \cite{KMP}, 
@@ -221,21 +223,21 @@ is reduced to the problem of computing the absorption probabilities of the dual 
 In general, this is a difficult task. However, there are cases in which these absorption
 probabilities can be computed thanks to the integrability property of the system.
 For recent examples in the framework of single-species systems, see \cite{frassek2020eigenstates, frassek2022exact, frassek2020non, floreani2023non}.
-Here we generalize the duality approach to the set-up of multi-species particle systems.
+Here we generalize the duality approach to the set-up of multispecies particle systems.
 
-The remainder of this paper is organized as follows. In Section \ref{sec1} we define the open multi-species stirring
-process and provide its Lie algebraic description. In Section \ref{sectionDuality} we prove duality (Theorem \ref{thm-duality}) 
-and we show that, even in the presence of multi-species, the problem of characterizing the non-equilibrium 
+The remainder of this paper is organized as follows. In Section~\ref{sec1} we define the open multispecies stirring
+process and provide its Lie algebraic description. In Section~\ref{sectionDuality} we prove duality (Theorem~\ref{thm-duality}) 
+and we show that, even in the presence of multispecies, the problem of characterizing the non-equilibrium 
 steady state can be reduced to the computation of the absorption probabilities. Duality is proved when the 
-system has a general spatial structure described by a general graph. In Section \ref{sectionIntegrabiliy} we then obtain a closed formula 
-for the stationary correlations (Theorem \ref{thm-correlations}) for the case of a one-dimensional chain with at most one 
+system has a general spatial structure described by a general graph. In Section~\ref{sectionIntegrabiliy} we then obtain a closed formula 
+for the stationary correlations (Theorem~\ref{thm-correlations}) for the case of a one-dimensional chain with at most one 
 particle per site, which is driven out-of-equilbrium by two reservoirs acting at the left and right boundaries. 
 Here the computation of the absorption probabilities relies on the previously formulated Matrix Product Ansatz \cite{vanicat2017exact},
-which is in fact also simplified by the use of duality. Finally in Section \ref{sec5} we discuss a few extensions 
+which is in fact also simplified by the use of duality. Finally in Section~\ref{sec5} we discuss a few extensions 
 and generalizations of the model, including instantaneous thermalization limits and reaction-diffusions.
 
-In closing this introduction we mention that we are currently working on the boundary-driven multi-species 
-model with non-compact Lie-algebras, both integrable and non-integrable, which will be presented in a 
+In closing this introduction we mention that we are currently working on the boundary-driven multispecies 
+model with non-compact Lie algebras, both integrable and non-integrable, which will be presented in a 
 future paper. 
 
 
@@ -246,7 +248,7 @@ INFN Progetto Giovani
 %
 %{\color{blue}
 %In the past years duality has been developed to study stochastic processes, especially in the boundary driven case, i.e. when the system is put in contact with boundaries that generate a non-equilibrium current. The literature is huge. We can address , for instance, to \cite{giardina2009duality,carinci2013duality,frassek2020duality}. One application of duality is the attempt to characterize the non equilibrium steady state of boundary driven process via the so called absorption probabilities. Indeed, there are many cases where the dual process has absorbing boundaries. This means that the the chain is eventually empty in the long time scale. Moreover, there are cases in which the steady state of a stochastic process can be computed explicitly, thanks to the integrability property of the system (quantum inverse scattering method, matrix product ansatz). In this direction, some examples can be found in \cite{derrida1993exact,frassek2019non,frassek2020eigenstates}. In the past, the focus has been on processes where one can distinguish, in each site of a certain graph, a (or many) particles or an empty state. However, this particles are indistinguishable, in the sense that you can pile up in a site just one type of particles. Some natural questions arise: what happens if we imagine to assign different colours to the particles? Is the duality property still holding? How far can we push our analysis for the characterization of the non equilibrium steady state?\\
-%The way one can define a multi-type (or multi-species) interacting particle system is not unique. In the literature there are many. Two of them are the following. On one hand, the \textit{multi-layer models}, in which the process is constructed on a many layer graph where each graph correspond to a type and perform a kind of dynamic (independent jump, exclusion/inclusion walkers) and the layers communicate each other with some "switching probabilities". The state space of the Markov process is the Cartesian product of the state spaces of each layer, i.e. of the two species. For example see \cite{floreani2022switching,redig2022ergodic,redig2023equilibrium}. On the other hand, the \textit{single layer models}. Here, there is just one layer, where particles of each type can pile up, in a way that the exclusion dynamic concerns many species together. In other words, now the species can interact "directly", not just by switching layer. Here the state space contains all the species and it is not product anymore. Some examples of such a dynamic can be found in \cite{casini2022uphill,vanicat2017exact,zhou2021orthogonal,casini2023density}. \\
+%The way one can define a multi-type (or multispecies) interacting particle system is not unique. In the literature there are many. Two of them are the following. On one hand, the \textit{multi-layer models}, in which the process is constructed on a many layer graph where each graph correspond to a type and perform a kind of dynamic (independent jump, exclusion/inclusion walkers) and the layers communicate each other with some "switching probabilities". The state space of the Markov process is the Cartesian product of the state spaces of each layer, i.e. of the two species. For example see \cite{floreani2022switching,redig2022ergodic,redig2023equilibrium}. On the other hand, the \textit{single layer models}. Here, there is just one layer, where particles of each type can pile up, in a way that the exclusion dynamic concerns many species together. In other words, now the species can interact "directly", not just by switching layer. Here the state space contains all the species and it is not product anymore. Some examples of such a dynamic can be found in \cite{casini2022uphill,vanicat2017exact,zhou2021orthogonal,casini2023density}. \\
 %In this work we concentrate our effort in this last "single layer" case with a repulsive process, i.e. a dynamic in which a maximum amount of particles can be present in each site at each time. We will call this amount, the "maximal occupancy" and it will indicated with $\twoj$ where $\twoj\in\mathbb{N}$. Particle of any species can exchange their position in the graph, under this exclusion constraint. The system will be put out of equilibrium and some absorbing duality result are investigated. Moreover, we will use this duality, to study the out of equilibrium steady state. In particular, in case of $\twoj=1$ we retrieve the model studied in \cite{vanicat2017exact}. 
 %{\color{red}
 %The case of $\twoj=1$ distinguishes itself from other values of $\twoj$ as in this case the model can be mapped to an integrable higher rank $\mathfrak{gl}(N)$ Heisenberg XXX spin chain with open (non-diagonal) boundaries. Furthermore the matrix product ansatz \cite{derrida1993exact}  is applicable, see \cite{Crampe:2014aoa,vanicat2017exact}.
@@ -257,8 +259,8 @@ INFN Progetto Giovani
 % \\
 % \\
 % \textbf{Some interesting references and extensions?}:
-% Multi-species version of non-compact chains. Extension of \cite{frassek2022exact},\cite{frassek2022integrable},\cite{frassek2020non},\cite{frassek2021duality}. \\
-% Use exact solution to compute large deviation rate function extending to the multi-species case results proved in \cite{derrida1998exact}, \cite{mallick2022exact}. \\
+% Multispecies version of non-compact chains. Extension of \cite{frassek2022exact},\cite{frassek2022integrable},\cite{frassek2020non},\cite{frassek2021duality}. \\
+% Use exact solution to compute large deviation rate function extending to the multispecies case results proved in \cite{derrida1998exact}, \cite{mallick2022exact}. \\
 % Extend the result to a-symmetric situation. See \cite{belitsky2018self}, \cite{belitsky2015quantum}, \cite{crampe2016integrable}, \cite{finn2018matrix}. \\
 % Extend the QISM technique to models which include reaction trying to apply the method exposed in \cite{de2021yang} for stirring process with a proper reaction term. Extend the duality to stirring models with different mechanism of transition \cite{chatterjee2023multi}. 
 %}
@@ -269,7 +271,7 @@ INFN Progetto Giovani
 \section{The stirring process with open boundaries}
 \label{sec1}
 \subsection{Informal description of the process}
-The process studied in this paper is the {\em multi-species stirring process}
+The process studied in this paper is the {\em multispecies stirring process}
 with open boundaries. 
 In words, the dynamics is described as follows. Each site
 of a connected graph can host up to $\nu\in \mathbb{N}$ particles.
@@ -296,7 +298,7 @@ of the remaining $N-1$ types. It is interesting to observe that, in case we stop
 (those of types $\{1,\ldots,N-1\}$), we retrieve the 
 boundary-driven version of the partial symmetric exclusion process \cite{schutzSandow,carinci2013duality}.
 The choice of type $N$ for the distinguished type is arbitrary and does not affect
-the results. In particular, we shall see in Section \ref{sectionDuality} about duality, that
+the results. In particular, we shall see in Section~\ref{sectionDuality} about duality, that
 the dual process eventually has only particles of type $N$ on the graph.
 Interpreting type $N$ as an hole, one can then say that the dual process voids the graph.  
 \end{remark}
@@ -307,7 +309,7 @@ Interpreting type $N$ as an hole, one can then say that the dual process voids t
 
 
 \subsection{The process generator}\label{subsectionGeneratorStr}
-We now give the mathematical description of the multi-species stirring process.
+We now give the mathematical description of the multispecies stirring process.
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
 At each vertex site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ denotes the number of particles of species $a\in \{1,\ldots,N\}$. On each vertex we allow a total  maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space of the process on the graph $G$ is 
 \begin{equation}\label{stateSpace}
@@ -343,7 +345,7 @@ Moreover, each vertex  exchanges particles with the external environment (reserv
 Namely, on each site $x\in V$  a particle of type $b$ is replaced with a particle of type $a$ at rate $\Gamma_{x}\alpha_{a}^{x}n_{b}^{x}$. 
 %
 %For the sake of notation we denote $|\alpha^{x}|=\sum_{a=1}^{N}\alpha_{a}^{x}$. 
-%See Figure \ref{fig:1} and  Figure \ref{fig:2} for a visualisation of the dynamics. 
+%See Figure~\ref{fig:1} and  Figure~\ref{fig:2} for a visualisation of the dynamics. 
 %\begin{figure}[h]
 %    \centering
 %    \includegraphics[scale=0.45]{BulkStirring.eps}
@@ -381,7 +383,7 @@ is the density of species $a$ and we used the notation $|\alpha|=\sum_{a=1}^{N}\
 \mu_{\text{rev}}^{x}(n^{x})=\frac{\nu!}{\prod_{a=1}^{N}n_{a}^{x}!}\prod_{a=1}^{N}\rho_{a}^{n_{a}^{x}}\,.
 \end{equation}
 This can be proved  by checking that detailed balance is satisfied. 
-If condition \eqref{reversibilityCondition} is not met, then in general reversibility is lost (but see remark \ref{rem-rev} below): 
+If condition \eqref{reversibilityCondition} is not met, then in general reversibility is lost (but see Remark~\ref{rem-rev} below): 
 each reservoir at site $x$ wants to fix its own set of densities $\rho^{x}=(\rho_{1}^{x},\ldots,\rho_{N}^{x})$ with
 \begin{equation}
 \label{rhox}
@@ -401,11 +403,11 @@ Currents will arise when at least two reservoirs have different densities.
 			|\alpha^{x}|=\sum_{a=1}^{N}\alpha_{a}^{x}\dt
 		\end{equation}
 		This is slightly more general than \eqref{reversibilityCondition}. In the case where the graph is a chain with nearest neighbors interactions and two reservoirs are attached to the two boundary sites
-		then condition \eqref{cond-gen} is the multi-species counterpart of $\alpha\delta=\beta\gamma$ of the boundary driven partially excluded process introduced in \cite{schutzSandow} (see Section 3.2 of \cite{carinci2013duality}).
+		then condition \eqref{cond-gen} is the multispecies counterpart of $\alpha\delta=\beta\gamma$ of the boundary driven partially excluded process introduced in \cite{schutzSandow} (see Section 3.2 of \cite{carinci2013duality}).
 		\end{remark}
 \subsection{Lie algebraic description of the process}
 
-In this paper we will often use the fact that the Markov generator of the multi-species stirring process can be described in terms a Lie algebra of rank $N$.
+In this paper we will often use the fact that the Markov generator of the multispecies stirring process can be described in terms a Lie algebra of rank $N$.
 In this section we provide details about this.
 
 Consider the Lie algebra $\mathfrak{gl}(N)$ with generators denoted by $\EE_{ab}$ with $a,b\in \{1,\ldots,N\}$ and commutation relations
@@ -444,7 +446,7 @@ The explicit action of the algebra generators on the basis  vectors $|n\rangle$ 
 The matrices defined in this way satisfy the commutation relations \eqref{eq:comgl} and yield Dynkin weight \eqref{eq:dynkin}. \\
 %{\color{red} Is this remark relevant for us?}
 %\newline 
-%\textbf{Remark}: it is possible to define these matrices in terms of creation and annihilation operators: see Appendix \ref{appA}.
+%\textbf{Remark}: it is possible to define these matrices in terms of creation and annihilation operators: see Appendix~\ref{appA}.
 \\ \\
 %\textbf{Remark}: The symmetric representations $\lambda=(\twoj,0,\ldots,0)$ are dual to the representations $\lambda=(\twoj,\ldots,\twoj,0)$ that can be obtained via 
 %\begin{equation}
@@ -558,7 +560,7 @@ E_{ab}&\to E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
 \end{comment}
  
 \subsection{Integrable process on a line segment}\label{subsection-description-process-LINE}
-In this section we specialize the multi-species stirring process to the geometry of the one dimensional chain with sites $\{1,\ldots,L\}$ where two reservoirs act at the boundary sites $1$ and $L$. These reservoirs, exchanging particle with the external environment, put the chain out of equilibrium. The Hamiltonian that we consider here is obtained from \eqref{OriginalHamiltonian} assuming that the conductances are
+In this section we specialize the multispecies stirring process to the geometry of the one dimensional chain with sites $\{1,\ldots,L\}$ where two reservoirs act at the boundary sites $1$ and $L$. These reservoirs, exchanging particle with the external environment, put the chain out of equilibrium. The Hamiltonian that we consider here is obtained from \eqref{OriginalHamiltonian} assuming that the conductances are
 \begin{equation}
 	\omega_{x,y}=\begin{cases}
 		1 \quad \text{if}\quad |x-y|=1\\
@@ -572,7 +574,7 @@ and the coupling to reservoirs are
 		0\quad \text{otherwise}
 	\end{cases}\dt
 \end{equation}
-The case $\nu=1$, i.e. one particle at most for each site, is special. We will consider this extensively in Section \ref{sectionIntegrabiliy}.
+The case $\nu=1$, i.e. one particle at most for each site, is special. We will consider this extensively in Section~\ref{sectionIntegrabiliy}.
 We will denote the element of the representation of the $\mathfrak{gl}(N)$  Lie algebra with $\nu=1$ by lowercase letters, i.e. $(e_{ab})_{a,b\in\{1,\ldots,N\}}$, to highlight that we are in the first fundamental representation of the algebra.
 The Hamiltonian now reads
 \begin{equation}\label{hamiltonian}
@@ -600,7 +602,7 @@ with
 		\tau_{L}
 	\end{pmatrix}
 \end{equation} 
-with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. Since the maximal occupancy at each site is $\nu=1$,  the configuration $\bm{n}$ introduced in Section \ref{subsectionGeneratorStr} and $\bm{\tau}$ are related by 
+with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. Since the maximal occupancy at each site is $\nu=1$,  the configuration $\bm{n}$ introduced in Section~\ref{subsectionGeneratorStr} and $\bm{\tau}$ are related by 
 \begin{equation}\label{notation-change-relation}
 	n_{a}^{x}=\delta_{\tau_{x},a}\dt
 \end{equation}
@@ -642,15 +644,15 @@ where, without loss of generality,  we assume that the parameters satisfy
 %\begin{equation}\label{lambdaConditions}
 %	(\alpha_{a}-\beta_{a})=\alpha_{a}-\beta_{a}\quad\text{with}\quad \sum_{a=1}^{N}(\alpha_{a}-\beta_{a})=0\,.
 %\end{equation}
-Under these assumption the Hamiltonian \ref{hamiltonian} is integrable (see \cite{vanicat2017exact} for its derivation within the Quantum Inverse Scattering method). 
+Under these assumption the Hamiltonian~\ref{hamiltonian} is integrable (see \cite{vanicat2017exact} for its derivation within the Quantum Inverse Scattering method). 
 
 
 \section{Duality}\label{sectionDuality}
-In this section we prove the first main result of this paper. We show that the multi-species stirring process with open boundary
+In this section we prove the first main result of this paper. We show that the multispecies stirring process with open boundary
 can be studied by means of a dual process. After recalling the definition of duality between two
-Markov processes in Section \ref{def-duality}, we formulate our duality result  in Theorem \ref{thm-duality}. A proof of the theorem is given in Section \ref{proof-th-duality}.
+Markov processes in Section~\ref{def-duality}, we formulate our duality result  in Theorem~\ref{thm-duality}. A proof of the theorem is given in Section~\ref{proof-th-duality}.
 The duality result is important since it yields several simplifications, the main one being that the
-dual process has absorbing sites. Therefore, as shown in Corollary \ref{Corolollary-ABS_Corr-abstract}, the study of correlations in the non-equilibrium steady state of the multi-species stirring process with open boundary
+dual process has absorbing sites. Therefore, as shown in Corollary~\ref{Corolollary-ABS_Corr-abstract}, the study of correlations in the non-equilibrium steady state of the multispecies stirring process with open boundary
 is reduced to the study of the absorption probabilities of dual particles.
 
 
@@ -680,8 +682,8 @@ where the superscript $T$ denotes the matrix transposition. Therefore, the duali
     H^{T}D=D\widetilde{H}\dt
 \end{equation}
 \end{remark}
-\subsection{Duality for the open multi-species stirring process}\label{statementDualitySubsection}
-In this section we formulate duality for the multi-species stirring process $(\bm{n}(t))_{t\geq 0}$ with open boundaries, defined by the generator \eqref{Generator}.
+\subsection{Duality for the open multispecies stirring process}\label{statementDualitySubsection}
+In this section we formulate duality for the multispecies stirring process $(\bm{n}(t))_{t\geq 0}$ with open boundaries, defined by the generator \eqref{Generator}.
 The dual  process $(\bm{\xi}(t))_{t\geq 0}$ is defined on the \textit{enlarged graph} $\widetilde{G}=(\widetilde{V},\widetilde{\mathcal{E}})$ where 
 \begin{equation}
 	\widetilde{V}:=V\cup \left\{u(x)\,:\, x\in V\right\}\qquad \widetilde{\mathcal{E}}:=\mathcal{E}\cup \left\{(x,u(x))\,:\, x\in V\right\}\dt
@@ -700,7 +702,7 @@ where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles
 and the component $\xi_{a}^{u(x)}$  gives the number of dual particles of type $a\in \{1,\ldots,N\}$ at 
 the extra-site $u(x)$ connected to $x\in V$. We state the following duality result.
 \begin{theorem}[Absorbing duality]\label{thm-duality}
-	The multi-species stirring process $(\bm{n}(t))_{t\geq 0}$ defined on the state space $\Omega$ with generator $\mathcal{L}$ defined in \eqref{Generator} is dual to the process $(\bm{\xi}(t))_{t\geq 0}$ defined on the enlarged state space $\widetilde{\Omega}$ with generator
+	The multispecies stirring process $(\bm{n}(t))_{t\geq 0}$ defined on the state space $\Omega$ with generator $\mathcal{L}$ defined in \eqref{Generator} is dual to the process $(\bm{\xi}(t))_{t\geq 0}$ defined on the enlarged state space $\widetilde{\Omega}$ with generator
 	 \begin{equation}\label{DualGenerator}
 		\widetilde{\mathcal{L}}=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}+\sum_{x\in V}\Gamma_{x}\widetilde{\mathcal{L}}_{x}
 	\end{equation}
@@ -719,7 +721,7 @@ where we recall the definition of the reservoir densities (cf. \eqref{rhox})
 \end{equation}
 \end{theorem}
 \begin{comment}
-We define the duality function of the open multi-species stirring process as
+We define the duality function of the open multispecies stirring process as
 \begin{equation}\label{dualityElements}
 	D(\bm{n},\bm{\xi})=\prod_{x\in V}\left(\frac{(\nu -\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\,\right)
 \end{equation}
@@ -738,7 +740,7 @@ $\mathcal{L}_{x,y}$ is defined in \eqref{edgeGenerator} and, for any function $f
 \end{equation}
 \newline
 \end{comment}
-The dual dynamics is described as follows. On one hand, the edge part $\mathcal{L}_{x,y}$ of the dual Markov generator gives rise to  the multi-species stirring dynamics on the graph. On the other hand, the site
+The dual dynamics is described as follows. On one hand, the edge part $\mathcal{L}_{x,y}$ of the dual Markov generator gives rise to  the multispecies stirring dynamics on the graph. On the other hand, the site
 part $\widetilde{\mathcal{L}}_{x}$ of the dual generator replaces a particle of any type $a\in\{1,\ldots,N-1\}$ at site $x$ with a particle of type $N$ and creates a particle of the same type $a$ at the extra-site $u(x)$. This last transition is performed with rate $|\alpha^{x}|\xi_{a}^{x}$. This means that eventually the dual process voids the graph, putting all the dual particles of species $\{1,\ldots,N-1\}$ in the extra-sites. In other words the extra-sites play the role of absorbing boundaries. 
 \begin{remark} In the reversible situation, i.e. when $\forall x\in V$ we have $\rho_{a}^{x}=\rho_{a}$, the expectation  of the duality function  $D(\bm{n},\bm{\xi})$ with   $\bm{n}$ distributed as  $\mu_{\text{rev}} = \bigotimes_{x\in V}\text{Multinomial}\left(\twoj, \rho_{1},\ldots,\rho_{N}\right)$ is
 \begin{equation}
@@ -747,7 +749,7 @@ part $\widetilde{\mathcal{L}}_{x}$ of the dual generator replaces a particle of 
 \end{remark}
 %
 %
-\subsection{Proof of Theorem \ref{thm-duality}}
+\subsection{Proof of Theorem~\ref{thm-duality}}
 \label{proof-th-duality}
 To prove duality between $(\bm{n}(t))_{t\geq 0}$ and $(\bm{\xi}(t))_{t\geq 0}$ we  show that \eqref{DualityRelation} is fulfilled.  To show this, we will use the Hamiltonians and their Lie algebraic description. Indeed, in this formalism the proof 
 reduces to finding symmetries of the generator (for the bulk duality) and group like transformations (for the ``boundary duality'').
@@ -1133,10 +1135,10 @@ $\square$
 \end{flushright}
 
 \subsection{Duality for the integrable process on a line segment}\label{integrableChain-duality}
-Here we consider the chain defined in Section \ref{subsection-description-process-LINE} with the hard-core constrain, i.e. $\nu=1$. 
+Here we consider the chain defined in Section~\ref{subsection-description-process-LINE} with the hard-core constrain, i.e. $\nu=1$. 
 We recall that the geometry is a one dimensional chain with sites $\{1,\ldots,L\}$ where reservoirs are attached to $1$ and $L$. 
 We also recall the notation for the occupation variable which is called $\bm{\tau}=(\tau_1,\ldots,\tau_L)$ with $\tau_x\in\{1,\ldots,N\}$.
-The dynamics is described by an Hamiltonian that is written in terms of the first fundamental representation of $\mathfrak{gl}(N)$. The duality result stated in Section \ref{statementDualitySubsection} is adapted to the present situation as follows. 
+The dynamics is described by an Hamiltonian that is written in terms of the first fundamental representation of $\mathfrak{gl}(N)$. The duality result stated in Section~\ref{statementDualitySubsection} is adapted to the present situation as follows. 
 The extra-sites are denoted by $0$ and $L+1$, and they are connected with sites $1$ and $L$ of the chain respectively. The matrix $R_{x}$ defined in \eqref{Revmatrix} 
 reduces to the identity, therefore the relation between the generators of the algebra and its transposed reduces to
 \begin{equation}\label{transpostionPropertyFund}
@@ -1162,14 +1164,14 @@ where $\mathcal{H}$ is defined in \eqref{H-corsivo} and
 \begin{equation}\label{boundary-H-dual-chain}
 	\widetilde{H}_{\text{left}}=\sum_{a=1}^{N-1}\left((\mathbf{a}^{+})_{a}^{0}\,e_{Na}^{1}-e_{aa}^{1}\right)\qquad 	\widetilde{H}_{\text{right}}=\sum_{a=1}^{N-1}\left((\mathbf{a}^{+})_{a}^{L+1}\,e_{Na}^{L}-e_{aa}^{L}\right)\dt
 \end{equation}
-In the long-time limit the dual process voids the chain, i.e. all particles of types $\{1,\ldots,N-1\}$ are eventually absorbed at the extra-sites $0$ and $L+1$ and replaced by types $N$. We also notice that, up the the bosonic creation operators $(\mathbf{a}^{+})_{a}$, the dual boundary Hamiltonians \eqref{boundary-H-dual-chain} are triangular. This simplification will be crucial in Section \ref{sectionIntegrabiliy}.\\
+In the long-time limit the dual process voids the chain, i.e. all particles of types $\{1,\ldots,N-1\}$ are eventually absorbed at the extra-sites $0$ and $L+1$ and replaced by types $N$. We also notice that, up the the bosonic creation operators $(\mathbf{a}^{+})_{a}$, the dual boundary Hamiltonians \eqref{boundary-H-dual-chain} are triangular. This simplification will be crucial in Section~\ref{sectionIntegrabiliy}.\\
 
 %In this notation, the elements of the duality matrix reads
 %\begin{equation}\label{ElementsDualityMatrixChain_1}
 %	D(\bm{\tau},\bm{\xi})=\prod_{a=1}^{N-1}\alpha_{a}^{\xi_{a}^{0}}\left(\prod_{x=1}^{L}\prod_{a=1}^{N-1}\mathbbm{1}_{\{\delta_{\tau_{x},a}\geq \xi_{a}^{x}\}}\right)\prod_{a=1}^{N-1}\beta_{a}^{\xi_{a}^{L+1}}\dt
 %\end{equation}
 %\\
-Using duality, one can compute the  $m$-point correlations between non-empty particles in terms of the absorption probabilities of $m$ dual particles. Therefore, to determine the non-equilibrium steady state correlations of the integrable multi-species stirring process, it is enough to compute these absorption probabilities. In the following we denote by $\mu$ the non-equilibrium steady state distribution and we call $\bm{Y} = (Y_1,\ldots,Y_L)$ the random vector with law $\mu$. 
+Using duality, one can compute the  $m$-point correlations between non-empty particles in terms of the absorption probabilities of $m$ dual particles. Therefore, to determine the non-equilibrium steady state correlations of the integrable multispecies stirring process, it is enough to compute these absorption probabilities. In the following we denote by $\mu$ the non-equilibrium steady state distribution and we call $\bm{Y} = (Y_1,\ldots,Y_L)$ the random vector with law $\mu$. 
 Furthermore we write $\mathbb{E}[\cdot]$ for the expectation with respect to $\mu$.%For arbitrary $m\in \mathbb{N}$ such that $m<L$, we fix $a_{k}\in\{1,\ldots,N-1\}$ and $x_{k}\in\{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for every $k\in\{1,\ldots,m\}$. 
 \begin{corollary}[Correlations via duality]\label{Corolollary-ABS_Corr-abstract}
 Let $m\in \{1,\ldots,L\}$ and consider $m$ sites $1 \le x_{1} < x_2 < \ldots < x_m \le L $ and
@@ -1191,7 +1193,7 @@ where the initial dual configuration is $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{
 \end{equation}
 In \eqref{absProbabilitiesIntegrable} the variable $t_k$ is $1$ (resp. $0$) when the dual particle of species $a_k$ initially positioned at site $x_{k}$ is absorbed at at the extra site $\{0\}$ (resp. $\{L+1\}$).
 \end{corollary}
-\textbf{Proof of Corollary \ref{Corolollary-ABS_Corr-abstract}}:
+\textbf{Proof of Corollary~\ref{Corolollary-ABS_Corr-abstract}}:
 For any $\bm{\tau}\in \Omega^{'}$ the duality matrix defined in \eqref{ElementsDualityMatrixChain_1} evaluated on the dual configuration $\bm{\xi}\in\widetilde{\Omega}$ given in \eqref{xsi-init} read
 \begin{equation}
 	D(\bm{\tau},\bm{\xi})%=\prod_{k=1}^{m}\mathbbm{1}_{\{\delta_{\tau_{x_{k}},a_{k}}=1\}}
@@ -1214,7 +1216,7 @@ For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function o
 	\mathbb{E}\left[\left( \prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right) \left(\prod_{k=1}^{b}\mathbbm{1}_{\{Y_{q_{k}}=a_{q_{k}}\}}\right)\right]\,.
 \end{equation}
 \end{corollary}
-\textbf{Proof of Corollary \ref{Corollary-NESS-ABS}:}
+\textbf{Proof of Corollary~\ref{Corollary-NESS-ABS}:}
 Given $\bm{\tau}\in \Omega^{'}$,  we have 
 \begin{align}
 	\mu\left(\bm{\tau}\right)=&\mathbb{E}\left[\prod_{x=1}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right]
@@ -1242,9 +1244,9 @@ Therefore, using the linearity of the expectation and introducing the index $b\i
 	$\square$
 \end{flushright}
 \begin{remark}\label{Remark-extension-graph-nu}
-	The results in Corollary \ref{Corolollary-ABS_Corr-abstract} and in Corollary \ref{Corollary-NESS-ABS}  can be generalized to arbitrary graphs $G=(V,\mathcal{E})$ and for higher maximal occupancies $\nu >1$.
+	The results in Corollary~\ref{Corolollary-ABS_Corr-abstract} and in Corollary~\ref{Corollary-NESS-ABS}  can be generalized to arbitrary graphs $G=(V,\mathcal{E})$ and for higher maximal occupancies $\nu >1$.
 	However the computation of absorption probabilities of the dual process is possible only in the set-up of the integrable chain with $\nu =1$ and two reservoirs at the boundaries.
-	Thus we chose to present them in such a context. For the chain with higher maximal occupancies $\nu >1$ see Section \ref{Subsection-ss-nonI}.
+	Thus we chose to present them in such a context. For the chain with higher maximal occupancies $\nu >1$ see Section~\ref{Subsection-ss-nonI}.
 \end{remark}
 
 
@@ -1252,13 +1254,13 @@ Therefore, using the linearity of the expectation and introducing the index $b\i
 
 
 \section{Correlations and steady state  for the integrable chain}\label{sectionIntegrabiliy}
-In this section we combine duality and the matrix product ansatz (MPA) to charaterize the non-equilibrium steady state for the integrable version of the multi-species stirring process, defined in Section \ref{integrableChain-duality}. 
-As it will turn out, such combination of duality and MPA allows to determine a closed formula for the absorption probabilities and thus (using Corollary \ref{Corolollary-ABS_Corr-abstract}) for the correlations
-and (using Corollary \ref{Corollary-NESS-ABS}) for the probability mass-function of the non-equilibrium steady state.
+In this section we combine duality and the matrix product ansatz (MPA) to charaterize the non-equilibrium steady state for the integrable version of the multispecies stirring process, defined in Section~\ref{integrableChain-duality}. 
+As it will turn out, such combination of duality and MPA allows to determine a closed formula for the absorption probabilities and thus (using Corollary~\ref{Corolollary-ABS_Corr-abstract}) for the correlations
+and (using Corollary~\ref{Corollary-NESS-ABS}) for the probability mass-function of the non-equilibrium steady state.
 We start by recalling the formulation of the MPA  and then we explain our strategy.
 
 \subsection{Matrix product ansatz for the non-equilibrium steady state}
-The matrix product ansatz for the multi-species stirring process has been formulated in \cite{vanicat2017exact}, here we briefly recall the main steps.
+The matrix product ansatz for the multispecies stirring process has been formulated in \cite{vanicat2017exact}, here we briefly recall the main steps.
  Denoting by $|\Psi(t)\rangle$ the column vector that encodes the probability distribution of the chain with Hamiltonian \eqref{hamiltonian} at time $t\geq 0$, its evolution equation is given by 
  the master equation
 \begin{equation}
@@ -1306,7 +1308,7 @@ Without loss of generality, we further assume that $\langle W|V\rangle=1$.
 The MPA gives an abstract form of the non-equilibrium steady state in terms of an algebra of operators. However, the computation of  correlations are in general involved. 
 
 \subsection{Strategy}
- In the next Section \ref{subsection-exact} we will show that the existence of the absorbing dual process established in Section \ref{sectionDuality} simplifies substantially the algebra of operators $X_a$ defined in previous
+ In the next Section~\ref{subsection-exact} we will show that the existence of the absorbing dual process established in Section~\ref{sectionDuality} simplifies substantially the algebra of operators $X_a$ defined in previous
  section.  The idea is summarized in the following scheme. 
  We define a sequence of similarity transformation such that 
  \begin{equation}
@@ -1481,22 +1483,22 @@ Therefore, we compute the third cumulant, i.e. the three-point connected correla
 \end{align}
 \begin{remark} The first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, match with those found in Section 4.3 of \cite{vanicat2017exact}.
 	\end{remark}
-%The computation are organized as follows: we first define the similarity transformations $S_{1},S_{2}$ and the Hamiltonians $H^{'},H^{''}$. Second, we compute right eigenvector with vanishing eigenvalue of $H^{''}$ exploiting the simpler commutators. Finally, we invert the similarities and retrieve the right eigenvector of $H^{'}$ with vanishing eigenvalue and  the arbitrary correlations in the non-equilibrium steady state. The explicit expression of the steady state $|\Psi\rangle$ of $H$ is reported in Appendix \ref{appB}. 
+%The computation are organized as follows: we first define the similarity transformations $S_{1},S_{2}$ and the Hamiltonians $H^{'},H^{''}$. Second, we compute right eigenvector with vanishing eigenvalue of $H^{''}$ exploiting the simpler commutators. Finally, we invert the similarities and retrieve the right eigenvector of $H^{'}$ with vanishing eigenvalue and  the arbitrary correlations in the non-equilibrium steady state. The explicit expression of the steady state $|\Psi\rangle$ of $H$ is reported in Appendix~\ref{appB}. 
 \begin{comment}
-{\color{blue}We aim to find an explicit for for the steady state $|\Psi\rangle$. The MPA gives the steady state in terms of an abstract algebra of operators. If an explicit representation of $(X_{a})_{a=1,\ldots,N}$ was available, it would be possible to compute explicitly all the correlations and currents of particles for the Hamiltonian \eqref{hamiltonian}. Another way of computing this steady state, without passing through a representation, is using the commutators \eqref{bula} and the actions \eqref{leftBoundary} and \eqref{rightBoundary}. For the one and two point correlation and for the currents this has been done in \cite{vanicat2017exact}. Inspired by this last reference, in this subsection, we aim to find exact formulas for the steady state  $|\Psi\rangle$ using only the \eqref{bula}, \eqref{leftBoundary} and \eqref{rightBoundary}. In subsection \ref{correlation-section}, this result will leads to exact correlation for arbitrary number of particles of type $\{2,\ldots,N\}$. This aim will be achieved by the help of a similarity transformation $\mathcal{S}$ that makes commutation relations simpler, and allows to find the steady state $|\widetilde\Psi\rangle$ of a transformed Hamiltonian, denoted  $\mathbb{H}$, with lower-triangular left boundary and diagonal right boundary. Therefore, inverting this similarity, one can retrieve the steady state of \eqref{hamiltonian}. A fundamental 'ingredient' of these computation is duality, that has been proved in section~\ref{sectionDuality}. Indeed, the similarity transformation $\mathcal{S}$ relies on an "intermediate transformation" $V$ (see \eqref{transformationV}) that is, up to the diagonal operator $R$, the duality matrix.} \com{clarify}
+{\color{blue}We aim to find an explicit for for the steady state $|\Psi\rangle$. The MPA gives the steady state in terms of an abstract algebra of operators. If an explicit representation of $(X_{a})_{a=1,\ldots,N}$ was available, it would be possible to compute explicitly all the correlations and currents of particles for the Hamiltonian \eqref{hamiltonian}. Another way of computing this steady state, without passing through a representation, is using the commutators \eqref{bula} and the actions \eqref{leftBoundary} and \eqref{rightBoundary}. For the one and two point correlation and for the currents this has been done in \cite{vanicat2017exact}. Inspired by this last reference, in this subsection, we aim to find exact formulas for the steady state  $|\Psi\rangle$ using only the \eqref{bula}, \eqref{leftBoundary} and \eqref{rightBoundary}. In subsection~\ref{correlation-section}, this result will leads to exact correlation for arbitrary number of particles of type $\{2,\ldots,N\}$. This aim will be achieved by the help of a similarity transformation $\mathcal{S}$ that makes commutation relations simpler, and allows to find the steady state $|\widetilde\Psi\rangle$ of a transformed Hamiltonian, denoted  $\mathbb{H}$, with lower-triangular left boundary and diagonal right boundary. Therefore, inverting this similarity, one can retrieve the steady state of \eqref{hamiltonian}. A fundamental 'ingredient' of these computation is duality, that has been proved in section~\ref{sectionDuality}. Indeed, the similarity transformation $\mathcal{S}$ relies on an "intermediate transformation" $V$ (see \eqref{transformationV}) that is, up to the diagonal operator $R$, the duality matrix.} \com{clarify}
 \end{comment}
-\subsection{Proof of Theorem \ref{thm-correlations}}
+\subsection{Proof of Theorem~\ref{thm-correlations}}
 The proof of formula \eqref{exactCorrelations} is split into the following steps:
 \begin{itemize}
-	\item In Section \ref{subsectionSTransf}, we introduce two similarity transformations $S_1$ and  $S_2$. 
+	\item In Section~\ref{subsectionSTransf}, we introduce two similarity transformations $S_1$ and  $S_2$. 
 	 The first turns the Hamiltonian $H$ into $H^{'}= S_{1} H S_{1}^{-1} $ with boundary terms in a triangular form;
 	 the second  turns the Hamiltonian $H'$ into $H^{''} = S_{2}H' S_{2}^{-1}$ having the left boundary in a triangular form and the right boundary is diagonal.
 	Associated to $H^{'}$ and $H^{''}$ there are two ground states denoted by $|\Psi^{'}\rangle$ and $|\Psi^{''}\rangle$ respectively. 
-	\item In Section \ref{subsectionSSHsec} we apply the MPA to $H^{''}$. Here the commutation relations defining the matrix algebra are simpler. The explicit expression for $|\Psi^{''}\rangle$ is determined (see \eqref{ResulsBasis}).
-	\item In subsection \ref{subsectionSSdual}, we invert the similarity transformation $S_2$ to recover  the ground state $|\Psi^{'}\rangle$ from the explicit expression of $|\Psi^{''}\rangle$  (see \eqref{ABS}).
-	\item In Section \ref{correlation-section} we show, using duality, that the correlations are in turn the components of the vector $|\Psi^{'}\rangle$. By exploiting a binomial formula we rewrite the correlations in terms
-	as a polynomial in the left and right boundary densities with coefficients given by the absorption probabilities, as claimed in Corollary \ref{Corolollary-ABS_Corr-abstract}.
-	For completeness, we also show that Corollary \ref{Corollary-NESS-ABS} is in turn corresponding to the transformation $|\Psi\rangle = S_{1}^{-1} |\Psi'\rangle$.
+	\item In Section~\ref{subsectionSSHsec} we apply the MPA to $H^{''}$. Here the commutation relations defining the matrix algebra are simpler. The explicit expression for $|\Psi^{''}\rangle$ is determined (see \eqref{ResulsBasis}).
+	\item In subsection~\ref{subsectionSSdual}, we invert the similarity transformation $S_2$ to recover  the ground state $|\Psi^{'}\rangle$ from the explicit expression of $|\Psi^{''}\rangle$  (see \eqref{ABS}).
+	\item In Section~\ref{correlation-section} we show, using duality, that the correlations are in turn the components of the vector $|\Psi^{'}\rangle$. By exploiting a binomial formula we rewrite the correlations in terms
+	as a polynomial in the left and right boundary densities with coefficients given by the absorption probabilities, as claimed in Corollary~\ref{Corolollary-ABS_Corr-abstract}.
+	For completeness, we also show that Corollary~\ref{Corollary-NESS-ABS} is in turn corresponding to the transformation $|\Psi\rangle = S_{1}^{-1} |\Psi'\rangle$.
 	\end{itemize}
 \subsubsection{The similarity transformations}\label{subsectionSTransf}
 Consider the matrices
@@ -1723,7 +1725,7 @@ In the following subsections we will first compute the steady state $|\widetilde
 		\tau_{L}
 	\end{pmatrix}
 \end{equation} 
-with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. The notation with $\bm{n}$, introduced in Section \ref{subsectionGeneratorStr} and the one with $\bm{\tau}$ are related by 
+with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. The notation with $\bm{n}$, introduced in Section~\ref{subsectionGeneratorStr} and the one with $\bm{\tau}$ are related by 
 \begin{equation}
 	n_{a}^{x}=\delta_{\tau_{x},a}
 \end{equation}
@@ -2283,7 +2285,7 @@ From third to fourth line we have changed the summation order. Therefore, compar
 	$\square$
 \end{flushright}
 \subsubsection{Interpretation of $\Psi^{'}(\bm{\tau})$ as marginals of the steady state distribution}\label{subsection-interpretationPSIp}
-%We argue similarly as in the Section \ref{correlation-section}. 
+%We argue similarly as in the Section~\ref{correlation-section}. 
 We still miss the interpretation of $\Psi^{'}(\bm{\tau})$ when  $\bm{\tau})= (N,\ldots,N)$. We show here that for this particular configuration
 $\Psi^{'}(N,\ldots,N) =1$. Indeed, for any $\bm{\tau}\in \Omega^{'}$ we have that 
 \begin{align}
@@ -2313,7 +2315,7 @@ Indeed, we have that
 			1\qquad  &\text{if}\quad \tau_{x}= N
 			\end{cases}\dt
 \end{equation}
- Therefore using the duality function \eqref{ElementsDualityMatrixChain_1} and equation \ref{useful-InInterpretation}, we obtain 
+ Therefore using the duality function \eqref{ElementsDualityMatrixChain_1} and equation~\ref{useful-InInterpretation}, we obtain 
  	\begin{equation}\label{interpretation-PsiP}
  	\Psi^{'}(\bm{\tau})=\mathbb{E}\left[\prod_{x=1}^{L}\left(\mathbbm{1}_{\{Y_{x}=\tau_{x}\}} \right)^{(1-\delta_{\tau_{x},N})}\right]\dt
  \end{equation} 
@@ -2336,8 +2338,8 @@ It follows that $\Psi^{'}(\bm{\tau})$ is the marginal on $\ell$ sites $x_{1},\ld
 %As a consequence, all the marginals of $\mu$ can be found using the absorption probabilities by equation \eqref{exactCorrelations}. 
 
 \subsubsection{Steady state}\label{appB}
-By the knowledge of the closed formula for correlations \eqref{exactCorrelations}, we find the probability mass-function in the non-equilibrium steady state by using Corollary \ref{Corollary-NESS-ABS}. Indeed we show here that 
-$|\Psi\rangle=S_{1}^{-1}|\Psi^{'}\rangle$ is nothing but Corollary \ref{Corollary-NESS-ABS}.
+By the knowledge of the closed formula for correlations \eqref{exactCorrelations}, we find the probability mass-function in the non-equilibrium steady state by using Corollary~\ref{Corollary-NESS-ABS}. Indeed we show here that 
+$|\Psi\rangle=S_{1}^{-1}|\Psi^{'}\rangle$ is nothing but Corollary~\ref{Corollary-NESS-ABS}.
 On a single site we have that 
 \begin{equation}\label{S1-L1}
 	\mathcal{S}_{1}^{-1}=\mathbbm{1}+(-1)\sum_{a=1}^{N-1}e_{Na}
@@ -2521,12 +2523,12 @@ As it has to be, this is the probability of the configuration $\bm{\tau}$ under 
 \end{comment}
 %In \eqref{SteadyState-coeff-implicit} there are two terms. For every configuration $\bm{\tau}$ the first term just gives $\Psi^{'}(\bm{\tau})$ from formula \eqref{ABS}. The second term acts as follows: for every $b\in\{1,\ldots,L\}$, if $\bm{\tau}$ has more then $b$ empty occupations, it changes $b$ of these empty occupations in all possible species from $1$ to $N-1$ and gives contributions $\Psi^{'}(\tau_{1},\ldots,\underbrace{i_{q_{1}}}_{q_{1}},\ldots,\underbrace{i_{q_{b}}}_{q_{b}},\ldots,\tau_{L})$. If $\bm{\tau}$ has less than $b$ empty occupation we do not see any contribution from this second term.
 %\begin{remark}%[Correlation as the steady state of a $m$-chain ]
-%	We observe that, as a consequence of Section \ref{subsection-interpretationPSIp}, if $\bm{\tau}$ has only non-empty occupations, i.e. $\tau_{x}\in \{1,\ldots,N-1\}$ for all $x\in \{1,\ldots,L\}$, then 
+%	We observe that, as a consequence of Section~\ref{subsection-interpretationPSIp}, if $\bm{\tau}$ has only non-empty occupations, i.e. $\tau_{x}\in \{1,\ldots,N-1\}$ for all $x\in \{1,\ldots,L\}$, then 
 %	\begin{equation}
 %		\Psi(\bm{\tau})=\Psi^{'}(\bm{\tau})=\mathbb{E}\left[\prod_{x=1}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right]
 %	\end{equation}
 %\begin{comment}
-% As a consequence, we can give a different interpretation to correlation computed in \eqref{exactCorrelations}. Consider the sites $(x_{k})_{k\in \{1,\ldots,m\}}$ and fix $(a_{k})_{k\in \{1,\ldots,m\}}$ introduced in Theorem \ref{thm-correlations}. We define a chain of length $m$ where the sites have coordinates $x_{1},\ldots,x_{m}$. We denote by $|\Psi_{m}\rangle$ the non-equilibrium steady state of this $m$-chain. Then, we have that the correlations computed in \eqref{exactCorrelations} can be written as
+% As a consequence, we can give a different interpretation to correlation computed in \eqref{exactCorrelations}. Consider the sites $(x_{k})_{k\in \{1,\ldots,m\}}$ and fix $(a_{k})_{k\in \{1,\ldots,m\}}$ introduced in Theorem~\ref{thm-correlations}. We define a chain of length $m$ where the sites have coordinates $x_{1},\ldots,x_{m}$. We denote by $|\Psi_{m}\rangle$ the non-equilibrium steady state of this $m$-chain. Then, we have that the correlations computed in \eqref{exactCorrelations} can be written as
 %\begin{equation}
 %	\mathbb{E}_{\mu}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=\Psi_{m}(a_{1},\ldots,a_{m})
 %\end{equation}
@@ -2585,7 +2587,7 @@ As it has to be, this is the probability of the configuration $\bm{\tau}$ under 
 	%	When the configuration has holes, the presence of the second addend is motivated by the dependence of the "empty" in a fixed site from all others types in the same site.
 		\begin{comment}
 		
-		From Section \ref{correlation-section} we recall that the components $\Psi^{'}(\bm{\tau})$ of $|\Psi^{'}\rangle$ can be written as in equation \eqref{interpretation-PsiP}. Thus, we have that  
+		From Section~\ref{correlation-section} we recall that the components $\Psi^{'}(\bm{\tau})$ of $|\Psi^{'}\rangle$ can be written as in equation \eqref{interpretation-PsiP}. Thus, we have that  
 			\begin{equation}
 			\Psi(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\mathbb{E}_{\mu}\left[\prod_{k=1}^{b}\mathbbm{1}_{\{\sigma_{q_{k}}=i_{q_{k}}\}}\prod_{x=1}^{L}\left(\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right)^{1-\delta_{\tau_{x},N}}\right]
 		\end{equation}
@@ -2649,7 +2651,7 @@ Formula \eqref{SteadyState-coeff-implicit} can be also obtained without invertin
 					=&\sum_{\bm{\sigma}\in \Omega^{'}}\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right)\prod_{x=1\,:\,\tau_{x}=N}^{L}\left(1-\sum_{i_{x}=1}^{N-1}\mathbbm{1}_{\{\sigma_{x}=i_{x}\}}\right)\langle\bm{\sigma}|\Psi\rangle
 					%=&\sum_{\bm{\sigma}\in \Omega^{'}}\langle \bm{\sigma}|D|\bm{\xi}\rangle\langle \bm{\sigma}|\Psi\rangle
 				\end{align}
-				Introducing the summation over $b$, the coordinates $(q_{k})_{k\in {1,\ldots,b}}$ and the indices $i_{q_{k}}$ as in the previous proof and arguing as in Section \ref{correlation-section}, we have that 
+				Introducing the summation over $b$, the coordinates $(q_{k})_{k\in {1,\ldots,b}}$ and the indices $i_{q_{k}}$ as in the previous proof and arguing as in Section~\ref{correlation-section}, we have that 
 				\begin{equation}
 				\Psi(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{i_{q_{1}},\ldots,i_{q_{b}}=1}^{N-1}\mathbb{E}_{\mu}\left[\prod_{k=1}^{b}\mathbbm{1}_{\{\sigma_{q_{k}}=i_{q_{k}}\}}\prod_{x=1\,:\,x\notin \{q_{1},\ldots,q_{k}\}}^{L}\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right]
 				\end{equation}
@@ -2664,7 +2666,7 @@ Formula \eqref{SteadyState-coeff-implicit} can be also obtained without invertin
 							\xi_{a}^{x}=0\qquad &\forall a\in \{1,\ldots,N\},\;\;x\in {0,L+1}
 						\end{cases}
 					\end{equation}
-					Since the occupations in the extra-sites $\{0,L+1\}$ we can introduce (arguing similarly to the Section \ref{correlation-section}) $\hat{\bm{\xi}}=(\xi^{1},\ldots,\xi^{L})$ and observe that 
+					Since the occupations in the extra-sites $\{0,L+1\}$ we can introduce (arguing similarly to the Section~\ref{correlation-section}) $\hat{\bm{\xi}}=(\xi^{1},\ldots,\xi^{L})$ and observe that 
 					\begin{equation}
 						\langle \bm{\sigma}|D|\bm{\xi}\rangle=\langle \bm{\sigma}|S_{1}^{T}|\hat{\bm{\xi}}\rangle\dt
 					\end{equation}
@@ -2676,7 +2678,7 @@ Formula \eqref{SteadyState-coeff-implicit} can be also obtained without invertin
 		
 		
 \subsection{The single-species case (SSEP)}
-The computations made for the multi-species stirring process can be specialized to the single-species case $N=2$. In this situation we retrieve the SSEP, that was already solved with the quantum inverse scattering method in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations of SEEP: 
+The computations made for the multispecies stirring process can be specialized to the single-species case $N=2$. In this situation we retrieve the SSEP, that was already solved with the quantum inverse scattering method in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations of SEEP: 
 \begin{equation}
 	H=H_{\text{left}}+\sum_{x=1}^{L-1}H_{x,x+1}+H_{\text{right}}
 \end{equation}
@@ -2724,7 +2726,7 @@ while the boundary Hamiltonians of $H^{''}$ are
 	0&0
 \end{pmatrix}\dt
 \end{equation}
- We only report the main results, since the computations are just a specific case of the ones done for the multi-species stirring process. 
+ We only report the main results, since the computations are just a specific case of the ones done for the multispecies stirring process. 
 \paragraph{Correlations of SSEP.}
 We retrieve the closed formula for correlations in the non-equilibrium steady state found in \cite[(4.26)]{frassek2020eigenstates}:  
 \begin{equation}\label{correlations-SSEP}
@@ -2811,12 +2813,12 @@ The steady state $|\Psi\rangle$ of the Hamiltonian $H$ is given by
 \end{equation}
 where for every $(\tau_{1},\ldots,\tau_{L})=\bm{\tau}$
 
- Using \eqref{ABS} it is possible to write $\Psi(\bm{\tau})$ explicitly, however to compute correlations it is enough the above expression. We report the explicit formula and the proof in Appendix \ref{appB}.\\
+ Using \eqref{ABS} it is possible to write $\Psi(\bm{\tau})$ explicitly, however to compute correlations it is enough the above expression. We report the explicit formula and the proof in Appendix~\ref{appB}.\\
 \\
 The state $|\Psi\rangle$ is normalized. To prove it we aim to show that 
 \end{comment}
 \begin{comment}
-\textbf{Remark}: In the case of $N=2$ we can argue similarly as we did in the Remark of Section \ref{subsectionSSHsec}. If we stop distinguishing types of non-empty particles and by introducing $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x,1}}$ we have that \eqref{ABS} reads
+\textbf{Remark}: In the case of $N=2$ we can argue similarly as we did in the Remark of Section~\ref{subsectionSSHsec}. If we stop distinguishing types of non-empty particles and by introducing $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x,1}}$ we have that \eqref{ABS} reads
 \begin{align}
 	\Psi^{'}(\bm{\tau})=&\sum_{q=0}^{|\bm{\tau}|}(\alpha-\beta)^{q}\beta^{L-q}\frac{\Gamma(L+2-q)}{\Gamma(L+2)}\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\mathbbm{1}_{\{c_{1}+\cdots+c_{L}=q\}}
 	\\&\prod_{x=1}^{L}\left(L+2-x-\sum_{i=x}^{L}c_{i}\right)^{c_{x}}\dt
@@ -2970,16 +2972,16 @@ Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,x_{k},c_{k},\ldots,c_{m})$ an
 
 \section{Extensions beyond the integrable chain}
 \label{sec5}
-In Sections \ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable using integrability.  
+In Sections~\ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable using integrability.  
 The aim of this section is to study the process when integrability is lost. We fix $\nu\geq 1$ and, for the sake of simplicity, we keep the geometry of a chain. We provide the following extensions: 
 \begin{enumerate}
-	\item \textit{Correlations} (Section \ref{Subsection-ss-nonI}): exploiting duality, the steady state correlations can be expressed in terms of absorption probabilities of the dual particles. These probability are hard to find when $\nu>1$. We give 
-	in Appendix \ref{appendix-1pts-general} the expression for the one-point correlation.
-	\item \textit{Instantaneous thermalization} (Section \ref{Subsection-Thermalized}): starting from the multi-species stirring dynamics, we define the thermalized process, where particle are redistributed on each bond with a measure that is the reversible one conditioned to the conservation of the number of particles on this bond. Also for this thermalized process we prove duality. 	
-	\item \textit{Reaction-diffusion process} (Section \ref{Subsection-RD}): a further dynamics is added. Particle can now change type. The model is carefully constructed with the goal of having the average densities evolving as a closed system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is also proved.
+	\item \textit{Correlations} (Section~\ref{Subsection-ss-nonI}): exploiting duality, the steady state correlations can be expressed in terms of absorption probabilities of the dual particles. These probability are hard to find when $\nu>1$. We give 
+	in Appendix~\ref{appendix-1pts-general} the expression for the one-point correlation.
+	\item \textit{Instantaneous thermalization} (Section~\ref{Subsection-Thermalized}): starting from the multispecies stirring dynamics, we define the thermalized process, where particle are redistributed on each bond with a measure that is the reversible one conditioned to the conservation of the number of particles on this bond. Also for this thermalized process we prove duality. 	
+	\item \textit{Reaction-diffusion process} (Section~\ref{Subsection-RD}): a further dynamics is added. Particle can now change type. The model is carefully constructed with the goal of having the average densities evolving as a closed system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is also proved.
 \end{enumerate}
 In the rest of this section we consider a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can host $\nu\geq 1$ particles, whose type is chosen among the $N$ available ones. The graph of the dual process is still a chain, but with two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$). The processes considered in this section will be denoted with same name $\left(\bm{n}(t)\right)_{t\geq0}$, their generator will be specified in each subsection. 
-We use the notation of Section \ref{sectionDuality} specialized to the one dimensional chain with $\nu >1$.
+We use the notation of Section~\ref{sectionDuality} specialized to the one dimensional chain with $\nu >1$.
 E.g. the state space is denoted by 
 \begin{equation}\label{stateSpace-Chain}
 	\Omega_{L}=\bigotimes_{x=1}^{L} \Omega_{x}\,.
@@ -2994,7 +2996,7 @@ In the following of this section we will denote by
 	\rho_{a}^{\text{left}}=\frac{\alpha_{a}}{|\alpha|},\qquad \qquad \rho_{a}^{\text{right}}=\frac{\beta_{a}}{|\beta|}\,.
 \end{equation}
 \subsection{Duality for a boundary driven chain}\label{Subsection-ss-nonI}
- As already pointed out the dual process eventually voids the chain by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites $0$ and $L+1$ and replacing them by types $N$ (the empty). This property allows to characterize the steady state non-equilibrium distribution (that is unique) by the probability that dual particles are absorbed in the extra-sites, called \textit{absorption probabilities}. This is a generalization for the non-integrable chain of the Corollary \ref{Corolollary-ABS_Corr-abstract}. The process $\left(\bm{n}(t)\right)_{t\geq0}$ has generator
+ As already pointed out the dual process eventually voids the chain by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites $0$ and $L+1$ and replacing them by types $N$ (the empty). This property allows to characterize the steady state non-equilibrium distribution (that is unique) by the probability that dual particles are absorbed in the extra-sites, called \textit{absorption probabilities}. This is a generalization for the non-integrable chain of the Corollary~\ref{Corolollary-ABS_Corr-abstract}. The process $\left(\bm{n}(t)\right)_{t\geq0}$ has generator
 \begin{equation}
 	\mathcal{L}=\mathcal{L}_{\text{left}}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\mathcal{L}_{\text{right}}\dt
 \end{equation} 
@@ -3050,17 +3052,17 @@ Therefore, up to this constant, $\mathbb{E}_{\mu_{\text{NESS}}}\left[D(\bm{n},\b
 		\sum_{t_{1}=0}^{|\xi_{1}|}\ldots\sum_{t_{N}=0}^{|\xi_{N}|}\prod_{a=1}^{N-1}\left(\rho_{a}^{\text{left}}\right)^{t_{a}}\left(\rho_{a}^{\text{right}}\right)^{|\xi_{a}|-t_{a}}\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{N})
 	\end{split}
 \end{equation}
-here we recall that, generalizing Corollary \ref{Corolollary-ABS_Corr-abstract}, %that $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{|\alpha|}$, $\rho_{\alpha}^{R}=\frac{\beta_{a}}{|\beta|}$ are the boundary densities and 
+here we recall that, generalizing Corollary~\ref{Corolollary-ABS_Corr-abstract}, %that $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{|\alpha|}$, $\rho_{\alpha}^{R}=\frac{\beta_{a}}{|\beta|}$ are the boundary densities and 
 \begin{equation}\label{Pass} 
 	\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{N})	=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{a=1}^{N-1}\left(t_{a}\delta_{a}^{0}+(|\xi_{a}|-t_{a})\delta_{a}^{L+1}\right)| \bm{\xi}(0)=\bm{\xi}\right)
 \end{equation}
 are the absorption probabilities for the non-integrable chain, i.e. the probabilities that $t_{a}$ particles of species $a$ are absorbed at $\{0\}$. Here we have denoted $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x}$.
- These correlations can be computed once the absorption probabilities are known. For example, we report in Appendix \ref{appendix-1pts-general} the solution for the simplest case of one point correlations that is exactly solvable, since the single dual particle behaves as an independent random walker. The absorption probabilities for higher point correlations fulfill  difference equations.
+ These correlations can be computed once the absorption probabilities are known. For example, we report in Appendix~\ref{appendix-1pts-general} the solution for the simplest case of one point correlations that is exactly solvable, since the single dual particle behaves as an independent random walker. The absorption probabilities for higher point correlations fulfill  difference equations.
 
 % In the following we specialize the chain to the integrable case $\nu=1$. As it will be shown, in such a situation the non-equilibrium steady state correlations can be computed with different techniques exploiting the integrability of the process (matrix product ansatz and quantum inverse scattering method) combined with duality and, as a by-product, all absorption probabilities can be explicitly found. 
 
 \subsection{Instantaneous thermalization}\label{Subsection-Thermalized}
-In this subsection we aim to extend to the multi-species stirring process the concept of \textit{instantaneous thermalization limit} (see \cite{carinci2013duality,KMP}). The thermalized process gives rise, for any pair nearest neighbour sites of the chain, to a redistribution of the total number of particles. The thermalized model that we present in this paper is obtained from the boundary driven model with generator \eqref{Generator} as follows: for each bond $(x,x+1)$ the total number of particles $\epsilon=n^{x}+n^{x+1}$ is redistributed according to the reversible measure, conditioned on the conservation of $\epsilon$. 
+In this subsection we aim to extend to the multispecies stirring process the concept of \textit{instantaneous thermalization limit} (see \cite{carinci2013duality,KMP}). The thermalized process gives rise, for any pair nearest neighbour sites of the chain, to a redistribution of the total number of particles. The thermalized model that we present in this paper is obtained from the boundary driven model with generator \eqref{Generator} as follows: for each bond $(x,x+1)$ the total number of particles $\epsilon=n^{x}+n^{x+1}$ is redistributed according to the reversible measure, conditioned on the conservation of $\epsilon$. 
 \subsubsection{The thermalization measure}
 We introduce the reversible measure \eqref{reversibleMeasure} conditioned on the conservation of the particles on that bond
 \begin{align}
@@ -3094,8 +3096,8 @@ where we denote the multinomial coefficient
 	\binom{\nu}{n_{1},\ldots,n_{N}}=\frac{\nu!}{n_{1}!\cdots n_{N}!}\dt
 \end{equation}
 %provided that $n_{1}+\ldots+n_{N}=\nu$ and $n_{1},\ldots,n_{N}\in \mathbb{N}_{0}$. 
-\subsubsection{Thermalized multi-species stirring process}
-The thermalized multi-species stirring process is defined on the configuration space $\Omega$ introduced in \eqref{stateSpace-Chain} and its generator reads
+\subsubsection{Thermalized multispecies stirring process}
+The thermalized multispecies stirring process is defined on the configuration space $\Omega$ introduced in \eqref{stateSpace-Chain} and its generator reads
 \begin{equation}\label{thermalizedGenerator}
 	\mathcal{L}^{TH}=\mathcal{L}_{\text{left}}^{TH}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{TH}+\mathcal{L}_{\text{right}}^{TH}
 \end{equation}
@@ -3123,9 +3125,9 @@ and $\mathcal{L}_{\text{right}}^{TH}$ acting similarly on the site $L$ and with 
 %\end{equation}
 In the thermalized bulk generator particles on a bond $x$ and $x+1$ are redistribute according to the measure $\nu_{TH}(r|\epsilon)$, while in the thermalized boundary generators the configuration at site $1$ ($L$) is replaced by $r$, according to a rate depending on $r$ itself and on the reservoirs parameters. 
 \subsubsection{The dual thermalized process}\label{subsection-dualTHM}
-Here we state the duality result for the thermalized multi-species stirring process with boundary driving.
-\begin{proposition}[Duality for the thermalized multi-species stirring process]\label{proposition-dualityTHM}
-The thermalized multi-species stirring process $(\bm{n}(t))_{t\geq 0}$ on the state space $\Omega_{L}$, with generator $\mathcal{L}^{TH}$ defined in \eqref{thermalizedGenerator} is dual to the process $(\bm{\xi}(t))_{t\geq 0}$ on the enlarged configuration space $\widetilde{\Omega}_{L}$, with dual generator
+Here we state the duality result for the thermalized multispecies stirring process with boundary driving.
+\begin{proposition}[Duality for the thermalized multispecies stirring process]\label{proposition-dualityTHM}
+The thermalized multispecies stirring process $(\bm{n}(t))_{t\geq 0}$ on the state space $\Omega_{L}$, with generator $\mathcal{L}^{TH}$ defined in \eqref{thermalizedGenerator} is dual to the process $(\bm{\xi}(t))_{t\geq 0}$ on the enlarged configuration space $\widetilde{\Omega}_{L}$, with dual generator
 \begin{equation}
 	\widetilde{\mathcal{L}}^{TH}=\widetilde{\mathcal{L}}_{\text{left}}^{TH}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{TH}+\widetilde{\mathcal{L}}_{\text{right}}^{TH}
 \end{equation}
@@ -3133,15 +3135,15 @@ where $\mathcal{L}^{TH}_{x,x+1}$ is \eqref{bulkThermalized} and $\widetilde{\mat
 \begin{align}
 	\widetilde{\mathcal{L}}_{\text{left}}^{TH}f(\bm{\xi})&=\left\{f(\xi^{0}+\xi^{1},0,\xi^{2},\ldots,\xi^{L})-f(\bm{\xi})\right\}\nonumber\\ \widetilde{\mathcal{L}}_{\text{right}}^{TH}f(\bm{\xi})&=\left\{f(\xi^{0},\ldots,\xi^{L-1},0,\xi^{L}+\xi^{L+1})-f(\bm{\xi})\right\}\dt
 \end{align}
-The duality function is the same of the multi-species stirring process, i.e. 
+The duality function is the same of the multispecies stirring process, i.e. 
 \begin{equation}
 	D(\bm{n},\bm{\xi})=\prod_{a=1}^{N-1}\left(\rho_{a}^{\text{left}}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=1}^{N-1}\left(\rho_{a}^{\text{right}}\right)^{\xi_{a}^{L+1}}\dt
 \end{equation}
 (cf. \eqref{dualityElements}).
 \end{proposition}
 This dual process is absorbing since the dual boundary generator $\mathcal{L}_{\text{left}}^{TH}$ ($\mathcal{L}_{\text{left}}^{TH}$) remove all dual particles at site $1$ ($L$) and put these particles in the extra-site $0$ ($L+1$) with rate 1.
-The proof of Proposition \ref{proposition-dualityTHM} is standard. For the sake of completeness we report it in Appendix \ref{appendix-dualityThermalized}.
-\subsection{Multi-species stirring process with reaction} \label{Subsection-RD}
+The proof of Proposition~\ref{proposition-dualityTHM} is standard. For the sake of completeness we report it in Appendix~\ref{appendix-dualityThermalized}.
+\subsection{Multispecies stirring process with reaction} \label{Subsection-RD}
 We define the average density occupation of species $a$ at site $x$ as
 \begin{equation}
 	\rho_{a}(x,t)=\mathbb{E}_{\mu_{0}}\left[n_{a}^{x}(t)\right]
@@ -3160,7 +3162,7 @@ This equation is endowed with boundary conditions $\rho_{a}^{\text{left}},\rho_{
 The generator of this model consists in a sum of three Markov generators: a stirring, a stirring-mutation and a pure mutation one (see section 4 of \cite{casini2022uphill}). For the lattice $\mathbb{Z}$, self-duality has been showed and the duality function is exactly \eqref{elementsABS} in case of hard-core exclusion (see section 5 of \cite{casini2022uphill}). In view of what have been proved in the previous sections of this work, some questions arise naturally:
 \begin{enumerate}
 		\item Is it possible to extend the results of \cite{casini2022uphill} to a case with arbitrary number of species $N\in \mathbb{N}$ and arbitrary maximal site occupation $\nu\in \mathbb{N}$?
-			\item Is it possible to extend the duality result to the boundary-driven case in order to have an absorbing dual process, using the same $\mathfrak{gl}(N)$ Lie-algebraic structure?
+			\item Is it possible to extend the duality result to the boundary-driven case in order to have an absorbing dual process, using the same $\mathfrak{gl}(N)$ Lie algebraic structure?
 \end{enumerate}
 Therefore, we aim to find a process whose average occupations $\rho_{a}(x,t)$ for any species $a\in\{1,\ldots,N-1\}$ evolve as a system of difference-differential equation given by 
 \begin{equation}\label{NSpeciesRD}
@@ -3177,7 +3179,7 @@ where
 \begin{equation}\label{edgeGeneratorRD}
 	\mathcal{L}_{x,x+1}^{rd}=\nu \sigma_{11}\mathcal{L}_{x,x+1}+\nu \sigma_{12}\sum_{c=1}^{N-2}\mathcal{L}_{x,x+1}^{c}+(\Upsilon-2\nu\sigma_{12})\mathcal{L}_{x,x+1}^{m}
 \end{equation}
-where $\mathcal{L}_{x,x+1}$ is the edge-generator \eqref{edgeGenerator} of the multi-species stirring process and, for any function $f:\Omega\to \mathbb{R}$ and for any $c\in \{1,\ldots,N-2\}$ we introduce the \textit{stirring-mutation} generator
+where $\mathcal{L}_{x,x+1}$ is the edge-generator \eqref{edgeGenerator} of the multispecies stirring process and, for any function $f:\Omega\to \mathbb{R}$ and for any $c\in \{1,\ldots,N-2\}$ we introduce the \textit{stirring-mutation} generator
 \begin{equation}
 	\mathcal{L}_{x,x+1}^{c}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{x+1}\left(f(\bm{n}-\bm{\delta}_{a}^{x}+\bm{\delta}_{h_{c}(b)}^{x}+\bm{\delta}_{h_{c}(a)}^{x+1}-\bm{\delta}_{b}^{x+1})-f(\bm{n})\right)
 \end{equation}
@@ -3218,10 +3220,10 @@ As a consequence, from the above conditions we can define the boundary values in
 \end{equation}
 for every $a\in\{1,\ldots,N\}$. Moreover, with this choice we have that $\sum_{a=1}^{N}\alpha_{a}=\nu(\sigma_{11}+(N-1)\sigma_{12})$ and $\sum_{a=1}^{N}\rho_{a}^{\text{left}}=\nu$. 
 The boundary generator $\mathcal{L}_{\text{right}}^{rd}$ is defined analogously, but the $\alpha$'s are replaced by $\beta$'s and the boundary values $\rho_{a}^{\text{right}}$.
-%\begin{remark}: we stress that, up to a specific choice of the $\alpha$'s ($\beta$'s), the left (right) boundary generator $\mathcal{L}_{\text{left}}^{rd}$ ($\mathcal{L}_{\text{right}}^{rd}$) has the form of the one of the multi-species stirring process \eqref{siteGenerator}. 
+%\begin{remark}: we stress that, up to a specific choice of the $\alpha$'s ($\beta$'s), the left (right) boundary generator $\mathcal{L}_{\text{left}}^{rd}$ ($\mathcal{L}_{\text{right}}^{rd}$) has the form of the one of the multispecies stirring process \eqref{siteGenerator}. 
 %\end{remark}
 \paragraph{Action on the occupation variable}
-We only report the final result. The details are written in Appendix \ref{appendix-RD}. For arbitrary site $x\in \{2,\ldots,L-1\}$, the action on the occupation variable $f(\bm{n})=n_{a}^{x}$ of particle of type $a\in \{1,\ldots,N-1\}$ at site $x$ reads
+We only report the final result. The details are written in Appendix~\ref{appendix-RD}. For arbitrary site $x\in \{2,\ldots,L-1\}$, the action on the occupation variable $f(\bm{n})=n_{a}^{x}$ of particle of type $a\in \{1,\ldots,N-1\}$ at site $x$ reads
 \begin{equation}\label{DifferenceEquation}
 	\mathcal{L}^{rd}n_{a}^{x}=\nu\sigma_{11}\Delta_{L}n_{a}^{x}+\nu\sigma_{12}\sum_{b=1\,:\,b\neq a}^{N-1}\Delta_{L}n_{b}^{x}+\Upsilon\sum_{b=1\,:\,b\neq a}^{N-1}(n_{b}^{x}-n_{a}^{x})
 \end{equation}
@@ -3262,11 +3264,11 @@ This can be proved by imposing the detailed balance conditions for the bond $(x,
 %			p_{a}p_{b}=p_{h_{c}(a)}p_{h_{c}(b)}
 %		\end{equation*}
 %		that is verified if $p_{a}=p_{b}$ for all $a,b\in \{1,\ldots,N-1\}$. A similar argument for the generator $\mathcal{L}^{m}$ gives the same conditions for the $p$'s. Considering the boundary generators, one obtain the result.}
-% Arguing as in Remark \ref{rem-rev}, conditions \eqref{cond-gen} become here
+% Arguing as in Remark~\ref{rem-rev}, conditions \eqref{cond-gen} become here
 %\begin{equation}
 %	\alpha((N-2)\beta+\beta_{N})=\beta((N-2)\alpha+\alpha_{N})
 %\end{equation} 
-%where $\alpha_{a}=\alpha_{b}=\alpha$ and $\beta_{a}=\beta_{b}=\beta$ for all $a,b\in \{1,\ldots,N-1\}$.%For fixed site $x\in \{1,\ldots,L\}$ we only prove the detailed balance for  $\mathcal{L}_{x,x+1}^{c}$ with $c\in\{1,\ldots,N-2\}$ since for the generator $\mathcal{L}_{x,x+1}^{m}$ the computation is similar and has already been proved for $\mathcal{L}_{x,x+1}$ of the multi-species stirring. Consider the transition $\bm{n}\to \bm{n}-\delta_{a}^{x}+\delta_{h_{c}(b)}^{x}+\delta_{h_{c}(b)}^{x+1}-\delta_{b}^{x+1}$ for arbitrary $a,b\in\{1,\ldots,N-1\}$ and $c\in\{1,\ldots,N-2\}$; the detailed balance gives
+%where $\alpha_{a}=\alpha_{b}=\alpha$ and $\beta_{a}=\beta_{b}=\beta$ for all $a,b\in \{1,\ldots,N-1\}$.%For fixed site $x\in \{1,\ldots,L\}$ we only prove the detailed balance for  $\mathcal{L}_{x,x+1}^{c}$ with $c\in\{1,\ldots,N-2\}$ since for the generator $\mathcal{L}_{x,x+1}^{m}$ the computation is similar and has already been proved for $\mathcal{L}_{x,x+1}$ of the multispecies stirring. Consider the transition $\bm{n}\to \bm{n}-\delta_{a}^{x}+\delta_{h_{c}(b)}^{x}+\delta_{h_{c}(b)}^{x+1}-\delta_{b}^{x+1}$ for arbitrary $a,b\in\{1,\ldots,N-1\}$ and $c\in\{1,\ldots,N-2\}$; the detailed balance gives
 \begin{comment}
 \begin{equation}
 	\begin{split}
@@ -3287,12 +3289,12 @@ By the arbitrariness of $a,b,$ it is true if and only if
 	p_{a}=p\qquad \forall a\in \{1,\ldots,N-1\}
 \end{equation}
 while $p_{N}=1-\sum_{a=1}^{N-1}p_{a}$\\
-For the boundary generators $\mathcal{L}_{\text{left}}^{rd}$ and $\mathcal{L}_{\text{right}}^{rd}$ we have that, analogously to what happens for the multi-species stirring process, the reservoirs parameters must be such that $\beta_{a}=\alpha_{a}$ and, due to \eqref{p-equal}, we also need $\alpha_{a}=\alpha$ for all $a\in\{1,\ldots,N-1\}$. 
+For the boundary generators $\mathcal{L}_{\text{left}}^{rd}$ and $\mathcal{L}_{\text{right}}^{rd}$ we have that, analogously to what happens for the multispecies stirring process, the reservoirs parameters must be such that $\beta_{a}=\alpha_{a}$ and, due to \eqref{p-equal}, we also need $\alpha_{a}=\alpha$ for all $a\in\{1,\ldots,N-1\}$. 
 \end{comment}
 \subsubsection{Duality for the reaction-diffusion process}
-In this section we formulate duality for the multi-species reaction diffusion process. This answer to the second question addressed at the beginning of Section \ref{Subsection-RD}.  The dual process is defined on the enlarged state space $\widetilde{\Omega}_{L}$.  
+In this section we formulate duality for the multispecies reaction diffusion process. This answer to the second question addressed at the beginning of Section~\ref{Subsection-RD}.  The dual process is defined on the enlarged state space $\widetilde{\Omega}_{L}$.  
 \begin{proposition}[Duality for the reaction-diffusion process]\label{propositin-duality-RD}
-The reaction-diffusion multi-species stirring process $(\bm{n}(t))_{t\geq 0}$, on the state space $\Omega_{L}$, with generator $\mathcal{L}^{rd}$ defined in \eqref{RDGenerator} is dual to the process $(\bm{\xi}(t))_{t\geq 0}$ on the state space $\widetilde{\Omega}_{L}$ with dual generator
+The reaction-diffusion multispecies stirring process $(\bm{n}(t))_{t\geq 0}$, on the state space $\Omega_{L}$, with generator $\mathcal{L}^{rd}$ defined in \eqref{RDGenerator} is dual to the process $(\bm{\xi}(t))_{t\geq 0}$ on the state space $\widetilde{\Omega}_{L}$ with dual generator
 \begin{equation}\label{DualGeneratorRD}
 	\widetilde{\mathcal{L}}_{\text{left}}^{rd}=\widetilde{\mathcal{L}}^{rd}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{rd}+\widetilde{\mathcal{L}}_{\text{right}}^{rd}
 \end{equation}
@@ -3320,8 +3322,8 @@ is the same of the stirring process, i.e.
 %	\rho_{a}^{x}:=\frac{\alpha_{a}^{x}}{|\alpha^{x}|}
 %\end{equation}
 
-\paragraph{Proof of Proposition \ref{propositin-duality-RD}:}
-we only prove duality for the bulk generator, since the boundary generators are the same of the multi-species stirring process. In the spirit of Section \ref{sectionDuality}, it is convenient to write the Hamiltonian of the process, that is defined through the basis elements \eqref{actionE} of the $\mathfrak{gl}(N)$ Lie algebra as 
+\paragraph{Proof of Proposition~\ref{propositin-duality-RD}:}
+we only prove duality for the bulk generator, since the boundary generators are the same of the multispecies stirring process. In the spirit of Section~\ref{sectionDuality}, it is convenient to write the Hamiltonian of the process, that is defined through the basis elements \eqref{actionE} of the $\mathfrak{gl}(N)$ Lie algebra as 
 \begin{equation}
 	H^{rd}=H_{\text{left}}+\sum_{x=1}^{L-1}\left(\sigma_{11}\mathcal{H}_{x,x+1}+\sigma_{12}\sum_{c=1}^{N-2}\mathcal{H}_{x,x+1}^{c}+(\Upsilon-2\sigma_{12})\mathcal{H}_{x,x+1}^{m}\right)+H_{\text{right}}\dt
 \end{equation}
@@ -3338,7 +3340,7 @@ We prove that, for arbitrary $x\in\{1,\ldots,L\}$,
 	&(\mathcal{H}_{x,x+1}^{c})^{T}D=D\mathcal{H}_{x,x+1}^{c}\qquad \forall c\in \{1,\ldots,N-2\}\label{cDualityRelation}\\
 	&(\mathcal{H}_{x,x+1}^{m})^{T}D=D\mathcal{H}_{x,x+1}^{m}\label{mDualityRelation}\dt
 \end{align}
-Since the matrix $R_{x}$ is the same as in Section \ref{sectionDuality}, we shall show that $\mathcal{H}_{x,x+1}^{c}$ and $\mathcal{H}_{x,x+1}^{m}$ commute with $\exp{(E^{x})}\exp{(E^{x+1})}$, where $E$ is defined in \eqref{EquationEx}. Using \eqref{eq:comgl}, the bilinearity and associativity of the Kronecker product and the bilinearity of the brackets we obtain 
+Since the matrix $R_{x}$ is the same as in Section~\ref{sectionDuality}, we shall show that $\mathcal{H}_{x,x+1}^{c}$ and $\mathcal{H}_{x,x+1}^{m}$ commute with $\exp{(E^{x})}\exp{(E^{x+1})}$, where $E$ is defined in \eqref{EquationEx}. Using \eqref{eq:comgl}, the bilinearity and associativity of the Kronecker product and the bilinearity of the brackets we obtain 
 \begin{align*}
 	&\left[\left(\sum_{a=1}^{N-1}E_{aN}^{x}\otimes\sum_{a=1}^{N-1}E_{aN}^{x+1}\right), \sum_{d,\ell=1}^{N}\left(E_{h_{c}(\ell)d}^{x}\otimes E_{h_{c}(d)\ell}^{x+1} -E_{dd}^{x}\otimes E_{\ell\ell}^{x+1}\right)\right]
 	\\=&
@@ -3359,7 +3361,7 @@ Concerning the commutator between $\mathcal{H}_{x,x+1}^{m}$ the proof is similar
 \end{flushright}
 \begin{comment}
 \subsection{One points correlations of the non-integrable multi-speceis stirring process on a chain[To check, something could be wrong]}
-In subsection~\ref{subsection-exact}, for the case with geometry of one dimensional chain of length $L$ connected at the ends with two reservoris of parameters $(\alpha_{a})_{a=1,\ldots,N}$ and $(\beta_{a})_{a=1,\ldots,N}$, all the correlations have been written by \eqref{exactCorrelations} using integrability. When the maximal occupation of each site $\nu>1$, this nice property is lost. However, something about correlations can be said using duality. In this subsection we still consider the same geometry of \ref{subsection-exact}. As pointed out in section~\ref{sectionDuality}, the dual process voids the chain. Therefore, the problem of computing the average of the duality matrix with respect to the stationary distribution is reduced to computing the absorption probabilities of dual particles, as we will clarify below. In this context it is better to work agin with generators. We first write the generators for the original and the dual process and the duality matrix in the particular case of this geometry. \\
+In subsection~\ref{subsection-exact}, for the case with geometry of one dimensional chain of length $L$ connected at the ends with two reservoris of parameters $(\alpha_{a})_{a=1,\ldots,N}$ and $(\beta_{a})_{a=1,\ldots,N}$, all the correlations have been written by \eqref{exactCorrelations} using integrability. When the maximal occupation of each site $\nu>1$, this nice property is lost. However, something about correlations can be said using duality. In this subsection we still consider the same geometry of~\ref{subsection-exact}. As pointed out in section~\ref{sectionDuality}, the dual process voids the chain. Therefore, the problem of computing the average of the duality matrix with respect to the stationary distribution is reduced to computing the absorption probabilities of dual particles, as we will clarify below. In this context it is better to work agin with generators. We first write the generators for the original and the dual process and the duality matrix in the particular case of this geometry. \\
 We consider the process $(\bm{n}(t))_{t\geq 0}$ on a chain of length $L$ with the end sites connected with two reservoirs. This interaction with the external environment is described by the generators 
 \begin{equation}
     \mathcal{L}_{\text{left}}f(\bm{n})=\sum_{a,b=0}^{N}\alpha_{a}n_{b}^{1}\left(f(\bm{n}-\delta_{b}^{x}+\delta_{a}^{x})-f(\bm{n})\right)\qquad \mathcal{L}_{\text{right}}f(\bm{n})=\sum_{a,b=0}^{N}\beta_{a}n_{b}^{L}\left(f(\bm{n}-\delta_{b}^{x}+\delta_{a}^{x})-f(\bm{n})\right)
@@ -3433,8 +3435,8 @@ that gives back \eqref{one-pts-corr}.
 
 
 %\section{Conclusion and outlook}
-%Multi-species version of non-compact chains. Extension of \cite{frassek2022exact},\cite{frassek2022integrable},\cite{frassek2020non},\cite{frassek2021duality}. \\
-%Use exact solution to compute large deviation rate function extending to the multi-species case results %proved in \cite{derrida1998exact}, \cite{mallick2022exact}. \\
+%Multispecies version of non-compact chains. Extension of \cite{frassek2022exact},\cite{frassek2022integrable},\cite{frassek2020non},\cite{frassek2021duality}. \\
+%Use exact solution to compute large deviation rate function extending to the multispecies case results %proved in \cite{derrida1998exact}, \cite{mallick2022exact}. \\
 %Extend the result to a-symmetric situation. See \cite{belitsky2018self}, \cite{belitsky2015quantum}, \cite{crampe2016integrable}, \cite{finn2018matrix}. \\
 %Extend the QISM technique to models which include reaction trying to apply the method exposed in \cite{de2021yang} for stirring process with a proper reaction term. Extend the duality to stirring models with different mechanism of transition \cite{chatterjee2023multi}. 
 
@@ -3498,14 +3500,14 @@ where $\Delta_{L}$ is the discrete Laplace operator on the chain of length $L$. 
 that is the same result obtained in \eqref{one-pts-corr}.  
 \end{remark}
 %Already for two-point correlations the computations become more involving and hard to solve.
-\section{Proof of duality of thermalized multi-species stirring}\label{appendix-dualityThermalized}
+\section{Proof of duality of thermalized multispecies stirring}\label{appendix-dualityThermalized}
 The proof of the duality consists in showing
 \begin{align}
 	\left(\mathcal{L}_{x,x+1}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left(\widetilde{\mathcal{L}}_{x,x+1}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\qquad x\in \{1,\ldots,L-1\}\label{bulkDualityTH}\\
 	\left(\mathcal{L}_{\text{left}}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left(\widetilde{\mathcal{L}}_{\text{left}}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\label{boundaryDualityTH}
 \end{align}
 Duality for the right boundary is similar. \\
-Equation \eqref{bulkDualityTH} follows from the proof of the edge duality for the multi-species stirring process. To prove \eqref{boundaryDualityTH} we directly apply the generators on the duality function. For the sake of notation, we introduce 
+Equation \eqref{bulkDualityTH} follows from the proof of the edge duality for the multispecies stirring process. To prove \eqref{boundaryDualityTH} we directly apply the generators on the duality function. For the sake of notation, we introduce 
 \begin{equation}
 	d(n^{x},\xi^{x}):=\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}
 \end{equation}
