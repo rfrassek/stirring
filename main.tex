@@ -210,20 +210,20 @@ are also discussed.
  \newpage
 
 \section{Introduction} 
-Boundary-driven particle systems are paradigmatic models for non-equilibrium statistical mechanics. In a boundary-driven system, the model is put in contact with reservoirs at its ``boundaries'' imposing different particle densities, and a current is generated through the system. In the long time limit, a non-equilibrium steady state sets in, with a stationary value of the current. {\color{red} The aim of this paper is to study the mathematical aspects of the stationary measure of boundary-driven {\em multispecies} particle systems \cite{schutz2017kardar, vanicat2017exact, crampe2016integrable, finn2018matrix, floreani2022switching, casini2022uphill, casini2023density, redig2022ergodic, redig2023equilibrium, chatterjee2023multi, zhou2021orthogonal, franceschini2022orthogonal}.}
+Boundary-driven particle systems are paradigmatic models for non-equilibrium statistical mechanics. In a boundary-driven system, the model is put in contact with reservoirs at its ``boundaries'' imposing different particle densities, and a current is generated through the system. In the long time limit, a non-equilibrium steady state sets in, with a stationary value of the current. {\color{red} The aim of this paper is to study the mathematical aspects of the stationary measure of boundary-driven {\em multispecies} particle systems \cite{schutz2017kardar, vanicat2017exact, crampe2016integrable, finn2018matrix, floreani2022switching, casini2022uphill, casini2023density, redig2022ergodic, redig2023equilibrium, chatterjee2023multi, zhou2021orthogonal, franceschini2022orthogonal,floreani2023non}.}
 {\color{blue} I think this is to general...  Do all the references study the steady state? Also the main point is about duality no?}
 
-For the single species case, {\color{blue} the solution of } the exclusion process with open boundaries \cite{derrida1993exact,1993JSP....72..277S} has been of crucial importance in our understanding of the structural properties of non-equilibrium state, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviation \cite{mallick2022exact,bodineau2005current}. The results available for the exclusion process are rooted in the algebraic properties of the corresponding integrable quantum spin chain, i.e. the XXX Heisenberg Hamiltonian with ${su}(2)$ spins of value 1/2.
-In this paper, we investigate the multispecies analog of the exclusion process in the boundary-driven context, i.e. the {\em  multispecies stirring process with open boundaries}. The bulk part of the model with $N$ species is associated with the integrable higher-rank
-Heisenberg XXX Hamiltonian having  ${gl}(N)$ symmetry.
+{\color{red} I do not understand why we immediately start with XXX although the duality approach is much more general.}
+For the single species case,  the solution of the exclusion process with open boundaries \cite{derrida1993exact,1993JSP....72..277S} has been of crucial importance in our understanding of the structural properties of non-equilibrium state, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviations \cite{mallick2022exact,bodineau2005current}. The results available for the exclusion process are rooted in the algebraic symmetries of the corresponding integrable quantum spin chain, i.e. the XXX Heisenberg Hamiltonian with ${su}(2)$ spins of value $s=1/2$.
+In this paper, we investigate the multispecies analog of the exclusion process in the boundary-driven context \cite{vanicat2017exact}, i.e. the {\em  multispecies stirring process with open boundaries}. See also \cite{crampe2016integrable, finn2018matrix} for the asymmetric setup.  The bulk part of the model with $N$ species is associated with the integrable ${gl}(N)$ 
+Heisenberg XXX Hamiltonian with integrable non-diagonal open boundaries.
 
 Our strategy to solve for the non-equilibrium steady state is of a probabilistic nature and relies on the use of {\em duality} \cite{schutzSandow}. This approach, starting from the pioneering work of Kipnis, Marchiorio and Presutti \cite{KMP}, 
 has been substantially developed in recent years to study stochastic processes in the boundary-driven set-up \cite{giardina2009duality,carinci2013duality,frassek2020duality,carinci2023open}. 
 The boundary-driven process is mapped to a dual process with absorbing extra sites and the problem of describing the stationary state of the original system
 is reduced to the problem of computing the absorption probabilities of the dual particles. 
-In general, this is a difficult task. However, there are cases in which these absorption
-probabilities can be computed thanks to the integrability property of the system.
-For recent examples in the framework of single-species systems, see \cite{frassek2020eigenstates, frassek2022exact, frassek2020non, floreani2023non}.
+In general, this is a difficult task. However,  for the case of integrable systems they can be computed exactly in closed-form. 
+For recent examples in the framework of singlespecies systems, see \cite{frassek2020eigenstates, frassek2022exact}.  
 Here we generalize the duality approach to the set-up of multispecies particle systems.
 
 The remainder of this paper is organized as follows. In Section~\ref{sec1} we define the open multispecies stirring
