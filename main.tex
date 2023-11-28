@@ -189,12 +189,12 @@ an extended graph $\widetilde{G}=(\widetilde{V},\widetilde{\mathcal{E})}$ which
 includes additional extra-sites $\widetilde{V}\setminus V$ where
 dual particles gets absorbed in the long-time limit.  
 We thus obtain a characterization of the non-equilibrium
-steady state of the bounbdary-driven system in terms of the absorption
+steady state of the boundary-driven system in terms of the absorption
 probabilities of dual particles.
 For the case of one-dimensional chains with two reservoirs
 at the boundaries and with maximum one particle per site,
 we compute these absorption probabilities by relying
-on the underlying $\mathfrak{gl}(N)$ symmetry and the
+on the underlying ${gl}(N)$ symmetry and the
 matrix product ansatz. Thus one gets a closed-formula
 for (long-ranged) correlations and for the 
 non-equilibrium stationary measure.
@@ -210,11 +210,12 @@ are also discussed.
  \newpage
 
 \section{Introduction} 
-Boundary-driven particle systems are paradigmatic models for non-equilibrium statistical mechanics. In a boundary-driven system, the model is put in contact with reservoirs at its ``boundaries'' imposing different particle densities, and a current is generated through the system. In the long time limit, a non-equilibrium steady state sets in, with a stationary value of the current. The aim of this paper is to study the mathematical aspects of the stationary measure of boundary-driven {\em multispecies} particle systems \cite{schutz2017kardar, vanicat2017exact, crampe2016integrable, finn2018matrix, floreani2022switching, casini2022uphill, casini2023density, redig2022ergodic, redig2023equilibrium, chatterjee2023multi, zhou2021orthogonal, franceschini2022orthogonal}.
+Boundary-driven particle systems are paradigmatic models for non-equilibrium statistical mechanics. In a boundary-driven system, the model is put in contact with reservoirs at its ``boundaries'' imposing different particle densities, and a current is generated through the system. In the long time limit, a non-equilibrium steady state sets in, with a stationary value of the current. {\color{red} The aim of this paper is to study the mathematical aspects of the stationary measure of boundary-driven {\em multispecies} particle systems \cite{schutz2017kardar, vanicat2017exact, crampe2016integrable, finn2018matrix, floreani2022switching, casini2022uphill, casini2023density, redig2022ergodic, redig2023equilibrium, chatterjee2023multi, zhou2021orthogonal, franceschini2022orthogonal}.}
+{\color{blue} I think this is to general...  Do all the references study the steady state? Also the main point is about duality no?}
 
-For the single species case, the exclusion process with open boundaries \cite{derrida1993exact} has been of crucial importance in our understanding of the structural properties of non-equilibrium state states, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviation \cite{mallick2022exact,bodineau2005current}. The results available for the exclusion process are rooted in the algebraic properties of the corresponding integrable quantum spin chain, i.e. the XXX Heisenberg Hamiltonian with $\mathfrak{su}(2)$ spins of value 1/2.
+For the single species case, {\color{blue} the solution of } the exclusion process with open boundaries \cite{derrida1993exact,1993JSP....72..277S} has been of crucial importance in our understanding of the structural properties of non-equilibrium state, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviation \cite{mallick2022exact,bodineau2005current}. The results available for the exclusion process are rooted in the algebraic properties of the corresponding integrable quantum spin chain, i.e. the XXX Heisenberg Hamiltonian with ${su}(2)$ spins of value 1/2.
 In this paper, we investigate the multispecies analog of the exclusion process in the boundary-driven context, i.e. the {\em  multispecies stirring process with open boundaries}. The bulk part of the model with $N$ species is associated with the integrable higher-rank
-Heisenberg XXX Hamiltonian having  $\mathfrak{gl}(N)$ symmetry.
+Heisenberg XXX Hamiltonian having  ${gl}(N)$ symmetry.
 
 Our strategy to solve for the non-equilibrium steady state is of a probabilistic nature and relies on the use of {\em duality} \cite{schutzSandow}. This approach, starting from the pioneering work of Kipnis, Marchiorio and Presutti \cite{KMP}, 
 has been substantially developed in recent years to study stochastic processes in the boundary-driven set-up \cite{giardina2009duality,carinci2013duality,frassek2020duality,carinci2023open}. 
@@ -251,7 +252,7 @@ INFN Progetto Giovani
 %The way one can define a multi-type (or multispecies) interacting particle system is not unique. In the literature there are many. Two of them are the following. On one hand, the \textit{multi-layer models}, in which the process is constructed on a many layer graph where each graph correspond to a type and perform a kind of dynamic (independent jump, exclusion/inclusion walkers) and the layers communicate each other with some "switching probabilities". The state space of the Markov process is the Cartesian product of the state spaces of each layer, i.e. of the two species. For example see \cite{floreani2022switching,redig2022ergodic,redig2023equilibrium}. On the other hand, the \textit{single layer models}. Here, there is just one layer, where particles of each type can pile up, in a way that the exclusion dynamic concerns many species together. In other words, now the species can interact "directly", not just by switching layer. Here the state space contains all the species and it is not product anymore. Some examples of such a dynamic can be found in \cite{casini2022uphill,vanicat2017exact,zhou2021orthogonal,casini2023density}. \\
 %In this work we concentrate our effort in this last "single layer" case with a repulsive process, i.e. a dynamic in which a maximum amount of particles can be present in each site at each time. We will call this amount, the "maximal occupancy" and it will indicated with $\twoj$ where $\twoj\in\mathbb{N}$. Particle of any species can exchange their position in the graph, under this exclusion constraint. The system will be put out of equilibrium and some absorbing duality result are investigated. Moreover, we will use this duality, to study the out of equilibrium steady state. In particular, in case of $\twoj=1$ we retrieve the model studied in \cite{vanicat2017exact}. 
 %{\color{red}
-%The case of $\twoj=1$ distinguishes itself from other values of $\twoj$ as in this case the model can be mapped to an integrable higher rank $\mathfrak{gl}(N)$ Heisenberg XXX spin chain with open (non-diagonal) boundaries. Furthermore the matrix product ansatz \cite{derrida1993exact}  is applicable, see \cite{Crampe:2014aoa,vanicat2017exact}.
+%The case of $\twoj=1$ distinguishes itself from other values of $\twoj$ as in this case the model can be mapped to an integrable higher rank ${gl}(N)$ Heisenberg XXX spin chain with open (non-diagonal) boundaries. Furthermore the matrix product ansatz \cite{derrida1993exact}  is applicable, see \cite{Crampe:2014aoa,vanicat2017exact}.
 %}
 %We will exploit the duality and the underlying symmetries of the model, to write explicitly all the correlations of this \textit{hard-core exclusion} case. The main tool that we will use is the Lie algebraic description of the process, that allows to find the duality as a proper symmetry of the generator. \\
 % For a complete review of the quantum inverse scattering method see \cite{Sklyanin:1988yz} and \cite{faddeev1996algebraic}. For application of the QISM to interacting particle systems we refer to \cite{frassek2020eigenstates,frassek2019non,frassek2022exact,vanicat2017exact}. \\
@@ -410,7 +411,7 @@ Currents will arise when at least two reservoirs have different densities.
 In this paper we will often use the fact that the Markov generator of the multispecies stirring process can be described in terms a Lie algebra of rank $N$.
 In this section we provide details about this.
 
-Consider the Lie algebra $\mathfrak{gl}(N)$ with generators denoted by $\EE_{ab}$ with $a,b\in \{1,\ldots,N\}$ and commutation relations
+Consider the Lie algebra ${gl}(N)$ with generators denoted by $\EE_{ab}$ with $a,b\in \{1,\ldots,N\}$ and commutation relations
 \begin{equation}\label{eq:comgl}
 \left[\EE_{ab},\EE_{cd}\right]=\EE_{ad}\delta_{cb}-\EE_{cb}\delta_{ad}\qquad \forall a,b\in \{1,\ldots,N\}\,.
 \end{equation}
@@ -453,7 +454,7 @@ The matrices defined in this way satisfy the commutation relations \eqref{eq:com
 %   \bar E_{ab}=\nu\delta_{ab}-E_{N-b+1,N-a+1}\dt
 %\end{equation}
 %{\color{red} This needs to be checked and give alternative form of Hamiltonian?}\\
-The process with generator \eqref{Generator} can be described in terms of $\mathfrak{gl}(N)$ Lie algebra generators. The state space \eqref{stateSpace} is given by the $|V|$-fold tensor product of the vector space with basis elements $|n^x\rangle$ at a given site. Namely,
+The process with generator \eqref{Generator} can be described in terms of ${gl}(N)$ Lie algebra generators. The state space \eqref{stateSpace} is given by the $|V|$-fold tensor product of the vector space with basis elements $|n^x\rangle$ at a given site. Namely,
 a vector $|{\bm{n}}\rangle \in \Omega$ can be written as
 %We now define the equivalent of \eqref{stateSpace} in the vector notation
 % \begin{equation}
@@ -501,15 +502,15 @@ where
 \begin{equation}
     \langle f|=\sum_{ {{\bm{m}}\in \Omega}}f( {\bm{m}})\langle  {\bm{m}}|\dt
 \end{equation}
-We can write the edge Hamiltonian \eqref{edgeHamiltonian} as a function of the coproduct of the quadratic Casimir of $\mathfrak{gl}(N)$
+We can write the edge Hamiltonian \eqref{edgeHamiltonian} as a function of the coproduct of the quadratic Casimir of ${gl}(N)$
 \begin{equation}\label{secondCasimir}
     C=\sum_{a,b=1}^{N}E_{ab}E_{ba}\co
 \end{equation}
-that acts diagonally as $C|\bm{n}\rangle=\twoj(\twoj+N)|\bm{n}\rangle$ and belogs to the center of $\mathfrak{gl}(N)$ (i.e. it commutes with all the algebra elements).  
+that acts diagonally as $C|\bm{n}\rangle=\twoj(\twoj+N)|\bm{n}\rangle$ and belogs to the center of ${gl}(N)$ (i.e. it commutes with all the algebra elements).  
 More precisely,  considering the standard coproduct 
 \begin{equation}
 \begin{split}
-\Delta:\mathfrak{gl}(N)&\to \mathfrak{gl}(N)\otimes \mathfrak{gl}(N)\\
+\Delta:{gl}(N)&\to {gl}(N)\otimes {gl}(N)\\
 E_{ab}&\mapsto E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
 \end{split}
 \end{equation}
@@ -553,7 +554,7 @@ It reads
 Here we introduced the standard coproduct
 \begin{equation}
 \begin{split}
-\Delta:\mathfrak{gl}(N)&\to \mathfrak{gl}(N)\otimes \mathfrak{gl}(N)\\
+\Delta:{gl}(N)&\to {gl}(N)\otimes {gl}(N)\\
 E_{ab}&\to E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
 \end{split}
 \end{equation} acting on sites $x,y$ and used that $C_{2}|n\rangle=\twoj(\twoj+N)|n\rangle$. 
@@ -575,7 +576,7 @@ and the coupling to reservoirs are
 	\end{cases}\dt
 \end{equation}
 The case $\nu=1$, i.e. one particle at most for each site, is special. We will consider this extensively in Section~\ref{sectionIntegrabiliy}.
-We will denote the element of the representation of the $\mathfrak{gl}(N)$  Lie algebra with $\nu=1$ by lowercase letters, i.e. $(e_{ab})_{a,b\in\{1,\ldots,N\}}$, to highlight that we are in the first fundamental representation of the algebra.
+We will denote the element of the representation of the ${gl}(N)$  Lie algebra with $\nu=1$ by lowercase letters, i.e. $(e_{ab})_{a,b\in\{1,\ldots,N\}}$, to highlight that we are in the first fundamental representation of the algebra.
 The Hamiltonian now reads
 \begin{equation}\label{hamiltonian}
 	H=H_{\text{left}}+H_{\text{bulk}}+H_{\text{right}}
@@ -880,7 +881,7 @@ We now look for a symmetry of $\mathcal{H}_{x,y}$, i.e. a matrix $S_{x,y}$ of th
 	%\quad \Leftrightarrow \quad [\mathcal{H}_{x,y},S_{x,y}]=0
 	\dt
 \end{equation}
-Using \eqref{hamiltonianCasimir}, we observe that $\mathcal{H}_{x,y}$ is proportional to the coproduct of the second Casimir, up to a diagonal term. Therefore, it is enough to look for a symmetry of $\Delta (C)$. Using the bilinearity of the coproduct operator and the fact that $C$ belongs to the centre of the Lie algebra, it is easy to show that for any matrix $E\in \mathfrak{gl}(N)$ the following holds:
+Using \eqref{hamiltonianCasimir}, we observe that $\mathcal{H}_{x,y}$ is proportional to the coproduct of the second Casimir, up to a diagonal term. Therefore, it is enough to look for a symmetry of $\Delta (C)$. Using the bilinearity of the coproduct operator and the fact that $C$ belongs to the centre of the Lie algebra, it is easy to show that for any matrix $E\in {gl}(N)$ the following holds:
 \begin{equation}
  \text{if } \quad	[C,E]=0\qquad  \text{ then }\qquad \left[\Delta (C),\Delta(E)) \right]=0\dt
 \end{equation}
@@ -900,11 +901,11 @@ i.e. it is a symmetry of $\mathcal{H}_{x,y}$. Exploiting these considerations we
 
 
 \begin{comment}
-As already pointed out, $\mathcal{H}_{x,y}$ is a linear function of $\Delta(C_{2})$. This implies that symmetries of  $\Delta(C_{2})$ are also symmetries of  $\mathcal{H}_{x,y}$. Moreover, the coproduct is a Lie algebra homomorphism, i.e. $\forall A,B\in \mathfrak{gl}(N)$
+As already pointed out, $\mathcal{H}_{x,y}$ is a linear function of $\Delta(C_{2})$. This implies that symmetries of  $\Delta(C_{2})$ are also symmetries of  $\mathcal{H}_{x,y}$. Moreover, the coproduct is a Lie algebra homomorphism, i.e. $\forall A,B\in {gl}(N)$
 \begin{equation}\label{symmetryCoproduct}
     [A,B]=0\quad \Longrightarrow\quad \left[\Delta(A),\Delta(B)\right]=0
 \end{equation}
-This tells us that it is enough to find a symmetry of $C_{2}$. This element belongs to the center of $\mathfrak{gl}(N)$, and therefore it commutes with all the element of this algebra. Consider
+This tells us that it is enough to find a symmetry of $C_{2}$. This element belongs to the center of ${gl}(N)$, and therefore it commutes with all the element of this algebra. Consider
 \begin{equation}\label{equationE}
     E=\sum_{a=2}^{N}E_{a1}
 \end{equation}
@@ -940,11 +941,11 @@ i.e. $S_{x,y}$ is a symmetry of $\mathcal{H}_{x,y}$. \\ Exploiting these conside
      $\square$
  \end{flushright}
  \paragraph{Proof of boundary duality \eqref{siteDualRelation}.} To prove \eqref{siteDualRelation} we transform via the Hadamard formula the transposed of the site Hamiltonian \eqref{siteDualHamiltonian} and then to  introduce properly a creation operator acting on an extra-site $u(x)$. % that we connect to every site $x\in V$ of the graph $G$. \\
- Considering $A,B\in \mathfrak{gl}(N)$, the Hadamard formula reads 
+ Considering $A,B\in {gl}(N)$, the Hadamard formula reads 
  \begin{equation}\label{HadamardFormula}
      \exp{(-B)}A\exp{(B)}=A-\left[B,A\right]+\frac{1}{2!}\left[B,\left[B,A\right]\right]-\frac{1}{3!}\left[B,\left[B,\left[B,A\right]\right]\right]+\ldots
  \end{equation}
-In the following we need the application of this with $B=\sum_{a=1}^{N-1}E_{aN}$ defined in \eqref{EquationEx} and with $A$ equal to some of the generator $E_{cd}$ of the Lie algebra $\mathfrak{gl}(N)$ with $c,d\in\{1,\ldots,N\}$. Therefore we compute 
+In the following we need the application of this with $B=\sum_{a=1}^{N-1}E_{aN}$ defined in \eqref{EquationEx} and with $A$ equal to some of the generator $E_{cd}$ of the Lie algebra ${gl}(N)$ with $c,d\in\{1,\ldots,N\}$. Therefore we compute 
 \begin{align}
 	\left[B,A\right]=\sum_{a=1}^{N-1}\left[E_{aN},E_{cd}\right]=\delta_{cN}\sum_{a=1}^{N-1}E_{ad}-(1-\delta_{dN})E_{cN}
 \end{align}
@@ -1138,7 +1139,7 @@ $\square$
 Here we consider the chain defined in Section~\ref{subsection-description-process-LINE} with the hard-core constrain, i.e. $\nu=1$. 
 We recall that the geometry is a one dimensional chain with sites $\{1,\ldots,L\}$ where reservoirs are attached to $1$ and $L$. 
 We also recall the notation for the occupation variable which is called $\bm{\tau}=(\tau_1,\ldots,\tau_L)$ with $\tau_x\in\{1,\ldots,N\}$.
-The dynamics is described by an Hamiltonian that is written in terms of the first fundamental representation of $\mathfrak{gl}(N)$. The duality result stated in Section~\ref{statementDualitySubsection} is adapted to the present situation as follows. 
+The dynamics is described by an Hamiltonian that is written in terms of the first fundamental representation of ${gl}(N)$. The duality result stated in Section~\ref{statementDualitySubsection} is adapted to the present situation as follows. 
 The extra-sites are denoted by $0$ and $L+1$, and they are connected with sites $1$ and $L$ of the chain respectively. The matrix $R_{x}$ defined in \eqref{Revmatrix} 
 reduces to the identity, therefore the relation between the generators of the algebra and its transposed reduces to
 \begin{equation}\label{transpostionPropertyFund}
@@ -3180,7 +3181,7 @@ This equation is endowed with boundary conditions $\rho_{a}^{\text{left}},\rho_{
 The generator of this model consists in a sum of three Markov generators: a stirring, a stirring-mutation and a pure mutation one (see section 4 of \cite{casini2022uphill}). For the lattice $\mathbb{Z}$, self-duality has been showed and the duality function is exactly \eqref{elementsABS} in case of hard-core exclusion (see section 5 of \cite{casini2022uphill}). In view of what have been proved in the previous sections of this work, some questions arise naturally:
 \begin{enumerate}
 		\item Is it possible to extend the results of \cite{casini2022uphill} to a case with arbitrary number of species $N\in \mathbb{N}$ and arbitrary maximal site occupation $\nu\in \mathbb{N}$?
-			\item Is it possible to extend the duality result to the boundary-driven case in order to have an absorbing dual process, using the same $\mathfrak{gl}(N)$ Lie algebraic structure?
+			\item Is it possible to extend the duality result to the boundary-driven case in order to have an absorbing dual process, using the same ${gl}(N)$ Lie algebraic structure?
 \end{enumerate}
 Therefore, we aim to find a process whose average occupations $\rho_{a}(x,t)$ for any species $a\in\{1,\ldots,N-1\}$ evolve as a system of difference-differential equation given by 
 \begin{equation}\label{NSpeciesRD}
@@ -3341,7 +3342,7 @@ is the same of the stirring process, i.e.
 %\end{equation}
 
 \paragraph{Proof of Proposition~\ref{propositin-duality-RD}:}
-we only prove duality for the bulk generator, since the boundary generators are the same of the multispecies stirring process. In the spirit of Section~\ref{sectionDuality}, it is convenient to write the Hamiltonian of the process, that is defined through the basis elements \eqref{actionE} of the $\mathfrak{gl}(N)$ Lie algebra as 
+we only prove duality for the bulk generator, since the boundary generators are the same of the multispecies stirring process. In the spirit of Section~\ref{sectionDuality}, it is convenient to write the Hamiltonian of the process, that is defined through the basis elements \eqref{actionE} of the ${gl}(N)$ Lie algebra as 
 \begin{equation}
 	H^{rd}=H_{\text{left}}+\sum_{x=1}^{L-1}\left(\sigma_{11}\mathcal{H}_{x,x+1}+\sigma_{12}\sum_{c=1}^{N-2}\mathcal{H}_{x,x+1}^{c}+(\Upsilon-2\sigma_{12})\mathcal{H}_{x,x+1}^{m}\right)+H_{\text{right}}\dt
 \end{equation}
@@ -3470,7 +3471,7 @@ that gives back \eqref{one-pts-corr}.
 {\color{blue}
 \section{Oscillator realization}\label{appA}
 
- The basis element $ (E_{ab})_{a,b\in\{1,\ldots,N\}}$ of $\mathfrak{gl}(N)$ can also be thought as proper compositions of the rising, and lowering operators of th Heisenberg Lie algebra
+ The basis element $ (E_{ab})_{a,b\in\{1,\ldots,N\}}$ of ${gl}(N)$ can also be thought as proper compositions of the rising, and lowering operators of th Heisenberg Lie algebra
   \begin{equation}\label{creationOperators}
 	\begin{cases}
 	\oad_{a}|n_{1},\ldots,n_{a},\ldots,n_{N}\rangle = |n_{1},\ldots,n_{a}+1,\ldots,n_{N}\rangle\\
@@ -3636,11 +3637,11 @@ Therefore, \eqref{actionBDLine} follows.
 \begin{comment}
 \section{Representation}
 The approach we use to find duality relations is the Lie algebraic one. The main idea is to describe the infinitesimal generator (or better, its transposed, i.e. the Hamiltonian operator) via a proper combination of the basis of a certain Lie algebra. Then, duality will be found by symmetry argument.\\
-We chose the $\mathfrak{gl}(N)$ Lie algebra. This is compact. The abstract basis elements are denoted by $E_{a,b}$ with $a,b\in \{1,\ldots,N\}$ that obeys to the Lie bracket relations given by
+We chose the ${gl}(N)$ Lie algebra. This is compact. The abstract basis elements are denoted by $E_{a,b}$ with $a,b\in \{1,\ldots,N\}$ that obeys to the Lie bracket relations given by
 \begin{equation}
 \left[E_{ab},E_{cd}\right]=E_{ab}E_{cd}-E_{cd}E_{ab}=E_{ad}\delta_{bc}-E_{cb}\delta_{ad}\qquad \forall a,b\in \{1,\ldots,N\}
 \end{equation}
-We define the the following representation $(\mathcal{C}^{D},\Pi)$, where $D$ is the dimension of the representation and $\Pi:\mathfrak{gl}(N):\to \mathcal{M}_{D\times D}$ is an homeomorfism between the Lie algebra and the space $\mathcal{M}_{D\times D}$ of $D\times D$ matrices with complex coefficients. For every elements $E_{ab}$ of the abstract Lie algebra, it associates $\Pi(E_{ab})=e_{ab}$ Since this Lie algebra is compact and semi-simple, we can characterize every irreducible representation by defining its own \textit{highest weight state}. We recall that a weight is a vector $\mu=(\mu_{0},\ldots,\mu_{N})$ with $\mu_{i}\in\mathbb{N}_{0}$ such that there exist a state $|\mu\rangle$ with the property $e_{ii}|\mu\rangle=\mu_{i}|\mu\rangle$ $\forall i=0,\ldots,N$ (where $e_{ii}$ is the Cartan element). Let's consider two weights $\mu$,$\nu$, then we say that $\mu$ is positive if the first non zero component is positive. Then, we say that $\mu>\nu$ if $\mu-\nu>0$. Thus, we can define the "highest weight" of a representation the $\mu_{0}$ that is bigger then all the other weights. As already pointed out, every irreducible representation of $\mathfrak{gl}(N)$ is in a one to one correspondence with its heights weight. That means that we can characterize the representations via the highest weight. A more formal definitions: $\mu^{hws}=(\mu_{1},\ldots,\mu_{N})$ with $\mu_{i}\geq \mu_{i+1}$ is the heights weight of the representation if 
+We define the the following representation $(\mathcal{C}^{D},\Pi)$, where $D$ is the dimension of the representation and $\Pi:{gl}(N):\to \mathcal{M}_{D\times D}$ is an homeomorfism between the Lie algebra and the space $\mathcal{M}_{D\times D}$ of $D\times D$ matrices with complex coefficients. For every elements $E_{ab}$ of the abstract Lie algebra, it associates $\Pi(E_{ab})=e_{ab}$ Since this Lie algebra is compact and semi-simple, we can characterize every irreducible representation by defining its own \textit{highest weight state}. We recall that a weight is a vector $\mu=(\mu_{0},\ldots,\mu_{N})$ with $\mu_{i}\in\mathbb{N}_{0}$ such that there exist a state $|\mu\rangle$ with the property $e_{ii}|\mu\rangle=\mu_{i}|\mu\rangle$ $\forall i=0,\ldots,N$ (where $e_{ii}$ is the Cartan element). Let's consider two weights $\mu$,$\nu$, then we say that $\mu$ is positive if the first non zero component is positive. Then, we say that $\mu>\nu$ if $\mu-\nu>0$. Thus, we can define the "highest weight" of a representation the $\mu_{0}$ that is bigger then all the other weights. As already pointed out, every irreducible representation of ${gl}(N)$ is in a one to one correspondence with its heights weight. That means that we can characterize the representations via the highest weight. A more formal definitions: $\mu^{hws}=(\mu_{1},\ldots,\mu_{N})$ with $\mu_{i}\geq \mu_{i+1}$ is the heights weight of the representation if 
 \begin{equation}
 	e_{ii}|\mu^{hws}\rangle=\mu_{i}^{hws}|\mu^{hws}\rangle\qquad \text{and}\qquad e_{ij}|\mu^{hws}\rangle=0\quad \forall i<j
 \end{equation}
@@ -3663,7 +3664,7 @@ $\forall n=(n_{1},\ldots,n_{N})\in \chi$ where $\chi:=\left\{n\;:\;\sum_{a=1}^{N
     \langle q_{1},\ldots,q_{N}|_{x}|t_{1},\ldots,t_{N}\rangle_{x}=\prod_{a=1}^{N}\delta_{q_{a},t_{a}}
 \end{equation}
 
-The algebra $\mathfrak{gl}(N)$ is isomorphic to $su(N)$ and we have chosen a $2j$ spin representation of it. It is also possible to see that this representation can be written as a direct sum of representation of $su(2)$, each with representation $2j$ and each associated with a positive root. The generator of this $su(2)$ sub-algebras can be written by:  $J^{+}=e_{ab}$, $J^{-}=e_{ba}$, $J^{0}=1/2(e_{bb}-e_{aa})$ $\forall a,b=1,\ldots,N$. \\
+The algebra ${gl}(N)$ is isomorphic to $su(N)$ and we have chosen a $2j$ spin representation of it. It is also possible to see that this representation can be written as a direct sum of representation of $su(2)$, each with representation $2j$ and each associated with a positive root. The generator of this $su(2)$ sub-algebras can be written by:  $J^{+}=e_{ab}$, $J^{-}=e_{ba}$, $J^{0}=1/2(e_{bb}-e_{aa})$ $\forall a,b=1,\ldots,N$. \\
 The explicit actions of the basis element of the algebra on the vectors of the space $\mathcal{C}^{D}$ are the following, for non Cartan and Cartan elements respectively: 
 \begin{equation}
 	\begin{cases}
