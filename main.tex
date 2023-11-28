@@ -1254,8 +1254,8 @@ Therefore, using the linearity of the expectation and introducing the index $b\i
 
 
 \section{Correlations and steady state  for the integrable chain}\label{sectionIntegrabiliy}
-In this section we combine duality and the matrix product ansatz (MPA) to charaterize the non-equilibrium steady state for the integrable version of the multispecies stirring process, defined in Section~\ref{integrableChain-duality}. 
-As it will turn out, such combination of duality and MPA allows to determine a closed formula for the absorption probabilities and thus (using Corollary~\ref{Corolollary-ABS_Corr-abstract}) for the correlations
+In this section we combine duality, the $gl(N)$ invariance and the matrix product ansatz (MPA) to charaterize the non-equilibrium steady state for the integrable version of the multispecies stirring process, defined in Section~\ref{integrableChain-duality}. 
+As it will turn out, the combination of the $gl(N)$ invariance  and the MPA allows to determine a closed formula for the absorption probabilities and thus (using Corollary~\ref{Corolollary-ABS_Corr-abstract}) for the correlations
 and (using Corollary~\ref{Corollary-NESS-ABS}) for the probability mass-function of the non-equilibrium steady state.
 We start by recalling the formulation of the MPA  and then we explain our strategy.
 
@@ -1308,13 +1308,27 @@ Without loss of generality, we further assume that $\langle W|V\rangle=1$.
 The MPA gives an abstract form of the non-equilibrium steady state in terms of an algebra of operators. However, the computation of  correlations are in general involved. 
 
 \subsection{Strategy}
- In the next Section~\ref{subsection-exact} we will show that the existence of the absorbing dual process established in Section~\ref{sectionDuality} simplifies substantially the algebra of operators $X_a$ defined in previous
- section.  The idea is summarized in the following scheme. 
+ In the next Section~\ref{subsection-exact} we will show that the DEHP albegra in \eqref{bulk}-\eqref{rightBoundary} can be simplified substantially using the ${gl}(N)$ invariance of the bulk. In fact, such simplification can always be achieved if 
+  there exists an absorbing dual process as established in Section~\ref{sectionDuality}
+ 
+ The idea is summarized in the following scheme. 
  We define a sequence of similarity transformation such that 
  \begin{equation}
  	H\;\xleftrightarrow{S_{1}}\;H^{'}\;\xleftrightarrow{S_{2}}\;H^{''}
  \end{equation} 
- where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Using these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} become simpler. As a consequence, the ground state $|\Psi^{''}\rangle$ of $H^{''}$ can be written explicitly. Finally, reversing the transformations we retrieve $|\Psi\rangle$, i.e. the vector whose components are the probabilities of a certain configuration of the process in the non-equilibrium steady state.
+ where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Using these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} simplify significantly. More precisely for the components of $\tilde X=S_2S_1 X$ we obtain the bulk relations
+\begin{equation}\label{commutationsBula2}
+	\left[\Xt_{a},\Xt_{N}\right]=(\alpha_{a}-\beta_{a})\Xt_{N}\dt %\forall a\in \{1,\ldots,N-1\}\dt
+\end{equation}
+for $a=1,\ldots,N-1$. 
+At the boundaries 
+\begin{equation}\label{commLEFT2}
+	\langle W|\left((\alpha_{a}-\beta_{a})\Xt_{N}-\Xt_{a}\right)=(\alpha_{a}-\beta_{a})\langle W|%\qquad\forall a=1,\ldots,N-1
+	\co \qquad 
+	\Xt_{a} |V\rangle= (\alpha_{a}-\beta_{a})|V\rangle%\qquad\forall a=1,\ldots,N-1
+	\,.
+\end{equation} 
+where again we have  $a=1,\ldots,N-1$.   As a consequence, the ground state $|\Psi^{''}\rangle$ of $H^{''}$ can be written exactly in closed-form. Finally, reversing the transformations we retrieve $|\Psi\rangle$, i.e. the vector whose components are the probabilities of a certain configuration of the process in the non-equilibrium steady state.
  The first transformation $S_{1}$ is closely related to the duality matrix and we will see that $H^{'}$ is $\widetilde{H}^{T}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic, however it turns out that the components of its eigenvector with zero eigenvalue $|\Psi^{'}\rangle$ are the correlations in the non-equilibrium steady state. 
  %The second transformation $S_{2}$ diagonalizes the right boundary. Finally, the composition  $S_{2} S_{1}$ allows to simplify the commutators of the MPA algebra. 
 \subsection{Correlations in the non-equilibrium steady state}\label{subsection-exact}
@@ -1804,15 +1818,19 @@ Summing over $b\in \{1,\ldots,N\}$ in commutation relations \eqref{bulk} we have
 with $\widetilde{X}_{N}=\widetilde{X}_{1}+\ldots+\widetilde{X}_{N}$. 
 Therefore, we obtain the commutation relations for $\Xt_{a}$ 
 \begin{equation}\label{commutationsBula}
-	\left[\Xt_{a},\Xt_{N}\right]=(\alpha_{a}-\beta_{a})\Xt_{N}\dt %\forall a\in \{1,\ldots,N-1\}\dt
+	\left[\Xt_{a},\Xt_{N}\right]=(\alpha_{a}-\beta_{a})\Xt_{N}\co %\forall a\in \{1,\ldots,N-1\}\dt
 \end{equation}
+cf.~\eqref{commutationsBula2}.
 Moreover using \eqref{Xtildes2b} and \eqref{Xes}, the action of $\Xt_{a}$ on the boundary vectors are given by 
 \begin{equation}\label{commLEFT}
-	\langle W|\left((\alpha_{a}-\beta_{a})\Xt_{N}-\Xt_{a}\right)=(\alpha_{a}-\beta_{a})\langle\co W|%\qquad\forall a=1,\ldots,N-1
+	\langle W|\left((\alpha_{a}-\beta_{a})\Xt_{N}-\Xt_{a}\right)=(\alpha_{a}-\beta_{a})\langle W|%\qquad\forall a=1,\ldots,N-1
+	\co
 \end{equation}
 \begin{equation}\label{commRIGHT}
 	\Xt_{a} |V\rangle= (\alpha_{a}-\beta_{a})|V\rangle%\qquad\forall a=1,\ldots,N-1
+	\co
 \end{equation} 
+cf.~\eqref{commLEFT2}.
 Using the transformed operators $(\widetilde{X}_{a})_{a\in\{1,\ldots,N\}}$, the vector $|\Psi^{''}\rangle$ of the matrix product ansatz is written as
 \begin{equation}\label{toDetermineTilde}
 	|\Psi^{''}\rangle = \frac{1}{Z_{L}}\sum_{\bm{\tau}\in \Omega^{'}}\langle W|\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
