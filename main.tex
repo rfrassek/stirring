@@ -20,6 +20,31 @@
 
 
 
+% \usepackage[margin=2.5cm]{geometry} 
+
+%%%%%  TODO NOTES ETC  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\usepackage[left=1.7cm,right=4.3cm,bottom=4cm]{geometry}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\definecolor{todocolor}{HTML}{D7E1E5}
+\usepackage[textsize=tiny, 
+            backgroundcolor=todocolor, 
+            bordercolor=todocolor, 
+            linecolor=todocolor, 
+            textwidth=3.9cm]{todonotes}
+\newcommand{\todoWARN}[1]{\todo{\colorbox{yellow}{\parbox{3.4cm}{#1}}}}
+\newcommand{\todoERR}[1]{\todo{\colorbox{red}{\parbox{3.4cm}{#1}}}}
+\usepackage{comment}
+\usepackage{rotating}
+\usepackage[left]{showlabels}
+\renewcommand{\showlabelfont}{\tiny}
+\renewcommand{\showlabelsetlabel}[1]
+{\begin{turn}{65}\showlabelfont \llap{#1}\end{turn}}
+\newcommand{\wiptitle}[1]{
+    \par\noindent\hspace*{-0.5cm}\texttt{\scriptsize\color{gray} \lbrack #1\rbrack} \par\noindent\ignorespaces}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 %\usepackage[textsize=tiny]{todonotes}
  
@@ -69,7 +94,6 @@
 
 \setcounter{tocdepth}{2}
 
-\usepackage[margin=2.5cm]{geometry} 
 
 %%%%%  oscillators
 \newcommand{\osc}[1]{\mathbf{#1}}
@@ -242,7 +266,7 @@ and generalizations of the model, including instantaneous thermalization limits 
 In closing this introduction we mention that we are currently working on the boundary-driven multispecies 
 model with non-compact Lie algebras, both integrable and non-integrable, which will be presented in a 
 future paper. 
-
+\todo{I prefer to remove this sentence}
 
 {\bf Acknowledgments.} We acknowledge support from Istituto Nazionale di Alta Matematica (GNFM),  the INFN grant Gauge and String Theory (GAST),  the PRIN project CUP-E53D23002220006,  the FAR UNIMORE project CUP-E93C23002040005 and  the INdAM–GNFM project CUP-E53C22001930001.  
 
@@ -299,13 +323,18 @@ steady state sets in.
 \label{hole}
 In the following we will often consider type $N$ as a distinguished type
 (called `holes'), whose number at each site is fixed by the numbers of particles 
-of the remaining $N-1$ types. It is interesting to observe that, in case we stop distinguishing the types of the ``true'' particles of types 
-(those of types $\{1,\ldots,N-1\}$), we retrieve the 
-boundary-driven version of the partial symmetric exclusion process \cite{schutzSandow,carinci2013duality}.
+of the remaining $N-1$ types. 
+% It is interesting to observe that, in case we stop distinguishing the types of the ``true'' particles of types 
+% (those of types $\{1,\ldots,N-1\}$), we retrieve the 
+% boundary-driven version of the partial symmetric exclusion process \cite{schutzSandow,carinci2013duality}.
+In the case $N=2$, we retrieve the  boundary-driven version of the symmetric exclusion process \cite{schutzSandow,carinci2013duality}.
+% \todo{I would prefer to say this is for N=2}
 The choice of type $N$ for the distinguished type is arbitrary and does not affect
-the results. In particular, we shall see in Section~\ref{sectionDuality} about duality, that
-the dual process eventually has only particles of type $N$ on the graph.
+the results. However, we shall see in Section~\ref{sectionDuality}, that
+the dual process breaks the symmetry.
+In particular, in the  long-time limit the dual process has only particles of type $N$ on the graph.
 Interpreting type $N$ as an hole, one can then say that the dual process voids the graph.  
+\todo{Exchange hole with void? Also can the remark be just text?}
 \end{remark}
 
 
@@ -375,7 +404,7 @@ homogeneous product measure
 \label{reversibleMeasure}
 \mu_{\text{rev}}=\bigotimes_{x\in V}\mu_{\text{rev}}^{x}
 \end{equation}
-with marginals $\mu_{\text{rev}}^{x}$ given by 
+with marginals $\mu_{\text{rev}}^{x}$ given by  the multinomial distribution
 \begin{equation}
  \mu^{x}_{\text{rev}}\sim \text{Multinomial}\left(\twoj,\rho_{1},\ldots,\rho_{N}\right)\,.
 \end{equation}
@@ -389,7 +418,7 @@ is the density of species $a$ and we used the notation $|\alpha|=\sum_{a=1}^{N}\
 \end{equation}
 This can be proved  by checking that detailed balance is satisfied. 
 If condition \eqref{reversibilityCondition} is not met, then in general reversibility is lost (but see Remark~\ref{rem-rev} below): 
-each reservoir at site $x$ wants to fix its own set of densities $\rho^{x}=(\rho_{1}^{x},\ldots,\rho_{N}^{x})$ with
+each reservoir at site $x$ {\color{red}wants to fix}\todo{?} its own set of densities $\rho^{x}=(\rho_{1}^{x},\ldots,\rho_{N}^{x})$ with
 \begin{equation}
 \label{rhox}
 \rho_{a}^x=\frac{\alpha_{a}}{|\alpha^x|}
@@ -410,9 +439,10 @@ Currents will arise when at least two reservoirs have different densities.
 		This is slightly more general than \eqref{reversibilityCondition}. In the case where the graph is a chain with nearest neighbors interactions and two reservoirs are attached to the two boundary sites
 		then condition \eqref{cond-gen} is the multispecies counterpart of $\alpha\delta=\beta\gamma$ of the boundary driven partially excluded process introduced in \cite{schutzSandow} (see Section 3.2 of \cite{carinci2013duality}).
 		\end{remark}
+		\todo{?}
 \subsection{Lie algebraic description of the process}
 
-In this paper we will often use the fact that the Markov generator of the multispecies stirring process can be described in terms a Lie algebra of rank $N$.
+In this paper we will often use the fact that the Markov generator of the multispecies stirring process can be described in terms a Lie algebra ${gl}(N)$.
 In this section we provide details about this.
 
 Consider the Lie algebra ${gl}(N)$ with generators denoted by $\EE_{ab}$ with $a,b\in \{1,\ldots,N\}$ and commutation relations
@@ -432,14 +462,14 @@ The dimension $M_\twoj$ of this symmetric representations is given by the combin
 The generators of the symmetric representations will be denoted by $E_{ab}$.
 A basis of the vector space $\mathbb{C}^{M_\twoj}$ are the column vectors denoted by
 \begin{equation}
-  |n\rangle=  |n_{1},\ldots,n_{N}\rangle,\quad \text{with}\quad n_{i}\in\mathbb{N}_{0}\quad \text{sucht that}\quad \sum_{i=1}^{N}n_{i}=\nu\,.
+  |n\rangle=  |n_{1},\ldots,n_{N}\rangle,\quad \text{with}\quad n_{i}\in\mathbb{N}_{0}\quad \text{such that}\quad \sum_{i=1}^{N}n_{i}=\nu\,.
 \end{equation}
 %where $\sum_{a=1}^{N}n_{i}=\nu$. 
 The basis vectors satisfy the orthogonality relation
 \begin{equation}\label{ortho}
    \langle m|n \rangle =\langle m_{1},\ldots,m_{N}|n_{1},\ldots,n_{N}\rangle=\prod_{a=1}^{N}\delta_{m_{a},n_{a}}\co
 \end{equation}
-where  $ \langle m_{1},\ldots,m_{N}|$ is the row vectors obtained by transposing $|m\rangle=|m_{1},\ldots,m_{N}\rangle$ and $\delta_{m_{a},n_{a}}$ is the Kronecker delta. 
+where  $ \langle m_{1},\ldots,m_{N}|$ is the row vector obtained by transposing $|m\rangle=|m_{1},\ldots,m_{N}\rangle$ and $\delta_{m_{a},n_{a}}$ is the Kronecker delta. 
 
 The explicit action of the algebra generators on the basis  vectors $|n\rangle$ is the following:
 \begin{equation}\label{actionE}
@@ -448,7 +478,7 @@ The explicit action of the algebra generators on the basis  vectors $|n\rangle$ 
 		E_{aa}|n_{1},\ldots,n_{a},\ldots,n_{N}\rangle = n_{a} |n_{1},\ldots,n_{a},\ldots,n_{N}\rangle\dt
 	\end{cases}
 \end{equation}  
-The matrices defined in this way satisfy the commutation relations \eqref{eq:comgl} and yield Dynkin weight \eqref{eq:dynkin}. \\
+The matrices defined in this way satisfy the commutation relations \eqref{eq:comgl} and yield highest Dynkin weight \eqref{eq:dynkin}. \\
 %{\color{red} Is this remark relevant for us?}
 %\newline 
 %\textbf{Remark}: it is possible to define these matrices in terms of creation and annihilation operators: see Appendix~\ref{appA}.
@@ -458,7 +488,7 @@ The matrices defined in this way satisfy the commutation relations \eqref{eq:com
 %   \bar E_{ab}=\nu\delta_{ab}-E_{N-b+1,N-a+1}\dt
 %\end{equation}
 %{\color{red} This needs to be checked and give alternative form of Hamiltonian?}\\
-The process with generator \eqref{Generator} can be described in terms of ${gl}(N)$ Lie algebra generators. The state space \eqref{stateSpace} is given by the $|V|$-fold tensor product of the vector space with basis elements $|n^x\rangle$ at a given site. Namely,
+As mentioned above, the process with generator \eqref{Generator} can be described in terms of ${gl}(N)$ Lie algebra generators. The state space \eqref{stateSpace} is given by the $|V|$-fold tensor product of the vector space with basis elements $|n^x\rangle$ at a given site. Namely,
 a vector $|{\bm{n}}\rangle \in \Omega$ can be written as
 %We now define the equivalent of \eqref{stateSpace} in the vector notation
 % \begin{equation}
@@ -473,8 +503,7 @@ a vector $|{\bm{n}}\rangle \in \Omega$ can be written as
 %		|{\bm{n}}\rangle=\left(\,\bigotimes_{x\in V}	|n_{1},\ldots,n_{N}\rangle_{x}\right)
 %	\end{equation*}}
 %where we require that $n_{a}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have 
-with $\sum_{a=1}^{N}n_{a}^{x}=\nu$ for any $x\in V$. Sometimes it will bw convenient to write $|n^{x}\rangle$ to denote, for a fixed $x\in V$, the vector $|n_{1}^{x},\ldots,n_{N}^{x}\rangle$.
-The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
+with $\sum_{a=1}^{N}n_{a}^{x}=\nu$ for any $x\in V$. For a fixed $x\in V$ we write $|n^{x}\rangle=|n_{1}^{x},\ldots,n_{N}^{x}\rangle$. The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
 \begin{equation}
     \langle {\bm{n}}|{\bm{m}}\rangle =\prod_{x\in V}\prod_{a=1}^N\delta_{n^x_a,m^{x}_a}\,.
 \end{equation}
@@ -484,21 +513,21 @@ We introduce the Hamiltonian operator
 		H=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}\mathcal{H}_{x,y}+\sum_{x\in V}\Gamma_{x}H_{x}
 	\end{split}
 \end{equation}
-where the edge Hamiltonian that describes the interaction between two connected sites is
+where the edge Hamiltonian $\mathcal{H}_{x,y}$ that describes the interaction between two connected sites is
 \begin{equation}\label{edgeHamiltonian}
 \mathcal{H}_{x,y}=\sum_{a,b=1}^{N}\Big(E_{ab}^{x} E_{b a}^{y}-E_{bb}^{x} E_{aa}^{y}\Big)
  \end{equation}
-  and where the site Hamiltonian is
+  and where the site Hamiltonian $H_{x}$  is
  \begin{equation}\label{siteHamiltonian}
 H_{x}=\sum_{a,b=1}^{N}\alpha_{a}^{x}\left(E_{ab}^{x}-E_{bb}^{x}\right)
 \end{equation}
-Here $E_{ab}^{x}$ is a copy of $E_{ab}$ defined in \eqref{actionE} acting on site $x$ (and
-acting trivially as the identity on the other sites). 
-Following  \cite{belitsky2015self}, the Hamiltonian and the Markov generator are linked by
+Here $E_{ab}^{x}$ denotes the generator $E_{ab}$ in \eqref{actionE} acting non-trivially on site $x$ (and as the identity on the other sites). 
+The Hamiltonian in \eqref{OriginalHamiltonian} is stochastic and is linked to the Markov generator  by
 \begin{equation}\label{Hamiltonian-Generator}
-H=\mathcal{L}^{T}\dt
+H=\mathcal{L}^{T} 
 \end{equation}
-The action of the generator can also be expressed as 
+where $T$ denotes transposition, see e.g.  \cite{belitsky2015self}.
+The action of the generator on functions $f$ can then  be expressed as 
 \begin{equation}
     \mathcal{L}f( {\bm{n}})=\langle f|H| {\bm{n}}\rangle
 \end{equation}
@@ -510,14 +539,17 @@ We can write the edge Hamiltonian \eqref{edgeHamiltonian} as a function of the c
 \begin{equation}\label{secondCasimir}
     C=\sum_{a,b=1}^{N}E_{ab}E_{ba}\co
 \end{equation}
-that acts diagonally as $C|\bm{n}\rangle=\twoj(\twoj+N)|\bm{n}\rangle$ and belogs to the center of ${gl}(N)$ (i.e. it commutes with all the algebra elements).  
+that acts diagonally as $C|{n}\rangle=\twoj(\twoj+N)|{n}\rangle$ and belogs to the center of ${gl}(N)$ (i.e. it commutes with all the algebra elements).  
 More precisely,  considering the standard coproduct 
 \begin{equation}
 \begin{split}
-\Delta:{gl}(N)&\to {gl}(N)\otimes {gl}(N)\\
-E_{ab}&\mapsto E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
+\Delta:{gl}(N)\to {gl}(N)\otimes {gl}(N)
 \end{split}
 \end{equation}
+with
+\begin{equation}
+E_{ab}\mapsto E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}\co
+\end{equation} 
 we have 
 \begin{equation}
 \Delta(C)=\sum_{a,b=1}^{N}\Delta(E_{ab})\Delta(E_{ba})=2\sum_{a,b=1}^{N}E_{ab}\otimes E_{ba}+C\otimes \mathbbm{1}+\mathbbm{1}\otimes C\,.
