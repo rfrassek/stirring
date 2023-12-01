@@ -240,48 +240,50 @@ Our strategy to solve for the non-equilibrium steady state is of a probabilistic
 has been substantially developed in recent years to study stochastic processes in the boundary-driven set-up \cite{giardina2009duality,carinci2013duality}.
 The boundary-driven process is mapped to a dual process with absorbing extra sites and the problem of describing the stationary state of the original system
 is reduced to the problem of computing the absorption probabilities of the dual particles.
-In general, this is a difficult task. However,  for the case of integrable systems they can be computed exactly in closed-form.
+{\color{red} Say that for a  general graph with boundaries attached to any site, this is a difficult task. }
+% However,  for the case of integrable systems they can be computed exactly in closed-form.
 
+{\color{red} Explain here that we consider the chain with only two reservoirs at the end of the chain}
 
 For the single species case,  the solution of the exclusion process with open boundaries \cite{derrida1993exact,1993JSP....72..277S} has been of crucial importance in our understanding of the structural properties of non-equilibrium state, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviations \cite{mallick2022exact,bodineau2005current}. One may argue that the results available for the exclusion process are rooted in the algebraic symmetries of the corresponding integrable spin $s=1/2$ Heisenberg chain [SCHUTZ,RAGOUCY].
 
 
 The model studied in this paper is the multispecies analog of the exclusion process on a generic graph as introduced in \cite{zhou2021orthogonal} with additional boundary reservoirs as proposed in \cite{vanicat2017exact}.
-{\color{red}Explain the model here.... $N$-species }
+{\color{red}Explain the model here.... $N$-species, say that it becomes integrable for the line }
 
 We refer to the model as the {\em  multispecies stirring process with open boundaries}.
 %
 
 The  paper is organized as follows.
 In Section~\ref{sec1} we define the open multispecies stirring
-process and provide its Lie algebraic description in terms of $gl(N)$ generators. In Section~\ref{sectionDuality} we prove an absorption duality (Theorem~\ref{thm-duality})
+process on a general graph and provide its Lie algebraic description in terms of $gl(N)$ generators. In Section~\ref{sectionDuality} we prove an absorption duality (Theorem~\ref{thm-duality})
 and show that the problem of characterizing the non-equilibrium
-steady state can be reduced to the computation of the absorption probabilities similar to the single species case [SPOHN?]. The duality is proved for a
-system whose spatial structure is described by a general graph. In Section~\ref{sectionIntegrabiliy} we then obtain a closed formula
-for the stationary correlations (Theorem~\ref{thm-correlations}) for the case of a one-dimensional chain with at most one 
-particle per site, which is driven out-of-equilbrium by two reservoirs acting at the left and right boundaries. 
-Here the computation of the absorption probabilities relies on the extension of the  Matrix Product Ansatz \cite{derrida1993exact} to multiple species \cite{vanicat2017exact},{\color{red}
-which is in fact also simplified by the use of duality. }Finally in Section~\ref{sec5} we discuss a few extensions 
-and generalizations of the model, including instantaneous thermalization limits and reaction-diffusions.
+steady state can be reduced to the computation of the absorption probabilities similar to the singlespecies case on the line [SPOHN?] and for a general graph \cite{ frassek2020duality}. 
+% The duality is proved for a system whose spatial structure is described by a general graph.
+In Section~\ref{sectionIntegrabiliy}  we consider  the case of the one-dimensional chain with at most one 
+particle per site, which is driven out-of-equilbrium by two reservoirs on the left and right boundaries. In this case we obtain a closed-form expression for the stationary correlations (Theorem~\ref{thm-correlations}). Here the computation
+% of the absorption probabilities 
+relies on the extension of the  Matrix Product Ansatz \cite{derrida1993exact} to multiple species \cite{vanicat2017exact} and the $gl(n)$ invariance of the process in the bulk. Finally in Section~\ref{sec5} we discuss a few extensions 
+and generalizations of the model, including instantaneous thermalization limits and reaction-diffusions. {\color{red} mention the results you have in appendix}.
 
-In closing this introduction we mention that we are currently working on the boundary-driven multispecies 
-model with non-compact Lie algebras, both integrable and non-integrable, which will be presented in a 
-future paper. 
-\todo{I prefer to remove this sentence}
-
-
-\cite{schutz2017kardar, vanicat2017exact, crampe2016integrable, finn2018matrix, floreani2022switching, casini2022uphill, casini2023density, redig2022ergodic, redig2023equilibrium, chatterjee2023multi,  franceschini2022orthogonal,floreani2023non,carinci2023open}
-
- See also \cite{crampe2016integrable, finn2018matrix} for the asymmetric setup.
-
-For recent examples in the framework of singlespecies systems, see \cite{frassek2020eigenstates, frassek2020duality,frassek2022exact}.
-{\color{red}
-Here we generalize the duality approach to the set-up of multispecies particle systems.}
+% In closing this introduction we mention that we are currently working on the boundary-driven multispecies 
+% model with non-compact Lie algebras, both integrable and non-integrable, which will be presented in a 
+% future paper. 
+% \todo{I prefer to remove this sentence}
 
 
-{\color{blue} I think this is to general...  Do all the references study the steady state? Also the main point is about duality no?}
+% \cite{schutz2017kardar, vanicat2017exact, crampe2016integrable, finn2018matrix, floreani2022switching, casini2022uphill, casini2023density, redig2022ergodic, redig2023equilibrium, chatterjee2023multi,  franceschini2022orthogonal,floreani2023non,carinci2023open}
 
-{\color{red} Missing the part about non integrable model and duality.}
+%  See also \cite{crampe2016integrable, finn2018matrix} for the asymmetric setup.
+
+% For recent examples in the framework of singlespecies systems, see \cite{frassek2020eigenstates, frassek2020duality,frassek2022exact}.
+% {\color{red}
+% Here we generalize the duality approach to the set-up of multispecies particle systems.}
+
+
+% {\color{blue} I think this is to general...  Do all the references study the steady state? Also the main point is about duality no?}
+
+% {\color{red} Missing the part about non integrable model and duality.}
 
 {\bf Acknowledgments.} We acknowledge support from Istituto Nazionale di Alta Matematica (GNFM),  the INFN grant Gauge and String Theory (GAST),  the PRIN project CUP-E53D23002220006,  the FAR UNIMORE project CUP-E93C23002040005 and  the INdAM–GNFM project CUP-E53C22001930001.  
 
