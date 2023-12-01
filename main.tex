@@ -204,19 +204,19 @@ Parco Area delle Scienze, 7/A, 43124 Parma, Italy\\
 
 \begin{abstract}
 \noindent
-We study the boundary-driven version of the stirring process with $N-1$ species
-on a generic graph $G=(V,\mathcal{E})$ with reservoirs. 
+We study the stirring process with $N-1$ species
+on a generic graph $G=(V,\mathcal{E})$ introduced with reservoirs.
 The multispecies stirring process generalizes the symmetric exclusion process, 
 which is recovered in the case $N=2$.
 We prove the existence of a dual process defined on
 an extended graph $\widetilde{G}=(\widetilde{V},\widetilde{\mathcal{E})}$ which 
 includes additional extra-sites $\widetilde{V}\setminus V$ where
-dual particles gets absorbed in the long-time limit.  
+dual particles get absorbed in the long-time limit.
 We thus obtain a characterization of the non-equilibrium
 steady state of the boundary-driven system in terms of the absorption
-probabilities of dual particles.
-For the case of one-dimensional chains with two reservoirs
-at the boundaries and with maximum one particle per site the process is integrable. Based on the results of \cite{vanicat2017exact},
+probabilities of dual particles.  The process is integrable
+for the case of the one-dimensional chain with two reservoirs
+at the boundaries and with maximally one particle per site. Based on the results of \cite{vanicat2017exact},
 we compute the absorption probabilities by relying
 on the underlying ${gl}(N)$ symmetry and the
 matrix product ansatz. Thus one gets a closed-formula
@@ -234,29 +234,30 @@ are also discussed.
  \newpage
 
 \section{Introduction} 
-Boundary-driven particle systems are paradigmatic models for non-equilibrium statistical mechanics. In a boundary-driven system, the model is put in contact with reservoirs at its ``boundaries'' imposing different particle densities, and a current is generated through the system. In the long time limit, a non-equilibrium steady state sets in, with a stationary value of the current. {\color{red} The aim of this paper is to study the mathematical aspects of the stationary measure of boundary-driven {\em multispecies} particle systems \cite{schutz2017kardar, vanicat2017exact, crampe2016integrable, finn2018matrix, floreani2022switching, casini2022uphill, casini2023density, redig2022ergodic, redig2023equilibrium, chatterjee2023multi, zhou2021orthogonal, franceschini2022orthogonal,floreani2023non}.}
-{\color{blue} I think this is to general...  Do all the references study the steady state? Also the main point is about duality no?}
+Boundary-driven particle systems are paradigmatic models for non-equilibrium statistical mechanics. In a boundary-driven system, the model is put in contact with reservoirs at its ``boundaries'' imposing different particle densities, and a current is generated through the system. In the long time limit, a non-equilibrium steady state sets in, with a stationary value of the current.  The aim of this paper is to develop the theory of stochastic duality and  study the stationary measure of certain symmetric boundary-driven {\em multispecies} particle systems with exclusion.
 
-{\color{red} Missing the part about non integrable model and duality.}
-
-For the single species case,  the solution of the exclusion process with open boundaries \cite{derrida1993exact,1993JSP....72..277S} has been of crucial importance in our understanding of the structural properties of non-equilibrium state, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviations \cite{mallick2022exact,bodineau2005current}. The results available for the exclusion process are rooted in the algebraic symmetries of the corresponding integrable quantum spin chain, i.e. the XXX Heisenberg Hamiltonian with ${su}(2)$ spins of value $s=1/2$.
-In this paper, we investigate the multispecies analog of the exclusion process in the boundary-driven context \cite{vanicat2017exact}, i.e. the {\em  multispecies stirring process with open boundaries}. See also \cite{crampe2016integrable, finn2018matrix} for the asymmetric setup.  The bulk part of the model with $N$ species is associated with the integrable ${gl}(N)$ 
-Heisenberg XXX Hamiltonian with integrable non-diagonal open boundaries.
-
-Our strategy to solve for the non-equilibrium steady state is of a probabilistic nature and relies on the use of {\em duality} \cite{schutzSandow}. This approach, starting from the pioneering work of Kipnis, Marchiorio and Presutti \cite{KMP}, 
-has been substantially developed in recent years to study stochastic processes in the boundary-driven set-up \cite{giardina2009duality,carinci2013duality,frassek2020duality,carinci2023open}. 
+Our strategy to solve for the non-equilibrium steady state is of a probabilistic nature and relies on the use of {\em duality} \cite{schutzSandow}. Starting from the pioneering work of Kipnis, Marchiorio and Presutti \cite{KMP}, this approach
+has been substantially developed in recent years to study stochastic processes in the boundary-driven set-up \cite{giardina2009duality,carinci2013duality}.
 The boundary-driven process is mapped to a dual process with absorbing extra sites and the problem of describing the stationary state of the original system
-is reduced to the problem of computing the absorption probabilities of the dual particles. 
-In general, this is a difficult task. However,  for the case of integrable systems they can be computed exactly in closed-form. 
-For recent examples in the framework of singlespecies systems, see \cite{frassek2020eigenstates, frassek2022exact}.  
-{\color{red}
-Here we generalize the duality approach to the set-up of multispecies particle systems.}
+is reduced to the problem of computing the absorption probabilities of the dual particles.
+In general, this is a difficult task. However,  for the case of integrable systems they can be computed exactly in closed-form.
 
-The remainder of this paper is organized as follows. In Section~\ref{sec1} we define the open multispecies stirring
-process and provide its Lie algebraic description. In Section~\ref{sectionDuality} we prove duality (Theorem~\ref{thm-duality}) 
-and we show that, even in the presence of multispecies, the problem of characterizing the non-equilibrium 
-steady state can be reduced to the computation of the absorption probabilities. Duality is proved when the 
-system has a general spatial structure described by a general graph. In Section~\ref{sectionIntegrabiliy} we then obtain a closed formula 
+
+For the single species case,  the solution of the exclusion process with open boundaries \cite{derrida1993exact,1993JSP....72..277S} has been of crucial importance in our understanding of the structural properties of non-equilibrium state, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviations \cite{mallick2022exact,bodineau2005current}. One may argue that the results available for the exclusion process are rooted in the algebraic symmetries of the corresponding integrable spin $s=1/2$ Heisenberg chain [SCHUTZ,RAGOUCY].
+
+
+The model studied in this paper is the multispecies analog of the exclusion process on a generic graph as introduced in \cite{zhou2021orthogonal} with additional boundary reservoirs as proposed in \cite{vanicat2017exact}.
+{\color{red}Explain the model here.... $N$-species }
+
+We refer to the model as the {\em  multispecies stirring process with open boundaries}.
+%
+
+The  paper is organized as follows.
+In Section~\ref{sec1} we define the open multispecies stirring
+process and provide its Lie algebraic description in terms of $gl(N)$ generators. In Section~\ref{sectionDuality} we prove an absorption duality (Theorem~\ref{thm-duality})
+and show that the problem of characterizing the non-equilibrium
+steady state can be reduced to the computation of the absorption probabilities similar to the single species case [SPOHN?]. The duality is proved for a
+system whose spatial structure is described by a general graph. In Section~\ref{sectionIntegrabiliy} we then obtain a closed formula
 for the stationary correlations (Theorem~\ref{thm-correlations}) for the case of a one-dimensional chain with at most one 
 particle per site, which is driven out-of-equilbrium by two reservoirs acting at the left and right boundaries. 
 Here the computation of the absorption probabilities relies on the extension of the  Matrix Product Ansatz \cite{derrida1993exact} to multiple species \cite{vanicat2017exact},{\color{red}
@@ -268,7 +269,24 @@ model with non-compact Lie algebras, both integrable and non-integrable, which w
 future paper. 
 \todo{I prefer to remove this sentence}
 
+
+\cite{schutz2017kardar, vanicat2017exact, crampe2016integrable, finn2018matrix, floreani2022switching, casini2022uphill, casini2023density, redig2022ergodic, redig2023equilibrium, chatterjee2023multi,  franceschini2022orthogonal,floreani2023non,carinci2023open}
+
+ See also \cite{crampe2016integrable, finn2018matrix} for the asymmetric setup.
+
+For recent examples in the framework of singlespecies systems, see \cite{frassek2020eigenstates, frassek2020duality,frassek2022exact}.
+{\color{red}
+Here we generalize the duality approach to the set-up of multispecies particle systems.}
+
+
+{\color{blue} I think this is to general...  Do all the references study the steady state? Also the main point is about duality no?}
+
+{\color{red} Missing the part about non integrable model and duality.}
+
 {\bf Acknowledgments.} We acknowledge support from Istituto Nazionale di Alta Matematica (GNFM),  the INFN grant Gauge and String Theory (GAST),  the PRIN project CUP-E53D23002220006,  the FAR UNIMORE project CUP-E93C23002040005 and  the INdAM–GNFM project CUP-E53C22001930001.  
+
+
+
 
 % Prin-project {\color{blue} xxxx}, FAR-project {\color{blue} xxxx} UniMoRe.
 % 
@@ -421,9 +439,9 @@ If condition \eqref{reversibilityCondition} is not met, then in general reversib
 each reservoir at site $x$ {\color{red}wants to fix}\todo{?} its own set of densities $\rho^{x}=(\rho_{1}^{x},\ldots,\rho_{N}^{x})$ with
 \begin{equation}
 \label{rhox}
-\rho_{a}^x=\frac{\alpha_{a}}{|\alpha^x|}
+\rho_{a}^x=\frac{\alpha_{a}^x}{|\alpha^x|}
 \end{equation}
-and  $|\alpha^x|=\sum_{a=1}^{N}\alpha_{a}$. 
+and  $|\alpha^x|=\sum_{a=1}^{N}\alpha_{a}^x$.
 Currents will arise when at least two reservoirs have different densities. 
 \begin{remark}
 \label{rem-rev}
@@ -635,11 +653,7 @@ with
 \end{equation} 
  In this context it will be useful to introduce the following notation for the occupation variable of the process. Each configuration is denoted by
 \begin{equation}\label{Tau-Notation}
-	|\bm{\tau}\rangle=|\tau_{1},\ldots,\tau_{L}\rangle =\begin{pmatrix}
-		\tau_{1}\\
-		\vdots\\
-		\tau_{L}
-	\end{pmatrix}
+	|\bm{\tau}\rangle=|\tau_{1},\ldots,\tau_{L}\rangle
 \end{equation} 
 with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. Since the maximal occupancy at each site is $\nu=1$,  the configuration $\bm{n}$ introduced in Section~\ref{subsectionGeneratorStr} and $\bm{\tau}$ are related by 
 \begin{equation}\label{notation-change-relation}
@@ -790,7 +804,7 @@ part $\widetilde{\mathcal{L}}_{x}$ of the dual generator replaces a particle of 
 %
 \subsection{Proof of Theorem~\ref{thm-duality}}
 \label{proof-th-duality}
-To prove duality between $(\bm{n}(t))_{t\geq 0}$ and $(\bm{\xi}(t))_{t\geq 0}$ we  show that \eqref{DualityRelation} is fulfilled.  To show this, we will use the Hamiltonians and their Lie algebraic description. Indeed, in this formalism the proof 
+To prove duality between the process $(\bm{n}(t))_{t\geq 0}$ and the process  $(\bm{\xi}(t))_{t\geq 0}$ we  show that \eqref{DualityRelation} is fulfilled.  To show this, we will use the Hamiltonians and their Lie algebraic description. Indeed, in this formalism the proof
 reduces to finding symmetries of the generator (for the bulk duality) and group like transformations (for the ``boundary duality'').
 To a configuration $\bm{\xi}$ of the configuration space  \eqref{dualStateSpace} of a dual process we associate the vector
 \begin{equation}
@@ -877,6 +891,7 @@ Fix an arbitrary site $x\in V$, then we have that
 	 &\langle n^{x}|d_{x}\otimes \dd|\xi^{x}\rangle\nonumber\\=&\langle n_{1}^{x},\ldots,n_{N}^{x}| (\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x}}))^{T}R_{x}\otimes\sum_{q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|\nonumber
 	 \\&|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle \otimes |\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle
 \end{align}
+\todo{something wrong...}
 where we used \eqref{transpositionPropertyR}. \\
 On one hand, on the extra-site $u(x)$ we have 
 \begin{align}
