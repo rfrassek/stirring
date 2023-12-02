@@ -239,7 +239,7 @@ Boundary-driven particle systems are paradigmatic models for non-equilibrium sta
 Our strategy to solve for the non-equilibrium steady state is of a probabilistic nature and relies on the use of {\em duality} \cite{schutzSandow}. Starting from the pioneering work of Kipnis, Marchiorio and Presutti \cite{KMP}, this approach
 has been substantially developed in recent years to study stochastic processes in the boundary-driven set-up \cite{giardina2009duality,carinci2013duality}.
 The boundary-driven process is mapped to a dual process with absorbing extra sites and the problem of describing the stationary state of the original system
-is reduced to the problem of computing the absorption probabilities of the dual particles.
+is reduced to the problem of computing the absorption probabilities of the dual particles. {\color{blue}On one hand, this absorbing duality allows to formally write the non-equilibrium steady state in a different (simpler) form. On the other hand, absorption probabilities are hard to to find since they fulfil multilinear algebraic equation with proper boundary conditions. The situation simplifies when the graph reduces to a chain with two reservoirs on the boundary sites. In this context, the integrable structure of the process can be combined with duality to compute non-equilibrium steady state. Recently, probabilistic techniques have been developped to compute absorption probabilities for the simple symmetric exclusion process \cite{floreani2023non}.}
 {\color{red} Say that for a  general graph with boundaries attached to any site, this is a difficult task. }
 % However,  for the case of integrable systems they can be computed exactly in closed-form.
 
@@ -886,7 +886,7 @@ We aim to show that its matrix elements coincide with duality function \eqref{du
 \end{equation}
 Fix an arbitrary site $x\in V$, then we have that 
 \begin{align}
-	 &\langle n^{x}|d_{x}\otimes \dd|\xi^{x}\rangle\nonumber\\=&\langle n_{1}^{x},\ldots,n_{N}^{x}| (\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x}}))^{T}R_{x}\otimes\sum_{q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|\nonumber
+	 &\langle n^{x}_{1},\ldots,n_{N}^{x}|\left(d_{x}\otimes \dd\right)\left(|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\otimes|\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle\right)\nonumber\\=&\langle n_{1}^{x},\ldots,n_{N}^{x}| (\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x}}))^{T}R_{x}\otimes\sum_{q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|\nonumber
 	 \\&|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle \otimes |\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle
 \end{align}
 \todo{something wrong...}
@@ -1123,17 +1123,17 @@ Thus, we rewrite \eqref{intermediateTransposeSite} as
 \begin{equation}\label{siteHadamardI}
 H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}|\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\dt
 \end{equation}
-Taking the tensor product of both sides of \eqref{siteHadamardI} with 
-\begin{equation}
-\langle \rho|_{u(x)}=\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|_{u(x)}
-\end{equation}
+Taking the tensor product of both sides of \eqref{siteHadamardI}% with 
+%\begin{equation}
+%\langle \rho|_{u(x)}=\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}%\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|_{u(x)}
+%\end{equation}
 %{\color{blue}Think about replacing $\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|$ with $\langle \xi_{1},\ldots,\xi_{N}|_{u(x)}$}\\
 we obtain 
 \begin{equation}\label{siteHadamardII}
     \begin{split}
-    	H_{x}^{T}d_{x}\otimes\langle\rho|_{u(x)}=
+    	&H_{x}^{T}d_{x}\otimes\left(\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\right)\\=&
  d_{x}\,
-|\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\otimes \langle\rho|_{u(x)}\dt
+|\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\otimes \left(\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\right)
     \end{split}
 \end{equation}
 \todo{somehow this now has extra index for the space and everywhere else not.... please fix}
