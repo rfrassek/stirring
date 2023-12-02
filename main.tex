@@ -355,8 +355,7 @@ the dual process breaks the symmetry.
 In particular, in the  long-time limit the dual process has only particles of type $N$ on the graph.
 Interpreting type $N$ as an hole, one can then say that the dual process voids the graph.   
 \end{remark}
-
-
+\todo{It is misleading to have to different interpretations. Like what is the number of particles per site? Another confusion is for the reservoirs/open boundaries... Is it the same on general graph?}
 
 
 
@@ -631,7 +630,7 @@ and the coupling to reservoirs are
 	\end{cases}\dt
 \end{equation}
 The case $\nu=1$, i.e. one particle at most for each site, is integrable and has been considered previously in \cite{vanicat2017exact}. 
-For  $\nu=1$ we denote the ${gl}(N)$  generators   as  $(e_{ab})_{a,b\in\{1,\ldots,N\}}$.
+For  $\nu=1$ we denote the ${gl}(N)$  generators   as  $(e_{ab})_{a,b\in\{1,\ldots,N\}}$ obeying $(e_{ab})_{cd}=\delta_{ac}\delta_{bd}$.
 The Hamiltonian can then be written as
 \begin{equation}\label{hamiltonian}
 	H=H_{\text{left}}+H_{\text{bulk}}+H_{\text{right}}
@@ -640,7 +639,7 @@ where
 \begin{equation}
 	H_{\text{bulk}}=\sum_{x=1}^{L-1}\mathcal{H}_{x,x+1}\dt
 \end{equation}
-Here $\mathcal{H}_{x,x+1}$  is a copy (acting on the vertices of the edge $x,x+1$) of the two-site Hamiltonian
+Here $\mathcal{H}_{x,x+1}$  denotes  the two-site Hamiltonian 
 \begin{equation}\label{H-corsivo}
 	\begin{split}
 		\mathcal{H}=P-\id
@@ -648,8 +647,9 @@ Here $\mathcal{H}_{x,x+1}$  is a copy (acting on the vertices of the edge $x,x+1
 \end{equation}
 with the permutation matrix
 \begin{equation}
-	P=\sum_{a,b=1}^Ne_{ab}\otimes e_{ba}.
+	P=\sum_{a,b=1}^Ne_{ab}\otimes e_{ba}\,,
 \end{equation} 
+acting non-trivially on the vertices of the edge $x,x+1$.
  In this context it will be useful to introduce the following notation for the occupation variables of the process. Each configuration is denoted by
 \begin{equation}\label{Tau-Notation}
 	|\bm{\tau}\rangle=|\tau_{1},\ldots,\tau_{L}\rangle
@@ -662,13 +662,13 @@ The state space of the process is now
 \begin{equation}
 	\Omega^{'}=\left\{(\tau_{1},\ldots,\tau_{L})\;:\; \tau_{x}\in\{1,\ldots,N\}\right\}\dt
 \end{equation}
-The action of $\mathcal{H}$ amounts to the permutation of the occupations of the two sites, i.e.
+The action of the Hamiltonian density $\mathcal{H}$ on the tensor product of the configuration of two sites follows immediately from \eqref{H-corsivo} and reads
 \begin{equation}
 	\begin{split}
 		\mathcal{H}| \tau\rangle\otimes   |\tau'\rangle&=|\tau'\rangle \otimes |\tau\rangle-|\tau\rangle \otimes|\tau'\rangle\dt
 	\end{split}
 \end{equation}
-The boundary terms are given by 
+The boundary terms of the Hamiltonian \eqref{hamiltonian}  are given by 
 \begin{equation}
 	H_{\text{left}}=\begin{pmatrix}
 		\alpha_{1}-1&\alpha_{1}&\alpha_{1}&\ldots&\ldots&\alpha_{1}\\
@@ -696,16 +696,14 @@ where, without loss of generality,  we assume that the parameters satisfy
 %\begin{equation}\label{lambdaConditions}
 %	(\alpha_{a}-\beta_{a})=\alpha_{a}-\beta_{a}\quad\text{with}\quad \sum_{a=1}^{N}(\alpha_{a}-\beta_{a})=0\,.
 %\end{equation}
-Under these assumption the Hamiltonian~\ref{hamiltonian} is integrable (see \cite{vanicat2017exact} for its derivation within the Quantum Inverse Scattering method). 
-
-We will consider it extensively in Section~\ref{sectionIntegrabiliy}.
+Under these assumption the Hamiltonian~\ref{hamiltonian} is integrable. This has been schown in \cite{vanicat2017exact} within  the Quantum Inverse Scattering Method.  We will consider this process more extensively in Section~\ref{sectionIntegrabiliy}.
 
 \section{Duality}\label{sectionDuality}
-In this section we prove the first main result of this paper. We show that the multispecies stirring process with open boundary
+In this section we prove the first main result of this paper. We show that the multispecies stirring process with open boundaries
 can be studied by means of a dual process. After recalling the definition of duality between two
 Markov processes in Section~\ref{def-duality}, we formulate our duality result  in Theorem~\ref{thm-duality}. A proof of the theorem is given in Section~\ref{proof-th-duality}.
-The duality result is important since it yields several simplifications, the main one being that the
-dual process has absorbing sites. Therefore, as shown in Corollary~\ref{Corolollary-ABS_Corr-abstract}, the study of correlations in the non-equilibrium steady state of the multispecies stirring process with open boundary
+The duality result yields several simplifications, \todo{which else?} the main one being that the
+dual process has absorbing sites. Therefore, as shown in Corollary~\ref{Corolollary-ABS_Corr-abstract}, the study of correlations in the non-equilibrium steady state of the multispecies stirring process with open boundaries
 is reduced to the study of the absorption probabilities of dual particles.
 
 
@@ -730,7 +728,7 @@ that can be read as
 \begin{equation}\label{dualityIntertwines}
     \mathcal{L}D=D\widetilde{\mathcal{L}}^{\,T}
 \end{equation}
-where the superscript $T$ denotes the matrix transposition. Therefore, the duality relation \eqref{dualityIntertwines} is an intertwining between two linear operators $\mathcal{L}$ and $\widetilde{\mathcal{L}}^{\,T}$. Working in terms of the Hamiltonian operators the duality relation reads 
+where the superscript $T$ denotes the matrix transposition. Therefore, the duality relation \eqref{dualityIntertwines}  intertwines between two linear operators $\mathcal{L}$ and $\widetilde{\mathcal{L}}^{\,T}$. Working in terms of the Hamiltonian operators the duality relation reads 
 \begin{equation}\label{DualityRelation}
     H^{T}D=D\widetilde{H}\dt
 \end{equation}
@@ -741,12 +739,12 @@ The dual  process $(\bm{\xi}(t))_{t\geq 0}$ is defined on the \textit{enlarged g
 \begin{equation}
 	\widetilde{V}:=V\cup \left\{u(x)\,:\, x\in V\right\}\qquad \widetilde{\mathcal{E}}:=\mathcal{E}\cup \left\{(x,u(x))\,:\, x\in V\right\}\dt
 \end{equation}
-This means that to each site $x\in V$ we associate an ``extra-site'' via a bijection $u:V\to V$. We denote as $u(x)$ the extra-site asspciated to $x\in V$ . The configuration space of the dual process is the enlarged state space
+This means that to each site $x\in V$ we associate an ``extra-site'' via a bijection $u:V\to V$. We denote as $u(x)$ the extra-site associated to $x\in V$ . The configuration space of the dual process is the enlarged state space
 \begin{equation}\label{dualStateSpace}
     \widetilde{\Omega}= \bigotimes_{x\in V} \widetilde{\Omega}_{x}\ = \bigotimes_{x\in V} (\Omega_{x}\times \mathbb{N}_{0}^{N})\dt
 \end{equation}
 Note that on the extra-site we allow an unbounded number of particles. Thus
-dual particle will accumulate in these extra-sites in the course of time. 
+dual particles will accumulate in these extra-sites in the course of time. 
 We write the configurations $\bm{\xi} \in \widetilde\Omega$  as
 \begin{equation}
     \bm{\xi}=\left(\xi_{1}^{x},\ldots,\xi_{N}^{x},\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\right)_{x\in V}
@@ -849,7 +847,7 @@ Furthermore
 \begin{equation}\label{dualityMatrix2}
 \dd=\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\dt
 \end{equation}
-We observe that the matrix $R_{x}$ is diagonal. Its elements are related to the inverse of the weights of the reversible measure \eqref{reversibleMeasure}. In particular, to obtain these elements, we have considered the weights of \eqref{reversibleMeasure} when all the parameters $\rho_{a}=\frac{1}{N}$. Then, the constant $\left(\frac{1}{N}\right)^{\nu}$ has been neglected, since it does not change the duality relation. This $R_{x}$ is called the ``cheap'' duality matrix and is associated to reversibility (see \cite{giardina2009duality}). \\
+We observe that the matrix $R_{x}$ is diagonal. Its elements are related to the inverse of the weights of the reversible measure \eqref{reversibleMeasure}. In particular, to obtain these elements, we have considered the weights of \eqref{reversibleMeasure} when all the parameters $\rho_{a}=\frac{1}{N}$. Then, the constant $\left(\frac{1}{N}\right)^{\nu}$ has been neglected, since it does not change the duality relation. This $R_{x}$   is associated to reversibility, see \cite{giardina2009duality}. \\
 
 Since \eqref{dualityMatrix} is product over sites, proving \eqref{DualityRelation} is equivalent to showing that 
 \begin{equation}\label{edgeDualRealtion}
@@ -902,7 +900,7 @@ On the other hand, on the site $x$, we have
 \begin{align}
 &\langle n_{1}^{x},\ldots,n_{N}^{x}|(\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x})})^{T}R_{x}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\nonumber\\&= \langle  n_{1}^{x},\ldots,n_{N}^{x}|\left(\sum_{k_{1}=0}^{\infty}\frac{\left\{\left(E_{N1}^{x}\right)^{T}\right\}^{k_{1}}}{k_{1}!}\ldots\sum_{k_{N-1}=0}^{\infty}\frac{\left\{\left(E_{N\,N-1}^{x}\right)^{T}\right\}^{k_{N-1}}}{k_{N-1}!}\sum_{s\in\Omega_{x}}\frac{s_{1}^{x}!\cdots s_{N}^{x}!}{\nu!}|s_{1}^{x},\ldots,s_{N}^{x}\rangle\langle s_{1}^{x},\ldots,s_{N}^{x}|\right)\nonumber
 \\&
-\hspace{2.cm}\qquad|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\nonumber
+\hspace{2.cm}\qquad\times |\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\nonumber
 %\\&=
 %\sum_{k_{1}=0}^{n_{1}^{x}}\ldots\sum_{k_{N-1}=0}^{n_{N-1}^{x}}\langle n_{1}^{x}-k_{1},\ldots,n_{N-1}^{x}-k_{N-1},n_{N}^{x}+k_{1}+\ldots+k_{N-1}|
 %\\&
@@ -910,7 +908,7 @@ On the other hand, on the site $x$, we have
 \\&=
 \sum_{k_{1}=0}^{n_{1}^{x}}\ldots\sum_{k_{N-1}=0}^{n_{N-1}^{x}}\langle n_{1}^{x}-k_{1},\ldots,n_{N-1}^{x}-k_{N-1},\ldots,n_{N}^{x}+k_{1}+\ldots+k_{N-1}|\frac{n_{1}^{x}!\cdots n_{N-1}^{x}!}{(n_{1}^{x}-k_{1})!\cdots(n_{N-1}^{x}-k_{N-1})!}\nonumber
 \\& 
-\hspace{2.cm}\qquad\frac{1}{k_{1}!\cdots k_{N-1}!}\frac{\xi_{1}^{x}!\cdots \xi_{N}^{x}!}{\nu!}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\nonumber
+\hspace{2.cm}\qquad\times \frac{1}{k_{1}!\cdots k_{N-1}!}\frac{\xi_{1}^{x}!\cdots \xi_{N}^{x}!}{\nu!}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\nonumber
 \\&=
 \frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}
 \end{align}
@@ -1138,6 +1136,7 @@ we obtain
 |\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\otimes \langle\rho|_{u(x)}\dt
     \end{split}
 \end{equation}
+\todo{somehow this now has extra index for the space and everywhere else not.... please fix}
 Recalling the action of the bosonic creation operator acting at site $u(x)$ and on the species $a\in \{1,\ldots,N-1\}$ we have that 
 \begin{equation}\label{bosonicKX}
     \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})^{u(x)}_{a}=  \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|\dt
@@ -1231,11 +1230,11 @@ Furthermore we write $\mathbb{E}[\cdot]$ for the expectation with respect to $\m
 Let $m\in \{1,\ldots,L\}$ and consider $m$ sites $1 \le x_{1} < x_2 < \ldots < x_m \le L $ and
 $m$ species $a_{k}\in\{1,\ldots,N-1\}$  with $k=1,2,\ldots, m$. Then, the $m$-point correlations in the non-equilibrium steady state read
 \begin{equation}\label{NESS-expectation-ABS}
-\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\mathcal{P}_{x_1,\ldots,x_m}(t_{1},\ldots,t_{m})
+\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\left[\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right]\mathcal{P}_{x_1,\ldots,x_m}(t_{1},\ldots,t_{m})
 \end{equation}
 where
 \begin{equation}\label{absProbabilitiesIntegrable}
-	\mathcal{P}_{x_1,\ldots,x_m}(t_{1},\ldots,t_{m}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(t_{k}\delta^{0}_{a_k}+(1-t_{k})\delta^{L+1}_{a_k}\right)\lvert \bm{\xi}(0)=\bm{\xi}\right)
+	\mathcal{P}_{x_1,\ldots,x_m}(t_{1},\ldots,t_{m}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(t_{k}\delta^{0}_{a_k}+(1-t_{k})\delta^{L+1}_{a_k}\right)\Big| \bm{\xi}(0)=\bm{\xi}\right)
 \end{equation}
 where the initial dual configuration is $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, meaning that 
 \begin{equation}
@@ -1266,9 +1265,10 @@ Therefore, by ergodicity and duality  we have
     \begin{corollary}[Non-equilibrium steady state]\label{Corollary-NESS-ABS}
 For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function of the non-equilibrium steady states is given by 
 \begin{equation}\label{implicit-mass-function}
-	\mu(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{q_{1}},\ldots,a_{q_{b}}=1}^{N-1}
-	\mathbb{E}\left[\left( \prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right) \left(\prod_{k=1}^{b}\mathbbm{1}_{\{Y_{q_{k}}=a_{q_{k}}\}}\right)\right]\,.
+	\mu(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{q_{1}},\ldots,a_{q_{b}}=1}^{N-1}{\color{red}
+	\mathbb{E}\left[\left( \prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right) \left(\prod_{k=1}^{b}\mathbbm{1}_{\{Y_{q_{k}}=a_{q_{k}}\}}\right)\right]}\,.
 \end{equation}
+\todo{Explain this expectation...}
 \end{corollary}
 \textbf{Proof of Corollary~\ref{Corollary-NESS-ABS}:}
 Given $\bm{\tau}\in \Omega^{'}$,  we have 
@@ -1281,6 +1281,7 @@ Given $\bm{\tau}\in \Omega^{'}$,  we have
 	%	=&\sum_{\bm{\sigma}\in \Omega^{'}}\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)\prod_{x=1\,:\,\tau_{x}=N}^{L}\left(1-\sum_{i_{x}=1}^{N-1}\mathbbm{1}_{\{Y_x=i_{x}\}}\right)\langle\bm{\sigma}|\Psi\rangle
 	%=&\sum_{\bm{\sigma}\in \Omega^{'}}\langle \bm{\sigma}|D|\bm{\xi}\rangle\langle \bm{\sigma}|\Psi\rangle
 \end{align}
+	\todo{To me this looks like it is zero. Can you explain the notation?}
 where in the last equality we exploited the fact that 
 \begin{equation}			\mathbbm{1}_{\{Y_{x}=N\}}=1-\sum_{a_{x}=1}^{N-1}\mathbbm{1}_{\{Y_{x}=a_{x}\}}\dt
 \end{equation}
@@ -1293,6 +1294,7 @@ Therefore, we may write
 +&\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)(-1)^{2}\left\{\sum_{1\leq q_{1}<q_{2}\leq L}\delta_{\tau_{q_{1}},N}\delta_{\tau_{q_{2}},N}\sum_{a_{q_{1}},a_{q_{2}}=1}^{N-1}\mathbbm{1}_{\{Y_{q_{1}}=a_{q_{1}}\}}\mathbbm{1}_{\{Y_{q_{2}}=a_{q_{2}}\}}\right\}+\ldots+\nonumber\\
 +&\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)(-1)^{L-\ell}\sum_{1\leq q_{1}<\ldots<q_{L-\ell}\leq L}\left(\prod_{k=1}^{L-\ell}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{q_{1}},\ldots,a_{q_{L-\ell}}=1}^{N-1}\prod_{k=1}^{L-\ell}\mathbbm{1}_{\{Y_{q_{k}}=a_{q_{k}}\}}\dt
 \end{align} 
+\todo{indices are strange. What happens here?}
 Therefore, using the linearity of the expectation and introducing the index $b\in \{0,\ldots,L\}$ we obtain \eqref{implicit-mass-function}. 
 \begin{flushright}
 	$\square$
