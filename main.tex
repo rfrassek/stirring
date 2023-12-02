@@ -1277,43 +1277,43 @@ Given $\bm{\tau}\in \Omega^{'}$,  we have
 \begin{align}
 	\mu\left(\bm{\tau}\right)=&\mathbb{E}\left[\prod_{x=1}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right]
 	=\mathbb{E}\left[\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right)\left(\prod_{x=1\,:\,\tau_{x}=N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_x\}}\right)\right]\nonumber\\
-	=&\mathbb{E}\left[\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right)\left(\prod_{x=1\,:\,\tau_{x}=N}^{L}\left(1-\sum_{a_{x}=1}^{N-1}\mathbbm{1}_{\{Y_{x}=a_{x}\}}\right)\right)\right]
+	=&\mathbb{E}\left[\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right)\left(\prod_{x=1\,:\,\tau_{x}=N}^{L}\left(1-\sum_{a=1}^{N-1}\mathbbm{1}_{\{Y_{x}=a\}}\right)\right)\right]
 	%\\=&\sum_{\bm{\sigma}\in \Omega^{'}}\prod_{x=1}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\langle \bm{\sigma}|\Psi\rangle\nonumber\\
 	%	=&\sum_{\bm{\sigma}\in \Omega^{'}}\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)\left(\prod_{x=1\,:\,\tau_{x}=N}^{L}\mathbbm{1}_{\{Y_x=N\}}\right)\langle\bm{\sigma}|\Psi\rangle\nonumber\\
 	%	=&\sum_{\bm{\sigma}\in \Omega^{'}}\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)\prod_{x=1\,:\,\tau_{x}=N}^{L}\left(1-\sum_{i_{x}=1}^{N-1}\mathbbm{1}_{\{Y_x=i_{x}\}}\right)\langle\bm{\sigma}|\Psi\rangle
 	%=&\sum_{\bm{\sigma}\in \Omega^{'}}\langle \bm{\sigma}|D|\bm{\xi}\rangle\langle \bm{\sigma}|\Psi\rangle
 \end{align}
-{\color{blue}Is it not an identity? Take for example 3 sites: $\tau_{1}=\tau_{2}=1$ and $\tau_{3}=N$. Then we have that 
-$$
-\prod_{x=1}^{3}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}=\mathbbm{1}_{\{Y_{1}=\tau_{1}\}}\mathbbm{1}_{\{Y_{2}=\tau_{2}\}}\mathbbm{1}_{\{Y_{3}=\tau_{3}\}}=\left(\mathbbm{1}_{\{Y_{1}=1\}}\mathbbm{1}_{\{Y_{2}=1\}}\right)\left(\mathbbm{1}_{\{Y_{3}=N\}}\right)=\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{3}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right)\left(\prod_{x=1\,:\,\tau_{x}= N}^{3}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right)
-$$}
-	\todo{To me this looks like it is zero in (3.4.12). Can you explain the notation?}
+% {\color{blue}Is it not an identity? Take for example 3 sites: $\tau_{1}=\tau_{2}=1$ and $\tau_{3}=N$. Then we have that 
+% $$
+% \prod_{x=1}^{3}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}=\mathbbm{1}_{\{Y_{1}=\tau_{1}\}}\mathbbm{1}_{\{Y_{2}=\tau_{2}\}}\mathbbm{1}_{\{Y_{3}=\tau_{3}\}}=\left(\mathbbm{1}_{\{Y_{1}=1\}}\mathbbm{1}_{\{Y_{2}=1\}}\right)\left(\mathbbm{1}_{\{Y_{3}=N\}}\right)=\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{3}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right)\left(\prod_{x=1\,:\,\tau_{x}= N}^{3}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right)
+% $$} 
+\todo{removed subindex $a_x$ here}
 where in the last equality we exploited the fact that 
-\begin{equation}\label{prova}			\mathbbm{1}_{\{Y_{x}=N\}}=1-\sum_{a_{x}=1}^{N-1}\mathbbm{1}_{\{Y_{x}=a_{x}\}}\dt
+\begin{equation}\label{prova}			\mathbbm{1}_{\{Y_{x}=N\}}=1-\sum_{a=1}^{N-1}\mathbbm{1}_{\{Y_{x}=a\}}\dt
 \end{equation}
-{\color{blue}
-Here I mean 
-\begin{equation}
-	\mathbbm{1}_{\{Y_{x}=a\}}=\begin{cases}
-		1\qquad \text{if}\qquad  Y_{x}=a\\
-		0\qquad \text{if}\qquad Y_{x}\neq a
-	\end{cases}
-\end{equation}
-Therefore, \begin{equation}
-	\mathbbm{1}_{\{Y_{x}=N\}}=\begin{cases}
-		1\qquad \text{if}\qquad  Y_{x}=N\\
-		0\qquad \text{if}\qquad Y_{x}\neq N
-	\end{cases}
-\end{equation}
-and 
-\begin{equation}
-1-\sum_{a_{x}=1}^{N-1}\mathbbm{1}_{\{Y_{x}=a_{x}\}}=\begin{cases}
-	1\qquad \text{if}\qquad  Y_{x}=N\\
-	0\qquad \text{if}\qquad Y_{x}\neq N
-\end{cases}
-\end{equation}
-therefore \eqref{prova} follows.
-}
+% {\color{blue}
+% Here I mean 
+% \begin{equation}
+% 	\mathbbm{1}_{\{Y_{x}=a\}}=\begin{cases}
+% 		1\qquad \text{if}\qquad  Y_{x}=a\\
+% 		0\qquad \text{if}\qquad Y_{x}\neq a
+% 	\end{cases}
+% \end{equation}
+% Therefore, \begin{equation}
+% 	\mathbbm{1}_{\{Y_{x}=N\}}=\begin{cases}
+% 		1\qquad \text{if}\qquad  Y_{x}=N\\
+% 		0\qquad \text{if}\qquad Y_{x}\neq N
+% 	\end{cases}
+% \end{equation}
+% and 
+% \begin{equation}
+% 1-\sum_{a_{x}=1}^{N-1}\mathbbm{1}_{\{Y_{x}=a_{x}\}}=\begin{cases}
+% 	1\qquad \text{if}\qquad  Y_{x}=N\\
+% 	0\qquad \text{if}\qquad Y_{x}\neq N
+% \end{cases}
+% \end{equation}
+% therefore \eqref{prova} follows.
+% }
 The configuration $\bm{\tau}$ has $\ell=\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})$ occupied sites and then the remaining $L-\ell$ sites are empty. % We introduce an index $b\in \{0,\ldots,L-\ell\}$. 
 Therefore, we may write
 \begin{align}
