@@ -747,8 +747,9 @@ Note that on the extra-site we allow an unbounded number of particles. Thus
 dual particles will accumulate in these extra-sites in the course of time. 
 We write the configurations $\bm{\xi} \in \widetilde\Omega$  as
 \begin{equation}
-    \bm{\xi}=\left(\xi_{1}^{x},\ldots,\xi_{N}^{x},\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\right)_{x\in V}
+    \bm{\xi}=\left(\xi_{1}^{x},\ldots,\xi_{N}^{x}\right)\otimes (\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)} )_{x\in V}
 \end{equation}
+\todo{OK? but this has no index $x$?}
 where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles of type $a\in \{1,\ldots,N\}$ at site $x$, 
 and the component $\xi_{a}^{u(x)}$  gives the number of dual particles of type $a\in \{1,\ldots,N\}$ at 
 the extra-site $u(x)$ connected to $x\in V$. We state the following duality result.
@@ -886,15 +887,16 @@ We aim to show that its matrix elements coincide with duality function \eqref{du
 \end{equation}
 Fix an arbitrary site $x\in V$, then we have that 
 \begin{align}
-	 &\langle n^{x}|d_{x}\otimes \dd|\xi^{x}\rangle\nonumber\\=&\langle n_{1}^{x},\ldots,n_{N}^{x}| (\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x}}))^{T}R_{x}\otimes\sum_{q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|\nonumber
+	 &\langle n^{x}|d_{x}\otimes \dd|\xi^{x}\rangle\nonumber\\=&\langle n_{1}^{x},\ldots,n_{N}^{x}| (\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x}}))^{T}R_{x}\otimes\sum_{q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\right)\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|\nonumber
 	 \\&|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle \otimes |\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle
 \end{align}
 \todo{something wrong...}
 where we used \eqref{transpositionPropertyR}. \\
 On one hand, on the extra-site $u(x)$ we have 
 \begin{align}
-\sum_{q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle=\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}
+\sum_{q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\right)\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle=\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}
 \end{align}
+\todo{what happens to $q_N$?}
 where  we used the orthogonality relation \eqref{ortho}. 
 On the other hand, on the site $x$, we have 
 \begin{align}
