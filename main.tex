@@ -353,8 +353,7 @@ The choice of type $N$ for the distinguished type is arbitrary and does not affe
 the results. However, we shall see in Section~\ref{sectionDuality}, that
 the dual process breaks the symmetry.
 In particular, in the  long-time limit the dual process has only particles of type $N$ on the graph.
-Interpreting type $N$ as an hole, one can then say that the dual process voids the graph.  
-\todo{Exchange hole with void? Also can the remark be just text?}
+Interpreting type $N$ as an hole, one can then say that the dual process voids the graph.   
 \end{remark}
 
 
@@ -437,7 +436,7 @@ is the density of species $a$ and we used the notation $|\alpha|=\sum_{a=1}^{N}\
 \mu_{\text{rev}}^{x}(n^{x})=\frac{\nu!}{\prod_{a=1}^{N}n_{a}^{x}!}\prod_{a=1}^{N}\rho_{a}^{n_{a}^{x}}\,.
 \end{equation}
 This can be proved  by checking that detailed balance is satisfied. 
-If condition \eqref{reversibilityCondition} is not met, then in general reversibility is lost (but see Remark~\ref{rem-rev} below): 
+If condition \eqref{reversibilityCondition} is not met, then in general reversibility is lost: 
 each reservoir at site $x$ {\color{red}wants to fix}\todo{?} its own set of densities $\rho^{x}=(\rho_{1}^{x},\ldots,\rho_{N}^{x})$ with
 \begin{equation}
 \label{rhox}
@@ -459,7 +458,7 @@ Currents will arise when at least two reservoirs have different densities.
 		This is slightly more general than \eqref{reversibilityCondition}. In the case where the graph is a chain with nearest neighbors interactions and two reservoirs are attached to the two boundary sites
 		then condition \eqref{cond-gen} is the multispecies counterpart of $\alpha\delta=\beta\gamma$ of the boundary driven partially excluded process introduced in \cite{schutzSandow} (see Section 3.2 of \cite{carinci2013duality}).
 		\end{remark}
-		\todo{?}
+% 		\todo{?}
 \subsection{Lie algebraic description of the process}
 
 In this paper we will often use the fact that the Markov generator of the multispecies stirring process can be described in terms a Lie algebra ${gl}(N)$.
@@ -617,9 +616,7 @@ E_{ab}&\to E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}
 \end{comment}
  
 \subsection{Integrable process on a line segment}\label{subsection-description-process-LINE}
-In this section we specialize the multispecies stirring process to the geometry of the one-dimensional chain with sites $\{1,\ldots,L\}$ where two reservoirs act at the boundary sites $1$ and $L$.  The reservoirs, exchanging particle with the external environment, put the chain out of equilibrium. This process was studied previously in \cite{vanicat2017exact}.
-
-The Hamiltonian that we consider here is obtained from \eqref{OriginalHamiltonian} assuming that the conductances are
+In this section we specialize the multispecies stirring process to the geometry of the one-dimensional chain with sites $\{1,\ldots,L\}$ where two reservoirs are attached to the boundary sites $1$ and $L$.  The reservoirs, exchanging particles with the external environment, put the chain out of equilibrium.  The  Hamiltonian that we consider here is obtained from \eqref{OriginalHamiltonian} assuming that the conductances are
 \begin{equation}
 	\omega_{x,y}=\begin{cases}
 		1 \quad \text{if}\quad |x-y|=1\\
@@ -633,9 +630,9 @@ and the coupling to reservoirs are
 		0\quad \text{otherwise}
 	\end{cases}\dt
 \end{equation}
-The case $\nu=1$, i.e. one particle at most for each site, is special. We will consider this extensively in Section~\ref{sectionIntegrabiliy}.
-We will denote the element of the representation of the ${gl}(N)$  Lie algebra with $\nu=1$ by lowercase letters, i.e. $(e_{ab})_{a,b\in\{1,\ldots,N\}}$, to highlight that we are in the first fundamental representation of the algebra.
-The Hamiltonian now reads
+The case $\nu=1$, i.e. one particle at most for each site, is integrable and has been considered previously in \cite{vanicat2017exact}. 
+For  $\nu=1$ we denote the ${gl}(N)$  generators   as  $(e_{ab})_{a,b\in\{1,\ldots,N\}}$.
+The Hamiltonian can then be written as
 \begin{equation}\label{hamiltonian}
 	H=H_{\text{left}}+H_{\text{bulk}}+H_{\text{right}}
 \end{equation}
@@ -649,11 +646,11 @@ Here $\mathcal{H}_{x,x+1}$  is a copy (acting on the vertices of the edge $x,x+1
 		\mathcal{H}=P-\id
 	\end{split}
 \end{equation}
-with 
+with the permutation matrix
 \begin{equation}
 	P=\sum_{a,b=1}^Ne_{ab}\otimes e_{ba}.
 \end{equation} 
- In this context it will be useful to introduce the following notation for the occupation variable of the process. Each configuration is denoted by
+ In this context it will be useful to introduce the following notation for the occupation variables of the process. Each configuration is denoted by
 \begin{equation}\label{Tau-Notation}
 	|\bm{\tau}\rangle=|\tau_{1},\ldots,\tau_{L}\rangle
 \end{equation} 
@@ -701,6 +698,7 @@ where, without loss of generality,  we assume that the parameters satisfy
 %\end{equation}
 Under these assumption the Hamiltonian~\ref{hamiltonian} is integrable (see \cite{vanicat2017exact} for its derivation within the Quantum Inverse Scattering method). 
 
+We will consider it extensively in Section~\ref{sectionIntegrabiliy}.
 
 \section{Duality}\label{sectionDuality}
 In this section we prove the first main result of this paper. We show that the multispecies stirring process with open boundary
