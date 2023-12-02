@@ -1285,8 +1285,31 @@ Given $\bm{\tau}\in \Omega^{'}$,  we have
 \end{align}
 	\todo{To me this looks like it is zero. Can you explain the notation?}
 where in the last equality we exploited the fact that 
-\begin{equation}			\mathbbm{1}_{\{Y_{x}=N\}}=1-\sum_{a_{x}=1}^{N-1}\mathbbm{1}_{\{Y_{x}=a_{x}\}}\dt
+\begin{equation}\label{prova}			\mathbbm{1}_{\{Y_{x}=N\}}=1-\sum_{a_{x}=1}^{N-1}\mathbbm{1}_{\{Y_{x}=a_{x}\}}\dt
 \end{equation}
+{\color{blue}
+Here I mean 
+\begin{equation}
+	\mathbbm{1}_{\{Y_{x}=a\}}=\begin{cases}
+		1\qquad \text{if}\qquad  Y_{x}=a\\
+		0\qquad \text{if}\qquad Y_{x}\neq a
+	\end{cases}
+\end{equation}
+Therefore, \begin{equation}
+	\mathbbm{1}_{\{Y_{x}=N\}}=\begin{cases}
+		1\qquad \text{if}\qquad  Y_{x}=N\\
+		0\qquad \text{if}\qquad Y_{x}\neq N
+	\end{cases}
+\end{equation}
+and 
+\begin{equation}
+1-\sum_{a_{x}=1}^{N-1}\mathbbm{1}_{\{Y_{x}=a_{x}\}}=\begin{cases}
+	1\qquad \text{if}\qquad  Y_{x}=N\\
+	0\qquad \text{if}\qquad Y_{x}\neq N
+\end{cases}
+\end{equation}
+therefore \eqref{prova} follows.
+}
 The configuration $\bm{\tau}$ has $\ell=\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})$ occupied sites and then the remaining $L-\ell$ sites are empty. % We introduce an index $b\in \{0,\ldots,L-\ell\}$. 
 Therefore, we may write
 \begin{align}
