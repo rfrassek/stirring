@@ -242,7 +242,7 @@ The boundary-driven process is mapped to a dual process with absorbing extra sit
 is simplified to the problem of computing the absorption probabilities of the dual particles. In general, however,  there is little hope to compute the absorption probabilities exactly. 
 
 
-{\color{blue}On one hand, this absorbing duality allows to formally write the non-equilibrium steady state in a different (simpler) form. On the other hand, absorption probabilities are hard to to find since they fulfil multilinear algebraic equation with proper boundary conditions. The situation simplifies when the graph reduces to a chain with two reservoirs on the boundary sites. In this context, the integrable structure of the process can be combined with duality to compute non-equilibrium steady state. Recently, probabilistic techniques have been developped to compute absorption probabilities for the simple symmetric exclusion process \cite{floreani2023non}.}
+{\color{blue}On one hand, this absorbing duality allows to formally write the non-equilibrium steady state in a different (simpler) form. On the other hand, absorption probabilities are hard to find since they fulfil multilinear algebraic equation with proper boundary conditions. The situation simplifies when the graph reduces to a chain with two reservoirs on the boundary sites. In this context, the integrable structure of the process can be combined with duality to compute non-equilibrium steady state. Recently, probabilistic techniques have been developped to compute absorption probabilities for the simple symmetric exclusion process \cite{floreani2023non}.}
 {\color{red} Say that for a  general graph with boundaries attached to any site, this is a difficult task. }
 % However,  for the case of integrable systems they can be computed exactly in closed-form.
 
@@ -341,9 +341,9 @@ In the long-time limit, a so-called non-equilibrium
 steady state sets in.
 
 
-\noindent
-\begin{remark}
-\label{hole}
+%\noindent
+%\begin{remark}
+%\label{hole}
 In the following we will often consider type $N$ as a distinguished type
 (called `holes'), whose number at each site is fixed by the numbers of particles 
 of the remaining $N-1$ types. 
@@ -357,9 +357,10 @@ the results. However, we shall see in Section~\ref{sectionDuality}, that
 the dual process breaks the symmetry.
 In particular, in the  long-time limit the dual process has only particles of type $N$ on the graph.
 Interpreting type $N$ as an hole, one can then say that the dual process voids the graph.   
-\end{remark}
+%\end{remark}
 \todo{It is misleading to have to different interpretations. Like what is the number of particles per site? Another confusion is for the reservoirs/open boundaries... Is it the same on general graph?}
-
+{\color{blue} First question: Do you mean that we should specify it like "the maximal occupancy at each site is..."?\\
+Second question: I think yes. The concept of boundary is general, not only for the chain}
 
 
 
@@ -438,17 +439,17 @@ is the density of species $a$ and we used the notation $|\alpha|=\sum_{a=1}^{N}\
 \mu_{\text{rev}}^{x}(n^{x})=\frac{\nu!}{\prod_{a=1}^{N}n_{a}^{x}!}\prod_{a=1}^{N}\rho_{a}^{n_{a}^{x}}\,.
 \end{equation}
 This can be proved  by checking that detailed balance is satisfied. 
-If condition \eqref{reversibilityCondition} is not met, then in general reversibility is lost: 
-each reservoir at site $x$ {\color{red}wants to fix}\todo{?} its own set of densities $\rho^{x}=(\rho_{1}^{x},\ldots,\rho_{N}^{x})$ with
+If condition \eqref{reversibilityCondition} is not met, then in general reversibility is lost: indeed, in this situation, each reservoir at site $x$ has  its own set of densities vector $\rho^{x}=(\rho_{1}^{x},\ldots,\rho_{N}^{x})$ with components
 \begin{equation}
-\label{rhox}
-\rho_{a}^x=\frac{\alpha_{a}^x}{|\alpha^x|}
+	\label{rhox}
+	\rho_{a}^x=\frac{\alpha_{a}^x}{|\alpha^x|}
 \end{equation}
-and  $|\alpha^x|=\sum_{a=1}^{N}\alpha_{a}^x$.
-Currents will arise when at least two reservoirs have different densities. 
+and  $|\alpha^x|=\sum_{a=1}^{N}\alpha_{a}^x$. {\color{blue} As a consequence, particles are injected and removed in the graph with different rates. When, for any $a\in \{1,\ldots,N\}$ there are at least two reservoirs at sites $x,y$ such that $\rho_{a}^{x}\neq  \rho_{a}^{y}$, a  non-zero current sets in, breaking the reversibility. Informally, one can say that the reservoirs try to impose their different densities at the boundaries of the the graph, putting the system out-of-equilibrium.} %{\color{red}wants to fix}
+\todo{?}
+%Currents will arise when at least two reservoirs have different densities. 
 \begin{remark}
 \label{rem-rev}
-		One can check that the following condition on the reservoir parameters implies reversibility:
+		{\color{blue}One can check that conditions \eqref{reversibilityCondition} are not the most general that implies reversibility. Indeed, by choosing the reservoir parameters as }
 		\begin{equation}
 		\label{cond-gen}
 			\alpha_{k}^{x}\left(|\alpha^{y}|-\alpha_{k}^{y}\right)=\alpha_{k}^{y}\left(|\alpha^{x}|-\alpha_{k}^{x}\right)\qquad\qquad \forall x,y\in V,\quad \forall k\in \{1,\ldots,N\}
@@ -457,7 +458,9 @@ Currents will arise when at least two reservoirs have different densities.
 		\begin{equation}
 			|\alpha^{x}|=\sum_{a=1}^{N}\alpha_{a}^{x}\dt
 		\end{equation}
-		This is slightly more general than \eqref{reversibilityCondition}. In the case where the graph is a chain with nearest neighbors interactions and two reservoirs are attached to the two boundary sites
+		reversibility holds. 
+		%This is slightly more general than \eqref{reversibilityCondition}.
+		 In the case where the graph is a chain with nearest neighbors interactions and two reservoirs are attached to the two boundary sites
 		then condition \eqref{cond-gen} is the multispecies counterpart of $\alpha\delta=\beta\gamma$ of the boundary driven partially excluded process introduced in \cite{schutzSandow} (see Section 3.2 of \cite{carinci2013duality}).
 		\end{remark}
 % 		\todo{?}
@@ -1273,6 +1276,7 @@ For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function o
 	\mu(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{q_{1}},\ldots,a_{q_{b}}=1}^{N-1}{\color{red}
 	\mathbb{E}\left[\left( \prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right) \left(\prod_{k=1}^{b}\mathbbm{1}_{\{Y_{q_{k}}=a_{q_{k}}\}}\right)\right]}\,.
 \end{equation}
+{\color{blue}where the expectation is take with respect to the non-equilibrium steady state distribution, i.e. it is given in \eqref{exactCorrelations}.}
 \todo{Explain this expectation...}
 \end{corollary}
 \textbf{Proof of Corollary~\ref{Corollary-NESS-ABS}:}
@@ -1444,7 +1448,7 @@ and
 \end{theorem}
 \begin{comment}
  Consider . . Then, with respect to the non-equilibrium stationary distribution, the correlations among these particles are given by
-\begin{equation}\label{exactCorrelations}
+\begin{equation}%\label{exactCorrelations}
 	\mathbb{E}_{\mu}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\tau_{x_{k}}=a_{k}\}}\right]=\sum_{c_{1},\ldots,c_{m}=0}^{1}
 	f(L,c_{1},\ldots,c_{m})\prod_{k=1}^{m}(\alpha_{a_{k}}-\beta_{a_{k}})^{c_{k}}\beta_{a_{k}}^{1-c_{k}}g_{k}(L,y_{k},c_{k},\ldots,c_{m})
 \end{equation}
