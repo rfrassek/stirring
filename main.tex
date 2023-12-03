@@ -579,7 +579,7 @@ Then, one can check that
 \begin{equation}\label{hamiltonianCasimir}
 	\mathcal{H}_{x,y}=\frac{1}{2}\Delta_{x,y}(C)-\twoj(2\twoj+N)
 \end{equation}
-where $\Delta_{x,y}(C)$ denotes a copy of $\Delta(C)$ acting on  the sites of edge $(x,y)\in \mathcal{E}$ and acting trivially on the other sites of the graph.
+where $\Delta_{x,y}(C)$ denotes  $\Delta(C)$ acting on  the sites of edge $(x,y)\in \mathcal{E}$ and acting trivially on the other sites of the graph.
 
 
 \begin{comment}
@@ -829,7 +829,7 @@ and
 	\langle q|\mathbf{a}^{+}=\langle q-1|\qquad \langle q|\mathbf{a}=(q+1) \langle q+1|
 \end{equation}
 on a generic vector $\langle q|$ with $q\in \mathbb{N}_{0}$, so that in \eqref{siteDualHamiltonian} 
-$(\mathbf{a}^{+})_{a}^{u(x)}$ denotes a copy of $\mathbf{a}^{+}$ acting on the extra-site $u(x)$ and on the species $a\in\{1,\ldots,N-1\}$. \\
+$(\mathbf{a}^{+})_{a}^{u(x)}$ denotes  $\mathbf{a}^{+}$ acting on the extra-site $u(x)$ and on the species $a\in\{1,\ldots,N-1\}$. \\
 
 We will show below that the Hamiltonians \eqref{OriginalHamiltonian} and \eqref{DualHamiltonian} are dual in the sense of \eqref{DualityRelation}. From an algebraic point of view, the duality matrix $D$ \eqref{dualityElements} is described as 
 \begin{equation}\label{dualityMatrix}
@@ -949,7 +949,7 @@ and, for a fixed $(x,y)\in \mathcal{E}$, we define
 \begin{equation}
 	S_{x,y}=\exp{(\Delta_{x,y}(E))}=\exp{(E^{x})}\exp{(E^{y})}
 \end{equation}
-where $\Delta_{x,y}(E)$ is a copy of the coproduct acting on sites $x$ and $y$. As a consequence, this operator $S_{x,y}$ satisfies
+where $\Delta_{x,y}(E)$ denotes the coproduct acting on sites $x$ and $y$. As a consequence, this operator $S_{x,y}$ satisfies
 \begin{equation}\label{symmetryH}
 	\left[S_{x,y},\mathcal{H}_{x,y}\right]=0
 \end{equation}
@@ -1612,7 +1612,7 @@ We introduce
 \begin{equation}\label{transformationV}
  \mathcal{S}_{1}^{x}:=\exp{\left(\sum_{a=1}^{N-1}e_{Na}^{x}\right)}\co %=\mathbbm{1}+\sum_{a=2}^{N}e_{1a}
 \end{equation}
-that is a copy of $\mathcal{S}_{1}$ (see \eqref{S1Gen}) acting at site $x$. 
+to denote $\mathcal{S}_{1}$ (see \eqref{S1Gen}) when acting at site $x$. 
 Observe that $\mathcal{S}_{1}^{x}$ is the transposed of the bulk part of the duality matrix $d_{x}$  at site $x\in \{1,\ldots,L\}$ (see \eqref{bulkElementDualityMatrix}). By taking the product over the chain we define
 \begin{equation}\label{S1-Whole}
     S_{1}=\prod_{x=1}^{L}\mathcal{S}_{1}^{x}
@@ -1664,7 +1664,7 @@ We introduce
  \begin{equation}
  	\mathcal{S}_{2}^{x}:=\exp{\left(-\sum_{a=1}^{N-1}\beta_{a}e_{aN}^{x}\right)}\co%=\mathbbm{1}-\sum_{a=2}^{N}\beta_{a}e_{a1}
  \end{equation}
-which is a copy of $\mathcal{S}_{2}$ (see \eqref{S2Gen}) acting at site $x$. By taking the product over the chain we obtain 
+whichdenotes $\mathcal{S}_{2}$ (see \eqref{S2Gen}) acting at site $x$. By taking the product over the chain we obtain 
 \begin{equation}\label{S2-Whole}
 	S_{2}=\prod_{x=1}^{L}\mathcal{S}_{2}^{x}\dt
 \end{equation}
@@ -3081,7 +3081,7 @@ Introducing $f(L,c_{1},\ldots,c_{m})$ and $g_{k}(L,x_{k},c_{k},\ldots,c_{m})$ an
 In Sections~\ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable using integrability.  
 The aim of this section is to study the process when integrability is lost. We fix $\nu\geq 1$ and, for the sake of simplicity, we keep the geometry of a chain. We provide the following extensions: 
 \begin{enumerate}
-	\item \textit{Correlations} (Section~\ref{Subsection-ss-nonI}): exploiting duality, the steady state correlations can be expressed in terms of absorption probabilities of the dual particles. These probability are hard to find when $\nu>1$. We give 
+	\item \textit{Correlations} (Section~\ref{Subsection-ss-nonI}): exploiting duality, the steady state correlations can be expressed in terms of absorption probabilities of the dual particles. These probabilities are hard to find when $\nu>1$. We give 
 	in Appendix~\ref{appendix-1pts-general} the expression for the one-point correlation.
 	\item \textit{Instantaneous thermalization} (Section~\ref{Subsection-Thermalized}): starting from the multispecies stirring dynamics, we define the thermalized process, where particle are redistributed on each bond with a measure that is the reversible one conditioned to the conservation of the number of particles on this bond. Also for this thermalized process we prove duality. 	
 	\item \textit{Reaction-diffusion process} (Section~\ref{Subsection-RD}): a further dynamics is added. Particle can now change type. The model is carefully constructed with the goal of having the average densities evolving as a closed system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is also proved.
