@@ -248,7 +248,7 @@ is simplified to the problem of computing the absorption probabilities of the du
 
 {\color{red} Explain here that we consider the chain with only two reservoirs at the end of the chain}
 
-For the single species case,  the solution of the exclusion process with open boundaries \cite{derrida1993exact,1993JSP....72..277S} has been of crucial importance in our understanding of the structural properties of non-equilibrium state, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviations \cite{mallick2022exact,bodineau2005current}. One may argue that the results available for the exclusion process are rooted in the algebraic symmetries of the corresponding integrable spin $s=1/2$ Heisenberg chain [SCHUTZ,RAGOUCY].
+For the single species case,  the solution of the exclusion process with open boundaries \cite{derrida1993exact,1993JSP....72..277S} has been of crucial importance in our understanding of the structural properties of non-equilibrium state, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviations \cite{mallick2022exact,bodineau2005current}. One may argue that the results available for the exclusion process are rooted in the algebraic symmetries of the corresponding integrable spin $s=1/2$ Heisenberg chain \cite{schutzManyBody,SSEPReviewRagoucy}.
 
 
 The model studied in this paper is the multispecies analog of the exclusion process on a generic graph as introduced in \cite{zhou2021orthogonal} with additional boundary reservoirs as proposed in \cite{vanicat2017exact}.
@@ -708,8 +708,9 @@ Under these assumption the Hamiltonian~\ref{hamiltonian} is integrable. This has
 In this section we prove the first main result of this paper. We show that the multispecies stirring process with open boundaries
 can be studied by means of a dual process. After recalling the definition of duality between two
 Markov processes in Section~\ref{def-duality}, we formulate our duality result  in Theorem~\ref{thm-duality}. A proof of the theorem is given in Section~\ref{proof-th-duality}.
-The duality result yields several simplifications, \todo{which else?} the main one being that the
-dual process has absorbing sites. Therefore, as shown in Corollary~\ref{Corolollary-ABS_Corr-abstract}, the study of correlations in the non-equilibrium steady state of the multispecies stirring process with open boundaries
+The duality result yields {\color{blue} to a dual process that} %several simplifications,  the main one being that the
+%dual process
+ has absorbing sites\todo{which else?}. Therefore, as shown in Corollary~\ref{Corolollary-ABS_Corr-abstract}, the study of correlations in the non-equilibrium steady state of the multispecies stirring process with open boundaries
 is reduced to the study of the absorption probabilities of dual particles.
 
 
@@ -828,7 +829,7 @@ Here we introduced the pair of bosonic operators $\mathbf{a},\,\mathbf{a}^{+}$ s
 	\mathbf{a}^{+}|q\rangle=|q+1\rangle\qquad \mathbf{a}|q\rangle=q|q-1\rangle
 \end{equation}
 and 
-\begin{equation}
+\begin{equation}\label{bosonic_2}
 	\langle q|\mathbf{a}^{+}=\langle q-1|\qquad \langle q|\mathbf{a}=(q+1) \langle q+1|
 \end{equation}
 on a generic vector $\langle q|$ with $q\in \mathbb{N}_{0}$, so that in \eqref{siteDualHamiltonian} 
@@ -896,13 +897,13 @@ Fix an arbitrary site $x\in V$, then we have that
 	 &\langle n^{x}_{1},\ldots,n_{N}^{x}|\left(d_{x}\otimes \dd\right)\left(|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\otimes|\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle\right)\nonumber\\=&\langle n_{1}^{x},\ldots,n_{N}^{x}| (\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x}}))^{T}R_{x}\otimes\sum_{q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|\nonumber
 	 \\&|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle \otimes |\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle
 \end{align}
-\todo{something wrong...}
+\todo{something wrong...} {\color{blue} [I have added the vector at site $u(x)$]}
 where we used \eqref{transpositionPropertyR}. \\
 On one hand, on the extra-site $u(x)$ we have 
 \begin{align}
 \sum_{q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\right)\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle=\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}
 \end{align}
-\todo{what happens to $q_N$?}
+\todo{what happens to $q_N$?} {\color{blue} we used the orthogonality between $\langle q_{1}^{u(x)} ,\ldots,q_{N}^{u(x)}|\xi_{1}^{u(x)},\ldots,q_{N}^{u(x)}\rangle=1$ on the extra-site $u(x)$}
 where  we used the orthogonality relation \eqref{ortho}. 
 On the other hand, on the site $x$, we have 
 \begin{align}
@@ -1144,7 +1145,7 @@ we obtain
 |\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\otimes \left(\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}|\right)
     \end{split}
 \end{equation}
-\todo{somehow this now has extra index for the space and everywhere else not.... please fix}
+\todo{somehow this now has extra index for the space and everywhere else not.... please fix} {\color{blue} We have defined the bosonic operator with the extra-site, see under equation \eqref{bosonic_2}}
 Recalling the action of the bosonic creation operator acting at site $u(x)$ and on the species $a\in \{1,\ldots,N-1\}$ we have that 
 \begin{equation}\label{bosonicKX}
     \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N}^{u(x)}|(\mathbf{a}^{+})^{u(x)}_{a}=  \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N}^{u(x)}|\dt
@@ -1276,7 +1277,7 @@ For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function o
 	\mu(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{q_{1}},\ldots,a_{q_{b}}=1}^{N-1}{\color{red}
 	\mathbb{E}\left[\left( \prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right) \left(\prod_{k=1}^{b}\mathbbm{1}_{\{Y_{q_{k}}=a_{q_{k}}\}}\right)\right]}\,.
 \end{equation}
-{\color{blue}where the expectation is take with respect to the non-equilibrium steady state distribution, i.e. it is given in \eqref{exactCorrelations}.}
+{\color{blue}where the expectation is taken with respect to the non-equilibrium steady state distribution, i.e. it is given in \eqref{exactCorrelations}.}
 \todo{Explain this expectation...}
 \end{corollary}
 \textbf{Proof of Corollary~\ref{Corollary-NESS-ABS}:}
@@ -1323,7 +1324,7 @@ where in the last equality we exploited the fact that
 % }
 The configuration $\bm{\tau}$ has $\ell=\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})$ occupied sites and then the remaining $L-\ell$ sites are empty. % We introduce an index $b\in \{0,\ldots,L-\ell\}$. 
 Therefore, we may write
-\begin{align}
+\begin{align}\label{sum}
 &\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)\left(\prod_{x=1\,:\,\tau_{x}=N}^{L}\left(1-\sum_{a_{x}=1}^{N-1}\mathbbm{1}_{\{Y_x=a_{x}\}}\right)\right)\nonumber\\
 =&
 \prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}+\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)(-1)\left\{\sum_{q_{1}=1}^{L}\delta_{\tau_{q_{1}},N}\sum_{a_{q_{1}}=1}^{N-1}\mathbbm{1}_{\{Y_{q_{1}}=a_{q_{1}}\}}\right\}+\nonumber\\
@@ -1331,7 +1332,7 @@ Therefore, we may write
 +&\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)(-1)^{L-\ell}\sum_{1\leq q_{1}<\ldots<q_{L-\ell}\leq L}\left(\prod_{k=1}^{L-\ell}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{q_{1}},\ldots,a_{q_{L-\ell}}=1}^{N-1}\prod_{k=1}^{L-\ell}\mathbbm{1}_{\{Y_{q_{k}}=a_{q_{k}}\}}\dt
 \end{align} 
 \todo{indices are strange. Say what happens here}
-Therefore, using the linearity of the expectation and introducing the index $b\in \{0,\ldots,L\}$ we obtain \eqref{implicit-mass-function}. 
+Therefore, using the linearity of the expectation and introducing the index $b\in \{0,\ldots,L\}$ {\color{blue} we rewrite the sum in equation \eqref{sum} as} \eqref{implicit-mass-function}.{\color{blue} Indeed, when $b>L-\ell$ we have vanishing terms in the sum \eqref{implicit-mass-function}.}
 \begin{flushright}
 	$\square$
 \end{flushright}
