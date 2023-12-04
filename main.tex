@@ -232,9 +232,9 @@ are also discussed.
 \tableofcontents
 
  \newpage
-
 \section{Introduction} 
-Boundary-driven particle systems are paradigmatic models for non-equilibrium statistical mechanics. In a boundary-driven system, the model is put in contact with reservoirs at its {\color{red}``boundaries'' } imposing different particle densities, and a current is generated through the system. In the long time limit, a non-equilibrium steady state sets in, with a stationary value of the current.  The aim of this paper is to develop the theory of stochastic duality and  study the stationary measure of certain symmetric boundary-driven {\em multispecies} particle systems with exclusion.
+Boundary-driven particle systems are paradigmatic models for non-equilibrium statistical mechanics. In a boundary-driven system, the model is put in contact with reservoirs at its {\color{red}``boundaries'' } imposing different particle densities, and a current is generated through the system. In the long time limit, a non-equilibrium steady state sets in, with a stationary value of the current.
+ The aim of this paper is to develop the theory of stochastic duality and  study the stationary measure of certain symmetric boundary-driven {\em multispecies} particle systems with exclusion.
 
 Our strategy to solve for the non-equilibrium steady state is of a probabilistic nature and relies on the use of {\em duality} \cite{schutzSandow}. Starting from the pioneering work of Kipnis, Marchiorio and Presutti \cite{KMP}, this approach
 has been substantially developed in recent years to study stochastic processes in the boundary-driven set-up \cite{giardina2009duality,carinci2013duality}.
@@ -251,13 +251,14 @@ is simplified to the problem of computing the absorption probabilities of the du
 For the single species case,  the solution of the exclusion process with open boundaries \cite{derrida1993exact,1993JSP....72..277S} has been of crucial importance in our understanding of the structural properties of non-equilibrium state, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviations \cite{mallick2022exact,bodineau2005current}. One may argue that the results available for the exclusion process are rooted in the algebraic symmetries of the corresponding integrable spin $s=1/2$ Heisenberg chain \cite{schutzManyBody,SSEPReviewRagoucy}.
 
 
-The model studied in this paper is the multispecies analog of the exclusion process on a generic graph as introduced in \cite{zhou2021orthogonal} with additional boundary reservoirs as proposed in \cite{vanicat2017exact}.
+The model studied in this paper is the multispecies analogue of the exclusion process on a generic graph as introduced in \cite{zhou2021orthogonal} with additional boundary reservoirs as proposed in \cite{vanicat2017exact}. {\color{blue}This particle system is defined on a generic connected and undirected graph. At each site $\nu\in \mathbb{N}$ particles of $N$ types (species) are hosted. There is an exclusion constraint that makes the occupancy of each site dependent on $N-1$ species only. Two sites do interact when there is an edge between them and this interaction consists in an swap of two different types of particles between these sites. Furthermore, reservoirs are attached at each site of the graph, making the system interact with external environments with fixed average particle densities. When the graph is a finite chain with two reservoirs attached to the first and the last sites respectively and when $\nu=1$, the process becomes integrable (see \cite{vanicat2017exact}).}
 {\color{red}Explain the model here.... $N$-species (or $N-1$ plus empty?). What is the graph? say that it becomes integrable for the line }
 
 We refer to the model as the {\em  multispecies stirring process with open boundaries}.
 %
 
-The  paper is organized as follows.
+%The  paper is organized as follows.
+\subsection*{Organization of the paper}
 In Section~\ref{sec1} we define the open multispecies stirring
 process on a general graph and provide its Lie algebraic description in terms of $gl(N)$ generators. In Section~\ref{sectionDuality} we prove an absorption duality (Theorem~\ref{thm-duality})
 and show that the problem of characterizing the non-equilibrium
@@ -267,7 +268,7 @@ In Section~\ref{sectionIntegrabiliy}  we consider  the case of the one-dimension
 particle per site, which is driven out-of-equilbrium by two reservoirs on the left and right boundaries. In this case we obtain a closed-form expression for the stationary correlations (Theorem~\ref{thm-correlations}). Here the computation
 % of the absorption probabilities 
 relies on the extension of the  Matrix Product Ansatz \cite{derrida1993exact} to multiple species \cite{vanicat2017exact} and the $gl(n)$ invariance of the process in the bulk. Finally in Section~\ref{sec5} we discuss a few extensions 
-and generalizations of the model, including instantaneous thermalization limits and reaction-diffusions. {\color{red} mention the results you have in appendix}.
+and generalizations of the model, including instantaneous thermalization limits and reaction-diffusions. {\color{blue} In particular, a thermalized boundary-driven version of the multispecies stirring process is introduced, showing that it has an absorbing duality. Moreover, a further interaction mechanism of reaction type is added in order to have closed evolution equation for average particle density (inspired by \cite{casini2022uphill,schutzReaction}). Absorbing duality is proved. The duality function for the termalized and the reaction diffusion process turns out to be the same of the multispecies stirring process.} {\color{red} mention the results you have in appendix}.
 
 % In closing this introduction we mention that we are currently working on the boundary-driven multispecies 
 % model with non-compact Lie algebras, both integrable and non-integrable, which will be presented in a 
