@@ -444,7 +444,7 @@ If condition \eqref{reversibilityCondition} is not met, then in general reversib
 	\label{rhox}
 	\rho_{a}^x=\frac{\alpha_{a}^x}{|\alpha^x|}
 \end{equation}
-and  $|\alpha^x|=\sum_{a=1}^{N}\alpha_{a}^x$. {\color{blue} As a consequence, particles are injected and removed in the graph with different rates. When, for any $a\in \{1,\ldots,N\}$ there are at least two reservoirs at sites $x,y$ such that $\rho_{a}^{x}\neq  \rho_{a}^{y}$, a  non-zero current sets in, breaking the reversibility. Informally, one can say that the reservoirs try to impose their different densities at the boundaries of the the graph, putting the system out-of-equilibrium.} %{\color{red}wants to fix}
+and  $|\alpha^x|=\sum_{a=1}^{N}\alpha_{a}^x$. {\color{blue} As a consequence, particles are injected and removed in the graph with different rates. When, for any $a\in \{1,\ldots,N\}$, there are at least two reservoirs at two different sites $x,y$ such that $\rho_{a}^{x}\neq  \rho_{a}^{y}$, a  non-zero current sets in, breaking the reversibility. Informally, one can say that the reservoirs try to impose their different densities at the boundaries of the the graph, putting the system out-of-equilibrium.} %{\color{red}wants to fix}
 \todo{?}
 %Currents will arise when at least two reservoirs have different densities. 
 \begin{remark}
@@ -754,12 +754,12 @@ Note that on the extra-site we allow an unbounded number of particles. Thus
 dual particles will accumulate in these extra-sites in the course of time. 
 We write the configurations $\bm{\xi} \in \widetilde\Omega$  as
 \begin{equation}
-    \bm{\xi}=\left(\xi_{1}^{x},\ldots,\xi_{N}^{x}\right)\otimes (\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)} )_{x\in V}
+    \bm{\xi}=\left(\left(\xi_{1}^{x},\ldots,\xi_{N}^{x}\right)\otimes (\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)} )\right)_{x\in V}
 \end{equation}
 \todo{OK? but this has no index $x$?}
 where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles of type $a\in \{1,\ldots,N\}$ at site $x$, 
 and the component $\xi_{a}^{u(x)}$  gives the number of dual particles of type $a\in \{1,\ldots,N\}$ at 
-the extra-site $u(x)$ connected to $x\in V$. We state the following duality result.
+the extra-site $u(x)$ connected to $x\in V$. {\color{blue} We observe that the configuration variable at the extra site $u(x)$ does not have to satisfy any exclusion constraint, since it is defined on $\mathbb{N}_{0}^{N}$}. We state the following duality result.
 \begin{theorem}[Absorbing duality]\label{thm-duality}
 	The multispecies stirring process $(\bm{n}(t))_{t\geq 0}$ defined on the state space $\Omega$ with generator $\mathcal{L}$ defined in \eqref{Generator} is dual to the process $(\bm{\xi}(t))_{t\geq 0}$ defined on the enlarged state space $\widetilde{\Omega}$ with generator
 	 \begin{equation}\label{DualGenerator}
@@ -816,6 +816,10 @@ To a configuration $\bm{\xi}$ of the configuration space  \eqref{dualStateSpace}
 \begin{equation}
     |\bm{\xi}\rangle=\bigotimes_{x\in V}\left(|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\otimes |\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle\right)\dt
 \end{equation}
+{\color{blue} Here $|\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle$ is the vector associated to the configuration of in the extra site $u(x)$.  For all $q_{1},\ldots,q_{N}\in \mathbb{N}_{0}$, we assume that it satisfy an orthogonality relation
+\begin{equation}\label{ortho-extraSite}
+	\langle q_{1},\ldots,q_{N}|\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle=\prod_{a=1}^{N}\delta_{\xi_{a}^{u(x)},q_{a}}
+\end{equation} }
 The Hamiltonian of the dual process reads
 \begin{equation}\label{DualHamiltonian}
     \widetilde{H}=\sum_{x,y\in \mathcal{E}}\omega_{x,y}\mathcal{H}_{x,y}+\sum_{x\in V}\Gamma_{x}\widetilde{H}_{x}
@@ -903,8 +907,8 @@ On one hand, on the extra-site $u(x)$ we have
 \begin{align}
 \sum_{q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\right)\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|\xi_{1}^{u(x)},\ldots,\xi_{N}^{u(x)}\rangle=\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}
 \end{align}
-\todo{what happens to $q_N$?} {\color{blue} we used the orthogonality between $\langle q_{1}^{u(x)} ,\ldots,q_{N}^{u(x)}|\xi_{1}^{u(x)},\ldots,q_{N}^{u(x)}\rangle=1$ on the extra-site $u(x)$}
-where  we used the orthogonality relation \eqref{ortho}. 
+\todo{what happens to $q_N$?} {\color{blue} 
+where we used the orthogonality relation \eqref{ortho-extraSite}}. 
 On the other hand, on the site $x$, we have 
 \begin{align}
 &\langle n_{1}^{x},\ldots,n_{N}^{x}|(\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x})})^{T}R_{x}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\nonumber\\&= \langle  n_{1}^{x},\ldots,n_{N}^{x}|\left(\sum_{k_{1}=0}^{\infty}\frac{\left\{\left(E_{N1}^{x}\right)^{T}\right\}^{k_{1}}}{k_{1}!}\ldots\sum_{k_{N-1}=0}^{\infty}\frac{\left\{\left(E_{N\,N-1}^{x}\right)^{T}\right\}^{k_{N-1}}}{k_{N-1}!}\sum_{s\in\Omega_{x}}\frac{s_{1}^{x}!\cdots s_{N}^{x}!}{\nu!}|s_{1}^{x},\ldots,s_{N}^{x}\rangle\langle s_{1}^{x},\ldots,s_{N}^{x}|\right)\nonumber
@@ -1277,7 +1281,7 @@ For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function o
 	\mu(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{q_{1}},\ldots,a_{q_{b}}=1}^{N-1}{\color{red}
 	\mathbb{E}\left[\left( \prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right) \left(\prod_{k=1}^{b}\mathbbm{1}_{\{Y_{q_{k}}=a_{q_{k}}\}}\right)\right]}\,.
 \end{equation}
-{\color{blue}where the expectation is taken with respect to the non-equilibrium steady state distribution, i.e. it is given in \eqref{exactCorrelations}.}
+{\color{blue}where the expectation is taken with respect to the non-equilibrium steady state distribution, then it is given in \eqref{exactCorrelations}.}
 \todo{Explain this expectation...}
 \end{corollary}
 \textbf{Proof of Corollary~\ref{Corollary-NESS-ABS}:}
@@ -3054,15 +3058,15 @@ i.e., computing the $m$-point correlations is equivalent to computing the steady
 \begin{comment}
 {\color{blue}
  \paragraph{Proof of formula \eqref{exactCorrelations}}
- We aim to compute the correlations between the sites $\mathbf{x}=\left(x_{1},\ldots,x_{m}\right)$ occupied by the species $\mathbf{a}=\left(a_{1},\ldots,a_{m}\right)$, such that $a_{1},\ldots,a_{m}\in \{2,\ldots,N\}$ i.e. 
-\begin{equation}\label{Prob-m}
-	\begin{split}
-		\langle n_{a_{1}}^{x_{1}}\cdots n_{a_{m}}^{x_{m}}\rangle_{\text{stat}}&
-		=\mathbb{P}_{stat}\left(n_{a_{1}}^{x_{1}}=1,\ldots,n_{a_{m}}^{x_{m}}=1\right)
-	\end{split}
+ We aim to compute the correlations between the sites% $\mathbf{x}=\left(x_{1},\ldots,x_{m}\right)$ occupied by the species $\mathbf{a}=\left(a_{1},\ldots,a_{m}\right)$, such that $a_{1},\ldots,a_{m}\in \{2,\ldots,N\}$ i.e. 
+\begin{equation}%\label{Prob-m}
+	%\begin{split}
+	%	\langle n_{a_{1}}^{x_{1}}\cdots n_{a_{m}}^{x_{m}}\rangle_{\text{stat}}&
+	%	=\mathbb{P}_{stat}\left(n_{a_{1}}^{x_{1}}=1,\ldots,n_{a_{m}}^{x_{m}}=1\right)
+%	\end{split}
 \end{equation}
-where we denote $\mathbb{P}_{stat}$ the non-equilibrium steady state distribution. 
-This corresponds to the steady state probability of a chain of length $m$ with each coordinates $x_{i}$ occupied by $a_{i}\neq 1$.Therefore, using again the notation \eqref{notation} and calling $\tau_{i}=a_{i}$, we have 
+where we denote %$\mathbb{P}_{stat}$ the non-equilibrium steady state distribution. 
+This corresponds to the steady state probability of a chain of length %$m$ with each coordinates $x_{i}$ occupied by $a_{i}\neq 1$.Therefore, using again the notation \eqref{notation} and calling %$\tau_{i}=a_{i}$, we have 
 \begin{equation}
 	\mathbb{P}_{stat}\left(n_{a_{1}}^{x_{1}}=1,\ldots,n_{a_{m}}^{x_{m}}=1\right)=\Psi\left(\tau_{1},\ldots,\tau_{m}\right)
 \end{equation}
