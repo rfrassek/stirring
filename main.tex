@@ -1094,6 +1094,7 @@ Therefore, by ergodicity and duality  we have
 	\\&=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{m})\dt
 \end{split}
 \end{equation}
+\todo{but these are the correlations, no?}
 \begin{flushright}
 	$\square$
 \end{flushright} 
@@ -1173,10 +1174,16 @@ Therefore, using the linearity of the expectation and introducing the index $b\i
 
 
 \section{Correlations and steady state  for the integrable chain}\label{sectionIntegrabiliy}
-In this section we combine duality, the $gl(N)$ invariance and the matrix product ansatz (MPA) to charaterize the non-equilibrium steady state for the integrable version of the multispecies stirring process, defined in Section~\ref{integrableChain-duality}. 
-As it will turn out, the combination of the $gl(N)$ invariance  and the MPA allows to determine a closed formula for the absorption probabilities and thus (using Corollary~\ref{Corolollary-ABS_Corr-abstract}) for the correlations
-and (using Corollary~\ref{Corollary-NESS-ABS}) for the probability mass-function of the non-equilibrium steady state.
+In this section we combine the matrix product ansatz (MPA) \cite{vanicat2017exact} and  the $gl(N)$ invariance of the process in the bulk, cf.~\eqref{symmetryH}, to exactly compute the correlations in the non-equilibrium steady state
+ for the integrable version of the multispecies stirring process on a defined on a line segment, see Section~\ref{integrableChain-duality}. 
+This allows further to determine the absorption probabilities and the probability mass-function of the non-equilibrium steady state in closed form.
 We start by recalling the formulation of the MPA  and then we explain our strategy.
+
+
+% In this section we combine duality, the $gl(N)$ invariance and the matrix product ansatz (MPA) to charaterize the non-equilibrium steady state for the integrable version of the multispecies stirring process, defined in Section~\ref{integrableChain-duality}. 
+% As it will turn out, the combination of the $gl(N)$ invariance  and the MPA allows to determine a closed formula for the absorption probabilities and thus (using Corollary~\ref{Corolollary-ABS_Corr-abstract}) for the correlations
+% and (using Corollary~\ref{Corollary-NESS-ABS}) for the probability mass-function of the non-equilibrium steady state.
+% We start by recalling the formulation of the MPA  and then we explain our strategy.
 
 \subsection{Matrix product ansatz for the non-equilibrium steady state}
 The matrix product ansatz for the multispecies stirring process has been formulated in \cite{vanicat2017exact}, here we briefly recall the main steps.
@@ -1192,7 +1199,7 @@ We denote by $|\Psi\rangle$ the column vector that gives the stationary distribu
 \end{equation}
 The MPA states the following
 \begin{equation}
-	|\Psi\rangle=\frac{1}{Z_{L}}\langle W|\begin{pmatrix}
+	|\Psi\rangle=\frac{1}{Z_{L}} \langle \langle W|  \begin{pmatrix}
 		X_{1}\\
 		\vdots\\
 		X_{N}
@@ -1200,11 +1207,11 @@ The MPA states the following
 		X_{1}\\
 		\vdots\\
 		X_{N}
-	\end{pmatrix}|V\rangle
+	\end{pmatrix} |V\rangle\rangle 
 \end{equation}
 with the normalization 
 \begin{equation}
-	Z_{L}=\langle W|(X_{1}+\ldots +X_{N})^{L}|V\rangle\dt
+	Z_{L}= \langle \langle W|  (X_{1}+\ldots +X_{N})^{L} |V\rangle\rangle \dt
 \end{equation}
 Here the operators $(X_{a})_{a\in \{1,\ldots,N\}}$ fulfil the commutators
 \begin{equation}\label{bulk}
@@ -1212,15 +1219,15 @@ Here the operators $(X_{a})_{a\in \{1,\ldots,N\}}$ fulfil the commutators
 \end{equation}
 and their action on the boundary vectors are
 \begin{equation}\label{leftBoundary}
-	\langle W|\left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=(\alpha_{a}-\beta_{a})\langle W|%\qquad\forall a=1,\ldots,N\co
+	 \langle \langle W|  \left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=(\alpha_{a}-\beta_{a}) \langle \langle W|  %\qquad\forall a=1,\ldots,N\co
 \end{equation}
 \begin{equation}\label{rightBoundary}
-	\left(\beta_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)|V\rangle=-(\alpha_{a}-\beta_{a})|V\rangle%\qquad\forall a=1,\ldots,N\dt
+	\left(\beta_{a}(X_{1}+\ldots+X_{N})-X_{a}\right) |V\rangle\rangle =-(\alpha_{a}-\beta_{a}) |V\rangle\rangle %\qquad\forall a=1,\ldots,N\dt
 \end{equation}
-Without loss of generality, we further assume that $\langle W|V\rangle=1$. 
+Without loss of generality, we further assume that $ \langle \langle W|  V\rangle=1$. 
 \begin{remark} Only $N-1$ of the $N$ equations \eqref{leftBoundary}  are independent. This can be seen by summing them over the species $a\in \{1,\ldots,N\}$, i.e.
 	\begin{equation}
-		\sum_{a=1}^{N}	\langle W|\left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=0,%\sum_{a=1}^{N}(\alpha_{a}-\beta_{a})\langle W|=0
+		\sum_{a=1}^{N}	 \langle \langle W|  \left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=0,%\sum_{a=1}^{N}(\alpha_{a}-\beta_{a}) \langle \langle W|  =0
 	\end{equation}
 	and using  \eqref{ratesConditions}.
  Similarly for the right boundary  \eqref{rightBoundary} there are only  $N-1$ independent equations. \end{remark} 
@@ -1242,9 +1249,9 @@ The MPA gives an abstract form of the non-equilibrium steady state in terms of a
 for $a=1,\ldots,N-1$. 
 At the boundaries 
 \begin{equation}\label{commLEFT2}
-	\langle W|\left((\alpha_{a}-\beta_{a})\Xt_{N}-\Xt_{a}\right)=(\alpha_{a}-\beta_{a})\langle W|%\qquad\forall a=1,\ldots,N-1
+	 \langle \langle W|  \left((\alpha_{a}-\beta_{a})\Xt_{N}-\Xt_{a}\right)=(\alpha_{a}-\beta_{a}) \langle \langle W|  %\qquad\forall a=1,\ldots,N-1
 	\co \qquad 
-	\Xt_{a} |V\rangle= (\alpha_{a}-\beta_{a})|V\rangle%\qquad\forall a=1,\ldots,N-1
+	\Xt_{a}  |V\rangle\rangle = (\alpha_{a}-\beta_{a}) |V\rangle\rangle %\qquad\forall a=1,\ldots,N-1
 	\,.
 \end{equation} 
 where again we have  $a=1,\ldots,N-1$.   As a consequence, the ground state $|\Psi^{''}\rangle$ of $H^{''}$ can be written exactly in closed-form. Finally, reversing the transformations we retrieve $|\Psi\rangle$, i.e. the vector whose components are the probabilities of a certain configuration of the process in the non-equilibrium steady state.
@@ -1553,25 +1560,25 @@ Therefore, we obtain the commutation relations for $\Xt_{a}$
 cf.~\eqref{commutationsBula2}.
 Moreover using \eqref{Xtildes2b} and \eqref{Xes}, the action of $\Xt_{a}$ on the boundary vectors are given by 
 \begin{equation}\label{commLEFT}
-	\langle W|\left((\alpha_{a}-\beta_{a})\Xt_{N}-\Xt_{a}\right)=(\alpha_{a}-\beta_{a})\langle W|
+	 \langle \langle W|  \left((\alpha_{a}-\beta_{a})\Xt_{N}-\Xt_{a}\right)=(\alpha_{a}-\beta_{a}) \langle \langle W|  
 	\co
 \end{equation}
 \begin{equation}\label{commRIGHT}
-	\Xt_{a} |V\rangle= (\alpha_{a}-\beta_{a})|V\rangle
+	\Xt_{a}  |V\rangle\rangle = (\alpha_{a}-\beta_{a}) |V\rangle\rangle 
 	\co
 \end{equation} 
 cf.~\eqref{commLEFT2}.
 Using the transformed operators $(\widetilde{X}_{a})_{a\in\{1,\ldots,N\}}$, the vector $|\Psi^{''}\rangle$ of the matrix product ansatz is written as
 \begin{equation}\label{toDetermineTilde}
-	|\Psi^{''}\rangle = \frac{1}{Z_{L}}\sum_{\bm{\tau}\in \Omega^{'}}\langle W|\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
-	|V \rangle \,|\bm{\tau}\rangle
+	|\Psi^{''}\rangle = \frac{1}{Z_{L}}\sum_{\bm{\tau}\in \Omega^{'}} \langle \langle W|  \prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
+	|V\rangle\rangle \,|\bm{\tau}\rangle
 \end{equation}
 where the normalization is given by 
 \begin{align}
-		Z_{L}&=\langle W|(X_{1}+\ldots+X_{N})^{L}|V\rangle=\langle W|\widetilde{X}_{N}^{L}|V\rangle\dt
+		Z_{L}&= \langle \langle W|  (X_{1}+\ldots+X_{N})^{L} |V\rangle\rangle = \langle \langle W|  \widetilde{X}_{N}^{L} |V\rangle\rangle \dt
 \end{align}
 
-To determine the eigenvector \eqref{toDetermineTilde}, we compute the coefficient $\langle W|\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
+To determine the eigenvector \eqref{toDetermineTilde}, we compute the coefficient $ \langle \langle W|  \prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
 |V \rangle$ and the normalization $Z_{L}$. Using \eqref{commutationsBula} we have
 \begin{equation}\label{UsefulRelation}
 	\widetilde{X}_{a}\widetilde{X}_{N}=\widetilde{X}_{N}\left((\alpha_{a}-\beta_{a})+\widetilde{X}_{a}\right)\dt
@@ -1588,42 +1595,42 @@ By taking the product over the sites $x$ from $1$ to $L$ we obtain
 \end{equation}
 Multiplying by the boundary vectors and by using \eqref{commRIGHT} we have 
 \begin{align}
-	\langle W|\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
+	 \langle \langle W|  \prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
 	|V \rangle=
-	\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}\langle W|\widetilde{X}_{N}^{\sum_{x=1}^{L}\delta_{\tau_{x},N}}|V\rangle \dt
+	\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}} \langle \langle W|  \widetilde{X}_{N}^{\sum_{x=1}^{L}\delta_{\tau_{x},N}} |V\rangle\rangle  \dt
 \end{align}
-We now compute $\langle W|\widetilde{X}_{N}^{\sum_{i=1}^{L}\delta_{\tau_{x},N}}|V\rangle$. For all $n\in \mathbb{N}$ we have that  
+We now compute $ \langle \langle W|  \widetilde{X}_{N}^{\sum_{i=1}^{L}\delta_{\tau_{x},N}} |V\rangle\rangle $. For all $n\in \mathbb{N}$ we have that  
 \begin{align}
-	\langle W|\widetilde{X}_{N}^{n}|V\rangle&=\langle W|\widetilde{X}_{N}\widetilde{X}_{N}^{n-1}|V\rangle=\langle W|\widetilde{X}_{N}^{n-1}|V\rangle +\langle W|\frac{1}{(\alpha_{a}-\beta_{a})}\widetilde{X}_{a}\widetilde{X}_{N}^{n-1}|V\rangle\nonumber
+	 \langle \langle W|  \widetilde{X}_{N}^{n} |V\rangle\rangle &= \langle \langle W|  \widetilde{X}_{N}\widetilde{X}_{N}^{n-1} |V\rangle\rangle = \langle \langle W|  \widetilde{X}_{N}^{n-1} |V\rangle\rangle  + \langle \langle W|  \frac{1}{(\alpha_{a}-\beta_{a})}\widetilde{X}_{a}\widetilde{X}_{N}^{n-1} |V\rangle\rangle \nonumber
 	\\&=
-	\langle W|\widetilde{X}_{N}^{n-1}|V\rangle+\frac{1}{(\alpha_{a}-\beta_{a})}\langle W|\widetilde{X}_{N}^{n-1}\left(\widetilde{X}_{a}+(\alpha_{a}-\beta_{a})(n-1)\right)|V\rangle\nonumber
+	 \langle \langle W|  \widetilde{X}_{N}^{n-1} |V\rangle\rangle +\frac{1}{(\alpha_{a}-\beta_{a})} \langle \langle W|  \widetilde{X}_{N}^{n-1}\left(\widetilde{X}_{a}+(\alpha_{a}-\beta_{a})(n-1)\right) |V\rangle\rangle \nonumber
 	\\&=
-	\langle W|\widetilde{X}_{N}^{n-1}|V\rangle+\left(n+1-1\right)\langle W|\widetilde{X}_{N}^{n-1}|V\rangle\nonumber
+	 \langle \langle W|  \widetilde{X}_{N}^{n-1} |V\rangle\rangle +\left(n+1-1\right) \langle \langle W|  \widetilde{X}_{N}^{n-1} |V\rangle\rangle \nonumber
 	\\&=
-	\left(2+n-1\right)\langle W|\widetilde{X}_{N}^{n-1}|V\rangle\nonumber
+	\left(2+n-1\right) \langle \langle W|  \widetilde{X}_{N}^{n-1} |V\rangle\rangle \nonumber
 	\\&=
-	\frac{(1+n)!}{n!}\langle W|\widetilde{X}_{N}^{n-1}|V\rangle
+	\frac{(1+n)!}{n!} \langle \langle W|  \widetilde{X}_{N}^{n-1} |V\rangle\rangle 
 \end{align}
 where in the second equality we used \eqref{usefulRelaton-many}. 
 This leads to the recursion relation
 \begin{align}
-		\langle W|\widetilde{X}_{N}^{n}|V\rangle=\frac{(1+n)!}{n!}\langle W|\widetilde{X}_{N}^{n-1}|V\rangle
+		 \langle \langle W|  \widetilde{X}_{N}^{n} |V\rangle\rangle =\frac{(1+n)!}{n!} \langle \langle W|  \widetilde{X}_{N}^{n-1} |V\rangle\rangle 
 \end{align}
-with $	\langle W|\widetilde{X}_{N}^{0}|V\rangle=1$. 
+with $	 \langle \langle W|  \widetilde{X}_{N}^{0} |V\rangle\rangle =1$. 
 Therefore, we obtain 
 \begin{align}
-	\langle W|\widetilde{X}_{N}^{n}|V\rangle&=%\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\langle W|\widetilde{X}_{N}^{n_{N}-1}|V\rangle=\langle W|\widetilde{X}_{N}^{n_{N}}|V\rangle=\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\frac{\Gamma(2+n_{N}-1)}{\Gamma(2+n_{N}-2)}\langle W|\widetilde{X}_{N}^{n_{N}-2}|V\rangle\\&=
-	\frac{(1+n)!}{n!}\frac{n!}{(n-1)!}\ldots \frac{3!}{2!}\frac{2!}{1!}\langle W|\widetilde{X}_{N}^{0}|V\rangle=
+	 \langle \langle W|  \widetilde{X}_{N}^{n} |V\rangle\rangle &=%\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)} \langle \langle W|  \widetilde{X}_{N}^{n_{N}-1} |V\rangle\rangle = \langle \langle W|  \widetilde{X}_{N}^{n_{N}} |V\rangle\rangle =\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\frac{\Gamma(2+n_{N}-1)}{\Gamma(2+n_{N}-2)} \langle \langle W|  \widetilde{X}_{N}^{n_{N}-2} |V\rangle\rangle \\&=
+	\frac{(1+n)!}{n!}\frac{n!}{(n-1)!}\ldots \frac{3!}{2!}\frac{2!}{1!} \langle \langle W|  \widetilde{X}_{N}^{0} |V\rangle\rangle =
 	(1+n)!\dt
 \end{align}
 By using this result we have that
 \begin{equation}
-	\langle W|\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
-	|V \rangle=(1+\sum_{x=1}^{N}\delta_{\tau_{x},N})!\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}\dt
+	 \langle \langle W|  \prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
+	|V\rangle\rangle=(1+\sum_{x=1}^{N}\delta_{\tau_{x},N})!\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}\dt
 \end{equation}
 The normalization constant is then given by
 \begin{align}
-	Z_{L}&=\langle W|(X_{1}+\ldots+X_{N})^{L}|V\rangle=\langle W|\widetilde{X}_{N}^{L}|V|\rangle=
+	Z_{L}&= \langle \langle W|  (X_{1}+\ldots+X_{N})^{L} |V\rangle\rangle = \langle \langle W|  \widetilde{X}_{N}^{L}|V|\rangle=
 	(L+1)!\dt
 \end{align}
 Therefore, we write
