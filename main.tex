@@ -1223,7 +1223,7 @@ and their action on the boundary vectors are
 \begin{equation}\label{rightBoundary}
 	\left(\beta_{a}(X_{1}+\ldots+X_{N})-X_{a}\right) |V\rangle\rangle =-(\alpha_{a}-\beta_{a}) |V\rangle\rangle %\qquad\forall a=1,\ldots,N\dt
 \end{equation}
-Without loss of generality, we further assume that $ \langle \langle W|  V\rangle=1$. 
+Without loss of generality, we further assume that $ \langle \langle W|  V\rangle\rangle =1$. 
 \begin{remark} Only $N-1$ of the $N$ equations \eqref{leftBoundary}  are independent. This can be seen by summing them over the species $a\in \{1,\ldots,N\}$, i.e.
 	\begin{equation}
 		\sum_{a=1}^{N}	 \langle \langle W|  \left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=0,%\sum_{a=1}^{N}(\alpha_{a}-\beta_{a}) \langle \langle W|  =0
@@ -1237,8 +1237,8 @@ The MPA gives an abstract form of the non-equilibrium steady state in terms of a
   there exists an absorbing dual process as established in Section~\ref{sectionDuality}
  
  The idea is summarized in the following scheme. 
- We define a sequence of similarity transformation such that 
- \begin{equation}
+ We define a sequence of local similarity transformations such that 
+ \begin{equation}\label{eq:scheme}
  	H\;\xleftrightarrow{S_{1}}\;H^{'}\;\xleftrightarrow{S_{2}}\;H^{''}
  \end{equation} 
  where $H^{'}= S_{1} H S_{1}^{-1} $ has both boundary terms in a triangular form, and $H^{''} = S_{2}H' S_{2}^{-1}$ has the left boundary in a triangular form and the right boundary is diagonal. Using these transformations the commutators \eqref{bulk} and the action on the boundary vectors \eqref{leftBoundary}, \eqref{rightBoundary} simplify significantly. More precisely for the components of $\tilde X=S_2S_1 X$ we obtain the bulk relations
@@ -1253,8 +1253,8 @@ At the boundaries
 	\Xt_{a}  |V\rangle\rangle = (\alpha_{a}-\beta_{a}) |V\rangle\rangle %\qquad\forall a=1,\ldots,N-1
 	\,.
 \end{equation} 
-where again we have  $a=1,\ldots,N-1$.   As a consequence, the ground state $|\Psi^{''}\rangle$ of $H^{''}$ can be written exactly in closed-form. Finally, reversing the transformations we retrieve $|\Psi\rangle$, i.e. the vector whose components are the probabilities of a certain configuration of the process in the non-equilibrium steady state.
- The first transformation $S_{1}$ is closely related to the duality matrix and we will see that $H^{'}$ is $\widetilde{H}^{T}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. Therefore, $H^{'}$ is not stochastic, however it turns out that the components of its eigenvector with zero eigenvalue $|\Psi^{'}\rangle$ are the correlations in the non-equilibrium steady state. 
+where again we have  $a=1,\ldots,N-1$.   As a consequence, the ground state $|\Psi^{''}\rangle$ of $H^{''}$ can be written exactly in closed-form. Finally, reversing the transformations in \eqref{eq:scheme} we retrieve $|\Psi\rangle$, i.e. the vector whose components are the probabilities of a certain configuration of the process in the non-equilibrium steady state.
+ The first transformation $S_{1}$ is closely related to the duality matrix \eqref{dualityMatrix} and we will see that $H^{'}$ is $\widetilde{H}^{T}$, up to the extra-site term described by the bosonic creation operator in \eqref{siteDualHamiltonian}. The Hamiltonian $H^{'}$ is not stochastic, however it turns out that the components of its eigenvector with zero eigenvalue $|\Psi^{'}\rangle$ are the correlations in the non-equilibrium steady state. 
  %The second transformation $S_{2}$ diagonalizes the right boundary. Finally, the composition  $S_{2} S_{1}$ allows to simplify the commutators of the MPA algebra. 
 \subsection{Correlations in the non-equilibrium steady state}\label{subsection-exact}
 In this section we write a formula for the stationary non-equilibrium steady state correlations between $m$- points of the chain.
@@ -1262,7 +1262,9 @@ In this section we write a formula for the stationary non-equilibrium steady sta
 %Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $(x_{1},\ldots,x_{m})$, such that $x_{k}<x_{k+1}$ $\forall k\in \{1,\ldots,m-1\}$
 %and consider $m$ species $a_{k}\in \{1,\ldots,N-1\}$. 
 Let $m\in \{1,\ldots,L\}$ and consider $m$ sites $1 \le x_{1} < x_2 < \ldots < x_m \le L $ and
-$m$ species $a_{k}\in\{1,\ldots,N-1\}$  with $k=1,2,\ldots, m$. Then the $m$-point correlations with respect to the non-equilibrium steady state measure are given by 
+$m$ species $a_{k}\in\{1,\ldots,N-1\}$  with $k=1,2,\ldots, m$.
+\todo{should this not be particles or so ? Maybe we can call particles 1 to N-1 excitations....}
+Then the $m$-point correlations with respect to the non-equilibrium steady state measure are given by 
 \begin{equation}\label{exactCorrelations}
 \mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]\\=\sum_{t_{1},\ldots,t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{m})
 \end{equation}
@@ -1291,10 +1293,12 @@ Using \eqref{abs-probabilities} we obtain the absorption probabilities
 \begin{equation}
 	\mathcal{P}_{x_1}(0)=1-\frac{(L+1-x_{1})}{(L+1)}\qquad \mathcal{P}_{x_1}(1)=\frac{(L+1-x_{1})}{(L+1)}
 \end{equation} 
-where $\mathcal{P}_{x_1}(1)$ is the probability that a single random walk started at $x_1$ is absorbed in $\{0\}$. Then, using \eqref{exactCorrelations}, we have
+where $\mathcal{P}_{x_1}(1)$ is the probability that a single random walk started at $x_1$ is absorbed in $\{0\}$.\todo{site 0?} Then, using \eqref{exactCorrelations}, we have
 \begin{equation}\label{one-pts-corr}
-		\langle\rho_{a_{1}}^{x_{1}}\rangle= \mathbb{E}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\right]=\frac{(L+1-x_{1})}{(L+1)}\alpha_{a_{1}}+\frac{x_{1}}{(L+1)}\beta_{a_{1}}\dt
+		\langle\rho_{a_{1}}^{x_{1}}\rangle= \mathbb{E}\left[\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}\right]=\frac{(L+1-x_{1})}{(L+1)}\alpha_{a_{1}}+\frac{x_{1}}{(L+1)}\beta_{a_{1}}\co
 \end{equation}
+\todo{here Y instead of $\tau$?}
+{\color{blue}where we defined $\langle\rho_{a_{1}}^{x_{1}}\rangle$.}
 \paragraph{Two-point correlations}
 We consider the average with respect to $\mu$ of the occupation variable of the species  $a_{1},a_{2}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2}\in \{1,\ldots,L\}$ such that $x_{1}< x_{2}$. 
 %\begin{equation}
@@ -1331,6 +1335,7 @@ Therefore, we compute the second cumulant, i.e. the two-point connected correlat
 		 \mathbb{E}\left[\left(\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}-\langle\rho_{a_{1}}^{x_{1}}\rangle \right)\left(\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}-\langle\rho_{a_{2}}^{x_{2}}\rangle \right)\right]=-\frac{x_{1}(L-x_{2}+1)}{L(L+1)^{2}}\left(\alpha_{a_{1}}-\beta_{a_{1}}\right)\left(\alpha_{a_{2}}-\beta_{a_{2}}\right)\dt
 	\end{split}
 \end{equation}
+\todo{here Y instead of $\tau$?}
 \paragraph{Three-point correlations}
 We consider the average with respect to $\mu$ of the occupation variable of the species  $a_{1},a_{2},a_{3}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2},x_{3}\in \{1,\ldots,L\}$ such that $x_{1}<x_{2}<x_{3}$. Using \eqref{abs-probabilities} we compute the absorption probabilities 
 \begin{equation}
@@ -1355,6 +1360,7 @@ Therefore, we compute the third cumulant, i.e. the three-point connected correla
 	&\mathbb{E}\left[\left(\mathbbm{1}_{\{Y_{x_{1}}=a_{1}\}}-\langle\rho_{a_{1}}^{x_{1}}\rangle \right)\left(\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}-\langle\rho_{a_{2}}^{x_{2}}\rangle \right)\left(\mathbbm{1}_{\{\tau_{x_{3}}=a_{3}\}}-\langle\rho_{a_{3}}^{x_{3}}\rangle \right)\right]\nonumber\\
 	=&-\frac{2x_{1}(L+1-2x_{2})(L+1-x_{3})}{(L+1)^{3}(L-1)L}(\alpha_{a_{1}}-\beta_{a_{1}})(\alpha_{a_{2}}-\beta_{a_{2}})(\alpha_{a_{3}}-\beta_{a_{3}})\dt
 \end{align}
+\todo{should this all be $Y$ in the identities?}
 \begin{remark} The first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, match with those found in Section 4.3 of \cite{vanicat2017exact}.
 	\end{remark}
 
@@ -1366,12 +1372,12 @@ The proof of formula \eqref{exactCorrelations} is split into the following steps
 	 the second  turns the Hamiltonian $H'$ into $H^{''} = S_{2}H' S_{2}^{-1}$ having the left boundary in a triangular form and the right boundary is diagonal.
 	Associated to $H^{'}$ and $H^{''}$ there are two ground states denoted by $|\Psi^{'}\rangle$ and $|\Psi^{''}\rangle$ respectively. 
 	\item In Section~\ref{subsectionSSHsec} we apply the MPA to $H^{''}$. Here the commutation relations defining the matrix algebra are simpler. The explicit expression for $|\Psi^{''}\rangle$ is determined (see \eqref{ResulsBasis}).
-	\item In subsection~\ref{subsectionSSdual}, we invert the similarity transformation $S_2$ to recover  the ground state $|\Psi^{'}\rangle$ from the explicit expression of $|\Psi^{''}\rangle$  (see \eqref{ABS}).
+	\item In Section~\ref{subsectionSSdual}, we invert the similarity transformation $S_2$ to recover  the ground state $|\Psi^{'}\rangle$ from the explicit expression of $|\Psi^{''}\rangle$  (see \eqref{ABS}).
 	\item In Section~\ref{correlation-section} we show that the correlations are in turn the components of the vector $|\Psi^{'}\rangle$. 
 	By exploiting a binomial formula we rewrite the correlations in terms
 of polynomials in the left and right boundary densities with coefficients given by the absorption probabilities, as claimed in Corollary~\ref{Corolollary-ABS_Corr-abstract}.
-	For completeness, we also show that Corollary~\ref{Corollary-NESS-ABS} is in turn corresponding to the transformation $|\Psi\rangle = S_{1}^{-1} |\Psi'\rangle$.
-	\todo{to discuss}
+	For completeness, we also show that Corollary~\ref{Corollary-NESS-ABS} is in turn corresponding to the transformation $|\Psi\rangle = S_{1}^{-1} |\Psi'\rangle$ in Section~\ref{appB}.
+	\todo{added ref... What about Section 4.4.5?}
 	\end{itemize}
 \subsubsection{The similarity transformations}\label{subsectionSTransf}
 Consider the matrix
@@ -1620,7 +1626,7 @@ This leads to the recursion relation
 \begin{align}
 		 \langle \langle W|  \widetilde{X}_{N}^{n} |V\rangle\rangle =\frac{(1+n)!}{n!} \langle \langle W|  \widetilde{X}_{N}^{n-1} |V\rangle\rangle 
 \end{align}
-with $	 \langle \langle W|  \widetilde{X}_{N}^{0} |V\rangle\rangle =1$. 
+with $	 \langle \langle W|  \widetilde{X}_{N}^{0} |V\rangle\rangle=	 \langle \langle W |V\rangle\rangle  =1$. 
 Therefore, we obtain 
 \begin{align}
 	 \langle \langle W|  \widetilde{X}_{N}^{n} |V\rangle\rangle &=%\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)} \langle \langle W|  \widetilde{X}_{N}^{n_{N}-1} |V\rangle\rangle = \langle \langle W|  \widetilde{X}_{N}^{n_{N}} |V\rangle\rangle =\frac{\Gamma(2+n_{N})}{\Gamma(2+n_{N}-1)}\frac{\Gamma(2+n_{N}-1)}{\Gamma(2+n_{N}-2)} \langle \langle W|  \widetilde{X}_{N}^{n_{N}-2} |V\rangle\rangle \\&=
@@ -1634,7 +1640,7 @@ By using this result we have that
 \end{equation}
 The normalization constant is then given by
 \begin{align}
-	Z_{L}&= \langle \langle W|  (X_{1}+\ldots+X_{N})^{L} |V\rangle\rangle = \langle \langle W|  \widetilde{X}_{N}^{L}|V|\rangle=
+	Z_{L}&= \langle \langle W|  (X_{1}+\ldots+X_{N})^{L} |V\rangle\rangle = \langle \langle W|  \widetilde{X}_{N}^{L}|V\rangle \rangle=
 	(L+1)!\dt
 \end{align}
 Therefore, we write
@@ -1693,7 +1699,7 @@ We observe that, for any fixed $x\in \{1,\ldots,L\}$ and for any fixed $\bm{\tau
 \begin{align}
 	\left[\delta_{\tau_{x},\sigma_{x}}+\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\beta_{\tau_{x}}\right]\left(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}}\right)^{1-\delta_{\sigma_{x},N}}=	\left[\delta_{\tau_{x},\sigma_{x}}+\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\beta_{\tau_{x}}\right]\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\sigma_{x},N}}\dt
 \end{align}
-Indeed, on one hand if $\sigma_{x}\neq N$ only the term $\delta_{\tau_{x},\sigma_{x}}$ does survive in the square brackets of the above equation, that is non-vanishing only if $\sigma_{x}=\tau_{x}$. This implies that both the left-hand-side and the right-hand-side are either $(\alpha_{\tau_{x}}-\beta_{\tau_{x}})$ ro $0$. On the other hand, if $\sigma_{x}=N$ we have $(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}=(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-\delta_{\sigma_{x},N}}=1$, thus both sides of the equality are either $\beta_{\tau_{x}}$ or $0$.  \\
+Indeed, on one hand if $\sigma_{x}\neq N$ only the term $\delta_{\tau_{x},\sigma_{x}}$ does survive in the square brackets of the above equation, that is non-vanishing only if $\sigma_{x}=\tau_{x}$. This implies that both the left-hand-side and the right-hand-side are either $(\alpha_{\tau_{x}}-\beta_{\tau_{x}})$ or $0$. On the other hand, if $\sigma_{x}=N$ we have $(\alpha_{\sigma_{x}}-\beta_{\sigma_{x}})^{1-\delta_{\sigma_{x},N}}=(\alpha_{\tau_{x}}-\beta_{\tau_{x}})^{1-\delta_{\sigma_{x},N}}=1$, thus both sides of the equality are either $\beta_{\tau_{x}}$ or $0$.  \\
 Moreover, we have that 
 \begin{align}
 	\delta_{\sigma_{x},\tau_{x}}+\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\beta_{\tau_{x}}=&\beta_{\tau_{x}}^{\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})}\left(\delta_{\tau_{x},\sigma_{x}}+\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})\right)\nonumber\\
@@ -1796,10 +1802,11 @@ From third to fourth line we have changed the summation order. Therefore, compar
 
 {\color{blue}
 \begin{remark}
-Alternatively by a direct computation we immediately find 
+Alternatively, by a direct computation we immediately verify 
 \begin{equation}
 \begin{split}
- \mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]&=\sum_{\bm{\tau}\in\Omega^{'}}\prod_{k=1}^{m}\delta_{{{\tau}_{x_k}},a_{k}}\langle \bm{\tau}|\Psi\rangle=\langle N,\ldots,N,a_1,N,\ldots,N,a_m,N,\ldots,N|\Psi^{'}\rangle
+\langle N,\ldots,N,a_1,N,\ldots,N,a_m,N,\ldots,N|\Psi^{'}\rangle
+ =\sum_{\bm{\tau}\in\Omega^{'}}\prod_{k=1}^{m}\delta_{{{\tau}_{x_k}},a_{k}}\langle \bm{\tau}|\Psi\rangle=\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]
  \end{split}
 \end{equation} 
 where the entries $a_i\neq N$ are at position $x_i$. Here we only  used  that $|\Psi^{'}\rangle=S_1|\Psi\rangle$ and
@@ -1812,6 +1819,7 @@ where the entries $a_i\neq N$ are at position $x_i$. Here we only  used  that $|
 \end{remark}
 
 }
+\todo{ok?}
 
 \subsubsection{Interpretation of $\Psi^{'}(\bm{\tau})$ as marginals of the steady state distribution}\label{subsection-interpretationPSIp}
 %We argue similarly as in the Section~\ref{correlation-section}. 
