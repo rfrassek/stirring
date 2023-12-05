@@ -1768,6 +1768,8 @@ Therefore, it follows that, using the resolution of the identity
 	=\langle \hat{\bm{\xi}}|S_{1}|\Psi\rangle
 	=\langle \hat{\bm{\xi}}|\Psi^{'}\rangle\dt
 \end{align}
+
+
 Using $\Psi^{'}(\bm{\tau})$ in \eqref{ABS_1} we have 
 \begin{align}
 	\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=&\sum_{c_{1}=0}^{1}\ldots\sum_{c_{m}=0}^{1}\frac{(L+1-\sum_{a=1}^{m}c_{a})!}{(L+1)!}\prod_{k=1}^{m}(\alpha_{a_{k}}-\beta_{a_{k}})^{c_{k}}\beta_{a_{k}}^{1-c_{k}}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}\nonumber\\
@@ -1790,13 +1792,35 @@ From third to fourth line we have changed the summation order. Therefore, compar
 \begin{flushright}
 	$\square$
 \end{flushright}
+
+
+{\color{blue}
+\begin{remark}
+Alternatively by a direct computation we immediately find 
+\begin{equation}
+\begin{split}
+ \mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]&=\sum_{\bm{\tau}\in\Omega^{'}}\prod_{k=1}^{m}\delta_{{{\tau}_{x_k}},a_{k}}\langle \bm{\tau}|\Psi\rangle=\langle N,\ldots,N,a_1,N,\ldots,N,a_m,N,\ldots,N|\Psi^{'}\rangle
+ \end{split}
+\end{equation} 
+where the entries $a_i\neq N$ are at position $x_i$. Here we only  used that  we used that $|\Psi^{'}\rangle=S_1|\Psi\rangle$ and
+\begin{equation}
+ \langle \tau |S_1=\begin{cases}
+                    \sum_{\sigma=1}^N\langle \sigma|  \quad\text{if}\quad \tau=N\\
+                    \langle \tau| \quad\text{else} 
+                   \end{cases}\,.
+\end{equation} 
+\end{remark}
+
+}
+
 \subsubsection{Interpretation of $\Psi^{'}(\bm{\tau})$ as marginals of the steady state distribution}\label{subsection-interpretationPSIp}
 %We argue similarly as in the Section~\ref{correlation-section}. 
-We still miss the interpretation of $\Psi^{'}(\bm{\tau})$ when  $\bm{\tau})= (N,\ldots,N)$. We show here that for this particular configuration
+We still miss the interpretation of $\Psi^{'}(\bm{\tau})$ when  $\bm{\tau}= (N,\ldots,N)$. We show here that for this particular configuration
 $\Psi^{'}(N,\ldots,N) =1$. Indeed, for any $\bm{\tau}\in \Omega^{'}$ we have that 
 \begin{align}
 	\Psi^{'}(\bm{\tau})=&\langle\bm{\tau}|\Psi^{'}\rangle=\sum_{\bm{\sigma}\in \Omega}\langle \bm{\tau}|S_{1}|\bm{\sigma}\rangle\langle \bm{\sigma}|\Psi\rangle=\sum_{\sigma\in \Omega}\langle \bm{\sigma}|S_{1}^{T}|\bm{\tau}\rangle\langle \bm{\sigma}|\Psi\rangle\dt
 \end{align}
+\todo{what was Omega again?}
 We introduce the dual configuration $\bm{\xi}(\bm{\tau})=(N,\tau_{1},\ldots,\tau_{L},N)$ where two extra-sites occupied by the species $N$ have been attached to the vector $\bm{\tau}$, transforming it from a vector of dimension $L$ to one of dimension $L+2$. More explicitly, this dual configuration is given by
 \begin{equation}
 	\begin{cases}
