@@ -1761,6 +1761,7 @@ Denoting by $|\hat{\bm{\xi}}\rangle=|\xi^{1},\ldots,\xi^{L}\rangle$, i.e. the ve
 \begin{equation}
 	S_{1}^{T}=\prod_{x=1}^{L}d_{x}
 \end{equation} 
+\todo{double check and ref to $d_x$}
 we have
 \begin{equation}
 	\langle \bm{\tau}|S_{1}^{T}|\hat{\bm{\xi}}\rangle=\langle \bm{\tau}|D|\bm{\xi}\rangle \dt
@@ -1801,27 +1802,29 @@ From third to fourth line we have changed the summation order. Therefore, compar
 
 
 {\color{blue}
-\begin{remark}
-Alternatively, by a direct computation we immediately verify 
-\begin{equation}
-\begin{split}
-\langle N,\ldots,N,a_1,N,\ldots,N,a_m,N,\ldots,N|\Psi^{'}\rangle
- =\sum_{\bm{\tau}\in\Omega^{'}}\prod_{k=1}^{m}\delta_{{{\tau}_{x_k}},a_{k}}\langle \bm{\tau}|\Psi\rangle=\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]
- \end{split}
-\end{equation} 
-where the entries $a_i\neq N$ are at position $x_i$. Here we only  used  that $|\Psi^{'}\rangle=S_1|\Psi\rangle$ and
+\begin{remark} 
+Without using duality but only  the definition $|\Psi^{'}\rangle=S_1|\Psi\rangle$ and that
 \begin{equation}
  \langle \tau |S_1=\begin{cases}
                     \sum_{\sigma=1}^N\langle \sigma|  \quad\text{if}\quad \tau=N\\
                     \langle \tau| \quad\text{else} 
-                   \end{cases}\,.
+                   \end{cases}\,,
 \end{equation} 
+  we immediately verify 
+\begin{equation}\label{eq:EE}
+\begin{split}
+\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=\sum_{\bm{\tau}\in\Omega^{'}}\prod_{k=1}^{m}\delta_{{{\tau}_{x_k}},a_{k}}\langle \bm{\tau}|\Psi\rangle=
+\langle N,\ldots,N,a_1,N,\ldots,N,a_m,N,\ldots,N|\Psi^{'}\rangle\dt
+ \end{split}
+\end{equation} 
+Here the entries $a_i\neq N$ in \eqref{eq:EE} are at position $x_i$. 
 \end{remark}
 
 }
-\todo{ok?}
+\todo{ok? adopt notation?}
 
 \subsubsection{Interpretation of $\Psi^{'}(\bm{\tau})$ as marginals of the steady state distribution}\label{subsection-interpretationPSIp}
+\todo{discuss section}
 %We argue similarly as in the Section~\ref{correlation-section}. 
 We still miss the interpretation of $\Psi^{'}(\bm{\tau})$ when  $\bm{\tau}= (N,\ldots,N)$. We show here that for this particular configuration
 $\Psi^{'}(N,\ldots,N) =1$. Indeed, for any $\bm{\tau}\in \Omega^{'}$ we have that 
@@ -1904,6 +1907,7 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 			=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\left(\prod_{x=1\,:\,x\notin\{q_{1},\ldots,q_{b}\}}^{L}\delta_{\tau_{x},\sigma_x}\right)\left(\prod_{x\in \{q_{1},\ldots,q_{b}\}}\delta_{\tau_{x},N}\sum_{a_{x}=1}^{N-1}\delta_{\sigma_{x},a_{x}}\right)\nonumber\\
 			=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{q_{1}},\ldots a_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{a_{q_{1}}}_{q_{1}},\ldots,\underbrace{a_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
 		\end{align}
+		\todo{can we remove q index in sum?}
 		where the notation
 		\begin{equation}\label{notation-PSI}
 			\Psi^{'}(\tau_{1},\ldots,\underbrace{a_{q_{1}}}_{q_{1}},\ldots,\underbrace{a_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
@@ -1915,6 +1919,7 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 				\tau_{x}=\tau_{x}\qquad &\text{if}\quad \text{otherwise}
 			\end{cases}\dt
 		\end{equation}
+		\todo{?}
 		In the second equality we have rewritten the product by introducing the summation over $b$, the coordinates $q_{1},\ldots,q_{b}$ and the occupations variables $a_{q_{1}},\ldots,a_{q_{k}}$. In the last equality we have summed over all possible $\sigma\in \Omega^{'}$. Finally, using equation \eqref{interpretation-PsiP}, the result follows. 
 \begin{remark}[Equilibrium case]
 	Using equation \eqref{implicit-mass-function} with correlation computed in \eqref{exactCorrelations} in the equilibrium case ($\beta_{a}=\alpha_{a}$), we obtain 
@@ -1924,7 +1929,7 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 As it has to be, this is the probability of the configuration $\bm{\tau}$ under the reversible measure \eqref{reversibleMeasure}, with site marginals distributed as $\text{Multinomial }(1,\alpha_{1},\ldots,\alpha_{N})$. 
 \end{remark}
 \subsection{The single-species case (SSEP)}
-The computations made for the multispecies stirring process can be specialized to the single-species case $N=2$. In this situation we retrieve the SSEP, that was already solved with the quantum inverse scattering method in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations of SEEP: 
+The computations made for the multispecies stirring process can be specialized to the single-species case $N=2$. In this situation we retrieve the SSEP, that was studied using the same approach as presented here in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations of SEEP: 
 \begin{equation}
 	H=H_{\text{left}}+\sum_{x=1}^{L-1}H_{x,x+1}+H_{\text{right}}
 \end{equation}
@@ -1942,6 +1947,7 @@ Here $e_{ab}$ are the basis elements of the fundamental representation of $gl(2)
 	\beta_{2}&1-\beta_{2}
 \end{pmatrix}\dt
 \end{equation}
+\todo{double check}
 In this case, the similarity transformations read
 \begin{equation}
 	\mathcal{S}_{1}=\begin{pmatrix}
@@ -1973,13 +1979,16 @@ while the boundary Hamiltonians of $H^{''}$ are
 \end{pmatrix}\dt
 \end{equation}
  We only report the main results, since the computations are just a specific case of the ones done for the multispecies stirring process. 
+ \todo{?}
 \paragraph{Correlations of SSEP.}
 We retrieve the closed formula for correlations in the non-equilibrium steady state found in \cite[(4.26)]{frassek2020eigenstates}:  
 \begin{equation}\label{correlations-SSEP}
 	\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=1\}}\right]=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation} 
 \textbf{Proof of formula \eqref{correlations-SSEP}:} Starting from \eqref{exactCorrelations} we exploit indistinguishability of particles and we introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define $q$ %labels denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  
-$1\leq \ell_{1}<\ell_{2}<\ldots<\ell_{q}\leq m$. To each of these label we associate the coordinates $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$ that are such $c_{x_{\ell_{k}}}=1$ for all $k\in \{1,\ldots,q\}$ and $c_{x}=0$ for $x\notin \{x_{\ell_{1}},\ldots,x_{\ell_{q}}\}$. Therefore, for any fixed $c_{x_{1}},\ldots,c_{x_{m}}$, we find $q$ and $\ell_{1},\ldots,\ell_{q}$ from which we fix $x_{\ell_{1}},\ldots,x_{\ell_{q}}$. Then, we obtain  
+$1\leq \ell_{1}<\ell_{2}<\ldots<\ell_{q}\leq m$. 
+\todo{?}
+To each of these label we associate the coordinates $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$ that are such $c_{x_{\ell_{k}}}=1$ for all $k\in \{1,\ldots,q\}$ and $c_{x}=0$ for $x\notin \{x_{\ell_{1}},\ldots,x_{\ell_{q}}\}$. Therefore, for any fixed $c_{x_{1}},\ldots,c_{x_{m}}$, we find $q$ and $\ell_{1},\ldots,\ell_{q}$ from which we fix $x_{\ell_{1}},\ldots,x_{\ell_{q}}$. Then, we obtain  
 	\begin{equation}
 		\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}=\prod_{k=1}^{q}\left(1+L-x_{\ell_{k}}-q+k\right)\dt
 	\end{equation}
