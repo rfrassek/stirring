@@ -1367,17 +1367,18 @@ The proof of formula \eqref{exactCorrelations} is split into the following steps
 	Associated to $H^{'}$ and $H^{''}$ there are two ground states denoted by $|\Psi^{'}\rangle$ and $|\Psi^{''}\rangle$ respectively. 
 	\item In Section~\ref{subsectionSSHsec} we apply the MPA to $H^{''}$. Here the commutation relations defining the matrix algebra are simpler. The explicit expression for $|\Psi^{''}\rangle$ is determined (see \eqref{ResulsBasis}).
 	\item In subsection~\ref{subsectionSSdual}, we invert the similarity transformation $S_2$ to recover  the ground state $|\Psi^{'}\rangle$ from the explicit expression of $|\Psi^{''}\rangle$  (see \eqref{ABS}).
-	\item In Section~\ref{correlation-section} we show, using duality, that the correlations are in turn the components of the vector $|\Psi^{'}\rangle$. By exploiting a binomial formula we rewrite the correlations in terms
-	as a polynomial in the left and right boundary densities with coefficients given by the absorption probabilities, as claimed in Corollary~\ref{Corolollary-ABS_Corr-abstract}.
+	\item In Section~\ref{correlation-section} we show that the correlations are in turn the components of the vector $|\Psi^{'}\rangle$. 
+	By exploiting a binomial formula we rewrite the correlations in terms
+of polynomials in the left and right boundary densities with coefficients given by the absorption probabilities, as claimed in Corollary~\ref{Corolollary-ABS_Corr-abstract}.
 	For completeness, we also show that Corollary~\ref{Corollary-NESS-ABS} is in turn corresponding to the transformation $|\Psi\rangle = S_{1}^{-1} |\Psi'\rangle$.
+	\todo{to discuss}
 	\end{itemize}
 \subsubsection{The similarity transformations}\label{subsectionSTransf}
-Consider the matrices
+Consider the matrix
 \begin{align}
-	\mathcal{S}_{1}:=\exp{\left(\sum_{a=1}^{N-1}e_{Na}\right)}\label{S1Gen}\co\\
-	\mathcal{S}_{2}:=\exp{\left(-\sum_{a=1}^{N-1}\beta_{a}e_{aN}\right)}\dt\label{S2Gen}
+	\mathcal{S}_{1}:=\exp{\left(\sum_{a=1}^{N-1}e_{Na}\right)}\label{S1Gen}\co
 \end{align}
-We introduce
+and
 \begin{equation}\label{transformationV}
  \mathcal{S}_{1}^{x}:=\exp{\left(\sum_{a=1}^{N-1}e_{Na}^{x}\right)}\co %=\mathbbm{1}+\sum_{a=2}^{N}e_{1a}
 \end{equation}
@@ -1430,10 +1431,14 @@ We have the following correspondence between eigenvectors with zero eigenvalues
 where $|\Psi^{'}\rangle$ satisfies $H^{'}|\Psi^{'}\rangle=0$.
 
 We introduce
+\begin{align} 
+	\mathcal{S}_{2}:=\exp{\left(-\sum_{a=1}^{N-1}\beta_{a}e_{aN}\right)}\dt\label{S2Gen}
+\end{align}
+and
  \begin{equation}
  	\mathcal{S}_{2}^{x}:=\exp{\left(-\sum_{a=1}^{N-1}\beta_{a}e_{aN}^{x}\right)}\co%=\mathbbm{1}-\sum_{a=2}^{N}\beta_{a}e_{a1}
  \end{equation}
-whichdenotes $\mathcal{S}_{2}$ (see \eqref{S2Gen}) acting at site $x$. By taking the product over the chain we obtain 
+which denotes $\mathcal{S}_{2}$ (see \eqref{S2Gen}) acting at site $x$. By taking the product over the chain we obtain 
 \begin{equation}\label{S2-Whole}
 	S_{2}=\prod_{x=1}^{L}\mathcal{S}_{2}^{x}\dt
 \end{equation}
