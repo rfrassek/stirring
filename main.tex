@@ -1406,7 +1406,7 @@ that is related to $H$ by
    H^{'}=S_{1}HS_{1}^{-1}\dt
 \end{equation}
 The bulk part of the Hamiltonian is left unchanged (because it is written using the coproduct of the second Casimir, see equation \eqref{hamiltonianCasimir}) while the boundaries are given by 
-\begin{equation}
+\begin{equation}\label{eq:Hprimes}
 	H^{'}_{\text{left}}=\sum_{a=1}^{N-1}\left(\alpha_{a}e_{aN}^{1}-e_{aa}^{1}\right)\qquad H^{'}_{\text{right}}=\sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}\right)\dt
 \end{equation}
 Indeed, using \eqref{HadTransfBoundary}, \eqref{ratesConditions} and \eqref{transpostionPropertyFund}, we obtain for the left boundary
@@ -1428,7 +1428,7 @@ H_{\text{right}}^{'}=S_{1}H_{\text{right}}S_{1}^{-1}=
 \sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}\right)\dt
 \end{equation}
 \begin{remark}
-	The boundary Hamiltonians $H_{\text{left}}^{'}$ and $H_{\text{right}}^{'}$ relates to the transposed of  $\widetilde{H}_{\text{left}}$ and $\widetilde{H}_{\text{right}}$, i.e. to the transposed of the boundary part of the dual Hamiltonian  defined in \eqref{siteDualHamiltonian}. They are obtained replacing the  extra-site bosonic creation operators $(\mathbf{a}^{+})_{a}^{0}$  (resp. $(\mathbf{a}^{+})_{a}^{L+1}$) with the corresponding reservoir parameters $\alpha_a$ (resp. $\beta_a$).
+	The boundary Hamiltonians $H_{\text{left}}^{'}$ and $H_{\text{right}}^{'}$ in \eqref{eq:Hprimes} resemble the transposed of  $\widetilde{H}_{\text{left}}$ and $\widetilde{H}_{\text{right}}$, i.e. to the transposed of the boundary part of the dual Hamiltonian  defined in \eqref{siteDualHamiltonian}. They can be identified  when replacing the  extra-site bosonic creation operators $(\mathbf{a}^{+})_{a}^{0}$  (resp. $(\mathbf{a}^{+})_{a}^{L+1}$) with the corresponding reservoir parameters $\alpha_a$ (resp. $\beta_a$).
 \end{remark}
 We have the following correspondence between eigenvectors with zero eigenvalues
 \begin{equation}\label{S1-Inverse}
@@ -1456,7 +1456,7 @@ that is related to $H'$ by
 \begin{equation}
 	H^{''}=S_{2}H^{'}S_{2}^{-1}\dt
 \end{equation}
-The boundary Hamiltonians of $H^{''}$ reads
+The boundary Hamiltonians of $H^{''}$ read
 \begin{align}\label{tri-diag-boundaryHamiltonians}
 	H_{\text{left}}^{''}=e_{NN}^{1}-\mathbbm{1}+\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1}\qquad H_{\text{right}}^{''}=e_{NN}^{L}-\mathbbm{1}\dt
 \end{align}
@@ -1518,55 +1518,60 @@ where
         0\quad \text{otherwise}
     \end{cases}\dt
 \end{equation}
+\todo{that's a 1 right?}
 
 
 \paragraph{Proof of formula \eqref{ResulsBasis}}  
 We consider the vector with elements given by the operators of the MPA $(X_{1},\ldots,X_{N})$ and we act on it with the similarity transformation $S=S_{2}S_{1}$ obtaining new operators $(\Xt_{1},\ldots,\Xt_{N})$ that will satisfy simpler commutation relations. 
-For the sake of notation we denote by
-\begin{equation}
-    \begin{pmatrix}
-		X_{a}\\ 
-		X_{N}
-	\end{pmatrix}=\begin{pmatrix}
-	    X_{1}\\
-     \vdots\\
-     X_{N}
-	\end{pmatrix}\dt
-\end{equation}
+% For the sake of notation we denote by
+% \begin{equation}
+%     \begin{pmatrix}
+% 		X_{a}\\ 
+% 		X_{N}
+% 	\end{pmatrix}=\begin{pmatrix}
+% 	    X_{1}\\
+%      \vdots\\
+%      X_{N}
+% 	\end{pmatrix}\co
+% \end{equation}
 We define the transformed matrix product operators
 \begin{equation}\label{Xtildes2b}
 	\begin{pmatrix}
-		\Xt_{a}\\ 
+		\Xt_{1}\\ 
+		\vdots\\
+		\Xt_{N-1}\\
 		\Xt_{N}
 	\end{pmatrix} =S\begin{pmatrix}
-		X_{a}\\X_{N}
+		X_{1}\\
+		\vdots 
+		\\
+		X_{N-1}
+		\\X_{N}
 	\end{pmatrix}=\begin{pmatrix} 
-		X_{a}-\beta_{a}(X_{1}+\ldots+X_{N})\\
+		X_{1}-\beta_{1}(X_{1}+\ldots+X_{N})\\
+		\vdots \\
+		X_{N-1}-\beta_{N-1}(X_{1}+\ldots+X_{N})\\
 				X_{1}+\ldots +X_{N}\\
 	\end{pmatrix}\dt
 \end{equation}
-We can also reverse the transformation by $S^{-1}$ and get back: 
+We can also reverse the transformation by $S^{-1}$ and get: 
 \begin{equation}\label{Xes}
-	\begin{pmatrix}
-		X_{a}\\
-		X_{N} 
-	\end{pmatrix} =S^{-1}\begin{pmatrix}
-		\widetilde{X}_{a}\\
-		\widetilde{X}_{N}
-	\end{pmatrix}=\begin{pmatrix}
-		\Xt_{a}+\beta_{a}\Xt_{N}\\ 
-		\beta_N\Xt_{N}-(\Xt_{1}+\ldots+\Xt_{N-1})
-	\end{pmatrix}\dt
+ X_{a}=	\Xt_{a}+\beta_{a}\Xt_{N}\,,\qquad
+	X_{N} = \beta_N\Xt_{N}-(\Xt_{1}+\ldots+\Xt_{N-1})
 \end{equation}
+where  $ a\in \{1,\ldots,N-1\}$.
+
 Summing over $b\in \{1,\ldots,N\}$ in commutation relations \eqref{bulk} we have
 \begin{equation} 
 	\left[X_{a},\Xt_{N}\right]=(\alpha_{a}-\beta_{a})\Xt_{N}
 \end{equation}
-with $\widetilde{X}_{N}=\widetilde{X}_{1}+\ldots+\widetilde{X}_{N}$. 
-Therefore, we obtain the commutation relations for $\Xt_{a}$ 
+with $\widetilde{X}_{N}= {X}_{1}+\ldots+ {X}_{N}$. 
+Therefore, using \eqref{Xes}
+we obtain the commutation relations for $\Xt_{a}$ 
 \begin{equation}\label{commutationsBula}
 	\left[\Xt_{a},\Xt_{N}\right]=(\alpha_{a}-\beta_{a})\Xt_{N}\co
 \end{equation}
+for $a=1,\ldots,N-1$,
 cf.~\eqref{commutationsBula2}.
 Moreover using \eqref{Xtildes2b} and \eqref{Xes}, the action of $\Xt_{a}$ on the boundary vectors are given by 
 \begin{equation}\label{commLEFT}
@@ -1577,35 +1582,43 @@ Moreover using \eqref{Xtildes2b} and \eqref{Xes}, the action of $\Xt_{a}$ on the
 	\Xt_{a}  |V\rangle\rangle = (\alpha_{a}-\beta_{a}) |V\rangle\rangle 
 	\co
 \end{equation} 
+for $a=1,\ldots,N-1$,
 cf.~\eqref{commLEFT2}.
 Using the transformed operators $(\widetilde{X}_{a})_{a\in\{1,\ldots,N\}}$, the vector $|\Psi^{''}\rangle$ of the matrix product ansatz is written as
 \begin{equation}\label{toDetermineTilde}
-	|\Psi^{''}\rangle = \frac{1}{Z_{L}}\sum_{\bm{\tau}\in \Omega^{'}} \langle \langle W|  \prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
+	|\Psi^{''}\rangle = \frac{1}{Z_{L}}\sum_{\bm{\tau}\in \Omega^{'}} \langle \langle W| \widetilde{X}_{\tau_{1}}\cdots \widetilde{X}_{\tau_{L}}
 	|V\rangle\rangle \,|\bm{\tau}\rangle
 \end{equation}
-where the normalization is given by 
+\todo{these do not commute. Introduced ordered product. Please check if ok}
+where
+the normalization is given by 
 \begin{align}
 		Z_{L}&= \langle \langle W|  (X_{1}+\ldots+X_{N})^{L} |V\rangle\rangle = \langle \langle W|  \widetilde{X}_{N}^{L} |V\rangle\rangle \dt
 \end{align}
 
-To determine the eigenvector \eqref{toDetermineTilde}, we compute the coefficient $ \langle \langle W|  \prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
-|V \rangle\rangle$ and the normalization $Z_{L}$. Using \eqref{commutationsBula} we have
+To determine the eigenvector \eqref{toDetermineTilde} in closed form, we compute the coefficients and the normalization $Z_{L}$. Using \eqref{commutationsBula} we have
 \begin{equation}\label{UsefulRelation}
 	\widetilde{X}_{a}\widetilde{X}_{N}=\widetilde{X}_{N}\left((\alpha_{a}-\beta_{a})+\widetilde{X}_{a}\right)\dt
 \end{equation}
-Fix $ a\in \{1,\ldots,N-1\}$ and arbitrary $ \ell,n\in \mathbb{N}$. By applying the above formula \eqref{UsefulRelation} we have
+Fix  $ \ell,n\in \mathbb{N}$. By applying the above formula \eqref{UsefulRelation} we have
 \begin{align}\label{usefulRelaton-many}
 	\widetilde{X}_{a}^{n}\widetilde{X}_{N}^{\ell}&=
 	\widetilde{X}_{N}^{\ell}\left(\widetilde{X}_{a}+\ell(\alpha_{a}-\beta_{a})\right)^{n}\dt
 \end{align}
 
-By taking the product over the sites $x$ from $1$ to $L$ we obtain 
+
+
+Using \eqref{usefulRelaton-many} we obtain
 \begin{equation}
-	\prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}=\widetilde{X}_{N}^{\sum_{x=1}^{L}\delta_{\tau_{x},N}}\prod_{x=1}^{L}\left(\widetilde{X}_{\tau_{x}}+(\alpha_{\tau_{x}}-\beta_{\tau_{x}})\sum_{j=x}^{L}\delta_{\tau_{x},N}\right)^{1-\delta_{\tau_{x},N}}\dt
+	\sideset{}{'}\prod_{x=1}^L\widetilde{X}_{\tau_{x}}=\widetilde{X}_{N}^{\sum_{x=1}^{L}\delta_{\tau_{x},N}}\sideset{}{'}\prod_{x=1}^L\left(\widetilde{X}_{\tau_{x}}+(\alpha_{\tau_{x}}-\beta_{\tau_{x}})\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}\co
 \end{equation}
+where for convenience we introduce the ordered product
+\begin{equation}
+ \sideset{}{'}\prod_{x=1}^L \widetilde{X}_{\tau_{x}}= \widetilde{X}_{\tau_{1}}\cdots  \widetilde{X}_{\tau_{L}}\,.
+\end{equation} 
 Multiplying by the boundary vectors and by using \eqref{commRIGHT} we have 
 \begin{align}
-	 \langle \langle W|  \prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
+	 \langle \langle W| \widetilde{X}_{\tau_{1}}\cdots  \widetilde{X}_{\tau_{L}}
 	|V \rangle\rangle=
 	\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}} \langle \langle W|  \widetilde{X}_{N}^{\sum_{x=1}^{L}\delta_{\tau_{x},N}} |V\rangle\rangle  \dt
 \end{align}
@@ -1635,8 +1648,8 @@ Therefore, we obtain
 \end{align}
 By using this result we have that
 \begin{equation}
-	 \langle \langle W|  \prod_{x=1}^{L}\widetilde{X}_{\tau_{x}}
-	|V\rangle\rangle=(1+\sum_{x=1}^{N}\delta_{\tau_{x},N})!\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}\dt
+	 \langle \langle W|  \widetilde{X}_{\tau_{1}}\cdots  \widetilde{X}_{\tau_{L}}
+	|V\rangle\rangle=(1+\textstyle \sum_{x=1}^{N}\delta_{\tau_{x},N})!\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}\dt
 \end{equation}
 The normalization constant is then given by
 \begin{align}
@@ -1649,7 +1662,7 @@ Therefore, we write
 \end{equation}
 We observe that, for all $x$, we have
 \begin{equation}
-	\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}=\frac{(1+\sum_{j=x+1}^{L}\delta_{\tau_{j},N})!}{(\sum_{j=x}^{L}\delta_{\tau_{j},N})!}\dt
+	\left(1+\textstyle\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}=\frac{(1+\sum_{j=x+1}^{L}\delta_{\tau_{j},N})!}{(\sum_{j=x}^{L}\delta_{\tau_{j},N})!}\dt
 \end{equation}
 It follows that 
 \begin{align}\label{remove-exponent}
