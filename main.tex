@@ -466,7 +466,7 @@ If condition \eqref{reversibilityCondition} is not met, then in general reversib
 	\rho_{a}^x=\frac{\alpha_{a}^x}{|\alpha^x|}
 \end{equation}
 and  $|\alpha^x|=\sum_{a=1}^{N}\alpha_{a}^x$. {\color{blue} As a consequence, particles are injected and removed in the graph with different rates. When, for any $a\in \{1,\ldots,N\}$, there are at least two reservoirs at two different sites $x,y$ such that $\rho_{a}^{x}\neq  \rho_{a}^{y}$, a  non-zero current sets in, breaking the reversibility. Informally, one can say that the reservoirs try to impose their different densities at the boundaries of the the graph, putting the system out-of-equilibrium.} %{\color{red}wants to fix}
-\todo{?}
+% \todo{?}
 %Currents will arise when at least two reservoirs have different densities. 
 \begin{remark}
 \label{rem-rev}
@@ -698,7 +698,7 @@ can be studied by means of a dual process. After recalling the definition of dua
 Markov processes in Section~\ref{def-duality}, we formulate our duality result  in Theorem~\ref{thm-duality}. A proof of the theorem is given in Section~\ref{proof-th-duality}.
 The duality result yields {\color{blue} to a dual process that} %several simplifications,  the main one being that the
 %dual process
- has absorbing sites\todo{which else?}. Therefore, as shown in Corollary~\ref{Corolollary-ABS_Corr-abstract}, the study of correlations in the non-equilibrium steady state of the multispecies stirring process with open boundaries
+ has absorbing sites. Therefore, as shown in Corollary~\ref{Corolollary-ABS_Corr-abstract}, the study of correlations in the non-equilibrium steady state of the multispecies stirring process with open boundaries
 is reduced to the study of the absorption probabilities of dual particles.
 
 
@@ -742,9 +742,8 @@ Note that on the extra-site we allow an unbounded number of particles. Thus
 dual particles will accumulate in these extra-sites in the course of time. 
 We write the configurations $\bm{\xi} \in \widetilde\Omega$  as
 \begin{equation}
-    \bm{\xi}=\left(\left(\xi_{1}^{x},\ldots,\xi_{N}^{x}\right)\otimes (\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)} )\right)_{x\in V}
-\end{equation}
-\todo{OK? but this has no index $x$?}
+    \bm{\xi}=\bigotimes_{x\in V} \left(\left(\xi_{1}^{x},\ldots,\xi_{N}^{x}\right)\otimes (\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)} )\right) 
+\end{equation} 
 where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles of type $a\in \{1,\ldots,N\}$ at site $x$, 
 and the component $\xi_{a}^{u(x)}$  gives the number of dual particles of type $a\in \{1,\ldots,N-1\}$ at 
 the extra-site $u(x)$ connected to $x\in V$. {\color{blue} We observe that the configuration variable at the extra site $u(x)$ does not have to satisfy any exclusion constraint, i.e. an unbounded number of particles can be hosted at extra-site $u(x)$. Therefore, the occupation variable of species $N$ (the one dependent on the species $1,\ldots,N-1$) is not present}. We state the following duality result.
@@ -815,9 +814,9 @@ Here
 \begin{equation}\label{bulkElementDualityMatrix}
 d_{x}=R_{x}\exp{(E^{x})}
 \end{equation}
-with 
+with  the diagonal part
 \begin{equation}\label{Revmatrix}
-    R_{x}=\sum_{n^{x}\in\Omega_{x}}\frac{\prod_{a=1}^{N}n_{a}^{x}!}{\nu!}|n_{1}^{x},\ldots,n_{N}^{x}\rangle\langle n_{1}^{x},\ldots,n_{N}^{x}|
+    R_{x} =\sum_{n^{x}\in\Omega_{x}}\frac{\prod_{a=1}^{N}n_{a}^{x}!}{\nu!}|n_{1}^{x},\ldots,n_{N}^{x}\rangle\langle n_{1}^{x},\ldots,n_{N}^{x}|
 \end{equation}
 and
 \begin{equation}\label{EquationEx}
@@ -853,14 +852,13 @@ Fix an arbitrary site $x\in V$, then we have that
 \begin{align}
 	 &\langle n^{x}_{1},\ldots,n_{N}^{x}|\left(d_{x}\otimes \dd\right)\left(|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\otimes|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle\right)\nonumber\\=&\langle n_{1}^{x},\ldots,n_{N}^{x}| (\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x}}))^{T}R_{x}\otimes\sum_{q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}=0}^{\infty}\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\langle q_{1}^{u(x)},\ldots,q_{N}^{u(x)}|\nonumber
 	 \\&|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle \otimes |\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle
-\end{align}
-\todo{something wrong...} {\color{blue} [I have added the vector at site $u(x)$]}
+\end{align} 
 where we used \eqref{transpositionPropertyR}. \\
 On one hand, on the extra-site $u(x)$ we have 
 \begin{align}
 \sum_{q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{q_{a}^{u(x)}}\right)\langle q_{1}^{u(x)},\ldots,q_{N-1}^{u(x)}|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle=\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}
 \end{align}
-\todo{what happens to $q_N$?} {\color{blue} 
+{ 
 where we used the orthogonality relation \eqref{ortho-extraSite}}. 
 On the other hand, on the site $x$, we have 
 \begin{align}
@@ -991,7 +989,7 @@ we obtain
 |\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\otimes \left(\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|\right)
     \end{split}
 \end{equation}
-\todo{somehow this now has extra index for the space and everywhere else not.... please fix} {\color{blue} We have defined the bosonic operator with the extra-site, see under equation \eqref{bosonic_2}}
+\todo{explain extra index }  
 Recalling the action of the bosonic creation operator acting at site $u(x)$ and on the species $a\in \{1,\ldots,N-1\}$ we have that 
 \begin{equation}\label{bosonicKX}
     \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N-1}^{u(x)}|(\mathbf{a}^{+})^{u(x)}_{a}=  \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|\dt
@@ -1537,11 +1535,10 @@ The ground state of the Hamiltonian $H^{''}$ is given by
 where 
 \begin{equation}
     \delta_{\tau_{x},N}:=\begin{cases}
-        N\quad \text{if}\quad \tau_{x}=N\\
+        1\quad \text{if}\quad \tau_{x}=N\\
         0\quad \text{otherwise}
     \end{cases}\dt
-\end{equation}
-\todo{that's a 1 right?}
+\end{equation} 
 
 
 \paragraph{Proof of formula \eqref{ResulsBasis}}  
@@ -1611,8 +1608,7 @@ Using the transformed operators $(\widetilde{X}_{a})_{a\in\{1,\ldots,N\}}$, the 
 \begin{equation}\label{toDetermineTilde}
 	|\Psi^{''}\rangle = \frac{1}{Z_{L}}\sum_{\bm{\tau}\in \Omega^{'}} \langle \langle W| \widetilde{X}_{\tau_{1}}\cdots \widetilde{X}_{\tau_{L}}
 	|V\rangle\rangle \,|\bm{\tau}\rangle
-\end{equation}
-\todo{these do not commute. Introduced ordered product. Please check if ok}
+\end{equation} 
 where
 the normalization is given by 
 \begin{align}
@@ -1642,8 +1638,8 @@ where for convenience we introduce the ordered product
 Multiplying by the boundary vectors and by using \eqref{commRIGHT} we have 
 \begin{align}
 	 \langle \langle W| \widetilde{X}_{\tau_{1}}\cdots  \widetilde{X}_{\tau_{L}}
-	|V \rangle\rangle=
-	\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}} \langle \langle W|  \widetilde{X}_{N}^{\sum_{x=1}^{L}\delta_{\tau_{x},N}} |V\rangle\rangle  \dt
+	|V \rangle\rangle=\langle \langle W|  \widetilde{X}_{N}^{\sum_{x=1}^{L}\delta_{\tau_{x},N}} |V\rangle\rangle
+	\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}   \dt
 \end{align}
 We now compute $ \langle \langle W|  \widetilde{X}_{N}^{\sum_{i=1}^{L}\delta_{\tau_{x},N}} |V\rangle\rangle $. For all $n\in \mathbb{N}$ we have that  
 \begin{align}
@@ -1796,7 +1792,7 @@ Denoting by $|\hat{\bm{\xi}}\rangle=|\xi^{1},\ldots,\xi^{L}\rangle$, i.e. the ve
 \begin{equation}
 	S_{1}^{T}=\prod_{x=1}^{L}d_{x}
 \end{equation} 
-\todo{double check and ref to $d_x$}
+\todo{double check and ref to $d_x$ and say that R is id}
 we have
 \begin{equation}
 	\langle \bm{\tau}|S_{1}^{T}|\hat{\bm{\xi}}\rangle=\langle \bm{\tau}|D|\bm{\xi}\rangle \dt
