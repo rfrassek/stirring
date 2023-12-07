@@ -1328,7 +1328,7 @@ where $\mathcal{P}_{x_1}(1)$ is the probability that a single random walk starte
 		\langle\rho_{a_{1}}^{x_{1}}\rangle= \mathbb{E}\left[\mathbbm{1}_{\{Y_{x_{1}}=a_{1}\}}\right]=\frac{(L+1-x_{1})}{(L+1)}\alpha_{a_{1}}+\frac{x_{1}}{(L+1)}\beta_{a_{1}}\co
 \end{equation}
 \todo{here Y instead of $\tau$?}
-{\color{blue}where we defined $\langle\rho_{a_{1}}^{x_{1}}\rangle$.}
+{\color{blue}where, for the sake of notation, we have introduced $\langle\rho_{a_{1}}^{x_{1}}\rangle$.}
 \paragraph{Two-point correlations}
 We consider the average with respect to $\mu$ of the occupation variable of the species  $a_{1},a_{2}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2}\in \{1,\ldots,L\}$ such that $x_{1}< x_{2}$. 
 %\begin{equation}
@@ -1362,7 +1362,7 @@ Using \eqref{abs-probabilities} we obtain the absorption probabilities
 Therefore, we compute the second cumulant, i.e. the two-point connected correlation
 \begin{equation}\label{two-pts-corr}
 	\begin{split}
-		 \mathbb{E}\left[\left(\mathbbm{1}_{\{\tau_{x_{1}}=a_{1}\}}-\langle\rho_{a_{1}}^{x_{1}}\rangle \right)\left(\mathbbm{1}_{\{\tau_{x_{2}}=a_{2}\}}-\langle\rho_{a_{2}}^{x_{2}}\rangle \right)\right]=-\frac{x_{1}(L-x_{2}+1)}{L(L+1)^{2}}\left(\alpha_{a_{1}}-\beta_{a_{1}}\right)\left(\alpha_{a_{2}}-\beta_{a_{2}}\right)\dt
+		 \mathbb{E}\left[\left(\mathbbm{1}_{\{Y_{x_{1}}=a_{1}\}}-\langle\rho_{a_{1}}^{x_{1}}\rangle \right)\left(\mathbbm{1}_{\{Y_{x_{2}}=a_{2}\}}-\langle\rho_{a_{2}}^{x_{2}}\rangle \right)\right]=-\frac{x_{1}(L-x_{2}+1)}{L(L+1)^{2}}\left(\alpha_{a_{1}}-\beta_{a_{1}}\right)\left(\alpha_{a_{2}}-\beta_{a_{2}}\right)\dt
 	\end{split}
 \end{equation}
 \todo{here Y instead of $\tau$?}
@@ -1797,12 +1797,15 @@ Thus it follows that
 	\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=&\sum_{\bm{\tau}\in \Omega^{'}}D(\bm{\tau},\bm{\xi})\langle\bm{\tau}|\Psi\rangle
 	=\sum_{\bm{\tau}\in \Omega^{'}}\langle \bm{\tau}|D|\bm{\xi}\rangle\langle\bm{\tau}|\Psi\rangle\dt
 \end{align}
-Denoting by $|\hat{\bm{\xi}}\rangle=|\xi^{1},\ldots,\xi^{L}\rangle$, i.e. the vector constructed from $|\bm{\xi}\rangle$ by removing the components at sites $\{0\}$ and $\{L+1\}$ and recalling that  
+We denote by $|\hat{\bm{\xi}}\rangle=|\xi^{1},\ldots,\xi^{L}\rangle$, i.e. the vector constructed from $|\bm{\xi}\rangle$ by removing the components at sites $\{0\}$ and $\{L+1\}$. Recalling that {\color{blue} in the case $\nu=1$, since the matrix $R_{x}$ defined in \eqref{Revmatrix} reduces to the identity, we have that the matrix $d_{x}$ defined in \eqref{bulkElementDualityMatrix} becomes
+\begin{equation}
+	d_{x}=\exp{(\sum_{a=1}^{N-1}e_{aN}^{x})}
+	\end{equation} then the following holds}
 \begin{equation}
 	S_{1}^{T}=\prod_{x=1}^{L}d_{x}
 \end{equation} 
 \todo{double check and ref to $d_x$ and say that R is id}
-we have
+{\color{blue}As a consequence we have that }
 \begin{equation}
 	\langle \bm{\tau}|S_{1}^{T}|\hat{\bm{\xi}}\rangle=\langle \bm{\tau}|D|\bm{\xi}\rangle \dt
 \end{equation}
@@ -1841,7 +1844,6 @@ From third to fourth line we have changed the summation order. Therefore, compar
 \end{flushright}
 
 
-{\color{blue}
 \begin{remark} 
 Without using duality but only  the definition $|\Psi^{'}\rangle=S_1|\Psi\rangle$ and that
 \begin{equation}
@@ -1860,63 +1862,8 @@ Without using duality but only  the definition $|\Psi^{'}\rangle=S_1|\Psi\rangle
 Here the entries $a_i\neq N$ in \eqref{eq:EE} are at position $x_i$. 
 \end{remark}
 
-}
 \todo{ok? adopt notation?}
 
-\subsubsection{Interpretation of $\Psi^{'}(\bm{\tau})$ as marginals of the steady state distribution}\label{subsection-interpretationPSIp}
-\todo{discuss section}
-%We argue similarly as in the Section~\ref{correlation-section}. 
-We still miss the interpretation of $\Psi^{'}(\bm{\tau})$ when  $\bm{\tau}= (N,\ldots,N)$. We show here that for this particular configuration
-$\Psi^{'}(N,\ldots,N) =1$. Indeed, for any $\bm{\tau}\in \Omega^{'}$ we have that 
-\begin{align}
-	\Psi^{'}(\bm{\tau})=&\langle\bm{\tau}|\Psi^{'}\rangle=\sum_{\bm{\sigma}\in \Omega^{'}}\langle \bm{\tau}|S_{1}|\bm{\sigma}\rangle\langle \bm{\sigma}|\Psi\rangle=\sum_{\bm{\sigma}\in \Omega^{'}}\langle \bm{\sigma}|S_{1}^{T}|\bm{\tau}\rangle\langle \bm{\sigma}|\Psi\rangle\dt
-\end{align}
-\todo{what was Omega again?}
-We introduce the dual configuration $\bm{\xi}(\bm{\tau})=(N,\tau_{1},\ldots,\tau_{L},N)$ where two extra-sites occupied by the species $N$ have been attached to the vector $\bm{\tau}$, transforming it from a vector of dimension $L$ to one of dimension $L+2$. More explicitly, this dual configuration is given by
-\begin{equation}
-	\begin{cases}
-	\xi_{a}^{x}(\bm{\tau})= \delta_{\tau_{x},a}\qquad \forall a\in \{1,\ldots N\}\quad \forall x\in \{1,\ldots,L\}\\
-	\xi_{N}^{0}(\bm{\tau})=\xi_{N}^{L+1}(\bm{\tau})=1
-\end{cases}\dt
-\end{equation} Now we consider the elements $\langle\bm{\sigma}|D|\xi(\bm{\tau})\rangle$ of the duality matrix $D$ and we have
-\begin{align}\label{useful-InInterpretation}
-	\Psi^{'}(\bm{\tau})=&\sum_{\bm{\sigma}\in \Omega}\langle \bm{\sigma}|D|\bm{\xi}(\bm{\tau})\rangle\langle \bm{\sigma}|\Psi\rangle\dt
-\end{align}
-We observe that for any $x\in \{1,\ldots,L\}$
-\begin{equation}
-	\prod_{a=1}^{N-1}\mathbbm{1}_{\{\delta_{\sigma_{x},a}\geq\xi_{a}^{x}(\bm{\tau})\}}=\left(\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right)^{(1-\delta_{\tau_{x},N})}%=\begin{cases}
-	%	\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\qquad &\text{if}\quad \tau_{x}\neq N\\
-	%	1\qquad  &\text{if}\quad \tau_{x}= N
-%	\end{cases}\dt
-\end{equation}
-Indeed, we have that 
-\begin{equation}
-	\prod_{a=1}^{N-1}\mathbbm{1}_{\{\delta_{\sigma_{x},a}\geq\xi_{a}^{x}(\bm{\tau})\}}=\begin{cases}
-			\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\qquad &\text{if}\quad \tau_{x}\neq N\\
-			1\qquad  &\text{if}\quad \tau_{x}= N
-			\end{cases}\dt
-\end{equation}
- Therefore using the duality function \eqref{ElementsDualityMatrixChain_1} and equation~\ref{useful-InInterpretation}, we obtain 
- 	\begin{equation}\label{interpretation-PsiP}
- 	\Psi^{'}(\bm{\tau})=\mathbb{E}\left[\prod_{x=1}^{L}\left(\mathbbm{1}_{\{Y_{x}=\tau_{x}\}} \right)^{(1-\delta_{\tau_{x},N})}\right]\dt
- \end{equation} 
- This last equation completes and generalizes \eqref{corr-psi1} by showing that $\Psi^{'}(N,\ldots,N) =1$.
- 
- Equivalently, we can interpret the components of $\Psi'(\bm{\tau})$ as follows.
- Let $\ell$ be the number of occupied sites in the configuration $\bm{\tau}$, i.e.  $\ell=\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})$. We denote by $x_{1},\ldots,x_{\ell}$, such that $x_{k}<x_{k+1}$ for all $k\in \{1,\ldots,\ell-1\}$, the coordinates where a particle of any (non-empty) type is present. Finally, we call 
- \begin{equation}
- 	\Omega_{\ell}^{'}(\bm{\tau}):=\left\{\bm{\sigma}\in \Omega^{'}\;:\; \sigma_{x_{1}}=\tau_{x_{1}},\ldots,\sigma_{x_{\ell}}=\tau_{x_{\ell}}\right\}\dt
- \end{equation} 
-Observe that, if $\ell=0$ then $\Omega_{\ell}^{'}(\bm{\tau})$ does coincide with the whole state space $\Omega^{'}$, while, if $\ell=L$ then $\Omega_{\ell}^{'}(\bm{\tau})$ reduces to the configuration $\bm{\tau}$. Denoting the marginal on $\ell$ sites of the steady state distribution by 
-\begin{equation}
-	\mu_{x_{1},\ldots,x_{\ell}}(\bm{\tau})=\sum_{\bm{\sigma}\in \Omega_{\ell}^{'}(\bm{\tau})}\mu(\bm{\sigma})
-\end{equation}
-we have that 
-\begin{align}
-	\Psi^{'}(\bm{\tau})=&\mathbb{E}\left[\prod_{x=1}^{L}\left(\mathbbm{1}_{\{Y_{x}=\tau_{x}\}} \right)^{(1-\delta_{\tau_{x},N})}\right]=\mathbb{E}\left[\prod_{k=1}^{\ell}\mathbbm{1}_{\{Y_{x_{k}}=\tau_{x_{k}}\}}\right]=\sum_{\bm{\sigma}\in \Omega_{\ell}^{'}(\bm{\tau})}\mu(\bm{\sigma})=\mu_{x_{1},\ldots,x_{\ell}}(\bm{\tau})\dt
-\end{align} 
-It follows that $\Psi^{'}(\bm{\tau})$ is the marginal on $\ell$ sites $x_{1},\ldots,x_{\ell}$ of the non-equilibrium steady state distribution. In particular, when the configuration $\bm{\tau}$ has $\ell$ particles, $\Psi^{'}(\bm{\tau})$ does coincide with the $\ell$-point correlation function. 
-%As a consequence, all the marginals of $\mu$ can be found using the absorption probabilities by equation \eqref{exactCorrelations}. 
 
 \subsubsection{Steady state}\label{appB}
 By the knowledge of the closed formula for correlations \eqref{exactCorrelations}, we find the probability mass-function in the non-equilibrium steady state by using Corollary~\ref{Corollary-NESS-ABS}. Indeed we show here that 
@@ -1980,11 +1927,11 @@ where the bulk Hamiltonian densities are
 Here $e_{ab}$ are the basis elements of the fundamental representation of $gl(2)$. The boundary Hamiltonians are
 \begin{equation}
 	H_{\text{left}}=\begin{pmatrix}
-		1-\alpha_{1}&\alpha_{1}\\
-		\alpha_{2}&1-\alpha_{2}
+		\alpha_{1}-1&\alpha_{1}\\
+		\alpha_{2}&\alpha_{2}-1
 	\end{pmatrix},\qquad H_{\text{right}}=\begin{pmatrix}
-	1-\beta_{1}&\beta_{1}\\
-	\beta_{2}&1-\beta_{2}
+	\beta_{1}-1&\beta_{1}\\
+	\beta_{2}&\beta_{2}-1
 \end{pmatrix}\dt
 \end{equation}
 \todo{double check}
@@ -2018,14 +1965,15 @@ while the boundary Hamiltonians of $H^{''}$ are
 	0&0
 \end{pmatrix}\dt
 \end{equation}
- We only report the main results, since the computations are just a specific case of the ones done for the multispecies stirring process. 
+{\color{blue}As a further check we report here the steady state correlations and the vectors $|\Psi^{''}\rangle$, $|\Psi^{'}\rangle$ and $|\Psi\rangle$ for the SSEP, i.e. the situation where the process has only one species of particles and holes. }
+ %We only report the main results, since the computations are just a specific case of the ones done for the multispecies stirring process. 
  \todo{?}
 \paragraph{Correlations of SSEP.}
 We retrieve the closed formula for correlations in the non-equilibrium steady state found in \cite[(4.26)]{frassek2020eigenstates}:  
 \begin{equation}\label{correlations-SSEP}
 	\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=1\}}\right]=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation} 
-\textbf{Proof of formula \eqref{correlations-SSEP}:} Starting from \eqref{exactCorrelations} we exploit indistinguishability of particles and we introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define $q$ %labels denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  
+\textbf{Proof of formula \eqref{correlations-SSEP}:} Starting from \eqref{exactCorrelations} we exploit indistinguishability of particles and we introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define {\color{blue} $q$ labels denoted by } %labels denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  
 $1\leq \ell_{1}<\ell_{2}<\ldots<\ell_{q}\leq m$. 
 \todo{?}
 To each of these label we associate the coordinates $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$ that are such $c_{x_{\ell_{k}}}=1$ for all $k\in \{1,\ldots,q\}$ and $c_{x}=0$ for $x\notin \{x_{\ell_{1}},\ldots,x_{\ell_{q}}\}$. Therefore, for any fixed $c_{x_{1}},\ldots,c_{x_{m}}$, we find $q$ and $\ell_{1},\ldots,\ell_{q}$ from which we fix $x_{\ell_{1}},\ldots,x_{\ell_{q}}$. Then, we obtain  
@@ -2440,7 +2388,58 @@ Concerning the commutator between $\mathcal{H}_{x,x+1}^{m}$ the proof is similar
 
 \appendix
 \section*{Appendix}
+\section{Interpretation of $\Psi^{'}$ as marginals of the steady state distribution}\label{subsection-interpretationPSIp}
+We still miss the interpretation of $\Psi^{'}(\bm{\tau})$ when  $\bm{\tau}= (N,\ldots,N)$. We show here that for this particular configuration
+$\Psi^{'}(N,\ldots,N) =1$. Indeed, for any $\bm{\tau}\in \Omega^{'}$ we have that 
+\begin{align}
+	\Psi^{'}(\bm{\tau})=&\langle\bm{\tau}|\Psi^{'}\rangle=\sum_{\bm{\sigma}\in \Omega^{'}}\langle \bm{\tau}|S_{1}|\bm{\sigma}\rangle\langle \bm{\sigma}|\Psi\rangle=\sum_{\bm{\sigma}\in \Omega^{'}}\langle \bm{\sigma}|S_{1}^{T}|\bm{\tau}\rangle\langle \bm{\sigma}|\Psi\rangle\dt
+\end{align}
+\todo{what was Omega again?}
+We introduce the dual configuration $\bm{\xi}(\bm{\tau})=(N,\tau_{1},\ldots,\tau_{L},N)$ where two extra-sites occupied by the species $N$ have been attached to the vector $\bm{\tau}$, transforming it from a vector of dimension $L$ to one of dimension $L+2$. More explicitly, this dual configuration is given by
+\begin{equation}
+	\begin{cases}
+		\xi_{a}^{x}(\bm{\tau})= \delta_{\tau_{x},a}\qquad \forall a\in \{1,\ldots N\}\quad \forall x\in \{1,\ldots,L\}\\
+		\xi_{N}^{0}(\bm{\tau})=\xi_{N}^{L+1}(\bm{\tau})=1
+	\end{cases}\dt
+\end{equation} Now we consider the elements $\langle\bm{\sigma}|D|\xi(\bm{\tau})\rangle$ of the duality matrix $D$ and we have
+\begin{align}\label{useful-InInterpretation}
+	\Psi^{'}(\bm{\tau})=&\sum_{\bm{\sigma}\in \Omega^{'}}\langle \bm{\sigma}|D|\bm{\xi}(\bm{\tau})\rangle\langle \bm{\sigma}|\Psi\rangle\dt
+\end{align}
+We observe that for any $x\in \{1,\ldots,L\}$
+\begin{equation}
+	\prod_{a=1}^{N-1}\mathbbm{1}_{\{\delta_{\sigma_{x},a}\geq\xi_{a}^{x}(\bm{\tau})\}}=\left(\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right)^{(1-\delta_{\tau_{x},N})}%=\begin{cases}
+		%	\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\qquad &\text{if}\quad \tau_{x}\neq N\\
+		%	1\qquad  &\text{if}\quad \tau_{x}= N
+		%	\end{cases}\dt
+\end{equation}
+Indeed, we have that 
+\begin{equation}
+	\prod_{a=1}^{N-1}\mathbbm{1}_{\{\delta_{\sigma_{x},a}\geq\xi_{a}^{x}(\bm{\tau})\}}=\begin{cases}
+		\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\qquad &\text{if}\quad \tau_{x}\neq N\\
+		1\qquad  &\text{if}\quad \tau_{x}= N
+	\end{cases}\dt
+\end{equation}
+Therefore using the duality function \eqref{ElementsDualityMatrixChain_1} and equation~\ref{useful-InInterpretation}, we obtain 
+\begin{equation}\label{interpretation-PsiP}
+	\Psi^{'}(\bm{\tau})=\mathbb{E}\left[\prod_{x=1}^{L}\left(\mathbbm{1}_{\{Y_{x}=\tau_{x}\}} \right)^{(1-\delta_{\tau_{x},N})}\right]\dt
+\end{equation} 
+This last equation completes and generalizes \eqref{corr-psi1} by showing that $\Psi^{'}(N,\ldots,N) =1$.
 
+Equivalently, we can interpret the components of $\Psi'(\bm{\tau})$ as follows.
+Let $\ell$ be the number of occupied sites in the configuration $\bm{\tau}$, i.e.  $\ell=\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})$. We denote by $x_{1},\ldots,x_{\ell}$, such that $x_{k}<x_{k+1}$ for all $k\in \{1,\ldots,\ell-1\}$, the coordinates where a particle of any (non-empty) type is present. Finally, we call 
+\begin{equation}
+	\Omega_{\ell}^{'}(\bm{\tau}):=\left\{\bm{\sigma}\in \Omega^{'}\;:\; \sigma_{x_{1}}=\tau_{x_{1}},\ldots,\sigma_{x_{\ell}}=\tau_{x_{\ell}}\right\}\dt
+\end{equation} 
+Observe that, if $\ell=0$ then $\Omega_{\ell}^{'}(\bm{\tau})$ does coincide with the whole state space $\Omega^{'}$, while, if $\ell=L$ then $\Omega_{\ell}^{'}(\bm{\tau})$ reduces to the configuration $\bm{\tau}$. Denoting the marginal on $\ell$ sites of the steady state distribution by 
+\begin{equation}
+	\mu_{x_{1},\ldots,x_{\ell}}(\bm{\tau})=\sum_{\bm{\sigma}\in \Omega_{\ell}^{'}(\bm{\tau})}\mu(\bm{\sigma})
+\end{equation}
+we have that 
+\begin{align}
+	\Psi^{'}(\bm{\tau})=&\mathbb{E}\left[\prod_{x=1}^{L}\left(\mathbbm{1}_{\{Y_{x}=\tau_{x}\}} \right)^{(1-\delta_{\tau_{x},N})}\right]=\mathbb{E}\left[\prod_{k=1}^{\ell}\mathbbm{1}_{\{Y_{x_{k}}=\tau_{x_{k}}\}}\right]=\sum_{\bm{\sigma}\in \Omega_{\ell}^{'}(\bm{\tau})}\mu(\bm{\sigma})=\mu_{x_{1},\ldots,x_{\ell}}(\bm{\tau})\dt
+\end{align} 
+It follows that $\Psi^{'}(\bm{\tau})$ is the marginal on $\ell$ sites $x_{1},\ldots,x_{\ell}$ of the non-equilibrium steady state distribution. In particular, when the configuration $\bm{\tau}$ has $\ell$ particles, $\Psi^{'}(\bm{\tau})$ does coincide with the $\ell$-point correlation function. 
+%As a consequence, all the marginals of $\mu$ can be found using the absorption probabilities by equation \eqref{exactCorrelations}. 
 
 \section{One point correlations for $\nu\geq 1$}\label{appendix-1pts-general}
 We take $m=1$ and we fix a site $x\in\{1,\ldots,L\}$ and a species $a\in \{1,\ldots,N-1\}$. We consider the dual configuration $\bm{\xi}=\delta_{a}^{x}$, then 
