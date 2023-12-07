@@ -251,7 +251,13 @@ On one hand, this absorbing duality allows to write the non-equilibrium steady s
 one can deduce macroscopic properties. For instance this sufficed in  \cite{KMP} to prove local equilibrium for the KMP model.
 On the other hand, absorption probabilities are hard to compute explicitly since they fulfill difference equation with proper boundary conditions. 
 The situation simplifies for a chain with two reservoirs on the boundary sites. 
-In this context, the integrable structure of the process can be combined with duality to compute non-equilibrium steady state. 
+In this context, the integrable structure of the process can be combined with duality. As shown in \cite{frassek2020eigenstates,frassek2020duality}, this approach leads to closed-form expressions for the correlations and the non-equilibrium steady state. 
+
+
+
+
+
+\todo{which process do we mean here? SEP?}
 %Recently, probabilistic techniques have been developped to compute absorption probabilities for the simple symmetric exclusion process \cite{floreani2023non}.
 %Say that for a  general graph with boundaries attached to any site, this is a difficult task. 
 % However,  for the case of integrable systems they can be computed exactly in closed-form.
@@ -263,10 +269,13 @@ For the single species case,  the solution of the exclusion process with open bo
 The model studied in this paper is the {\em  multispecies stirring process with open boundaries}, i.e. the multispecies analogue of the exclusion process on a generic graph as introduced in \cite{zhou2021orthogonal} with additional boundary reservoirs as proposed in \cite{vanicat2017exact}. 
 This particle system is defined on a generic connected and undirected graph. At each site 
 the maximal number of allowed particles is $\nu\in \mathbb{N}$. These particles can be of $N-1$ types (or species). Two sites do interact when there is an edge between them and this interaction consists in swapping the occupations of these two sites (for a precise definition of the process see Section \ref{sec1}). 
-Furthermore, reservoirs are attached at each site of the graph, creating and removing particle. When the graph is a finite chain with two reservoirs attached to the first and the last sites respectively and when $\nu=1$, the process becomes integrable (see \cite{vanicat2017exact}). {\color{blue}The choice of the boundary reservoirs introduced in \cite{vanicat2017exact} is motivated from the fact that they allow to determine an absorbing dual process, regardless of the geometry on which the process is defined and on the maximal number of particle hosted at each site}.
+Furthermore, reservoirs are attached at each site of the graph, creating and removing particle. The process becomes integrable when the graph is a finite chain with two reservoirs attached to the first and the last sites respectively and the maximal  number of allowed particles is fixed to be $\nu=1$,  see \cite{vanicat2017exact}. {\color{blue}The choice of the boundary reservoirs introduced in \cite{vanicat2017exact} is motivated from the fact that they allow to determine an absorbing dual process, regardless of the geometry on which the process is defined and on the maximal number of particle hosted at each site}.
 %{\color{red}Explain the model here.... $N$-species (or $N-1$ plus empty?). What is the graph? say that it becomes integrable for the line }
 %We refer to the model as the {\em  multispecies stirring process with open boundaries}.
 %
+
+
+
 
 %The  paper is organized as follows.
 \subsection*{Organization of the paper}
@@ -2032,6 +2041,7 @@ Varying all possible $c$'s in \eqref{exactCorrelations} is equivalent of varying
 \begin{equation}
 	\sum_{c_{1}\ldots,c_{m}=0}^{m}\frac{(L+1-\sum_{k=1}^{m}c_{k})!}{(L+1)!}\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}\right)=\sum_{q=0}^{m}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\prod_{k=1}^{q}\frac{(1+L-x_{\ell_{k}}-q+k)}{(2+L-k)}
 \end{equation}
+\todo{is there $c_j$ and $c_k$ missing?}
 and \eqref{correlations-SSEP} follows. 
 \begin{flushright}
 	$\square$
