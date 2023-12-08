@@ -250,8 +250,8 @@ is simplified to the problem of computing the absorption probabilities of the du
 On one hand, this absorbing duality allows to write the non-equilibrium steady state in terms of these absorption probabilities and then
 one can deduce macroscopic properties. For instance this sufficed in  \cite{KMP} to prove local equilibrium for the KMP model.
 On the other hand, absorption probabilities are hard to compute explicitly since they fulfill difference equation with proper boundary conditions. 
-The situation simplifies for a chain with two reservoirs on the boundary sites. 
-In this context, the integrable structure of the process can be combined with duality. As shown in \cite{frassek2020eigenstates,frassek2020duality}, this approach leads to closed-form expressions for the correlations and the non-equilibrium steady state. 
+The situation simplifies {\color{blue} for the simple symmetric exclusion process \cite{schutzSandow} on the geometry of } a chain with two reservoirs on the boundary sites. 
+{\color{blue}In this context, the process posses an integrable structure \cite{schutzManyBody,SSEPReviewRagoucy}. This integrability property can be combined with duality to compute absorption probabilities}. As shown in \cite{frassek2020eigenstates,frassek2020duality}, this approach leads to closed-form expressions for the correlations and the non-equilibrium steady state. 
 
 
 
@@ -750,7 +750,7 @@ This means that to each site $x\in V$ we associate an ``extra-site'' via a bijec
 Note that on the extra-site we allow an unbounded number of particles. Thus
 dual particles will accumulate in these extra-sites in the course of time. 
 We write the configurations $\bm{\xi} \in \widetilde\Omega$  as
-\begin{equation}
+\begin{equation}\label{row-dual-vectors}
     \bm{\xi}=\bigotimes_{x\in V} \left(\left(\xi_{1}^{x},\ldots,\xi_{N}^{x}\right)\otimes (\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)} )\right) 
 \end{equation} 
 where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles of type $a\in \{1,\ldots,N\}$ at site $x$, 
@@ -794,8 +794,11 @@ To a configuration $\bm{\xi}$ of the configuration space  \eqref{dualStateSpace}
 \end{equation}
 {\color{blue} Here $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$ is the vector associated to the configuration of in the extra site $u(x)$.  For all $q_{1},\ldots,q_{N-1}\in \mathbb{N}_{0}$, we assume that it satisfy an orthogonality relation
 \begin{equation}\label{ortho-extraSite}
-	\langle q_{1},\ldots,q_{N-1}|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle=\prod_{a=1}^{N-1}\delta_{\xi_{a}^{u(x)},q_{a}}
+	\langle q_{1}^{u(x)},\ldots,q^{u(x)}_{N-1}|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle=\prod_{a=1}^{N-1}\delta_{\xi_{a}^{u(x)},q_{a}}
 \end{equation} }
+{\color{blue} \begin{remark}
+	In the following, with a slightly abuse of notation, we denote the configuration vectors on the extra-site $u(x)$ by $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$. This allows to recall that these vectors belongs to the extra-space $N_{0}^{N-1}$ "attached" to original configuration space $\Omega$. Moreover, this notation allows to directly connect the ket-vector $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$ with the row vector $(\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)})$ defined in \eqref{row-dual-vectors}.
+\end{remark}}
 The Hamiltonian of the dual process reads
 \begin{equation}\label{DualHamiltonian}
     \widetilde{H}=\sum_{x,y\in \mathcal{E}}\omega_{x,y}\mathcal{H}_{x,y}+\sum_{x\in V}\Gamma_{x}\widetilde{H}_{x}
@@ -1106,7 +1109,7 @@ where the initial dual configuration is $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{
 		\xi_{a}^{x}=0\qquad \text{otherwise}
 	\end{cases}\dt
 \end{equation}
-In \eqref{absProbabilitiesIntegrable} the variable $t_k$ is $1$ (resp. $0$) when the dual particle of species $a_k$ initially positioned at site $x_{k}$ is absorbed at at the extra site $\{0\}$ (resp. $\{L+1\}$).
+In \eqref{absProbabilitiesIntegrable} the variable $t_k$ is $1$ (resp. $0$) when the dual particle of species $a_k$ initially positioned at site $x_{k}$ is absorbed at at the extra site $0$ (resp. $L+1$).
 \end{corollary}
 \textbf{Proof of Corollary~\ref{Corolollary-ABS_Corr-abstract}}:
 For any $\bm{\tau}\in \Omega^{'}$ the duality matrix defined in \eqref{ElementsDualityMatrixChain_1} evaluated on the dual configuration $\bm{\xi}\in\widetilde{\Omega}$ given in \eqref{xsi-init} read
@@ -1124,15 +1127,18 @@ Therefore, by ergodicity and duality  we have
 \begin{flushright}
 	$\square$
 \end{flushright} 
+{\color{blue}By using the correlations in the non-equilibrium steady state \eqref{exactCorrelations}, it is possible to determine the non-equilibrium steady probability distribution. }
     \begin{corollary}[Non-equilibrium steady state]\label{Corollary-NESS-ABS}
 For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function of the non-equilibrium steady states is given by 
 \begin{equation}\label{implicit-mass-function}
 	\mu(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{{1}},\ldots,a_{{b}}=1}^{N-1}{\color{red}
 	\mathbb{E}\left[\left( \prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right) \left(\prod_{k=1}^{b}\mathbbm{1}_{\{Y_{q_{k}}=a_{{k}}\}}\right)\right]}\,.
 \end{equation}
-{\color{blue}where the expectation is taken with respect to the non-equilibrium steady state distribution, then it is given in \eqref{exactCorrelations}.}
+{\color{blue}where the expectation is taken with respect to the non-equilibrium steady state, then it computed by using the correlations of equation \eqref{exactCorrelations}.}
 \todo{Explain this expectation...}
 \end{corollary}
+{\color{blue} The quantity $\mu(\bm{\tau})$ gives the probability, under the non-equilibrium steady distribution, of having a configuration $\bm{\tau}$, that can be composed by particles and holes as well. However, from Corollary \ref{Corolollary-ABS_Corr-abstract}, we only have an explicit formula for the expectations of the indicator of particle configurations (indeed $a_{1},\ldots,a_{m}$ are different from $N$). Therefore, to write the probability mass function $\mu$ for occupations containing holes we have to use the conservation of probability to get rid of the indicators of these holes. Then, equation \eqref{implicit-mass-function} is derived (for details see below the proof of Corollary \ref{Corollary-NESS-ABS}).\\
+ The expectation on the right-hand-side of \eqref{implicit-mass-function} contains only indicators of particles configurations: indeed in the first product  $\tau_{x}\neq N$ are considered, while in the second product we have $a_{k}\neq N$ for all $k\in\{1,\ldots,N\}$. As a consequence, we can map the coordinates $x_{1},\ldots,x_{m}$ and the types $a_{1},\ldots,a_{m}$ introduced in Corollary \ref{Corolollary-ABS_Corr-abstract} with, respectively, the coordinates $x$ (where the $\tau_{x}\neq N$) and $q_{1},\ldots,q_{b}$ and with the types $\tau_{x}\neq N$ and $a_{1},\ldots,a_{b}$. For this reason, by knowing the correlations \eqref{exactCorrelations}, the probability mass function $\mu(\bm{\tau})$ given in equation \eqref{implicit-mass-function} is obtained.}\\
 \textbf{Proof of Corollary~\ref{Corollary-NESS-ABS}:}
 Given $\bm{\tau}\in \Omega^{'}$,  we have 
 \begin{align}
@@ -1178,7 +1184,7 @@ where in the last equality we exploited the fact that
 The configuration $\bm{\tau}$ has $\ell=\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})$ occupied sites and then the remaining $L-\ell$ sites are empty. % We introduce an index $b\in \{0,\ldots,L-\ell\}$. 
 Therefore, we may write
 \begin{align}\label{sum}
-&\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)\left(\prod_{x=1\,:\,\tau_{x}=N}^{L}\left(1-\sum_{a_{x}=1}^{N-1}\mathbbm{1}_{\{Y_x=a_{x}\}}\right)\right)\nonumber\\
+&\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)\left(\prod_{x=1\,:\,\tau_{x}=N}^{L}\left(1-\sum_{a=1}^{N-1}\mathbbm{1}_{\{Y_x=a\}}\right)\right)\nonumber\\
 =&
 \prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}+\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)(-1)\left\{\sum_{q_{1}=1}^{L}\delta_{\tau_{q_{1}},N}\sum_{a_{1}=1}^{N-1}\mathbbm{1}_{\{Y_{q_{1}}
 =
@@ -1188,7 +1194,7 @@ a_{1}\}}\right\}+\nonumber\\
 +&\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)(-1)^{L-\ell}\sum_{1\leq q_{1}<\ldots<q_{L-\ell}\leq L}\left(\prod_{k=1}^{L-\ell}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{1},\ldots,a_{L-\ell}=1}^{N-1}\prod_{k=1}^{L-\ell}\mathbbm{1}_{\{Y_{q_{k}}=a_{k}\}}\dt
 \end{align} 
 \todo{indices are strange. Say what happens here}
-Therefore, using the linearity of the expectation and introducing the index $b\in \{0,\ldots,L\}$ {\color{blue} we rewrite the sum in equation \eqref{sum} as} \eqref{implicit-mass-function}.{\color{blue} Indeed, when $b>L-\ell$ we have vanishing terms in the sum \eqref{implicit-mass-function}.}
+Therefore, using the linearity of the expectation and introducing the index $b\in \{0,\ldots,L\}$ {\color{blue} we rewrite the sum in equation \eqref{sum} as} \eqref{implicit-mass-function}. {\color{blue} Indeed, when $b>L-\ell$ we have vanishing terms in the sum \eqref{implicit-mass-function}.}
 \begin{flushright}
 	$\square$
 \end{flushright}
@@ -1323,7 +1329,7 @@ Using \eqref{abs-probabilities} we obtain the absorption probabilities
 \begin{equation}
 	\mathcal{P}_{x_1}(0)=1-\frac{(L+1-x_{1})}{(L+1)}\qquad \mathcal{P}_{x_1}(1)=\frac{(L+1-x_{1})}{(L+1)}
 \end{equation} 
-where $\mathcal{P}_{x_1}(1)$ is the probability that a single random walk started at $x_1$ is absorbed in $\{0\}$.\todo{site 0?} Then, using \eqref{exactCorrelations}, we have
+where $\mathcal{P}_{x_1}(1)$ is the probability that a single random walk started at $x_1$ is absorbed in $0$.\todo{site 0?} Then, using \eqref{exactCorrelations}, we have
 \begin{equation}\label{one-pts-corr}
 		\langle\rho_{a_{1}}^{x_{1}}\rangle= \mathbb{E}\left[\mathbbm{1}_{\{Y_{x_{1}}=a_{1}\}}\right]=\frac{(L+1-x_{1})}{(L+1)}\alpha_{a_{1}}+\frac{x_{1}}{(L+1)}\beta_{a_{1}}\co
 \end{equation}
@@ -1797,7 +1803,7 @@ Thus it follows that
 	\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=&\sum_{\bm{\tau}\in \Omega^{'}}D(\bm{\tau},\bm{\xi})\langle\bm{\tau}|\Psi\rangle
 	=\sum_{\bm{\tau}\in \Omega^{'}}\langle \bm{\tau}|D|\bm{\xi}\rangle\langle\bm{\tau}|\Psi\rangle\dt
 \end{align}
-We denote by $|\hat{\bm{\xi}}\rangle=|\xi^{1},\ldots,\xi^{L}\rangle$, i.e. the vector constructed from $|\bm{\xi}\rangle$ by removing the components at sites $\{0\}$ and $\{L+1\}$. Recalling that {\color{blue} in the case $\nu=1$, since the matrix $R_{x}$ defined in \eqref{Revmatrix} reduces to the identity, we have that the matrix $d_{x}$ defined in \eqref{bulkElementDualityMatrix} becomes
+We denote by $|\hat{\bm{\xi}}\rangle=|\xi^{1},\ldots,\xi^{L}\rangle$, i.e. the vector constructed from $|\bm{\xi}\rangle$ by removing the components at sites $0$ and $L+1$. Recalling that {\color{blue} in the case $\nu=1$, since the matrix $R_{x}$ defined in \eqref{Revmatrix} reduces to the identity, we have that the matrix $d_{x}$ defined in \eqref{bulkElementDualityMatrix} becomes
 \begin{equation}
 	d_{x}=\exp{(\sum_{a=1}^{N-1}e_{aN}^{x})}
 	\end{equation} then the following holds}
@@ -1856,10 +1862,10 @@ Without using duality but only  the definition $|\Psi^{'}\rangle=S_1|\Psi\rangle
 \begin{equation}\label{eq:EE}
 \begin{split}
 \mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=\sum_{\bm{\tau}\in\Omega^{'}}\prod_{k=1}^{m}\delta_{{{\tau}_{x_k}},a_{k}}\langle \bm{\tau}|\Psi\rangle=
-\langle N,\ldots,N,a_1,N,\ldots,N,a_m,N,\ldots,N|\Psi^{'}\rangle\dt
+\langle N,\ldots,N,\underbrace{a_1}_{x_{1}},N,\ldots,N,\underbrace{a_m}_{x_{m}},N,\ldots,N|\Psi^{'}\rangle\dt
  \end{split}
 \end{equation} 
-Here the entries $a_i\neq N$ in \eqref{eq:EE} are at position $x_i$. 
+{\color{blue}Here the notation means that the entries $a_k\neq N$ in \eqref{eq:EE} are at position $x_k$ for $k\in\{1,\ldots,m\}$.} 
 \end{remark}
 
 \todo{ok? adopt notation?}
@@ -1882,7 +1888,7 @@ By taking the tensor product over the chain we obtain
 \end{equation}
 therefore, projecting on $\langle \bm{\tau}|$ we have
 \begin{equation}\label{Tensor-S1}
-	\langle \bm{\tau}|	S_{1}^{-1}|\bm{\sigma}\rangle=\prod_{x=1}^{L}\left(\delta_{\tau_{x},\sigma_{x}}+(-1)\delta_{\tau_{x},N}\sum_{a_{x}=1}^{N-1}\delta_{\sigma_{x},a_{x}}\right)\dt
+	\langle \bm{\tau}|	S_{1}^{-1}|\bm{\sigma}\rangle=\prod_{x=1}^{L}\left(\delta_{\tau_{x},\sigma_{x}}+(-1)\delta_{\tau_{x},N}\sum_{a=1}^{N-1}\delta_{\sigma_{x},a}\right)\dt
 \end{equation}
 
 		Considering 
@@ -1890,24 +1896,18 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 			|\Psi^{'}\rangle=\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})|\bm{\sigma}\rangle\co
 		\end{equation} we obtain  
 		\begin{align}\label{implicit-PSI-PSIp}
-			\langle \bm{\tau}|S_{1}^{-1}|\Psi^{'}\rangle=&\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\prod_{x=1}^{L}\left(\delta_{\tau_{x},\sigma_{x}}+(-1)\delta_{\tau_{x},N}\sum_{a_{x}=1}^{N-1}\delta_{\sigma_x,a_{x}}\right)\nonumber\\
-			=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\left(\prod_{x=1\,:\,x\notin\{q_{1},\ldots,q_{b}\}}^{L}\delta_{\tau_{x},\sigma_x}\right)\left(\prod_{x\in \{q_{1},\ldots,q_{b}\}}\delta_{\tau_{x},N}\sum_{a_{x}=1}^{N-1}\delta_{\sigma_{x},a_{x}}\right)\nonumber\\
-			=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{q_{1}},\ldots a_{q_{b}}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{a_{q_{1}}}_{q_{1}},\ldots,\underbrace{a_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
+			\langle \bm{\tau}|S_{1}^{-1}|\Psi^{'}\rangle=&\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\prod_{x=1}^{L}\left(\delta_{\tau_{x},\sigma_{x}}+(-1)\delta_{\tau_{x},N}\sum_{a=1}^{N-1}\delta_{\sigma_x,a}\right)\nonumber\\
+			=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\left(\prod_{x=1\,:\,x\notin\{q_{1},\ldots,q_{b}\}}^{L}\delta_{\tau_{x},\sigma_x}\right)\left(\prod_{x\in \{q_{1},\ldots,q_{b}\}}\delta_{\tau_{x},N}\sum_{a=1}^{N-1}\delta_{\sigma_{x},a}\right)\nonumber\\
+			=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{1},\ldots a_{b}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{a_{1}}_{q_{1}},\ldots,\underbrace{a_{b}}_{q_{b}},\ldots,\tau_{L})
 		\end{align}
 		\todo{can we remove q index in sum?}
-		where the notation
+			{\color{blue}In the second equality we have rewritten the product by introducing the summation over $b$, the coordinates $q_{1},\ldots,q_{b}$ and the occupations variables $a_{1},\ldots,a_{b}$. In the last equality we have summed over all possible $\bm{\sigma}\in \Omega^{'}$, taking into account the Kronecker deltas.} Here, the notation
 		\begin{equation}\label{notation-PSI}
-			\Psi^{'}(\tau_{1},\ldots,\underbrace{a_{q_{1}}}_{q_{1}},\ldots,\underbrace{a_{q_{b}}}_{q_{b}},\ldots,\tau_{L})
+			\Psi^{'}(\tau_{1},\ldots,\underbrace{a_{1}}_{q_{1}},\ldots,\underbrace{a_{b}}_{q_{b}},\ldots,\tau_{L})
 		\end{equation}
-		means that, for all $b\in \{0,\ldots,L\}$ and for all $1\leq q_{1}<\ldots<q_{b}\leq L$,
-		\begin{equation}
-			\begin{cases}
-				\tau_{x}=a_{x}\qquad &\text{if}\quad x\in\{q_{1},\ldots,q_{b}\}\\
-				\tau_{x}=\tau_{x}\qquad &\text{if}\quad \text{otherwise}
-			\end{cases}\dt
-		\end{equation}
+		means that, for all $b\in \{0,\ldots,L\}$ and for all $1\leq q_{1}<\ldots<q_{b}\leq L$ {\color{blue} at sites $q_{k}$ for $k=1,\ldots,b$ we have a particle of type $a_{k}$, while at the other sites ($x\notin\{q_{1},\ldots,q_{b}\}$) the occupation $\tau_{x}$ is left unchanged. }
 		\todo{?}
-		In the second equality we have rewritten the product by introducing the summation over $b$, the coordinates $q_{1},\ldots,q_{b}$ and the occupations variables $a_{q_{1}},\ldots,a_{q_{k}}$. In the last equality we have summed over all possible $\bm{\sigma}\in \Omega^{'}$. Finally, using equation \eqref{interpretation-PsiP}, the result follows. 
+	 %Finally, using equation \eqref{interpretation-PsiP}, the result follows. 
 \begin{remark}[Equilibrium case]
 	Using equation \eqref{implicit-mass-function} with correlation computed in \eqref{exactCorrelations} in the equilibrium case ($\beta_{a}=\alpha_{a}$), we obtain 
 	\begin{equation}
@@ -1916,7 +1916,7 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 As it has to be, this is the probability of the configuration $\bm{\tau}$ under the reversible measure \eqref{reversibleMeasure}, with site marginals distributed as $\text{Multinomial }(1,\alpha_{1},\ldots,\alpha_{N})$. 
 \end{remark}
 \subsection{The single-species case (SSEP)}
-The computations made for the multispecies stirring process can be specialized to the single-species case $N=2$. In this situation we retrieve the SSEP, that was studied using the same approach as presented here in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations of SEEP: 
+The computations made for the multispecies stirring process can be specialized to the single-species case $N=2$, {\color{blue}i.e. when only a type of particles and the holes are present.} In this situation we retrieve the SSEP, that was studied using the same approach as presented here in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations of SEEP: 
 \begin{equation}
 	H=H_{\text{left}}+\sum_{x=1}^{L-1}H_{x,x+1}+H_{\text{right}}
 \end{equation}
@@ -1987,7 +1987,7 @@ Furthermore, using the properties of the factorials, we have that
 \end{equation}
 Varying all possible $c$'s in \eqref{exactCorrelations} is equivalent of varying all possible $q$ and all possible $\ell_{1},\ldots,\ell_{q}$, therefore we obtain 
 \begin{equation}
-	\sum_{c_{1}\ldots,c_{m}=0}^{m}\frac{(L+1-\sum_{k=1}^{m}c_{k})!}{(L+1)!}\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}\right)=\sum_{q=0}^{m}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\prod_{k=1}^{q}\frac{(1+L-x_{\ell_{k}}-q+k)}{(2+L-k)}
+	\sum_{c_{1}\ldots,c_{m}=0}^{m}\frac{(L+1-\sum_{k=1}^{m}c_{k})!}{(L+1)!}\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)=\sum_{q=0}^{m}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\prod_{k=1}^{q}\frac{(1+L-x_{\ell_{k}}-q+k)}{(2+L-k)}
 \end{equation}
 \todo{is there $c_j$ and $c_k$ missing?}
 and \eqref{correlations-SSEP} follows. 
@@ -2081,7 +2081,7 @@ The process is dual to $(\bm{\xi}(t))_{t\geq0}$, defined on the dual state space
 \begin{equation}
 	\widetilde{\mathcal{L}}=\widetilde{\mathcal{L}}_{\text{left}}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\widetilde{\mathcal{L}}_{\text{right}}
 \end{equation} 
-where $\mathcal{L}_{x,x+1}$ is given by \eqref{Generator} and where the boundary generators $\widetilde{\mathcal{L}}_{\text{left}}$ and $\widetilde{\mathcal{L}}_{\text{right}}$ are given in \eqref{siteDualGenerator}: they absorb particles from sites $\{1\}$ and $\{L\}$ and put them at extra-sites $\{0\}$ and $\{L+1\}$ respectively. The duality function reads is \eqref{dualityElements} specified on the chain. 
+where $\mathcal{L}_{x,x+1}$ is given by \eqref{Generator} and where the boundary generators $\widetilde{\mathcal{L}}_{\text{left}}$ and $\widetilde{\mathcal{L}}_{\text{right}}$ are given in \eqref{siteDualGenerator}: they absorb particles from sites $\{1\}$ and $\{L\}$ and put them at extra-sites $0$ and $L+1$ respectively. The duality function reads is \eqref{dualityElements} specified on the chain. 
 We call $\mu_{\text{NESS}}$ the non-equilibrium stationary steady state of the the process $(\bm{n}(t))_{t\geq 0}$, we denote by $\mathbb{E}_{\mu_{\text{NESS}}}[\cdot]$ the expectation with respect to this measure and and we call $\bm{\mathcal{Y}} = (\mathcal{Y}^{1},\ldots,\mathcal{Y}^{L})$ the random vector with law $\mu_{\text{NESS}}$. For every $m\in\{1,\ldots,L\}$ we consider  $x_{1},\ldots,x_{m}\in\{1,\ldots,L\}$ and $a_{1},\ldots,a_{m}\in \{1,\ldots,N-1\}$. We introduce the dual configuration  $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, meaning that 
 \begin{equation}
 	\begin{cases}
@@ -2106,7 +2106,7 @@ here we recall that, generalizing Corollary~\ref{Corolollary-ABS_Corr-abstract},
 \begin{equation}\label{Pass} 
 	\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{N})	=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{a=1}^{N-1}\left(t_{a}\delta_{a}^{0}+(|\xi_{a}|-t_{a})\delta_{a}^{L+1}\right)| \bm{\xi}(0)=\bm{\xi}\right)
 \end{equation}
-are the absorption probabilities for the non-integrable chain, i.e. the probabilities that $t_{a}$ particles of species $a$ are absorbed at $\{0\}$. Here we have denoted $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x}$.
+are the absorption probabilities for the non-integrable chain, i.e. the probabilities that $t_{a}$ particles of species $a$ are absorbed at $0$. Here we have denoted $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x}$.
  These correlations can be computed once the absorption probabilities are known. For example, we report in Appendix~\ref{appendix-1pts-general} the solution for the simplest case of one point correlations that is exactly solvable, since the single dual particle behaves as an independent random walker. The absorption probabilities for higher point correlations fulfill  difference equations.
 
 
