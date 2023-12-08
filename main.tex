@@ -265,7 +265,7 @@ The situation simplifies {\color{blue} for the simple symmetric exclusion proces
 % However,  for the case of integrable systems they can be computed exactly in closed-form.
 %{\color{red} Explain here that we consider the chain with only two reservoirs at the end of the chain}
 
-For the single species case,  the solution of the exclusion process with open boundaries \cite{derrida1993exact,1993JSP....72..277S} has been of crucial importance in our understanding of the structural properties of non-equilibrium state, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviations \cite{mallick2022exact,bodineau2005current}. One may argue that the results available for the exclusion process are rooted in the algebraic symmetries of the corresponding integrable spin $s=1/2$ Heisenberg chain, see e.g. \cite{schutzManyBody,SSEPReviewRagoucy} for two excellent reviews. .
+For the single species case,  the solution of the exclusion process with open boundaries \cite{derrida1993exact,1993JSP....72..277S} has been of crucial importance in our understanding of the structural properties of non-equilibrium state, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviations \cite{mallick2022exact,bodineau2005current}. One may argue that the results available for the exclusion process are rooted in the algebraic symmetries of the corresponding integrable spin $s=1/2$ Heisenberg chain, see e.g. \cite{schutzManyBody,SSEPReviewRagoucy} for two excellent reviews.
 %
 This integrability property can be combined with duality and leads to closed-form expressions for the correlations and the non-equilibrium steady state, as shown in \cite{frassek2020eigenstates,frassek2020duality}.
 % by extending the previous results of \cite{frassek2020eigenstates}. 
@@ -275,8 +275,8 @@ This integrability property can be combined with duality and leads to closed-for
 
 The model studied in this paper is the {\em  multispecies stirring process with open boundaries}, i.e. the multispecies analogue of the exclusion process on a generic graph as introduced in \cite{zhou2021orthogonal} with additional boundary reservoirs as proposed in \cite{vanicat2017exact}. 
 This particle system is defined on a generic connected and undirected graph. At each site 
-the maximal number of allowed particles is $\nu\in \mathbb{N}$. These particles can be of $N-1$ types (or species). Two sites do interact when there is an edge between them and this interaction consists in swapping the occupations of these two sites (for a precise definition of the process see Section \ref{sec1}). 
-Furthermore, reservoirs are attached at each site of the graph, creating and removing particle. The process becomes integrable when the graph is a finite chain with two reservoirs attached to the first and the last sites respectively and the maximal  number of allowed particles is fixed to be $\nu=1$,  see \cite{vanicat2017exact}. {\color{blue}The choice of the boundary reservoirs introduced in \cite{vanicat2017exact} is further motivated by the fact that they allow to determine an absorbing dual process, regardless of the geometry on which the process is defined and on the maximal number of particle hosted at each site}.
+the maximal number of allowed particles {\color{blue}(also called \textit{maximal occupancy})} is $\nu\in \mathbb{N}$. These particles can be of $N-1$ types (or species). Two sites do interact when there is an edge between them and this interaction consists in swapping the occupations of these two sites (for a precise definition of the process see Section \ref{sec1}). 
+Furthermore, reservoirs are attached at each site of the graph, creating and removing particle. The process becomes integrable when the graph is a finite chain with two reservoirs attached to the first and the last sites respectively and the maximal number of allowed particles is fixed to be $\nu=1$,  see \cite{vanicat2017exact}. {\color{blue}The choice of the boundary reservoirs introduced in \cite{vanicat2017exact} is further motivated by the fact that they allow to determine an absorbing dual process, regardless of the geometry on which the process is defined and on the maximal number of particle hosted at each site}.
 %{\color{red}Explain the model here.... $N$-species (or $N-1$ plus empty?). What is the graph? say that it becomes integrable for the line }
 %We refer to the model as the {\em  multispecies stirring process with open boundaries}.
 %
@@ -304,7 +304,7 @@ and generalizations of the model, including instantaneous thermalization limits 
 \bigskip
 
 {\color{magenta} Cristian I think it is good to keep some of the following citations, especailly the one to Schutz...
- \cite{schutz2017kardar, vanicat2017exact, crampe2016integrable, finn2018matrix, floreani2022switching, casini2022uphill, casini2023density, redig2022ergodic, redig2023equilibrium, chatterjee2023multi,  franceschini2022orthogonal,floreani2023non,carinci2023open}
+ \cite{schutz2017kardar, crampe2016integrable, finn2018matrix, floreani2022switching, casini2023density, redig2022ergodic, redig2023equilibrium, chatterjee2023multi,  franceschini2022orthogonal,floreani2023non,carinci2023open}
 See also \cite{crampe2016integrable, finn2018matrix} for the asymmetric setup.}
 
 % For recent examples in the framework of singlespecies systems, see \cite{frassek2020eigenstates, frassek2020duality,frassek2022exact}.
@@ -404,7 +404,7 @@ In the case $N=2$, we retrieve the  boundary-driven version of the symmetric exc
 \subsection{The process generator}\label{subsectionGeneratorStr}
 We now give the mathematical description of the multispecies stirring process.
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
-At each vertex site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ denotes the number of particles of species $a\in \{1,\ldots,N\}$. On each vertex we allow a total  maximal occupancy $\nu\in \mathbb{N}$. Then, the configuration space of the process on the graph $G$ is 
+At each vertex site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ {\color{blue} denotes the number of particles of species $a\in \{1,\ldots,N-1\}$, while the component $n_{N}^{x}$ denotes the number of holes at site $x$.} On each vertex we {\color{blue} allow a total maximal number of particles $\nu\in \mathbb{N}$}. Then, the configuration space of the process on the graph $G$ is 
 \begin{equation}\label{stateSpace}
     \Omega:=\bigotimes_{x\in V} \Omega_{x}
 \end{equation}
@@ -664,7 +664,7 @@ acting non-trivially on the vertices of the edge $x,x+1$.
 \begin{equation}\label{Tau-Notation}
 	|\bm{\tau}\rangle=|\tau_{1},\ldots,\tau_{L}\rangle
 \end{equation} 
-with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. Since the maximal occupancy at each site is $\nu=1$,\todo{but is it at max 1? I do not understand what we call the stirring process....}  the configuration $\bm{n}$ introduced in Section~\ref{subsectionGeneratorStr} and $\bm{\tau}$ are related by 
+with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. Since the {\color{blue} maximal occupancy at each site is $\nu=1$},\todo{but is it at max 1? I do not understand what we call the stirring process....}  the configuration $\bm{n}$ introduced in Section~\ref{subsectionGeneratorStr} and $\bm{\tau}$ are related by 
 \begin{equation}\label{notation-change-relation}
 	n_{a}^{x}=\delta_{\tau_{x},a}\dt
 \end{equation}
@@ -1060,7 +1060,7 @@ $\square$
 \end{flushright}
 
 \subsection{Duality for the integrable process on a line segment}\label{integrableChain-duality}
-Here we consider the chain defined in Section~\ref{subsection-description-process-LINE} with the hard-core constrain, i.e. $\nu=1$. 
+Here we consider the chain defined in Section~\ref{subsection-description-process-LINE} with the hard-core constrain {\color{blue} (at most one particle per site)}, i.e. $\nu=1$. 
 We recall that the geometry is a one dimensional chain with sites $\{1,\ldots,L\}$ where reservoirs are attached to $1$ and $L$. 
 We also recall the notation for the occupation variable which is called $\bm{\tau}=(\tau_1,\ldots,\tau_L)$ with $\tau_x\in\{1,\ldots,N\}$.
 The dynamics is described by an Hamiltonian that is written in terms of the first fundamental representation of ${gl}(N)$. The duality result stated in Section~\ref{statementDualitySubsection} is adapted to the present situation as follows. 
@@ -1144,7 +1144,7 @@ For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function o
 {\color{blue}where the expectation is taken with respect to the non-equilibrium steady state, then it computed by using the correlations of equation \eqref{exactCorrelations}.}
 \todo{Explain this expectation...}
 \end{corollary}
-{\color{blue} The quantity $\mu(\bm{\tau})$ gives the probability, under the non-equilibrium steady distribution, of having a configuration $\bm{\tau}$, that can be composed by particles and holes as well. However, from Corollary \ref{Corolollary-ABS_Corr-abstract}, we only have an explicit formula for the expectations of the indicator of particle configurations (indeed $a_{1},\ldots,a_{m}$ are different from $N$). Therefore, to write the probability mass function $\mu$ for occupations containing holes we have to use the conservation of probability to get rid of the indicators of these holes. Then, equation \eqref{implicit-mass-function} is derived (for details see below the proof of Corollary \ref{Corollary-NESS-ABS}).\\
+{\color{blue} The quantity $\mu(\bm{\tau})$ is the probability, under the non-equilibrium steady distribution, of having a configuration $\bm{\tau}$, that can be composed by particles and holes as well. However, from Corollary \ref{Corolollary-ABS_Corr-abstract}, we only have an explicit formula for the expectations of the indicator of particle configurations (indeed $a_{1},\ldots,a_{m}$ are different from $N$). Therefore, to write the probability mass function $\mu$ for occupations containing holes we have to use the conservation of probability to get rid of the indicators of these holes. Then, equation \eqref{implicit-mass-function} is derived (for details see below the proof of Corollary \ref{Corollary-NESS-ABS}).\\
  The expectation on the right-hand-side of \eqref{implicit-mass-function} contains only indicators of particles configurations: indeed in the first product  $\tau_{x}\neq N$ are considered, while in the second product we have $a_{k}\neq N$ for all $k\in\{1,\ldots,N\}$. As a consequence, we can map the coordinates $x_{1},\ldots,x_{m}$ and the types $a_{1},\ldots,a_{m}$ introduced in Corollary \ref{Corolollary-ABS_Corr-abstract} with, respectively, the coordinates $x$ (where the $\tau_{x}\neq N$) and $q_{1},\ldots,q_{b}$ and with the types $\tau_{x}\neq N$ and $a_{1},\ldots,a_{b}$. For this reason, by knowing the correlations \eqref{exactCorrelations}, the probability mass function $\mu(\bm{\tau})$ given in equation \eqref{implicit-mass-function} is obtained.}\\
 \textbf{Proof of Corollary~\ref{Corollary-NESS-ABS}:}
 Given $\bm{\tau}\in \Omega^{'}$,  we have 
@@ -1206,9 +1206,9 @@ Therefore, using the linearity of the expectation and introducing the index $b\i
 	$\square$
 \end{flushright}
 \begin{remark}\label{Remark-extension-graph-nu}
-	The results in Corollary~\ref{Corolollary-ABS_Corr-abstract} and in Corollary~\ref{Corollary-NESS-ABS}  can be generalized to arbitrary graphs $G=(V,\mathcal{E})$ and for higher maximal occupancies $\nu >1$.
+	The results in Corollary~\ref{Corolollary-ABS_Corr-abstract} and in Corollary~\ref{Corollary-NESS-ABS}  can be generalized to arbitrary graphs $G=(V,\mathcal{E})$ and for {\color{blue} higher maximal number of particles allowed at each site}, that is for $\nu >1$.
 	However the computation of absorption probabilities of the dual process is possible only in the set-up of the integrable chain with $\nu =1$ and two reservoirs at the boundaries.
-	Thus we chose to present them in such a context. For the chain with higher maximal occupancies $\nu >1$ see Section~\ref{Subsection-ss-nonI}.
+	Thus we chose to present them in such a context. For the chain with {\color{blue} more than one particle allowed at each site} $\nu >1$ see Section~\ref{Subsection-ss-nonI}.
 \end{remark}
 
 
@@ -1942,7 +1942,7 @@ Here $e_{ab}$ are the basis elements of the fundamental representation of $gl(2)
 \end{pmatrix}\dt
 \end{equation}
 \todo{double check}
-In this case, the similarity transformations read
+where we assume that $(\alpha_{1}+\alpha_{2})=(\beta_{1}+\beta_{2})=1$. In this case, the similarity transformations read
 \begin{equation}
 	\mathcal{S}_{1}=\begin{pmatrix}
 		1&0\\
@@ -1950,6 +1950,9 @@ In this case, the similarity transformations read
 	\end{pmatrix},\qquad \mathcal{S}_{2}=\begin{pmatrix}
 	1&-\beta_{1}\\
 	0&1
+\end{pmatrix},\qquad \mathcal{S}=\mathcal{S}_{2}\mathcal{S}_{1}=\begin{pmatrix}
+1-\beta_{1}&-\beta_{1}\\
+1&1
 \end{pmatrix}\dt
 \end{equation}
 Therefore, we have that $H^{'}$ has the following boundaries
@@ -1972,7 +1975,7 @@ while the boundary Hamiltonians of $H^{''}$ are
 	0&0
 \end{pmatrix}\dt
 \end{equation}
-{\color{blue}As a further check we report here the steady state correlations and the vectors $|\Psi^{''}\rangle$, $|\Psi^{'}\rangle$ and $|\Psi\rangle$ for the SSEP, i.e. the situation where the process has only one species of particles and holes. }
+{\color{blue}As a further check we report the steady state correlations and the vectors $|\Psi^{''}\rangle$, $|\Psi^{'}\rangle$ and $|\Psi\rangle$ for the SSEP, i.e. the situation where the process has only one species of particles and holes, with maximal occupancy $\nu=1$. }
  %We only report the main results, since the computations are just a specific case of the ones done for the multispecies stirring process. 
  \todo{?}
 \paragraph{Correlations of SSEP.}
@@ -2063,7 +2066,7 @@ The aim of this section is to study the process when integrability is lost. We f
 	\item \textit{Instantaneous thermalization} (Section~\ref{Subsection-Thermalized}): starting from the multispecies stirring dynamics, we define the thermalized process, where particle are redistributed on each bond with a measure that is the reversible one conditioned to the conservation of the number of particles on this bond. Also for this thermalized process we prove duality. 	
 	\item \textit{Reaction-diffusion process} (Section~\ref{Subsection-RD}): a further dynamics is added. Particle can now change type. The model is carefully constructed with the goal of having the average densities evolving as a closed system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is also proved.
 \end{enumerate}
-In the rest of this section we consider a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can host $\nu\geq 1$ particles, whose type is chosen among the $N$ available ones. The graph of the dual process is still a chain, but with two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$). The processes considered in this section will be denoted with same name $\left(\bm{n}(t)\right)_{t\geq0}$, their generator will be specified in each subsection. 
+In the rest of this section we consider a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can {\color{blue} host at most $\nu\geq 1$ particles per site}, whose type is chosen among the $N$ available ones. The graph of the dual process is still a chain, but with two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$). The processes considered in this section will be denoted with same name $\left(\bm{n}(t)\right)_{t\geq0}$, their generator will be specified in each subsection. 
 We use the notation of Section~\ref{sectionDuality} specialized to the one dimensional chain with $\nu >1$.
 E.g. the state space is denoted by 
 \begin{equation}\label{stateSpace-Chain}
@@ -2100,7 +2103,7 @@ The duality function is \eqref{dualityElements}, adapted to the chain. Therefore
 \begin{equation}
 	D(\bm{n},\bm{\xi})= \frac{\prod_{k=1}^{m}n_{a_{k}}^{x_{k}}}{C(\nu,m)}\dt
 \end{equation}
-where $C(\nu,m)$ is a constant that depends on $m$ and on the maximal occupancy $\nu$. 
+where $C(\nu,m)$ is a constant that depends on $m$ and on the maximal number of particle per site $\nu$. 
 Therefore, up to this constant, $\mathbb{E}_{\mu_{\text{NESS}}}\left[D(\bm{n},\bm{\xi})\right]$ gives the $m-$points correlations at non-equilibrium steady state. The following equalities hold using ergodicity and duality:
 \begin{equation}\label{ExptationSS}
 	\begin{split}
@@ -2123,7 +2126,7 @@ In this subsection we aim to extend to the multispecies stirring process the con
 \subsubsection{The thermalization measure}
 We introduce the reversible measure \eqref{reversibleMeasure} conditioned on the conservation of the particles on that bond
 \begin{align}
-	\nu_{TH}(r|\epsilon):&=\mathbb{P}\left(n^{x}=r|n^{x}+n^{x+1}=\epsilon\right)\nonumber
+	\mu_{TH}(r|\epsilon):&=\mathbb{P}\left(n^{x}=r|n^{x}+n^{x+1}=\epsilon\right)\nonumber
 	\\&
 	=\mathbb{P}\left((n_{1}^{x},\ldots,n_{N}^{x})=
 	(r_{1},\ldots,r_{N})\;|\;(n_{1}^{x}+n_{1}^{x+1},\ldots,n_{N}^{x}+n_{N}^{x+1})=(\epsilon_{1},\ldots,\epsilon_{N})\right)\dt
@@ -2135,7 +2138,7 @@ Here $r=(r_{1},\ldots,r_{N})$ and  $\epsilon=(\epsilon_{1},\ldots,\epsilon_{N})$
  Using the conditional probability and the fact that the reversible measure \eqref{reversibleMeasure} is the product over the sites of multinomial distributions we have
 \begin{equation}
 	\begin{split}
-\nu_{TH}(r|\epsilon)&=\frac{\mathbb{P}\left(\left\{n^{x}=r\right\}\,\cap\,\left\{n^{x}+n^{x+1}=\epsilon\right\}\right)}{\mathbb{P}\left(n^{x}+n^{x+1}=\epsilon\right)}=\frac{\mathbb{P}\left(n^{x}=r\right)\,\mathbb{P}\left(n^{x+1}=\epsilon-r\right)}{\mathbb{P}\left(n^{x}+n^{x+1}=\epsilon\right)}\dt
+\mu_{TH}(r|\epsilon)&=\frac{\mathbb{P}\left(\left\{n^{x}=r\right\}\,\cap\,\left\{n^{x}+n^{x+1}=\epsilon\right\}\right)}{\mathbb{P}\left(n^{x}+n^{x+1}=\epsilon\right)}=\frac{\mathbb{P}\left(n^{x}=r\right)\,\mathbb{P}\left(n^{x+1}=\epsilon-r\right)}{\mathbb{P}\left(n^{x}+n^{x+1}=\epsilon\right)}\dt
 	\end{split}
 \end{equation}
 %Moreover, it holds that 
@@ -2145,7 +2148,7 @@ Here $r=(r_{1},\ldots,r_{N})$ and  $\epsilon=(\epsilon_{1},\ldots,\epsilon_{N})$
 Therefore the thermalization measure reads
 \begin{equation}
 	\begin{split}
-	\nu_{TH}(r|\epsilon)=\frac{\binom{\nu}{r_{1},\ldots,r_{N}}\binom{\nu}{(\epsilon_{1}-r_{1}),\ldots,(\epsilon_{N}-r_{N})}}{\binom{2\nu}{\epsilon_{1}\ldots,\epsilon_{N}}}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}
+	\mu_{TH}(r|\epsilon)=\frac{\binom{\nu}{r_{1},\ldots,r_{N}}\binom{\nu}{(\epsilon_{1}-r_{1}),\ldots,(\epsilon_{N}-r_{N})}}{\binom{2\nu}{\epsilon_{1}\ldots,\epsilon_{N}}}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}
 	\end{split}
 \end{equation}
 where we denote the multinomial coefficient
@@ -2163,7 +2166,7 @@ where
 	\begin{split}
 	\mathcal{L}_{x,x+1}^{TH}f(\bm{n})=&\sum_{r_{1}=0}^{n_{1}^{x}+n_{1}^{x+1}}\ldots\sum_{r_{N}=0}^{n_{N}^{x}+n_{N}^{x+1}}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}
 	\\&
-	\left\{f(n^{1},\ldots,n^{x-1},r,n^{x}+n^{x+1}-r,n^{x+2},\ldots,n^{L})-f(\bm{n})\right\}\nu_{TH}(\bm{r}|\bm{\epsilon})
+	\left\{f(n^{1},\ldots,n^{x-1},r,n^{x}+n^{x+1}-r,n^{x+2},\ldots,n^{L})-f(\bm{n})\right\}\mu_{TH}(\bm{r}|\bm{\epsilon})
 	\end{split}
 \end{equation}
 while
@@ -2180,7 +2183,7 @@ and $\mathcal{L}_{\text{right}}^{TH}$ acting similarly on the site $L$ and with 
 %		\binom{\nu}{r_{1},\ldots, r_{N}}\prod_{a=1}^{N-1}\left(\frac{\beta_{k}}{\beta_{N}}\right)^{r_{k}}\left(\frac{\beta_{N}}{|\beta|}\right)^{\nu}
 %	\end{split}
 %\end{equation}
-In the thermalized bulk generator particles on a bond $x$ and $x+1$ are redistribute according to the measure $\nu_{TH}(r|\epsilon)$, while in the thermalized boundary generators the configuration at site $1$ ($L$) is replaced by $r$, according to a rate depending on $r$ itself and on the reservoirs parameters. 
+In the thermalized bulk generator particles on a bond $x$ and $x+1$ are redistribute according to the measure $\mu_{TH}(r|\epsilon)$, while in the thermalized boundary generators the configuration at site $1$ ($L$) is replaced by $r$, according to a rate depending on $r$ itself and on the reservoirs parameters. 
 \subsubsection{The dual thermalized process}\label{subsection-dualTHM}
 Here we state the duality result for the thermalized multispecies stirring process with boundary driving.
 \begin{proposition}[Duality for the thermalized multispecies stirring process]\label{proposition-dualityTHM}
