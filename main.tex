@@ -56,6 +56,9 @@
 \usepackage{graphicx}
 
 \usepackage{subcaption} 
+\usepackage[numbers,sort]{natbib}
+
+
 
 %\usepackage[numbers,sort&compress]{natbib}
 %\usepackage{hypernat}
@@ -251,20 +254,23 @@ On one hand, this absorbing duality allows to write the non-equilibrium steady s
 one can deduce macroscopic properties. For instance this sufficed in  \cite{KMP} to prove local equilibrium for the KMP model.
 On the other hand, absorption probabilities are hard to compute explicitly since they fulfill difference equation with proper boundary conditions. 
 The situation simplifies {\color{blue} for the simple symmetric exclusion process \cite{schutzSandow} on the geometry of } a chain with two reservoirs on the boundary sites. 
-{\color{blue}In this context, the process posses an integrable structure \cite{schutzManyBody,SSEPReviewRagoucy}. This integrability property can be combined with duality to compute absorption probabilities}. As shown in \cite{frassek2020eigenstates,frassek2020duality}, this approach leads to closed-form expressions for the correlations and the non-equilibrium steady state. 
+% {\color{blue}In this context, the process possesses an integrable structure, see e.g. \cite{schutzManyBody,SSEPReviewRagoucy} for two excellent reviews. 
+% 
+% }
 
 
-
-
-
-\todo{which process do we mean here? SEP?}
+ 
 %Recently, probabilistic techniques have been developped to compute absorption probabilities for the simple symmetric exclusion process \cite{floreani2023non}.
 %Say that for a  general graph with boundaries attached to any site, this is a difficult task. 
 % However,  for the case of integrable systems they can be computed exactly in closed-form.
 %{\color{red} Explain here that we consider the chain with only two reservoirs at the end of the chain}
 
-For the single species case,  the solution of the exclusion process with open boundaries \cite{derrida1993exact,1993JSP....72..277S} has been of crucial importance in our understanding of the structural properties of non-equilibrium state, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviations \cite{mallick2022exact,bodineau2005current}. One may argue that the results available for the exclusion process are rooted in the algebraic symmetries of the corresponding integrable spin $s=1/2$ Heisenberg chain \cite{schutzManyBody,SSEPReviewRagoucy}.
+For the single species case,  the solution of the exclusion process with open boundaries \cite{derrida1993exact,1993JSP....72..277S} has been of crucial importance in our understanding of the structural properties of non-equilibrium state, such as long-range correlations \cite{spohn1983long} and non-local density large deviation functions \cite{derrida2007non,derrida1998exact} and current large deviations \cite{mallick2022exact,bodineau2005current}. One may argue that the results available for the exclusion process are rooted in the algebraic symmetries of the corresponding integrable spin $s=1/2$ Heisenberg chain, see e.g. \cite{schutzManyBody,SSEPReviewRagoucy} for two excellent reviews. .
+%
+This integrability property can be combined with duality and leads to closed-form expressions for the correlations and the non-equilibrium steady state, as shown in \cite{frassek2020eigenstates,frassek2020duality}. 
 
+
+\todo{moved down this last paragraph. all good?}
 
 The model studied in this paper is the {\em  multispecies stirring process with open boundaries}, i.e. the multispecies analogue of the exclusion process on a generic graph as introduced in \cite{zhou2021orthogonal} with additional boundary reservoirs as proposed in \cite{vanicat2017exact}. 
 This particle system is defined on a generic connected and undirected graph. At each site 
