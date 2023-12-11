@@ -497,7 +497,6 @@ and  $|\alpha^x|=\sum_{a=1}^{N}\alpha_{a}^x$. {\color{blue} As a consequence, pa
 			|\alpha^{x}|=\sum_{a=1}^{N}\alpha_{a}^{x}\dt
 		\end{equation}
 		reversibility holds. 
-		%This is slightly more general than \eqref{reversibilityCondition}.
 		 In the case where the graph is a chain with nearest neighbors interactions and two reservoirs are attached to the two boundary sites
 		then condition \eqref{cond-gen} is the multispecies counterpart of $\alpha\delta=\beta\gamma$ of the boundary driven partially excluded process introduced in \cite{schutzSandow} (see Section 3.2 of \cite{carinci2013duality}).
 		\end{remark}
@@ -806,8 +805,8 @@ To a configuration $\bm{\xi}$ of the configuration space  \eqref{dualStateSpace}
 \begin{equation}\label{ortho-extraSite}
 	\langle q_{1}^{u(x)},\ldots,q^{u(x)}_{N-1}|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle=\prod_{a=1}^{N-1}\delta_{\xi_{a}^{u(x)},q_{a}}
 \end{equation} }
-{\color{blue} \begin{remark}
-	In the following, with a slightly abuse of notation, we denote the configuration vectors on the extra-site $u(x)$ by $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$. This allows to recall that these vectors belongs to the extra-space $N_{0}^{N-1}$ "attached" to original configuration space $\Omega$. Moreover, this notation allows to directly connect the ket-vector $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$ with the row vector $(\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)})$ defined in \eqref{row-dual-vectors}.
+{\color{blue} \begin{remark}\label{reamrk-extraSite}
+	In the following, with a slight abuse of notation, we denote the configuration vectors on the extra-site $u(x)$ by $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$. This allows to recall that these vectors belongs to the extra-space $N_{0}^{N-1}$ "attached" to original configuration space $\Omega$. Moreover, this notation allows to directly connect the ket-vector $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$ with the row vector $(\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)})$ defined in \eqref{row-dual-vectors}, in which the components $\xi_{a}^{u(x)}$ denotes the number of dual particles of type $a$ at site $u(x)$.
 \end{remark}}
 The Hamiltonian of the dual process reads
 \begin{equation}\label{DualHamiltonian}
@@ -1011,6 +1010,7 @@ we obtain
 |\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\otimes \left(\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|\right)
     \end{split}
 \end{equation}
+{\color{blue}With a slight abuse of notation and in the spirit of Remark \ref{reamrk-extraSite}, in equation \eqref{siteHadamardII}, we still denote the occupation vector at extra-site $u(x)$ by $\langle \xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|$ although there is the summation over $\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}$.}
 \todo{explain extra index }  
 Recalling the action of the bosonic creation operator acting at site $u(x)$ and on the species $a\in \{1,\ldots,N-1\}$ we have that 
 \begin{equation}\label{bosonicKX}
@@ -1339,11 +1339,11 @@ Using \eqref{abs-probabilities} we obtain the absorption probabilities
 \begin{equation}
 	\mathcal{P}_{x_1}(0)=1-\frac{(L+1-x_{1})}{(L+1)}\qquad \mathcal{P}_{x_1}(1)=\frac{(L+1-x_{1})}{(L+1)}
 \end{equation} 
-where $\mathcal{P}_{x_1}(1)$ is the probability that a single random walk started at $x_1$ is absorbed in $0$.\todo{site 0?} Then, using \eqref{exactCorrelations}, we have
+where $\mathcal{P}_{x_1}(1)$ is the probability that a single random walk started at $x_1$ is absorbed {\color{blue}at site $0$}.\todo{site 0?} Then, using \eqref{exactCorrelations}, we have
 \begin{equation}\label{one-pts-corr}
 		\langle\rho_{a_{1}}^{x_{1}}\rangle= \mathbb{E}\left[\mathbbm{1}_{\{Y_{x_{1}}=a_{1}\}}\right]=\frac{(L+1-x_{1})}{(L+1)}\alpha_{a_{1}}+\frac{x_{1}}{(L+1)}\beta_{a_{1}}\co
 \end{equation}
-\todo{here Y instead of $\tau$?}
+\todo{here Y instead of $\tau$? [DONE]}
 {\color{blue}where, for the sake of notation, we have introduced $\langle\rho_{a_{1}}^{x_{1}}\rangle$.}
 \paragraph{Two-point correlations}
 We consider the average with respect to $\mu$ of the occupation variable of the species  $a_{1},a_{2}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2}\in \{1,\ldots,L\}$ such that $x_{1}< x_{2}$. 
@@ -1381,7 +1381,7 @@ Therefore, we compute the second cumulant, i.e. the two-point connected correlat
 		 \mathbb{E}\left[\left(\mathbbm{1}_{\{Y_{x_{1}}=a_{1}\}}-\langle\rho_{a_{1}}^{x_{1}}\rangle \right)\left(\mathbbm{1}_{\{Y_{x_{2}}=a_{2}\}}-\langle\rho_{a_{2}}^{x_{2}}\rangle \right)\right]=-\frac{x_{1}(L-x_{2}+1)}{L(L+1)^{2}}\left(\alpha_{a_{1}}-\beta_{a_{1}}\right)\left(\alpha_{a_{2}}-\beta_{a_{2}}\right)\dt
 	\end{split}
 \end{equation}
-\todo{here Y instead of $\tau$?}
+\todo{here Y instead of $\tau$? [DONE]}
 \paragraph{Three-point correlations}
 We consider the average with respect to $\mu$ of the occupation variable of the species  $a_{1},a_{2},a_{3}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2},x_{3}\in \{1,\ldots,L\}$ such that $x_{1}<x_{2}<x_{3}$. Using \eqref{abs-probabilities} we compute the absorption probabilities 
 \begin{equation}
@@ -1406,7 +1406,7 @@ Therefore, we compute the third cumulant, i.e. the three-point connected correla
 	&\mathbb{E}\left[\left(\mathbbm{1}_{\{Y_{x_{1}}=a_{1}\}}-\langle\rho_{a_{1}}^{x_{1}}\rangle \right)\left(\mathbbm{1}_{\{Y_{x_{2}}=a_{2}\}}-\langle\rho_{a_{2}}^{x_{2}}\rangle \right)\left(\mathbbm{1}_{\{Y_{x_{3}}=a_{3}\}}-\langle\rho_{a_{3}}^{x_{3}}\rangle \right)\right]\nonumber\\
 	=&-\frac{2x_{1}(L+1-2x_{2})(L+1-x_{3})}{(L+1)^{3}(L-1)L}(\alpha_{a_{1}}-\beta_{a_{1}})(\alpha_{a_{2}}-\beta_{a_{2}})(\alpha_{a_{3}}-\beta_{a_{3}})\dt
 \end{align}
-\todo{should this all be $Y$ in the identities?}
+\todo{should this all be $Y$ in the identities?[DONE]}
 \begin{remark} The first and second cumulants, computed in \eqref{one-pts-corr} and \eqref{two-pts-corr} respectively, match with those found in Section 4.3 of \cite{vanicat2017exact}.
 	\end{remark}
 
@@ -1423,7 +1423,7 @@ The proof of formula \eqref{exactCorrelations} is split into the following steps
 	By exploiting a binomial formula we rewrite the correlations in terms
 of polynomials in the left and right boundary densities with coefficients given by the absorption probabilities, as claimed in Corollary~\ref{Corolollary-ABS_Corr-abstract}.
 	For completeness, we also show that Corollary~\ref{Corollary-NESS-ABS} is in turn corresponding to the transformation $|\Psi\rangle = S_{1}^{-1} |\Psi'\rangle$ in Section~\ref{appB}.
-	\todo{added ref... What about Section 4.4.5?}
+	\todo{added ref... What about Section 4.4.5?[PREVIOUS SECTION 4.4.5 NOW MOVED IN THE APPENDIX A]}
 	\end{itemize}
 \subsubsection{The similarity transformations}\label{subsectionSTransf}
 Consider the matrix
@@ -1816,11 +1816,11 @@ Thus it follows that
 We denote by $|\hat{\bm{\xi}}\rangle=|\xi^{1},\ldots,\xi^{L}\rangle$, i.e. the vector constructed from $|\bm{\xi}\rangle$ by removing the components at sites $0$ and $L+1$. Recalling that {\color{blue} in the case $\nu=1$, since the matrix $R_{x}$ defined in \eqref{Revmatrix} reduces to the identity, we have that the matrix $d_{x}$ defined in \eqref{bulkElementDualityMatrix} becomes
 \begin{equation}
 	d_{x}=\exp{(\sum_{a=1}^{N-1}e_{aN}^{x})}
-	\end{equation} then the following holds}
+	\end{equation} then, considering equation \eqref{transformationV}, the following holds}
 \begin{equation}
 	S_{1}^{T}=\prod_{x=1}^{L}d_{x}
 \end{equation} 
-\todo{double check and ref to $d_x$ and say that R is id}
+\todo{double check and ref to $d_x$ and say that R is id [DONE]}
 {\color{blue}As a consequence we have that }
 \begin{equation}
 	\langle \bm{\tau}|S_{1}^{T}|\hat{\bm{\xi}}\rangle=\langle \bm{\tau}|D|\bm{\xi}\rangle \dt
@@ -1910,13 +1910,13 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 			=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\left(\prod_{x=1\,:\,x\notin\{q_{1},\ldots,q_{b}\}}^{L}\delta_{\tau_{x},\sigma_x}\right)\left(\prod_{x\in \{q_{1},\ldots,q_{b}\}}\delta_{\tau_{x},N}\sum_{a=1}^{N-1}\delta_{\sigma_{x},a}\right)\nonumber\\
 			=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{1},\ldots a_{b}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underbrace{a_{1}}_{q_{1}},\ldots,\underbrace{a_{b}}_{q_{b}},\ldots,\tau_{L})
 		\end{align}
-		\todo{can we remove q index in sum?}
+		\todo{can we remove q index in sum?[SUB-INDICES q REMOVED]}
 			{\color{blue}In the second equality we have rewritten the product by introducing the summation over $b$, the coordinates $q_{1},\ldots,q_{b}$ and the occupations variables $a_{1},\ldots,a_{b}$. In the last equality we have summed over all possible $\bm{\sigma}\in \Omega^{'}$, taking into account the Kronecker deltas.} Here, the notation
 		\begin{equation}\label{notation-PSI}
 			\Psi^{'}(\tau_{1},\ldots,\underbrace{a_{1}}_{q_{1}},\ldots,\underbrace{a_{b}}_{q_{b}},\ldots,\tau_{L})
 		\end{equation}
 		means that, for all $b\in \{0,\ldots,L\}$ and for all $1\leq q_{1}<\ldots<q_{b}\leq L$ {\color{blue} at sites $q_{k}$ for $k=1,\ldots,b$ we have a particle of type $a_{k}$, while at the other sites ($x\notin\{q_{1},\ldots,q_{b}\}$) the occupation $\tau_{x}$ is left unchanged. }
-		\todo{?}
+		\todo{?[EXPLAINED]}
 	 %Finally, using equation \eqref{interpretation-PsiP}, the result follows. 
 \begin{remark}[Equilibrium case]
 	Using equation \eqref{implicit-mass-function} with correlation computed in \eqref{exactCorrelations} in the equilibrium case ($\beta_{a}=\alpha_{a}$), we obtain 
@@ -1926,7 +1926,7 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 As it has to be, this is the probability of the configuration $\bm{\tau}$ under the reversible measure \eqref{reversibleMeasure}, with site marginals distributed as $\text{Multinomial }(1,\alpha_{1},\ldots,\alpha_{N})$. 
 \end{remark}
 \subsection{The single-species case (SSEP)}
-The computations made for the multispecies stirring process can be specialized to the single-species case $N=2$, {\color{blue}i.e. when only a type of particles and the holes are present.} In this situation we retrieve the SSEP, that was studied using the same approach as presented here in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations of SEEP: 
+The computations made for the multispecies stirring process can be specialized to the single-species case $N=2$, {\color{blue}i.e. when only one type of particles and the holes are present.} In this situation we retrieve the SSEP, that was studied using the same approach as presented here in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations of SEEP: 
 \begin{equation}
 	H=H_{\text{left}}+\sum_{x=1}^{L-1}H_{x,x+1}+H_{\text{right}}
 \end{equation}
@@ -1944,7 +1944,7 @@ Here $e_{ab}$ are the basis elements of the fundamental representation of $gl(2)
 	\beta_{2}&\beta_{2}-1
 \end{pmatrix}\dt
 \end{equation}
-\todo{double check}
+\todo{double check [DONE]}
 where we assume that $(\alpha_{1}+\alpha_{2})=(\beta_{1}+\beta_{2})=1$. In this case, the similarity transformations read
 \begin{equation}
 	\mathcal{S}_{1}=\begin{pmatrix}
@@ -1980,7 +1980,7 @@ while the boundary Hamiltonians of $H^{''}$ are
 \end{equation}
 {\color{blue}As a further check we report the steady state correlations and the vectors $|\Psi^{''}\rangle$, $|\Psi^{'}\rangle$ and $|\Psi\rangle$ for the SSEP, i.e. the situation where the process has only one species of particles and holes, with maximal occupancy $\nu=1$. }
  %We only report the main results, since the computations are just a specific case of the ones done for the multispecies stirring process. 
- \todo{?}
+ \todo{? [SENTENCE REWRITTEN]}
 \paragraph{Correlations of SSEP.}
 We retrieve the closed formula for correlations in the non-equilibrium steady state found in \cite[(4.26)]{frassek2020eigenstates}:  
 \begin{equation}\label{correlations-SSEP}
@@ -1988,7 +1988,7 @@ We retrieve the closed formula for correlations in the non-equilibrium steady st
 \end{equation} 
 \textbf{Proof of formula \eqref{correlations-SSEP}:} Starting from \eqref{exactCorrelations} we exploit indistinguishability of particles and we introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define {\color{blue} $q$ labels denoted by } %labels denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  
 $1\leq \ell_{1}<\ell_{2}<\ldots<\ell_{q}\leq m$. 
-\todo{?}
+\todo{?[BLUE SENTENCE REWRITTEN]}
 To each of these label we associate the coordinates $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$ that are such $c_{x_{\ell_{k}}}=1$ for all $k\in \{1,\ldots,q\}$ and $c_{x}=0$ for $x\notin \{x_{\ell_{1}},\ldots,x_{\ell_{q}}\}$. Therefore, for any fixed $c_{x_{1}},\ldots,c_{x_{m}}$, we find $q$ and $\ell_{1},\ldots,\ell_{q}$ from which we fix $x_{\ell_{1}},\ldots,x_{\ell_{q}}$. Then, we obtain  
 	\begin{equation}
 		\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}=\prod_{k=1}^{q}\left(1+L-x_{\ell_{k}}-q+k\right)\dt
@@ -2002,7 +2002,7 @@ Varying all possible $c$'s in \eqref{exactCorrelations} is equivalent of varying
 \begin{equation}
 	\sum_{c_{1}\ldots,c_{m}=0}^{m}\frac{(L+1-\sum_{k=1}^{m}c_{k})!}{(L+1)!}\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)=\sum_{q=0}^{m}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}\prod_{k=1}^{q}\frac{(1+L-x_{\ell_{k}}-q+k)}{(2+L-k)}
 \end{equation}
-\todo{is there $c_j$ and $c_k$ missing?}
+\todo{is there $c_j$ and $c_k$ missing?[DONE]}
 and \eqref{correlations-SSEP} follows. 
 \begin{flushright}
 	$\square$
@@ -2407,7 +2407,7 @@ $\Psi^{'}(N,\ldots,N) =1$. Indeed, for any $\bm{\tau}\in \Omega^{'}$ we have tha
 \begin{align}
 	\Psi^{'}(\bm{\tau})=&\langle\bm{\tau}|\Psi^{'}\rangle=\sum_{\bm{\sigma}\in \Omega^{'}}\langle \bm{\tau}|S_{1}|\bm{\sigma}\rangle\langle \bm{\sigma}|\Psi\rangle=\sum_{\bm{\sigma}\in \Omega^{'}}\langle \bm{\sigma}|S_{1}^{T}|\bm{\tau}\rangle\langle \bm{\sigma}|\Psi\rangle\dt
 \end{align}
-\todo{what was Omega again?}
+\todo{what was Omega again?[DONE]}
 We introduce the dual configuration $\bm{\xi}(\bm{\tau})=(N,\tau_{1},\ldots,\tau_{L},N)$ where two extra-sites occupied by the species $N$ have been attached to the vector $\bm{\tau}$, transforming it from a vector of dimension $L$ to one of dimension $L+2$. More explicitly, this dual configuration is given by
 \begin{equation}
 	\begin{cases}
