@@ -277,7 +277,7 @@ The model studied in this paper is the {\em  multispecies stirring process with 
 This particle system is defined on a generic connected and undirected graph. At each site 
 the maximal number of allowed particles {\color{blue}(also called \textit{maximal occupancy})} is $\nu\in \mathbb{N}$. These particles can be of $N-1$ types (or species). Two sites do interact when there is an edge between them and this interaction consists in swapping the occupations of these two sites (for a precise definition of the process see Section \ref{sec1}). 
 Furthermore, reservoirs are attached at each site of the graph, creating and removing particle. The process becomes integrable when the graph is a finite chain with two reservoirs attached to the first and the last sites respectively and the maximal number of allowed particles is fixed to be $\nu=1$,  see \cite{vanicat2017exact}. {\color{blue}The choice of the boundary reservoirs introduced in \cite{vanicat2017exact} is further motivated by the fact that they allow to determine an absorbing dual process, regardless of the geometry on which the process is defined and regardless of the maximal number of particle hosted at each site ($\nu$ can any natural number)}.\\
-{\color{blue}In this paper we concentrate our effort in studying the symmetric multispecies model. In literature, also multispecies asymmetric models have been introduced \cite{schutz2017kardar,crampe2016integrable, finn2018matrix} and integrability results have been proved. Moreover, different transition mechanism (beyond the diffusive one) have been recently studied \cite{chatterjee2023multi}. Finally, the presence of different types of particles have also been modelled via a "multi-layer" dynamics (see \cite{redig2022ergodic,floreani2022switching}). As far as we know, in these contexts integrability does not hold.} 
+{\color{blue}In this paper we concentrate our effort in studying the boundary driven symmetric multispecies model. In literature, also multispecies asymmetric models have been introduced \cite{schutz2017kardar} and integrability results have been proved both with \cite{crampe2016integrable, finn2018matrix} and without boundary driving \cite{mallick1,mallick2}. Moreover, different transition mechanisms (beyond the diffusive one) have been recently studied \cite{chatterjee2023multi}. Finally, the presence of different types of particles have also been modelled via a "multi-layer" dynamics (see \cite{redig2022ergodic,floreani2022switching}). As far as we know, in this last context integrability does not hold.} 
 %{\color{red}Explain the model here.... $N$-species (or $N-1$ plus empty?). What is the graph? say that it becomes integrable for the line }
 %We refer to the model as the {\em  multispecies stirring process with open boundaries}.
 %
@@ -2556,11 +2556,11 @@ Indeed,
 	\item \textit{Stirring generator}:
 
 \begin{equation}
-	\mathcal{L}_{x,x+1}n_{d}^{x}=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{a}^{x}+\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{x+1}-\bm{\delta}_{b}^{x+1})-n_{d}^{x}\right)
+	\mathcal{L}_{x,x+1}n_{d}^{x}=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{B}^{x}+\bm{\delta}_{A}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)
 \end{equation}
-In the brackets of the right-hand-side of the above equation we have: a contribution $-n_{d}^{x}n_{b}^{x+1}$, when $a=d$; a contribution $n_{a}^{x}n_{d}^{x+1}$, when $b=d$. Thus we obtain 
+In the brackets of the right-hand-side of the above equation we have: a contribution $-n_{d}^{x}n_{B}^{x+1}$, when $A=d$; a contribution $n_{A}^{x}n_{d}^{x+1}$, when $B=d$. Thus we obtain 
 \begin{align*}
-	\mathcal{L}_{x,x+1}n_{d}^{x}=&\sum_{a=1}^{N}n_{a}^{x}n_{d}^{x+1}-\sum_{b=1}^{N}n_{d}^{x}n_{b}^{x+1}\\
+	\mathcal{L}_{x,x+1}n_{d}^{x}=&\sum_{a=1}^{N}n_{A}^{x}n_{d}^{x+1}-\sum_{bB=1}^{N}n_{d}^{x}n_{B}^{x+1}\\
 	=&\sum_{a=1}^{N-1}n_{a}^{x}n_{d}^{x+1}+(\nu-\sum_{i=1}^{N-1}n_{i}^{x})n_{d}^{x+1}-\sum_{b=1}^{N-1}n_{d}^{x}n_{b}^{x+1}-n_{d}^{x}(\nu-\sum_{i=1}^{N-1}n_{i}^{x+1})\\
 	=&\nu\left(n_{d}^{x+1}-n_{d}^{x}\right)
 \end{align*} 
@@ -2568,21 +2568,21 @@ where we have used the fact that $n_{N}^{x}=\nu-\sum_{i=1}^{N-1}n_{i}^{x}$.
 \item \textit{Stirring-mutation generator}: for every $c\in \{1,\ldots,N-2\}$ we have 
 \begin{equation}
 	\begin{split}
-		\mathcal{L}_{x,x+1}^{c}n_{d}^{x}&=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{a}^{x}+\bm{\delta}_{h_{c}(b)}^{x}+\bm{\delta}_{h_{c}(a)}^{x+1}-\bm{\delta}_{b}^{x+1})-n_{d}^{x}\right)
+		\mathcal{L}_{x,x+1}^{c}n_{d}^{x}&=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{h_{c}(B)}^{x}+\bm{\delta}_{h_{c}(A)}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)
 	\end{split}
 \end{equation}
-In the brackets of the right-hand-side of the above equation we have: a contribution $-n_{d}^{x}n_{\ell}^{x+1}$, when $a=d$ (here we call $\ell=h_{c}(b)$); a contribution $n_{a}^{x}n_{q}^{x+1}$, when $h_{c}(b)=d$. Thus we obtain 
+In the brackets of the right-hand-side of the above equation we have: a contribution $-n_{d}^{x}n_{K}^{x+1}$, when $A=d$ (here we call $K=h_{c}(B)$); a contribution $n_{A}^{x}n_{q}^{x+1}$, when $h_{c}(B)=d$. Thus we obtain 
 \begin{align}
-		\mathcal{L}_{x,x+1}^{c}n_{d}^{x}&=\sum_{a=1}^{N}n_{a}^{x}n_{b}^{x+1}-\sum_{\ell=1}^{N}n_{d}^{x}n_{\ell}^{x+1}
+		\mathcal{L}_{x,x+1}^{c}n_{d}^{x}&=\sum_{A=1}^{N}n_{A}^{x}n_{b}^{x+1}-\sum_{K=1}^{N}n_{d}^{x}n_{K}^{x+1}
 		\\&=
-		\sum_{k=1}^{N-1}n_{k}^{x}n_{b}^{x+1}+\left(\nu-\sum_{i=1}^{N-1}n_{i}^{x}\right)n_{b}^{x+1}-\sum_{\ell=1}^{N-1}n_{d}^{x}n_{\ell}^{x+1}-n_{d}^{x}\left(\nu-\sum_{i=1}^{N-1}n_{i}^{x+1}\right)
+		\sum_{k=1}^{N-1}n_{k}^{x}n_{b}^{x+1}+\left(\nu-\sum_{i=1}^{N-1}n_{i}^{x}\right)n_{b}^{x+1}-\sum_{K=1}^{N-1}n_{d}^{x}n_{K}^{x+1}-n_{d}^{x}\left(\nu-\sum_{i=1}^{N-1}n_{i}^{x+1}\right)
 		\\&=
 		\nu(n_{b}^{x+1}-n_{d}^{x})
 \end{align}
-where  we used the fact that $n_{N}^{x}=\nu-\sum_{i=1}^{N-1}n_{i}^{x}$. Let us observe that, by the definition of the map $h_{c}(\cdot)$ and for the fact that $1\leq c\leq N-2$, we have that in the above equation $b\neq d$ and $b\neq N$.
+where  we used the fact that $n_{N}^{x}=\nu-\sum_{i=1}^{N-1}n_{i}^{x}$. Let us observe that, by the definition of the map $h_{c}(\cdot)$ and for the fact that $1\leq c\leq N-2$, we have that in the above equation $B\neq d$ and $B\neq N$.
 \item \textit{Pure-mutation generator}: here we have that 
 \begin{equation}
-	\mathcal{L}_{x,y}^{m}n_{d}^{x}=\sum_{a,b=1}^{N-1}n_{a}^{x}\left((n_{d}^{x}-\bm{\delta}_{a}^{x}+\bm{\delta}_{b}^{x})-n_{d}^{x}\right)=\sum_{b=1}^{N-1}(n_{b}^{x}-n_{d}^{x})
+	\mathcal{L}_{x,y}^{m}n_{d}^{x}=\sum_{A,B=1}^{N-1}n_{A}^{x}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{B}^{x})-n_{d}^{x}\right)=\sum_{b=1}^{N-1}(n_{b}^{x}-n_{d}^{x})
 \end{equation}
 \end{enumerate}
 Then, summing over all indices $c\in\{1,\ldots,N-2\}$, we obtain \eqref{actionGraphRD} and \eqref{DifferenceEquation} follows.
@@ -2590,7 +2590,7 @@ Then, summing over all indices $c\in\{1,\ldots,N-2\}$, we obtain \eqref{actionGr
 Acting on $n_{d}^{1}$  with $\mathcal{L}_{\text{left}}^{rd}$ we obtain
 \begin{equation}\label{actionBoudaryRD}
 	\begin{split}
-		\mathcal{L}_{\text{left}}^{rd}n_{d}^{1}&=\sum_{a,b=1}^{N}\alpha_{a}n_{b}^{1}\left((n_{d}^{1}-\bm{\delta}_{b}^{1}+\bm{\delta}_{a}^{1})-n_{d}^{1}\right)=\alpha_{d}\sum_{b=1\,:\,b\neq d}^{N}n_{b}^{1}-n_{d}^{1}\sum_{b=1\,:b\neq d}^{N}\alpha_{b}
+		\mathcal{L}_{\text{left}}^{rd}n_{d}^{1}&=\sum_{A,B=1}^{N}\alpha_{A}n_{B}^{1}\left((n_{d}^{1}-\bm{\delta}_{B}^{1}+\bm{\delta}_{B}^{1})-n_{d}^{1}\right)=\alpha_{d}\sum_{B=1\,:\,b\neq d}^{N}n_{B}^{1}-n_{d}^{1}\sum_{B=1\,:B\neq d}^{N}\alpha_{B}
 	\end{split}
 \end{equation}
 Using equation \eqref{boundaryParamRD}, we obtain 
