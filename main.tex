@@ -2380,7 +2380,7 @@ Since the matrix $R_{x}$ is the same as in Section~\ref{sectionDuality}, we shal
 %	\\=&
 %	\sum_{d,k=1}^{N-1}\sum_{a,b=1}^{N}\left\{\left(E_{da}^{x}-E_{h_{c}(b)N}^{x}-E_{da}^{x}+E_{aN}^{x}\right)\otimes\left(E_{kb}^{x+1}-E_{h_{c}(a)N}^{x+1}-E_{kb}^{x+1}+E_{bN}^{x+1}\right)\right\}
 %	\\=&
-	\sum_{a,b=1}^{N-1}\sum_{D,k=1}^{N}\left\{\left(E_{DN}^{x}-E_{h_{c}(k)N}^{x}\right)\otimes \left(E_{DN}^{x+1}-E_{h_{c}(K)N}^{x+1}\right)\right\}=0\dt
+	\sum_{a,b=1}^{N-1}\sum_{D,K=1}^{N}\left\{\left(E_{DN}^{x}-E_{h_{c}(K)N}^{x}\right)\otimes \left(E_{DN}^{x+1}-E_{h_{c}(K)N}^{x+1}\right)\right\}=0\dt
 \end{align*}
 In the last equality we used the fact that map $h_{c}(\cdot)$ is surjective. 
 %\paragraph{Duality for $H_{x,x+1}^{m}$} 
@@ -2560,7 +2560,7 @@ Indeed,
 \end{equation}
 In the brackets of the right-hand-side of the above equation we have: a contribution $-n_{d}^{x}n_{B}^{x+1}$, when $A=d$; a contribution $n_{A}^{x}n_{d}^{x+1}$, when $B=d$. Thus we obtain 
 \begin{align*}
-	\mathcal{L}_{x,x+1}n_{d}^{x}=&\sum_{a=1}^{N}n_{A}^{x}n_{d}^{x+1}-\sum_{bB=1}^{N}n_{d}^{x}n_{B}^{x+1}\\
+	\mathcal{L}_{x,x+1}n_{d}^{x}=&\sum_{a=1}^{N}n_{A}^{x}n_{d}^{x+1}-\sum_{B=1}^{N}n_{d}^{x}n_{B}^{x+1}\\
 	=&\sum_{a=1}^{N-1}n_{a}^{x}n_{d}^{x+1}+(\nu-\sum_{i=1}^{N-1}n_{i}^{x})n_{d}^{x+1}-\sum_{b=1}^{N-1}n_{d}^{x}n_{b}^{x+1}-n_{d}^{x}(\nu-\sum_{i=1}^{N-1}n_{i}^{x+1})\\
 	=&\nu\left(n_{d}^{x+1}-n_{d}^{x}\right)
 \end{align*} 
@@ -2590,7 +2590,7 @@ Then, summing over all indices $c\in\{1,\ldots,N-2\}$, we obtain \eqref{actionGr
 Acting on $n_{d}^{1}$  with $\mathcal{L}_{\text{left}}^{rd}$ we obtain
 \begin{equation}\label{actionBoudaryRD}
 	\begin{split}
-		\mathcal{L}_{\text{left}}^{rd}n_{d}^{1}&=\sum_{A,B=1}^{N}\alpha_{A}n_{B}^{1}\left((n_{d}^{1}-\bm{\delta}_{B}^{1}+\bm{\delta}_{B}^{1})-n_{d}^{1}\right)=\alpha_{d}\sum_{B=1\,:\,b\neq d}^{N}n_{B}^{1}-n_{d}^{1}\sum_{B=1\,:B\neq d}^{N}\alpha_{B}
+		\mathcal{L}_{\text{left}}^{rd}n_{d}^{1}&=\sum_{A,B=1}^{N}\alpha_{A}n_{B}^{1}\left((n_{d}^{1}-\bm{\delta}_{B}^{1}+\bm{\delta}_{B}^{1})-n_{d}^{1}\right)=\alpha_{d}\sum_{B=1\,:\,B\neq d}^{N}n_{B}^{1}-n_{d}^{1}\sum_{B=1\,:B\neq d}^{N}\alpha_{B}
 	\end{split}
 \end{equation}
 Using equation \eqref{boundaryParamRD}, we obtain 
