@@ -271,7 +271,7 @@ This integrability property can be combined with duality and leads to closed-for
 % by extending the previous results of \cite{frassek2020eigenstates}. 
 
 
-\todo{moved down this last paragraph. all good?}
+% \todo{moved down this last paragraph. all good?}
 
 The model studied in this paper is the {\em  multispecies stirring process with open boundaries}, i.e. the multispecies analogue of the exclusion process on a generic graph as introduced in \cite{zhou2021orthogonal} with additional boundary reservoirs as proposed in \cite{vanicat2017exact}. 
 This particle system is defined on a generic connected and undirected graph. At each site 
@@ -285,7 +285,8 @@ Furthermore, reservoirs are attached at each site of the graph, creating and rem
 
 
 %The  paper is organized as follows.
-\subsection*{Organization of the paper}
+% \subsubsection*{Organization of the paper}
+\paragraph{Organization of the paper}
 In Section~\ref{sec1} we define the open multispecies stirring
 process on a general graph and provide its Lie algebraic description in terms of $gl(N)$ generators. In Section~\ref{sectionDuality} we prove an absorption duality (Theorem~\ref{thm-duality})
 and show that the problem of characterizing the non-equilibrium
@@ -664,7 +665,9 @@ acting non-trivially on the vertices of the edge $x,x+1$.
 \begin{equation}\label{Tau-Notation}
 	|\bm{\tau}\rangle=|\tau_{1},\ldots,\tau_{L}\rangle
 \end{equation} 
-with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. Since the {\color{blue} maximal occupancy at each site is $\nu=1$},\todo{but is it at max 1? I do not understand what we call the stirring process....}  the configuration $\bm{n}$ introduced in Section~\ref{subsectionGeneratorStr} and $\bm{\tau}$ are related by 
+with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. Since the {\color{blue} maximal occupancy at each site is $\nu=1$},
+% \todo{but is it at max 1? I do not understand what we call the stirring process....}  
+the configuration $\bm{n}$ introduced in Section~\ref{subsectionGeneratorStr} and $\bm{\tau}$ are related by 
 \begin{equation}\label{notation-change-relation}
 	n_{a}^{x}=\delta_{\tau_{x},a}\dt
 \end{equation}
@@ -1161,7 +1164,7 @@ Given $\bm{\tau}\in \Omega^{'}$,  we have
 % $$
 % \prod_{x=1}^{3}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}=\mathbbm{1}_{\{Y_{1}=\tau_{1}\}}\mathbbm{1}_{\{Y_{2}=\tau_{2}\}}\mathbbm{1}_{\{Y_{3}=\tau_{3}\}}=\left(\mathbbm{1}_{\{Y_{1}=1\}}\mathbbm{1}_{\{Y_{2}=1\}}\right)\left(\mathbbm{1}_{\{Y_{3}=N\}}\right)=\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{3}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right)\left(\prod_{x=1\,:\,\tau_{x}= N}^{3}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right)
 % $$} 
-\todo{removed subindex $a_x$ here}
+% \todo{removed subindex $a_x$ here}
 where in the last equality we exploited the fact that 
 \begin{equation}\label{prova}			\mathbbm{1}_{\{Y_{x}=N\}}=1-\sum_{a=1}^{N-1}\mathbbm{1}_{\{Y_{x}=a\}}\dt
 \end{equation}
@@ -1200,7 +1203,7 @@ a_{1}\}}\right\}+\nonumber\\
 \nonumber\\
 +&\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)(-1)^{L-\ell}\sum_{1\leq q_{1}<\ldots<q_{L-\ell}\leq L}\left(\prod_{k=1}^{L-\ell}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{1},\ldots,a_{L-\ell}=1}^{N-1}\prod_{k=1}^{L-\ell}\mathbbm{1}_{\{Y_{q_{k}}=a_{k}\}}\dt
 \end{align} 
-\todo{indices are strange. Say what happens here}
+% \todo{indices are strange. Say what happens here}
 Therefore, using the linearity of the expectation and introducing the index $b\in \{0,\ldots,L\}$ {\color{blue} we rewrite the sum in equation \eqref{sum} as} \eqref{implicit-mass-function}. {\color{blue} Indeed, when $b>L-\ell$ we have vanishing terms in the sum \eqref{implicit-mass-function}.}
 \begin{flushright}
 	$\square$
