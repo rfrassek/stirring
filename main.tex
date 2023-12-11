@@ -405,15 +405,19 @@ In the case $N=2$, we retrieve the  boundary-driven version of the symmetric exc
 \subsection{The process generator}\label{subsectionGeneratorStr}
 We now give the mathematical description of the multispecies stirring process.
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
-At each vertex site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ {\color{blue} denotes the number of particles of species $a\in \{1,\ldots,N-1\}$, while the component $n_{N}^{x}$ denotes the number of holes at site $x$.} On each vertex we {\color{blue} allow a total maximal number of particles $\nu\in \mathbb{N}$}. Then, the configuration space of the process on the graph $G$ is 
+At each vertex site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ {\color{blue} denotes the number of particles of species $a\in \{1,\ldots,N-1\}$, while the component $n_{N}^{x}$ denotes the number of holes at site $x$.} On each vertex we {\color{blue} allow a total maximal number of particles $\nu\in \mathbb{N}$}. {\color{blue} In the following we introduce the indices denoted by lowercase letters $a,b,c,d,k\in \{1,\ldots,N-1\}$ when only particles are taken into account. Moreover, we introduce the indices denoted by uppercase letters $A,B,C,D,K\in\{1,\ldots,N\}$ when we also consider the hole, that we recall is denoted by $N$. The link between the two indices is given by 
+\begin{equation}
+	a\in \{1,\ldots,N-1\}\qquad \text{and}\qquad A=(a,N)
+	\end{equation} 
+and the same for the other letters.} Then, the configuration space of the process on the graph $G$ is 
 \begin{equation}\label{stateSpace}
     \Omega:=\bigotimes_{x\in V} \Omega_{x}
 \end{equation}
 where
 \begin{equation}
-\Omega_{x}:=\left\{n^x=(n_{1}^{x},\ldots,n_{N}^{x})\in\mathbb{N}_0^{N}\;:\; \sum_{a=1}^{N}n_{a}^{x}=\twoj\right\}\,.
+\Omega_{x}:=\left\{n^x=(n_{1}^{x},\ldots,n_{N}^{x})\in\mathbb{N}_0^{N}\;:\; \sum_{A=1}^{N}n_{A}^{x}=\twoj\right\}\,.
 \end{equation}
-We denote a particle configuration on the graph as $\bm{n}\in \Omega$, where $\bm{n}=(n_{a}^{x})_{x\in V,\,a\in\{1,\ldots,N\}}$.
+We denote a particle configuration on the graph as $\bm{n}\in \Omega$, where $\bm{n}=(n_{A}^{x})_{x\in V,\,A\in\{1,\ldots,N\}}$.
 The infinitesimal generator of the process reads
 \begin{equation}\label{Generator}
     \mathcal{L}=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}+\sum_{x\in V}\Gamma_{x}\mathcal{L}_{x}
@@ -421,22 +425,22 @@ The infinitesimal generator of the process reads
 where  $ \omega_{x,y}\geq 0$ are so-called conductances and $\Gamma_{x}\geq 0$ are the couplings to reservoirs. 
 The generator $\mathcal{L}_{x,y}$ is called the \textit{edge generator}, while $\mathcal{L}_{x}$ is called the \textit{site generator}. These linear operators act on functions $f:\Omega\to \mathbb{R}$ as follows
 \begin{equation}\label{edgeGenerator}
-\mathcal{L}_{x,y}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{y}\left[f(\bm{n}-\bm{\delta}^{x}_{a}+\bm{\delta}_{b}^{x}+\bm{\delta}_{a}^{y}-\bm{\delta}_{b}^{y})-f(\bm{n})\right]\co
+\mathcal{L}_{x,y}f(\bm{n})=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{y}\left[f(\bm{n}-\bm{\delta}^{x}_{A}+\bm{\delta}_{B}^{x}+\bm{\delta}_{A}^{y}-\bm{\delta}_{B}^{y})-f(\bm{n})\right]\co
 \end{equation}
 \begin{equation}\label{siteGenerator}
-    \mathcal{L}_{x}f(\bm{n})=\sum_{a,b=1}^{N}\alpha_{a}^{x}n_{b}^{x}\left[f(\bm{n}+\bm{\delta}_{a}^{x}-\bm{\delta}_{b}^{x})-f(\bm{n})\right]\co
+    \mathcal{L}_{x}f(\bm{n})=\sum_{A,B=1}^{N}\alpha_{A}^{x}n_{B}^{x}\left[f(\bm{n}+\bm{\delta}_{A}^{x}-\bm{\delta}_{B}^{x})-f(\bm{n})\right]\co
 \end{equation}
 where 
 \begin{equation}
-(\bm{\delta}_{a}^{x})^{y}_{b}=\begin{cases}
-1\qquad &\text{if}\quad y=x,\;b=a\;,\\
+(\bm{\delta}_{A}^{x})^{y}_{B}=\begin{cases}
+1\qquad &\text{if}\quad y=x,\;B=A\;,\\
 0\qquad &\text{otherwise}\dt
 \end{cases}
 \end{equation}
 Thus the dynamics consists in an exchange of particles between connected vertices at Poissonian times. 
-This means that on the edge $(x,y)\in \mathcal{E}$  a particle of type $a$ at site $x$ is exchanged with a particle of type $b$ at site $y$ at rate $\omega_{x,y}n_{a}^{x}n_{b}^{y}$. 
-Moreover, each vertex  exchanges particles with the external environment (reservoirs). 
-Namely, on each site $x\in V$  a particle of type $b$ is replaced with a particle of type $a$ at rate $\Gamma_{x}\alpha_{a}^{x}n_{b}^{x}$. 
+This means that on the edge $(x,y)\in \mathcal{E}$  a particle {\color{blue}or a hole} of type $A$ at site $x$ is exchanged with a particle {\color{blue}or a hole} of type $B$ at site $y$ at rate $\omega_{x,y}n_{A}^{x}n_{B}^{y}$. {\color{blue} The transitions where an hole is exchanged by a particle, can be interpreted as \textit{purely diffusive}.}
+Moreover, each vertex  exchanges particles {\color{blue} or holes} with the external environment (reservoirs). 
+Namely, on each site $x\in V$  a particle {\color{blue} or a hole} of type $B$ is replaced with a particle {\color{blue} or a hole} of type $A$ at rate $\Gamma_{x}\alpha_{A}^{x}n_{B}^{x}$. {\color{blue}The transitions where the a particle is replaced by a hole can be interpreted as a removal/injection of particles.}
 %
 %For the sake of notation we denote $|\alpha^{x}|=\sum_{a=1}^{N}\alpha_{a}^{x}$. 
 %See Figure~\ref{fig:1} and  Figure~\ref{fig:2} for a visualisation of the dynamics. 
@@ -472,9 +476,9 @@ Here
  $$
 \rho_{a}=\frac{\alpha_{a}}{|\alpha|}\co
 $$
-is the density of species $a$ and we used the notation $|\alpha|=\sum_{a=1}^{N}\alpha_{a}$. Explicitly, 
+is the density of species $a$ and we used the notation $|\alpha|=\sum_{A=1}^{N}\alpha_{A}$. Explicitly, 
 \begin{equation}
-\mu_{\text{rev}}^{x}(n^{x})=\frac{\nu!}{\prod_{a=1}^{N}n_{a}^{x}!}\prod_{a=1}^{N}\rho_{a}^{n_{a}^{x}}\,.
+\mu_{\text{rev}}^{x}(n^{x})=\frac{\nu!}{\prod_{A=1}^{N}n_{A}^{x}!}\prod_{A=1}^{N}\rho_{A}^{n_{A}^{x}}\,.
 \end{equation}
 This can be proved  by checking that detailed balance is satisfied. 
 If condition \eqref{reversibilityCondition} is not met, then in general reversibility is lost: indeed, in this situation, each reservoir at site $x$ has  its own set of densities vector $\rho^{x}=(\rho_{1}^{x},\ldots,\rho_{N}^{x})$ with components
@@ -482,7 +486,7 @@ If condition \eqref{reversibilityCondition} is not met, then in general reversib
 	\label{rhox}
 	\rho_{a}^x=\frac{\alpha_{a}^x}{|\alpha^x|}
 \end{equation}
-and  $|\alpha^x|=\sum_{a=1}^{N}\alpha_{a}^x$. {\color{blue} As a consequence, particles are injected and removed in the graph with different rates. When, for any $a\in \{1,\ldots,N\}$, there are at least two reservoirs at two different sites $x,y$ such that $\rho_{a}^{x}\neq  \rho_{a}^{y}$, a  non-zero current sets in, breaking the reversibility. Informally, one can say that the reservoirs try to impose their different densities at the boundaries of the the graph, putting the system out-of-equilibrium.} %{\color{red}wants to fix}
+and  $|\alpha^x|=\sum_{A=1}^{N}\alpha_{A}^x$. {\color{blue} As a consequence, particles are injected and removed in the graph with different rates. When, for any $A\in \{1,\ldots,N\}$, there are at least two reservoirs at two different sites $x,y$ such that $\rho_{A}^{x}\neq  \rho_{A}^{y}$, a  non-zero current sets in, breaking the reversibility. Informally, one can say that the reservoirs try to impose their different densities at the boundaries of the the graph, putting the system out-of-equilibrium.} %{\color{red}wants to fix}
 % \todo{?}
 %Currents will arise when at least two reservoirs have different densities. 
 \begin{remark}
@@ -506,9 +510,9 @@ and  $|\alpha^x|=\sum_{a=1}^{N}\alpha_{a}^x$. {\color{blue} As a consequence, pa
 In this paper we will often use the fact that the Markov generator of the multispecies stirring process can be described in terms a Lie algebra ${gl}(N)$.
 In this section we provide details about this.
 
-Consider the Lie algebra ${gl}(N)$ with generators denoted by $\EE_{ab}$ with $a,b\in \{1,\ldots,N\}$ and commutation relations
+Consider the Lie algebra ${gl}(N)$ with generators denoted by $\EE_{AB}$ with $A,B\in \{1,\ldots,N\}$ and commutation relations
 \begin{equation}\label{eq:comgl}
-\left[\EE_{ab},\EE_{cd}\right]=\EE_{ad}\delta_{cb}-\EE_{cb}\delta_{ad}\qquad \forall a,b\in \{1,\ldots,N\}\,.
+\left[\EE_{AB},\EE_{CD}\right]=\EE_{AD}\delta_{CB}-\EE_{CB}\delta_{AD}\qquad \forall A,B\in \{1,\ldots,N\}\,.
 \end{equation}
 The finite-dimensional representations are labelled by partitions $\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_N)$ of $\nu$ with  $\lambda_i\geq \lambda_{i+1}$,  $\lambda_i\in \mathbb{N}$ and $\sum_{i=1}^N \lambda_i = \nu\in\mathbb{N}$.  
 We are interested in the {\em symmetric} finite-dimensional representations with 
@@ -520,23 +524,23 @@ The dimension $M_\twoj$ of this symmetric representations is given by the combin
 \begin{equation}
 	M_\twoj= \frac{(N+\twoj-1)!}{\twoj  !(N-1)!}\dt
 \end{equation} 
-The generators of the symmetric representations will be denoted by $E_{ab}$.
+The generators of the symmetric representations will be denoted by $E_{AB}$.
 A basis of the vector space $\mathbb{C}^{M_\twoj}$ are the column vectors denoted by
 \begin{equation}
-  |n\rangle=  |n_{1},\ldots,n_{N}\rangle,\quad \text{with}\quad n_{i}\in\mathbb{N}_{0}\quad \text{such that}\quad \sum_{i=1}^{N}n_{i}=\nu\,.
+  |n\rangle=  |n_{1},\ldots,n_{N}\rangle,\quad \text{with}\quad n_{A}\in\mathbb{N}_{0}\quad \text{such that}\quad \sum_{A=1}^{N}n_{A}=\nu\,.
 \end{equation}
 %where $\sum_{a=1}^{N}n_{i}=\nu$. 
 The basis vectors satisfy the orthogonality relation
 \begin{equation}\label{ortho}
-   \langle m|n \rangle =\langle m_{1},\ldots,m_{N}|n_{1},\ldots,n_{N}\rangle=\prod_{a=1}^{N}\delta_{m_{a},n_{a}}\co
+   \langle m|n \rangle =\langle m_{1},\ldots,m_{N}|n_{1},\ldots,n_{N}\rangle=\prod_{A=1}^{N}\delta_{m_{A},n_{A}}\co
 \end{equation}
-where  $ \langle m_{1},\ldots,m_{N}|$ is the row vector obtained by transposing $|m\rangle=|m_{1},\ldots,m_{N}\rangle$ and $\delta_{m_{a},n_{a}}$ is the Kronecker delta. 
+where  $ \langle m_{1},\ldots,m_{N}|$ is the row vector obtained by transposing $|m\rangle=|m_{1},\ldots,m_{N}\rangle$ and $\delta_{m_{A},n_{A}}$ is the Kronecker delta. 
 
 The explicit action of the algebra generators on the basis  vectors $|n\rangle$ is the following:
 \begin{equation}\label{actionE}
 	\begin{cases}
-		E_{ab}|n_{1},\ldots,n_{a},\ldots,n_{b},\ldots,n_{N}\rangle =n_{b}|n_{1},\ldots,n_{a}+1,\ldots,n_{b}-1,\ldots,n_{N}\rangle\qquad\qquad a\neq b\\[0.1cm]
-		E_{aa}|n_{1},\ldots,n_{a},\ldots,n_{N}\rangle = n_{a} |n_{1},\ldots,n_{a},\ldots,n_{N}\rangle\dt
+		E_{AB}|n_{1},\ldots,n_{A},\ldots,n_{B},\ldots,n_{N}\rangle =n_{B}|n_{1},\ldots,n_{A}+1,\ldots,n_{B}-1,\ldots,n_{N}\rangle\qquad\qquad A\neq B\\[0.1cm]
+		E_{AA}|n_{1},\ldots,n_{A},\ldots,n_{N}\rangle = n_{A} |n_{1},\ldots,n_{A},\ldots,n_{N}\rangle\dt
 	\end{cases}
 \end{equation}  
 The matrices defined in this way satisfy the commutation relations \eqref{eq:comgl} and yield highest Dynkin weight \eqref{eq:dynkin}. \\
@@ -566,7 +570,7 @@ a vector $|{\bm{n}}\rangle \in \Omega$ can be written as
 %where we require that $n_{a}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have 
 with $\sum_{a=1}^{N}n_{a}^{x}=\nu$ for any $x\in V$. For a fixed $x\in V$ we write $|n^{x}\rangle=|n_{1}^{x},\ldots,n_{N}^{x}\rangle$. The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
 \begin{equation}
-    \langle {\bm{n}}|{\bm{m}}\rangle =\prod_{x\in V}\prod_{a=1}^N\delta_{n^x_a,m^{x}_a}\,.
+    \langle {\bm{n}}|{\bm{m}}\rangle =\prod_{x\in V}\prod_{A=1}^N\delta_{n^x_{A},m^{x}_{A}}\,.
 \end{equation}
 We introduce the Hamiltonian operator
 \begin{equation}\label{OriginalHamiltonian}
@@ -576,11 +580,11 @@ We introduce the Hamiltonian operator
 \end{equation}
 where the edge Hamiltonian $\mathcal{H}_{x,y}$ that describes the interaction between two connected sites is
 \begin{equation}\label{edgeHamiltonian}
-\mathcal{H}_{x,y}=\sum_{a,b=1}^{N}\Big(E_{ab}^{x} E_{b a}^{y}-E_{bb}^{x} E_{aa}^{y}\Big)
+\mathcal{H}_{x,y}=\sum_{A,B=1}^{N}\Big(E_{AB}^{x} E_{BA}^{y}-E_{BB}^{x} E_{AA}^{y}\Big)
  \end{equation}
   and where the site Hamiltonian $H_{x}$  is
  \begin{equation}\label{siteHamiltonian}
-H_{x}=\sum_{a,b=1}^{N}\alpha_{a}^{x}\left(E_{ab}^{x}-E_{bb}^{x}\right)
+H_{x}=\sum_{A,B=1}^{N}\alpha_{A}^{x}\left(E_{AB}^{x}-E_{BB}^{x}\right)
 \end{equation}
 Here $E_{ab}^{x}$ denotes the generator $E_{ab}$ in \eqref{actionE} acting non-trivially on site $x$ (and as the identity on the other sites). 
 The Hamiltonian in \eqref{OriginalHamiltonian} is stochastic and is linked to the Markov generator  by
@@ -598,7 +602,7 @@ where
 \end{equation}
 We can write the edge Hamiltonian \eqref{edgeHamiltonian} as a function of the coproduct of the quadratic Casimir of ${gl}(N)$
 \begin{equation}\label{secondCasimir}
-    C=\sum_{a,b=1}^{N}E_{ab}E_{ba}\co
+    C=\sum_{a,b=1}^{N}E_{AB}E_{BA}\co
 \end{equation}
 that acts diagonally as $C|{n}\rangle=\twoj(\twoj+N)|{n}\rangle$ on any state $|n\rangle$ and belogs to the center of ${gl}(N)$ (i.e. it commutes with all the algebra elements).  
 More precisely,  considering the standard coproduct 
@@ -609,11 +613,11 @@ More precisely,  considering the standard coproduct
 \end{equation}
 with
 \begin{equation}
-E_{ab}\mapsto E_{ab}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{ab}\co
+E_{AB}\mapsto E_{AB}\otimes \mathbbm{1}+\mathbbm{1}\otimes E_{AB}\co
 \end{equation} 
 we have 
 \begin{equation}
-\Delta(C)=\sum_{a,b=1}^{N}\Delta(E_{ab})\Delta(E_{ba})=2\sum_{a,b=1}^{N}E_{ab}\otimes E_{ba}+C\otimes \mathbbm{1}+\mathbbm{1}\otimes C\,.
+\Delta(C)=\sum_{A,B=1}^{N}\Delta(E_{AB})\Delta(E_{BA})=2\sum_{A,B=1}^{N}E_{AB}\otimes E_{BA}+C\otimes \mathbbm{1}+\mathbbm{1}\otimes C\,.
 \end{equation}
 Then, one can check that 
 \begin{equation}\label{hamiltonianCasimir}
@@ -640,7 +644,7 @@ and the coupling to reservoirs are
 	\end{cases}\dt
 \end{equation}
 The case $\nu=1$, i.e. one particle at most for each site, is integrable and has been considered previously in \cite{vanicat2017exact}. 
-For  $\nu=1$ we denote the ${gl}(N)$  generators   as  $(e_{ab})_{a,b\in\{1,\ldots,N\}}$ obeying $(e_{ab})_{cd}=\delta_{ac}\delta_{bd}$.
+For  $\nu=1$ we denote the ${gl}(N)$  generators   as  $(e_{AB})_{A,B\in\{1,\ldots,N\}}$ obeying $(e_{AB})_{CS}=\delta_{AC}\delta_{BD}$.
 The Hamiltonian can then be written as
 \begin{equation}\label{hamiltonian}
 	H=H_{\text{left}}+H_{\text{bulk}}+H_{\text{right}}
@@ -657,7 +661,7 @@ Here $\mathcal{H}_{x,x+1}$  denotes  the two-site Hamiltonian
 \end{equation}
 with the permutation matrix
 \begin{equation}
-	P=\sum_{a,b=1}^Ne_{ab}\otimes e_{ba}\,,
+	P=\sum_{A,B=1}^Ne_{AB}\otimes e_{BA}\,,
 \end{equation} 
 acting non-trivially on the vertices of the edge $x,x+1$.
  In this context it will be useful to introduce the following notation for the occupation variables of the process. Each configuration is denoted by
@@ -668,7 +672,7 @@ with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. Since the {\co
 % \todo{but is it at max 1? I do not understand what we call the stirring process....}  
 the configuration $\bm{n}$ introduced in Section~\ref{subsectionGeneratorStr} and $\bm{\tau}$ are related by 
 \begin{equation}\label{notation-change-relation}
-	n_{a}^{x}=\delta_{\tau_{x},a}\dt
+	n_{A}^{x}=\delta_{\tau_{x},A}\dt
 \end{equation}
 The state space of the process is now 
 \begin{equation}
@@ -702,7 +706,7 @@ and
 \end{equation}
 where, without loss of generality,  we assume that the parameters satisfy
 \begin{equation}\label{ratesConditions}
-	\sum_{a=1}^{N}\alpha_{a}=1,\qquad\sum_{a=1}^{N}\beta_{a}=1\;.
+	\sum_{A=1}^{N}\alpha_{A}=1,\qquad\sum_{A=1}^{N}\beta_{A}=1\;.
 \end{equation} 
 %We define also 
 %\begin{equation}\label{lambdaConditions}
@@ -762,9 +766,9 @@ We write the configurations $\bm{\xi} \in \widetilde\Omega$  as
 \begin{equation}\label{row-dual-vectors}
     \bm{\xi}=\bigotimes_{x\in V} \left(\left(\xi_{1}^{x},\ldots,\xi_{N}^{x}\right)\otimes (\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)} )\right) 
 \end{equation} 
-where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles of type $a\in \{1,\ldots,N\}$ at site $x$, 
-and the component $\xi_{a}^{u(x)}$  gives the number of dual particles of type $a\in \{1,\ldots,N-1\}$ at 
-the extra-site $u(x)$ connected to $x\in V$. {\color{blue} We observe that the configuration variable at the extra site $u(x)$ does not have to satisfy any exclusion constraint, i.e. an unbounded number of particles can be hosted at extra-site $u(x)$. Therefore, the occupation variable of species $N$ (the one dependent on the species $1,\ldots,N-1$) is not present}. We state the following duality result.
+where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles of type $a\in \{1,\ldots,N-1\}$ at site $x$, {\color{blue} while $\xi_{N}^{x}$ is interpreted as the number of holes at site $x$ of the dual process.}
+The component $\xi_{a}^{u(x)}$  gives the number of dual particles of type $a\in \{1,\ldots,N-1\}$ at 
+the extra-site $u(x)$ connected to $x\in V$. {\color{blue} We observe that the configuration variable at the extra site $u(x)$ does not have to satisfy any exclusion constraint, i.e. an unbounded number of particles can be hosted. Therefore, an infinite number of holes is available at each extra-site $u(x)$. As a consequence, the hole occupation variable $\xi_{N}^{u(x)}$ is not considered}. We state the following duality result.
 \begin{theorem}[Absorbing duality]\label{thm-duality}
 	The multispecies stirring process $(\bm{n}(t))_{t\geq 0}$ defined on the state space $\Omega$ with generator $\mathcal{L}$ defined in \eqref{Generator} is dual to the process $(\bm{\xi}(t))_{t\geq 0}$ defined on the enlarged state space $\widetilde{\Omega}$ with generator
 	 \begin{equation}\label{DualGenerator}
@@ -806,7 +810,7 @@ To a configuration $\bm{\xi}$ of the configuration space  \eqref{dualStateSpace}
 	\langle q_{1}^{u(x)},\ldots,q^{u(x)}_{N-1}|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle=\prod_{a=1}^{N-1}\delta_{\xi_{a}^{u(x)},q_{a}}
 \end{equation} }
 {\color{blue} \begin{remark}\label{reamrk-extraSite}
-	In the following, with a slight abuse of notation, we denote the configuration vectors on the extra-site $u(x)$ by $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$. This allows to recall that these vectors belongs to the extra-space $N_{0}^{N-1}$ "attached" to original configuration space $\Omega$. Moreover, this notation allows to directly connect the ket-vector $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$ with the row vector $(\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)})$ defined in \eqref{row-dual-vectors}, in which the components $\xi_{a}^{u(x)}$ denotes the number of dual particles of type $a$ at site $u(x)$.
+	In the following, with a slight abuse of notation, we denote the configuration vectors on the extra-site $u(x)$ by $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$. This allows to recall that these vectors belongs to the extra-space $N_{0}^{N-1}$ "attached" to original configuration space $\Omega$. Moreover, this notation allows to directly connect the ket-vector $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$ with the row vector $(\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)})$ defined in \eqref{row-dual-vectors}, in which we recall that the components $\xi_{a}^{u(x)}$ denotes the number of dual particles of type $a$ at site $u(x)$.
 \end{remark}}
 The Hamiltonian of the dual process reads
 \begin{equation}\label{DualHamiltonian}
@@ -837,7 +841,7 @@ d_{x}=R_{x}\exp{(E^{x})}
 \end{equation}
 with  the diagonal part
 \begin{equation}\label{Revmatrix}
-    R_{x} =\sum_{n^{x}\in\Omega_{x}}\frac{\prod_{a=1}^{N}n_{a}^{x}!}{\nu!}|n_{1}^{x},\ldots,n_{N}^{x}\rangle\langle n_{1}^{x},\ldots,n_{N}^{x}|
+    R_{x} =\sum_{n^{x}\in\Omega_{x}}\frac{\prod_{A=1}^{N}n_{A}^{x}!}{\nu!}|n_{1}^{x},\ldots,n_{N}^{x}\rangle\langle n_{1}^{x},\ldots,n_{N}^{x}|
 \end{equation}
 and
 \begin{equation}\label{EquationEx}
@@ -953,45 +957,45 @@ i.e. it is a symmetry of $\mathcal{H}_{x,y}$. Exploiting these considerations we
      $\square$
  \end{flushright}
  \paragraph{Proof of boundary duality \eqref{siteDualRelation}.} To prove \eqref{siteDualRelation} we transform via the Hadamard formula the transposed of the site Hamiltonian \eqref{siteDualHamiltonian} and then to  introduce properly a creation operator acting on an extra-site $u(x)$. % that we connect to every site $x\in V$ of the graph $G$. \\
- Considering $A,B\in {gl}(N)$, the Hadamard formula reads 
+ Considering {\color{blue}$\mathcal{A},\mathcal{B}\in {gl}(N)$}, the Hadamard formula reads 
  \begin{equation}\label{HadamardFormula}
-     \exp{(-B)}A\exp{(B)}=A-\left[B,A\right]+\frac{1}{2!}\left[B,\left[B,A\right]\right]-\frac{1}{3!}\left[B,\left[B,\left[B,A\right]\right]\right]+\ldots
+     \exp{(-\mathcal{B})}A\exp{(\mathcal{B})}=\mathcal{A}-\left[\mathcal{B},\mathcal{A}\right]+\frac{1}{2!}\left[B\mathcal{B},\left[\mathcal{B},\mathcal{A}\right]\right]-\frac{1}{3!}\left[\mathcal{B},\left[\mathcal{B},\left[\mathcal{B},\mathcal{A}\right]\right]\right]+\ldots
  \end{equation}
-In the following we need the application of this with $B=\sum_{a=1}^{N-1}E_{aN}$ defined in \eqref{EquationEx} and with $A$ equal to some of the generator $E_{cd}$ of the Lie algebra ${gl}(N)$ with $c,d\in\{1,\ldots,N\}$. Therefore we compute 
+In the following we need the application of this with $\mathcal{B}=\sum_{a=1}^{N-1}E_{aN}$ defined in \eqref{EquationEx} and with $\mathcal{A}$ equal to some of the generator $E_{CD}$ of the Lie algebra ${gl}(N)$ with $C,D\in\{1,\ldots,N\}$. Therefore we compute 
 \begin{align}
-	\left[B,A\right]=\sum_{a=1}^{N-1}\left[E_{aN},E_{cd}\right]=\delta_{cN}\sum_{a=1}^{N-1}E_{ad}-(1-\delta_{dN})E_{cN}
+	\left[\mathcal{B},\mathcal{A}\right]=\sum_{a=1}^{N-1}\left[E_{aN},E_{CD}\right]=\delta_{CN}\sum_{a=1}^{N-1}E_{aD}-(1-\delta_{DN})E_{CN}
 \end{align}
 and 
 \begin{align}
-	\left[B\left[B,A\right]\right]=&\left[\sum_{a=1}^{N-1}E_{aN},\delta_{cN}\sum_{b=1}^{N-1}E_{bd}-(1-\delta_{dN})E_{cN}\right]\nonumber\\=&
-	\sum_{a=1}^{N-1}\left(\delta_{cN}\sum_{b=1}^{N-1}\left[E_{aN},E_{bd}\right]-(1-\delta_{dN})\left[E_{aN},E_{cN}\right]\right)\nonumber\\=&
-	\sum_{a=1}^{N-1}\left(-\delta_{cN}\delta_{ad}\sum_{b=1}^{N-1}E_{bN}-(1-\delta_{dN})\delta_{cN}E_{aN}\right)\nonumber\\=&
-	-\left(\delta_{cN}(1-\delta_{dN})+(1-\delta_{dN})\delta_{cN}\right)\sum_{b=1}^{N-1}E_{bN}\nonumber
+	\left[\mathcal{B}\left[\mathcal{B},\mathcal{A}\right]\right]=&\left[\sum_{a=1}^{N-1}E_{aN},\delta_{CN}\sum_{b=1}^{N-1}E_{bD}-(1-\delta_{DN})E_{CN}\right]\nonumber\\=&
+	\sum_{a=1}^{N-1}\left(\delta_{CN}\sum_{b=1}^{N-1}\left[E_{aN},E_{bD}\right]-(1-\delta_{DN})\left[E_{aN},E_{CN}\right]\right)\nonumber\\=&
+	\sum_{a=1}^{N-1}\left(-\delta_{CN}\delta_{aD}\sum_{b=1}^{N-1}E_{bN}-(1-\delta_{DN})\delta_{CN}E_{aN}\right)\nonumber\\=&
+	-\left(\delta_{CN}(1-\delta_{DN})+(1-\delta_{DN})\delta_{CN}\right)\sum_{b=1}^{N-1}E_{bN}\nonumber
 	\\=&
-	-2\delta_{cN}(1-\delta_{dN})\sum_{b=1}^{N-1}E_{bN}\dt
+	-2\delta_{CN}(1-\delta_{DN})\sum_{b=1}^{N-1}E_{bN}\dt
 \end{align}
-From the third commutator on we always obtain zero, i.e. $[B,[B,[B,A]]]=0$. All in all we have that 
+From the third commutator on we always obtain zero, i.e. $[\mathcal{B},[\mathcal{B},[\mathcal{B},\mathcal{A}]]]=0$. All in all we have that 
  \begin{align}\label{HT-BA}
- 	\exp{\left(-\sum_{a=1}^{N-1}E_{aN}\right)}E_{cd}\exp{\left(\sum_{a=1}^{N-1}E_{aN}\right)}=E_{cd}-\delta_{cN}\sum_{a=1}^{N-1}E_{ad}+(1-\delta_{dN})E_{cN}-\delta_{cN}(1-\delta_{dN})\sum_{b=1}^{N-1}E_{bN}\dt
+ 	\exp{\left(-\sum_{a=1}^{N-1}E_{aN}\right)}E_{CD}\exp{\left(\sum_{a=1}^{N-1}E_{aN}\right)}=E_{CD}-\delta_{CN}\sum_{a=1}^{N-1}E_{aD}+(1-\delta_{DN})E_{CN}-\delta_{CN}(1-\delta_{DN})\sum_{b=1}^{N-1}E_{bN}\dt
  \end{align}
 
 Using \eqref{transpositionPropertyR} we write the transpose of site Hamiltonian \eqref{siteHamiltonian} 
 \begin{equation}
     \begin{split}
-H_{x}^{T}=\sum_{a,b=1}^{N}\alpha_{a}^{x}\left(E_{ab}^{x}-E_{bb}^{x}\right)^{T}=R_{x}\sum_{a,b=1}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)R_{x}^{-1}\dt
+H_{x}^{T}=\sum_{A,B=1}^{N}\alpha_{A}^{x}\left(E_{AB}^{x}-E_{BB}^{x}\right)^{T}=R_{x}\sum_{A,B=1}^{N}\alpha_{A}^{x}\left(E_{BA}^{x}-E_{BB}^{x}\right)R_{x}^{-1}\dt
     \end{split}
 \end{equation}
 We multiply both sides by $R_{x}\exp{(E^{x})}$
 \begin{equation}\label{intermediateTransposeSite}
-    H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\sum_{a,b =1}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}\dt
+    H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\sum_{A,B =1}^{N}\alpha_{A}^{x}\left(E_{B A}^{x}-E_{BB}^{x}\right)\exp{(E^{x})}\dt
 \end{equation}
 %By inserting the identity $I=\exp{(E^{x})}\exp{(-E^{x})}$ and 
 By using \eqref{HT-BA} and the fact that 
 %the first Casimir operator $C_{1}=
-$\sum_{a,b=1}^{N}E_{ab}$ is central for the algebra we have 
+$\sum_{a,b=1}^{N}E_{AB}$ is central for the algebra we have 
 
 \begin{equation}\label{HadTransfBoundary}
-\exp{(-E^{x})}\sum_{a=1}^{N}\sum_{b=1}^{N}\alpha_{a}^{x}\left(E_{b a}^{x}-E_{bb}^{x}\right)\exp{(E^{x})}=	|\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\dt
+\exp{(-E^{x})}\sum_{A=1}^{N}\sum_{B=1}^{N}\alpha_{A}^{x}\left(E_{B A}^{x}-E_{BB}^{x}\right)\exp{(E^{x})}=	|\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\dt
 \end{equation}
 Thus, we rewrite \eqref{intermediateTransposeSite} as
 \begin{equation}\label{siteHadamardI}
@@ -1115,8 +1119,8 @@ where the initial dual configuration is $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{
 \begin{equation}
 \label{xsi-init}
 	\begin{cases}
-		\xi_{a}^{x}=1\qquad \text{if}\;x=x_{k}\;\text{and}\; a=a_{k}\\
-		\xi_{a}^{x}=0\qquad \text{otherwise}
+		\xi_{A}^{x}=1\qquad \text{if}\;x=x_{k}\;\text{and}\; A=a_{k}\\
+		\xi_{A}^{x}=0\qquad \text{otherwise}
 	\end{cases}\dt
 \end{equation}
 In \eqref{absProbabilitiesIntegrable} the variable $t_k$ is $1$ (resp. $0$) when the dual particle of species $a_k$ initially positioned at site $x_{k}$ is absorbed at at the extra site $0$ (resp. $L+1$).
@@ -1148,7 +1152,7 @@ For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function o
 \todo{Explain this expectation...}
 \end{corollary}
 {\color{blue} The quantity $\mu(\bm{\tau})$ is the probability, under the non-equilibrium steady distribution, of having a configuration $\bm{\tau}$, that can be composed by particles and holes as well. However, from Corollary \ref{Corolollary-ABS_Corr-abstract}, we only have an explicit formula for the expectations of the indicator of particle configurations (indeed $a_{1},\ldots,a_{m}$ are different from $N$). Therefore, to write the probability mass function $\mu$ for occupations containing holes we have to use the conservation of probability to get rid of the indicators of these holes. Then, equation \eqref{implicit-mass-function} is derived (for details see below the proof of Corollary \ref{Corollary-NESS-ABS}).\\
- The expectation on the right-hand-side of \eqref{implicit-mass-function} contains only indicators of particles configurations: indeed in the first product  $\tau_{x}\neq N$ are considered, while in the second product we have $a_{k}\neq N$ for all $k\in\{1,\ldots,N\}$. As a consequence, we can map the coordinates $x_{1},\ldots,x_{m}$ and the types $a_{1},\ldots,a_{m}$ introduced in Corollary \ref{Corolollary-ABS_Corr-abstract} with, respectively, the coordinates $x$ (where the $\tau_{x}\neq N$) and $q_{1},\ldots,q_{b}$ and with the types $\tau_{x}\neq N$ and $a_{1},\ldots,a_{b}$. For this reason, by knowing the correlations \eqref{exactCorrelations}, the probability mass function $\mu(\bm{\tau})$ given in equation \eqref{implicit-mass-function} is obtained.}\\
+ The expectation on the right-hand-side of \eqref{implicit-mass-function} contains only indicators of particles configurations: indeed in the first product  $\tau_{x}\neq N$ are considered, while in the second product we have $a_{k}\neq N$ for all $k\in\{1,\ldots,N\}$. As a consequence, we can map the coordinates $x_{1},\ldots,x_{m}$ and the types $a_{1},\ldots,a_{m}$ introduced in Corollary \ref{Corolollary-ABS_Corr-abstract} with, respectively, the coordinates $x$ (where the $\tau_{x}\neq N$) and $q_{1},\ldots,q_{b}$ and with the types $\tau_{x}\neq N$ and $a_{1},\ldots,a_{b}$. For this reason, by knowing the correlations \eqref{exactCorrelations}, the probability mass function $\mu(\bm{\tau})$ given in equation \eqref{implicit-mass-function} is obtained.}\\ \\
 \textbf{Proof of Corollary~\ref{Corollary-NESS-ABS}:}
 Given $\bm{\tau}\in \Omega^{'}$,  we have 
 \begin{align}
@@ -1209,7 +1213,7 @@ Therefore, using the linearity of the expectation and introducing the index $b\i
 	$\square$
 \end{flushright}
 \begin{remark}\label{Remark-extension-graph-nu}
-	The results in Corollary~\ref{Corolollary-ABS_Corr-abstract} and in Corollary~\ref{Corollary-NESS-ABS}  can be generalized to arbitrary graphs $G=(V,\mathcal{E})$ and for {\color{blue} higher maximal number of particles allowed at each site}, that is for $\nu >1$.
+	The results in Corollary~\ref{Corolollary-ABS_Corr-abstract} and in Corollary~\ref{Corollary-NESS-ABS}  can be generalized to arbitrary graphs $G=(V,\mathcal{E})$ and for {\color{blue} higher maximal maximal occupancy}, that is for $\nu >1$.
 	However the computation of absorption probabilities of the dual process is possible only in the set-up of the integrable chain with $\nu =1$ and two reservoirs at the boundaries.
 	Thus we chose to present them in such a context. For the chain with {\color{blue} more than one particle allowed at each site} $\nu >1$ see Section~\ref{Subsection-ss-nonI}.
 \end{remark}
@@ -1458,9 +1462,9 @@ The bulk part of the Hamiltonian is left unchanged (because it is written using 
 Indeed, using \eqref{HadTransfBoundary}, \eqref{ratesConditions} and \eqref{transpostionPropertyFund}, we obtain for the left boundary
 \begin{equation}
 	\begin{split}
-		H_{\text{left}}^{'}&=S_{1}H_{\text{left}}S_{1}^{-1}=\exp{\left(\sum_{c=1}^{N-1}e_{Nc}^{1}\right)}\sum_{a,b=1}^{N}\alpha_{a}\left(e_{ab}^{1}-e_{bb}^{1}\right)\exp{\left(-\sum_{c=1}^{N-1}e_{Nc}^{1}\right)}
+		H_{\text{left}}^{'}&=S_{1}H_{\text{left}}S_{1}^{-1}=\exp{\left(\sum_{c=1}^{N-1}e_{Nc}^{1}\right)}\sum_{A,B=1}^{N}\alpha_{a}\left(e_{AB}^{1}-e_{BB}^{1}\right)\exp{\left(-\sum_{c=1}^{N-1}e_{Nc}^{1}\right)}
 		\\&=
-		\left\{\exp{\left(-\sum_{c=1}^{N-1}e_{cN}^{1}\right)}\sum_{a,b=1}^{N}\alpha_{a}\left(e_{ba}^{1}-e_{bb}^{1}\right)\exp{\left(\sum_{c=1}^{N-1}e_{cN}^{1}\right)}\right\}^{T}
+		\left\{\exp{\left(-\sum_{c=1}^{N-1}e_{cN}^{1}\right)}\sum_{A,B=1}^{N}\alpha_{A}\left(e_{BA}^{1}-e_{BB}^{1}\right)\exp{\left(\sum_{c=1}^{N-1}e_{cN}^{1}\right)}\right\}^{T}
 		\\&=
 		\sum_{a=1}^{N-1}\left(\alpha_{a}e_{Na}^{1}-e_{aa}^{1}\right)^{T}
 		\\&=
@@ -1506,7 +1510,7 @@ The boundary Hamiltonians of $H^{''}$ read
 \begin{align}\label{tri-diag-boundaryHamiltonians}
 	H_{\text{left}}^{''}=e_{NN}^{1}-\mathbbm{1}+\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1}\qquad H_{\text{right}}^{''}=e_{NN}^{L}-\mathbbm{1}\dt
 \end{align}
-The left one is lower triangular and depends on the differences between the boundary parameters, while the right one is diagonal. Equations \eqref{tri-diag-boundaryHamiltonians} are proved using the Hadamard formula \eqref{HadamardFormula} with $B=\sum_{c=1}^{N-1}\beta_{c}e_{cN}$, $A_{N}=e_{aN},$ and $A_{a}=e_{aa}$.
+The left one is lower triangular and depends on the differences between the boundary parameters, while the right one is diagonal. Equations \eqref{tri-diag-boundaryHamiltonians} are proved using the Hadamard formula \eqref{HadamardFormula} with $\mathcal{B}=\sum_{c=1}^{N-1}\beta_{c}e_{cN}$, $\mathcal{A}_{N}=e_{aN},$ and $\mathcal{A}_{a}=e_{aa}$.
 
 Therefore, using \eqref{HT-BA} we obtain for the left boundary 
 \begin{equation}
@@ -2069,37 +2073,37 @@ The aim of this section is to study the process when integrability is lost. We f
 	\item \textit{Instantaneous thermalization} (Section~\ref{Subsection-Thermalized}): starting from the multispecies stirring dynamics, we define the thermalized process, where particle are redistributed on each bond with a measure that is the reversible one conditioned to the conservation of the number of particles on this bond. Also for this thermalized process we prove duality. 	
 	\item \textit{Reaction-diffusion process} (Section~\ref{Subsection-RD}): a further dynamics is added. Particle can now change type. The model is carefully constructed with the goal of having the average densities evolving as a closed system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is also proved.
 \end{enumerate}
-In the rest of this section we consider a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can {\color{blue} host at most $\nu\geq 1$ particles per site}, whose type is chosen among the $N$ available ones. The graph of the dual process is still a chain, but with two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$). The processes considered in this section will be denoted with same name $\left(\bm{n}(t)\right)_{t\geq0}$, their generator will be specified in each subsection. 
+In the rest of this section we consider a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can {\color{blue} host at most $\nu\geq 1$ particles per site, whose type is chosen among the $N-1$ available ones}. The graph of the dual process is still a chain, but with two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$). The processes considered in this section will be denoted with same name $\left(\bm{n}(t)\right)_{t\geq0}$, their generator will be specified in each subsection. 
 We use the notation of Section~\ref{sectionDuality} specialized to the one dimensional chain with $\nu >1$.
 E.g. the state space is denoted by 
 \begin{equation}\label{stateSpace-Chain}
 	\Omega_{L}=\bigotimes_{x=1}^{L} \Omega_{x}\,.
 \end{equation}
- The dual process will always be denoted by $(\bm{\xi}(t))_{t\geq 0}$ with the generator specified case by case. The dual configuration space is the one defined in \eqref{dualStateSpace} and adapted to the chain of size $L$ and with two extra-site $\{0,L+1\}$ attached to $\{1,L\}$ respectively. 
+ The dual process will always be denoted by $(\bm{\xi}(t))_{t\geq 0}$ with the generator specified case by case. The dual configuration space is the one defined in \eqref{dualStateSpace} and adapted to the chain of size $L$ and with two extra-site $0$ and $L+1$ attached to $1$ and $L$ respectively. 
  We denote the space of the dual process by $\widetilde{\Omega}_{L}$, i.e.
 \begin{equation}\label{dualSpace-chain}
-	\widetilde{\Omega_{L}}=\mathbb{N}_{0}^{N}\otimes \Omega_{L}\otimes \mathbb{N}_{0}^{N}\dt
+	\widetilde{\Omega_{L}}=\mathbb{N}_{0}^{N-1}\otimes \Omega_{L}\otimes \mathbb{N}_{0}^{N-1}\dt
 \end{equation}
-In the following of this section we will denote by 
+In the following, for $a\in \{1,\ldots,N-1\}$ of this section we will denote by 
 \begin{equation}
 	\rho_{a}^{\text{left}}=\frac{\alpha_{a}}{|\alpha|},\qquad \qquad \rho_{a}^{\text{right}}=\frac{\beta_{a}}{|\beta|}\,.
 \end{equation}
 \subsection{Duality for a boundary driven chain}\label{Subsection-ss-nonI}
- As already pointed out the dual process eventually voids the chain by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites $0$ and $L+1$ and replacing them by types $N$ (the empty). This property allows to characterize the steady state non-equilibrium distribution (that is unique) by the probability that dual particles are absorbed in the extra-sites, called \textit{absorption probabilities}. This is a generalization for the non-integrable chain of the Corollary~\ref{Corolollary-ABS_Corr-abstract}. The process $\left(\bm{n}(t)\right)_{t\geq0}$ has generator
+ As already pointed out the dual process eventually voids the chain by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites $0$ and $L+1$ and replacing them by the holes $N$. This property allows to characterize the steady state non-equilibrium distribution (that is unique) by the probability that dual particles are absorbed in the extra-sites, called \textit{absorption probabilities}. This is a generalization for the non-integrable chain of the Corollary~\ref{Corolollary-ABS_Corr-abstract}. The process $\left(\bm{n}(t)\right)_{t\geq0}$ has generator
 \begin{equation}
 	\mathcal{L}=\mathcal{L}_{\text{left}}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\mathcal{L}_{\text{right}}\dt
 \end{equation} 
-where $\mathcal{L}_{x,x+1}$ is the edge generator defined in \eqref{edgeGenerator} acting on the bond $(x,x+1)$ and $\mathcal{L}_{\text{left}}$ and $\mathcal{L}_{\text{right}}$ are the generators \eqref{siteGenerator} acting on sites $\{1\}$ and $\{L\}$ with parameters $(\alpha_{a})_{a\in \{1,\ldots,N\}}$ and $(\beta_{a})_{a\in \{1,\ldots,N\}}$ respectively. 
+where $\mathcal{L}_{x,x+1}$ is the edge generator defined in \eqref{edgeGenerator} acting on the bond $(x,x+1)$ and $\mathcal{L}_{\text{left}}$ and $\mathcal{L}_{\text{right}}$ are the generators \eqref{siteGenerator} acting on sites $1$ and $L$ with parameters $(\alpha_{A})_{A\in \{1,\ldots,N\}}$ and $(\beta_{A})_{A\in \{1,\ldots,N\}}$ respectively. 
 The process is dual to $(\bm{\xi}(t))_{t\geq0}$, defined on the dual state space $\widetilde{\Omega}_{L}$, has generator
 \begin{equation}
 	\widetilde{\mathcal{L}}=\widetilde{\mathcal{L}}_{\text{left}}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\widetilde{\mathcal{L}}_{\text{right}}
 \end{equation} 
-where $\mathcal{L}_{x,x+1}$ is given by \eqref{Generator} and where the boundary generators $\widetilde{\mathcal{L}}_{\text{left}}$ and $\widetilde{\mathcal{L}}_{\text{right}}$ are given in \eqref{siteDualGenerator}: they absorb particles from sites $\{1\}$ and $\{L\}$ and put them at extra-sites $0$ and $L+1$ respectively. The duality function reads is \eqref{dualityElements} specified on the chain. 
+where $\mathcal{L}_{x,x+1}$ is given by \eqref{Generator} and where the boundary generators $\widetilde{\mathcal{L}}_{\text{left}}$ and $\widetilde{\mathcal{L}}_{\text{right}}$ are given in \eqref{siteDualGenerator}: they absorb particles from sites $1$ and $L$ and put them at extra-sites $0$ and $L+1$ respectively. The duality function reads is \eqref{dualityElements} specified on the chain. 
 We call $\mu_{\text{NESS}}$ the non-equilibrium stationary steady state of the the process $(\bm{n}(t))_{t\geq 0}$, we denote by $\mathbb{E}_{\mu_{\text{NESS}}}[\cdot]$ the expectation with respect to this measure and and we call $\bm{\mathcal{Y}} = (\mathcal{Y}^{1},\ldots,\mathcal{Y}^{L})$ the random vector with law $\mu_{\text{NESS}}$. For every $m\in\{1,\ldots,L\}$ we consider  $x_{1},\ldots,x_{m}\in\{1,\ldots,L\}$ and $a_{1},\ldots,a_{m}\in \{1,\ldots,N-1\}$. We introduce the dual configuration  $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, meaning that 
 \begin{equation}
 	\begin{cases}
-		\xi_{a}^{x}=\sum_{y=1}^{L}\sum_{b=1}^{N-1}\mathbbm{1}_{\{y=x_{k}\}}\mathbbm{1}_{\{b=a_{k}\}}\qquad &\text{if}\quad x=x_{k}\;\text{and} \; a=a_{k}\\
-		\xi_{a}^{x}=0\qquad &\text{otherwise}
+		\xi_{A}^{x}=\sum_{y=1}^{L}\sum_{b=1}^{N-1}\mathbbm{1}_{\{y=x_{k}\}}\mathbbm{1}_{\{b=a_{k}\}}\qquad &\text{if}\quad x=x_{k}\;\text{and} \; A=a_{k}\\
+		\xi_{A}^{x}=0\qquad &\text{otherwise}
 	\end{cases}\dt
 \end{equation}
 The duality function is \eqref{dualityElements}, adapted to the chain. Therefore, we have that
@@ -2134,7 +2138,7 @@ We introduce the reversible measure \eqref{reversibleMeasure} conditioned on the
 	=\mathbb{P}\left((n_{1}^{x},\ldots,n_{N}^{x})=
 	(r_{1},\ldots,r_{N})\;|\;(n_{1}^{x}+n_{1}^{x+1},\ldots,n_{N}^{x}+n_{N}^{x+1})=(\epsilon_{1},\ldots,\epsilon_{N})\right)\dt
 \end{align}
-Here $r=(r_{1},\ldots,r_{N})$ and  $\epsilon=(\epsilon_{1},\ldots,\epsilon_{N})$ are such that $\forall a\in\{1,\ldots,N\}$ we have $r_{a}\in \{0,\ldots,\nu\}$ and $\epsilon_{a}\in \{0,\ldots,2\nu\}$, under the constraints 
+Here $r=(r_{1},\ldots,r_{N})$ and  $\epsilon=(\epsilon_{1},\ldots,\epsilon_{N})$ are such that $\forall A\in\{1,\ldots,N\}$ we have $r_{A}\in \{0,\ldots,\nu\}$ and $\epsilon_{A}\in \{0,\ldots,2\nu\}$, under the constraints 
 \begin{equation}
 	\epsilon_{N}=2\nu-\sum_{a=1}^{N-1}\epsilon_{a},\qquad r_{N}=\nu-\sum_{a=1}^{N-1}r_{a}\dt
 \end{equation}
@@ -2154,7 +2158,7 @@ Therefore the thermalization measure reads
 	\mu_{TH}(r|\epsilon)=\frac{\binom{\nu}{r_{1},\ldots,r_{N}}\binom{\nu}{(\epsilon_{1}-r_{1}),\ldots,(\epsilon_{N}-r_{N})}}{\binom{2\nu}{\epsilon_{1}\ldots,\epsilon_{N}}}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}
 	\end{split}
 \end{equation}
-where we denote the multinomial coefficient
+where we recall that the multinomial coefficient reads
 \begin{equation}
 	\binom{\nu}{n_{1},\ldots,n_{N}}=\frac{\nu!}{n_{1}!\cdots n_{N}!}\dt
 \end{equation}
@@ -2207,7 +2211,7 @@ The duality function is the same of the multispecies stirring process, i.e.
 This dual process is absorbing since the dual boundary generator $\mathcal{L}_{\text{left}}^{TH}$ ($\mathcal{L}_{\text{left}}^{TH}$) remove all dual particles at site $1$ ($L$) and put these particles in the extra-site $0$ ($L+1$) with rate 1.
 The proof of Proposition~\ref{proposition-dualityTHM} is standard. For the sake of completeness we report it in Appendix~\ref{appendix-dualityThermalized}.
 \subsection{Multispecies stirring process with reaction} \label{Subsection-RD}
-We define the average density occupation of species $a$ at site $x$ as
+We define the average density occupation of species $a\in\{1,\ldots,N-1\}$ at site $x$ as
 \begin{equation}
 	\rho_{a}(x,t)=\mathbb{E}_{\mu_{0}}\left[n_{a}^{x}(t)\right]
 \end{equation}
@@ -2244,21 +2248,21 @@ where
 \end{equation}
 where $\mathcal{L}_{x,x+1}$ is the edge-generator \eqref{edgeGenerator} of the multispecies stirring process and, for any function $f:\Omega\to \mathbb{R}$ and for any $c\in \{1,\ldots,N-2\}$ we introduce the \textit{stirring-mutation} generator
 \begin{equation}
-	\mathcal{L}_{x,x+1}^{c}f(\bm{n})=\sum_{a,b=1}^{N}n_{a}^{x}n_{b}^{x+1}\left(f(\bm{n}-\bm{\delta}_{a}^{x}+\bm{\delta}_{h_{c}(b)}^{x}+\bm{\delta}_{h_{c}(a)}^{x+1}-\bm{\delta}_{b}^{x+1})-f(\bm{n})\right)
+	\mathcal{L}_{x,x+1}^{c}f(\bm{n})=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left(f(\bm{n}-\bm{\delta}_{A}^{x}+\bm{\delta}_{h_{c}(B)}^{x}+\bm{\delta}_{h_{c}(A)}^{x+1}-\bm{\delta}_{B}^{x+1})-f(\bm{n})\right)
 \end{equation}
 with the mapping 
 \begin{equation}
 	\begin{split}
 		h_{c}(\cdot):\{1,\ldots,N\}&\to\{1,\ldots,N\}\\
-		k&\to h_{c}(k)
+		A&\to h_{c}(A)
 	\end{split}
 \end{equation}
 defined as
 \begin{equation}
-	h_{c}(k)=\begin{cases}
-		k+c \quad &\text{if}\quad k+c< N \\
-		k+c-N+1\quad &\text{if}\quad k+c\geq N\quad \text{and}\quad k\neq N\\
-		N\quad &\text{if}\quad k=N
+	h_{c}(A)=\begin{cases}
+		A+c \quad &\text{if}\quad A+c< N \\
+		A+c-N+1\quad &\text{if}\quad A+c\geq N\quad \text{and}\quad A\neq N\\
+		N\quad &\text{if}\quad A=N
 	\end{cases}\dt
 \end{equation}
 Observe that $h_{c}(\cdot)$ is surjective and injective, and thus invertible. 
@@ -2281,8 +2285,8 @@ As a consequence, from the above conditions we can define the boundary values in
 \begin{equation}
 	\rho_{a}^{\text{left}}=\frac{\alpha_{a}\sigma_{11}-\sigma_{12}\sum_{b=1\,:\,b\neq a}^{N-1}\alpha_{b}}{(\sigma_{11}-(N-2)\sigma_{12})(\sigma_{11}+(N-2)\sigma_{12})}\qquad \rho_{N}^{\text{left}}=\frac{\alpha_{N}}{(\sigma_{11}+(N-2)\sigma_{12})}
 \end{equation}
-for every $a\in\{1,\ldots,N\}$. Moreover, with this choice we have that $\sum_{a=1}^{N}\alpha_{a}=\nu(\sigma_{11}+(N-1)\sigma_{12})$ and $\sum_{a=1}^{N}\rho_{a}^{\text{left}}=\nu$. 
-The boundary generator $\mathcal{L}_{\text{right}}^{rd}$ is defined analogously, but the $\alpha$'s are replaced by $\beta$'s and the boundary values $\rho_{a}^{\text{right}}$.
+for every $a\in\{1,\ldots,N-1\}$. Moreover, with this choice we have that $\sum_{A=1}^{N}\alpha_{A}=\nu(\sigma_{11}+(N-1)\sigma_{12})$ and $\sum_{A=1}^{N}\rho_{A}^{\text{left}}=\nu$. 
+The boundary generator $\mathcal{L}_{\text{right}}^{rd}$ is defined analogously, but the $\alpha$'s are replaced by $\beta$'s and the boundary values $\rho_{A}^{\text{right}}$.
 %\begin{remark}: we stress that, up to a specific choice of the $\alpha$'s ($\beta$'s), the left (right) boundary generator $\mathcal{L}_{\text{left}}^{rd}$ ($\mathcal{L}_{\text{right}}^{rd}$) has the form of the one of the multispecies stirring process \eqref{siteGenerator}. 
 %\end{remark}
 \paragraph{Action on the occupation variable}
@@ -2314,7 +2318,7 @@ where
 \end{equation}
 Namely,
 \begin{equation}
-	\Lambda_{\text{rev}}^{x}(n^{x})=\frac{\nu!}{\prod_{a=1}^{N}n_{a}^{x}!}p^{\sum_{a=1}^{N-1}n_{a}^{x}}p^{n_{N}^{x}}
+	\Lambda_{\text{rev}}^{x}(n^{x})=\frac{\nu!}{\prod_{A=1}^{N}n_{A}^{x}!}p^{\sum_{a=1}^{N-1}n_{a}^{x}}p^{n_{N}^{x}}
 \end{equation}
 This can be proved by imposing the detailed balance conditions for the bond $(x,x+1)$ and for the boundaries $\{1,L\}$.\\
 
@@ -2356,11 +2360,11 @@ we only prove duality for the bulk generator, since the boundary generators are 
 \end{equation}
 Here, $\mathcal{H}_{x,x+1}$ is  \eqref{edgeHamiltonian}  and $H_{\text{left}},H_{\text{right}}$ is \eqref{siteHamiltonian} (with the choice of the boundary parameters done in \eqref{boundaryParamRD}). We, then have that 
 \begin{equation}
-	\mathcal{H}_{x,x+1}^{c}=\sum_{a,b=0}^{N}\left(E_{h_{c}(a)b}\otimes E_{h_{c}(b)a}-E_{aa}\otimes E_{bb}\right)
+	\mathcal{H}_{x,x+1}^{c}=\sum_{A,B=1}^{N}\left(E_{h_{c}(A)B}\otimes E_{h_{c}(B)A}-E_{AA}\otimes E_{BB}\right)
 \end{equation}
 and 
 \begin{equation}
-	\mathcal{H}_{x,x+1}^{m}=\sum_{a,b=1}^{N}\left(E_{ba}\otimes \mathbbm{1}-E_{aa}\otimes \mathbbm{1}\right)\dt
+	\mathcal{H}_{x,x+1}^{m}=\sum_{A,B=1}^{N}\left(E_{BA}\otimes \mathbbm{1}-E_{AA}\otimes \mathbbm{1}\right)\dt
 \end{equation}
 We prove that, for arbitrary $x\in\{1,\ldots,L\}$,
 \begin{align}
@@ -2369,19 +2373,19 @@ We prove that, for arbitrary $x\in\{1,\ldots,L\}$,
 \end{align}
 Since the matrix $R_{x}$ is the same as in Section~\ref{sectionDuality}, we shall show that $\mathcal{H}_{x,x+1}^{c}$ and $\mathcal{H}_{x,x+1}^{m}$ commute with $\exp{(E^{x})}\exp{(E^{x+1})}$, where $E$ is defined in \eqref{EquationEx}. Using \eqref{eq:comgl}, the bilinearity and associativity of the Kronecker product and the bilinearity of the brackets we obtain 
 \begin{align*}
-	&\left[\left(\sum_{a=1}^{N-1}E_{aN}^{x}\otimes\sum_{a=1}^{N-1}E_{aN}^{x+1}\right), \sum_{d,\ell=1}^{N}\left(E_{h_{c}(\ell)d}^{x}\otimes E_{h_{c}(d)\ell}^{x+1} -E_{dd}^{x}\otimes E_{\ell\ell}^{x+1}\right)\right]
+	&\left[\left(\sum_{a=1}^{N-1}E_{aN}^{x}\otimes\sum_{a=1}^{N-1}E_{aN}^{x+1}\right), \sum_{D,K=1}^{N}\left(E_{h_{c}(K)D}^{x}\otimes E_{h_{c}(D)K}^{x+1} -E_{DD}^{x}\otimes E_{KK}^{x+1}\right)\right]
 	\\=&
 %	\sum_{d,k=1}^{N-1}\sum_{a,b=1}^{N}\left\{\left((E_{da}^{x}\delta_{h_{c}(b)N}-E_{h_{c}(b)N}^{x}\delta_{ad})-(E_{da}^{x}\delta_{aN}-E_{aN}^{x}\delta_{da})\right)\right. \\ \otimes&\left. \left((E_{kb}^{x+1}\delta_{h_{c}(a)N}-E_{h_{c}N}^{x+1}\delta_{kb})-(E_{kb}^{x+1}\delta_{bN}-E_{bN}^{x+1}\delta_{kb})\right)\right\}
 %	\\=&
 %	\sum_{d,k=1}^{N-1}\sum_{a,b=1}^{N}\left\{\left(E_{da}^{x}-E_{h_{c}(b)N}^{x}-E_{da}^{x}+E_{aN}^{x}\right)\otimes\left(E_{kb}^{x+1}-E_{h_{c}(a)N}^{x+1}-E_{kb}^{x+1}+E_{bN}^{x+1}\right)\right\}
 %	\\=&
-	\sum_{a,b=1}^{N-1}\sum_{d,\ell=1}^{N}\left\{\left(E_{dN}^{x}-E_{h_{c}(\ell)N}^{x}\right)\otimes \left(E_{dN}^{x+1}-E_{h_{c}(\ell)N}^{x+1}\right)\right\}=0\dt
+	\sum_{a,b=1}^{N-1}\sum_{D,k=1}^{N}\left\{\left(E_{DN}^{x}-E_{h_{c}(k)N}^{x}\right)\otimes \left(E_{DN}^{x+1}-E_{h_{c}(K)N}^{x+1}\right)\right\}=0\dt
 \end{align*}
 In the last equality we used the fact that map $h_{c}(\cdot)$ is surjective. 
 %\paragraph{Duality for $H_{x,x+1}^{m}$} 
 Concerning the commutator between $\mathcal{H}_{x,x+1}^{m}$ the proof is similar and gives
 \begin{equation}
-	\left[\sum_{a=1}^{N-1}E_{aN}^{x}\otimes \sum_{b=1}^{N-1}E_{bN}^{x},\;\sum_{d,\ell=1}^{N}\left(E_{\ell a}^{x}\otimes \mathbbm{1}^{x+1}-E_{dd}^{x}\otimes \mathbbm{1}^{x+1}\right)\right]=0\dt
+	\left[\sum_{a=1}^{N-1}E_{aN}^{x}\otimes \sum_{b=1}^{N-1}E_{bN}^{x},\;\sum_{D,K=1}^{N}\left(E_{K a}^{x}\otimes \mathbbm{1}^{x+1}-E_{DD}^{x}\otimes \mathbbm{1}^{x+1}\right)\right]=0\dt
 \end{equation}
 \begin{flushright}
 	$\square$
