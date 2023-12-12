@@ -277,8 +277,8 @@ This integrability property can be combined with duality and leads to closed-for
 The model studied in this paper is the {\em  multispecies stirring process with open boundaries}, i.e. the multispecies analogue of the exclusion process on a generic graph as introduced in \cite{zhou2021orthogonal} with additional boundary reservoirs as proposed in \cite{vanicat2017exact}. 
 This particle system is defined on a generic connected and undirected graph. At each site 
 the maximal number of allowed particles {\color{blue}(also called \textit{maximal occupancy})} is $\nu\in \mathbb{N}$. These particles can be of $N-1$ types (or species). Two sites do interact when there is an edge between them and this interaction consists in swapping the occupations of these two sites (for a precise definition of the process see Section \ref{sec1}). 
-Furthermore, reservoirs are attached at each site of the graph, creating and removing particle. The process becomes integrable when the graph is a finite chain with two reservoirs attached to the first and the last sites respectively and the maximal number of allowed particles is fixed to be $\nu=1$,  see \cite{vanicat2017exact}. {\color{blue}The choice of the boundary reservoirs introduced in \cite{vanicat2017exact} is further motivated by the fact that they allow to determine an absorbing dual process, regardless of the geometry on which the process is defined and regardless of the maximal number of particle hosted at each site ($\nu$ can any natural number)}.\\
-{\color{blue}In this paper we concentrate our effort in studying the boundary driven symmetric multispecies model. In literature, also multispecies asymmetric models have been introduced \cite{schutz2017kardar} and integrability results have been proved both with \cite{crampe2016integrable, finn2018matrix} and without boundary driving \cite{mallick1,mallick2}. Moreover, different transition mechanisms (beyond the diffusive one) have been recently studied \cite{chatterjee2023multi}. Finally, the presence of different types of particles have also been modelled via a "multi-layer" dynamics (see \cite{redig2022ergodic,floreani2022switching}). As far as we know, in this last context integrability does not hold.} 
+Furthermore, reservoirs are attached at each site of the graph, creating and removing particle. The process becomes integrable when the graph is a finite chain with two reservoirs attached to the first and the last sites respectively and the maximal number of allowed particles is fixed to be $\nu=1$,  see \cite{vanicat2017exact}. {\color{blue}As we will see, this choice of the boundary reservoirs is further motivated by the fact that they allow to determine an absorbing dual process, regardless of the geometry on which the process is defined and  the maximal number of particle hosted at each site ($\nu$ can any natural number)}.\\
+{\color{blue}In this paper we concentrate our effort in studying the boundary driven symmetric multispecies model. In literature, also asymmetric multispecies  models have been introduced \cite{schutz2017kardar} and integrability results have been proved both with \cite{crampe2016integrable, finn2018matrix} and without boundary driving \cite{mallick1,mallick2}. Moreover, different transition mechanisms (beyond the diffusive one) have been recently studied \cite{chatterjee2023multi}. Finally, the presence of different types of particles have also been modelled via a "multi-layer" dynamics (see \cite{redig2022ergodic,floreani2022switching}). As far as we know, in this last context integrability does not hold.} 
 %{\color{red}Explain the model here.... $N$-species (or $N-1$ plus empty?). What is the graph? say that it becomes integrable for the line }
 %We refer to the model as the {\em  multispecies stirring process with open boundaries}.
 %
@@ -299,6 +299,7 @@ particle per site, which is driven out-of-equilbrium by two reservoirs on the le
 % of the absorption probabilities 
 relies on the extension of the  Matrix Product Ansatz \cite{derrida1993exact} to multiple species \cite{vanicat2017exact} and the $gl(N)$ invariance of the process in the bulk. Finally in Section~\ref{sec5} we discuss a few extensions 
 and generalizations of the model, including instantaneous thermalization limits and reaction-diffusions. In particular, a thermalized boundary-driven version of the multispecies stirring process is introduced, showing that it has an absorbing duality. Moreover, a further interaction mechanism of reaction type is added in order to have closed evolution equation for average particle density (inspired by \cite{casini2022uphill,schutzReaction}). Again, an absorbing duality is proved and the duality function for the thermalized and the reaction diffusion process turns out to be the same of the multispecies stirring process.
+\todo{mention that there is an appendix. In particular Appendix B could be interesting to stress.}
 % In closing this introduction we mention that we are currently working on the boundary-driven multispecies 
 % model with non-compact Lie algebras, both integrable and non-integrable, which will be presented in a 
 % future paper. 
@@ -306,9 +307,9 @@ and generalizations of the model, including instantaneous thermalization limits 
 
 \bigskip
 
-{\color{magenta} Cristian I think it is good to keep some of the following citations, especailly the one to Schutz...
- \cite{schutz2017kardar, crampe2016integrable, finn2018matrix, chatterjee2023multi,redig2022ergodic, floreani2022switching} and \cite{casini2023density,  franceschini2022orthogonal,redig2023equilibrium,floreani2023non,carinci2023open}
-See also \cite{crampe2016integrable, finn2018matrix} for the asymmetric setup.}
+% {\color{magenta} Cristian I think it is good to keep some of the following citations, especailly the one to Schutz...
+%  \cite{schutz2017kardar, crampe2016integrable, finn2018matrix, chatterjee2023multi,redig2022ergodic, floreani2022switching} and \cite{casini2023density,  franceschini2022orthogonal,redig2023equilibrium,floreani2023non,carinci2023open}
+% See also \cite{crampe2016integrable, finn2018matrix} for the asymmetric setup.}
 
 % For recent examples in the framework of singlespecies systems, see \cite{frassek2020eigenstates, frassek2020duality,frassek2022exact}.
 % {\color{red}
@@ -367,7 +368,7 @@ Then, the dynamics has two parts:
 \begin{itemize}
 \item
 on each edge of the graph, any two types of particles are swapped at rate $1$;
-moreover a particle of any type and a hole are also swapped at rate $1$;
+moreover a particle of any type and a hole are also swapped at rate $1$;\todo{explain what is a hole... Maybe stress that there can be at max $\nu$ holes per site?}
 \item
 on each vertex $x$ of the graph, a particle of type $a \in \{1,\ldots,N-1\}$ is created  at rate $\alpha_a^x >0$;
 additionally a particles of any type is replaced with a
@@ -407,7 +408,7 @@ In the case $N=2$, we retrieve the  boundary-driven version of the symmetric exc
 \subsection{The process generator}\label{subsectionGeneratorStr}
 We now give the mathematical description of the multispecies stirring process.
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
-At each vertex site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ {\color{blue} denotes the number of particles of species $a\in \{1,\ldots,N-1\}$, while the component $n_{N}^{x}$ denotes the number of holes at site $x$.} On each vertex we {\color{blue} allow a total maximal number of particles $\nu\in \mathbb{N}$}. {\color{blue} In the following we introduce the indices denoted by lowercase letters (for instance $a,b,c,d,k\in \{1,\ldots,N-1\}$) when only particles are taken into account. Moreover, we introduce the indices denoted by uppercase letters (for instance $A,B,C,D,K\in\{1,\ldots,N\}$) when we also consider the hole, that we recall is denoted by $N$. The link between the two indices is given by 
+At each vertex site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ {\color{blue} denotes the number of particles of species $a\in \{1,\ldots,N-1\}$, while the component $n_{N}^{x}$ denotes the number of holes at site $x$.} On each vertex we {\color{blue} allow a total maximal number of particles $\nu\in \mathbb{N}$}. {\color{blue} In the following we introduce the indices denoted by lowercase letters (for instance $a,b,c,d,k\in \{1,\ldots,N-1\}$) when only particles are taken into account. Moreover, we introduce the indices denoted by uppercase letters (for instance $A,B,C,D,K\in\{1,\ldots,N\}$) \todo{any chance we can remove index K and k?} when we also consider the hole, that we recall is denoted by $N$. The link between the two indices is given by 
 \begin{equation}
 	a\in \{1,\ldots,N-1\}\qquad \text{and}\qquad A=(a,N)
 	\end{equation} 
