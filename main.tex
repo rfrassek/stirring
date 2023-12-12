@@ -1829,16 +1829,14 @@ Thus it follows that
 	\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=&\sum_{\bm{\tau}\in \Omega^{'}}D(\bm{\tau},\bm{\xi})\langle\bm{\tau}|\Psi\rangle
 	=\sum_{\bm{\tau}\in \Omega^{'}}\langle \bm{\tau}|D|\bm{\xi}\rangle\langle\bm{\tau}|\Psi\rangle\dt
 \end{align}
-We denote by $|\hat{\bm{\xi}}\rangle=|\xi^{1},\ldots,\xi^{L}\rangle$, i.e. the vector constructed from $|\bm{\xi}\rangle$ by removing the components at sites $0$ and $L+1$. Recalling that {\color{blue} in the case $\nu=1$, since the matrix $R_{x}$ defined in \eqref{Revmatrix} reduces to the identity, we have that the matrix $d_{x}$, defined in \eqref{bulkElementDualityMatrix}, becomes
+We denote by $|\hat{\bm{\xi}}\rangle=|\xi^{1},\ldots,\xi^{L}\rangle$, i.e. the vector constructed from $|\bm{\xi}\rangle$ by removing the components at sites $0$ and $L+1$. Recalling that {in the case $\nu=1$ the matrix $R_{x}$ defined in \eqref{Revmatrix} reduces to the identity, we have that the matrix $d_{x}$, defined in \eqref{bulkElementDualityMatrix}, becomes
 \begin{equation}
 	d_{x}=\exp{(\sum_{a=1}^{N-1}e_{aN}^{x})}\dt
 	\end{equation} Then, considering equation \eqref{transformationV}, the following holds}
 \begin{equation}
-	S_{1}^{T}=\prod_{x=1}^{L}d_{x}
+	S_{1}^{T}=\prod_{x=1}^{L}d_{x}\dt
 \end{equation}  
-
-\todo{double check and ref to $d_x$ and say that R is id [DONE]}
-{\color{blue}As a consequence we have that }
+{As a consequence we have that }
 \begin{equation}
 	\langle \bm{\tau}|S_{1}^{T}|\hat{\bm{\xi}}\rangle=\langle \bm{\tau}|D|\bm{\xi}\rangle \dt
 \end{equation}
@@ -1885,7 +1883,7 @@ The above formula \eqref{interpretation-PsiP} allows to interpret these coeffici
 
 
 \begin{remark} 
-Without using duality but only  the definition $|\Psi^{'}\rangle=S_1|\Psi\rangle$ and that
+Using  the definition $|\Psi^{'}\rangle=S_1|\Psi\rangle$ and that
 \begin{equation}
  \langle \tau |S_1=\begin{cases}
                     \sum_{\sigma=1}^N\langle \sigma|  \quad\text{if}\quad \tau=N\\
@@ -1899,7 +1897,7 @@ Without using duality but only  the definition $|\Psi^{'}\rangle=S_1|\Psi\rangle
 \langle N,\ldots,N,\underset{\uparrow}{a_1}_{x_{1}},N,\ldots,N,\underset{\uparrow}{a_m}_{x_{m}},N,\ldots,N|\Psi^{'}\rangle\dt
  \end{split}
 \end{equation} 
-{\color{blue}Here the notation means that the entries $a_k\neq N$ in \eqref{eq:EE} are at position $x_k$ for $k\in\{1,\ldots,m\}$.} 
+{Here the notation means that the entries $a_k\neq N$ in \eqref{eq:EE} are at position $x_k$ for $k\in\{1,\ldots,m\}$.} 
 \end{remark}
  
 
@@ -1932,14 +1930,12 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 			\langle \bm{\tau}|S_{1}^{-1}|\Psi^{'}\rangle=&\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\prod_{x=1}^{L}\left(\delta_{\tau_{x},\sigma_{x}}+(-1)\delta_{\tau_{x},N}\sum_{a=1}^{N-1}\delta_{\sigma_x,a}\right)\nonumber\\
 			=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\left(\prod_{x=1\,:\,x\notin\{q_{1},\ldots,q_{b}\}}^{L}\delta_{\tau_{x},\sigma_x}\right)\left(\prod_{x\in \{q_{1},\ldots,q_{b}\}}\delta_{\tau_{x},N}\sum_{a=1}^{N-1}\delta_{\sigma_{x},a}\right)\nonumber\\
 			=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}^{L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{1},\ldots a_{b}=1}^{N-1}\Psi^{'}(\tau_{1},\ldots,\underset{\uparrow}{a_{1}}_{q_{1}},\ldots,\underset{\uparrow}{a_{b}}_{q_{b}},\ldots,\tau_{L})
-		\end{align}
-		\todo{can we remove q index in sum?[SUB-INDICES q REMOVED]}
-			{\color{blue}In the second equality we have rewritten the product by introducing the summation over $b$, the coordinates $q_{1},\ldots,q_{b}$ and the occupations variables $a_{1},\ldots,a_{b}$. In the last equality we have summed over all possible $\bm{\sigma}\in \Omega^{'}$, taking into account the Kronecker deltas.} Here, the notation
+		\end{align} 
+			{In the second equality we have rewritten the product by introducing the summation over $b$, the coordinates $q_{1},\ldots,q_{b}$ and the occupation variables $a_{1},\ldots,a_{b}$. In the last equality we have summed over all possible $\bm{\sigma}\in \Omega^{'}$, taking into account the Kronecker deltas.} Here, the notation
 		\begin{equation}\label{notation-PSI}
 			\Psi^{'}(\tau_{1},\ldots,\underset{\uparrow}{a_{1}}_{q_{1}},\ldots,\underset{\uparrow}{a_{b}}_{q_{b}},\ldots,\tau_{L})
 		\end{equation}
-		means that, {\color{blue} given $\bm{\tau}$ from the bra-vector $\langle \bm{\tau}|$ introduced before equation \eqref{Tensor-S1},} for all $b\in \{0,\ldots,L\}$ and for all $1\leq q_{1}<\ldots<q_{b}\leq L$ {\color{blue} at sites $q_{k}$ (for $k=1,\ldots,b$) we have a particle of type $a_{k}$, while at the other sites the occupation $\tau_{x}$ is left unchanged  ($x\notin\{q_{1},\ldots,q_{b}\}$). } 
-		\todo{mention also fat $\bm{\tau}$ in this sentence somehow.[DONE]}
+		means that, {given $\bm{\tau}$ from the bra-vector $\langle \bm{\tau}|$ introduced before equation \eqref{Tensor-S1},} for all $b\in \{0,\ldots,L\}$ and for all $1\leq q_{1}<\ldots<q_{b}\leq L$ {at sites $q_{k}$ (for $k=1,\ldots,b$) we have a particle of type $a_{k}$, while at the other sites the occupation $\tau_{x}$ is left unchanged  ($x\notin\{q_{1},\ldots,q_{b}\}$). }  
 	 %Finally, using equation \eqref{interpretation-PsiP}, the result follows. 
 \begin{remark}[Equilibrium case]
 	Using equation \eqref{implicit-mass-function} with correlation computed in \eqref{exactCorrelations} in the equilibrium case ($\beta_{a}=\alpha_{a}$), we obtain 
@@ -1949,7 +1945,7 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 As it has to be, this is the probability of the configuration $\bm{\tau}$ under the reversible measure \eqref{reversibleMeasure}, with site marginals distributed as $\text{Multinomial }(1,\alpha_{1},\ldots,\alpha_{N})$. 
 \end{remark}
 \subsection{The single-species case (SSEP)}
-The computations made for the multispecies stirring process can be specialized to the single-species case $N=2$, {\color{blue}i.e. when only one type of particles and the holes are present.} In this situation we retrieve the SSEP, that was studied using the same approach as presented here in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations of SEEP: 
+The computations made for the multispecies stirring process can be specialized to the single-species case $N=2$, {i.e. when only one type of particles and the holes are present.} In this situation we retrieve the SSEP, that was studied using the same approach as presented here in \cite{frassek2020eigenstates}. We report the Hamiltonians and the similarity transformations of SEEP: 
 \begin{equation}
 	H=H_{\text{left}}+\sum_{x=1}^{L-1}H_{x,x+1}+H_{\text{right}}
 \end{equation}
@@ -2007,10 +2003,10 @@ We retrieve the closed formula for correlations in the non-equilibrium steady st
 \begin{equation}\label{correlations-SSEP}
 	\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=1\}}\right]=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation} 
-\textbf{Proof of formula \eqref{correlations-SSEP}:} Starting from \eqref{exactCorrelations} we exploit {\color{blue} the fact that $N=2$, i.e. that each site can be either occupied by a particle or empty.}\todo{can we just say $N=2$ as we discussed several times now [DONE]} We introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define {\color{blue} $q$ labels denoted by } %labels denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  
-$1\leq \ell_{1}<\ell_{2}<\ldots<\ell_{q}\leq m$. 
-\todo{?[BLUE SENTENCE REWRITTEN]}
-To each of these label we associate the coordinates $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$ that are such that $c_{x_{\ell_{k}}}=1$ for all $k\in \{1,\ldots,q\}$ and $c_{x}=0$ for $x\notin \{x_{\ell_{1}},\ldots,x_{\ell_{q}}\}$. Therefore, for any fixed $c_{x_{1}},\ldots,c_{x_{m}}$, we find $q$ and $\ell_{1},\ldots,\ell_{q}$ from which we fix $x_{\ell_{1}},\ldots,x_{\ell_{q}}$. Then, we obtain  
+\textbf{Proof of formula \eqref{correlations-SSEP}:} Starting from \eqref{exactCorrelations} we exploit {the fact that for $N=2$  each site can be either occupied by a particle or empty.} 
+We introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define {$q$ variables denoted by } %labels denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  
+$1\leq \ell_{1}<\ell_{2}<\ldots<\ell_{q}\leq m$.  
+To each of these variables we associate coordinates $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$ that are such that $c_{x_{\ell_{k}}}=1$ for all $k\in \{1,\ldots,q\}$ and $c_{x}=0$ for $x\notin \{x_{\ell_{1}},\ldots,x_{\ell_{q}}\}$. Therefore, for any fixed $c_{x_{1}},\ldots,c_{x_{m}}$, we find $q$\todo{you mean the sum is q?} and $\ell_{1},\ldots,\ell_{q}$ from which we fix $x_{\ell_{1}},\ldots,x_{\ell_{q}}$. Then, we obtain  
 	\begin{equation}
 		\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}=\prod_{k=1}^{q}\left(1+L-x_{\ell_{k}}-q+k\right)\dt
 	\end{equation}
@@ -2032,7 +2028,7 @@ and \eqref{correlations-SSEP} follows.
 	|\Psi^{''}\rangle=\sum_{q=0}^{L}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}(\alpha_{1}-\beta_{1})^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
 \end{equation}
 where $\bm{\ell}=(\ell_{1},\ldots,\ell_{q})$. \\ \\
-\textbf{Proof of formula \eqref{psiII-SSEP}:} We specialize equation \eqref{resulEsteady} to the {\color{blue} $N=2$ case}. \todo{can we just say $N=2$ as we discussed several times now [DONE]}We introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. For each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. Thus, arguing as in the proof of \eqref{correlations-SSEP} and using \eqref{Gamma-product} we have that 
+\textbf{Proof of formula \eqref{psiII-SSEP}:} We specialize equation \eqref{resulEsteady} to the {$N=2$ case} and introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. For each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. Thus, arguing as in the proof of \eqref{correlations-SSEP} and using \eqref{Gamma-product} we have that 
 \begin{align}
 	&\frac{\left(1+\sum_{x=1}^{L}\delta_{\tau_{x},2}\right)!}{\left(1+L\right)!}\prod_{x=1}^{L}\left[(\alpha_{\tau_{x}}-\beta_{\tau_{x}})\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},2}\right)\right]^{1-\delta_{\tau_{x},2}}\nonumber\\%=\lambda_{1}^{q}\prod_{x=1}^{L}\left(2+L-y_{x}-\sum_{j=x}^{L}\delta_{\tau_{j},1}\right)^{\delta_{\tau_{x},1}}
 	=&\frac{\left(1+L-\sum_{x=1}^{L}(1-\delta_{\tau_{x},2})\right)!}{\left(1+L\right)!}\prod_{x=1}^{L}\left[(\alpha_{\tau_{x}}-\beta_{\tau_{x}})\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{j},2})\right)\right]^{1-\delta_{\tau_{x},2}}\nonumber\\
@@ -2064,7 +2060,7 @@ Therefore, using \eqref{Gamma-product}  one finds $|\Psi^{'}\rangle$ for the SSE
 	$\square$
 \end{flushright}
 \paragraph{The vector $|\Psi\rangle$ for SSEP.}
-In the {\color{blue} $N=2$} case we have that \todo{can we just say $N=2$ as we discussed several times now[DONE]}
+In the single species case {$N=2$} we have that  
 \begin{equation}\label{NESS-SSEP}
 	|\Psi\rangle=\sum_{\bm{\tau}\in \Omega^{'}}\Psi(\bm{\tau})|\bm{\tau}\rangle
 \end{equation}
