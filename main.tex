@@ -517,7 +517,7 @@ Consider the Lie algebra ${gl}(N)$ with generators denoted by $\EE_{AB}$ with $A
 \begin{equation}\label{eq:comgl}
 \left[\EE_{AB},\EE_{CD}\right]=\EE_{AD}\delta_{CB}-\EE_{CB}\delta_{AD}\qquad \forall A,B\in \{1,\ldots,N\}\,.
 \end{equation}
-The finite-dimensional representations are labelled by partitions $\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_N)$ of $\nu$ with  $\lambda_i\geq \lambda_{i+1}$,  $\lambda_i\in \mathbb{N}$ and $\sum_{i=1}^N \lambda_i = \nu\in\mathbb{N}$.  
+The finite-dimensional representations are labelled by partitions $\lambda=(\lambda_1,\lambda_2,\ldots,\lambda_N)$ of $\nu$ with  $\lambda_A\geq \lambda_{A+1}$,  $\lambda_A\in \mathbb{N}$ and $\sum_{A=1}^N \lambda_A = \nu\in\mathbb{N}$.  
 We are interested in the {\em symmetric} finite-dimensional representations with 
 \begin{equation}\label{eq:dynkin}
     \lambda=(\twoj,0,\ldots,0) \;.
@@ -571,7 +571,7 @@ a vector $|{\bm{n}}\rangle \in \Omega$ can be written as
 %		|{\bm{n}}\rangle=\left(\,\bigotimes_{x\in V}	|n_{1},\ldots,n_{N}\rangle_{x}\right)
 %	\end{equation*}}
 %where we require that $n_{a}^{x}\in \mathbb{N}_{0}$ and $\forall x\in V$ we have 
-with $\sum_{a=1}^{N}n_{a}^{x}=\nu$ for any $x\in V$. For a fixed $x\in V$ we write $|n^{x}\rangle=|n_{1}^{x},\ldots,n_{N}^{x}\rangle$. The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
+with $\sum_{A=1}^{N}n_{A}^{x}=\nu$ for any $x\in V$. For a fixed $x\in V$ we write $|n^{x}\rangle=|n_{1}^{x},\ldots,n_{N}^{x}\rangle$. The following orthogonality relation is a consequence of the single site relation \eqref{ortho}
 \begin{equation}
     \langle {\bm{n}}|{\bm{m}}\rangle =\prod_{x\in V}\prod_{A=1}^N\delta_{n^x_{A},m^{x}_{A}}\,.
 \end{equation}
@@ -589,7 +589,7 @@ where the edge Hamiltonian $\mathcal{H}_{x,y}$ that describes the interaction be
  \begin{equation}\label{siteHamiltonian}
 H_{x}=\sum_{A,B=1}^{N}\alpha_{A}^{x}\left(E_{AB}^{x}-E_{BB}^{x}\right)
 \end{equation}
-Here $E_{ab}^{x}$ denotes the generator $E_{ab}$ in \eqref{actionE} acting non-trivially on site $x$ (and as the identity on the other sites). 
+Here $E_{AB}^{x}$ denotes the generator $E_{AB}$ in \eqref{actionE} acting non-trivially on site $x$ (and as the identity on the other sites). 
 The Hamiltonian in \eqref{OriginalHamiltonian} is stochastic and is linked to the Markov generator  by
 \begin{equation}\label{Hamiltonian-Generator}
 H=\mathcal{L}^{T} 
@@ -647,7 +647,7 @@ and the coupling to reservoirs are
 	\end{cases}\dt
 \end{equation}
 The case $\nu=1$, i.e. one particle at most for each site, is integrable and has been considered previously in \cite{vanicat2017exact}. 
-For  $\nu=1$ we denote the ${gl}(N)$  generators   as  $(e_{AB})_{A,B\in\{1,\ldots,N\}}$ obeying $(e_{AB})_{CS}=\delta_{AC}\delta_{BD}$.
+For  $\nu=1$ we denote the ${gl}(N)$  generators   as  $(e_{AB})_{A,B\in\{1,\ldots,N\}}$ obeying $(e_{AB})_{CD}=\delta_{AC}\delta_{BD}$.
 The Hamiltonian can then be written as
 \begin{equation}\label{hamiltonian}
 	H=H_{\text{left}}+H_{\text{bulk}}+H_{\text{right}}
@@ -867,9 +867,10 @@ and
 We perform the proof of duality in three steps: first we will show that matrix \eqref{dualityMatrix} has elements \eqref{dualityElements}; second we will prove the bulk duality \eqref{edgeDualRealtion}; finally we will show the boundary duality \eqref{siteDualRelation}. 
 As a preliminary result we note that 
 \begin{equation}\label{transpositionPropertyR}
-(E_{ba}^{x})^{T}=R_{x}E_{ab}^{x}R_{x}^{-1}\qquad \forall x\in V\co
+(E_{BA}^{x})^{T}=R_{x}E_{AB}^{x}R_{x}^{-1}\qquad \forall x\in V\co
 \end{equation}
-that follows immediately from the definition of $E_{ab}$. 
+\todo{changed to big indices. OK?}
+that follows immediately from the definition of $E_{AB}$. 
 \paragraph{Elements of the duality matrix.}
 Consider the matrix $D$ defined in \eqref{dualityMatrix}.
 We aim to show that its matrix elements coincide with duality function \eqref{dualityElements}, i.e.
@@ -904,7 +905,7 @@ On the other hand, on the site $x$, we have
 \\&=
 \frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}
 \end{align}
-where we used the definitions of the action of $E_{ab}$  and the orthogonality relations \eqref{ortho}, together with the fact that $\xi_{N}^{x}=\nu-\sum_{a=1}^{N-1}\xi_{a}^{x}$. 
+where we used the definitions of the action of $E_{AB}$  and the orthogonality relations \eqref{ortho}, together with the fact that $\xi_{N}^{x}=\nu-\sum_{a=1}^{N-1}\xi_{a}^{x}$. 
 Finally, by taking the product over $x\in V$ \eqref{proofDualityElements} is proved.
 \begin{flushright}
     $\square$
