@@ -1147,13 +1147,14 @@ Therefore, by ergodicity and duality  we have
 \end{flushright} 
 {\color{blue}By using the correlations in the non-equilibrium steady state \eqref{exactCorrelations}, it is possible to determine the non-equilibrium steady probability distribution. }
     \begin{corollary}[Non-equilibrium steady state]\label{Corollary-NESS-ABS}
-For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function of the non-equilibrium steady states is given by 
+For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function of the non-equilibrium steady states is fully determined by the correlations of equation \eqref{exactCorrelations} through the relation 
 \begin{equation}\label{implicit-mass-function}
 	\mu(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{{1}},\ldots,a_{{b}}=1}^{N-1}{\color{red}
 	\mathbb{E}\left[\left( \prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right) \left(\prod_{k=1}^{b}\mathbbm{1}_{\{Y_{q_{k}}=a_{{k}}\}}\right)\right]}\,.
 \end{equation}
-{\color{blue}where the expectation is taken with respect to the non-equilibrium steady state, then it computed by using the correlations of equation \eqref{exactCorrelations}.}
-\todo{Explain this expectation...}
+% {\color{blue}where the expectation is taken with respect to the non-equilibrium steady state, then it computed by using the correlations of equation
+% \eqref{exactCorrelations}.}
+\todo{Are you ok with that? It is still not super clear....}
 \end{corollary}
 {\color{blue} The quantity $\mu(\bm{\tau})$ is the probability, under the non-equilibrium steady distribution, of having a configuration $\bm{\tau}$, that can be composed by particles and holes as well. However, from Corollary \ref{Corolollary-ABS_Corr-abstract}, we only have an explicit formula for the expectations of the indicator of particle configurations (indeed $a_{1},\ldots,a_{m}$ are different from $N$). Therefore, to write the probability mass function $\mu$ for occupations containing holes we have to use the conservation of probability to get rid of the indicators of these holes. Then, equation \eqref{implicit-mass-function} is derived (for details see below the proof of Corollary \ref{Corollary-NESS-ABS}).\\
  The expectation on the right-hand-side of \eqref{implicit-mass-function} contains only indicators of particles configurations: indeed in the first product  $\tau_{x}\neq N$ are considered, while in the second product we have $a_{k}\neq N$ for all $k\in\{1,\ldots,N\}$. As a consequence, we can map the coordinates $x_{1},\ldots,x_{m}$ and the types $a_{1},\ldots,a_{m}$ introduced in Corollary \ref{Corolollary-ABS_Corr-abstract} with, respectively, the coordinates $x$ (where the $\tau_{x}\neq N$) and $q_{1},\ldots,q_{b}$ and with the types $\tau_{x}\neq N$ and $a_{1},\ldots,a_{b}$. For this reason, by knowing the correlations \eqref{exactCorrelations}, the probability mass function $\mu(\bm{\tau})$ given in equation \eqref{implicit-mass-function} is obtained.}\\ \\
