@@ -872,8 +872,7 @@ We perform the proof of duality in three steps: first we will show that matrix \
 As a preliminary result we note that 
 \begin{equation}\label{transpositionPropertyR}
 (E_{BA}^{x})^{T}=R_{x}E_{AB}^{x}R_{x}^{-1}\qquad \forall x\in V\co
-\end{equation}
-\todo{changed to big indices. OK?[YES]}
+\end{equation} 
 that follows immediately from the definition of $E_{AB}$. 
 \paragraph{Elements of the duality matrix.}
 Consider the matrix $D$ defined in \eqref{dualityMatrix}.
@@ -967,9 +966,10 @@ i.e. it is a symmetry of $\mathcal{H}_{x,y}$. Exploiting these considerations we
  \paragraph{Proof of boundary duality \eqref{siteDualRelation}.} To prove \eqref{siteDualRelation} we transform via the Hadamard formula the transposed of the site Hamiltonian \eqref{siteDualHamiltonian} and then to  introduce properly a creation operator acting on an extra-site $u(x)$. % that we connect to every site $x\in V$ of the graph $G$. \\
  Considering {\color{blue}$\mathcal{A},\mathcal{B}\in {gl}(N)$}, the Hadamard formula reads 
  \begin{equation}\label{HadamardFormula}
-     \exp{(-\mathcal{B})}A\exp{(\mathcal{B})}=\mathcal{A}-\left[\mathcal{B},\mathcal{A}\right]+\frac{1}{2!}\left[\mathcal{B},\left[\mathcal{B},\mathcal{A}\right]\right]-\frac{1}{3!}\left[\mathcal{B},\left[\mathcal{B},\left[\mathcal{B},\mathcal{A}\right]\right]\right]+\ldots
+     \exp{(-\mathcal{B})}\mathcal{A}\exp{(\mathcal{B})}=\mathcal{A}-\left[\mathcal{B},\mathcal{A}\right]+\frac{1}{2!}\left[\mathcal{B},\left[\mathcal{B},\mathcal{A}\right]\right]-\frac{1}{3!}\left[\mathcal{B},\left[\mathcal{B},\left[\mathcal{B},\mathcal{A}\right]\right]\right]+\ldots
  \end{equation}
 In the following we need the application of this with $\mathcal{B}=\sum_{a=1}^{N-1}E_{aN}$ defined in \eqref{EquationEx} and with $\mathcal{A}$ equal to some of the generator $E_{CD}$ of the Lie algebra ${gl}(N)$ with $C,D\in\{1,\ldots,N\}$. Therefore we compute 
+\todo{discuss}
 \begin{align}
 	\left[\mathcal{B},\mathcal{A}\right]=\sum_{a=1}^{N-1}\left[E_{aN},E_{CD}\right]=\delta_{CN}\sum_{a=1}^{N-1}E_{aD}-(1-\delta_{DN})E_{CN}
 \end{align}
@@ -1022,7 +1022,10 @@ we obtain
 |\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\otimes \left(\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|\right)
     \end{split}
 \end{equation}
-{\color{blue}With a slight abuse of notation and in the spirit of Remark \ref{reamrk-extraSite}, in equation \eqref{siteHadamardII}, we still denote the occupation vector at extra-site $u(x)$ by $\langle \xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|$ although there is the summation over $\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}$.}
+{\color{blue}With a slight abuse of notation and in the spirit of Remark \ref{reamrk-extraSite}, in equation \eqref{siteHadamardII}, we denote the occupation vector at extra-site $u(x)$ by $\langle \xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|$ 
+% although there is the summation over $\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}$
+.
+}
 \todo{explain extra index [Is the explanation of the remark 4 enough?]}  
 Recalling the action of the bosonic creation operator acting at site $u(x)$ and on the species $a\in \{1,\ldots,N-1\}$ we have that 
 \begin{equation}\label{bosonicKX}
