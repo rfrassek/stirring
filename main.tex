@@ -925,11 +925,11 @@ We now look for a symmetry of $\mathcal{H}_{x,y}$, i.e. a matrix $S_{x,y}$ of th
 	%\quad \Leftrightarrow \quad [\mathcal{H}_{x,y},S_{x,y}]=0
 	\dt
 \end{equation}
-Using \eqref{hamiltonianCasimir}, we observe that $\mathcal{H}_{x,y}$ is proportional to the coproduct of the second Casimir, up to a diagonal term. Therefore, it is enough to look for a symmetry of $\Delta (C)$. Using the bilinearity of the coproduct operator and the fact that $C$ belongs to the centre of the Lie algebra, it is easy to show that for any matrix $E\in {gl}(N)$ the following holds:
+Using \eqref{hamiltonianCasimir}, we observe that $\mathcal{H}_{x,y}$ is proportional to the coproduct of the second Casimir, up to a diagonal term. Therefore, it is enough to look for a symmetry of $\Delta (C)$. Using the bilinearity of the coproduct operator and the fact that $C$ belongs to the centre of the Lie algebra, it is easy to show that for any linear combination of generators $E\in {gl}(N)$ the following holds:
 \begin{equation}
  \text{if } \quad	[C,E]=0\qquad  \text{ then }\qquad \left[\Delta (C),\Delta(E)) \right]=0\dt
 \end{equation}
-We chose 
+Let
 \begin{equation}
 	E=\sum_{a=1}^{N-1}E_{aN}
 \end{equation}
@@ -963,7 +963,7 @@ i.e. it is a symmetry of $\mathcal{H}_{x,y}$. Exploiting these considerations we
  \paragraph{Proof of boundary duality \eqref{siteDualRelation}.} To prove \eqref{siteDualRelation} we transform via the Hadamard formula the transposed of the site Hamiltonian \eqref{siteDualHamiltonian} and then to  introduce properly a creation operator acting on an extra-site $u(x)$. % that we connect to every site $x\in V$ of the graph $G$. \\
  Considering {\color{blue}$\mathcal{A},\mathcal{B}\in {gl}(N)$}, the Hadamard formula reads 
  \begin{equation}\label{HadamardFormula}
-     \exp{(-\mathcal{B})}A\exp{(\mathcal{B})}=\mathcal{A}-\left[\mathcal{B},\mathcal{A}\right]+\frac{1}{2!}\left[B\mathcal{B},\left[\mathcal{B},\mathcal{A}\right]\right]-\frac{1}{3!}\left[\mathcal{B},\left[\mathcal{B},\left[\mathcal{B},\mathcal{A}\right]\right]\right]+\ldots
+     \exp{(-\mathcal{B})}A\exp{(\mathcal{B})}=\mathcal{A}-\left[\mathcal{B},\mathcal{A}\right]+\frac{1}{2!}\left[\mathcal{B},\left[\mathcal{B},\mathcal{A}\right]\right]-\frac{1}{3!}\left[\mathcal{B},\left[\mathcal{B},\left[\mathcal{B},\mathcal{A}\right]\right]\right]+\ldots
  \end{equation}
 In the following we need the application of this with $\mathcal{B}=\sum_{a=1}^{N-1}E_{aN}$ defined in \eqref{EquationEx} and with $\mathcal{A}$ equal to some of the generator $E_{CD}$ of the Lie algebra ${gl}(N)$ with $C,D\in\{1,\ldots,N\}$. Therefore we compute 
 \begin{align}
@@ -1078,7 +1078,7 @@ The dynamics is described by an Hamiltonian that is written in terms of the firs
 The extra-sites are denoted by $0$ and $L+1$, and they are connected with sites $1$ and $L$ of the chain respectively. The matrix $R_{x}$ defined in \eqref{Revmatrix} 
 reduces to the identity, therefore the relation between the generators of the algebra and its transposed reduces to
 \begin{equation}\label{transpostionPropertyFund}
-	e_{ab}^T= e_{ba}\dt
+	e_{AB}^T= e_{BA}\dt
 \end{equation}
 Therefore, duality matrix reads
 \begin{equation}
@@ -1111,7 +1111,7 @@ Using duality, one can compute the  $m$-point correlations between non-empty par
 Furthermore we write $\mathbb{E}[\cdot]$ for the expectation with respect to $\mu$.%For arbitrary $m\in \mathbb{N}$ such that $m<L$, we fix $a_{k}\in\{1,\ldots,N-1\}$ and $x_{k}\in\{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for every $k\in\{1,\ldots,m\}$. 
 \begin{corollary}[Correlations via duality]\label{Corolollary-ABS_Corr-abstract}
 Let $m\in \{1,\ldots,L\}$ and consider $m$ sites $1 \le x_{1} < x_2 < \ldots < x_m \le L $ and
-$m$ species $a_{k}\in\{1,\ldots,N-1\}$  with $k=1,2,\ldots, m$. Then, the $m$-point correlations in the non-equilibrium steady state read
+$m$ species $a_{k}\in\{1,\ldots,N-1\}$  with $k=1,2,\ldots, m$. Then, the $m$-point correlations in the non-equilibrium steady state read\todo{this I find still confusing}
 \begin{equation}\label{NESS-expectation-ABS}
 \mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\left[\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right]\mathcal{P}_{x_1,\ldots,x_m}(t_{1},\ldots,t_{m})
 \end{equation}
