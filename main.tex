@@ -1589,31 +1589,37 @@ We consider the vector with elements given by the operators of the MPA $(X_{1},\
 % 	\end{pmatrix}\co
 % \end{equation}
 We define the transformed matrix product operators
+via $\tilde X=S X$ such that
 \begin{equation}\label{Xtildes2b}
-	\begin{pmatrix}
-		\Xt_{1}\\ 
-		\vdots\\
-		\Xt_{N-1}\\
-		\Xt_{N}
-	\end{pmatrix} =S\begin{pmatrix}
-		X_{1}\\
-		\vdots 
-		\\
-		X_{N-1}
-		\\X_{N}
-	\end{pmatrix}=\begin{pmatrix} 
-		X_{1}-\beta_{1}(X_{1}+\ldots+X_{N})\\
-		\vdots \\
-		X_{N-1}-\beta_{N-1}(X_{1}+\ldots+X_{N})\\
-				X_{1}+\ldots +X_{N}\\
-	\end{pmatrix}\dt
-\end{equation}
+ \tilde X_a=X_{a}-\beta_{a}(X_{a}+\ldots+X_{N})\,,\qquad \tilde X_N= 
+				X_{1}+\ldots +X_{N}
+\end{equation} 
+where  $ a\in \{1,\ldots,N-1\}$.
+% 
+% \begin{equation}
+% 	\begin{pmatrix}
+% 		\Xt_{1}\\ 
+% 		\vdots\\
+% 		\Xt_{N-1}\\
+% 		\Xt_{N}
+% 	\end{pmatrix} =S\begin{pmatrix}
+% 		X_{1}\\
+% 		\vdots 
+% 		\\
+% 		X_{N-1}
+% 		\\X_{N}
+% 	\end{pmatrix}=\begin{pmatrix} 
+% 		X_{1}-\beta_{1}(X_{1}+\ldots+X_{N})\\
+% 		\vdots \\
+% 		X_{N-1}-\beta_{N-1}(X_{1}+\ldots+X_{N})\\
+% 				X_{1}+\ldots +X_{N}\\
+% 	\end{pmatrix}\dt
+% \end{equation}
 We can also reverse the transformation by $S^{-1}$ and get: 
 \begin{equation}\label{Xes}
  X_{a}=	\Xt_{a}+\beta_{a}\Xt_{N}\,,\qquad
-	X_{N} = \beta_N\Xt_{N}-(\Xt_{1}+\ldots+\Xt_{N-1})
+	X_{N} = \beta_N\Xt_{N}-(\Xt_{1}+\ldots+\Xt_{N-1})\,.
 \end{equation}
-where  $ a\in \{1,\ldots,N-1\}$.
 
 Summing over $b\in \{1,\ldots,N\}$ in commutation relations \eqref{bulk} we have
 \begin{equation} 
@@ -1624,8 +1630,7 @@ Therefore, using \eqref{Xes}
 we obtain the commutation relations for $\Xt_{a}$ 
 \begin{equation}\label{commutationsBula}
 	\left[\Xt_{a},\Xt_{N}\right]=(\alpha_{a}-\beta_{a})\Xt_{N}\co
-\end{equation}
-for $a=1,\ldots,N-1$,
+\end{equation} 
 cf.~\eqref{commutationsBula2}.
 Moreover using \eqref{Xtildes2b} and \eqref{Xes}, the action of $\Xt_{a}$ on the boundary vectors are given by 
 \begin{equation}\label{commLEFT}
@@ -1635,8 +1640,7 @@ Moreover using \eqref{Xtildes2b} and \eqref{Xes}, the action of $\Xt_{a}$ on the
 \begin{equation}\label{commRIGHT}
 	\Xt_{a}  |V\rangle\rangle = (\alpha_{a}-\beta_{a}) |V\rangle\rangle 
 	\co
-\end{equation} 
-for $a=1,\ldots,N-1$,
+\end{equation}  
 cf.~\eqref{commLEFT2}.
 Using the transformed operators $(\widetilde{X}_{a})_{a\in\{1,\ldots,N\}}$, the vector $|\Psi^{''}\rangle$ of the matrix product ansatz is written as
 \begin{equation}\label{toDetermineTilde}
