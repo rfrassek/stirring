@@ -1992,7 +1992,7 @@ We retrieve the closed formula for correlations in the non-equilibrium steady st
 \begin{equation}\label{correlations-SSEP}
 	\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=1\}}\right]=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation} 
-\textbf{Proof of formula \eqref{correlations-SSEP}:} Starting from \eqref{exactCorrelations} we exploit indistinguishability of particles and we introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define {\color{blue} $q$ labels denoted by } %labels denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  
+\textbf{Proof of formula \eqref{correlations-SSEP}:} Starting from \eqref{exactCorrelations} we exploit indistinguishability\todo{can we just say $N=2$ as we discussed several times now} of particles and we introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define {\color{blue} $q$ labels denoted by } %labels denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  
 $1\leq \ell_{1}<\ell_{2}<\ldots<\ell_{q}\leq m$. 
 \todo{?[BLUE SENTENCE REWRITTEN]}
 To each of these label we associate the coordinates $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$ that are such $c_{x_{\ell_{k}}}=1$ for all $k\in \{1,\ldots,q\}$ and $c_{x}=0$ for $x\notin \{x_{\ell_{1}},\ldots,x_{\ell_{q}}\}$. Therefore, for any fixed $c_{x_{1}},\ldots,c_{x_{m}}$, we find $q$ and $\ell_{1},\ldots,\ell_{q}$ from which we fix $x_{\ell_{1}},\ldots,x_{\ell_{q}}$. Then, we obtain  
@@ -2017,7 +2017,7 @@ and \eqref{correlations-SSEP} follows.
 	|\Psi^{''}\rangle=\sum_{q=0}^{L}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq L}(\alpha_{1}-\beta_{1})^{q}\prod_{k=1}^{q}\frac{\left(1+L-\ell_{k}-q+k\right)}{(2+L-k)}|\bm{\ell},q\rangle
 \end{equation}
 where $\bm{\ell}=(\ell_{1},\ldots,\ell_{q})$. \\ \\
-\textbf{Proof of formula \eqref{psiII-SSEP}:} We specialize equation \eqref{resulEsteady} to the colour-blind case. We introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. For each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. Thus, arguing as in the proof of \eqref{correlations-SSEP} and using \eqref{Gamma-product} we have that 
+\textbf{Proof of formula \eqref{psiII-SSEP}:} We specialize equation \eqref{resulEsteady} to the colour-blind case. \todo{can we just say $N=2$ as we discussed several times now}We introduce $q=\sum_{x=1}^{L}\delta_{\tau_{x},1}$. For each $q\in \{1,\ldots,L\}$ we call $1\leq\ell_{1}<\ldots,\ell_{q}\leq L$ the coordinates where particles of type $1$ are present. Thus, arguing as in the proof of \eqref{correlations-SSEP} and using \eqref{Gamma-product} we have that 
 \begin{align}
 	&\frac{\left(1+\sum_{x=1}^{L}\delta_{\tau_{x},2}\right)!}{\left(1+L\right)!}\prod_{x=1}^{L}\left[(\alpha_{\tau_{x}}-\beta_{\tau_{x}})\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},2}\right)\right]^{1-\delta_{\tau_{x},2}}\nonumber\\%=\lambda_{1}^{q}\prod_{x=1}^{L}\left(2+L-y_{x}-\sum_{j=x}^{L}\delta_{\tau_{j},1}\right)^{\delta_{\tau_{x},1}}
 	=&\frac{\left(1+L-\sum_{x=1}^{L}(1-\delta_{\tau_{x},2})\right)!}{\left(1+L\right)!}\prod_{x=1}^{L}\left[(\alpha_{\tau_{x}}-\beta_{\tau_{x}})\left(2+L-x-\sum_{j=x}^{L}(1-\delta_{\tau_{j},2})\right)\right]^{1-\delta_{\tau_{x},2}}\nonumber\\
@@ -2049,7 +2049,7 @@ Therefore, using \eqref{Gamma-product}  one finds $|\Psi^{'}\rangle$ for the SSE
 	$\square$
 \end{flushright}
 \paragraph{The vector $|\Psi\rangle$ for SSEP.}
-In the colour-blind case we have that 
+In the colour-blind case we have that \todo{can we just say $N=2$ as we discussed several times now}
 \begin{equation}\label{NESS-SSEP}
 	|\Psi\rangle=\sum_{\bm{\tau}\in \Omega^{'}}\Psi(\bm{\tau})|\bm{\tau}\rangle
 \end{equation}
