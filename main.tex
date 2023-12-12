@@ -1828,8 +1828,7 @@ We denote by $|\hat{\bm{\xi}}\rangle=|\xi^{1},\ldots,\xi^{L}\rangle$, i.e. the v
 	\end{equation} then, considering equation \eqref{transformationV}, the following holds}
 \begin{equation}
 	S_{1}^{T}=\prod_{x=1}^{L}d_{x}
-\end{equation} 
-\todo{double check and ref to $d_x$ and say that R is id [DONE]}
+\end{equation}  
 {\color{blue}As a consequence we have that }
 \begin{equation}
 	\langle \bm{\tau}|S_{1}^{T}|\hat{\bm{\xi}}\rangle=\langle \bm{\tau}|D|\bm{\xi}\rangle \dt
@@ -1921,10 +1920,10 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 		\todo{can we remove q index in sum?[SUB-INDICES q REMOVED]}
 			{\color{blue}In the second equality we have rewritten the product by introducing the summation over $b$, the coordinates $q_{1},\ldots,q_{b}$ and the occupations variables $a_{1},\ldots,a_{b}$. In the last equality we have summed over all possible $\bm{\sigma}\in \Omega^{'}$, taking into account the Kronecker deltas.} Here, the notation
 		\begin{equation}\label{notation-PSI}
-			\Psi^{'}(\tau_{1},\ldots,\underbrace{a_{1}}_{q_{1}},\ldots,\underbrace{a_{b}}_{q_{b}},\ldots,\tau_{L})
+			\Psi^{'}(\tau_{1},\ldots,\underset{\uparrow}{a_{1}}_{q_{1}},\ldots,\underset{\uparrow}{a_{b}}_{q_{b}},\ldots,\tau_{L})
 		\end{equation}
-		means that, for all $b\in \{0,\ldots,L\}$ and for all $1\leq q_{1}<\ldots<q_{b}\leq L$ {\color{blue} at sites $q_{k}$ for $k=1,\ldots,b$ we have a particle of type $a_{k}$, while at the other sites ($x\notin\{q_{1},\ldots,q_{b}\}$) the occupation $\tau_{x}$ is left unchanged. }
-		\todo{?[EXPLAINED]}
+		means that, for all $b\in \{0,\ldots,L\}$ and for all $1\leq q_{1}<\ldots<q_{b}\leq L$ {\color{blue} at sites $q_{k}$ for $k=1,\ldots,b$ we have a particle of type $a_{k}$, while at the other sites the occupation $\tau_{x}$ is left unchanged  ($x\notin\{q_{1},\ldots,q_{b}\}$). } 
+		\todo{mention also fat $\bm{\tau}$ in this sentence somehow.}
 	 %Finally, using equation \eqref{interpretation-PsiP}, the result follows. 
 \begin{remark}[Equilibrium case]
 	Using equation \eqref{implicit-mass-function} with correlation computed in \eqref{exactCorrelations} in the equilibrium case ($\beta_{a}=\alpha_{a}$), we obtain 
@@ -2066,26 +2065,26 @@ where
 
 \section{Extensions beyond the integrable chain}
 \label{sec5}
-In Sections~\ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model is exactly solvable using integrability.  
-The aim of this section is to study the process when integrability is lost. We fix $\nu\geq 1$ and, for the sake of simplicity, we keep the geometry of a chain. We provide the following extensions: 
+In Sections~\ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model \todo{which model?} is exactly solvable using integrability.  
+The aim of this section is to study the process when integrability is lost.\todo{but we got duality on any graph} We fix $\nu\geq 1$ and, for the sake of simplicity, we keep the geometry of a chain. We provide the following extensions: 
 \begin{enumerate}
 	\item \textit{Correlations} (Section~\ref{Subsection-ss-nonI}): exploiting duality, the steady state correlations can be expressed in terms of absorption probabilities of the dual particles. These probabilities are hard to find when $\nu>1$. We give 
-	in Appendix~\ref{appendix-1pts-general} the expression for the one-point correlation.
-	\item \textit{Instantaneous thermalization} (Section~\ref{Subsection-Thermalized}): starting from the multispecies stirring dynamics, we define the thermalized process, where particle are redistributed on each bond with a measure that is the reversible one conditioned to the conservation of the number of particles on this bond. Also for this thermalized process we prove duality. 	
-	\item \textit{Reaction-diffusion process} (Section~\ref{Subsection-RD}): a further dynamics is added. Particle can now change type. The model is carefully constructed with the goal of having the average densities evolving as a closed system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is also proved.
+	in Appendix~\ref{appendix-1pts-general} the expression for the one-point correlation. \todo{is this on a chain?}
+	\item \textit{Instantaneous thermalization} (Section~\ref{Subsection-Thermalized}): starting from the multispecies stirring dynamics, we define the thermalized process, where particles are redistributed on each bond with a measure that is the reversible one conditioned to the conservation of the number of particles on this bond. Also for this thermalized process we prove duality. 	
+	\item \textit{Reaction-diffusion process} (Section~\ref{Subsection-RD}): a further dynamics is added\todo{a further dynamic or further dynemics are? Maybe explain better}. Particle can now change type. The model \todo{which model?} is carefully constructed with the goal of having the average densities evolving as a closed system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is also proved.
 \end{enumerate}
-In the rest of this section we consider a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can {\color{blue} host at most $\nu\geq 1$ particles per site, whose type is chosen among the $N-1$ available ones}. The graph of the dual process is still a chain, but with two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$). The processes considered in this section will be denoted with same name $\left(\bm{n}(t)\right)_{t\geq0}$, their generator will be specified in each subsection. 
+In the rest of this section we consider a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can {\color{blue} host at most $\nu\geq 1$ particles per site, whose type is chosen among the $N-1$ available ones}. The graph of the dual process is still a chain, but with two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$). \todo{this is said before} The processes considered in this section will be denoted with same name \todo{variables?} $\left(\bm{n}(t)\right)_{t\geq0}$, their corresponding generator  will be specified in each subsection. 
 We use the notation of Section~\ref{sectionDuality} specialized to the one dimensional chain with $\nu >1$.
-E.g. the state space is denoted by 
+For example, the state space is denoted by 
 \begin{equation}\label{stateSpace-Chain}
 	\Omega_{L}=\bigotimes_{x=1}^{L} \Omega_{x}\,.
 \end{equation}
- The dual process will always be denoted by $(\bm{\xi}(t))_{t\geq 0}$ with the generator specified case by case. The dual configuration space is the one defined in \eqref{dualStateSpace} and adapted to the chain of size $L$ and with two extra-site $0$ and $L+1$ attached to $1$ and $L$ respectively. 
+ The dual process will always be denoted by $(\bm{\xi}(t))_{t\geq 0}$ with the generator specified case by case \todo{?}. The dual configuration space is the one defined in \eqref{dualStateSpace} and adapted to the chain of size $L$ and with two extra-site $0$ and $L+1$ attached to $1$ and $L$ respectively. 
  We denote the space of the dual process by $\widetilde{\Omega}_{L}$, i.e.
 \begin{equation}\label{dualSpace-chain}
-	\widetilde{\Omega_{L}}=\mathbb{N}_{0}^{N-1}\otimes \Omega_{L}\otimes \mathbb{N}_{0}^{N-1}\dt
+	\widetilde{\Omega}_{L}=\mathbb{N}_{0}^{N-1}\otimes \Omega_{L}\otimes \mathbb{N}_{0}^{N-1}\dt
 \end{equation}
-In the following, for $a\in \{1,\ldots,N-1\}$ of this section we will denote by 
+In the following, for $a\in \{1,\ldots,N-1\}$ of this section we will denote by \todo{?}
 \begin{equation}
 	\rho_{a}^{\text{left}}=\frac{\alpha_{a}}{|\alpha|},\qquad \qquad \rho_{a}^{\text{right}}=\frac{\beta_{a}}{|\beta|}\,.
 \end{equation}
