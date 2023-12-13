@@ -298,8 +298,7 @@ In Section~\ref{sectionIntegrabiliy}  we consider  the case of the one-dimension
 particle per site, which is driven out-of-equilbrium by two reservoirs on the left and right boundaries. In this case we obtain a closed-form expression for the stationary correlations (Theorem~\ref{thm-correlations}). Here the computation
 % of the absorption probabilities 
 relies on the extension of the  Matrix Product Ansatz \cite{derrida1993exact} to multiple species \cite{vanicat2017exact} and the $gl(N)$ invariance of the process in the bulk. Finally in Section~\ref{sec5} we discuss a few extensions 
-and generalizations of the model, including instantaneous thermalization limits and reaction-diffusions. {\color{blue} The first generalization, is to derive a formula, in terms of the absorption probabilities of the dual process, for the non-equilibrium steady state correlation $\nu\geq 1$, i.e. when more than one particle is allowed at each site. In this situation, integrability is lost and we cannot derive explicit formulas for these absorption probabilities. However, in Appendix \ref{appendix-1pts-general}, we show how to compute the one-point correlation by using the properties of a random walk.} The second generalization is the definition of a thermalized version of the boundary-driven multispecies stirring process. Moreover, we show that it has an absorbing duality  {\color{blue}with the same duality function of the multispecies stirring process (the details of the proof are reported in Appendix \ref{appendix-dualityThermalized}). Finally, the third generalization is the introduction of an "ad-hoc" interaction mechanism of reaction type, in order to have closed evolution equation for average particle density (inspired by \cite{casini2022uphill,schutzReaction})}. {\color{blue}We report the details of the computations for the closure of the average density evolution equation in Appendix \ref{appendix-RD}}. Again, an absorbing duality is proved and the duality function turns out to be the same of the multispecies stirring process. 
-\todo{mention that there is an appendix. In particular Appendix B could be interesting to stress.[DONE, SEE BLUE TEXT]}
+and generalizations of the model, including instantaneous thermalization limits and reaction-diffusions. {\color{blue} The first generalization, is to derive a formula, in terms of the absorption probabilities of the dual process, for the non-equilibrium steady state correlation $\nu\geq 1$, i.e. when more than one particle is allowed at each site. In this situation, integrability is lost and we cannot derive explicit formulas for these absorption probabilities. However, in Appendix \ref{appendix-1pts-general}, we show how to compute the one-point correlation by using the properties of a random walk.} The second generalization is the definition of a thermalized version of the boundary-driven multispecies stirring process. Moreover, we show that it has an absorbing duality  {\color{blue}with the same duality function of the multispecies stirring process (the details of the proof are reported in Appendix \ref{appendix-dualityThermalized}). Finally, the third generalization is the introduction of an "ad-hoc" interaction mechanism of reaction type, in order to have closed evolution equation for average particle density (inspired by \cite{casini2022uphill,schutzReaction})}. {\color{blue}We report the details of the computations for the closure of the average density evolution equation in Appendix \ref{appendix-RD}}. Again, an absorbing duality is proved and the duality function turns out to be the same of the multispecies stirring process.  
 % In closing this introduction we mention that we are currently working on the boundary-driven multispecies 
 % model with non-compact Lie algebras, both integrable and non-integrable, which will be presented in a 
 % future paper. 
@@ -308,7 +307,10 @@ and generalizations of the model, including instantaneous thermalization limits 
 \bigskip
 
 % {\color{magenta} Cristian I think it is good to keep some of the following citations, especailly the one to Schutz...
-%  \cite{schutz2017kardar, crampe2016integrable, finn2018matrix, chatterjee2023multi,redig2022ergodic, floreani2022switching} and \cite{casini2023density,  franceschini2022orthogonal,redig2023equilibrium,floreani2023non,carinci2023open}
+%  \cite{schutz2017kardar, crampe2016integrable, finn2018matrix, chatterjee2023multi,redig2022ergodic, floreani2022switching} and
+
+
+% \cite{casini2023density,  franceschini2022orthogonal,redig2023equilibrium,floreani2023non,carinci2023open}
 % See also \cite{crampe2016integrable, finn2018matrix} for the asymmetric setup.}
 
 % For recent examples in the framework of singlespecies systems, see \cite{frassek2020eigenstates, frassek2020duality,frassek2022exact}.
@@ -360,10 +362,10 @@ and generalizations of the model, including instantaneous thermalization limits 
 \subsection{Informal description of the process}
 The process studied in this paper is the {\em multispecies stirring process}
 with open boundaries. 
-In words, the dynamics is described as follows. Each site
+In words, the process is described as follows. Each site
 of a connected graph can host a maximal number of particles called $\nu\in \mathbb{N}$ .
 The particles have a {\em type} (sometimes called {\em species} or {\em colour})
-which can take $N-1$ values. {\color{blue}This means that at each site there are $\nu$ available places (called \textit{holes}) that can be either occupied by particles or not. As a consequence, each site can be totally empty (when no particles are present and thus $\nu$ holes are available), totally occupied (when $\nu$ particles, of any type, are present and thus no holes are there) or partially occupied (when some of the holes are occupied and some are available). These situations can be described by introducing the \textit{exclusion constraint} that tells that, at each site and at any time, the sum of the number of particles of any type and of the number of holes is $\nu$.}
+which can takes  values $\{1,2,\ldots,N-1\}$. {More precisely, at each site there are $\nu$ available places (called \textit{holes} or \textit{vacancies}) that can be either occupied by particles or not. As a consequence, each site can be totally empty (when no particles are present and thus $\nu$ holes are available), totally occupied (when $\nu$ particles, of any type, are present and thus no holes are available) or partially occupied (when some of the holes are occupied and some are available). All these configurations obey the \textit{exclusion constraint} that tells that, at each site and at any time, the sum of the number of particles of any type plus the number of holes is $\nu$.}
 
 
 
@@ -371,7 +373,7 @@ Then, the dynamics has two parts:
 \begin{itemize}
 \item
 on each edge of the graph, any two types of particles are swapped at rate $1$;
-moreover a particle of any type and a hole are also swapped at rate $1$;\todo{explain what is a hole... Maybe stress that there can be at max $\nu$ holes per site? [DONE, SEE BLUE TEXT JUST ABOVE]}
+moreover a particle of any type and a hole are also swapped at rate $1$; 
 \item
 on each vertex $x$ of the graph, a particle of type $a \in \{1,\ldots,N-1\}$ is created  at rate $\alpha_a^x >0$;
 additionally a particles of any type is replaced with a
@@ -411,11 +413,12 @@ In the case $N=2$, we retrieve the  boundary-driven version of the symmetric exc
 \subsection{The process generator}\label{subsectionGeneratorStr}
 We now give the mathematical description of the multispecies stirring process.
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
-At each vertex site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ {\color{blue} denotes the number of particles of species $a\in \{1,\ldots,N-1\}$, while the component $n_{N}^{x}$ denotes the number of holes at site $x$.} On each vertex we {\color{blue} allow a total maximal number of particles $\nu\in \mathbb{N}$}. {\color{blue} In the following we introduce the indices denoted by lowercase letters (for instance $a,b,c,d\in \{1,\ldots,N-1\}$) when only particles are taken into account. Moreover, we introduce the indices denoted by uppercase letters (for instance $A,B,C,D\in\{1,\ldots,N\}$) \todo{any chance we can remove index K and k?[DONE, I REMOVED THESE INDICES IN THE APPENDICES]} when we also consider the hole, that we recall is denoted by $N$. The link between the two indices is given by 
+At each vertex site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ {denotes the number of particles of species $a\in \{1,\ldots,N-1\}$, while the component $n_{N}^{x}$ counts the number of holes at site $x$.} On each vertex we {allow a total maximal number of particles $\nu\in \mathbb{N}$}. {In the following we use indices denoted by lowercase letters (for instance $a,b,c,d\in \{1,\ldots,N-1\}$) when only particles are taken into account. Moreover, we introduce indices denoted by uppercase letters (for instance $A,B,C,D\in\{1,\ldots,N\}$)  to also incorporate the holes, that correspond to the index $N$. The link between the two indices is given by 
 \begin{equation}
-	a\in \{1,\ldots,N-1\}\qquad \text{and}\qquad A=(a,N)
+	a\in \{1,\ldots,N-1\}\qquad \text{and}\qquad A=(a,N)\,.
 	\end{equation} 
-and the same for the other letters.} Then, the configuration space of the process on the graph $G$ is 
+} 
+The configuration space of the process on the graph $G$ is 
 \begin{equation}\label{stateSpace}
     \Omega:=\bigotimes_{x\in V} \Omega_{x}
 \end{equation}
@@ -444,9 +447,10 @@ where
 \end{cases}
 \end{equation}
 Thus the dynamics consists in an exchange of particles between connected vertices at Poissonian times. 
-This means that on the edge $(x,y)\in \mathcal{E}$  a particle {\color{blue}or a hole} of type $A$ at site $x$ is exchanged with a particle {\color{blue}or a hole} of type $B$ at site $y$ at rate $\omega_{x,y}n_{A}^{x}n_{B}^{y}$. {\color{blue} The transitions where an hole is exchanged by a particle, can be interpreted as \textit{purely diffusive}.}
-Moreover, each vertex  exchanges particles {\color{blue} or holes} with the external environment (reservoirs). 
-Namely, on each site $x\in V$  a particle {\color{blue} or a hole} of type $B$ is replaced with a particle {\color{blue} or a hole} of type $A$ at rate $\Gamma_{x}\alpha_{A}^{x}n_{B}^{x}$. {\color{blue}The transitions where the a particle is replaced by a hole can be interpreted as a removal/injection of particles.}
+This means that on the edge $(x,y)\in \mathcal{E}$  a particle {or a hole} indicated by $A$ at site $x$ is exchanged with a particle {or a hole} indicated by $B$ at site $y$ at rate $\omega_{x,y}n_{A}^{x}n_{B}^{y}$.
+% {\color{blue} The transitions where a hole is exchanged with a particle, can be interpreted as \textit{purely diffusive}.}
+Moreover, each vertex  exchanges particles {or holes} with the external environment (reservoirs). 
+Namely, on each site $x\in V$  a particle {or a hole} indicated by $B$ is replaced with a particle {or a hole} indicated $A$ at rate $\Gamma_{x}\alpha_{A}^{x}n_{B}^{x}$. {The transitions where the a particle is replaced by a hole/a hole is replaced by a particle is interpreted as a removal/injection of particles.}
 %
 %For the sake of notation we denote $|\alpha^{x}|=\sum_{a=1}^{N}\alpha_{a}^{x}$. 
 %See Figure~\ref{fig:1} and  Figure~\ref{fig:2} for a visualisation of the dynamics. 
@@ -492,12 +496,10 @@ If condition \eqref{reversibilityCondition} is not met, then in general reversib
 	\label{rhox}
 	\rho_{a}^x=\frac{\alpha_{a}^x}{|\alpha^x|}
 \end{equation}
-and  $|\alpha^x|=\sum_{A=1}^{N}\alpha_{A}^x$. {\color{blue} As a consequence, particles are injected and removed in the graph with different rates. When, for any $A\in \{1,\ldots,N\}$, there are at least two reservoirs at two different sites $x,y$ such that $\rho_{A}^{x}\neq  \rho_{A}^{y}$, a  non-zero current sets in, breaking the reversibility. Informally, one can say that the reservoirs try to impose their different densities at the boundaries of the the graph, putting the system out-of-equilibrium.} %{\color{red}wants to fix}
-% \todo{?}
-%Currents will arise when at least two reservoirs have different densities. 
+and  $|\alpha^x|=\sum_{A=1}^{N}\alpha_{A}^x$. {As a consequence, particles are injected and removed in the graph with different rates. When, for any $A\in \{1,\ldots,N\}$, there are at least two reservoirs at two different sites $x,y$ such that $\rho_{A}^{x}\neq  \rho_{A}^{y}$, a  non-zero current sets in, breaking the reversibility. Informally, one can say that the reservoirs try to impose their different densities at the boundaries of the the graph, putting the system out-of-equilibrium.} 
 \begin{remark}
 \label{rem-rev}
-		{\color{blue}One can check that conditions \eqref{reversibilityCondition} are not the most general that implies reversibility. Indeed, by choosing the reservoir parameters as }
+		{One can check that conditions \eqref{reversibilityCondition} are not the most general that implies reversibility. Indeed, by choosing the reservoir parameters as }
 		\begin{equation}
 		\label{cond-gen}
 			\alpha_{k}^{x}\left(|\alpha^{y}|-\alpha_{k}^{y}\right)=\alpha_{k}^{y}\left(|\alpha^{x}|-\alpha_{k}^{x}\right)\qquad\qquad \forall x,y\in V,\quad \forall k\in \{1,\ldots,N\}
@@ -674,7 +676,7 @@ acting non-trivially on the vertices of the edge $x,x+1$.
 \begin{equation}\label{Tau-Notation}
 	|\bm{\tau}\rangle=|\tau_{1},\ldots,\tau_{L}\rangle
 \end{equation} 
-with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. Since the {\color{blue} maximal occupancy at each site is $\nu=1$},
+with $\tau_{x}\in \{1,\ldots,N\}$, $\forall x\in \{1,\ldots,L\}$. Since the {maximal occupancy at each site is $\nu=1$},
 % \todo{but is it at max 1? I do not understand what we call the stirring process....}  
 the configuration $\bm{n}$ introduced in Section~\ref{subsectionGeneratorStr} and $\bm{\tau}$ are related by 
 \begin{equation}\label{notation-change-relation}
@@ -724,7 +726,7 @@ Under these assumption the Hamiltonian~\ref{hamiltonian} is integrable. This has
 In this section we prove the first main result of this paper. We show that the multispecies stirring process with open boundaries
 can be studied by means of a dual process. After recalling the definition of duality between two
 Markov processes in Section~\ref{def-duality}, we formulate our duality result  in Theorem~\ref{thm-duality}. A proof of the theorem is given in Section~\ref{proof-th-duality}.
-The duality result yields {\color{blue} to a dual process that} %several simplifications,  the main one being that the
+The duality result yields {to a dual process that} %several simplifications,  the main one being that the
 %dual process
  has absorbing sites. Therefore, as shown in Corollary~\ref{Corolollary-ABS_Corr-abstract}, the study of correlations in the non-equilibrium steady state of the multispecies stirring process with open boundaries
 is reduced to the study of the absorption probabilities of dual particles.
@@ -772,9 +774,9 @@ We write the configurations $\bm{\xi} \in \widetilde\Omega$  as
 \begin{equation}\label{row-dual-vectors}
     \bm{\xi}=\bigotimes_{x\in V} \left(\left(\xi_{1}^{x},\ldots,\xi_{N}^{x}\right)\otimes (\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)} )\right) 
 \end{equation} 
-where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles of type $a\in \{1,\ldots,N-1\}$ at site $x$, {\color{blue} while $\xi_{N}^{x}$ is interpreted as the number of holes at site $x$ of the dual process.}
+where the component $\xi_{a}^{x}$ is interpreted as the number of dual particles of type $a\in \{1,\ldots,N-1\}$ at site $x$, {while $\xi_{N}^{x}$ is interpreted as the number of holes at site $x$ of the dual process.}
 The component $\xi_{a}^{u(x)}$  gives the number of dual particles of type $a\in \{1,\ldots,N-1\}$ at 
-the extra-site $u(x)$ connected to $x\in V$. {\color{blue} We observe that the configuration variable at the extra site $u(x)$ does not have to satisfy any exclusion constraint, i.e. an unbounded number of particles can be hosted. Therefore, an infinite number of holes is available at each extra-site $u(x)$. As a consequence, the hole occupation variable $\xi_{N}^{u(x)}$ is not considered}. We state the following duality result.
+the extra-site $u(x)$ connected to $x\in V$. {We observe that the configuration variable at the extra site $u(x)$ does not have to satisfy any exclusion constraint, i.e. an unbounded number of particles can be hosted. Therefore, an infinite number of holes is available at each extra-site $u(x)$. As a consequence, the hole occupation variable $\xi_{N}^{u(x)}$ is not considered}. We state the following duality result.
 \begin{theorem}[Absorbing duality]\label{thm-duality}
 	The multispecies stirring process $(\bm{n}(t))_{t\geq 0}$ defined on the state space $\Omega$ with generator $\mathcal{L}$ defined in \eqref{Generator} is dual to the process $(\bm{\xi}(t))_{t\geq 0}$ defined on the enlarged state space $\widetilde{\Omega}$ with generator
 	 \begin{equation}\label{DualGenerator}
@@ -811,14 +813,13 @@ To a configuration $\bm{\xi}$ of the configuration space  \eqref{dualStateSpace}
 \begin{equation}
     |\bm{\xi}\rangle=\bigotimes_{x\in V}\left(|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\otimes |\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle\right)\dt
 \end{equation}
-{\color{blue} Here $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$ is the vector associated to the configuration of in the extra site $u(x)$.  For all $q_{1},\ldots,q_{N-1}\in \mathbb{N}_{0}$, we assume that it satisfy an orthogonality relation
+{Here $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$ is the vector associated to the configuration at the extra site $u(x)$.  For $q_{1},\ldots,q_{N-1}\in \mathbb{N}_{0}$, we assume that it satisfies an orthogonality relation
 \begin{equation}\label{ortho-extraSite}
-	\langle q_{1}^{u(x)},\ldots,q^{u(x)}_{N-1}|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle=\prod_{a=1}^{N-1}\delta_{\xi_{a}^{u(x)},q_{a}}
+	\langle q_{1}^{u(x)},\ldots,q^{u(x)}_{N-1}|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle=\prod_{a=1}^{N-1}\delta_{\xi_{a}^{u(x)},q_{a}}\,.
 \end{equation} }
-{\color{blue} \begin{remark}\label{reamrk-extraSite}
-	In the following, with a slight abuse of notation, we denote the configuration vectors on the extra-site $u(x)$ by $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$. This allows to stress that these vectors belongs to the extra-space $N_{0}^{N-1}$ "attached" to original configuration space $\Omega$. Moreover, this notation allows to directly connect the ket-vector $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$ with the row vector $(\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)})$ defined in \eqref{row-dual-vectors}, in which we recall that the components $\xi_{a}^{u(x)}$ denote the number of dual particles of type $a$ at site $u(x)$.
-\end{remark}}
-\todo{good, discuss}
+{\begin{remark}\label{reamrk-extraSite}
+	In the following, we denote the configuration vectors on the extra-site $u(x)$ by $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$. This allows to stress that these vectors belong to the extra-space $N_{0}^{N-1}$ "attached" to site $x$. Moreover, this notation allows to directly connect the ket-vector $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$ with the vector $(\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)})$ defined in \eqref{row-dual-vectors}, in which we recall that the components $\xi_{a}^{u(x)}$ denote the number of dual particles of type $a$ at site $u(x)$.
+\end{remark}} 
 The Hamiltonian of the dual process reads
 \begin{equation}\label{DualHamiltonian}
     \widetilde{H}=\sum_{x,y\in \mathcal{E}}\omega_{x,y}\mathcal{H}_{x,y}+\sum_{x\in V}\Gamma_{x}\widetilde{H}_{x}
@@ -968,8 +969,7 @@ i.e. it is a symmetry of $\mathcal{H}_{x,y}$. Exploiting these considerations we
  \begin{equation}\label{HadamardFormula}
      \exp{(-\mathcal{B})}\mathcal{A}\exp{(\mathcal{B})}=\mathcal{A}-\left[\mathcal{B},\mathcal{A}\right]+\frac{1}{2!}\left[\mathcal{B},\left[\mathcal{B},\mathcal{A}\right]\right]-\frac{1}{3!}\left[\mathcal{B},\left[\mathcal{B},\left[\mathcal{B},\mathcal{A}\right]\right]\right]+\ldots
  \end{equation}
-In the following we need the application of this with $\mathcal{B}=\sum_{a=1}^{N-1}E_{aN}$ defined in \eqref{EquationEx} and with $\mathcal{A}$ equal to some of the generator $E_{CD}$ of the Lie algebra ${gl}(N)$ with $C,D\in\{1,\ldots,N\}$. Therefore we compute 
-\todo{discuss}
+In the following we evaluate this formula for $\mathcal{B}=\sum_{a=1}^{N-1}E_{aN}$ defined in \eqref{EquationEx} and $\mathcal{A}=E_{CD}$  with $C,D\in\{1,\ldots,N\}$. We find  
 \begin{align}
 	\left[\mathcal{B},\mathcal{A}\right]=\sum_{a=1}^{N-1}\left[E_{aN},E_{CD}\right]=\delta_{CN}\sum_{a=1}^{N-1}E_{aD}-(1-\delta_{DN})E_{CN}
 \end{align}
@@ -1009,11 +1009,7 @@ Thus, we rewrite \eqref{intermediateTransposeSite} as
 \begin{equation}\label{siteHadamardI}
 H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}|\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\dt
 \end{equation}
-Taking the tensor product of both sides of \eqref{siteHadamardI}% with 
-%\begin{equation}
-%\langle \rho|_{u(x)}=\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}%\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|_{u(x)}
-%\end{equation}
-%{\color{blue}Think about replacing $\langle \xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|$ with $\langle \xi_{1},\ldots,\xi_{N}|_{u(x)}$}\\
+Taking the tensor product of both sides of  \eqref{siteHadamardI} 
 we obtain 
 \begin{equation}\label{siteHadamardII}
     \begin{split}
@@ -1022,11 +1018,10 @@ we obtain
 |\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\otimes \left(\sum_{\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}=0}^{\infty}\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{x}\right)^{\xi_{a}^{u(x)}}\right)\langle \xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|\right)
     \end{split}
 \end{equation}
-{\color{blue}With a slight abuse of notation and in the spirit of Remark \ref{reamrk-extraSite}, in equation \eqref{siteHadamardII}, we denote the occupation vector at extra-site $u(x)$ by $\langle \xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|$ 
+{With a slight abuse of notation and in the spirit of Remark \ref{reamrk-extraSite}, we here denote the occupation vector at extra-site $u(x)$ by $\langle \xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|$ 
 % although there is the summation over $\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}$
 .
-}
-\todo{explain extra index [IS THE EXPLANATION OF REMARK 4 ENOUGH?]}  
+} 
 Recalling the action of the bosonic creation operator acting at site $u(x)$ and on the species $a\in \{1,\ldots,N-1\}$ we have that 
 \begin{equation}\label{bosonicKX}
     \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N-1}^{u(x)}|(\mathbf{a}^{+})^{u(x)}_{a}=  \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|\dt
@@ -1160,10 +1155,9 @@ For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function o
 	\mathbb{E}\left[\left( \prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\right) \left(\prod_{k=1}^{b}\mathbbm{1}_{\{Y_{q_{k}}=a_{{k}}\}}\right)\right]}\,.
 \end{equation}
 % {\color{blue}where the expectation is taken with respect to the non-equilibrium steady state, then it computed by using the correlations of equation
-% \eqref{exactCorrelations}.}
-\todo{Are you ok with that? It is still not super clear....}
+% \eqref{exactCorrelations}.} 
 \end{corollary}
-{\color{blue} The quantity $\mu(\bm{\tau})$ is the probability, under the non-equilibrium steady distribution, of having a configuration $\bm{\tau}$, that can be composed by particles and holes as well. However, from Corollary \ref{Corolollary-ABS_Corr-abstract}, we only have an explicit formula for the expectations of the indicator of particle configurations (indeed $a_{1},\ldots,a_{m}$ are different from $N$). Therefore, to write the probability mass function $\mu$ for occupations containing holes we have to use the conservation of probability to get rid of the indicators of these holes. Then, equation \eqref{implicit-mass-function} is derived (for details see below the proof of Corollary \ref{Corollary-NESS-ABS}).\\
+{\color{blue} Here $\mu(\bm{\tau})$ is the  non-equilibrium steady probability of having a configuration $\bm{\tau}$, that can be composed by particles and holes as well. However, from Corollary \ref{Corolollary-ABS_Corr-abstract}, we only have an explicit formula for the expectations of the indicator of particle configurations (indeed $a_{1},\ldots,a_{m}$ are different from $N$). Therefore, to write the probability mass function $\mu$ for occupations containing holes we have to use the conservation of probability to get rid of the indicators of these holes. Then, equation \eqref{implicit-mass-function} is derived (for details see below the proof of Corollary \ref{Corollary-NESS-ABS}).\\
  The expectation on the right-hand-side of \eqref{implicit-mass-function} contains only indicators of particles configurations: indeed in the first product  $\tau_{x}\neq N$ are considered, while in the second product we have $a_{k}\neq N$ for all $k\in\{1,\ldots,N\}$. As a consequence, we can map the coordinates $x_{1},\ldots,x_{m}$ and the types $a_{1},\ldots,a_{m}$ introduced in Corollary \ref{Corolollary-ABS_Corr-abstract} with, respectively, the coordinates $x$ (where the $\tau_{x}\neq N$) and $q_{1},\ldots,q_{b}$ and with the types $\tau_{x}\neq N$ and $a_{1},\ldots,a_{b}$. For this reason, by knowing the correlations \eqref{exactCorrelations}, the probability mass function $\mu(\bm{\tau})$ given in equation \eqref{implicit-mass-function} is obtained.}\\ \\
 \textbf{Proof of Corollary~\ref{Corollary-NESS-ABS}:}
 Given $\bm{\tau}\in \Omega^{'}$,  we have 
@@ -1220,7 +1214,7 @@ a_{1}\}}\right\}+\nonumber\\
 +&\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)(-1)^{L-\ell}\sum_{1\leq q_{1}<\ldots<q_{L-\ell}\leq L}\left(\prod_{k=1}^{L-\ell}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{1},\ldots,a_{L-\ell}=1}^{N-1}\prod_{k=1}^{L-\ell}\mathbbm{1}_{\{Y_{q_{k}}=a_{k}\}}\dt
 \end{align} 
 % \todo{indices are strange. Say what happens here}
-Therefore, using the linearity of the expectation and introducing the index $b\in \{0,\ldots,L\}$ {\color{blue} we rewrite the sum in equation \eqref{sum} as} \eqref{implicit-mass-function}. {\color{blue} Indeed, when $b>L-\ell$ we have vanishing terms in the sum \eqref{implicit-mass-function}.}
+Therefore, using the linearity of the expectation and introducing the index $b\in \{0,\ldots,L\}$ {we rewrite the sum in equation \eqref{sum} as} \eqref{implicit-mass-function}.  {Indeed, when $b>L-\ell$ we have vanishing terms in the sum \eqref{implicit-mass-function}.}
 \begin{flushright}
 	$\square$
 \end{flushright}
@@ -1359,7 +1353,7 @@ where $\mathcal{P}_{x_1}(1)$ is the probability that a single random walk starte
 \begin{equation}\label{one-pts-corr}
 		\langle\rho_{a_{1}}^{x_{1}}\rangle= \mathbb{E}\left[\mathbbm{1}_{\{Y_{x_{1}}=a_{1}\}}\right]=\frac{(L+1-x_{1})}{(L+1)}\alpha_{a_{1}}+\frac{x_{1}}{(L+1)}\beta_{a_{1}}\co
 \end{equation} 
-{\color{blue}where, for the sake of notation, we have introduced $\langle\rho_{a_{1}}^{x_{1}}\rangle$.}
+{where, for the sake of notation, we have introduced $\langle\rho_{a_{1}}^{x_{1}}\rangle$.}
 \paragraph{Two-point correlations}
 We consider the average with respect to $\mu$ of the occupation variable of the species  $a_{1},a_{2}\in \{1,\ldots,N-1\}$ at coordinates $x_{1},x_{2}\in \{1,\ldots,L\}$ such that $x_{1}< x_{2}$. 
 %\begin{equation}
@@ -1996,7 +1990,7 @@ while the boundary Hamiltonians of $H^{''}$ are
 	0&0
 \end{pmatrix}\dt
 \end{equation}
-{\color{blue}As a check of our results we report the steady state correlations and the vectors $|\Psi^{''}\rangle$, $|\Psi^{'}\rangle$ and $|\Psi\rangle$ for the SSEP, i.e. the situation where the process has only one species of particles and holes, with maximal occupancy $\nu=1$ and compare the results to \cite{frassek2020eigenstates}. }
+{As a check of our results we report the steady state correlations and the vectors $|\Psi^{''}\rangle$, $|\Psi^{'}\rangle$ and $|\Psi\rangle$ for the SSEP, i.e. the situation where the process has only one species of particles and holes, with maximal occupancy $\nu=1$ and compare the results to \cite{frassek2020eigenstates}. }
  %We only report the main results, since the computations are just a specific case of the ones done for the multispecies stirring process.  
 \paragraph{Correlations of SSEP.}
 We retrieve the closed formula for correlations in the non-equilibrium steady state found in \cite[(4.26)]{frassek2020eigenstates}:  
@@ -2211,8 +2205,7 @@ while
 		\mathcal{L}_{\text{left}}^{TH}f(\bm{n})=&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\left\{f(r,n^{2},\ldots,n^{L})-f(\bm{n})\right\}\\&\times
 		\binom{\nu}{r_{1},\ldots, r_{N}}\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{\alpha_{N}}\right)^{r_{a}}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu}
 		\end{split}
-	\end{equation}
-	\todo{is the last term in the product?[CORRECT, I HAVE DONE IT ALSO IN APPENDIX C]}
+	\end{equation} 
 and $\mathcal{L}_{\text{right}}^{TH}$ acting similarly on the site $L$ and with parameters $\beta$'s. 
 %\begin{equation}
 %	\begin{split}
@@ -2433,8 +2426,7 @@ Concerning the commutator between $\mathcal{H}_{x,x+1}^{m}$ the proof is similar
 
 
 
-\appendix
-\todo{Why do equation numbers start wit 0?}
+\appendix 
 \section*{Appendix}
 \section{Interpretation of $\Psi^{'}$ as marginals of the steady state distribution}\label{subsection-interpretationPSIp} 
 We still miss the interpretation of $\Psi^{'}(\bm{\tau})$ when  $\bm{\tau}= (N,\ldots,N)$. We show here that for this particular configuration
@@ -2587,7 +2579,7 @@ For all $x\in \{1,\ldots,L-1\}$ and for all $d\in \{1,\ldots,N-1\}$ we have
 Indeed, 
 \begin{enumerate}
 	\item \textit{\underline{Stirring generator}}: {\color{blue}this is the edge generator $\mathcal{L}_{x,x+1}$ of the multispecies stirring process introduced in Section \ref{sec1} (with $y=x+1$). As already pointed out, in this nearest neighbour chain, its action consists in exchanging two particles or an hole and a particle on two adjacent sites. Here we show that its action on the occupation variable of any species gives a discrete gradient in the occupation variable itself. Indeed, we have that }
-\todo{add text here [DONE]}
+\todo{shorter? }
 \begin{equation}
 	\mathcal{L}_{x,x+1}n_{d}^{x}=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{B}^{x}+\bm{\delta}_{A}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)
 \end{equation}
