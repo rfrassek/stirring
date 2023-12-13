@@ -2077,29 +2077,46 @@ where
 
 \section{Extensions beyond the integrable chain}
 \label{sec5}
-In Sections~\ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model \todo{which model?} is exactly solvable using integrability.  
-The aim of this section is to study the process when integrability is lost.\todo{but we got duality on any graph} We fix $\nu\geq 1$ and, for the sake of simplicity, we keep the geometry of a chain. We provide the following extensions: 
+{\color{blue}In Section \ref{sectionIntegrabiliy} we have shown that, combining duality and integrability of the multispcies stirring process with $\nu=1$ and on the geometry of chain with two boundaries, the non-equilibrium steady state can be found in an explicit form. As soon as $\nu>1$ the integrability property is lost, but duality still hold. Therefore, in this section we first address the following question: \textit{can we use duality to characterize the non-equilibrium steady state of the boundary driven multispecies stirring process on a chain with $\nu>1$ via absorption probabilities}?  This question can be extend to the geometry of the graph $G$ introduced in Section \ref{sec1}, however, for the sake of simplicity and  for the sake of clarity, we keep the geometry of a chain with two reservoirs attached to the end sites $1$ and $L$ of the chain. \\
+Inspired by the results for the thermalized version of the symmetric exclusion process reported in \cite{carinci2013duality}, in this section we also investigate its multispecies counterpart. More precisely, we try to answer these questions: \textit{can we define a thermalized version of the boundary driven multispecies stirring process? Does this thermalized process keep the absorbing duality properties as in the single species case?} Again, we restrict our analysis on the chain with two reservoirs at the end sites. \\ Finally we add a reaction mechanism of transition to the boundary driven multispeices stirring process. The aim is to answer the following question: \textit{Can we generalize to the case with $\nu>1$ with arbitrary number of species the boundary driven model introduced in \cite{casini2022uphill}?} Moreover, in \cite{casini2022uphill} the duality for this reaction-diffusion process was proved only for the equilibrium case and the result was achieved by direct computation (without using a $gl(3)$ symmetry). Thus, we also investigate if this last duality result can be extended to a boundary driven process by using an approach similar to the one of Section \ref{sectionDuality}.\\ The section is organized as follows: }
+
+
+
+
+%In Sections~\ref{sectionIntegrabiliy} we have shown that, on the geometry of a chain and with hard-core interaction the model \todo{which model?} is exactly solvable using integrability.  
+%The aim of this section is to study the process when integrability is lost.\todo{but we got duality on any graph} We fix $\nu\geq 1$ and, for the sake of simplicity, we keep the geometry of a chain. We provide the following extensions: 
 \begin{enumerate}
-	\item \textit{Correlations} (Section~\ref{Subsection-ss-nonI}): exploiting duality, the steady state correlations can be expressed in terms of absorption probabilities of the dual particles. These probabilities are hard to find when $\nu>1$. We give 
-	in Appendix~\ref{appendix-1pts-general} the expression for the one-point correlation. \todo{is this on a chain?}
+	\item \textit{Correlations} (Section~\ref{Subsection-ss-nonI}): exploiting duality, the steady state correlations {\color{blue} of the boundary driven multispecies stirring process on a chain with two reservoirs} is expressed in terms of absorption probabilities of the dual particles. These probabilities are hard to find when $\nu>1$. As an example we give, 
+	in Appendix~\ref{appendix-1pts-general}, the expression for the one-point correlation. \todo{is this on a chain?[ DONE]}
 	\item \textit{Instantaneous thermalization} (Section~\ref{Subsection-Thermalized}): starting from the multispecies stirring dynamics, we define the thermalized process, where particles are redistributed on each bond with a measure that is the reversible one conditioned to the conservation of the number of particles on this bond. Also for this thermalized process we prove duality. 	
-	\item \textit{Reaction-diffusion process} (Section~\ref{Subsection-RD}): a further dynamics is added\todo{a further dynamic or further dynemics are? Maybe explain better}. Particle can now change type. The model \todo{which model?} is carefully constructed with the goal of having the average densities evolving as a closed system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. Duality for the boundary driven process is also proved.
+	\item \textit{Reaction-diffusion process} (Section~\ref{Subsection-RD}): {\color{blue} starting from the usual stirring dynamics (see Section \ref{sec1}) where particles and holes are exchanged in two nearest neighbour sites (now at a constant rate $\sigma_{11}$),} {\color{blue}two further reaction-type} dynamics are added\todo{a further dynamic or further dynemics are? Maybe explain better[DONE]}. Particle can now change type {\color{blue} with two different mechanism: a \textit{pure mutation} (with rate $\Upsilon$) and a \textit{stirring-mutation} (at rate $\sigma_{12}$), i.e. a transition where particles perform an exchange of their occupancies at nearest neighbour sites but, at the same time, they also mutate their own types.} {\color{blue} This reaction-diffusion} model \todo{which model?[DONE]} is carefully constructed with the goal of having the average densities evolving as a closed system of $N-1$ coupled difference-differential equation, providing a generalization of the model studied in \cite{casini2022uphill}. {\color{blue} Exploiting the $gl(N)$ symmetry of this reaction-diffusion process, absorbing duality} for the boundary driven process is also proved.
 \end{enumerate}
-In the rest of this section we consider a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can {\color{blue} host at most $\nu\geq 1$ particles per site, whose type is chosen among the $N-1$ available ones}. The graph of the dual process is still a chain, but with two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$). \todo{this is said before} The processes considered in this section will be denoted with same name \todo{variables?} $\left(\bm{n}(t)\right)_{t\geq0}$, their corresponding generator  will be specified in each subsection. 
-We use the notation of Section~\ref{sectionDuality} specialized to the one dimensional chain with $\nu >1$.
-For example, the state space is denoted by 
+{\color{blue}As already pointed out at the beginning, in this section we always assume that the geometry is a chain of length $L$ where two reservoirs are connected to the end sites $1$ and $L$. In all the three investigated situations, we will denote the original processes by the variables $\left(\bm{n}(t)\right)_{t\geq0}$, while their dual processes will be denoted by the variables  $(\bm{\xi}(t))_{t\geq 0}$. Moreover, we will always denote the configuration spaces of the original processes by
 \begin{equation}\label{stateSpace-Chain}
 	\Omega_{L}=\bigotimes_{x=1}^{L} \Omega_{x}\,.
 \end{equation}
- The dual process will always be denoted by $(\bm{\xi}(t))_{t\geq 0}$ with the generator specified case by case \todo{?}. The dual configuration space is the one defined in \eqref{dualStateSpace} and adapted to the chain of size $L$ and with two extra-site $0$ and $L+1$ attached to $1$ and $L$ respectively. 
- We denote the space of the dual process by $\widetilde{\Omega}_{L}$, i.e.
+and their dual configuration spaces 
 \begin{equation}\label{dualSpace-chain}
 	\widetilde{\Omega}_{L}=\mathbb{N}_{0}^{N-1}\otimes \Omega_{L}\otimes \mathbb{N}_{0}^{N-1}\dt
 \end{equation}
-In the following, for $a\in \{1,\ldots,N-1\}$ of this section we will denote by \todo{?}
-\begin{equation}
-	\rho_{a}^{\text{left}}=\frac{\alpha_{a}}{|\alpha|},\qquad \qquad \rho_{a}^{\text{right}}=\frac{\beta_{a}}{|\beta|}\,.
-\end{equation}
+We recall that the dual processes are defined on an enlarged chin with two extra-site $0$ and $L+1$ attached to $1$ and $L$ respectively.}
+%In the rest of this section we consider a chain of length $L$, where two reservoirs are attached to sites $1$ and $L$. Each site can {\color{blue} host at most $\nu\geq 1$ particles per site, whose type is chosen among the $N-1$ available ones}. 
+%The graph of the dual process is still a chain, but with two extra-sites $0$ (connected to $1$) and $L+1$ (connected to $L$). \todo{this is said before} 
+%The processes considered in this section will be denoted with same {\color{blue} random variable} \todo{variables?[DONE]} $\left(\bm{n}(t)\right)_{t\geq0}$. {\color{blue} We will specify the generators case by case}. %their corresponding generator will be specified in each subsection. 
+%We use the notation of Section~\ref{sectionDuality} specialized to the one dimensional chain with $\nu >1$.
+%{\color{blue}The state space of the original process} is denoted by 
+%\begin{equation}%\label{stateSpace-Chain}
+%	\Omega_{L}=\bigotimes_{x=1}^{L} \Omega%_{x}\,.
+%\end{equation}
+% The dual process will always be denoted by $(\bm{\xi}(t))_{t\geq 0}$ with the dual generator specified case by case \todo{?}. The dual configuration space is the one defined in \eqref{dualStateSpace} and adapted to the chain of size $L$ and with two extra-site $0$ and $L+1$ attached to $1$ and $L$ respectively. 
+% We denote the space of the dual process by $\widetilde{\Omega}_{L}$, i.e.%
+%\begin{equation}%\label{dualSpace-chain}
+%	\widetilde{\Omega}_{L}=\mathbb{N}_{0}^{N-1}\otimes \Omega_{L}\otimes \mathbb{N}_{0}^{N-1}\dt
+%\end{equation}
+%In the following, for $a\in \{1,\ldots,N-1\}$ of this section we will denote by \todo{?}
+%\begin{equation}
+%	\rho_{a}^{\text{left}}=\frac{\alpha_{a}}{|\alpha|},\qquad \qquad \rho_{a}^{\text{right}}=\frac{\beta_{a}}{|\beta|}\,.
+%\end{equation}
 \subsection{Duality for a boundary driven chain}\label{Subsection-ss-nonI}
  As already pointed out the dual process eventually voids the chain by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites $0$ and $L+1$ and replacing them by the holes $N$. This property allows to characterize the steady state non-equilibrium distribution (that is unique) by the probability that dual particles are absorbed in the extra-sites, called \textit{absorption probabilities}. This is a generalization for the non-integrable chain of the Corollary~\ref{Corolollary-ABS_Corr-abstract}. The process $\left(\bm{n}(t)\right)_{t\geq0}$ has generator
 \begin{equation}
@@ -2569,7 +2586,7 @@ For all $x\in \{1,\ldots,L-1\}$ and for all $d\in \{1,\ldots,N-1\}$ we have
 \end{equation}
 Indeed, 
 \begin{enumerate}
-	\item \textit{\underline{Stirring generator}}: {\color{blue}this is the edge generator $\mathcal{L}_{x,x+1}$ of the multispecies stirring process introduced in Section \ref{sec1} (with $y=x+1$). As already pointed out, in this nearest neighbour chain, its action consists in exchanging the particles or the holes and the particles of two adjacent sites. Here we show that its action on the occupation variable of any species gives the discrete gradient of the occupation variable itself. Indeed, we have that }
+	\item \textit{\underline{Stirring generator}}: {\color{blue}this is the edge generator $\mathcal{L}_{x,x+1}$ of the multispecies stirring process introduced in Section \ref{sec1} (with $y=x+1$). As already pointed out, in this nearest neighbour chain, its action consists in exchanging the particles or the holes and the particles of two adjacent sites. Here we show that its action on the occupation variable of any species gives a discrete gradient in the occupation variable itself. Indeed, we have that }
 \todo{add text here [DONE]}
 \begin{equation}
 	\mathcal{L}_{x,x+1}n_{d}^{x}=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{B}^{x}+\bm{\delta}_{A}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)
