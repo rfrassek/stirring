@@ -2150,7 +2150,7 @@ Therefore, up to this constant, $\mathbb{E}_{\mu_{\text{NESS}}}\left[D(\bm{n},\b
 \end{equation}
 here we recall that, generalizing Corollary~\ref{Corolollary-ABS_Corr-abstract}, %that $\rho_{\alpha}^{L}=\frac{\alpha_{a}}{|\alpha|}$, $\rho_{\alpha}^{R}=\frac{\beta_{a}}{|\beta|}$ are the boundary densities and 
 \begin{equation}\label{Pass} 
-	\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{N})	=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{a=1}^{N-1}\left(t_{a}\delta_{a}^{0}+(|\xi_{a}|-t_{a})\delta_{a}^{L+1}\right)| \bm{\xi}(0)=\bm{\xi}\right)
+	\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{N})	=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{a=1}^{N-1}\left(t_{a}\delta_{a}^{0}+(|\xi_{a}|-t_{a})\delta_{a}^{L+1}\right)\Big|  \bm{\xi}(0)=\bm{\xi}\right)
 \end{equation}
 are the absorption probabilities for the non-integrable chain, i.e. the probabilities that $t_{a}$ particles of species $a$ are absorbed at $0$. Here we have denoted $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x}$.
  These correlations can be computed once the absorption probabilities are known. For example, we report in Appendix~\ref{appendix-1pts-general} the solution for the simplest case of one point correlations that is exactly solvable, since the single dual particle behaves as an independent random walker. The absorption probabilities for higher point correlations fulfill  difference equations.
@@ -2349,8 +2349,7 @@ where
 Namely,
 \begin{equation}
 	\Lambda_{\text{rev}}^{x}(n^{x})=\frac{\nu!}{\prod_{A=1}^{N}n_{A}^{x}!}p^{\sum_{a=1}^{N-1}n_{a}^{x}}p_{N}^{n_{N}^{x}}
-\end{equation}
-\todo{Why not merge sum or is there a typo? [FIXED,THERE WAS A TYPO]}
+\end{equation} 
 This can be proved by imposing the detailed balance conditions for the bond $(x,x+1)$ and for the boundaries $\{1,L\}$.\\
 
 \subsubsection{Duality for the reaction-diffusion process}
@@ -2435,6 +2434,7 @@ Concerning the commutator between $\mathcal{H}_{x,x+1}^{m}$ the proof is similar
 
 
 \appendix
+\todo{Why do equation numbers start wit 0?}
 \section*{Appendix}
 \section{Interpretation of $\Psi^{'}$ as marginals of the steady state distribution}\label{subsection-interpretationPSIp} 
 We still miss the interpretation of $\Psi^{'}(\bm{\tau})$ when  $\bm{\tau}= (N,\ldots,N)$. We show here that for this particular configuration
