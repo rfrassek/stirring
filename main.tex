@@ -2399,9 +2399,8 @@ In the last equality we used the fact that map $h_{c}(\cdot)$ is surjective.
 %\paragraph{Duality for $H_{x,x+1}^{m}$} 
 Concerning the commutator between $\mathcal{H}_{x,x+1}^{m}$ the proof is similar and gives
 \begin{equation}
-	\left[\sum_{a=1}^{N-1}E_{aN}^{x}\otimes \sum_{b=1}^{N-1}E_{bN},\;\sum_{A,B=1}^{N}\left(E_{B a}\otimes \mathbbm{1}-E_{AA}\otimes \mathbbm{1}\right)\right]=0\dt
-\end{equation}
-\todo{shall we remove all site indices given that there is the tensor product?[Correct, DONE]}
+	\left[\sum_{a=1}^{N-1}E_{aN}\otimes \sum_{b=1}^{N-1}E_{bN},\;\sum_{A,B=1}^{N}\left(E_{B a}\otimes \mathbbm{1}-E_{AA}\otimes \mathbbm{1}\right)\right]=0\dt
+\end{equation} 
 \begin{flushright}
 	$\square$
 \end{flushright}
@@ -2420,8 +2419,7 @@ Concerning the commutator between $\mathcal{H}_{x,x+1}^{m}$ the proof is similar
 
 \appendix
 \section*{Appendix}
-\section{Interpretation of $\Psi^{'}$ as marginals of the steady state distribution}\label{subsection-interpretationPSIp}
-\todo{Why do we never refer to this appendix?[DONE, REMARK 10]}
+\section{Interpretation of $\Psi^{'}$ as marginals of the steady state distribution}\label{subsection-interpretationPSIp} 
 We still miss the interpretation of $\Psi^{'}(\bm{\tau})$ when  $\bm{\tau}= (N,\ldots,N)$. We show here that for this particular configuration
 $\Psi^{'}(N,\ldots,N) =1$. Indeed, for any $\bm{\tau}\in \Omega^{'}$ we have that 
 \begin{align}
@@ -2571,8 +2569,8 @@ For all $x\in \{1,\ldots,L-1\}$ and for all $d\in \{1,\ldots,N-1\}$ we have
 \end{equation}
 Indeed, 
 \begin{enumerate}
-	\item \textit{Stirring generator}:
-
+	\item \textit{\underline{Stirring generator}}:
+\todo{add text here}
 \begin{equation}
 	\mathcal{L}_{x,x+1}n_{d}^{x}=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{B}^{x}+\bm{\delta}_{A}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)
 \end{equation}
@@ -2583,7 +2581,7 @@ In the brackets of the right-hand-side of the above equation we have: a contribu
 	=&\nu\left(n_{d}^{x+1}-n_{d}^{x}\right)
 \end{align*} 
 where we have used the fact that $n_{N}^{x}=\nu-\sum_{c=1}^{N-1}n_{c}^{x}$.
-\item \textit{Stirring-mutation generator}: for every $c\in \{1,\ldots,N-2\}$ we have 
+\item \textit{\underline{Stirring-mutation generator}}: for every $c\in \{1,\ldots,N-2\}$ we have 
 \begin{equation}
 	\begin{split}
 		\mathcal{L}_{x,x+1}^{c}n_{d}^{x}&=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{h_{c}(B)}^{x}+\bm{\delta}_{h_{c}(A)}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)
@@ -2598,7 +2596,7 @@ In the brackets of the right-hand-side of the above equation we have: a contribu
 		\nu(n_{h_{c}(B^{'})}^{x+1}-n_{d}^{x})
 \end{align}
 where  we used the fact that $n_{N}^{x}=\nu-\sum_{b=1}^{N-1}n_{b}^{x}$. 
-\item \textit{Pure-mutation generator}: here we have that 
+\item \textit{\underline{Pure-mutation generator}}: here we have that 
 \begin{equation}
 	\mathcal{L}_{x,y}^{m}n_{d}^{x}=\sum_{A,B=1}^{N-1}n_{A}^{x}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{B}^{x})-n_{d}^{x}\right)=\sum_{b=1}^{N-1}(n_{b}^{x}-n_{d}^{x})
 \end{equation}
