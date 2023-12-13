@@ -299,7 +299,7 @@ particle per site, which is driven out-of-equilbrium by two reservoirs on the le
 % of the absorption probabilities 
 relies on the extension of the  Matrix Product Ansatz \cite{derrida1993exact} to multiple species \cite{vanicat2017exact} and the $gl(N)$ invariance of the process in the bulk. Finally in Section~\ref{sec5} we discuss a few extensions 
 and generalizations of the model, including instantaneous thermalization limits and reaction-diffusions. {\color{blue} The first generalization, is to derive a formula, in terms of the absorption probabilities of the dual process, for the non-equilibrium steady state correlation $\nu\geq 1$, i.e. when more than one particle is allowed at each site. In this situation, integrability is lost and we cannot derive explicit formulas for these absorption probabilities. However, in Appendix \ref{appendix-1pts-general}, we show how to compute the one-point correlation by using the properties of a random walk.} The second generalization is the definition of a thermalized version of the boundary-driven multispecies stirring process. Moreover, we show that it has an absorbing duality  {\color{blue}with the same duality function of the multispecies stirring process (the details of the proof are reported in Appendix \ref{appendix-dualityThermalized}). Finally, the third generalization is the introduction of an "ad-hoc" interaction mechanism of reaction type, in order to have closed evolution equation for average particle density (inspired by \cite{casini2022uphill,schutzReaction})}. {\color{blue}We report the details of the computations for the closure of the average density evolution equation in Appendix \ref{appendix-RD}}. Again, an absorbing duality is proved and the duality function turns out to be the same of the multispecies stirring process. 
-\todo{mention that there is an appendix. In particular Appendix B could be interesting to stress.}
+\todo{mention that there is an appendix. In particular Appendix B could be interesting to stress.[DONE, SEE BLUE TEXT]}
 % In closing this introduction we mention that we are currently working on the boundary-driven multispecies 
 % model with non-compact Lie algebras, both integrable and non-integrable, which will be presented in a 
 % future paper. 
@@ -371,7 +371,7 @@ Then, the dynamics has two parts:
 \begin{itemize}
 \item
 on each edge of the graph, any two types of particles are swapped at rate $1$;
-moreover a particle of any type and a hole are also swapped at rate $1$;\todo{explain what is a hole... Maybe stress that there can be at max $\nu$ holes per site?}
+moreover a particle of any type and a hole are also swapped at rate $1$;\todo{explain what is a hole... Maybe stress that there can be at max $\nu$ holes per site? [DONE, SEE BLUE TEXT JUST ABOVE]}
 \item
 on each vertex $x$ of the graph, a particle of type $a \in \{1,\ldots,N-1\}$ is created  at rate $\alpha_a^x >0$;
 additionally a particles of any type is replaced with a
@@ -411,7 +411,7 @@ In the case $N=2$, we retrieve the  boundary-driven version of the symmetric exc
 \subsection{The process generator}\label{subsectionGeneratorStr}
 We now give the mathematical description of the multispecies stirring process.
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
-At each vertex site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ {\color{blue} denotes the number of particles of species $a\in \{1,\ldots,N-1\}$, while the component $n_{N}^{x}$ denotes the number of holes at site $x$.} On each vertex we {\color{blue} allow a total maximal number of particles $\nu\in \mathbb{N}$}. {\color{blue} In the following we introduce the indices denoted by lowercase letters (for instance $a,b,c,d,k\in \{1,\ldots,N-1\}$) when only particles are taken into account. Moreover, we introduce the indices denoted by uppercase letters (for instance $A,B,C,D,K\in\{1,\ldots,N\}$) \todo{any chance we can remove index K and k?} when we also consider the hole, that we recall is denoted by $N$. The link between the two indices is given by 
+At each vertex site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ {\color{blue} denotes the number of particles of species $a\in \{1,\ldots,N-1\}$, while the component $n_{N}^{x}$ denotes the number of holes at site $x$.} On each vertex we {\color{blue} allow a total maximal number of particles $\nu\in \mathbb{N}$}. {\color{blue} In the following we introduce the indices denoted by lowercase letters (for instance $a,b,c,d\in \{1,\ldots,N-1\}$) when only particles are taken into account. Moreover, we introduce the indices denoted by uppercase letters (for instance $A,B,C,D\in\{1,\ldots,N\}$) \todo{any chance we can remove index K and k?[DONE, I REMOVED THESE INDICES IN THE APPENDICES]} when we also consider the hole, that we recall is denoted by $N$. The link between the two indices is given by 
 \begin{equation}
 	a\in \{1,\ldots,N-1\}\qquad \text{and}\qquad A=(a,N)
 	\end{equation} 
@@ -1026,7 +1026,7 @@ we obtain
 % although there is the summation over $\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}$
 .
 }
-\todo{explain extra index [Is the explanation of the remark 4 enough?]}  
+\todo{explain extra index [IS THE EXPLANATION OF REMARK 4 ENOUGH?]}  
 Recalling the action of the bosonic creation operator acting at site $u(x)$ and on the species $a\in \{1,\ldots,N-1\}$ we have that 
 \begin{equation}\label{bosonicKX}
     \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N-1}^{u(x)}|(\mathbf{a}^{+})^{u(x)}_{a}=  \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|\dt
@@ -1118,7 +1118,7 @@ Using duality, one can compute the  $m$-point correlations between non-empty par
 Furthermore we write $\mathbb{E}[\cdot]$ for the expectation with respect to $\mu$.%For arbitrary $m\in \mathbb{N}$ such that $m<L$, we fix $a_{k}\in\{1,\ldots,N-1\}$ and $x_{k}\in\{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for every $k\in\{1,\ldots,m\}$. 
 \begin{corollary}[Correlations via duality]\label{Corolollary-ABS_Corr-abstract}
 Let $m\in \{1,\ldots,L\}$ and consider $m$ sites $1 \le x_{1} < x_2 < \ldots < x_m \le L $ and
-$m$ species $a_{k}\in\{1,\ldots,N-1\}$  with $k=1,2,\ldots, m$. Then, the $m$-point correlations in the non-equilibrium steady state read\todo{this I find still confusing}
+{\color{blue}$m$ colours denoted by $a_{k}\in\{1,\ldots,N-1\}$  with $k=1,2,\ldots, m$, chosen among the $N-1$ available species.} Then, the $m$-point correlations in the non-equilibrium steady state read\todo{this I find still confusing [WHAT ABOUT THE BLUE SENTENCE?]}
 \begin{equation}\label{NESS-expectation-ABS}
 \mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\left[\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right]\mathcal{P}_{x_1,\ldots,x_m}(t_{1},\ldots,t_{m})
 \end{equation}
@@ -2004,9 +2004,9 @@ We retrieve the closed formula for correlations in the non-equilibrium steady st
 	\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=1\}}\right]=\sum_{q=0}^{m}(\alpha-\beta)^{q}\beta^{m-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq m}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation} 
 \textbf{Proof of formula \eqref{correlations-SSEP}:} Starting from \eqref{exactCorrelations} we exploit {the fact that for $N=2$  each site can be either occupied by a particle or empty.} 
-We introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define {$q$ variables denoted by } %labels denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  
+We introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define $q$ variables denoted by  %labels denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  
 $1\leq \ell_{1}<\ell_{2}<\ldots<\ell_{q}\leq m$.  
-To each of these variables we associate coordinates $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$ that are such that $c_{x_{\ell_{k}}}=1$ for all $k\in \{1,\ldots,q\}$ and $c_{x}=0$ for $x\notin \{x_{\ell_{1}},\ldots,x_{\ell_{q}}\}$. Therefore, for any fixed $c_{x_{1}},\ldots,c_{x_{m}}$, we find $q$\todo{you mean the sum is q?} and $\ell_{1},\ldots,\ell_{q}$ from which we fix $x_{\ell_{1}},\ldots,x_{\ell_{q}}$. Then, we obtain  
+To each of these variables we associate coordinates $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$ that are such that $c_{x_{\ell_{k}}}=1$ for all $k\in \{1,\ldots,q\}$ and $c_{x}=0$ for $x\notin \{x_{\ell_{1}},\ldots,x_{\ell_{q}}\}$. Therefore, for any fixed $c_{x_{1}},\ldots,c_{x_{m}}$, we find $q$ {\color{blue} (by the summation $\textstyle{\sum_{k=1}^{m}}c_{x_{k}}=q$)} \todo{you mean the sum is q?[FIXED]} and $\ell_{1},\ldots,\ell_{q}$ from which we fix $x_{\ell_{1}},\ldots,x_{\ell_{q}}$ {\color{blue} as explained.} Then, we obtain  
 	\begin{equation}
 		\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}=\prod_{k=1}^{q}\left(1+L-x_{\ell_{k}}-q+k\right)\dt
 	\end{equation}
@@ -2195,7 +2195,7 @@ while
 		\binom{\nu}{r_{1},\ldots, r_{N}}\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{\alpha_{N}}\right)^{r_{a}}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu}
 		\end{split}
 	\end{equation}
-	\todo{is the last term in the product?[Correct, I have done it also in appendix C]}
+	\todo{is the last term in the product?[CORRECT, I HAVE DONE IT ALSO IN APPENDIX C]}
 and $\mathcal{L}_{\text{right}}^{TH}$ acting similarly on the site $L$ and with parameters $\beta$'s. 
 %\begin{equation}
 %	\begin{split}
@@ -2333,7 +2333,7 @@ Namely,
 \begin{equation}
 	\Lambda_{\text{rev}}^{x}(n^{x})=\frac{\nu!}{\prod_{A=1}^{N}n_{A}^{x}!}p^{\sum_{a=1}^{N-1}n_{a}^{x}}p_{N}^{n_{N}^{x}}
 \end{equation}
-\todo{Why not merge sum or is there a typo? [There was a typo]}
+\todo{Why not merge sum or is there a typo? [FIXED,THERE WAS A TYPO]}
 This can be proved by imposing the detailed balance conditions for the bond $(x,x+1)$ and for the boundaries $\{1,L\}$.\\
 
 \subsubsection{Duality for the reaction-diffusion process}
@@ -2569,7 +2569,7 @@ For all $x\in \{1,\ldots,L-1\}$ and for all $d\in \{1,\ldots,N-1\}$ we have
 \end{equation}
 Indeed, 
 \begin{enumerate}
-	\item \textit{\underline{Stirring generator}}:
+	\item \textit{\underline{Stirring generator}}: {\color{blue}this is the edge generator $\mathcal{L}_{x,x+1}$ of the multispecies stirring process introduced in Section \ref{sec1} (with $y=x+1$). As already pointed out, in this nearest neighbour chain, its action consists in exchanging the particles or the holes and the particles of two adjacent sites. Here we show that its action on the occupation variable of any species gives the discrete gradient of the occupation variable itself. Indeed, we have that }
 \todo{add text here}
 \begin{equation}
 	\mathcal{L}_{x,x+1}n_{d}^{x}=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{B}^{x}+\bm{\delta}_{A}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)
