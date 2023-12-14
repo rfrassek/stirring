@@ -481,7 +481,7 @@ Namely, on each site $x\in V$  a particle {or a hole} indicated by $B$ is replac
 For a particular choice of the reservoir parameters one has an $N$-parameter family of reversible measures. More precisely
 when the parameters are the same on each site, i.e.
 \begin{equation}\label{reversibilityCondition}
-\alpha_{a}^{x}=\alpha_{a}\qquad \forall x\in V\,,
+\alpha_{A}^{x}=\alpha_{A}\qquad \forall x\in V\,,
 \end{equation}
 then the process described by the generator \eqref{Generator} is reversible with respect to the 
 homogeneous product measure 
@@ -495,7 +495,7 @@ with marginals $\mu_{\text{rev}}^{x}$ given by  the multinomial distribution
 \end{equation}
 Here
  $$
-\rho_{a}=\frac{\alpha_{a}}{|\alpha|}\co
+\rho_{A}=\frac{\alpha_{A}}{|\alpha|}\co
 $$
 is the density of species $a$ and we used the notation $|\alpha|=\sum_{A=1}^{N}\alpha_{A}$. Explicitly, 
 \begin{equation}
@@ -505,7 +505,7 @@ This can be proved  by checking that detailed balance is satisfied.
 If condition \eqref{reversibilityCondition} is not met, then in general reversibility is lost: indeed, in this situation, each reservoir at site $x$ has  its own set of densities vector $\rho^{x}=(\rho_{1}^{x},\ldots,\rho_{N}^{x})$ with components
 \begin{equation}
 	\label{rhox}
-	\rho_{a}^x=\frac{\alpha_{a}^x}{|\alpha^x|}
+	\rho_{A}^x=\frac{\alpha_{A}^x}{|\alpha^x|}
 \end{equation}
 and  $|\alpha^x|=\sum_{A=1}^{N}\alpha_{A}^x$. {As a consequence, particles are injected and removed in the graph with different rates. When, for any $A\in \{1,\ldots,N\}$, there are at least two reservoirs at two different sites $x,y$ such that $\rho_{A}^{x}\neq  \rho_{A}^{y}$, a  non-zero current sets in, breaking the reversibility. Informally, one can say that the reservoirs try to impose their different densities at the boundaries of the the graph, putting the system out-of-equilibrium.} 
 \begin{remark}
@@ -513,11 +513,11 @@ and  $|\alpha^x|=\sum_{A=1}^{N}\alpha_{A}^x$. {As a consequence, particles are i
 		{One can check that conditions \eqref{reversibilityCondition} are not the most general that implies reversibility. Indeed, by choosing the reservoir parameters as }
 		\begin{equation}
 		\label{cond-gen}
-			\alpha_{k}^{x}\left(|\alpha^{y}|-\alpha_{k}^{y}\right)=\alpha_{k}^{y}\left(|\alpha^{x}|-\alpha_{k}^{x}\right)\qquad\qquad \forall x,y\in V,\quad \forall k\in \{1,\ldots,N\}
+			\alpha_{A}^{x}\left(|\alpha^{y}|-\alpha_{A}^{y}\right)=\alpha_{A}^{y}\left(|\alpha^{x}|-\alpha_{A}^{x}\right)\qquad\qquad \forall x,y\in V,\quad \forall A\in \{1,\ldots,N\}
 		\end{equation}
 		where
 		\begin{equation}
-			|\alpha^{x}|=\sum_{a=1}^{N}\alpha_{a}^{x}\dt
+			|\alpha^{x}|=\sum_{A=1}^{N}\alpha_{A}^{x}\dt
 		\end{equation}
 		reversibility holds. 
 		 In the case where the graph is a chain with nearest neighbors interactions and two reservoirs are attached to the two boundary sites
@@ -621,7 +621,7 @@ where
 \end{equation}
 We can write the edge Hamiltonian \eqref{edgeHamiltonian} as a function of the coproduct of the quadratic Casimir of ${gl}(N)$
 \begin{equation}\label{secondCasimir}
-    C=\sum_{a,b=1}^{N}E_{AB}E_{BA}\co
+    C=\sum_{A,B=1}^{N}E_{AB}E_{BA}\co
 \end{equation}
 that acts diagonally as $C|{n}\rangle=\twoj(\twoj+N)|{n}\rangle$ on any state $|n\rangle$ and belogs to the center of ${gl}(N)$ (i.e. it commutes with all the algebra elements).  
 More precisely,  considering the standard coproduct 
@@ -1100,7 +1100,7 @@ Therefore, duality matrix reads
 where $\mathcal{D}_{0}$ and $\mathcal{D}_{L+1}$ are given in \eqref{dualityMatrix2}. 
 The elements of this duality matrix are given by
 \begin{equation}\label{ElementsDualityMatrixChain_1}
-	D(\bm{\tau},\bm{\xi})=\prod_{a=1}^{N-1}\alpha_{a}^{\xi_{a}^{0}}\left(\prod_{x=1}^{L}\prod_{a=1}^{N-1}\mathbbm{1}_{\{\delta_{\tau_{x},a}\geq \xi_{a}^{x}\}}\right)\prod_{a=1}^{N-1}\beta_{a}^{\xi_{a}^{L+1}}\dt
+	D(\bm{\tau},\bm{\xi})=\left(\prod_{a=1}^{N-1}\alpha_{a}^{\xi_{a}^{0}}\right)\left(\prod_{x=1}^{L}\prod_{a=1}^{N-1}\mathbbm{1}_{\{\delta_{\tau_{x},a}\geq \xi_{a}^{x}\}}\right)\left(\prod_{a=1}^{N-1}\beta_{a}^{\xi_{a}^{L+1}}\right)\dt
 \end{equation}
 %\begin{equation}\label{ElementsDualityMatrixChain}
 %	D(\bm{n},\bm{\xi})=\prod_{a=1}^{N-1}\alpha_{a}^{\xi_{a}^{0}}\left(\prod_{x=1}^{L}\prod_{a=1}^{N-1}\mathbbm{1}_{\{n_{a}^{x}\geq \xi_{a}^{x}\}}\right)\prod_{a=1}^{N-1}\beta_{a}^{\xi_{a}^{L+1}}\dt
@@ -1126,7 +1126,7 @@ Furthermore we write $\mathbb{E}[\cdot]$ for the expectation with respect to $\m
 Let $m\in \{1,\ldots,L\}$ and consider $m$ sites $1 \le x_{1} < x_2 < \ldots < x_m \le L $ and
 {\color{blue}$m$ colours denoted by $a_{k}\in\{1,\ldots,N-1\}$  with $k=1,2,\ldots, m$, chosen among the $N-1$ available species.} Then, the $m$-point correlations in the non-equilibrium steady state read\todo{this I find still confusing [WHAT ABOUT THE BLUE SENTENCE?]}
 \begin{equation}\label{NESS-expectation-ABS}
-\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\left[\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right]\mathcal{P}_{x_1,\ldots,x_m}(t_{1},\ldots,t_{m})
+\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\mathcal{P}_{x_1,\ldots,x_m}(t_{1},\ldots,t_{m})
 \end{equation}
 where
 \begin{equation}\label{absProbabilitiesIntegrable}
@@ -1152,7 +1152,7 @@ Therefore, by ergodicity and duality  we have
 \begin{equation}\label{CorrelationByABS-prob}
 	\begin{split}
 \mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]&=\lim_{t\to \infty}\mathbb{E}_{\bm{\tau}}\left[D(\bm{\tau}(t),\bm{{\xi}})\right]=\lim_{t\to \infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{\tau},\bm{{\xi}}(t))\right]
-	\\&=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{m})\dt
+	\\&=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{m})\dt
 \end{split}
 \end{equation} 
 \begin{flushright}
