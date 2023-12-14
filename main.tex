@@ -2011,7 +2011,8 @@ We retrieve the closed formula for correlations in the non-equilibrium steady st
 \textbf{Proof of formula \eqref{correlations-SSEP}:} Starting from \eqref{exactCorrelations} we exploit {the fact that for $N=2$  each site can be either occupied by a particle or empty.} 
 We introduce $q=\sum_{k=1}^{m}c_{x_{k}}$. There are many values of $c$'s that give the same $q$, therefore we define $q$ variables denoted by  %labels denoted by $\ell_{1},\ldots,\ell_{q}\in \{1,\ldots,m\}$ such that  
 $1\leq \ell_{1}<\ell_{2}<\ldots<\ell_{q}\leq m$.  
-To each of these variables we associate coordinates $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$ that are such that $c_{x_{\ell_{k}}}=1$ for all $k\in \{1,\ldots,q\}$ and $c_{x}=0$ for $x\notin \{x_{\ell_{1}},\ldots,x_{\ell_{q}}\}$. Therefore, for any fixed $c_{x_{1}},\ldots,c_{x_{m}}$, we find $q$ {\color{blue} (by the summation $\textstyle{\sum_{k=1}^{m}}c_{x_{k}}=q$)} \todo{you mean the sum is q?[FIXED]} and $\ell_{1},\ldots,\ell_{q}$ from which we fix $x_{\ell_{1}},\ldots,x_{\ell_{q}}$ {\color{blue} as explained.} Then, we obtain  
+To each of these variables we associate coordinates $x_{\ell_{1}},\ldots,x_{\ell_{q}}\in\{x_{1},\dots,x_{m}\}$ that are such that $c_{x_{\ell_{k}}}=1$ for all $k\in \{1,\ldots,q\}$ and $c_{x}=0$ for $x\notin \{x_{\ell_{1}},\ldots,x_{\ell_{q}}\}$. Therefore, for any fixed $c_{x_{1}},\ldots,c_{x_{m}}$, we find $q$ { (by the summation $\textstyle{\sum_{k=1}^{m}}c_{x_{k}}=q$)} %\todo{you mean the sum is q?[FIXED]}
+ and $\ell_{1},\ldots,\ell_{q}$ from which we fix $x_{\ell_{1}},\ldots,x_{\ell_{q}}$ { as explained.} Then, we obtain  
 	\begin{equation}
 		\prod_{k=1}^{m}\left(2+L-x_{k}-\sum_{j=k}^{m}c_{j}\right)^{c_{k}}=\prod_{k=1}^{q}\left(1+L-x_{\ell_{k}}-q+k\right)\dt
 	\end{equation}
@@ -2589,7 +2590,7 @@ For all $x\in \{1,\ldots,L-1\}$ and for all $d\in \{1,\ldots,N-1\}$ we have
 \end{equation}
 Indeed, 
 \begin{enumerate}
-	\item \textit{\underline{Stirring generator}}: {\color{blue}this is the edge generator $\mathcal{L}_{x,x+1}$ of the multispecies stirring process introduced in Section \ref{sec1} (with $y=x+1$). As already pointed out, in this nearest neighbour chain, its action consists in exchanging two particles or an hole and a particle on two adjacent sites. Here we show that its action on the occupation variable of any species gives a discrete gradient in the occupation variable itself. Indeed, we have that }
+	\item \textit{\underline{Stirring generator}}: {\color{blue}using edge generator $\mathcal{L}_{x,x+1}$ of the multispecies stirring process introduced in Section \ref{sec1} (with $y=x+1$) we have that}
 \todo{shorter? }
 \begin{equation}
 	\mathcal{L}_{x,x+1}n_{d}^{x}=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{B}^{x}+\bm{\delta}_{A}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)
