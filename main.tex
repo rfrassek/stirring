@@ -2452,13 +2452,14 @@ $\Psi^{'}(N,\ldots,N) =1$. Indeed, for any $\bm{\tau}\in \Omega^{'}$ we have tha
 \begin{align}
 	\Psi^{'}(\bm{\tau})=&\langle\bm{\tau}|\Psi^{'}\rangle=\sum_{\bm{\sigma}\in \Omega^{'}}\langle \bm{\tau}|S_{1}|\bm{\sigma}\rangle\langle \bm{\sigma}|\Psi\rangle=\sum_{\bm{\sigma}\in \Omega^{'}}\langle \bm{\sigma}|S_{1}^{T}|\bm{\tau}\rangle\langle \bm{\sigma}|\Psi\rangle\dt
 \end{align} 
-We introduce the dual configuration $\bm{\xi}(\bm{\tau})=(N,\tau_{1},\ldots,\tau_{L},N)$ where two extra-sites occupied by the species $N$ have been attached to the vector $\bm{\tau}$, transforming it from a vector of dimension $L$ to one of dimension $L+2$. More explicitly, this dual configuration is given by
+{\color{blue}We introduce the dual configuration constructed by attaching two extra-sites (without any particle) to the vector $\bm{\tau}$, transforming its dimension from $L$ to $L+2$. We denote it by $\bm{\xi}(\bm{\tau})=(0,\tau_{1},\ldots,\tau_{L},0)$, where we wrote $0$ in the two extra-sites to indicate that no dual particles are present there.}  More explicitly, this dual configuration is given by
 \begin{equation}
 	\begin{cases}
-		\xi_{a}^{x}(\bm{\tau})= \delta_{\tau_{x},a}\qquad \forall a\in \{1,\ldots N\}\quad \forall x\in \{1,\ldots,L\}\\
-		\xi_{N}^{0}(\bm{\tau})=\xi_{N}^{L+1}(\bm{\tau})=1
+		\xi_{A}^{x}(\bm{\tau})= \delta_{\tau_{x},A}\qquad \forall A\in \{1,\ldots N\}\quad \forall x\in \{1,\ldots,L\}\\
+		\xi_{1}^{0}(\bm{\tau})=\ldots=\xi_{N-1}^{0}(\bm{\tau})=0\\
+		\xi_{1}^{L+1}(\bm{\tau})=\ldots=\xi_{N-1}^{L+1}(\bm{\tau})=0
 	\end{cases}\dt
-\end{equation} Now we consider the elements $\langle\bm{\sigma}|D|\xi(\bm{\tau})\rangle$ of the duality matrix $D$ and we have
+\end{equation} Now we consider the elements $\langle\bm{\sigma}|D|\xi(\bm{\tau})\rangle$ of the duality matrix $D$ and, {\color{blue} since no dual particles are present in the extra-sites $0$ and $L+1$}, we have
 \begin{align}\label{useful-InInterpretation}
 	\Psi^{'}(\bm{\tau})=&\sum_{\bm{\sigma}\in \Omega^{'}}\langle \bm{\sigma}|D|\bm{\xi}(\bm{\tau})\rangle\langle \bm{\sigma}|\Psi\rangle\dt
 \end{align}
@@ -2484,7 +2485,7 @@ Therefore using the duality function \eqref{ElementsDualityMatrixChain_1} and eq
 This last equation completes and generalizes \eqref{corr-psi1} by showing that $\Psi^{'}(N,\ldots,N) =1$.
 
 Equivalently, we can interpret the components of $\Psi'(\bm{\tau})$ as follows.
-Let $\ell$ be the number of occupied sites in the configuration $\bm{\tau}$, i.e.  $\ell=\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})$. We denote by $x_{1},\ldots,x_{\ell}$, such that $x_{k}<x_{k+1}$ for all $k\in \{1,\ldots,\ell-1\}$, the coordinates where a particle of any (non-empty) type is present. Finally, we call 
+Let $\ell$ be the number of sites {\color{blue}occupied by a particle} in the configuration $\bm{\tau}$, i.e.  $\ell=\sum_{x=1}^{L}(1-\delta_{\tau_{x},N})$. We denote by $x_{1},\ldots,x_{\ell}$, such that $x_{k}<x_{k+1}$ for all $k\in \{1,\ldots,\ell-1\}$, the coordinates where a particle of any species is present. Finally, we call 
 \begin{equation}
 	\Omega_{\ell}^{'}(\bm{\tau}):=\left\{\bm{\sigma}\in \Omega^{'}\;:\; \sigma_{x_{1}}=\tau_{x_{1}},\ldots,\sigma_{x_{\ell}}=\tau_{x_{\ell}}\right\}\dt
 \end{equation} 
