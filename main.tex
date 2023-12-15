@@ -2511,7 +2511,7 @@ The average occupation reads
 			\mathbb{E}_{\mu_{\text{NESS}}}\left[\mathbbm{1}_{\{\mathcal{Y}_{a}^{x}=n_{a}^{x}\}}\right]&=\nu\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\delta_{a}^{x})\right]\\&=\nu\sum_{t_{a}=0}^{1}\left(\rho_{a}^{\text{left}}\right)^{t_{s}}\left(\rho_{s}^{\text{right}}\right)^{1-t_{s}}\mathbb{P}_{\delta_{a}^{x}}\left(\xi_{\infty}=t_{a}\delta_{0}+(1-t_{a})\delta_{L+1}\right)\dt
 	\end{split}
 \end{equation}
-To explicitly find the result, we aim to determine $\mathcal{P}(1,\delta_{a}^{x})=\mathbb{P}_{\delta_{a}^{x}}\left(\xi_{\infty}=t_{a}\delta_{a}^{0}+(1-t_{a})\delta_{a}^{L+1}\right)$. This is the probability of a random walker on the chain $\{1,\ldots,L\}$ with absorbing boundaries, therefore, it fulfils the following equations discrete Laplace equation
+To explicitly find the result, we aim to determine $\mathcal{P}(1,\delta_{a}^{x})=\mathbb{P}_{\delta_{a}^{x}}\left(\xi_{\infty}=t_{a}\delta_{a}^{0}+(1-t_{a})\delta_{a}^{L+1}\right)$. This is the probability of a random walker on the chain $\{1,\ldots,L\}$ with absorbing boundaries {\color{blue}is absorbed at extra-site $0$. It fulfils the following equations discrete Laplace equation}
 \begin{equation}\label{gamblers-ruin}
 	\begin{cases}
 		\Delta_{L}\mathcal{P}(1,\delta_{a}^{x})=0\\
@@ -2573,7 +2573,7 @@ and
 &\left(\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{|\alpha|}\right)^{\xi_{a}^{0}-\xi_{a}^{1}+\xi_{a}^{1}}\right)\left(\prod_{b=1}^{N-1}\left(\frac{\alpha_{b}}{\alpha_{N}}\right)^{r_{b}}\right)\left(\prod_{c=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-r_{c}+r_{c}}\right)\\=&	\left(\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{|\alpha|}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\right)\left(\prod_{b=1}^{N-1}\left(\frac{\alpha_{b}}{|\alpha|}\right)^{r_{b}-\xi_{b}^{1}}\right)\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-r_{1}-\ldots-r_{N-1}}
 \end{align*}
 and the multinomial theorem in the last equality. \\ We now consider the second addend in the curly brackets of \eqref{ProvaBordoTH}.
-We multiplying it by $\prod_{a=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-r_{a}+r_{a}}$ and we obtain
+We multiplying it by $\prod_{a=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-r_{a}+r_{a}}$ to get
 \begin{equation}\label{pezzo2}
 	\begin{split}
 		&D(\bm{n},\bm{\xi})\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\frac{\nu!}{r_{1}!\cdots r_{N}!}\left(\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{\alpha_{N}}\right)^{r_{a}}\right)\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-(r_{1}+\ldots+r_{N-1})+(r_{1}+\ldots+r_{N-1})}\\=&D(\bm{n},\bm{\xi})
@@ -2594,7 +2594,7 @@ where we used the multinomial theorem. Therefore, replacing \eqref{pezzo1} and \
 For all $x\in \{1,\ldots,L-1\}$ and for all $d\in \{1,\ldots,N-1\}$ we have
 \begin{equation}\label{actionGraphRD}
 	\begin{split}
-		\mathcal{L}_{x,x+1}^{rd}n_{d}^{x}&=\nu \sigma_{11}(n_{d}^{x+1}-n_{d}^{x})+\nu\sigma_{12}\sum_{b=1\,:	,b\neq d}^{N-1}(n_{b}^{x+1}-n_{d}^{x})+(\Upsilon-2\nu\sigma_{12})\sum_{b=1}^{N-1}(n_{b}^{x}-n_{\alpha}^{x})\dt
+		\mathcal{L}_{x,x+1}^{rd}n_{d}^{x}&=\nu \sigma_{11}(n_{d}^{x+1}-n_{d}^{x})+\nu\sigma_{12}\sum_{b=1\,:	,b\neq d}^{N-1}(n_{b}^{x+1}-n_{d}^{x})+(\Upsilon-2\nu\sigma_{12})\sum_{b=1}^{N-1}(n_{b}^{x}-n_{d}^{x})\dt
 	\end{split}
 \end{equation}
 Indeed, 
@@ -2605,7 +2605,7 @@ Indeed,
 \end{equation}
 In the brackets of the right-hand-side of the above equation we have: a contribution $-n_{d}^{x}n_{B}^{x+1}$, when $A=d$; a contribution $n_{A}^{x}n_{d}^{x+1}$, when $B=d$. Thus we obtain 
 \begin{align*}
-	\mathcal{L}_{x,x+1}n_{d}^{x}=&\sum_{a=1}^{N}n_{A}^{x}n_{d}^{x+1}-\sum_{B=1}^{N}n_{d}^{x}n_{B}^{x+1}\\
+	\mathcal{L}_{x,x+1}n_{d}^{x}=&\sum_{A=1}^{N}n_{A}^{x}n_{d}^{x+1}-\sum_{B=1}^{N}n_{d}^{x}n_{B}^{x+1}\\
 	=&\sum_{a=1}^{N-1}n_{a}^{x}n_{d}^{x+1}+(\nu-\sum_{c=1}^{N-1}n_{c}^{x})n_{d}^{x+1}-\sum_{b=1}^{N-1}n_{d}^{x}n_{b}^{x+1}-n_{d}^{x}(\nu-\sum_{c=1}^{N-1}n_{c}^{x+1})\\
 	=&\nu\left(n_{d}^{x+1}-n_{d}^{x}\right)
 \end{align*} 
@@ -2616,7 +2616,7 @@ where we have used the fact that $n_{N}^{x}=\nu-\sum_{c=1}^{N-1}n_{c}^{x}$.
 		\mathcal{L}_{x,x+1}^{c}n_{d}^{x}&=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{h_{c}(B)}^{x}+\bm{\delta}_{h_{c}(A)}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)\dt
 	\end{split}
 \end{equation}
-In the brackets of the right-hand-side of the above equation we have: a contribution $-n_{d}^{x}n_{D}^{x+1}$, when $A=d$ (here we call $D=h_{c}(B)$); a contribution $n_{A}^{x}n_{h_{c}(B^{'})}^{x+1}$, where we denoted by $B^{'}\in \{1,\ldots,N\}$ the type of particle such that $h_{c}(B^{'})=d$. Let us observe that, by the definition of the map $h_{c}(\cdot)$ and for the fact that $1\leq c\leq N-2$, we have that in the above equation $h_{c}(B^{'})\neq d$ and $h_{c}(B^{'})\neq N$. Thus we obtain 
+In the brackets of the right-hand-side of the above equation we have: a contribution $-n_{d}^{x}n_{D}^{x+1}$, when $A=d$ (here we call $D=h_{c}(B)$); a contribution $n_{A}^{x}n_{h_{c}(B^{'})}^{x+1}$, where we denoted by $B^{'}\in \{1,\ldots,N\}$ the species of particle such that $h_{c}(B^{'})=d$. Let us observe that, by the definition of the map $h_{c}(\cdot)$ and for the fact that $1\leq c\leq N-2$, we have that $h_{c}(B^{'})\neq d$ and $h_{c}(B^{'})\neq N$. Thus we obtain 
 \begin{align}
 		\mathcal{L}_{x,x+1}^{c}n_{d}^{x}&=\sum_{A=1}^{N}n_{A}^{x}n_{h_{c}(B^{'})}^{x+1}-\sum_{D=1}^{N}n_{d}^{x}n_{D}^{x+1}
 		\\&=
@@ -2635,16 +2635,16 @@ Then, summing over all indices $c\in\{1,\ldots,N-2\}$, we obtain \eqref{actionGr
 Acting on $n_{d}^{1}$  with $\mathcal{L}_{\text{left}}^{rd}$ we obtain
 \begin{equation}\label{actionBoudaryRD}
 	\begin{split}
-		\mathcal{L}_{\text{left}}^{rd}n_{d}^{1}&=\sum_{A,B=1}^{N}\alpha_{A}n_{B}^{1}\left((n_{d}^{1}-\bm{\delta}_{B}^{1}+\bm{\delta}_{B}^{1})-n_{d}^{1}\right)=\alpha_{d}\sum_{B=1\,:\,B\neq d}^{N}n_{B}^{1}-n_{d}^{1}\sum_{B=1\,:B\neq d}^{N}\alpha_{B}
+		\mathcal{L}_{\text{left}}^{rd}n_{d}^{1}&=\sum_{A,B=1}^{N}\alpha_{A}n_{B}^{1}\left((n_{d}^{1}-\bm{\delta}_{B}^{1}+\bm{\delta}_{A}^{1})-n_{d}^{1}\right)=\alpha_{d}\sum_{B=1\,:\,B\neq d}^{N}n_{B}^{1}-n_{d}^{1}\sum_{A=1\,:A\neq d}^{N}\alpha_{A}
 	\end{split}
 \end{equation}
-Indeed, by using equation \eqref{boundaryParamRD}, we obtain 
+Using equation \eqref{boundaryParamRD}, we obtain 
 \begin{align}
 			\mathcal{L}_{\text{left}}^{rd}n_{d}^{1}&=
-		\alpha_{d}\left(\nu-n_{d}^{1}\right)-n_{d}^{1}\left(\nu(\sigma_{11}+(N-2)\sigma_{12})-\alpha_{d}\right)
-		\\&=\alpha_{d}\nu-n_{d}^{1}\nu(\sigma_{11}+(N-2)\sigma_{12})
+		\alpha_{d}\left(\nu-n_{d}^{1}\right)-n_{d}^{1}\left(\nu(\sigma_{11}+(N-2)\sigma_{12})-\alpha_{d}\right)\nonumber
+		\\&=\alpha_{d}\nu-n_{d}^{1}\nu(\sigma_{11}+(N-2)\sigma_{12})\nonumber
 		\\&=
-		\nu\sigma_{11}\rho_{d}^{\text{left}}+\nu\sigma_{12}\left(\sum_{b=1\,:\,b\neq d}^{N-1}\rho_{b}^{\text{left}}\right)-n_{d}^{1}\nu(\sigma_{11}+(N-2)\sigma_{12})
+		\nu\sigma_{11}\rho_{d}^{\text{left}}+\nu\sigma_{12}\left(\sum_{b=1\,:\,b\neq d}^{N-1}\rho_{b}^{\text{left}}\right)-n_{d}^{1}\nu(\sigma_{11}+(N-2)\sigma_{12})\nonumber
 		\\&=
 		\nu \sigma_{11} (\rho_{d}^{\text{left}}-n_{d}^{1})+\nu\sigma_{12}\sum_{b=1\,:\,b\neq d}^{N-1}(\rho_{b}^{\text{left}}-n_{d}^{1})
 	\end{align}
