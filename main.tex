@@ -21,29 +21,30 @@
 
 
 
-% \usepackage[margin=2.5cm]{geometry} 
+\usepackage[margin=2.5cm]{geometry} 
 
-%%%%%  TODO NOTES ETC  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\usepackage[left=1.7cm,right=4.3cm,bottom=4cm]{geometry}
-\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-\definecolor{todocolor}{HTML}{D7E1E5}
-\usepackage[textsize=tiny, 
-            backgroundcolor=todocolor, 
-            bordercolor=todocolor, 
-            linecolor=todocolor, 
-            textwidth=3.9cm]{todonotes}
-\newcommand{\todoWARN}[1]{\todo{\colorbox{yellow}{\parbox{3.4cm}{#1}}}}
-\newcommand{\todoERR}[1]{\todo{\colorbox{red}{\parbox{3.4cm}{#1}}}}
-\usepackage{comment}
-\usepackage{rotating}
-\usepackage[left]{showlabels}
-\renewcommand{\showlabelfont}{\tiny}
-\renewcommand{\showlabelsetlabel}[1]
-{\begin{turn}{65}\showlabelfont \llap{#1}\end{turn}}
-\newcommand{\wiptitle}[1]{
-    \par\noindent\hspace*{-0.5cm}\texttt{\scriptsize\color{gray} \lbrack #1\rbrack} \par\noindent\ignorespaces}
+% %%%%%  TODO NOTES ETC  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% \usepackage[left=1.7cm,right=4.3cm,bottom=4cm]{geometry}
+% \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+% \definecolor{todocolor}{HTML}{D7E1E5}
+% \usepackage[textsize=tiny, 
+%             backgroundcolor=todocolor, 
+%             bordercolor=todocolor, 
+%             linecolor=todocolor, 
+%             textwidth=3.9cm]{todonotes}
+% \newcommand{\todoWARN}[1]{\todo{\colorbox{yellow}{\parbox{3.4cm}{#1}}}}
+% \newcommand{\todoERR}[1]{\todo{\colorbox{red}{\parbox{3.4cm}{#1}}}}
+% \usepackage{comment}
+% \usepackage{rotating}
+% \usepackage[left]{showlabels}
+% \renewcommand{\showlabelfont}{\tiny}
+% \renewcommand{\showlabelsetlabel}[1]
+% {\begin{turn}{65}\showlabelfont \llap{#1}\end{turn}}
+% \newcommand{\wiptitle}[1]{
+%     \par\noindent\hspace*{-0.5cm}\texttt{\scriptsize\color{gray} \lbrack #1\rbrack} \par\noindent\ignorespaces}
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -235,18 +236,8 @@ are also discussed.
 \newpage
 \tableofcontents
 
- \newpage
- {\color{blue}
- To do
- \begin{itemize}
-  \item Clean introduction
-  \item Try to clarify text in Corollary 1 and Theorem 2
-  \item Clean Section 5
-  \item Clarify Corollary 2
-  \item double check Remark 10
-  \item Clean appendix
- \end{itemize}
-}
+
+ \newpage 
 \section{Introduction} 
 Boundary-driven particle systems are paradigmatic models for non-equilibrium statistical mechanics. In a boundary-driven system, the model is put in contact with reservoirs, 
 %at its {\color{red}``boundaries'' } imposing different particle densities, 
@@ -1124,7 +1115,7 @@ Using duality, one can compute the  $m$-point correlations between non-empty par
 Furthermore we write $\mathbb{E}[\cdot]$ for the expectation with respect to $\mu$.%For arbitrary $m\in \mathbb{N}$ such that $m<L$, we fix $a_{k}\in\{1,\ldots,N-1\}$ and $x_{k}\in\{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for every $k\in\{1,\ldots,m\}$. 
 \begin{corollary}[Correlations via duality]\label{Corolollary-ABS_Corr-abstract}
 Let $m\in \{1,\ldots,L\}$ and consider $m$ sites $1 \le x_{1} < x_2 < \ldots < x_m \le L $ and
-{\color{blue}$m$ colours denoted by $a_{k}\in\{1,\ldots,N-1\}$  with $k=1,2,\ldots, m$, chosen among the $N-1$ available species.} Then, the $m$-point correlations in the non-equilibrium steady state read\todo{this I find still confusing [WHAT ABOUT THE BLUE SENTENCE?]}
+{$m$ colours denoted by $a_{k}\in\{1,\ldots,N-1\}$  with $k=1,2,\ldots, m$, chosen among the $N-1$ available species.} Then, the $m$-point correlations in the non-equilibrium steady state read 
 \begin{equation}\label{NESS-expectation-ABS}
 \mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\mathcal{P}_{x_1,\ldots,x_m}(t_{1},\ldots,t_{m})
 \end{equation}
@@ -1328,9 +1319,8 @@ In this section we write a formula for the stationary non-equilibrium steady sta
 \begin{theorem}[Correlations in the non-equilibrium steady state]\label{thm-correlations}
 %Consider $m\in \{1,\ldots,L\}$ points with coordinates given by $(x_{1},\ldots,x_{m})$, such that $x_{k}<x_{k+1}$ $\forall k\in \{1,\ldots,m-1\}$
 %and consider $m$ species $a_{k}\in \{1,\ldots,N-1\}$. 
-Let $m\in \{1,\ldots,L\}$ and consider $m$ sites $1 \le x_{1} < x_2 < \ldots < x_m \le L $ and
-$m$ species $a_{k}\in\{1,\ldots,N-1\}$  with $k=1,2,\ldots, m$.
-\todo{should this not be particles or so ? Maybe we can call particles 1 to N-1 excitations....}
+Let $m\in \{1,\ldots,L\}$. Consider $m$ sites $1 \le x_{1} < x_2 < \ldots < x_m \le L $ and
+{$m$ colours denoted by $a_{k}\in\{1,\ldots,N-1\}$  with $k=1,2,\ldots, m$, chosen among the $N-1$ available species.}  
 Then the $m$-point correlations with respect to the non-equilibrium steady state measure are given by 
 \begin{equation}\label{exactCorrelations}
 \mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]\\=\sum_{t_{1},\ldots,t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{m})
@@ -2544,7 +2534,7 @@ First, we act with $\mathcal{L}_{\text{left}}^{TH}$ on $D(\bm{n},\bm{\xi})$. By 
 	\\\times &
 	\frac{\nu!}{r_{1}!\cdots r_{N}!}\left(\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{\alpha_{N}}\right)^{r_{a}}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu}\right)\dt
 \end{align}
-We consider the first addend in the curly bracket of the \eqref{ProvaBordoTH}. We add and remove $\xi_{a}^{1}$ at the exponent of $\left(\frac{\alpha_{a}}{|\alpha|}\right)$ and then we multiplying this first addend by $\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-(r_{1}^{1}+\ldots+r_{N-1})+(r_{1}^{1}+\ldots+r_{N-1})}$.\todo{fix text?} Thus, we have
+We consider the first addend in the curly bracket of the \eqref{ProvaBordoTH}. We add and remove $\xi_{a}^{1}$ at the exponent of $\left(\frac{\alpha_{a}}{|\alpha|}\right)$ and then we multiplying this first addend by $\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-(r_{1}^{1}+\ldots+r_{N-1})+(r_{1}^{1}+\ldots+r_{N-1})}$ to get
 \begin{align}\label{pezzo1}
 	&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\nonumber
 	\\
@@ -2571,8 +2561,7 @@ We multiplying it by $\prod_{a=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^
 	\begin{split}
 		&D(\bm{n},\bm{\xi})\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\frac{\nu!}{r_{1}!\cdots r_{N}!}\left(\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{\alpha_{N}}\right)^{r_{a}}\right)\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-(r_{1}+\ldots+r_{N-1})+(r_{1}+\ldots+r_{N-1})}\\=&D(\bm{n},\bm{\xi})
 	\end{split}
-\end{equation}
-\todo{doublecheck}
+\end{equation} 
 where we used the multinomial theorem. Therefore, replacing \eqref{pezzo1} and \eqref{pezzo2} in \eqref{ProvaBordoTH} we have that
 \begin{align}
 	\left(\mathcal{L}_{\text{left}}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left\{\prod_{a=1}^{N-1}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
@@ -2593,8 +2582,7 @@ For all $x\in \{1,\ldots,L-1\}$ and for all $d\in \{1,\ldots,N-1\}$ we have
 \end{equation}
 Indeed, 
 \begin{enumerate}
-	\item \textit{\underline{Stirring generator}}: {\color{blue}using edge generator $\mathcal{L}_{x,x+1}$ of the multispecies stirring process introduced in Section \ref{sec1} (with $y=x+1$) we have that}
-\todo{shorter? }
+	\item \textit{\underline{Stirring generator}}: {using edge generator $\mathcal{L}_{x,x+1}$ of the multispecies stirring process introduced in Section~\ref{sec1} (with $y=x+1$) we have that} 
 \begin{equation}
 	\mathcal{L}_{x,x+1}n_{d}^{x}=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{B}^{x}+\bm{\delta}_{A}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)\dt
 \end{equation}
