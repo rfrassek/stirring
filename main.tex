@@ -1160,7 +1160,29 @@ For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function o
 % \eqref{exactCorrelations}.} 
 \end{corollary}
 {\color{blue} Here $\mu(\bm{\tau})$ is the  non-equilibrium steady probability of having a configuration $\bm{\tau}$, that can be composed by particles and holes as well. However, from Corollary \ref{Corolollary-ABS_Corr-abstract}, we only have an explicit formula for the expectations of the indicator of particle configurations (indeed $a_{1},\ldots,a_{m}$ are different from $N$). Therefore, to write the probability mass function $\mu$ for occupations containing holes we have to use the conservation of probability to get rid of the indicators of these holes. Then, equation \eqref{implicit-mass-function} is derived (for details see below the proof of Corollary \ref{Corollary-NESS-ABS}).\\
- The expectation on the right-hand-side of \eqref{implicit-mass-function} contains only indicators of particles configurations: indeed in the first product  $\tau_{x}\neq N$ are considered, while in the second product we have $a_{k}\neq N$ for all $k\in\{1,\ldots,N\}$. As a consequence, we can map the coordinates $x_{1},\ldots,x_{m}$ and the types $a_{1},\ldots,a_{m}$ introduced in Corollary \ref{Corolollary-ABS_Corr-abstract} with, respectively, the coordinates $x$ (where the $\tau_{x}\neq N$) and $q_{1},\ldots,q_{b}$ and with the types $\tau_{x}\neq N$ and $a_{1},\ldots,a_{b}$. For this reason, by knowing the correlations \eqref{exactCorrelations}, the probability mass function $\mu(\bm{\tau})$ given in equation \eqref{implicit-mass-function} is obtained.}\\ \\
+ The expectation on the right-hand-side of \eqref{implicit-mass-function} contains only indicators of particles configurations: indeed in the first product  $\tau_{x}\neq N$ are considered, while in the second product we have $a_{k}\neq N$ for all $k\in\{1,\ldots,N\}$. As a consequence, we can map the coordinates $x_{1},\ldots,x_{m}$ and the types $a_{1},\ldots,a_{m}$ introduced in Corollary \ref{Corolollary-ABS_Corr-abstract} with, respectively, the coordinates $x$ (where the $\tau_{x}\neq N$) and $q_{1},\ldots,q_{b}$ and with the types $\tau_{x}\neq N$ and $a_{1},\ldots,a_{b}$. For this reason, by knowing the correlations \eqref{exactCorrelations}, the probability mass function $\mu(\bm{\tau})$ given in equation \eqref{implicit-mass-function} is obtained.}\\
+{\color{blue} \paragraph{Example for an $L=2$ chain.} To clarify equation \eqref{implicit-mass-function} we report the example of a chain with $L=2$, where we compute the probability mass functions of three configurations. Without loss of generality we assume that the particles are always of species $1$. We have that 
+ \begin{itemize}
+ 	\item probability of two occupied site:
+ 	\begin{equation}
+ 		\mu(1,1)=\mathbb{E}\left[\mathbbm{1}_{\{Y_{1}=1\}}\mathbbm{1}_{\{Y_{2}=1\}}\right]\dt
+ 	\end{equation}
+ 	Here the right-hand-side corresponds to $b=0$ and average can be computed by Corollary \ref{Corolollary-ABS_Corr-abstract} with $m=2$, $x_{1}=1,\;x_{2}=2$ and $a_{1}=a_{2}=1$.
+ 	\item probability of the first site occupied and the second empty:
+ 	\begin{align}
+ 		\mu(1,N)=&\mathbb{E}\left[\mathbbm{1}_{\{Y_{1}=1\}}\mathbbm{1}_{\{Y_{2}=1\}}\right]=\mathbb{E}\left[\mathbbm{1}_{\{Y_{1}=1\}}\left(1-\sum_{a=1}^{N-1}\mathbbm{1}_{\{Y_{2}=a\}}\right)\right]\nonumber
+ 		\\=&
+ 		\mathbb{E}\left[\mathbbm{1}_{\{Y_{1}=1\}}\right]-\sum_{a=1}^{N-1}\mathbb{E}\left[\mathbbm{1}_{\{Y_{1}=1\}}\mathbbm{1}_{\{Y_{2}=a\}}\right]\dt
+ 	\end{align}
+ 	Here the first term on the right-hand-side corresponds to $b=0$ in \eqref{implicit-mass-function} and can be computed by Corollary \ref{Corolollary-ABS_Corr-abstract} with $m=1$, $x_{1}=1$ and $a_{1}=1$. The second term on the right-hand-side corresponds to $b=1$ in \eqref{implicit-mass-function} and can be computed by Corollary \ref{Corolollary-ABS_Corr-abstract} with $m=2$, $x_{1}=1,\;x_{2}=2$ and $a_{1}=1,\;a_{2}=a$ for all $a=1,\ldots N-1$. 
+ 	\item probability of both sites empty:
+ 	\begin{align}
+ 		\mu(N,N)=&\mathbb{E}\left[\mathbbm{1}_{\{Y_{1}=1\}}\mathbbm{1}_{\{Y_{2}=1\}}\right]=\mathbb{E}\left[\left(1-\sum_{a_{1}=1}^{N-1}\mathbbm{1}_{\{Y_{1}=_{1}a\}}\right)\left(1-\sum_{a_{2}=1}^{N-1}\mathbbm{1}_{\{Y_{2}=a_{2}\}}\right)\right]\nonumber
+ 		\\=&
+ 		1-\sum_{a_{1}=1}^{N-1}\mathbb{E}\left[\mathbbm{1}_{\{Y_{1}=a_{1}\}}\right]-\sum_{a_{2}=1}^{N-1}\mathbb{E}\left[\mathbbm{1}_{Y_{2}=a_{2}}\right]+\sum_{a_{1},a_{2}=1}^{N-1}\mathbb{E}\left[\mathbbm{1}_{\{Y_{1}=a_{1}\}}\mathbbm{1}_{\{Y_{2}=a_{2}\}}\right]\dt
+ 	\end{align}
+ 	Here the first term on the right-hand-side corresponds to $b=0$ and since $\bm{\tau}=(N,N)$ we obtain $1$. The second and the third term on the right-hand-side correspond to $b=1$. They can be computed by Corollary \ref{Corolollary-ABS_Corr-abstract} with $m=1$ and by fixing $x_{1}=1$, $a_{1}=1,\ldots,N-1$ and $x_{2}=2$, $a_{2}=1,\ldots,N-1$ respectively. The fourth term on the right-hand-side corresponds to $b=2$ and it can be computed by Corollary \ref{Corolollary-ABS_Corr-abstract} with $m=2$, $x_{1}=1,\,x_{2}=2$ and $a_{1},a_{2}=1,\ldots,N-1$. 
+ \end{itemize}}
 \textbf{Proof of Corollary~\ref{Corollary-NESS-ABS}:}
 Given $\bm{\tau}\in \Omega^{'}$,  we have 
 \begin{align}
