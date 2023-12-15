@@ -2124,16 +2124,16 @@ We recall that the dual processes are defined on an enlarged chin with two extra
 %	\rho_{a}^{\text{left}}=\frac{\alpha_{a}}{|\alpha|},\qquad \qquad \rho_{a}^{\text{right}}=\frac{\beta_{a}}{|\beta|}\,.
 %\end{equation}
 \subsection{Duality for a boundary driven chain}\label{Subsection-ss-nonI}
- As already pointed out the dual process eventually voids the chain by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites $0$ and $L+1$ and replacing them by the holes $N$. This property allows to characterize the steady state non-equilibrium distribution (that is unique) by the probability that dual particles are absorbed in the extra-sites, called \textit{absorption probabilities}. This is a generalization for the non-integrable chain of the Corollary~\ref{Corolollary-ABS_Corr-abstract}. The process $\left(\bm{n}(t)\right)_{t\geq0}$ has generator
+ As already pointed out, the dual process voids the chain by piling up particles of species $\{1,\ldots,N-1\}$ in the extra sites $0$ and $L+1$ and replacing them by the holes $N$. This property allows to characterize the steady state non-equilibrium distribution (that is unique) by the probability that dual particles are absorbed in the extra-sites, called \textit{absorption probabilities}. This is a generalization for the non-integrable chain of the Corollary~\ref{Corolollary-ABS_Corr-abstract}. The process $\left(\bm{n}(t)\right)_{t\geq0}$ has generator
 \begin{equation}
 	\mathcal{L}=\mathcal{L}_{\text{left}}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\mathcal{L}_{\text{right}}\dt
 \end{equation} 
 where $\mathcal{L}_{x,x+1}$ is the edge generator defined in \eqref{edgeGenerator} acting on the bond $(x,x+1)$ and $\mathcal{L}_{\text{left}}$ and $\mathcal{L}_{\text{right}}$ are the generators \eqref{siteGenerator} acting on sites $1$ and $L$ with parameters $(\alpha_{A})_{A\in \{1,\ldots,N\}}$ and $(\beta_{A})_{A\in \{1,\ldots,N\}}$ respectively. 
-The process is dual to $(\bm{\xi}(t))_{t\geq0}$, defined on the dual state space $\widetilde{\Omega}_{L}$, has generator
+The process is dual to $(\bm{\xi}(t))_{t\geq0}$, defined on the dual state space $\widetilde{\Omega}_{L}$, and has generator
 \begin{equation}
 	\widetilde{\mathcal{L}}=\widetilde{\mathcal{L}}_{\text{left}}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\widetilde{\mathcal{L}}_{\text{right}}
 \end{equation} 
-where $\mathcal{L}_{x,x+1}$ is given by \eqref{Generator} and where the boundary generators $\widetilde{\mathcal{L}}_{\text{left}}$ and $\widetilde{\mathcal{L}}_{\text{right}}$ are given in \eqref{siteDualGenerator}: they absorb particles from sites $1$ and $L$ and put them at extra-sites $0$ and $L+1$ respectively. The duality function reads is \eqref{dualityElements} specified on the chain. 
+where $\mathcal{L}_{x,x+1}$ is given by \eqref{Generator} and where the boundary generators $\widetilde{\mathcal{L}}_{\text{left}}$ and $\widetilde{\mathcal{L}}_{\text{right}}$ are given in \eqref{siteDualGenerator}: they absorb particles from sites $1$ and $L$ and put them at extra-sites $0$ and $L+1$ respectively. The duality function is \eqref{dualityElements} specified on the chain. 
 We call $\mu_{\text{NESS}}$ the non-equilibrium stationary steady state of the the process $(\bm{n}(t))_{t\geq 0}$, we denote by $\mathbb{E}_{\mu_{\text{NESS}}}[\cdot]$ the expectation with respect to this measure and and we call $\bm{\mathcal{Y}} = (\mathcal{Y}^{1},\ldots,\mathcal{Y}^{L})$ the random vector with law $\mu_{\text{NESS}}$. For every $m\in\{1,\ldots,L\}$ we consider  $x_{1},\ldots,x_{m}\in\{1,\ldots,L\}$ and $a_{1},\ldots,a_{m}\in \{1,\ldots,N-1\}$. We introduce the dual configuration  $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, meaning that 
 \begin{equation}
 	\xi_{A}^{x}=	\begin{cases}
@@ -2146,7 +2146,7 @@ The duality function is \eqref{dualityElements}, adapted to the chain. Therefore
 	D(\bm{n},\bm{\xi})= \frac{\prod_{k=1}^{m}n_{a_{k}}^{x_{k}}}{C(\nu,m)}\dt
 \end{equation}
 where $C(\nu,m)$ is a constant that depends on $m$ and on the maximal number of particle per site $\nu$. 
-Therefore, up to this constant, $\mathbb{E}_{\mu_{\text{NESS}}}\left[D(\bm{n},\bm{\xi})\right]$ gives the $m-$points correlations at non-equilibrium steady state. The following equalities hold using ergodicity and duality:
+Therefore, up to this constant, $\mathbb{E}_{\mu_{\text{NESS}}}\left[D(\bm{n},\bm{\xi})\right]$ gives the $m-$point correlations in the non-equilibrium steady state. The following equalities hold using ergodicity and duality:
 \begin{equation}\label{ExptationSS}
 	\begin{split}
 		\frac{\mathbb{E}_{\mu_{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\mathcal{Y}_{a_{k}}^{x_{k}}=n_{a_{k}}^{x_{k}}\}}\right]}{C(\nu,m)}&=\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\bm{\xi})\right]=\lim_{t\to\infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{n},\bm{\xi}(t))\right]
@@ -2159,7 +2159,7 @@ here we recall that, generalizing Corollary~\ref{Corolollary-ABS_Corr-abstract},
 	\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{N})	=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{a=1}^{N-1}\left(t_{a}\delta_{a}^{0}+(|\xi_{a}|-t_{a})\delta_{a}^{L+1}\right)\Big|  \bm{\xi}(0)=\bm{\xi}\right)
 \end{equation}
 are the absorption probabilities for the non-integrable chain, i.e. the probabilities that $t_{a}$ particles of species $a$ are absorbed at $0$. Here we have denoted $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x}$.
- These correlations can be computed once the absorption probabilities are known. For example, we report in Appendix~\ref{appendix-1pts-general} the solution for the simplest case of one point correlations that is exactly solvable, since the single dual particle behaves as an independent random walker. The absorption probabilities for higher point correlations fulfill  difference equations.
+ These correlations can be computed once the absorption probabilities are known. For example, we report in Appendix~\ref{appendix-1pts-general} the solution for the simplest case of one-point correlations that is exactly solvable, since the single dual particle behaves as an independent random walker. The absorption probabilities for higher point correlations fulfill  difference equations.
 
 
 
@@ -2461,7 +2461,8 @@ We observe that for any $x\in \{1,\ldots,L\}$
 	\prod_{a=1}^{N-1}\mathbbm{1}_{\{\delta_{\sigma_{x},a}\geq\xi_{a}^{x}(\bm{\tau})\}}=\left(\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\right)^{(1-\delta_{\tau_{x},N})}%=\begin{cases}
 		%	\mathbbm{1}_{\{\sigma_{x}=\tau_{x}\}}\qquad &\text{if}\quad \tau_{x}\neq N\\
 		%	1\qquad  &\text{if}\quad \tau_{x}= N
-		%	\end{cases}\dt
+		%	\end{cases}
+		\dt
 \end{equation}
 Indeed, we have that 
 \begin{equation}
@@ -2526,12 +2527,13 @@ that is the same result obtained in \eqref{one-pts-corr}.
 The proof of the duality consists in showing
 \begin{align}
 	\left(\mathcal{L}_{x,x+1}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left(\widetilde{\mathcal{L}}_{x,x+1}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\qquad x\in \{1,\ldots,L-1\}\label{bulkDualityTH}\\
-	\left(\mathcal{L}_{\text{left}}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left(\widetilde{\mathcal{L}}_{\text{left}}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\label{boundaryDualityTH}
+	\left(\mathcal{L}_{\text{left}}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left(\widetilde{\mathcal{L}}_{\text{left}}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\dt\label{boundaryDualityTH}
 \end{align}
 Duality for the right boundary is similar. \\
 Equation \eqref{bulkDualityTH} follows from the proof of the edge duality for the multispecies stirring process. To prove \eqref{boundaryDualityTH} we directly apply the generators on the duality function. For the sake of notation, we introduce 
+%
 \begin{equation}
-	d(n^{x},\xi^{x}):=\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}
+	d(n^{x},\xi^{x}):=\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\dt
 \end{equation}
 First, we act with $\mathcal{L}_{\text{left}}^{TH}$ on $D(\bm{n},\bm{\xi})$. By writing explicitly $\rho_{a}^{L}=\frac{\alpha_{a}}{|\alpha|}$, this action gives
 \begin{align}\label{ProvaBordoTH}
@@ -2540,9 +2542,9 @@ First, we act with $\mathcal{L}_{\text{left}}^{TH}$ on $D(\bm{n},\bm{\xi})$. By 
 	\times &\nonumber
 	\left.\left(\prod_{b=1}^{N-1}\frac{r_{b}!}{(r_{b}-\xi^{1}_{b})!}\right)\left(\prod_{x=2}^{L}d(n^{x},\xi^{x})\right)\left(\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}\right)-D(\bm{n},\bm{\xi})\right\}
 	\\\times &
-	\frac{\nu!}{r_{1}!\cdots r_{N}!}\left(\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{\alpha_{N}}\right)^{r_{a}}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu}\right)
+	\frac{\nu!}{r_{1}!\cdots r_{N}!}\left(\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{\alpha_{N}}\right)^{r_{a}}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu}\right)\dt
 \end{align}
-We consider the first addend in the curly bracket of the \eqref{ProvaBordoTH}. We add and remove $\xi_{a}^{1}$ at the exponent of $\left(\frac{\alpha_{a}}{|\alpha|}\right)$ and then we multiplying this first addend by $\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-(r_{1}^{1}+\ldots+r_{N-1})+(r_{1}^{1}+\ldots+r_{N-1})}$. Thus, we have
+We consider the first addend in the curly bracket of the \eqref{ProvaBordoTH}. We add and remove $\xi_{a}^{1}$ at the exponent of $\left(\frac{\alpha_{a}}{|\alpha|}\right)$ and then we multiplying this first addend by $\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-(r_{1}^{1}+\ldots+r_{N-1})+(r_{1}^{1}+\ldots+r_{N-1})}$.\todo{fix text?} Thus, we have
 \begin{align}\label{pezzo1}
 	&\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\nonumber
 	\\
@@ -2553,7 +2555,7 @@ We consider the first addend in the curly bracket of the \eqref{ProvaBordoTH}. W
 	\left(\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{|\alpha|}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\right)\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}	\frac{\left(\nu-\xi_{1}^{1}-\ldots-\xi_{N-1}^{1}\right)!}{(r_{1}-\xi_{1}^{1})!\cdots(r_{N-1}-\xi_{N-1}^{1})!(\nu-r_{1}-\ldots-r_{N-1})!}\nonumber\\
 	\times& \left(\prod_{b=1}^{N-1}\left(\frac{\alpha_{b}}{|\alpha|}\right)^{r_{b}-\xi_{b}^{1}}\right)\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu-r_{1}-\ldots-r_{N-1}}\left(\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\right)\left(\prod_{d=1}^{N-1}(\rho_{d}^{R})^{\xi_{d}^{L+1}}\right)\nonumber
 	\\=&
-	\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{\text{left}}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\right)\left(\prod_{x=2}^{L}d(n^{x},\xi^{x})\right)\left(\prod_{d=1}^{N-1}(\rho_{d}^{\text{right}})^{\xi_{d}^{L+1}}\right)
+	\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{\text{left}}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\right)\left(\prod_{x=2}^{L}d(n^{x},\xi^{x})\right)\left(\prod_{d=1}^{N-1}(\rho_{d}^{\text{right}})^{\xi_{d}^{L+1}}\right)\dt
 \end{align}
 Where we used 
 \begin{equation*}
@@ -2570,11 +2572,12 @@ We multiplying it by $\prod_{a=1}^{N-1}\left(\frac{\alpha_{N}}{|\alpha|}\right)^
 		&D(\bm{n},\bm{\xi})\sum_{r_{1}=0}^{\nu}\ldots\sum_{r_{N}=0}^{\nu}\mathbbm{1}_{\{r_{1}+\ldots+r_{N}=\nu\}}\frac{\nu!}{r_{1}!\cdots r_{N}!}\left(\prod_{a=1}^{N-1}\left(\frac{\alpha_{a}}{\alpha_{N}}\right)^{r_{a}}\right)\left(\frac{\alpha_{N}}{|\alpha|}\right)^{\nu}\left(\frac{\alpha_{N}}{|\alpha|}\right)^{-(r_{1}+\ldots+r_{N-1})+(r_{1}+\ldots+r_{N-1})}\\=&D(\bm{n},\bm{\xi})
 	\end{split}
 \end{equation}
+\todo{doublecheck}
 where we used the multinomial theorem. Therefore, replacing \eqref{pezzo1} and \eqref{pezzo2} in \eqref{ProvaBordoTH} we have that
 \begin{align}
 	\left(\mathcal{L}_{\text{left}}^{TH}D(\cdot,\bm{\xi})\right)(\bm{n})&=\left\{\prod_{a=1}^{N-1}\left(\frac{\alpha_{k}}{|\alpha|}\right)^{\xi_{a}^{0}+\xi_{a}^{1}}\prod_{x=2}^{N}d_{x}(n^{x},\xi^{x})\prod_{d=1}^{N-1}(\rho_{a}^{R})^{\xi_{d}^{L+1}}-D(\bm{n},\bm{\xi})\right\}
 	\\&=
-	\left(\widetilde{\mathcal{L}}_{\text{left}}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})
+	\left(\widetilde{\mathcal{L}}_{\text{left}}^{TH}D(\bm{n},\cdot)\right)(\bm{\xi})\dt
 \end{align}
 %The proof is similar for $\widetilde{\mathcal{L}}_{\text{right}}^{TH}$. 
 \begin{flushright}
@@ -2585,7 +2588,7 @@ where we used the multinomial theorem. Therefore, replacing \eqref{pezzo1} and \
 For all $x\in \{1,\ldots,L-1\}$ and for all $d\in \{1,\ldots,N-1\}$ we have
 \begin{equation}\label{actionGraphRD}
 	\begin{split}
-		\mathcal{L}_{x,x+1}^{rd}n_{d}^{x}&=\nu \sigma_{11}(n_{d}^{x+1}-n_{d}^{x})+\nu\sigma_{12}\sum_{b=1\,:	,b\neq d}^{N-1}(n_{b}^{x+1}-n_{d}^{x})+(\Upsilon-2\nu\sigma_{12})\sum_{b=1}^{N-1}(n_{b}^{x}-n_{\alpha}^{x})
+		\mathcal{L}_{x,x+1}^{rd}n_{d}^{x}&=\nu \sigma_{11}(n_{d}^{x+1}-n_{d}^{x})+\nu\sigma_{12}\sum_{b=1\,:	,b\neq d}^{N-1}(n_{b}^{x+1}-n_{d}^{x})+(\Upsilon-2\nu\sigma_{12})\sum_{b=1}^{N-1}(n_{b}^{x}-n_{\alpha}^{x})\dt
 	\end{split}
 \end{equation}
 Indeed, 
@@ -2593,7 +2596,7 @@ Indeed,
 	\item \textit{\underline{Stirring generator}}: {\color{blue}using edge generator $\mathcal{L}_{x,x+1}$ of the multispecies stirring process introduced in Section \ref{sec1} (with $y=x+1$) we have that}
 \todo{shorter? }
 \begin{equation}
-	\mathcal{L}_{x,x+1}n_{d}^{x}=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{B}^{x}+\bm{\delta}_{A}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)
+	\mathcal{L}_{x,x+1}n_{d}^{x}=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{B}^{x}+\bm{\delta}_{A}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)\dt
 \end{equation}
 In the brackets of the right-hand-side of the above equation we have: a contribution $-n_{d}^{x}n_{B}^{x+1}$, when $A=d$; a contribution $n_{A}^{x}n_{d}^{x+1}$, when $B=d$. Thus we obtain 
 \begin{align*}
@@ -2605,7 +2608,7 @@ where we have used the fact that $n_{N}^{x}=\nu-\sum_{c=1}^{N-1}n_{c}^{x}$.
 \item \textit{\underline{Stirring-mutation generator}}: for every $c\in \{1,\ldots,N-2\}$ we have 
 \begin{equation}
 	\begin{split}
-		\mathcal{L}_{x,x+1}^{c}n_{d}^{x}&=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{h_{c}(B)}^{x}+\bm{\delta}_{h_{c}(A)}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)
+		\mathcal{L}_{x,x+1}^{c}n_{d}^{x}&=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{h_{c}(B)}^{x}+\bm{\delta}_{h_{c}(A)}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)\dt
 	\end{split}
 \end{equation}
 In the brackets of the right-hand-side of the above equation we have: a contribution $-n_{d}^{x}n_{D}^{x+1}$, when $A=d$ (here we call $D=h_{c}(B)$); a contribution $n_{A}^{x}n_{h_{c}(B^{'})}^{x+1}$, where we denoted by $B^{'}\in \{1,\ldots,N\}$ the type of particle such that $h_{c}(B^{'})=d$. Let us observe that, by the definition of the map $h_{c}(\cdot)$ and for the fact that $1\leq c\leq N-2$, we have that in the above equation $h_{c}(B^{'})\neq d$ and $h_{c}(B^{'})\neq N$. Thus we obtain 
