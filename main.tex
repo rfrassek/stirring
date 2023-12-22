@@ -1196,7 +1196,7 @@ For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function o
 {\color{blue}
 \begin{equation}\label{implicit-mass-function}
 	\mu(\bm{\tau})=
-	\sum_{m=0}^{L}\;\sum_{1\leq x_{1}<x_{2}<\ldots<x_{m}\leq L}\left(\prod_{x\notin\{x_{1},\ldots,x_{m}\}}\delta_{\tau_{x},N}\right)\sum_{b_{1},\ldots,b_{m}=1}^{N-1}\left(\prod_{k=1}^{m}\delta_{\tau_{x_{k}},b_{k}}-\delta_{\tau_{x_{k}},N}\right)\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=b_{k}\}}\right]
+	\sum_{m=0}^{L}\;\sum_{1\leq x_{1}<x_{2}<\ldots<x_{m}\leq L}\left(\prod_{x\notin\{x_{1},\ldots,x_{m}\}}\delta_{\tau_{x},N}\right)\sum_{b_{1},\ldots,b_{m}=1}^{N-1}\left(\prod_{k=1}^{m}(\delta_{\tau_{x_{k}},b_{k}}-\delta_{\tau_{x_{k}},N})\right)\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=b_{k}\}}\right]
 \end{equation}}
 %\begin{equation}\label{implicit-mass-function}
 %	\mu(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{{1}},\ldots,a_{{b}}=1}^{N-1}{\color{black}
@@ -1211,7 +1211,7 @@ For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function o
  	\begin{equation}
  		\mu(1,1)=\mathbb{E}\left[\mathbbm{1}_{\{Y_{1}=1\}}\mathbbm{1}_{\{Y_{2}=1\}}\right]\dt
  	\end{equation}
- 	Here we have only one term corresponding to $m=2$ in formula  \eqref{implicit-mass-function}.
+ 	Here we have only one term corresponds to $m=2$ in formula  \eqref{implicit-mass-function}.
 	%and average can be computed by Corollary~\ref{Corolollary-ABS_Corr-abstract} with $m=2$, $x_{1}=1,\;x_{2}=2$ and $a_{1}=a_{2}=1$.
  	\item probability of the first site occupied and the second empty:
  	\begin{align}
@@ -1219,7 +1219,7 @@ For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function o
  		\\=&
  		\mathbb{E}\left[\mathbbm{1}_{\{Y_{1}=1\}}\right]-\sum_{a=1}^{N-1}\mathbb{E}\left[\mathbbm{1}_{\{Y_{1}=1\}}\mathbbm{1}_{\{Y_{2}=a\}}\right]\dt
  	\end{align}
-	{\color{blue}Here in the last equality we have two terms: the first corresponding to $m=1$ (with $x_{1}=1$) and the second corresponding to $m=2$ in formula \eqref{implicit-mass-function}.}
+	{\color{blue}In the last equality we have two terms: the first corresponds to $m=1$ (with $x_{1}=1$) and the second corresponds to $m=2$ in formula \eqref{implicit-mass-function}.}
 % 	Here the first term on the right-hand-side corresponds to $b=0$ in \eqref{implicit-mass-function} and can be computed by Corollary~\ref{Corolollary-ABS_Corr-abstract} with $m=1$, $x_{1}=1$ and $a_{1}=1$. The second term on the right-hand-side corresponds to $b=1$ in \eqref{implicit-mass-function} and can be computed by Corollary~\ref{Corolollary-ABS_Corr-abstract} with $m=2$, $x_{1}=1,\;x_{2}=2$ and $a_{1}=1,\;a_{2}=a$ for all $a=1,\ldots N-1$. 
  	\item probability of both sites empty:
  	\begin{align}
@@ -1227,7 +1227,7 @@ For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function o
  		\\=&
  		1-\sum_{a_{1}=1}^{N-1}\mathbb{E}\left[\mathbbm{1}_{\{Y_{1}=a_{1}\}}\right]-\sum_{a_{2}=1}^{N-1}\mathbb{E}\left[\mathbbm{1}_{\{Y_{2}=a_{2}\}}\right]+\sum_{a_{1},a_{2}=1}^{N-1}\mathbb{E}\left[\mathbbm{1}_{\{Y_{1}=a_{1}\}}\mathbbm{1}_{\{Y_{2}=a_{2}\}}\right]\dt
  	\end{align}
- 	{\color{blue}Here in the last equality we have four terms: the first term corresponds to $m=0$, the second and the third term correspond to $m=1$ (with $x_{1}=1$ and $x_{1}=2$ respectively) and the fourth term corresponds to $m=2$ in formula \eqref{implicit-mass-function}. }
+ 	{\color{blue}In the last equality we have four terms: the first term corresponds to $m=0$, the second and the third term correspond to $m=1$ (with $x_{1}=1$ and $x_{1}=2$ respectively) and the fourth term corresponds to $m=2$ in formula \eqref{implicit-mass-function}. }
 	%They can be computed by Corollary~\ref{Corolollary-ABS_Corr-abstract} with $m=1$ and by fixing $x_{1}=1$, $a_{1}=1,\ldots,N-1$ and $x_{2}=2$, $a_{2}=1,\ldots,N-1$ respectively. 
 	
 	%and it can be computed by Corollary~\ref{Corolollary-ABS_Corr-abstract} with $m=2$, $x_{1}=1,\,x_{2}=2$ and $a_{1},a_{2}=1,\ldots,N-1$. 
@@ -1287,27 +1287,27 @@ a_{1}\}}\right\}+\nonumber\\
 +&\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)(-1)^{L-\ell}\sum_{1\leq x_{1}<\ldots<x_{L-\ell}\leq L}\left(\prod_{k=1}^{L-\ell}\delta_{\tau_{x_{k}},N}\right)\sum_{a_{1},\ldots,a_{L-\ell}=1}^{N-1}\prod_{k=1}^{L-\ell}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\dt
 \end{align} 
 % \todo{indices are strange. Say what happens here}
-{\color{blue}In the right-hand-side of the equation above the first addend is the product of the indicator of $\ell$ sites, since none of the empty sites of the configuration $\bm{\tau}$ has been considered. Similarly, the second addend is the product of the indicator of $\ell+1$ sites. Indeed, in addition to the $\ell$ occupied sites of $\bm{\tau}$ one empty site is in turn chosen and its hole is filled with all possible particles. In the next addends the idea is repeated with $2,3,...L-\ell$ empty sites in turn filled with all possible particles. We notice that the exponent of the factors (-1) is given by the number of holes that have been turned into particles. Then, we introduce an index $m\in \{\ell,\ell+1,\ldots,L\}$ that counts the number of correlated sites. For each $m$ we introduce the coordinates $1\leq x_{1}<x_{2}<\ldots<x_{m}\leq L$. Then, we associate to to each of these $m$ one of the addend in \eqref{sum}. In particular, for $m=\ell$ we associate the first addend and we rewrite it as
+{\color{blue}In the right-hand-side of the equation above the first addend is the product of the indicator of $\ell$ sites, since none of the empty sites of the configuration $\bm{\tau}$ has been considered. Similarly, the second addend is the product of the indicator of $\ell+1$ occupied sites. Indeed, in addition to the $\ell$ occupied sites of the configuration $\bm{\tau}$, one empty site is in turn chosen and its hole is filled with all possible species particles. The idea is repeated in the next addends with $2,3,...L-\ell$ empty sites that are, in turn, filled with all possible species of particles. We notice that the exponent of the factors (-1) is given by the number of holes that have been filled with all possible species of particles. We introduce an index $m\in \{\ell,\ell+1,\ldots,L\}$ that counts the number of correlated site and we define the coordinates $1\leq x_{1}<x_{2}<\ldots<x_{m}\leq L$. Then, we associate to to each of these $m$ one of the addend in \eqref{sum}. In particular, for $m=\ell$ we associate the first addend and we rewrite it as
 	\begin{align}
-		\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}=&\sum_{1\leq x_{1}<\ldots<x_{\ell}\leq L}\;\left(\prod_{k=1}^{\ell}(1-\delta_{\tau_{x_{k}},N})\right)\sum_{b_{1},\ldots,b_{\ell}=1}^{N-1}\left(\prod_{k=1}^{\ell}\delta_{\tau_{x_{k}},b_{k}}\right)\left(\prod_{k=1}^{\ell}\mathbbm{1}_{\{Y_{x_{k}}=b_{k}\}}\right)\nonumber
-	\\	=&
-		\sum_{1\leq x_{1}<\ldots<x_{\ell}\leq L}\;\left(\prod_{x\notin \{x_{1},\ldots,x_{\ell}\}}\delta_{\tau_{x},N}\right)\sum_{b_{1},\ldots,b_{\ell}=1}^{N-1}\left(\prod_{k=1}^{\ell}\delta_{\tau_{x_{k}},b_{k}}-\delta_{\tau_{x_{k},N}}\right)\left(\prod_{k=1}^{\ell}\mathbbm{1}_{\{Y_{x_{k}}=b_{k}\}}\right)
+		\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}=&%\sum_{1\leq x_{1}<\ldots<x_{\ell}\leq L}\;\left(\prod_{k=1}^{\ell}(1-\delta_{\tau_{x_{k}},N})\right)\sum_{b_{1},\ldots,b_{\ell}=1}^{N-1}\left(\prod_{k=1}^{\ell}\delta_{\tau_{x_{k}},b_{k}}\right)\left(\prod_{k=1}^{\ell}\mathbbm{1}_{\{Y_{x_{k}}=b_{k}\}}\right)\nonumber
+	%\\	=&
+		\sum_{1\leq x_{1}<\ldots<x_{\ell}\leq L}\;\left(\prod_{x\notin \{x_{1},\ldots,x_{\ell}\}}\delta_{\tau_{x},N}\right)\sum_{b_{1},\ldots,b_{\ell}=1}^{N-1}\left(\prod_{k=1}^{\ell}(\delta_{\tau_{x_{k}},b_{k}}-\delta_{\tau_{x_{k},N}})\right)\left(\prod_{k=1}^{\ell}\mathbbm{1}_{\{Y_{x_{k}}=b_{k}\}}\right)
 	\end{align}
-	Similarly, the second addend in \eqref{sum} is associate to $m=\ell +1$ and it is rewritten as 
+	Similarly, the second addend in \eqref{sum} is associated to $m=\ell +1$ and it is rewritten as 
 	\begin{align}
 &\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)(-1)\left\{\sum_{x_{1}=1}^{L}\delta_{\tau_{x_{1}},N}\sum_{a_{1}=1}^{N-1}\mathbbm{1}_{\{Y_{x_{1}}
 	=
 	a_{1}\}}\right\}
 			\\=&
-		\sum_{1\leq x_{1}<\ldots<x_{\ell+1}\leq L}\;\left(\prod_{x\notin \{x_{1},\ldots,x_{\ell+1}\}}\delta_{\tau_{x},N}\right)\sum_{b_{1},\ldots,b_{\ell+1}=1}^{N-1}\left(\prod_{k=1}^{\ell}\delta_{\tau_{x_{k}},b_{k}}-\delta_{\tau_{x_{k},N}}\right)\left(\prod_{k=1}^{\ell+1}\mathbbm{1}_{\{Y_{x_{k}}=b_{k}\}}\right)
+		\sum_{1\leq x_{1}<\ldots<x_{\ell+1}\leq L}\;\left(\prod_{x\notin \{x_{1},\ldots,x_{\ell+1}\}}\delta_{\tau_{x},N}\right)\sum_{b_{1},\ldots,b_{\ell+1}=1}^{N-1}\left(\prod_{k=1}^{\ell+1}(\delta_{\tau_{x_{k}},b_{k}}-\delta_{\tau_{x_{k},N}})\right)\left(\prod_{k=1}^{\ell+1}\mathbbm{1}_{\{Y_{x_{k}}=b_{k}\}}\right)
 	\end{align}
 	The idea goes on for $m=\ell+2,\ldots L$ and we obtain that 
 \begin{align}
 &\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)\left(\prod_{x=1\,:\,\tau_{x}=N}^{L}\left(1-\sum_{a=1}^{N-1}\mathbbm{1}_{\{Y_x=a\}}\right)\right)\nonumber\\
 =&
-\sum_{m=\ell}^{L}\;\sum_{1\leq x_{1}<x_{2}<\ldots<x_{m}\leq L}\left(\prod_{x\notin\{x_{1},\ldots,x_{m}\}}\delta_{\tau_{x},N}\right)\sum_{b_{1},\ldots,b_{m}=1}^{N-1}\left(\prod_{k=1}^{m}\delta_{\tau_{x_{k}},b_{k}}-\delta_{\tau_{x_{k}},N}\right)\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=b_{k}\}}
+\sum_{m=\ell}^{L}\;\sum_{1\leq x_{1}<x_{2}<\ldots<x_{m}\leq L}\left(\prod_{x\notin\{x_{1},\ldots,x_{m}\}}\delta_{\tau_{x},N}\right)\sum_{b_{1},\ldots,b_{m}=1}^{N-1}\left(\prod_{k=1}^{m}(\delta_{\tau_{x_{k}},b_{k}}-\delta_{\tau_{x_{k}},N})\right)\left(\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=b_{k}\}}\right)
 \end{align}
-The above sum can be extended from $m=0$ since all the terms before $m=0,\ldots,\ell-1$ are vanishing. 
+The above sum can be extended until $m=0$ since all the terms $m=0,\ldots,\ell-1$ are vanishing. 
 Finally, by taking the expectation with respect to the steady state distribution we obtain \eqref{implicit-mass-function}.}  %{Indeed, when $b>L-\ell$ we have vanishing terms in the sum \eqref{implicit-mass-function}.} }
 \begin{flushright}
 	$\square$
@@ -2021,7 +2021,7 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 	%\end{equation} and 
 	Using \eqref{Tensor-S1} we obtain 
 			 \begin{align}\label{implicit-PSI-PSIp}
-			\Psi(\bm{\tau})=&\sum_{m=0}^{L}\sum_{1\leq x_{1}<x_{2}<\ldots<x_{m}\leq L}\left(\prod_{x\notin\{x_{1},\ldots,x_{m}\}}\delta_{\tau_{x_{k}},N}\right)\sum_{b_{1},\ldots,b_{m}=1}^{N-1}\left(\prod_{k=1}^{m}\delta_{\tau_{x_{k}},b_{k}}-\delta_{\tau_{x_{k}},N}\right)\nonumber\\
+			\Psi(\bm{\tau})=&\sum_{m=0}^{L}\sum_{1\leq x_{1}<x_{2}<\ldots<x_{m}\leq L}\left(\prod_{x\notin\{x_{1},\ldots,x_{m}\}}\delta_{\tau_{x},N}\right)\sum_{b_{1},\ldots,b_{m}=1}^{N-1}\left(\prod_{k=1}^{m}(\delta_{\tau_{x_{k}},b_{k}}-\delta_{\tau_{x_{k}},N})\right)\nonumber\\
 			\times &			
 			\Psi^{'}(N,\ldots,N,\underset{\uparrow}{b_{1}}_{x_{1}},N,\ldots,N,\underset{\uparrow}{b_{m}}_{x_{m}},N,\ldots,N)
 			%=&\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\sum_{\bm{\sigma}\in \Omega^{'}}\Psi^{'}(\bm{\sigma})\left(\prod_{x=1\,:\,x\notin\{q_{1},\ldots,q_{b}\}}^{L}\delta_{\tau_{x},\sigma_x}\right)\left(\prod_{x\in \{q_{1},\ldots,q_{b}\}}\delta_{\tau_{x},N}\sum_{a=1}^{N-1}\delta_{\sigma_{x},a}\right)\nonumber\\
@@ -2032,7 +2032,7 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 		%	\Psi^{'}(\tau_{1},\ldots,\underset{\uparrow}{a_{1}}_{q_{1}},\ldots,\underset{\uparrow}{a_{b}}_{q_{b}},\ldots,\tau_{L})
 			\Psi^{'}(N,\ldots,N,\underset{\uparrow}{b_{1}}_{x_{1}},N,\ldots,N,\underset{\uparrow}{b_{m}}_{x_{m}},N,\ldots,N)
 		\end{equation}
-		indicates that in positions $x_{1},\ldots,x_{m}$ we have particles of species $b_{1},\ldots,b_{m}$ and we have holes $N$ in all other positions.} %{given $\bm{\tau}$ from the bra-vector $\langle \bm{\tau}|$}☺ introduced before equation \eqref{Tensor-S1},} for all $b\in \{0,\ldots,L\}$ and for all $1\leq q_{1}<\ldots<q_{b}\leq L$ {at sites $q_{k}$ (for $k=1,\ldots,b$) we have a particle of type $a_{k}$, while at the other sites the occupation $\tau_{x}$ is left unchanged  ($x\notin\{q_{1},\ldots,q_{b}\}$). }  One can check that equation \eqref{implicit-PSI-PSIp} is indeed formula \eqref{implicit-mass-function} of Corollary~\ref{Corollary-NESS-ABS}. 
+		indicates that in positions $x_{1},\ldots,x_{m}$ there are particles of species $b_{1},\ldots,b_{m}$, while there are holes $N$ in all other positions.} %{given $\bm{\tau}$ from the bra-vector $\langle \bm{\tau}|$}☺ introduced before equation \eqref{Tensor-S1},} for all $b\in \{0,\ldots,L\}$ and for all $1\leq q_{1}<\ldots<q_{b}\leq L$ {at sites $q_{k}$ (for $k=1,\ldots,b$) we have a particle of type $a_{k}$, while at the other sites the occupation $\tau_{x}$ is left unchanged  ($x\notin\{q_{1},\ldots,q_{b}\}$). }  One can check that equation \eqref{implicit-PSI-PSIp} is indeed formula \eqref{implicit-mass-function} of Corollary~\ref{Corollary-NESS-ABS}. 
 	 %Finally, using equation \eqref{interpretation-PsiP}, the result follows. 
 \begin{remark}[Equilibrium case]
 	Using equation \eqref{implicit-mass-function} with correlation computed in \eqref{exactCorrelations} in the equilibrium case ($\beta_{a}=\alpha_{a}$), we obtain 
