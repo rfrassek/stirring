@@ -1177,7 +1177,9 @@ For any configuration $\bm{\tau}\in \Omega^{'}$  the probability mass function o
 \begin{equation}\label{implicit-mass-function}
 	\mu(\bm{\tau})=
 	\sum_{m=0}^{L}\;\sum_{1\leq x_{1}<x_{2}<\ldots<x_{m}\leq L}\left(\prod_{x\notin\{x_{1},\ldots,x_{m}\}}\delta_{\tau_{x},N}\right)\sum_{b_{1},\ldots,b_{m}=1}^{N-1}\left(\prod_{k=1}^{m}(\delta_{\tau_{x_{k}},b_{k}}-\delta_{\tau_{x_{k}},N})\right)\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=b_{k}\}}\right]
-\end{equation}}
+\end{equation}
+where $\delta_{\tau_{x_{k}},b_{k}}-\delta_{\tau_{x_{k}},N}=(-1)^{\delta_{\tau_{x_{k}},N}}$.
+}
 %\begin{equation}\label{implicit-mass-function}
 %	\mu(\bm{\tau})=\sum_{b=0}^{L}(-1)^{b}\sum_{1\leq q_{1}<\ldots<q_{b}\leq L}\left(\prod_{k=1}^{b}\delta_{\tau_{q_{k}},N}\right)\sum_{a_{{1}},\ldots,a_{{b}}=1}^{N-1}{\color{black}
 %	\mathbb{E}\left[\Bigg( \prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}\Bigg) \Bigg(\prod_{k=1}^{b}\mathbbm{1}_{\{Y_{q_{k}}=a_{{k}}\}}\Bigg)\right]}\,.
@@ -1267,7 +1269,7 @@ a_{1}\}}\right\}+\nonumber\\
 +&\left(\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_x=\tau_{x}\}}\right)(-1)^{L-\ell}\sum_{1\leq x_{1}<\ldots<x_{L-\ell}\leq L}\left(\prod_{k=1}^{L-\ell}\delta_{\tau_{x_{k}},N}\right)\sum_{a_{1},\ldots,a_{L-\ell}=1}^{N-1}\prod_{k=1}^{L-\ell}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\dt
 \end{align} 
 % \todo{indices are strange. Say what happens here}
-{\color{blue}In the right-hand-side of the equation above the first addend is the product of the indicator of $\ell$ sites, since none of the empty sites of the configuration $\bm{\tau}$ has been considered. Similarly, the second addend is the product of the indicator of $\ell+1$ occupied sites. Indeed, in addition to the $\ell$ occupied sites of the configuration $\bm{\tau}$, one empty site is in turn chosen and its hole is filled with all possible species particles. The idea is repeated in the next addends with $2,3,...L-\ell$ empty sites that are, in turn, filled with all possible species of particles. We notice that the exponent of the factors (-1) is given by the number of holes that have been filled with all possible species of particles. We introduce an index $m\in \{\ell,\ell+1,\ldots,L\}$ that counts the number of correlated site and we define the coordinates $1\leq x_{1}<x_{2}<\ldots<x_{m}\leq L$. Then, we associate to to each of these $m$ one of the addend in \eqref{sum}. In particular, for $m=\ell$ we associate the first addend and we rewrite it as
+{\color{blue}In the right-hand-side of the equation above the first addend is the product of the indicator of $\ell$ sites, since none of the empty sites of the configuration $\bm{\tau}$ has been considered. Similarly, the second addend is the product of the indicator of $\ell+1$ occupied sites. Indeed, in addition to the $\ell$ occupied sites of the configuration $\bm{\tau}$, one empty site is in turn chosen and its hole is filled with all possible species particles. The idea is repeated in the next addends with $2,3,...L-\ell$ empty sites that are, in turn, filled with all possible species of particles. We notice that the exponent of the factors (-1) is given by the number of holes that have been filled with all possible species of particles. We introduce an index $m\in \{\ell,\ell+1,\ldots,L\}$ that counts the number of correlated site and we define the coordinates $1\leq x_{1}<x_{2}<\ldots<x_{m}\leq L$. Then, we associate to each of these $m$ one of the addend in \eqref{sum}. In particular, for $m=\ell$ we associate the first addend and we rewrite it as
 	\begin{align}
 		\prod_{x=1\,:\,\tau_{x}\neq N}^{L}\mathbbm{1}_{\{Y_{x}=\tau_{x}\}}=&%\sum_{1\leq x_{1}<\ldots<x_{\ell}\leq L}\;\left(\prod_{k=1}^{\ell}(1-\delta_{\tau_{x_{k}},N})\right)\sum_{b_{1},\ldots,b_{\ell}=1}^{N-1}\left(\prod_{k=1}^{\ell}\delta_{\tau_{x_{k}},b_{k}}\right)\left(\prod_{k=1}^{\ell}\mathbbm{1}_{\{Y_{x_{k}}=b_{k}\}}\right)\nonumber
 	%\\	=&
