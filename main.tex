@@ -242,7 +242,8 @@ on a generic connected and undirected graph $G=(V,\mathcal{E})$ with vertex set 
 edge set $\mathcal{E}$. The maximal number of particles allowed at each vertex (also called \textit{maximal occupancy}) is denoted by $\nu\in \mathbb{N}$. 
 Two particles do interact when they sit on two sites connected by a graph edge and this interaction consists in swapping them. 
 Furthermore, reservoirs are attached at each site of the graph, creating and removing particles. For a precise definition of the rates of the process 
-we refer to Section~\ref{sec1}. As we will see, the choice of the boundary reservoirs is motivated by the fact that they allow to determine an absorbing dual process, 
+we refer to Section~\ref{sec1}. As we will see, the choice of the boundary reservoirs is motivated by the fact that they allow to determine an absorbing dual process
+\fra{that does not permit  color-changing until absorption at the boundary}, 
 regardless of the graph $G$ on which the process is defined and of the maximal occupancy $\nu$ at each site.
 
 
@@ -255,7 +256,7 @@ We recall that for the single species case,  the solution of the exclusion proce
 This integrability property can be combined with duality and leads to closed-form expressions for the correlations and the non-equilibrium steady state, as shown in \cite{frassek2020eigenstates,frassek2020duality}.
 In this paper we focus on the multispecies stirring process with open boundaries.
 We choose to restrict to the symmetric version of the model, as the formulation
-of duality in the presence of both asymmetry and boundary driving is substantially
+of duality in the presence of bvmmetry and boundary driving is substantially
 more involved (for recent results on the single species case see
 \cite{schuetz2022reverse,barraquand2022markov}).
 
@@ -333,10 +334,11 @@ In the case $N=2$, we retrieve the  boundary-driven version of the symmetric exc
 \subsection{The process generator}\label{subsectionGeneratorStr}
 We now give the mathematical description of the multispecies stirring process.
 We consider a connected graph $G=(V,\mathcal{E})$ with vertex set $V$ and edge set $\mathcal{E}$.
-At each vertex site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ {denotes the number of particles of species $a\in \{1,\ldots,N-1\}$, while the component $n_{N}^{x}$ counts the number of holes at site $x$.} On each vertex we {allow a total maximal number of particles $\nu\in \mathbb{N}$}. {In the following we use indices denoted by lowercase letters (for instance $a,b,c,d\in \{1,\ldots,N-1\}$) when only particles are taken into account. Moreover, we introduce indices denoted by uppercase letters (for instance $A,B,C,D\in\{1,\ldots,N\}$)  to also incorporate the holes, that correspond to the index $N$. The link between the two indices is given by 
-\begin{equation}
-	a\in \{1,\ldots,N-1\}\qquad \text{and}\qquad A=(a,N)\,.
-	\end{equation} 
+At each vertex site $x\in V$, we describe the occupation with an $N-$dimensional vector $n^{x}=(n_{1}^{x},\ldots,n_{N}^{x})$ in which the value of the $a$-th component $n_{a}^{x}$ {denotes the number of particles of species $a\in \{1,\ldots,N-1\}$, while the component $n_{N}^{x}$ counts the number of holes at site $x$.} On each vertex we {allow a total maximal number of particles $\nu\in \mathbb{N}$}. {In the following we use indices denoted by lowercase letters (for instance $a,b,c,d\in \{1,\ldots,N-1\}$) when only particles are taken into account. Moreover, we introduce indices denoted by uppercase letters (for instance $A,B,C,D\in\{1,\ldots,N\}$)  to also incorporate the holes, that correspond to the index $N$. 
+%The link between the two indices is given by 
+%\begin{equation}
+%	a\in \{1,\ldots,N-1\}\qquad \text{and}\qquad A=(a,N)\,.
+%	\end{equation} 
 } 
 The configuration space of the process on the graph $G$ is 
 \begin{equation}\label{stateSpace}
@@ -830,7 +832,7 @@ i.e. it is a symmetry of $\mathcal{H}_{x,y}$. Exploiting these considerations we
  \begin{flushright}
      $\square$
  \end{flushright}
- \paragraph{Proof of boundary duality \eqref{siteDualRelation}.} To prove \eqref{siteDualRelation} we transform via the Hadamard formula the transposed of the site Hamiltonian \eqref{siteDualHamiltonian} and then to  introduce properly a creation operator acting on an extra-site $u(x)$.
+ \paragraph{Proof of boundary duality \eqref{siteDualRelation}.} To prove \eqref{siteDualRelation} we transform via the Hadamard formula \footnote{\fra{See \cite{khuan} for an application of the Hadamard formula in the multispecies asymmetric context.}} the transposed of the site Hamiltonian \eqref{siteDualHamiltonian} and then we  introduce a creation operator acting on an extra-site $u(x)$.
  Considering {$\mathcal{A},\mathcal{B}\in {gl}(N)$}, the Hadamard formula reads 
  \begin{equation}\label{HadamardFormula}
      \exp{(-\mathcal{B})}\mathcal{A}\exp{(\mathcal{B})}=\mathcal{A}-\left[\mathcal{B},\mathcal{A}\right]+\frac{1}{2!}\left[\mathcal{B},\left[\mathcal{B},\mathcal{A}\right]\right]-\frac{1}{3!}\left[\mathcal{B},\left[\mathcal{B},\left[\mathcal{B},\mathcal{A}\right]\right]\right]+\ldots
