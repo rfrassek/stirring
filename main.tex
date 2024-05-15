@@ -664,7 +664,7 @@ the extra-site $u(x)$ connected to $x\in V$. {We observe that the configuration 
 		\widetilde{\mathcal{L}}=\sum_{(x,y)\in \mathcal{E}}\omega_{x,y}\mathcal{L}_{x,y}+\sum_{x\in V}\Gamma_{x}\widetilde{\mathcal{L}}_{x}
 	\end{equation}
 where 
-$\mathcal{L}_{x,y}$ is defined in \eqref{edgeGenerator} and, for any function $f:\widetilde{\Omega}\to \mathbb{R}$ 
+$\mathcal{L}_{x,y}$ \fra{are} defined in \eqref{edgeGenerator} and, for any function $f:\widetilde{\Omega}\to \mathbb{R}$ 
 \begin{equation}\label{siteDualGenerator}
 	\widetilde{\mathcal{L}}_{x}f(\bm{\xi})=|\alpha^{x}|\sum_{a=1}^{N-1}\xi_{a}^{x}\left(f(\bm{\xi}-\bm{\delta}_{a}^{x}+\bm{\delta}_{N}^{x}+\bm{\delta}_{a}^{u(x)})-f(\bm{\xi})\right)\dt
 \end{equation}
@@ -858,8 +858,18 @@ From the third commutator on we always obtain zero, i.e. $[\mathcal{B},[\mathcal
  		E%\sum_{a=1}^{N-1}E_{aN}
  		\right)}}=E_{CD}-\delta_{CN}\sum_{a=1}^{N-1}E_{aD}+(1-\delta_{DN})E_{CN}-\delta_{CN}(1-\delta_{DN})\sum_{b=1}^{N-1}E_{bN}\dt
  \end{align}
-
-Using \eqref{transpositionPropertyR} we write the transpose of site Hamiltonian \eqref{siteHamiltonian} 
+\fra{It follows that}
+\begin{align}\label{uno}
+	\fra{\exp{(-E)}\left(\sum_{a,b=1\,b\neq a}^{N-1}\alpha_{a}\left(E_{ba}-E_{bb}\right)\right)\exp{(E)}=\sum_{a,b=1\,b\neq a}^{N-1}\alpha_{a}\left(E_{ba}-E_{bb}\right)}\co
+\end{align}
+\begin{align}\label{due}
+	\fra{\exp{(-E)}\left(\sum_{a=1}^{N-1}\alpha_{a}\left(E_{Na}-E_{NN}\right)\right)\exp{(E)}=\sum_{a=1}^{N-1}\left(E_{Na}-E_{aa}-\sum_{b=1\,b\neq a}^{N-1}E_{ba}\right)}
+\end{align}
+\fra{and}
+\begin{align}\label{tre}
+	\fra{\exp{(-E)}\left(\alpha_{N}\sum_{b=1}^{N-1}\alpha_{a}\left(E_{bN}-E_{bb}\right)\right)\exp{(E)}=-\alpha_{N}\sum_{b=1}^{N-1}E_{bb}}
+\end{align}
+Using \eqref{transpositionPropertyR} we write the transpose of site Hamiltonian \eqref{siteHamiltonian} as
 \begin{equation}
     \begin{split}
 H_{x}^{T}=\sum_{A,B=1}^{N}\alpha_{A}^{x}\left(E_{AB}^{x}-E_{BB}^{x}\right)^{T}=R_{x}\sum_{A,B=1}^{N}\alpha_{A}^{x}\left(E_{BA}^{x}-E_{BB}^{x}\right)R_{x}^{-1}\dt
@@ -869,12 +879,16 @@ We multiply both sides by $R_{x}\exp{(E^{x})}$
 \begin{equation}\label{intermediateTransposeSite}
     H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\sum_{A,B =1}^{N}\alpha_{A}^{x}\left(E_{B A}^{x}-E_{BB}^{x}\right)\exp{(E^{x})}\dt
 \end{equation}
-By using \eqref{HT-BA} and the fact that 
+By using \fra{\eqref{uno},\eqref{due} and \eqref{tre})} and the fact that 
 \fra{$\sum_{A,B=1}^{N}E_{AB}$} is central for the algebra we have 
 
-\begin{equation}\label{HadTransfBoundary}
-\exp{(-E^{x})}\sum_{A=1}^{N}\sum_{B=1}^{N}\alpha_{A}^{x}\left(E_{B A}^{x}-E_{BB}^{x}\right)\exp{(E^{x})}=	|\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\dt
-\end{equation}
+\begin{align}\label{HadTransfBoundary}
+&\exp{(-E^{x})}\sum_{A=1}^{N}\sum_{B=1}^{N}\alpha_{A}^{x}\left(E_{B A}^{x}-E_{BB}^{x}\right)\exp{(E^{x})}\nonumber
+\\=&
+\fra{\sum_{a=1}^{N-1}\alpha_{a}\left(E_{Na}^{x}-E_{aa}^{x}\right)-\sum_{a,b=1\, a\neq b}^{N-1}\alpha_{a}^{x}E_{bb}^{x}-\alpha_{N}\sum_{a=1}^{N-1}E_{aa}^{x}\nonumber}
+\\=&
+\fra{	|\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)}\dt
+\end{align}
 Thus, we rewrite \eqref{intermediateTransposeSite} as
 \begin{equation}\label{siteHadamardI}
 H_{x}^{T}R_{x}\exp{(E^{x})}=R_{x}\exp{(E^{x})}|\alpha^{x}|\sum_{a=1}^{N-1}\left(\rho_{a}^{x}E_{Na}^{x}-E_{aa}^{x}\right)\dt
@@ -1519,7 +1533,7 @@ It follows that
 \begin{align}\label{remove-exponent}
 &\frac{(1+\sum_{x=1}^{L}\delta_{\tau_{x},N})!}{(L+1)!}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}\nonumber\\
 =&\frac{(1+\sum_{x=1}^{L}\delta_{\tau_{x},N})!}{(L+1)!}\prod_{x=1}^{L}\fra{\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}}\frac{(1+\sum_{j=x+1}^{L}\delta_{\tau_{j},N})!}{(\sum_{j=x}^{L}\delta_{\tau_{j},N})!}\nonumber\\
-=&\frac{1}{(L+1)!}\prod_{x=1}^{L}\fra{\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}}\frac{(1+\sum_{j=x}^{L}\delta_{\tau_{j},x})!}{(\sum_{j=x}^{L}\delta_{\tau_{j},x})!}\nonumber\\
+=&\frac{1}{(L+1)!}\prod_{x=1}^{L}\fra{\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}}\frac{(1+\sum_{j=x}^{L}\delta_{\tau_{j},N})!}{(\sum_{j=x}^{L}\delta_{\tau_{j},N})!}\nonumber\\
 =&\frac{1}{(L+1)!}\prod_{x=1}^{L}\fra{\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\dt
 \end{align}
 Therefore, we obtain \eqref{ResulsBasis}.
@@ -1594,7 +1608,7 @@ Observing now that $c_{x}(1-\delta_{\tau_{x},N})$ can be replaced by  $c_{x}-\de
 \begin{flushright}
     $\square$
 \end{flushright}
-\begin{remark} By changing the summation indices from $c_x\in \{\delta_{\tau_{x},N},1\}$ to $c_{x}^{'}\in \{0,1-\delta_{\tau_{x},N}\}$ and by  the fact that occupation of each site is bounded by $1$ we rewrite \eqref{ABS} as 
+\begin{remark} By changing the summation indices from $c_x\in \{\delta_{\tau_{x},N},1\}$ to $c_{x}^{'}\in \{0,1-\delta_{\tau_{x},N}\}$ \fra{(implying that $c_{x}=1-c_{x}^{'}$)} and by  the fact that occupation of each site is bounded by $1$ we rewrite \eqref{ABS} as 
 \begin{equation}\label{ABS_1}
 	\Psi^{'}(\bm{\tau})=\sum_{c^{'}_{1}=0}^{1-\delta_{\tau_{1},N}}\ldots\sum_{c^{'}_{L}=0}^{1-\delta_{\tau_{L},N}}\frac{(L+1-\sum_{x=1}^{L}c^{'}_{x})!}{(L+1)!}\prod_{x=1}^{L}\left((\alpha_{\tau_{x}}-\beta_{\tau_{x}})\left(2+L-x-\sum_{j=x}^{L}c^{'}_{j}\right)\right)^{c^{'}_{x}}\beta_{\tau_{x}}^{(1-c^{'}_{x}-\delta_{\tau_{x},N})}
 \end{equation}
@@ -1721,11 +1735,12 @@ therefore, projecting on $\langle \bm{\tau}|$ we have
 			\times &			
 			\Psi^{'}(N,\ldots,N,\underset{\uparrow}{b_{1}}_{x_{1}},N,\ldots,N,\underset{\uparrow}{b_{m}}_{x_{m}},N,\ldots,N)
 		\end{align} 
-			In the second equality we have rewritten the product by introducing the summation over $m$, the coordinates $x_{1},\ldots,x_{m}$ and the occupation variables $b_{1},\ldots,b_{m}$. Here, the notation
-		\begin{equation}\label{notation-PSI}
-			\Psi^{'}(N,\ldots,N,\underset{\uparrow}{b_{1}}_{x_{1}},N,\ldots,N,\underset{\uparrow}{b_{m}}_{x_{m}},N,\ldots,N)
-		\end{equation}
-		indicates that in positions $x_{1},\ldots,x_{m}$ there are particles of species $b_{1},\ldots,b_{m}$, while there are holes $N$ in all other positions.} 
+			In the second equality we have rewritten the product by introducing the summation over $m$, the coordinates $x_{1},\ldots,x_{m}$ and the occupation variables $b_{1},\ldots,b_{m}$. \fra{[Lines commented, referring to point 32]}.
+			%Here, the notation
+		%\begin{equation}\label{notation-PSI}
+		%	\Psi^{'}(N,\ldots,N,\underset{\uparrow}{b_{1}}_{x_{1}},N,\ldots,N,\underset{\uparrow}{b_{m}}_{x_{m}},N,\ldots,N)
+		%\end{equation}
+		%indicates that in positions $x_{1},\ldots,x_{m}$ there are particles of species $b_{1},\ldots,b_{m}$, while there are holes $N$ in all other positions.} 
 \begin{remark}[Equilibrium case]
 	Using equation \eqref{implicit-mass-function} with correlation computed in \eqref{exactCorrelations} in the equilibrium case ($\beta_{a}=\alpha_{a}$), we obtain 
 	\begin{equation}
@@ -1836,7 +1851,7 @@ where
 	\Psi^{'}(\bm{\tau})=\sum_{q=0}^{|\bm{\tau}|}(\alpha-\beta)^{q}\beta^{L-q}\sum_{1\leq \ell_{1}<\ldots<\ell_{q}\leq |\bm{\tau}|}\prod_{k=1}^{q}\frac{\left(L+1-x_{\ell_{k}}-q+k\right)}{(2+L-k)}\dt
 \end{equation}
 and where $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x},1}$ . \\ \\
- \textbf{Proof of formula \eqref{PsiI-N2}:}  For any configuration $\bm{\tau}\in \Omega$ we denote by  $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x},2}$ the number of occupied sites. Then, considering equation \eqref{ABS_1} we have the result by adapting the proof of \eqref{correlations-SSEP} in the following way. We select $q\in\{0,\ldots,|\bm{\tau}|\}$ particles among the occupied ones. We call $\ell_{1},\ldots\ell_{q}\in \{1,\ldots,|\tau|\}$ such that $\ell_{1}<\ell_{2}<\ldots<\ell_{q}$. These $(\ell_{k})_{k\in {1,\ldots,q}}$ are labels for the $q$ particles previously selected. For each $\ell_{k}$ we introduce $x_{\ell_{k}}$, i.e. the coordinate where the particle with label $\ell_{k}$ is placed. Thus, we have that  
+ \textbf{Proof of formula \eqref{PsiI-N2}:}  For any configuration $\bm{\tau}\in \Omega$ we denote by  $|\bm{\tau}|=\sum_{x=1}^{L}\delta_{\tau_{x},2}$ the number of occupied sites. Then, considering equation \eqref{ABS_1} we have the result by adapting the proof of \eqref{correlations-SSEP} in the following way. We select $q\in\{0,\ldots,|\bm{\tau}|\}$ particles among the occupied ones. We call $\ell_{1},\ldots\ell_{q}\in \{1,\ldots,\fra{|\bm{\tau}|}\}$ such that $\ell_{1}<\ell_{2}<\ldots<\ell_{q}$. These $(\ell_{k})_{k\in {1,\ldots,q}}$ are labels for the $q$ particles previously selected. For each $\ell_{k}$ we introduce $x_{\ell_{k}}$, i.e. the coordinate where the particle with label $\ell_{k}$ is placed. Thus, we have that  
 \begin{equation}
 	\prod_{x=1}^{L}\left(L+2-x-\sum_{j=x}^{L}c_{j}\right)^{c_{x}}=\prod_{k=1}^{q}\left(L+2-x_{\ell_{k}}-\sum_{j=x_{\ell_{k}}}^{L}c_{j}\right)=\prod_{k=1}^{q}\left(1+L-x_{\ell_{k}}-q+k\right)\dt
 \end{equation}
@@ -1990,7 +2005,7 @@ where $\mathcal{L}^{TH}_{x,x+1}$ is \eqref{bulkThermalized} and $\widetilde{\mat
 \end{align}
 The duality function is the same of the multispecies stirring process, i.e. 
 \begin{equation}
-	D(\bm{n},\bm{\xi})=\prod_{a=1}^{N-1}\left(\rho_{a}^{\text{left}}\right)^{\xi_{a}^{0}}\prod_{x=1}^{L}\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\prod_{a=1}^{N-1}\left(\rho_{a}^{\text{right}}\right)^{\xi_{a}^{L+1}}\co
+	\fra{D(\bm{n},\bm{\xi})=\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{\text{left}}\right)^{\xi_{a}^{0}}\right)\left(\prod_{x=1}^{L}\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\right)\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{\text{right}}\right)^{\xi_{a}^{L+1}}\right)}\co
 \end{equation}
 cf.~\eqref{dualityElements}.
 \end{proposition}
@@ -2104,7 +2119,7 @@ In this section we formulate duality for the multispecies reaction diffusion pro
 \begin{proposition}[Duality for the reaction-diffusion process]\label{propositin-duality-RD}
 The reaction-diffusion multispecies stirring process $(\bm{n}(t))_{t\geq 0}$, on the state space $\Omega_{L}$, with generator $\mathcal{L}^{rd}$ defined in \eqref{RDGenerator} is dual to the process $(\bm{\xi}(t))_{t\geq 0}$ on the state space $\widetilde{\Omega}_{L}$ with dual generator
 \begin{equation}\label{DualGeneratorRD}
-	\widetilde{\mathcal{L}}_{\text{left}}^{rd}=\widetilde{\mathcal{L}}^{rd}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{rd}+\widetilde{\mathcal{L}}_{\text{right}}^{rd}
+	\fra{\widetilde{\mathcal{L}}^{rd}=\widetilde{\mathcal{L}}_{\text{left}}^{rd}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{rd}+\widetilde{\mathcal{L}}_{\text{right}}^{rd}}
 \end{equation}
 where 
 $\mathcal{L}_{x,x+1}^{rd}$ is defined in \eqref{edgeGeneratorRD} and, $\widetilde{\mathcal{L}}_{\text{left}}^{rd}$ and $\widetilde{\mathcal{L}}_{\text{right}}^{rd}$ are the absorbing dual generators $\widetilde{\mathcal{L}}_{x}$ defined in \eqref{siteDualGenerator} and acting at sites $1$ and $L$, with the specific choice of the reservoirs parameters \eqref{boundaryParamRD}. The duality function

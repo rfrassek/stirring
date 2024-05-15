@@ -1,0 +1,83 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools,amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[pagebackref=false]{hyperref}
+\usepackage{bbm}
+\usepackage{bm}
+\usepackage{appendix}
+\usepackage{comment}
+\usepackage{mathtools}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+\usepackage[pagewise]{lineno}
+\usepackage{xspace}
+
+\newcommand{\fra}[1]{\textcolor[rgb]{0,0,1}{#1}}
+
+
+
+
+
+\usepackage[margin=2.5cm]{geometry} 
+\title{Answer to the referee for: \textit{Duality for the multispecies stirring process with open boundaries}}
+	\begin{document}
+		\maketitle
+		\section*{Answer to general comments}
+		\begin{enumerate}
+			\item% \fra{P3, line 25: Could you provide more detail on the ”choice of the boundary reservoirs”? Is this selection the most general case that allows for the determination of an absorbing dual process?}\\ \\
+				We expanded the sentence in the introduction to explain our choice of the boundary generators. One could in principle consider other choices of boundaries but then this would imply that dual particles could possibly change their color before getting absorbed at the boundaries. In view of the application of duality to the computation of the non-equilibrium steady state we are interested in we limit ourselves to the choice that avoid this color-changing.
+				\item% \fra{P4, line 33: The rates αa are strictly positive, what happens when they are zero? Does the corresponding
+				%	duality degenerates to nontrivial duality for closed system?} \\ \\
+					When the rates are zero, then the generator of the process in (2.2.6) [DOUBLE CHECK] is zero and therefore we get indeed for the closed system the expected duality in product form.
+					\item %\fra{P14, line 20: In my understanding, the Hadamard formula is a special case of the Baker–Campbell–Hausdorff
+						%formula, which was first utilized for duality in the paper arXiv:2209.03531. The authors should consider
+						%citing that paper as well.}\\ \\
+						A citation has been added on page [ADD PAGE NUMBER]
+						%\item \fra{P20, Section 4.2: “In fact, such simplification can always be achieved if there exists an absorbing dual
+						%	process as established in Section 3”: It looks like this method is general, could you be more precise
+						%	about the conditions for simplification and maybe analogues for (4.2.1)? Additionally, I find equations
+						%	(4.2.2) to (4.2.3) distracting in this context. It’s better to keep the introduction as simple as possible.
+						%	In fact, I find this section redundant with the steps outlined on page 22. Please consider rewriting
+						%	these two parts together.}\\ \\
+						\item 	As the computations in section 4 are rather lengthy and technical, we believe it is useful to keep a small introductory subsection where we explain the main ideas and show that the matrix product ansatz simplies after the similarity transformations.
+							We considered the option of moving section 4.2 at the end of 4.1, but we believe it is useful to explain the strategy of proof right at the beginning.							
+		\end{enumerate}
+		\section*{Minor issues}
+		\begin{enumerate}
+			\item Done.
+			\item Done.
+			\item Done.
+			\item Done.
+			\item Done.
+			\item Yes, $N$ is the number of species. 
+			\item We deleted line 52.
+			\item Done.
+			\item Done.
+			\item The reason is that when $\nu=1$ the we have the fundamental (defining) representation of the $gl(N)$ Lie algebra. Therefore, the matrices $E_{AB}$ coincide with the elementary matrices $e_{AB}$ such that $(e_{AB})_{CD}=\delta_{AC}\delta_{BD}$ for all $A,B,C,D\in\{1,\ldots,N\}$. A footnote has been added.
+			\item Done.
+			\item Done.
+			\item Done.
+			\item We agree with this suggestion. $E$ and $\mathcal{D}_{u(x)}$ have been added in the suggested equations.
+			\item Done.
+			\item Equations (3.3.30), (3.3.31) and (3.3.32) have been added at page 15. Moreover, they have been used to add an intermediate step in equation (3.3.35) at page 15.
+			\item Done.
+			\item We made a more precise statement. 
+			\item Done.
+			\item We replaced everywhere the symbol $t_{i}$ with $s_{i}$.
+			\item Done. 
+			\item NOT CLEAR
+			\item GOOD NOW
+			\item Done.
+			\item Done.
+			\item Fixed, the index is now $A$.
+			\item NOT CLEAR
+			\item Done.
+			\item Done.
+		\end{enumerate}
+	\end{document}
