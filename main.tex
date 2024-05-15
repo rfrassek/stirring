@@ -16,6 +16,7 @@
 \usepackage{hyperref}
 \numberwithin{equation}{section}
 \numberwithin{equation}{subsection}
+\usepackage[pagewise]{lineno}
 
 
 
@@ -152,7 +153,7 @@
 
 
 \begin{document} 
- 
+ \linenumbers
 \begingroup
 
 \begin{center}
@@ -693,7 +694,7 @@ To a configuration $\bm{\xi}$ of the configuration space  \eqref{dualStateSpace}
 \end{equation}
 {Here $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$ is the vector associated to the configuration at the extra site $u(x)$.  For $q_{1},\ldots,q_{N-1}\in \mathbb{N}_{0}$, we assume that it satisfies an orthogonality relation
 \begin{equation}\label{ortho-extraSite}
-	\langle q_{1}^{u(x)},\ldots,q^{u(x)}_{N-1}|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle=\prod_{a=1}^{N-1}\delta_{\xi_{a}^{u(x)},q_{a}}\,.
+	\langle q_{1}^{u(x)},\ldots,q^{u(x)}_{N-1}|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle=\prod_{a=1}^{N-1}\delta_{\xi_{a}^{u(x)},\fra{q_{a}^{u(x)}}}\,.
 \end{equation} }
 {\begin{remark}\label{reamrk-extraSite}
 	In the following, we denote the configuration vectors on the extra-site $u(x)$ by $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$. This allows to stress that these vectors belong to the extra-space $N_{0}^{N-1}$ "attached" to site $x$. Moreover, this notation allows to directly connect the ket-vector $|\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}\rangle$ with the vector $(\xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)})$ defined in \eqref{row-dual-vectors}, in which we recall that the components $\xi_{a}^{u(x)}$ denote the number of dual particles of type $a$ at site $u(x)$.
@@ -963,11 +964,11 @@ Furthermore we write $\mathbb{E}[\cdot]$ for the expectation with respect to $\m
 Let $m\in \{1,\ldots,L\}$ and consider $m$ sites $1 \le x_{1} < x_2 < \ldots < x_m \le L $ and
 {$m$ colours denoted by $a_{k}\in\{1,\ldots,N-1\}$  with $k=1,2,\ldots, m$, chosen among the $N-1$ available species.} Then, the $m$-point correlations in the non-equilibrium steady state read 
 \begin{equation}\label{NESS-expectation-ABS}
-\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\mathcal{P}_{x_1,\ldots,x_m}(t_{1},\ldots,t_{m})
+\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]=\sum_{s_{1}=0}^{1}\ldots \sum_{s_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{s_{k}}\beta_{a_{k}}^{1-s_{k}}\right)\mathcal{P}_{x_1,\ldots,x_m}(s_{1},\ldots,s_{m})
 \end{equation}
 where
 \begin{equation}\label{absProbabilitiesIntegrable}
-	\mathcal{P}_{x_1,\ldots,x_m}(t_{1},\ldots,t_{m}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(t_{k}\delta^{0}_{a_k}+(1-t_{k})\delta^{L+1}_{a_k}\right)\Big| \bm{\xi}(0)=\bm{\xi}\right)
+	\mathcal{P}_{x_1,\ldots,x_m}(s_{1},\ldots,s_{m}):=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{k=1}^{m}\left(s_{k}\delta^{0}_{a_k}+(1-s_{k})\delta^{L+1}_{a_k}\right)\Big| \bm{\xi}(0)=\bm{\xi}\right)
 \end{equation}
 where the initial dual configuration is $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, meaning that 
 \begin{equation}
@@ -977,7 +978,7 @@ where the initial dual configuration is $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{
 		\xi_{A}^{x}=0\qquad \text{otherwise}
 	\end{cases}\dt
 \end{equation}
-In \eqref{absProbabilitiesIntegrable} the variable $t_k$ is $1$ (resp. $0$) when the dual particle of species $a_k$ initially positioned at site $x_{k}$ is absorbed at at the extra site $0$ (resp. $L+1$).
+In \eqref{absProbabilitiesIntegrable} the variable $s_k$ is $1$ (resp. $0$) when the dual particle of species $a_k$ initially positioned at site $x_{k}$ is absorbed at at the extra site $0$ (resp. $L+1$).
 \end{corollary}
 \textbf{Proof of Corollary~\ref{Corolollary-ABS_Corr-abstract}}:
 For any $\bm{\tau}\in \Omega^{'}$ the duality matrix defined in \eqref{ElementsDualityMatrixChain_1} evaluated on the dual configuration $\bm{\xi}\in\widetilde{\Omega}$ given in \eqref{xsi-init} read
@@ -989,7 +990,7 @@ Therefore, by ergodicity and duality  we have
 \begin{equation}\label{CorrelationByABS-prob}
 	\begin{split}
 \mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]&=\lim_{t\to \infty}\mathbb{E}_{\bm{\tau}}\left[D(\bm{\tau}(t),\bm{{\xi}})\right]=\lim_{t\to \infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{\tau},\bm{{\xi}}(t))\right]
-	\\&=\sum_{t_{1}=0}^{1}\ldots \sum_{t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{m})\dt
+	\\&=\sum_{s_{1}=0}^{1}\ldots \sum_{s_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{s_{k}}\beta_{a_{k}}^{1-s_{k}}\right)\mathcal{P}_{x_{1},\ldots,x_{m}}(s_{1},\ldots,s_{m})\dt
 \end{split}
 \end{equation} 
 \begin{flushright}
@@ -1122,11 +1123,11 @@ with the normalization
 \begin{equation}
 	Z_{L}= \langle \langle W|  (X_{1}+\ldots +X_{N})^{L} |V\rangle\rangle \dt
 \end{equation}
-Here the operators $(X_{a})_{a\in \{1,\ldots,N\}}$ fulfil the commutators
+Here the operators $(X_{a})_{a\in \{1,\ldots,N\}}$ fulfill the commutators
 \begin{equation}\label{bulk}
 	\left[X_{a},X_{b}\right]=(\alpha_{a}-\beta_{a})X_{b}-(\alpha_{b}-\beta_{b})X_{a}
 \end{equation}
-and their action on the boundary vectors are
+and their action on the boundary vectors  \fra{$\langle \langle W|$ and $|V\rangle \rangle$} are
 \begin{equation}\label{leftBoundary}
 	 \langle \langle W|  \left(\alpha_{a}(X_{1}+\ldots+X_{N})-X_{a}\right)=(\alpha_{a}-\beta_{a}) \langle \langle W|  
 \end{equation}
@@ -1172,11 +1173,11 @@ Let $m\in \{1,\ldots,L\}$. Consider $m$ sites $1 \le x_{1} < x_2 < \ldots < x_m 
 {$m$ colours denoted by $a_{k}\in\{1,\ldots,N-1\}$  with $k=1,2,\ldots, m$, chosen among the $N-1$ available species.}  
 Then the $m$-point correlations with respect to the non-equilibrium steady state measure are given by 
 \begin{equation}\label{exactCorrelations}
-\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]\\=\sum_{t_{1},\ldots,t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{m})
+\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]\\=\fra{\sum_{s_{1},\ldots,s_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{s_{k}}\beta_{a_{k}}^{1-s_{k}}\right)\mathcal{P}_{x_{1},\ldots,x_{m}}(s_{1},\ldots,s_{m})}
 \end{equation}
 where
 \begin{equation}\label{abs-probabilities}
-	\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{m})=\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(c_{1},\ldots,c_{m})\prod_{j=1}^{m}(-1)^{c_{j}-t_{j}}g_{j}(x_{j},c_{j},\ldots,c_{m})
+	\mathcal{P}_{x_{1},\ldots,x_{m}}\fra{(s_{1},\ldots,s_{m})=\sum_{c_{1}=s_{1}}^{1}\ldots\sum_{c_{m}=s_{m}}^{1}f(c_{1},\ldots,c_{m})\prod_{j=1}^{m}(-1)^{c_{j}-s_{j}}g_{j}(x_{j},c_{j},\ldots,c_{m})}
 \end{equation}
 with
 \begin{equation}\label{powerCoeffNOspec}
@@ -1517,9 +1518,9 @@ We observe that, for all $x$, we have
 It follows that 
 \begin{align}\label{remove-exponent}
 &\frac{(1+\sum_{x=1}^{L}\delta_{\tau_{x},N})!}{(L+1)!}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)^{1-\delta_{\tau_{x},N}}\nonumber\\
-=&\frac{(1+\sum_{x=1}^{L}\delta_{\tau_{x},N})!}{(L+1)!}\prod_{x=1}^{L}\frac{(1+\sum_{j=x+1}^{L}\delta_{\tau_{j},N})!}{(\sum_{j=x}^{L}\delta_{\tau_{j},N})!}\nonumber\\
-=&\frac{1}{(L+1)!}\prod_{x=1}^{L}\frac{(1+\sum_{j=x}^{L}\delta_{\tau_{j},x})!}{(\sum_{j=x}^{L}\delta_{\tau_{j},x})!}\nonumber\\
-=&\frac{1}{(L+1)!}\prod_{x=1}^{L}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\dt
+=&\frac{(1+\sum_{x=1}^{L}\delta_{\tau_{x},N})!}{(L+1)!}\prod_{x=1}^{L}\fra{\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}}\frac{(1+\sum_{j=x+1}^{L}\delta_{\tau_{j},N})!}{(\sum_{j=x}^{L}\delta_{\tau_{j},N})!}\nonumber\\
+=&\frac{1}{(L+1)!}\prod_{x=1}^{L}\fra{\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}}\frac{(1+\sum_{j=x}^{L}\delta_{\tau_{j},x})!}{(\sum_{j=x}^{L}\delta_{\tau_{j},x})!}\nonumber\\
+=&\frac{1}{(L+1)!}\prod_{x=1}^{L}\fra{\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\tau_{x},N}}}\left(1+\sum_{j=x}^{L}\delta_{\tau_{j},N}\right)\dt
 \end{align}
 Therefore, we obtain \eqref{ResulsBasis}.
 \begin{flushright}
@@ -1575,7 +1576,7 @@ As a consequence we can write \eqref{ABS_intermediate} as
 \Psi^{'}(\bm{\tau})
 =&\frac{1}{(L+1)!}\sum_{\bm{\sigma}\in \Omega^{'}}^{N}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-\delta_{\sigma_{x},N}}\left(1+\sum_{j=x}^{L}\delta_{\sigma_{j},N}\right)\nonumber\\&\times\left[\beta_{\tau_{x}}^{\delta_{\sigma_{x},N}(1-\delta_{\tau_{x},N})}\left(\delta_{\sigma_{x},N}+(1-\delta_{\sigma_{x},N})(1-\delta_{\tau_{x},N})\right)\right]\dt
 \end{align}
-We observe that the argument of the summation above does not distinguish the colours of the $\sigma$'s but only whether, at each site $x$, $\sigma_{x}$ is occupied or empty. Therefore, we can replace the summation over $\sigma_{1},\ldots,\sigma_{L}$ with a summation over the indices  $c_{1},\ldots,c_{L}\in \{0,1\}$. Thus, we obtain 
+We observe that the argument of the summation above does not distinguish the colours of the $\sigma$'s but only whether, at each site $x$, $\sigma_{x}$ is occupied or empty. Therefore, we can replace the summation over $\sigma_{1},\ldots,\sigma_{L}$ with a summation over the indices  $c_{1},\ldots,c_{L}\in \{0,1\}$\fra{, where $c_{x}=\delta_{\sigma_{x},N}$}. Thus, we obtain 
 \begin{align}
 \Psi^{'}(\bm{\tau})	=&\frac{1}{(L+1)!}\sum_{c_{1}=0}^{1}\ldots\sum_{c_{L}=0}^{1}\prod_{x=1}^{L}\left(\alpha_{\tau_{x}}-\beta_{\tau_{x}}\right)^{1-c_{x}}\left(1+\sum_{j=x}^{L}c_{j}\right)\left[\beta_{\tau_{x}}^{c_{x}}\left(c_{x}+(1-c_{x})(1-\delta_{\tau_{x},N})\right)\right]\dt
 \end{align}
@@ -1599,9 +1600,10 @@ Observing now that $c_{x}(1-\delta_{\tau_{x},N})$ can be replaced by  $c_{x}-\de
 \end{equation}
 where we used the fact that 
 \begin{equation}
-	\left(1+\sum_{j=x}^{L}c_{j}\right) =\left(2+L-x-\sum_{j=x}^{L}c^{'}_{j}\right)\dt
+	\left(1+\sum_{j=x}^{L}c_{j}\right) =\left(2+L-x-\sum_{j=x}^{L}c^{'}_{j}\right)
 \end{equation}
-Equation \eqref{ABS_1} will be useful in the following. 
+\fra{and where we used equations \eqref{remove-exponent}.}
+Formula \eqref{ABS_1} will be useful in the following. 
 \end{remark}
 \subsubsection{Closed formula for correlations}\label{correlation-section}
 We consider $m\in \{1,\ldots,L\}$ sites with coordinates $x_{1},\ldots,x_{m}\in \{1,\ldots,L\}$ such that $x_{k}<x_{k+1}$ for all $k\in \{1,\ldots,m-1\}$. We fix $a_{k}\in\{1,\ldots,N-1\}$ and we would like to compute
@@ -1649,11 +1651,11 @@ where in the last equality we have used the definition of \eqref{powerCoeffNOspe
 As a last step, using the binomial theorem, we rewrite the previous expression as a polynomial in the boundary densities: 
 \begin{align}
 	&\mathbb{E}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{Y_{x_{k}}=a_{k}\}}\right]\nonumber\\=&
-	\sum_{c_{1},\ldots,c_{m}=0}^{1}
-	f(c_{1},\ldots,c_{m})\prod_{k=1}^{m}\left(\sum_{t_{k}=0}^{c_{k}}(-1)^{c_{k}-t_{k}}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}g_{k}(x_{k},c_{k},\ldots,c_{m})\right)\nonumber\\
-	=&\sum_{c_{1},\ldots,c_{m}=0}^{1}
-	f(c_{1},\ldots,c_{m})\sum_{t_{1}=0}^{c_{1}}\ldots\sum_{t_{m}=0}^{c_{m}}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\left(\prod_{k=1}^{m}(-1)^{c_{k}-t_{k}}g_{k}(x_{k},c_{k},\ldots,c_{m})\right)\nonumber\\
-	=&\sum_{t_{1},\ldots,t_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{t_{k}}\beta_{a_{k}}^{1-t_{k}}\right)\sum_{c_{1}=t_{1}}^{1}\ldots\sum_{c_{m}=t_{m}}^{1}f(c_{1},\ldots,c_{m})\left(\prod_{k=1}^{m}(-1)^{c_{k}-t_{k}}g_{k}(x_{k},c_{k},\ldots,c_{m})\right)\dt
+	\fra{\sum_{c_{1},\ldots,c_{m}=0}^{1}
+	f(c_{1},\ldots,c_{m})\prod_{k=1}^{m}\left(\sum_{s_{k}=0}^{c_{k}}(-1)^{c_{k}-s_{k}}\alpha_{a_{k}}^{s_{k}}\beta_{a_{k}}^{1-s_{k}}g_{k}(x_{k},c_{k},\ldots,c_{m})\right)}\nonumber\\
+	=&\fra{\sum_{c_{1},\ldots,c_{m}=0}^{1}
+	f(c_{1},\ldots,c_{m})\sum_{s_{1}=0}^{c_{1}}\ldots\sum_{s_{m}=0}^{c_{m}}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{s_{k}}\beta_{a_{k}}^{1-s_{k}}\right)\left(\prod_{k=1}^{m}(-1)^{c_{k}-s_{k}}g_{k}(x_{k},c_{k},\ldots,c_{m})\right)}\nonumber\\
+	=&\fra{\sum_{s_{1},\ldots,s_{m}=0}^{1}\left(\prod_{k=1}^{m}\alpha_{a_{k}}^{s_{k}}\beta_{a_{k}}^{1-s_{k}}\right)\sum_{c_{1}=s_{1}}^{1}\ldots\sum_{c_{m}=s_{m}}^{1}f(c_{1},\ldots,c_{m})\left(\prod_{k=1}^{m}(-1)^{c_{k}-s_{k}}g_{k}(x_{k},c_{k},\ldots,c_{m})\right)\dt}
 \end{align}
 From third to fourth line we have changed the summation order. Therefore, comparing the above formula and \eqref{absProbabilitiesIntegrable}, we can read off the absorption probabilities given in \eqref{abs-probabilities}.
 \begin{flushright}
@@ -1909,14 +1911,14 @@ Therefore, up to this constant, $\mathbb{E}_{\mu_{\text{NESS}}}\left[D(\bm{n},\b
 	\begin{split}
 		\frac{\mathbb{E}_{\mu_{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\mathcal{Y}_{a_{k}}^{x_{k}}=n_{a_{k}}^{x_{k}}\}}\right]}{C(\nu,m)}&=\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\bm{\xi})\right]=\lim_{t\to\infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{n},\bm{\xi}(t))\right]
 		\\&=
-		\sum_{t_{1}=0}^{|\xi_{1}|}\ldots\sum_{t_{N}=0}^{|\xi_{N}|}\prod_{a=1}^{N-1}\left(\rho_{a}^{\text{left}}\right)^{t_{a}}\left(\rho_{a}^{\text{right}}\right)^{|\xi_{a}|-t_{a}}\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{N})
+		\sum_{s_{1}=0}^{|\xi_{1}|}\ldots\sum_{s_{N}=0}^{|\xi_{N}|}\prod_{a=1}^{N-1}\left(\rho_{a}^{\text{left}}\right)^{s_{a}}\left(\rho_{a}^{\text{right}}\right)^{|\xi_{a}|-s_{a}}\mathcal{P}_{x_{1},\ldots,x_{m}}(s_{1},\ldots,s_{N})
 	\end{split}
 \end{equation}
 here we recall that, generalizing Corollary~\ref{Corolollary-ABS_Corr-abstract},
 \begin{equation}\label{Pass} 
-	\mathcal{P}_{x_{1},\ldots,x_{m}}(t_{1},\ldots,t_{N})	=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{a=1}^{N-1}\left(t_{a}\delta_{a}^{0}+(|\xi_{a}|-t_{a})\delta_{a}^{L+1}\right)\Big|  \bm{\xi}(0)=\bm{\xi}\right)
+	\mathcal{P}_{x_{1},\ldots,x_{m}}(s_{1},\ldots,s_{N})	=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{a=1}^{N-1}\left(s_{a}\delta_{a}^{0}+(|\xi_{a}|-s_{a})\delta_{a}^{L+1}\right)\Big|  \bm{\xi}(0)=\bm{\xi}\right)
 \end{equation}
-are the absorption probabilities for the non-integrable chain, i.e. the probabilities that $t_{a}$ particles of species $a$ are absorbed at $0$. Here we have denoted $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x}$.
+are the absorption probabilities for the non-integrable chain, i.e. the probabilities that $s_{a}$ particles of species $a$ are absorbed at $0$. Here we have denoted $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x}$.
  These correlations can be computed once the absorption probabilities are known. For example, we report in Appendix~\ref{appendix-1pts-general} the solution for the simplest case of one-point correlations that is exactly solvable, since the single dual particle behaves as an independent random walker. 
  The absorption probabilities for higher point correlations fulfil  difference equations.
 
@@ -2218,14 +2220,14 @@ We take $m=1$ and we fix a site $x\in\{1,\ldots,L\}$ and a species $a\in \{1,\ld
 The average occupation reads
 \begin{equation}\label{OnePtsCORR}
 	\begin{split}
-			\mathbb{E}_{\mu_{\text{NESS}}}\left[\mathbbm{1}_{\{\mathcal{Y}_{a}^{x}=n_{a}^{x}\}}\right]&=\nu\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\delta_{a}^{x})\right]\\&=\nu\sum_{t_{a}=0}^{1}\left(\rho_{a}^{\text{left}}\right)^{t_{a}}\left(\rho_{a}^{\text{right}}\right)^{1-t_{a}}\fra{\mathcal{P}(t_{a})}\dt
+			\mathbb{E}_{\mu_{\text{NESS}}}\left[\mathbbm{1}_{\{\mathcal{Y}_{a}^{x}=n_{a}^{x}\}}\right]&=\nu\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\delta_{a}^{x})\right]\\&=\nu\sum_{s_{a}=0}^{1}\left(\rho_{a}^{\text{left}}\right)^{s_{a}}\left(\rho_{a}^{\text{right}}\right)^{1-s_{a}}\fra{\mathcal{P}(s_{a})}\dt
 	\end{split}
 \end{equation}
 \fra{where 
 \begin{equation*}
-	\mathcal{P}(t_{a})=\mathbb{P}\left(\bm{\xi}(\infty)=t_{a}\delta_{0}+(1-t_{a})\delta_{L+1}|\bm{\xi}(0)=\delta_{a}^{x}\right)
+	\mathcal{P}(s_{a})=\mathbb{P}\left(\bm{\xi}(\infty)=s_{a}\delta_{0}+(1-s_{a})\delta_{L+1}|\bm{\xi}(0)=\delta_{a}^{x}\right)
 \end{equation*} are the absorption probabilities.}
-\fra{To explicitly find the result, we aim to determine $\mathcal{P}(t_{a})$.}%=\mathbb{P}_{\delta_{a}^{x}}\left(\xi_{\infty}=t_{a}\delta_{a}^{0}+(1-t_{a})\delta_{a}^{L+1}\right)$.
+\fra{To explicitly find the result, we aim to determine $\mathcal{P}(s_{a})$.}%=\mathbb{P}_{\delta_{a}^{x}}\left(\xi_{\infty}=s_{a}\delta_{a}^{0}+(1-s_{a})\delta_{a}^{L+1}\right)$.
 This is the probability that a random walker 
 (started at $x$) on the chain $\{1,\ldots,L\}$ with absorbing boundaries {\color{black}is absorbed at extra-site $0$. It fulfils the following equations discrete Laplace equation}
 \begin{equation}\label{gamblers-ruin}
