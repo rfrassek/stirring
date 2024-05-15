@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.27)  15 MAY 2024 17:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.27)  15 MAY 2024 17:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -607,8 +607,8 @@ Package rerunfilecheck Info: File `answer-to-referee.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12254 strings out of 474486
- 190904 string characters out of 5743755
+ 12269 strings out of 474486
+ 191009 string characters out of 5743755
  1940542 words of memory out of 5000000
  34294 multiletter control sequences out of 15000+600000
  623214 words of font info for 91 fonts, out of 8000000 for 9000
@@ -623,9 +623,9 @@ C:/Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C
 :/Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/
 Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/
 Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on answer-to-referee.pdf (2 pages, 157115 bytes).
+Output written on answer-to-referee.pdf (2 pages, 159616 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 38 named destinations out of 1000 (max. 500000)
+ 128 PDF objects out of 1000 (max. 8388607)
+ 53 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
