@@ -1147,7 +1147,7 @@ and their action on the boundary vectors  \fra{$\langle \langle W|$ and $|V\rang
 \begin{equation}\label{rightBoundary}
 	\left(\beta_{a}(X_{1}+\ldots+X_{N})-X_{a}\right) |V\rangle\rangle =-(\alpha_{a}-\beta_{a}) |V\rangle\rangle 
 \end{equation}
-\fra{From \cite{vanicat2017exact} we recall that the matrices $X_{A}$ act on a \textit{supplementary space} and that the boundary vectors are bra-ket vectors living in this space.}
+\fra{From \cite{vanicat2017exact} we recall that the matrices $(X_{A})_{A\in \{1,\ldots,N\}}$ act on a \textit{supplementary space} and that the boundary vectors are bra-ket vectors living in this space.}
 Without loss of generality, we further assume that $ \langle \langle W|  V\rangle\rangle =1$. 
 \begin{remark} Only $N-1$ of the $N$ equations \eqref{leftBoundary}  are independent. This can be seen by summing them over the species $a\in \{1,\ldots,N\}$, i.e.
 	\begin{equation}
@@ -1355,9 +1355,7 @@ The boundary Hamiltonians of $H^{''}$ read
 \begin{align}\label{tri-diag-boundaryHamiltonians}
 	H_{\text{left}}^{''}=e_{NN}^{1}-\mathbbm{1}+\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1}\qquad H_{\text{right}}^{''}=e_{NN}^{L}-\mathbbm{1}\dt
 \end{align}
-The left one is lower triangular and depends on the differences between the boundary parameters, while the right one is diagonal. Equations \eqref{tri-diag-boundaryHamiltonians} are proved using the Hadamard formula \eqref{HadamardFormula} with $\mathcal{B}=\sum_{c=1}^{N-1}\beta_{c}e_{cN}$\fra{, and either $\mathcal{A}=e_{aN},$ or $\mathcal{A}=e_{aa}$}.
-
-\fra{Using \eqref{HT-BA} we obtain}
+The left one is lower triangular and depends on the differences between the boundary parameters, while the right one is diagonal. Equations \eqref{tri-diag-boundaryHamiltonians} are proved using the Hadamard formula \eqref{HadamardFormula} with $\mathcal{B}=\sum_{c=1}^{N-1}\beta_{c}e_{cN}$\fra{, and either $\mathcal{A}=e_{aN},$ or $\mathcal{A}=e_{aa}$}. \fra{Namely, by using \eqref{HT-BA} we obtain}
 \begin{align}
 	\fra{S_{2}\left(\sum_{a=1}^{N-1}\alpha_{a}e_{aN}^{1}\right)S_{2}^{-1}=\sum_{a=1}^{N-1}\alpha_{a}e_{aN}^{1}}
 \end{align}
@@ -1624,7 +1622,7 @@ where we used the fact that
 \begin{equation}
 	\left(1+\sum_{j=x}^{L}c_{j}\right) =\left(2+L-x-\sum_{j=x}^{L}c^{'}_{j}\right)
 \end{equation}
-\fra{and where we used equations \eqref{remove-exponent}.}
+\fra{and where we exploited equation \eqref{remove-exponent}.}
 Formula \eqref{ABS_1} will be useful in the following. 
 \end{remark}
 \subsubsection{Closed formula for correlations}\label{correlation-section}
@@ -1917,13 +1915,20 @@ The process is dual to $(\bm{\xi}(t))_{t\geq0}$, defined on the dual state space
 	\widetilde{\mathcal{L}}=\widetilde{\mathcal{L}}_{\text{left}}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}+\widetilde{\mathcal{L}}_{\text{right}}
 \end{equation} 
 where $\mathcal{L}_{x,x+1}$ is given by \fra{\eqref{edgeGenerator}} and where the boundary generators $\widetilde{\mathcal{L}}_{\text{left}}$ and $\widetilde{\mathcal{L}}_{\text{right}}$ are given in \eqref{siteDualGenerator}: they absorb particles from sites $1$ and $L$ and put them at extra-sites $0$ and $L+1$ respectively. The duality function is \eqref{dualityElements} specified on the chain. 
-We call $\mu_{\text{NESS}}$ the non-equilibrium stationary steady state of the the process $(\bm{n}(t))_{t\geq 0}$, we denote by $\mathbb{E}_{\mu_{\text{NESS}}}[\cdot]$ the expectation with respect to this measure and and we call $\bm{\mathcal{Y}} = (\mathcal{Y}^{1},\ldots,\mathcal{Y}^{L})$ the random vector with law $\mu_{\text{NESS}}$. For every $m\in\{1,\ldots,L\}$ we consider {\color{black}the coordinates $x_{1},\ldots,x_{m}\in\{1,\ldots,L\}$ and we select $m$ colours $a_{1},\ldots,a_{m}\in \{1,\ldots,N-1\}$ among the $N-1$ available ones}. We introduce the dual configuration  $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, meaning that 
-\begin{equation}
-	\xi_{A}^{x}=	\begin{cases}
-	\sum_{y=1}^{L}\sum_{b=1}^{N-1}\mathbbm{1}_{\{y=x_{k}\}}\mathbbm{1}_{\{b=a_{k}\}}\qquad &\text{if}\quad x=x_{k}\;\text{and} \; A=a_{k}\\
-		 0\qquad &\text{otherwise}
-	\end{cases}\dt
+We call $\mu_{\text{NESS}}$ the non-equilibrium stationary steady state of the the process $(\bm{n}(t))_{t\geq 0}$, we denote by $\mathbb{E}_{\mu_{\text{NESS}}}[\cdot]$ the expectation with respect to this measure and and we call $\bm{\mathcal{Y}} = (\mathcal{Y}^{1},\ldots,\mathcal{Y}^{L})$ the random vector with law $\mu_{\text{NESS}}$. For every $m\in\{1,\ldots,L\}$ we consider {\color{black}the coordinates \fra{$1\leq x_{1}<x_{2}<\ldots<x_{m}\leq L$} and we select $m$ colours $a_{1},\ldots,a_{m}\in \{1,\ldots,N-1\}$ among the $N-1$ available ones}. We introduce the dual configuration  $\bm{\xi}=\sum_{k=1}^{m}\delta_{a_{k}}^{x_{k}}$, meaning that 
+%\begin{equation}
+%	\xi_{A}^{x}=	\begin{cases}
+%	\sum_{y=1}^{L}\sum_{b=1}^{N-1}\mathbbm{1}_{\{y=x_{k}\}}\mathbbm{1}_{\{b=a_{k}\}}\qquad &\text{if}\quad x=x_{k}\;\text{and} \; A=a_{k}\\
+%		 0\qquad &\text{otherwise}
+%	\end{cases}\dt
+%\end{equation}
+\begin{equation}\label{dual-config}
+\fra{	\hat{\xi}_{A}^{x}=}	\begin{cases}
+		\fra{1\qquad} &\fra{\text{if}\quad x=x_{k}\;\text{and} \; A=a_{k}}\\
+		\fra{0\qquad} &\fra{\text{otherwise}}
+	\end{cases}
 \end{equation}
+
 The duality function is \eqref{dualityElements}, adapted to the chain. Therefore, we have that
 \begin{equation}
 	D(\bm{n},\bm{\xi})= \frac{\prod_{k=1}^{m}n_{a_{k}}^{x_{k}}}{C(\nu,m)}\dt
@@ -1934,17 +1939,19 @@ Therefore, up to this constant, $\mathbb{E}_{\mu_{\text{NESS}}}\left[D(\bm{n},\b
 	\begin{split}
 		\frac{\mathbb{E}_{\mu_{\text{NESS}}}\left[\prod_{k=1}^{m}\mathbbm{1}_{\{\mathcal{Y}_{a_{k}}^{x_{k}}=n_{a_{k}}^{x_{k}}\}}\right]}{C(\nu,m)}&=\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\bm{\xi})\right]=\lim_{t\to\infty}\mathbb{E}_{\bm{\xi}}\left[D(\bm{n},\bm{\xi}(t))\right]
 		\\&=
-		\sum_{s_{1}=0}^{|\xi_{1}|}\ldots\sum_{s_{N}=0}^{|\xi_{N}|}\prod_{a=1}^{N-1}\left(\rho_{a}^{\text{left}}\right)^{s_{a}}\left(\rho_{a}^{\text{right}}\right)^{|\xi_{a}|-s_{a}}\mathcal{P}_{x_{1},\ldots,x_{m}}(s_{1},\ldots,s_{N})
+		\sum_{s_{1}=0}^{|\xi_{1}|}\ldots\fra{\sum_{s_{N-1}=0}^{|\xi_{N-1}|}}\prod_{a=1}^{N-1}\left(\rho_{a}^{\text{left}}\right)^{s_{a}}\left(\rho_{a}^{\text{right}}\right)^{|\xi_{a}|-s_{a}}\fra{\mathcal{P}_{x_{1},\ldots,x_{m}}(s_{1},\ldots,s_{N-1})}
 	\end{split}
 \end{equation}
 here we recall that, generalizing Corollary~\ref{Corolollary-ABS_Corr-abstract},
 \begin{equation}\label{Pass} 
-	\mathcal{P}_{x_{1},\ldots,x_{m}}(s_{1},\ldots,s_{N})	=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{a=1}^{N-1}\left(s_{a}\delta_{a}^{0}+(|\xi_{a}|-s_{a})\delta_{a}^{L+1}\right)\Big|  \bm{\xi}(0)=\bm{\xi}\right)
+\fra{\mathcal{P}_{x_{1},\ldots,x_{m}}(s_{1},\ldots,s_{N-1})}	=\mathbb{P}\left(\bm{\xi}(\infty)=\sum_{a=1}^{N-1}\left(s_{a}\delta_{a}^{0}+(|\xi_{a}|-s_{a})\delta_{a}^{L+1}\right)\Big|  \bm{\xi}(0)=\bm{\xi}\right)
 \end{equation}
 are the absorption probabilities for the non-integrable chain, i.e. the probabilities that $s_{a}$ particles of species $a$ are absorbed at $0$. Here we have denoted $|\xi_{a}|=\sum_{x=1}^{L}\xi_{a}^{x}$.
  These correlations can be computed once the absorption probabilities are known. For example, we report in Appendix~\ref{appendix-1pts-general} the solution for the simplest case of one-point correlations that is exactly solvable, since the single dual particle behaves as an independent random walker. 
  The absorption probabilities for higher point correlations fulfil  difference equations.
-
+  \begin{remark}
+	\fra{Considering arbitrary coordinates $(x_{k})_{k\in\{1,\ldots,m\}}$ (not necessary different) and considering proper dual configurations, the technique explained above can be used to compute, in function of the absorption probabilities, the $m$-mixed factorial moments under the non-equilibrium stationary distribution.}
+\end{remark}
 
 
 \subsection{Instantaneous thermalization}\label{Subsection-Thermalized}
@@ -2008,9 +2015,12 @@ The thermalized multispecies stirring process $(\bm{n}(t))_{t\geq 0}$ on the sta
 	\widetilde{\mathcal{L}}^{TH}=\widetilde{\mathcal{L}}_{\text{left}}^{TH}+\sum_{x=1}^{L-1}\mathcal{L}_{x,x+1}^{TH}+\widetilde{\mathcal{L}}_{\text{right}}^{TH}
 \end{equation}
 where $\mathcal{L}^{TH}_{x,x+1}$ is \eqref{bulkThermalized} and $\widetilde{\mathcal{L}}_{\text{left}}^{TH}$ and $\widetilde{\mathcal{L}}_{\text{right}}^{TH}$ are absorbing with rate $1$:
-\begin{align}
-	\widetilde{\mathcal{L}}_{\text{left}}^{TH}f(\bm{\xi})&=\left\{f(\xi^{0}+\xi^{1},0,\xi^{2},\ldots,\xi^{L})-f(\bm{\xi})\right\}\nonumber\\ \widetilde{\mathcal{L}}_{\text{right}}^{TH}f(\bm{\xi})&=\left\{f(\xi^{0},\ldots,\xi^{L-1},0,\xi^{L}+\xi^{L+1})-f(\bm{\xi})\right\}\dt
+	\begin{align}
+	\fra{\widetilde{\mathcal{L}}_{\text{left}}^{TH}f(\bm{\xi})}&\fra{=\left\{f\left(\xi^{0}+\sum_{a=1}^{N-1}\bm{\delta}_{a}^{0}\xi_{a}^{1},\;\xi^{1}-\sum_{a=1}^{N-1}\bm{\delta}_{a}^{1}\xi_{a}^{1}+\bm{\delta}_{N}^{1}\sum_{a=1}^{N-1}\xi_{a}^{1},\;\xi^{2},\ldots,\xi^{L}\right)-f\left(\bm{\xi}\right)\right\}}\nonumber\\ \fra{\widetilde{\mathcal{L}}_{\text{right}}^{TH}f(\bm{\xi})}&\fra{=\left\{f\left(\xi^{0},\ldots,\xi^{L-1},\;\xi^{L}-\sum_{a=1}^{N-1}\bm{\delta}_{a}^{L}\xi_{a}^{L}+\bm{\delta}_{N}^{L}\sum_{a=1}^{N-1}\xi_{a}^{L},\;\xi^{L+1}+\sum_{a=1}^{N-1}\bm{\delta}_{a}^{L+1}\xi_{a}^{L}\right)-f\left(\bm{\xi}\right)\right\}}\dt
 \end{align}
+%\begin{align}
+%	\widetilde{\mathcal{L}}_{\text{left}}^{TH}f(\bm{\xi})&=\left\{f(\xi^{0}+\xi^{1},0,\xi^{2},\ldots,\xi^{L})-f(\bm{\xi})\right\}\nonumber\\ \widetilde{\mathcal{L}}_{\text{right}}^{TH}f(\bm{\xi})&=\left\{f(\xi^{0},\ldots,\xi^{L-1},0,\xi^{L}+\xi^{L+1})-f(\bm{\xi})\right\}\dt
+%\end{align}
 The duality function is the same of the multispecies stirring process, i.e. 
 \begin{equation}
 	\fra{D(\bm{n},\bm{\xi})=\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{\text{left}}\right)^{\xi_{a}^{0}}\right)\left(\prod_{x=1}^{L}\frac{(\nu-\sum_{a=1}^{N-1}\xi_{a}^{x})!}{\nu!}\prod_{a=1}^{N-1}\frac{n_{a}^{x}!}{(n_{a}^{x}-\xi_{a}^{x})!}\right)\left(\prod_{a=1}^{N-1}\left(\rho_{a}^{\text{right}}\right)^{\xi_{a}^{L+1}}\right)}\co
