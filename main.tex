@@ -1148,6 +1148,7 @@ and their action on the boundary vectors  \fra{$\langle \langle W|$ and $|V\rang
 \begin{equation}\label{rightBoundary}
 	\left(\beta_{a}(X_{1}+\ldots+X_{N})-X_{a}\right) |V\rangle\rangle =-(\alpha_{a}-\beta_{a}) |V\rangle\rangle 
 \end{equation}
+\fra{From \cite{vanicat2017exact} we recall that the matrices $X_{A}$ act on a \textit{supplementary space} and that the boundary vectors are bra-ket vectors living in this space.}
 Without loss of generality, we further assume that $ \langle \langle W|  V\rangle\rangle =1$. 
 \begin{remark} Only $N-1$ of the $N$ equations \eqref{leftBoundary}  are independent. This can be seen by summing them over the species $a\in \{1,\ldots,N\}$, i.e.
 	\begin{equation}
@@ -1357,7 +1358,15 @@ The boundary Hamiltonians of $H^{''}$ read
 \end{align}
 The left one is lower triangular and depends on the differences between the boundary parameters, while the right one is diagonal. Equations \eqref{tri-diag-boundaryHamiltonians} are proved using the Hadamard formula \eqref{HadamardFormula} with $\mathcal{B}=\sum_{c=1}^{N-1}\beta_{c}e_{cN}$\fra{, and either $\mathcal{A}=e_{aN},$ or $\mathcal{A}=e_{aa}$}.
 
-Therefore, using \eqref{HT-BA} we obtain for the left boundary 
+\fra{Using \eqref{HT-BA} we obtain}
+\begin{align}
+	\fra{S_{2}\left(\sum_{a=1}^{N-1}\alpha_{a}e_{aN}^{1}\right)S_{2}^{-1}=\sum_{a=1}^{N-1}\alpha_{a}e_{aN}^{1}}
+\end{align}
+\fra{and}
+\begin{align}
+\fra{-S_{2}\sum_{a=1}^{N-1}e_{aa}^{1}S_{2}^{-1}=-\sum_{a=1}^{N-1}\left(e_{aa}^{1}+\beta_{a}e_{aN}^{1}\right)}
+\end{align}
+\fra{Therefore,  for the left boundary} 
 \begin{equation}
 	\begin{split}
 		H_{\text{left}}^{''}&=S_{2}H_{\text{left}}^{'}S_{2}^{-1}
