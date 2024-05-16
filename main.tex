@@ -280,8 +280,7 @@ particle per site ($\nu=1$), which is driven out-of-equilbrium by two reservoirs
 relies on the extension of the  Matrix Product Ansatz \cite{derrida1993exact} to multiple species \cite{vanicat2017exact} and the $gl(N)$ invariance of the process in the bulk. Finally in Section~\ref{sec5} we discuss a few extensions 
 and generalizations of the model. 
 The first generalization is the formula for the correlations for the boundary driven chain in the case when more than one particle is allowed at each site ($\nu > 1$). 
-In this situation integrability is lost and we cannot derive explicit formulas for the absorption probabilities. However, in Appendix \ref{appendix-1pts-general}, we show how to compute the one-point correlation by using the properties of a random walk. The second generalization is the definition of a thermalized version of the boundary-driven multispecies stirring process and the formulation of the the absorbing duality with the same duality function of the multispecies stirring process (the details of the proof are reported in Appendix \ref{appendix-dualityThermalized}). Finally, the third generalization is the introduction of an ``ad-hoc'' interaction mechanism of reaction type, in order to have closed evolution equation for average particle densities, \fra{inspired by \cite{casini2022uphill,schutzReaction}
-(we report the details of the computations for the closure of the average density evolution equation in Appendix \ref{appendix-RD})}. 
+In this situation integrability is lost and we cannot derive explicit formulas for the absorption probabilities. However, in Appendix \ref{appendix-1pts-general}, we show how to compute the one-point correlation by using the properties of a random walk. The second generalization is the definition of a thermalized version of the boundary-driven multispecies stirring process and the formulation of the the absorbing duality with the same duality function of the multispecies stirring process (the details of the proof are reported in Appendix \ref{appendix-dualityThermalized}). \fra{Finally, inspired by \cite{casini2022uphill,schutzReaction},} the third generalization is the introduction of an ``ad-hoc'' interaction mechanism of reaction type, in order to have closed evolution equation for average particle densities, \fra{(we report the details of the computations for the closure of the average density evolution equation in Appendix \ref{appendix-RD})}. 
 Again, an absorbing duality is proved with the same duality function of the multispecies stirring process.   
 
 
@@ -539,7 +538,7 @@ and the coupling to reservoirs are
 	\end{cases}\dt
 \end{equation}
 The case $\nu=1$, i.e. one particle at most for each site, is integrable and has been considered previously in \cite{vanicat2017exact}. 
-For  $\nu=1$ we denote the ${gl}(N)$  generators   as  $(e_{AB})_{A,B\in\{1,\ldots,N\}}$ obeying $(e_{AB})_{CD}=\delta_{AC}\delta_{BD}$ \footnote{\fra{In this set-up we have chosen the fundamental (defining) representation of the Lie algebra, therefore the generators $(E_{AB})_{A,B\in\{1,\ldots,N\}}$ do coincide with the elementary matrices $(e_{AB})_{A,B\in\{1,\ldots,N\}}$. Therefore, we denote them by lowercase letters}}.
+For  $\nu=1$ we denote the ${gl}(N)$  generators   as  $(e_{AB})_{A,B\in\{1,\ldots,N\}}$ obeying $(e_{AB})_{CD}=\delta_{AC}\delta_{BD}$ \footnote{\fra{In this set-up we have chosen the fundamental (defining) representation of the $gl(N)$ Lie algebra, therefore the generators $(E_{AB})_{A,B\in\{1,\ldots,N\}}$ do coincide with the elementary matrices $(e_{AB})_{A,B\in\{1,\ldots,N\}}$. As a consequence, we denote these generators by lowercase letters}}.
 The Hamiltonian can then be written as
 \begin{equation}\label{hamiltonian}
 	H=H_{\text{left}}+H_{\text{bulk}}+H_{\text{right}}
@@ -774,7 +773,7 @@ On one hand, on the extra-site $u(x)$ we have
 where we used the orthogonality relation \eqref{ortho-extraSite}}. 
 On the other hand, on the site $x$, we have 
 \begin{align}
-&\langle n_{1}^{x},\ldots,n_{N}^{x}|(\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x})})^{T}R_{x}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\nonumber\\&= \langle  n_{1}^{x},\ldots,n_{N}^{x}|\left(\sum_{k_{1}=0}^{\infty}\frac{\left\{\left(E_{N1}^{x}\right)^{T}\right\}^{k_{1}}}{k_{1}!}\ldots\sum_{k_{N-1}=0}^{\infty}\frac{\left\{\left(E_{N\,N-1}^{x}\right)^{T}\right\}^{k_{N-1}}}{k_{N-1}!}\sum_{s\in\Omega_{x}}\frac{s_{1}^{x}!\cdots s_{N}^{x}!}{\nu!}|s_{1}^{x},\ldots,s_{N}^{x}\rangle\langle s_{1}^{x},\ldots,s_{N}^{x}|\right)\nonumber
+&\langle n_{1}^{x},\ldots,n_{N}^{x}|(\exp{(E_{N1}^{x}+\ldots+E_{N\,N-1}^{x})})^{T}R_{x}|\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\nonumber\\&= \langle  n_{1}^{x},\ldots,n_{N}^{x}|\left(\sum_{k_{1}=0}^{\infty}\frac{\left\{\left(E_{N1}^{x}\right)^{T}\right\}^{k_{1}}}{k_{1}!}\ldots\sum_{k_{N-1}=0}^{\infty}\frac{\left\{\left(E_{N\,N-1}^{x}\right)^{T}\right\}^{k_{N-1}}}{k_{N-1}!}\fra{\sum_{r\in\Omega_{x}}\frac{r_{1}^{x}!\cdots r_{N}^{x}!}{\nu!}|r_{1}^{x},\ldots,r_{N}^{x}\rangle\langle r_{1}^{x},\ldots,r_{N}^{x}|}\right)\nonumber
 \\&
 \hspace{2.cm}\qquad\times |\xi_{1}^{x},\ldots,\xi_{N}^{x}\rangle\nonumber
 \\&=
@@ -905,9 +904,9 @@ we obtain \fra{
 \right)
     \end{split}
 \end{equation}}
-{With a slight abuse of notation and in the spirit of Remark \ref{reamrk-extraSite}, we here denote the occupation vector at extra-site $u(x)$ by $\langle \xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|$.
+{With a slight abuse of notation and in the spirit of Remark \ref{reamrk-extraSite}, we here denote the occupation vector at extra-site $u(x)$ by $\langle \xi_{1}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|$\fra{.}
 } \\
-Recalling the action of the bosonic creation operator acting at site $u(x)$ and on the species $a\in \{1,\ldots,N-1\}$ we have that 
+\fra{Recalling} the action of the bosonic creation operator acting at site $u(x)$ and on the species $a\in \{1,\ldots,N-1\}$ we have that 
 \begin{equation}\label{bosonicKX}
     \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)}+1,\ldots,\xi_{N-1}^{u(x)}|(\mathbf{a}^{+})^{u(x)}_{a}=  \langle \xi_{1}^{u(x)},\ldots,\xi_{a}^{u(x)},\ldots,\xi_{N-1}^{u(x)}|\dt
 \end{equation}
@@ -2244,24 +2243,24 @@ We take $m=1$ and we fix a site $x\in\{1,\ldots,L\}$ and a species $a\in \{1,\ld
 The average occupation reads
 \begin{equation}\label{OnePtsCORR}
 	\begin{split}
-			\mathbb{E}_{\mu_{\text{NESS}}}\left[\mathbbm{1}_{\{\mathcal{Y}_{a}^{x}=n_{a}^{x}\}}\right]&=\nu\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\delta_{a}^{x})\right]\\&=\nu\sum_{s_{a}=0}^{1}\left(\rho_{a}^{\text{left}}\right)^{s_{a}}\left(\rho_{a}^{\text{right}}\right)^{1-s_{a}}\fra{\mathcal{P}(s_{a})}\dt
+			\mathbb{E}_{\mu_{\text{NESS}}}\left[\mathbbm{1}_{\{\mathcal{Y}_{a}^{x}=n_{a}^{x}\}}\right]&=\nu\lim_{t\to\infty}\mathbb{E}_{\bm{n}}\left[D(\bm{n}(t),\delta_{a}^{x})\right]\\&=\nu\sum_{s_{a}=0}^{1}\left(\rho_{a}^{\text{left}}\right)^{s_{a}}\left(\rho_{a}^{\text{right}}\right)^{1-s_{a}}\fra{\mathcal{P}_{x_{a}}(s_{a})}\dt
 	\end{split}
 \end{equation}
 \fra{where 
 \begin{equation*}
-	\mathcal{P}(s_{a})=\mathbb{P}\left(\bm{\xi}(\infty)=s_{a}\delta_{0}+(1-s_{a})\delta_{L+1}|\bm{\xi}(0)=\delta_{a}^{x}\right)
+	\mathcal{P}_{x_{a}}(s_{a})=\mathbb{P}\left(\bm{\xi}(\infty)=s_{a}\delta_{0}+(1-s_{a})\delta_{L+1}|\bm{\xi}(0)=\delta_{a}^{x}\right)
 \end{equation*} are the absorption probabilities.}
-\fra{To explicitly find the result, we aim to determine $\mathcal{P}(s_{a})$.}%=\mathbb{P}_{\delta_{a}^{x}}\left(\xi_{\infty}=s_{a}\delta_{a}^{0}+(1-s_{a})\delta_{a}^{L+1}\right)$.
+\fra{To explicitly find the result, we aim to determine $\mathcal{P}_{x_{a}}(s_{a})$.}%=\mathbb{P}_{\delta_{a}^{x}}\left(\xi_{\infty}=s_{a}\delta_{a}^{0}+(1-s_{a})\delta_{a}^{L+1}\right)$.
 This is the probability that a random walker 
 (started at $x$) on the chain $\{1,\ldots,L\}$ with absorbing boundaries {\color{black}is absorbed at extra-site $0$. It fulfils the following equations discrete Laplace equation}
 \begin{equation}\label{gamblers-ruin}
 	\begin{cases}
-		\Delta_{L}\mathcal{P}(1,\delta_{a}^{x})=0\\
-		\mathcal{P}(1,\delta_{a}^{1})=\frac{|\alpha|}{1+|\alpha|}+\mathcal{P}(1,\delta_{a}^{2})\frac{1}{1+|\alpha|}\\
-		\mathcal{P}(1,\delta_{a}^{L})=\mathcal{P}(1,\delta_{a}^{L-1})\frac{1}{1+|\beta|}
+		\fra{\Delta_{L}\mathcal{P}_{x_{a}}(1)=0}\\
+		\fra{\mathcal{P}_{1}(1)=\frac{|\alpha|}{1+|\alpha|}+\mathcal{P}_{2}(1)\frac{1}{1+|\alpha|}}\\
+		\fra{\mathcal{P}_{L}(1)=\mathcal{P}_{L-1}(1)\frac{1}{1+|\beta|}}
 	\end{cases}
 \end{equation}
-where $\Delta_{L}$ is the discrete Laplace operator on the chain of length $L$. The equations \eqref{gamblers-ruin} can be solved and using $\mathcal{P}(1,\delta_{a}^{x})=1-\mathcal{P}(0,\delta_{a}^{x})$ we obtain 
+where $\Delta_{L}$ is the discrete Laplace operator on the chain of length $L$. The equations \eqref{gamblers-ruin} can be solved and using \fra{$\mathcal{P}_{x_{a}}(1)=1-\mathcal{P}_{x_{a}}(0)$} we obtain 
 \begin{equation}
 	\mathbb{E}_{\mu_{\text{NESS}}}\left[\mathbbm{1}_{\{\mathcal{Y}_{a}^{x}=n_{a}^{x}\}}\right]=\nu\frac{\alpha_{a}(L|\beta|-|\beta|x+1)+\beta_{a}(|\alpha|x+1-|\alpha|)}{|\alpha||\beta|L-|\alpha||\beta|+|\alpha|+|\beta|}\dt
 \end{equation}
