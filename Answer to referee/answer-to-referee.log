@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.27)  15 MAY 2024 17:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.27)  21 MAY 2024 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -585,19 +585,39 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: No \author given.
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--37
+
+ []
+
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 58.
+(Font)              <10> on input line 37.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 58.
+(Font)              <7> on input line 37.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 58.
+(Font)              <5> on input line 37.
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
+
+ []
+
 [1
 
 {C:/Users/casin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/casi
 n/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/casin/Ap
-pData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/casin/Ap
-pData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/casin/AppDat
-a/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] [2]
+pData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}] [2{C:/Users/casi
+n/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/casin/Ap
+pData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] [3]
 (answer-to-referee.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -607,25 +627,29 @@ Package rerunfilecheck Info: File `answer-to-referee.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12269 strings out of 474486
- 191009 string characters out of 5743755
- 1940542 words of memory out of 5000000
- 34294 multiletter control sequences out of 15000+600000
- 623214 words of font info for 91 fonts, out of 8000000 for 9000
+ 12276 strings out of 474486
+ 191069 string characters out of 5743755
+ 1939542 words of memory out of 5000000
+ 34295 multiletter control sequences out of 15000+600000
+ 626209 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,526b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
+ 75i,6n,79p,486b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pf
+b><C:/Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
 b><C:/Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pf
-b><C:/Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb
+b><C:/Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb
+><C:/Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb>
+<C:/Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmib10.pfb
 ><C:/Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb>
 <C:/Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><
 C:/Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C
 :/Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/
 Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/
-Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on answer-to-referee.pdf (2 pages, 159616 bytes).
+Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/
+Users/casin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb>
+Output written on answer-to-referee.pdf (3 pages, 225509 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 53 named destinations out of 1000 (max. 500000)
+ 157 PDF objects out of 1000 (max. 8388607)
+ 58 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
