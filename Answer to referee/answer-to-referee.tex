@@ -25,28 +25,31 @@
 
 
 \usepackage[margin=2.5cm]{geometry} 
-\title{Answer to the referee for: \textit{Duality for the multispecies stirring process with open boundaries}}
+\title{Answer to the referee
+%: \textit{Duality for the multispecies stirring process with open boundaries}
+}
 	\begin{document}
-		\maketitle
+	%	\maketitle
+		
 		\section*{Answer to general comments}
 		All the page and equation cited in the answers do refer to the new file. 
 		\begin{enumerate}
-			\item \textbf{P3, line 25: Could you provide more detail on the ”choice of the boundary reservoirs”? Is this selection
+			\item \textit{P3, line 25: Could you provide more detail on the ”choice of the boundary reservoirs”? Is this selection
 				the most general case that allows for the determination of an absorbing dual process?}\\ \\
-				We expanded the sentence in the introduction to explain our choice of the boundary generators. One could in principle consider other choices of boundaries but then this would imply that dual particles could possibly change their color before getting absorbed at the boundaries. In view of the application of duality to the computation of the non-equilibrium steady state we are interested in we limit ourselves to the choice that avoid this color-changing.
+				We expanded the sentence in the introduction to explain our choice of the boundary generators. One could in principle consider other choices but then this would imply that dual particles could possibly change their color before getting absorbed at the boundaries. In view of the application of duality to the computation of the non-equilibrium steady state we are interested in, we limit ourselves to the choice that avoids this color-changing.
 				\item \textbf{P4, line 33: The rates $\alpha_{A}$ are strictly positive, what happens when they are zero? Does the corresponding duality degenerates to nontrivial duality for closed system?} \\ \\
-					When the rates are zero, then the generator of the process in (2.2.5) is zero and therefore we get indeed for the closed system the expected duality in product form.
+					When the rates $\alpha_{A}$ are zero, then the generator of the process in (2.2.5) is zero and therefore we get indeed for the closed system the expected duality in product form.
 					\item \textbf{P14, line 20: In my understanding, the Hadamard formula is a special case of the Baker–Campbell–Hausdorff
 						formula, which was first utilized for duality in the paper arXiv:2209.03531. The authors should consider
 						citing that paper as well.}\\ \\
-						A citation has been added on page 14
+						A citation has been added on page 14.
 						\item \textbf{P20, Section 4.2: “In fact, such simplification can always be achieved if there exists an absorbing dual
 							process as established in Section 3”: It looks like this method is general, could you be more precise
 							about the conditions for simplification and maybe analogues for (4.2.1)? Additionally, I find equations
 							(4.2.2) to (4.2.3) distracting in this context. It’s better to keep the introduction as simple as possible.
 							In fact, I find this section redundant with the steps outlined on page 22. Please consider rewriting
 							these two parts together.}\\ \\ 	As the computations in section 4 are rather lengthy and technical, we believe it is useful to keep a small introductory subsection where we explain the main ideas and show that the matrix product ansatz simplies after the similarity transformations.
-							We considered the option of moving section 4.2 at the end of 4.1, but we believe it is useful to explain the strategy of proof right at the beginning.							
+							We considered the option of moving section 4.2 at the end of 4.1, but we believe it is useful to explain the strategy of the proof right at the beginning of the section.							
 		\end{enumerate}
 		\section*{Minor issues}
 		\begin{enumerate}
@@ -98,7 +101,7 @@
 \section*{Further corrections}
 \begin{enumerate}
 \item \textbf{Equation (5.2.10)}: the boundary dual generator of the thermalized process was wrong. Compare with the old (ArXiv) equation (5.2.10) with the new equation (5.2.10).
-\item \textbf{Equations (5.1.5), (5.1.6)}: the absorption probabilities of the dual particles should be written for $s_{1},\ldots,s_{N-1}$ and not until $s_{N}$ as they where before. Indeed, $s_{a}$ denotes the number of particles of species $a$ that we absorbed at $0$ and we can only absorb particles, not the holes. 
+\item \textbf{Equations (5.1.5), (5.1.6)}: the absorption probabilities of the dual particles should be written for $s_{1},\ldots,s_{N-1}$ and not until $s_{N}$ as they were before. Indeed, $s_{a}$ denotes the number of particles of species $a$ that we absorbed at $0$ and we can only absorb particles, not the holes. 
 \item \textbf{Section 5.1}: we can talk about $m$-point correlations only if we choose $1\leq x_{1}<\ldots<x_{m}\leq L$ otherwise  we obtain the mixed moments in the non-equilibrium steady state. I have fixed equation (5.1.3) and above and I have added Remark 13 to clarify.
 \end{enumerate}
 	\end{document}
