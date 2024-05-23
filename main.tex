@@ -1303,7 +1303,7 @@ that is related to $H$ by
 \end{equation}
 The bulk part of the Hamiltonian is left unchanged (because it is written using the coproduct of the second Casimir, see equation \eqref{hamiltonianCasimir}) while the boundaries are given by 
 \begin{equation}\label{eq:Hprimes}
-	H^{'}_{\text{left}}=\sum_{a=1}^{N-1}\left(\alpha_{a}e_{aN}^{1}-e_{aa}^{1}\right)\qquad H^{'}_{\text{right}}=\sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}\right)\dt
+	H^{'}_{\text{left}}=\sum_{a=1}^{N-1}\left(\alpha_{a}e_{aN}^{1}-e_{aa}^{1}\right),\qquad\qquad H^{'}_{\text{right}}=\sum_{a=1}^{N-1}\left(\beta_{a}e_{aN}^{L}-e_{aa}^{L}\right)\dt
 \end{equation}
 Indeed, using \eqref{HadTransfBoundary}, \eqref{ratesConditions} and \eqref{transpostionPropertyFund}, we obtain for the left boundary
 \begin{equation}
@@ -1353,7 +1353,7 @@ that is related to $H'$ by
 \end{equation}
 The boundary Hamiltonians of $H^{''}$ read
 \begin{align}\label{tri-diag-boundaryHamiltonians}
-	H_{\text{left}}^{''}=e_{NN}^{1}-\mathbbm{1}+\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1}\qquad H_{\text{right}}^{''}=e_{NN}^{L}-\mathbbm{1}\dt
+	H_{\text{left}}^{''}=e_{NN}^{1}-\mathbbm{1}+\sum_{a=1}^{N-1}(\alpha_{a}-\beta_{a})e_{aN}^{1},\qquad\qquad H_{\text{right}}^{''}=e_{NN}^{L}-\mathbbm{1}\dt
 \end{align}
 The left one is lower triangular and depends on the differences between the boundary parameters, while the right one is diagonal. Equations \eqref{tri-diag-boundaryHamiltonians} are proved using the Hadamard formula \eqref{HadamardFormula} with $\mathcal{B}=\sum_{c=1}^{N-1}\beta_{c}e_{cN}$\fra{, and either $\mathcal{A}=e_{aN},$ or $\mathcal{A}=e_{aa}$}. \fra{Namely, by using \eqref{HT-BA} we obtain}
 \begin{align}
@@ -2066,7 +2066,7 @@ where
 	\mathcal{L}_{x,x+1}^{rd}=\nu \sigma_{11}\mathcal{L}_{x,x+1}+\nu \sigma_{12}\sum_{c=1}^{N-2}\mathcal{L}_{x,x+1}^{c}+(\Upsilon-2\nu\sigma_{12})\mathcal{L}_{x,x+1}^{m}
 \end{equation}
 where $\mathcal{L}_{x,x+1}$ is the edge-generator \eqref{edgeGenerator} of the multispecies stirring process and, for any function $f:\Omega\to \mathbb{R}$ and for any $c\in \{1,\ldots,N-2\}$ we introduce the \textit{stirring-mutation} generator
-\begin{equation}
+\begin{equation}\label{stirring-mutation-generatorDensity}
 	\mathcal{L}_{x,x+1}^{c}f(\bm{n})=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left(f(\bm{n}-\bm{\delta}_{A}^{x}+\bm{\delta}_{h_{c}(B)}^{x}+\bm{\delta}_{h_{c}(A)}^{x+1}-\bm{\delta}_{B}^{x+1})-f(\bm{n})\right)
 \end{equation}
 with the mapping 
@@ -2087,7 +2087,7 @@ defined as
 Observe that $h_{c}(\cdot)$ is surjective and injective, and thus invertible. 
 
 Moreover, we define the \textit{pure-mutation} generator
-\begin{equation}
+\begin{equation}\label{pure-mutation-gneratorDensity}
 	\mathcal{L}_{x,x+1}^{m}f(\bm{n})=\sum_{a,b=1}^{N-1}n_{a}^{x}\left(f(\bm{n}-\bm{\delta}_{a}^{x}+\bm{\delta}_{b}^{x})-f(\bm{n})\right)\dt
 \end{equation}
 The left boundary generator $\mathcal{L}_{\text{left}}^{rd}$ is given by \eqref{siteGenerator} at site $1$,where the $\alpha$'s parameters are defined in function of the given boundary condition of the difference-differential system as
@@ -2350,7 +2350,7 @@ For all $x\in \{1,\ldots,L-1\}$ and for all $d\in \{1,\ldots,N-1\}$ we have
 \end{equation}
 Indeed, 
 \begin{enumerate}
-	\item \textit{\underline{Stirring generator}}: {using edge generator $\mathcal{L}_{x,x+1}$ of the multispecies stirring process introduced in Section~\ref{sec1} (with $y=x+1$) we have that} 
+	\item \textit{\underline{Stirring generator}} : {using edge generator $\mathcal{L}_{x,x+1}$ of the multispecies stirring process introduced in Section~\ref{sec1} (with $y=x+1$) \fra{and acting on the function $f(\bm{n})=n_{d}^{x}$} we have that} 
 \begin{equation}
 	\mathcal{L}_{x,x+1}n_{d}^{x}=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{B}^{x}+\bm{\delta}_{A}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)\dt
 \end{equation}
@@ -2361,7 +2361,7 @@ In the brackets of the right-hand-side of the above equation we have: a contribu
 	=&\nu\left(n_{d}^{x+1}-n_{d}^{x}\right)
 \end{align*} 
 where we have used the fact that $n_{N}^{x}=\nu-\sum_{c=1}^{N-1}n_{c}^{x}$.
-\item \textit{\underline{Stirring-mutation generator}}: for every $c\in \{1,\ldots,N-2\}$ we have 
+\item \textit{\underline{Stirring-mutation generator}} : \fra{considering the generator $\mathcal{L}_{x,x+1}^{c}$, defined in \eqref{stirring-mutation-generatorDensity} for every $c\in \{1,\ldots,N-2\}$} \fra{and acting on the function $f(\bm{n})=n_{d}^{x}$} we have 
 \begin{equation}
 	\begin{split}
 		\mathcal{L}_{x,x+1}^{c}n_{d}^{x}&=\sum_{A,B=1}^{N}n_{A}^{x}n_{B}^{x+1}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{h_{c}(B)}^{x}+\bm{\delta}_{h_{c}(A)}^{x+1}-\bm{\delta}_{B}^{x+1})-n_{d}^{x}\right)\dt
@@ -2376,14 +2376,14 @@ In the brackets of the right-hand-side of the above equation we have: a contribu
 		\nu(n_{h_{c}(B^{'})}^{x+1}-n_{d}^{x})
 \end{align}
 where  we used the fact that $n_{N}^{x}=\nu-\sum_{b=1}^{N-1}n_{b}^{x}$. 
-\item \textit{\underline{Pure-mutation generator}}: here we have that 
+\item \textit{\underline{Pure-mutation generator}} : \fra{considering the generator $\mathcal{L}_{x,x+1}^{m}$, defined in equation \eqref{pure-mutation-gneratorDensity}} \fra{and acting on the function $f(\bm{n})=n_{d}^{x}$} we have that 
 \begin{equation}
 	\mathcal{L}_{x,y}^{m}n_{d}^{x}=\sum_{A,B=1}^{N-1}n_{A}^{x}\left((n_{d}^{x}-\bm{\delta}_{A}^{x}+\bm{\delta}_{B}^{x})-n_{d}^{x}\right)=\sum_{b=1}^{N-1}(n_{b}^{x}-n_{d}^{x})
 \end{equation}
 \end{enumerate}
 Then, summing over all indices $c\in\{1,\ldots,N-2\}$, we obtain \eqref{actionGraphRD} and \eqref{DifferenceEquation} follows.
 \paragraph{Action of $\mathcal{L}_{\text{left}}^{rd}$ on the occupation variable}
-Acting on $n_{d}^{1}$  with $\mathcal{L}_{\text{left}}^{rd}$ we obtain
+\fra{Acting on the function $f(\bm{n})=n_{d}^{1}$}  with $\mathcal{L}_{\text{left}}^{rd}$ we obtain
 \begin{equation}\label{actionBoudaryRD}
 	\begin{split}
 		\mathcal{L}_{\text{left}}^{rd}n_{d}^{1}&=\sum_{A,B=1}^{N}\alpha_{A}n_{B}^{1}\left((n_{d}^{1}-\bm{\delta}_{B}^{1}+\bm{\delta}_{A}^{1})-n_{d}^{1}\right)=\alpha_{d}\sum_{B=1\,:\,B\neq d}^{N}n_{B}^{1}-n_{d}^{1}\sum_{A=1\,:A\neq d}^{N}\alpha_{A}
